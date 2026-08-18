@@ -6,6 +6,7 @@ import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
 import { check, MAX_PROFILE_CHARS, setup } from "../skills/simple/scripts/simple.mjs";
+import { skillLinks } from "../scripts/link-skill.mjs";
 
 const hook = fileURLToPath(new URL("../scripts/hook.mjs", import.meta.url));
 const simpleCli = fileURLToPath(new URL("../skills/simple/scripts/simple.mjs", import.meta.url));
@@ -97,6 +98,15 @@ test("pre-write hook adds only relevant reminders", () => {
     tool_input: { command: "+const migrationFramework = existingOwner;" }
   });
   assert.equal(architectureWords.stdout, "");
+});
+
+test("local install exposes one skill through each supported host", () => {
+  assert.deepEqual(skillLinks("/tmp/simple-home"), [
+    "/tmp/simple-home/.claude/skills/simple",
+    "/tmp/simple-home/.codex/skills/simple",
+    "/tmp/simple-home/.config/opencode/skills/simple",
+    "/tmp/simple-home/.gemini/config/skills/simple"
+  ]);
 });
 
 function completedProfile(root, label) {

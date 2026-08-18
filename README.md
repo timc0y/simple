@@ -127,6 +127,9 @@ For local skill development:
 npm run install:local
 ```
 
+The local installer links the same skill source into Codex, Claude Code, OpenCode,
+and Gemini. There is one maintained copy of the guidance, not a host-specific fork.
+
 ## Evidence
 
 Run deterministic checks with:

@@ -1,6 +1,6 @@
 {
   "name": "simple",
-  "version": "0.3.0",
+  "version": "0.3.1+codex.20260818135957",
   "description": "Solve complex software problems without unnecessary architecture.",
   "author": {
     "name": "Tim Coy",
@@ -9,7 +9,13 @@
   "homepage": "https://github.com/timc0y/simple",
   "repository": "https://github.com/timc0y/simple",
   "license": "MIT",
-  "keywords": ["simplicity", "software-design", "refactoring", "deletion", "agent-skill"],
+  "keywords": [
+    "simplicity",
+    "software-design",
+    "refactoring",
+    "deletion",
+    "agent-skill"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Simple",
@@ -17,8 +23,12 @@
     "longDescription": "Give agents concise repository context, specialist guidance, and quiet writing reminders so real obligations are preserved without speculative architecture.",
     "developerName": "Tim Coy",
     "category": "Developer Tools",
-    "capabilities": ["Interactive"],
+    "capabilities": [
+      "Interactive"
+    ],
     "websiteURL": "https://github.com/timc0y/simple",
-    "defaultPrompt": ["Use Simple and this repository's actual obligations to find the smallest truthful solution"]
+    "defaultPrompt": [
+      "Use Simple and this repository's actual obligations to find the smallest truthful solution"
+    ]
   }
 }

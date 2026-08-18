@@ -13,12 +13,12 @@
 ## Preserve
 
 - Progressive disclosure: the core stays small while specialist knowledge remains available.
-- Shared skill and repository context for Codex and Claude Code.
+- One shared skill and repository context across supported agent hosts.
 - Repository facts and reconsideration conditions that prevent speculative architecture.
 
 ## Current boundary
 
-- The plugin packages one shared skill for Codex and Claude Code.
+- The plugin packages Simple for Codex and Claude Code; the local installer exposes the same source to Codex, Claude Code, OpenCode, and Gemini.
 - Claude Code receives deterministic lifecycle and writing reminders through hooks.
 - Codex receives repository context through `AGENTS.md` and the skill; its current plugin manifest does not register hooks.
 - Setup records no inferred users or production promises.
@@ -26,6 +26,7 @@
 ## Ordinary paths
 
 - Shared guidance lives in `skills/simple`; host manifests only package it.
+- `scripts/link-skill.mjs` owns the four local host routes; it does not copy the skill.
 - `simple.mjs setup` creates the route and profile; `check` validates their shape.
 - One Claude Code hook script handles session, subagent, and relevant pre-write events.
 

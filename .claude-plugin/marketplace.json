@@ -9,7 +9,7 @@
       "name": "simple",
       "source": "./",
       "description": "Solve complex software problems without unnecessary architecture.",
-      "version": "0.3.0"
+      "version": "0.3.1"
     }
   ]
 }

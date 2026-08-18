@@ -1,4 +1,4 @@
 interface:
   display_name: "Simple"
-  short_description: "Delete complexity reality does not require"
-  default_prompt: "Use $simple to simplify this design against the repository's real obligations."
+  short_description: "Smallest truthful solution for this repository"
+  default_prompt: "Use $simple and the repository's actual obligations to find the smallest truthful solution."

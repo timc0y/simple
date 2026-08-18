@@ -1,7 +1,7 @@
 {
   "name": "simple",
-  "version": "0.1.0",
-  "description": "Delete software complexity that observed reality does not require.",
+  "version": "0.2.0",
+  "description": "Solve complex software problems without unnecessary architecture.",
   "author": {
     "name": "Tim Coy",
     "url": "https://github.com/timc0y"

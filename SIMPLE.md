@@ -1,22 +1,42 @@
-# Simple profile
+# Simple
 
 ## Reality
 
-- Users and operators: Tim maintains and uses the method through Codex and Claude Code; other people may install the public skill.
-- External consumers: skill and plugin installers only.
-- Public contracts: `SKILL.md`, its referenced files, both plugin manifests and the `simple.mjs` CLI.
+- Stage and users: Tim maintains and uses the method; other people may install the public plugin or skill.
+- Operators: Tim maintains releases and repository profiles.
+- External consumers: plugin and skill installers.
+- Public contracts: the skill, references, plugin manifests, hooks, and `simple.mjs` commands.
 - Persistent production data: none.
-- Compatibility: preserve documented skill paths and CLI commands after publication; before publication, replace freely.
-- Scale and failure consequences: local instruction files; refuse unsupported profiles rather than inventing deletion permission.
+- Compatibility commitments: preserve published paths and commands; replace unpublished internals freely.
+- Scale and failure consequences: local instructions can misguide agents, so profiles must not invent obligations or deletion permission.
 
-## Architecture boundary
+## Preserve
 
-This repository is one portable decision skill, repository-profile format, checker and thin Codex hook. It is not a general lint framework, dependency scanner, language parser or source of repository-specific facts.
+- Progressive disclosure: the core stays small while specialist knowledge remains available.
+- Cross-host support for Codex and Claude Code.
+- Repository facts and reconsideration conditions that prevent speculative architecture.
 
-## Deletion proof
+## Does not need yet
 
-- Skill behaviour: `npm test`
-- Profile integrity: `node skills/simple/scripts/simple.mjs check`
-- Skill structure: the installed skill validator
-- Plugin structure: the installed plugin validator
-- Public surface: inspect `SKILL.md`, references, manifest and README together before release
+- A general lint framework or language parser: hooks provide short contextual reminders.
+- An LLM classifier inside each hook: deterministic routing is sufficient.
+- Repository facts inferred from weak signals: setup cannot know users or production promises.
+
+## Ordinary paths
+
+- Shared guidance lives in `skills/simple`; host manifests only package it.
+- `simple.mjs setup` creates the route and profile; `check` validates their shape.
+- One hook script handles session, subagent, pre-write, and stop events.
+
+## Proof
+
+- Behaviour: `npm test`
+- Profile: `node skills/simple/scripts/simple.mjs check`
+- Model behaviour: `claude plugin eval simple@timc0y-simple --runs 1 --no-publish`
+- Skill and plugin structure: installed validators
+- Public surface: inspect the skill, references, manifests, hooks, and README together.
+
+## Reconsider when
+
+- Add parsing only if observed edits cannot be routed reliably with narrow heuristics.
+- Add compatibility only when a published installer or host requires the old surface.

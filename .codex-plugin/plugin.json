@@ -1,7 +1,7 @@
 {
   "name": "simple",
-  "version": "0.1.0",
-  "description": "Delete software complexity that observed reality does not require.",
+  "version": "0.2.0",
+  "description": "Solve complex software problems without unnecessary architecture.",
   "author": {
     "name": "Tim Coy",
     "url": "https://github.com/timc0y"
@@ -13,12 +13,12 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Simple",
-    "shortDescription": "Delete complexity reality does not require",
-    "longDescription": "Use observed users, contracts, state and hard-won repository precedents to remove speculative architecture and reuse ordinary paths.",
+    "shortDescription": "Simple solutions grounded in repository reality",
+    "longDescription": "Give agents concise repository context, specialist guidance, and quiet writing reminders so real obligations are preserved without speculative architecture.",
     "developerName": "Tim Coy",
     "category": "Developer Tools",
     "capabilities": ["Interactive"],
     "websiteURL": "https://github.com/timc0y/simple",
-    "defaultPrompt": ["Simplify this design against the repository's real obligations"]
+    "defaultPrompt": ["Use Simple and this repository's actual obligations to find the smallest truthful solution"]
   }
 }

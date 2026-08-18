@@ -4,7 +4,61 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
-const ROUTE = "For non-trivial design or implementation, invoke `$simple` and read the nearest `SIMPLE.md`. Design for observed reality, not imagined obligations.";
+export const MAX_PROFILE_CHARS = 6000;
+
+const ROUTE = "Before non-trivial development, invoke `$simple` and read the nearest `SIMPLE.md`. Repository facts override speculative compatibility, migration, and scale concerns.";
+
+const PROFILE = `# Simple
+
+## Reality
+
+- Stage and users: Establish before designing compatibility or migrations.
+- Operators: Establish from repository ownership and delivery practice.
+- External consumers: Establish from published interfaces and downstream use.
+- Public contracts: Establish from APIs, packages, URLs, files, and automation.
+- Persistent production data: Establish before deleting or replacing schemas.
+- Compatibility commitments: Establish from actual consumers and promises.
+- Scale and failure consequences: Establish from current operation, not forecasts.
+
+## Preserve
+
+- Record hard-won domain, operational, security, or recovery knowledge.
+
+## Does not need yet
+
+- Record specific complexity that current evidence does not justify.
+
+## Ordinary paths
+
+- Record the existing owners and workflows agents should reuse.
+
+## Proof
+
+- Record commands and independent surfaces that verify changes.
+
+## Reconsider when
+
+- Record observable conditions that would justify more complexity.
+`;
+
+const REQUIRED_HEADINGS = [
+  "## Reality",
+  "## Preserve",
+  "## Does not need yet",
+  "## Ordinary paths",
+  "## Proof",
+  "## Reconsider when"
+];
+
+const PRECEDENT_FIELDS = [
+  "Need:",
+  "Tempting complexity:",
+  "Observed fact:",
+  "Simple solution:",
+  "Why sufficient here:",
+  "Reconsider when:",
+  "Concepts avoided:"
+];
 
 export function check(root = process.cwd()) {
   const failures = [];
@@ -16,23 +70,26 @@ export function check(root = process.cwd()) {
   const profile = read(profilePath, failures);
 
   if (agents && (!agents.includes("$simple") || !agents.includes("SIMPLE.md"))) {
-    failures.push("AGENTS.md must route non-trivial design to $simple and SIMPLE.md");
+    failures.push("AGENTS.md must route non-trivial development to $simple and SIMPLE.md");
   }
   if (claude && !claude.includes("AGENTS.md") && (!claude.includes("$simple") || !claude.includes("SIMPLE.md"))) {
     failures.push("CLAUDE.md must import or route through AGENTS.md and SIMPLE.md");
   }
 
-  for (const heading of ["## Reality", "## Architecture boundary", "## Deletion proof"]) {
+  for (const heading of REQUIRED_HEADINGS) {
     if (profile && !profile.includes(heading)) failures.push(`SIMPLE.md is missing ${heading}`);
   }
 
   const precedents = profile.split(/^## Precedent:/m).slice(1);
   for (const [index, precedent] of precedents.entries()) {
-    for (const field of ["Need:", "Tempting complexity:", "Observed native fact:", "Simple solution:", "Why sufficient here:", "Invalidation condition:", "Concepts avoided:"]) {
+    for (const field of PRECEDENT_FIELDS) {
       if (!precedent.includes(field)) failures.push(`SIMPLE.md precedent ${index + 1} is missing ${field}`);
     }
   }
 
+  if (profile.length > MAX_PROFILE_CHARS) {
+    failures.push(`SIMPLE.md exceeds ${MAX_PROFILE_CHARS} characters; move specialist detail beside the code or into focused documentation`);
+  }
   if (/\b(?:TODO|TBD|FIXME)\b/.test(profile)) failures.push("SIMPLE.md contains an unresolved placeholder");
   return failures;
 }
@@ -52,9 +109,7 @@ export function setup(root = process.cwd()) {
     writeFileSync(claudePath, `${claude.trimEnd()}${claude.trim() ? "\n\n" : ""}@AGENTS.md\n`);
   }
 
-  if (!existsSync(profilePath)) {
-    writeFileSync(profilePath, `# Simple profile\n\n## Reality\n\nRecord observed users, operators, consumers, data, compatibility, scale and failure consequences.\n\n## Architecture boundary\n\nState what this repository is and is not.\n\n## Deletion proof\n\nRecord the commands and independent surfaces that prove safe deletion.\n`);
-  }
+  if (!existsSync(profilePath)) writeFileSync(profilePath, PROFILE);
 }
 
 function read(path, failures) {

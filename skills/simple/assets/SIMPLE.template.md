@@ -4,13 +4,14 @@
 
 ## Reality
 
-- Stage and users: Establish from repository evidence or its owner.
-- Operators: Establish who runs, releases, or supports it.
-- External consumers: Establish from downstream use and published interfaces.
-- Public contracts: Establish APIs, packages, URLs, files, and automation.
-- Persistent production data: Establish what must survive replacement.
-- Compatibility commitments: Establish actual promises and supported versions.
-- Scale and failure consequences: Establish current operation, not forecasts.
+- Stage and users: Who uses this now, and is it released or still internal?
+- Operators: Who runs, releases, or supports it?
+- External consumers: Does anything outside this repository depend on its APIs,
+  packages, URLs, commands, files, schemas, or exports?
+- Public contracts: Which interfaces have actually been published or promised?
+- Persistent production data: What user or production data must survive a change?
+- Compatibility commitments: Which old behaviour or versions have been promised?
+- Scale and failure consequences: What operates today, and what happens when it fails?
 
 ## Preserve
 

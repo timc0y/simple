@@ -5,13 +5,13 @@ import { spawnSync } from "node:child_process";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
-import { check, MAX_PROFILE_CHARS, setup } from "../skills/simple/scripts/simple.mjs";
+import { check, init, MAX_PROFILE_CHARS, setup } from "../skills/simple/scripts/simple.mjs";
 import { skillLinks } from "../scripts/link-skill.mjs";
 
 const hook = fileURLToPath(new URL("../scripts/hook.mjs", import.meta.url));
 const simpleCli = fileURLToPath(new URL("../skills/simple/scripts/simple.mjs", import.meta.url));
 
-test("setup creates an explicitly incomplete profile idempotently", () => {
+test("the setup compatibility alias creates an incomplete profile idempotently", () => {
   const root = mkdtempSync(join(tmpdir(), "simple-"));
   setup(root);
   const firstAgents = readFileSync(join(root, "AGENTS.md"), "utf8");
@@ -23,6 +23,15 @@ test("setup creates an explicitly incomplete profile idempotently", () => {
   assert.equal(readFileSync(join(root, "SIMPLE.md"), "utf8"), firstProfile);
   assert.equal(firstClaude, "@AGENTS.md\n");
   assert.ok(check(root).some((failure) => failure.includes("incomplete")));
+});
+
+test("init is the public setup command", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-"));
+  const result = spawnSync(process.execPath, [simpleCli, "init", root], { encoding: "utf8" });
+  assert.equal(result.status, 0);
+  assert.equal(JSON.parse(result.stdout).ready, false);
+  assert.ok(readFileSync(join(root, "AGENTS.md"), "utf8").includes("simple init"));
+  assert.equal(init, setup);
 });
 
 test("check accepts a completed repository profile", () => {

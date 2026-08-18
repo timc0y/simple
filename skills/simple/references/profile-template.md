@@ -3,7 +3,7 @@
 Use `SIMPLE.md` for local facts that materially change design decisions. Keep it
 short enough to inject at session and subagent start.
 
-Setup copies the canonical template from `assets/SIMPLE.template.md`. It deliberately
+Init copies the canonical template from `assets/SIMPLE.template.md`. It deliberately
 marks the new profile incomplete because a script cannot infer users, production
 data, or promises reliably. Establish those facts from repository evidence or its
 owner, then remove the incomplete marker and run `scripts/simple.mjs check`.

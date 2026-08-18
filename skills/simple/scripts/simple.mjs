@@ -6,7 +6,7 @@ import { pathToFileURL } from "node:url";
 
 export const MAX_PROFILE_CHARS = 6000;
 
-const ROUTE = "Before non-trivial development, invoke `$simple` and read the nearest `SIMPLE.md`. Repository facts override speculative compatibility, migration, and scale concerns.";
+const ROUTE = "Before a change where repository facts could change the implementation, invoke `$simple` and read the nearest `SIMPLE.md`. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `plan`, `review`, or `check` for an explicit Simple workflow.";
 const PROFILE_TEMPLATE_PATH = new URL("../assets/SIMPLE.template.md", import.meta.url);
 const PROFILE = readFileSync(PROFILE_TEMPLATE_PATH, "utf8");
 const REQUIRED_HEADINGS = [...PROFILE.matchAll(/^## .+$/gm)].map(([heading]) => heading);
@@ -21,7 +21,7 @@ export function check(root = process.cwd()) {
   const profile = read(profilePath, failures);
 
   if (agents && (!agents.includes("$simple") || !agents.includes("SIMPLE.md"))) {
-    failures.push("AGENTS.md must route non-trivial development to $simple and SIMPLE.md");
+    failures.push("AGENTS.md must route repository-dependent decisions to $simple and SIMPLE.md");
   }
   if (claude && !claude.includes("AGENTS.md") && (!claude.includes("$simple") || !claude.includes("SIMPLE.md"))) {
     failures.push("CLAUDE.md must import or route through AGENTS.md and SIMPLE.md");
@@ -41,7 +41,7 @@ export function check(root = process.cwd()) {
   return failures;
 }
 
-export function setup(root = process.cwd()) {
+export function init(root = process.cwd()) {
   const agentsPath = resolve(root, "AGENTS.md");
   const claudePath = resolve(root, "CLAUDE.md");
   const profilePath = resolve(root, "SIMPLE.md");
@@ -59,6 +59,8 @@ export function setup(root = process.cwd()) {
   if (!existsSync(profilePath)) writeFileSync(profilePath, PROFILE);
 }
 
+export const setup = init;
+
 function read(path, failures) {
   try {
     return readFileSync(path, "utf8");
@@ -75,13 +77,13 @@ function print(failures, failProcess = true) {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const [command = "check", directory = process.cwd()] = process.argv.slice(2);
-  if (command === "setup") {
-    setup(resolve(directory));
+  if (command === "init" || command === "setup") {
+    init(resolve(directory));
     print(check(resolve(directory)), false);
   } else if (command === "check") {
     print(check(resolve(directory)));
   } else {
-    process.stderr.write("Usage: simple.mjs <setup|check> [repository]\n");
+    process.stderr.write("Usage: simple.mjs <init|check> [repository]\n");
     process.exitCode = 2;
   }
 }

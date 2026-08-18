@@ -19,6 +19,9 @@ line count of one component.
 Sources: [SpaceX's Raptor comparison](https://x.com/SpaceX/status/1819795288116330594)
 and [SpaceX's 2026 technical disclosure](https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf).
 
+Use `examples.md` when another engineering precedent would expose the decision more
+clearly. A precedent guides attention; it does not supply missing repository facts.
+
 ## Find the ordinary path
 
 1. Observe the real system and name the owner.

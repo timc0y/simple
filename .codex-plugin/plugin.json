@@ -1,6 +1,6 @@
 {
   "name": "simple",
-  "version": "0.3.1+codex.20260818135957",
+  "version": "0.5.0+codex.20260818212316",
   "description": "Solve complex software problems without unnecessary architecture.",
   "author": {
     "name": "Tim Coy",
@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "Simple",
     "shortDescription": "Simple solutions grounded in repository reality",
-    "longDescription": "Give agents concise repository context, specialist guidance, and quiet writing reminders so real obligations are preserved without speculative architecture.",
+    "longDescription": "Give agents repository truth, explicit decision commands, objective evidence crawls, and engineering precedents so real obligations are preserved without speculative architecture.",
     "developerName": "Tim Coy",
     "category": "Developer Tools",
     "capabilities": [
@@ -28,7 +28,10 @@
     ],
     "websiteURL": "https://github.com/timc0y/simple",
     "defaultPrompt": [
-      "Use Simple and this repository's actual obligations to find the smallest truthful solution"
+      "Use Simple to find the smallest truthful solution",
+      "Run a read-only Simple audit of this repository",
+      "Use Simple to plan this change without implementing it",
+      "Review this design or diff with Simple"
     ]
   }
 }

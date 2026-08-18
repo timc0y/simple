@@ -47,9 +47,9 @@ The core uses a few established ideas as compact decision anchors:
 Repository evidence decides what those principles mean in each codebase.
 
 ```text
-small core skill
+small reasoning kernel
       +
-verified SIMPLE.md
+validated SIMPLE.md grounded in repository truth
       +
 specialist references when needed
       ↓
@@ -62,13 +62,13 @@ until the task needs them.
 
 ## Repository context
 
-Run setup from this repository:
+Run init from this repository:
 
 ```sh
-node skills/simple/scripts/simple.mjs setup /path/to/repository
+node skills/simple/scripts/simple.mjs init /path/to/repository
 ```
 
-Setup creates `AGENTS.md`, `CLAUDE.md`, and `SIMPLE.md`. The new profile is marked
+Init creates `AGENTS.md`, `CLAUDE.md`, and `SIMPLE.md`. The new profile is marked
 incomplete because a script cannot know the repository's users, production data, or
 promises. Replace its prompts with observed facts, remove the incomplete marker, and
 validate it:
@@ -82,6 +82,32 @@ The canonical generated profile lives at
 record only reality, knowledge to preserve, the current design boundary, ordinary
 paths, proof, and observable reconsideration conditions.
 
+## Commands
+
+Commands are human entry points into one Simple method, not separate skills or a
+mandatory lifecycle.
+
+| Command | Purpose | Default authority |
+| --- | --- | --- |
+| `simple init` | Establish repository truth and create its profile | Profile and routing files only |
+| `simple audit` | Find ownership seams, parallel paths, invented obligations, and unpaid complexity | Read-only |
+| `simple plan` | Design the smallest truthful change | Read-only |
+| `simple review` | Judge a design, plan, or diff | Read-only |
+| `simple check` | Validate routing and profile structure | Read-only |
+
+`init` and `check` have deterministic CLI implementations. `audit`, `plan`, and
+`review` require model judgement and remain thin prompt entry points into `$simple`.
+Claude Code exposes the files in `commands/` as slash commands; Codex exposes the
+same workflows through the skill and starter prompts.
+
+### Evidence-led audits
+
+When subagents are available, `simple audit` gives inexpensive agents bounded,
+objective crawls for repository reality, ownership, ordinary paths, compatibility,
+complexity candidates, and proof/profile consistency. They return normalized facts,
+scope, and limitations. The lead agent reconciles conflicts and retains all design
+judgement. A crawler's `not_found` result never becomes proof of absence.
+
 ## Writing
 
 Simple treats prose as part of the design:
@@ -90,6 +116,10 @@ Simple treats prose as part of the design:
 - comments preserve non-obvious reasons, contracts, and invariants;
 - documentation preserves knowledge needed to decide, operate, recover, or verify;
 - development updates lead with the outcome and material evidence.
+
+For operational and instructional English, Simple can invoke established technical
+English discipline such as ASD-STE100 rather than restating a language rulebook.
+Named standards guide execution only when their prerequisites and purpose fit.
 
 The goal is load-bearing prose, not aggressive compression.
 
@@ -139,10 +169,11 @@ npm test
 node skills/simple/scripts/simple.mjs check
 ```
 
-The tests cover incomplete setup, completed profile validation, nearest nested
+The tests cover incomplete init, completed profile validation, nearest nested
 profile discovery, profile injection, and targeted writing reminders. Behavioural
 eval cases cover pre-launch replacement, retained production data, reuse of an
-ordinary path, and concise development writing:
+ordinary path, concise development writing, and adversarial pressure to invent
+compatibility or architecture:
 
 ```sh
 claude plugin eval simple@timc0y-simple --runs 1 --no-publish

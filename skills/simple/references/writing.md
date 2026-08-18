@@ -3,7 +3,7 @@
 Use this when creating or substantially changing comments, Markdown, prompts,
 templates, help text, or internal technical prose.
 
-## Preserve
+## Keep prose that carries
 
 - contracts and externally observable behaviour;
 - invariants code cannot express;
@@ -12,14 +12,9 @@ templates, help text, or internal technical prose.
 - operational, recovery, and security knowledge;
 - prompts, fixtures, snapshots, templates, and error text when wording is behaviour.
 
-## Avoid
-
-- narrating visible code;
-- repeating one fact in several files;
-- history already recoverable from Git;
-- reports that only describe work just completed;
-- headings, summaries, and examples that do not change a decision or action;
-- appending new guidance instead of correcting the source of truth.
+Let code show its visible operation. Keep each fact in its owning source. Add a
+heading, summary, example, or history only when it changes a decision or action.
+Update stale guidance directly.
 
 Comments explain why:
 
@@ -27,12 +22,13 @@ Comments explain why:
 // Retry network failures only; validation failures are permanent.
 ```
 
-Not what the next line already says:
+The code already expresses this operation, so it needs no comment:
 
 ```js
 // Retry the request when an error occurs.
 ```
 
 Lead documents with the result. Put detail beside the decision or task that needs
-it. Use one term per concept. Separate fact, inference, and unknown. Preserve
-precision before reducing length.
+it. Use one term per concept. Separate fact, inference, and unknown. Preserve every
+material fact, decision, caveat, and next step; remove introductions, repetition,
+generic reassurance, and optional background first.

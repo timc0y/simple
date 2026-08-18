@@ -8,8 +8,9 @@ import assert from "node:assert/strict";
 import { check, MAX_PROFILE_CHARS, setup } from "../skills/simple/scripts/simple.mjs";
 
 const hook = fileURLToPath(new URL("../scripts/hook.mjs", import.meta.url));
+const simpleCli = fileURLToPath(new URL("../skills/simple/scripts/simple.mjs", import.meta.url));
 
-test("setup creates the route and profile idempotently", () => {
+test("setup creates an explicitly incomplete profile idempotently", () => {
   const root = mkdtempSync(join(tmpdir(), "simple-"));
   setup(root);
   const firstAgents = readFileSync(join(root, "AGENTS.md"), "utf8");
@@ -20,14 +21,23 @@ test("setup creates the route and profile idempotently", () => {
   assert.equal(readFileSync(join(root, "CLAUDE.md"), "utf8"), firstClaude);
   assert.equal(readFileSync(join(root, "SIMPLE.md"), "utf8"), firstProfile);
   assert.equal(firstClaude, "@AGENTS.md\n");
+  assert.ok(check(root).some((failure) => failure.includes("incomplete")));
+});
+
+test("check accepts a completed repository profile", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-"));
+  setup(root);
+  completeProfile(root, "root profile");
   assert.deepEqual(check(root), []);
 });
 
-test("check requires complete precedent evidence", () => {
+test("setup reports incomplete readiness without treating creation as a command failure", () => {
   const root = mkdtempSync(join(tmpdir(), "simple-"));
-  setup(root);
-  writeFileSync(join(root, "SIMPLE.md"), `${readFileSync(join(root, "SIMPLE.md"), "utf8")}\n## Precedent: incomplete\n\nNeed:\n`);
-  assert.ok(check(root).some((failure) => failure.includes("Reconsider when:")));
+  const result = spawnSync(process.execPath, [simpleCli, "setup", root], { encoding: "utf8" });
+  assert.equal(result.status, 0);
+  const output = JSON.parse(result.stdout);
+  assert.equal(output.ready, false);
+  assert.ok(output.failures.some((failure) => failure.includes("incomplete")));
 });
 
 test("check keeps injected profiles concise", () => {
@@ -37,22 +47,28 @@ test("check keeps injected profiles concise", () => {
   assert.ok(check(root).some((failure) => failure.includes("exceeds")));
 });
 
-test("session hook injects the nearest profile from a nested directory", () => {
+test("session hook injects the nearest nested profile", () => {
   const root = mkdtempSync(join(tmpdir(), "simple-"));
   mkdirSync(join(root, ".git"));
-  mkdirSync(join(root, "src"));
+  mkdirSync(join(root, "packages"));
+  mkdirSync(join(root, "packages", "app"));
+  mkdirSync(join(root, "packages", "app", "src"));
   setup(root);
-  const result = runHook({ hook_event_name: "SessionStart", cwd: join(root, "src") });
+  completeProfile(root, "root profile");
+  writeFileSync(join(root, "packages", "app", "SIMPLE.md"), completedProfile(root, "app profile"));
+  const result = runHook({ hook_event_name: "SessionStart", cwd: join(root, "packages", "app", "src") });
   assert.equal(result.status, 0);
   const output = JSON.parse(result.stdout);
   assert.match(output.hookSpecificOutput.additionalContext, /Repository-specific Simple context/);
-  assert.match(output.hookSpecificOutput.additionalContext, /Stage and users/);
+  assert.match(output.hookSpecificOutput.additionalContext, /app profile/);
+  assert.doesNotMatch(output.hookSpecificOutput.additionalContext, /root profile/);
 });
 
 test("pre-write hook adds only relevant reminders", () => {
   const root = mkdtempSync(join(tmpdir(), "simple-"));
   mkdirSync(join(root, ".git"));
   setup(root);
+  completeProfile(root, "writing fixture");
 
   const markdown = runHook({
     hook_event_name: "PreToolUse",
@@ -66,7 +82,7 @@ test("pre-write hook adds only relevant reminders", () => {
     cwd: root,
     tool_input: { command: "+// Explain the retry." }
   });
-  assert.match(JSON.parse(code.stdout).hookSpecificOutput.additionalContext, /Comments explain/);
+  assert.match(JSON.parse(code.stdout).hookSpecificOutput.additionalContext, /Use comments/);
 
   const ordinary = runHook({
     hook_event_name: "PreToolUse",
@@ -74,7 +90,24 @@ test("pre-write hook adds only relevant reminders", () => {
     tool_input: { command: "+const answer = 42;" }
   });
   assert.equal(ordinary.stdout, "");
+
+  const architectureWords = runHook({
+    hook_event_name: "PreToolUse",
+    cwd: root,
+    tool_input: { command: "+const migrationFramework = existingOwner;" }
+  });
+  assert.equal(architectureWords.stdout, "");
 });
+
+function completedProfile(root, label) {
+  return readFileSync(join(root, "SIMPLE.md"), "utf8")
+    .replace(/^<!-- simple-profile: incomplete.*-->\n\n/m, "")
+    .replace(/^- Stage and users: .*$/m, `- Stage and users: ${label}`);
+}
+
+function completeProfile(root, label) {
+  writeFileSync(join(root, "SIMPLE.md"), completedProfile(root, label));
+}
 
 function runHook(payload) {
   return spawnSync(process.execPath, [hook], {

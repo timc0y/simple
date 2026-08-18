@@ -13,30 +13,32 @@
 ## Preserve
 
 - Progressive disclosure: the core stays small while specialist knowledge remains available.
-- Cross-host support for Codex and Claude Code.
+- Shared skill and repository context for Codex and Claude Code.
 - Repository facts and reconsideration conditions that prevent speculative architecture.
 
-## Does not need yet
+## Current boundary
 
-- A general lint framework or language parser: hooks provide short contextual reminders.
-- An LLM classifier inside each hook: deterministic routing is sufficient.
-- Repository facts inferred from weak signals: setup cannot know users or production promises.
+- The plugin packages one shared skill for Codex and Claude Code.
+- Claude Code receives deterministic lifecycle and writing reminders through hooks.
+- Codex receives repository context through `AGENTS.md` and the skill; its current plugin manifest does not register hooks.
+- Setup records no inferred users or production promises.
 
 ## Ordinary paths
 
 - Shared guidance lives in `skills/simple`; host manifests only package it.
 - `simple.mjs setup` creates the route and profile; `check` validates their shape.
-- One hook script handles session, subagent, pre-write, and stop events.
+- One Claude Code hook script handles session, subagent, and relevant pre-write events.
 
 ## Proof
 
 - Behaviour: `npm test`
 - Profile: `node skills/simple/scripts/simple.mjs check`
 - Model behaviour: `claude plugin eval simple@timc0y-simple --runs 1 --no-publish`
-- Skill and plugin structure: installed validators
+- Skill and plugin structure: bundled validators
 - Public surface: inspect the skill, references, manifests, hooks, and README together.
 
 ## Reconsider when
 
 - Add parsing only if observed edits cannot be routed reliably with narrow heuristics.
 - Add compatibility only when a published installer or host requires the old surface.
+- Add Codex hooks when its accepted plugin manifest and runtime expose them reliably.

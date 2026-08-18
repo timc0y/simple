@@ -10,16 +10,11 @@ Use this for plans, progress updates, reviews, explanations, and handoffs.
 - Name a blocker with the exact missing authority, fact, or dependency.
 - Give the next meaningful action, not a diary of tool calls.
 
-Prefer:
+Example:
 
 > The migration is unnecessary: the repository has no production data or external
 > consumers. I replaced the schema directly and the test suite passes.
 
-Avoid:
-
-> I inspected several files, thought about several options, and then decided to make
-> some changes. Next I ran the tests.
-
 For a handoff, report the outcome, why it is sufficient, proof, and any remaining
-risk or reconsideration condition. Do not repeat commentary already given unless it
-is needed to understand the final state.
+risk or reconsideration condition. Repeat earlier commentary only when the final
+state needs it.

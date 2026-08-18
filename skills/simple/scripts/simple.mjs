@@ -7,58 +7,9 @@ import { pathToFileURL } from "node:url";
 export const MAX_PROFILE_CHARS = 6000;
 
 const ROUTE = "Before non-trivial development, invoke `$simple` and read the nearest `SIMPLE.md`. Repository facts override speculative compatibility, migration, and scale concerns.";
-
-const PROFILE = `# Simple
-
-## Reality
-
-- Stage and users: Establish before designing compatibility or migrations.
-- Operators: Establish from repository ownership and delivery practice.
-- External consumers: Establish from published interfaces and downstream use.
-- Public contracts: Establish from APIs, packages, URLs, files, and automation.
-- Persistent production data: Establish before deleting or replacing schemas.
-- Compatibility commitments: Establish from actual consumers and promises.
-- Scale and failure consequences: Establish from current operation, not forecasts.
-
-## Preserve
-
-- Record hard-won domain, operational, security, or recovery knowledge.
-
-## Does not need yet
-
-- Record specific complexity that current evidence does not justify.
-
-## Ordinary paths
-
-- Record the existing owners and workflows agents should reuse.
-
-## Proof
-
-- Record commands and independent surfaces that verify changes.
-
-## Reconsider when
-
-- Record observable conditions that would justify more complexity.
-`;
-
-const REQUIRED_HEADINGS = [
-  "## Reality",
-  "## Preserve",
-  "## Does not need yet",
-  "## Ordinary paths",
-  "## Proof",
-  "## Reconsider when"
-];
-
-const PRECEDENT_FIELDS = [
-  "Need:",
-  "Tempting complexity:",
-  "Observed fact:",
-  "Simple solution:",
-  "Why sufficient here:",
-  "Reconsider when:",
-  "Concepts avoided:"
-];
+const PROFILE_TEMPLATE_PATH = new URL("../assets/SIMPLE.template.md", import.meta.url);
+const PROFILE = readFileSync(PROFILE_TEMPLATE_PATH, "utf8");
+const REQUIRED_HEADINGS = [...PROFILE.matchAll(/^## .+$/gm)].map(([heading]) => heading);
 
 export function check(root = process.cwd()) {
   const failures = [];
@@ -80,15 +31,11 @@ export function check(root = process.cwd()) {
     if (profile && !profile.includes(heading)) failures.push(`SIMPLE.md is missing ${heading}`);
   }
 
-  const precedents = profile.split(/^## Precedent:/m).slice(1);
-  for (const [index, precedent] of precedents.entries()) {
-    for (const field of PRECEDENT_FIELDS) {
-      if (!precedent.includes(field)) failures.push(`SIMPLE.md precedent ${index + 1} is missing ${field}`);
-    }
-  }
-
   if (profile.length > MAX_PROFILE_CHARS) {
     failures.push(`SIMPLE.md exceeds ${MAX_PROFILE_CHARS} characters; move specialist detail beside the code or into focused documentation`);
+  }
+  if (profile.includes("simple-profile: incomplete")) {
+    failures.push("SIMPLE.md is incomplete; replace setup prompts with observed facts and remove the incomplete marker");
   }
   if (/\b(?:TODO|TBD|FIXME)\b/.test(profile)) failures.push("SIMPLE.md contains an unresolved placeholder");
   return failures;
@@ -121,16 +68,16 @@ function read(path, failures) {
   }
 }
 
-function print(failures) {
-  process.stdout.write(`${JSON.stringify(failures.length ? { ok: false, failures } : { ok: true }, null, 2)}\n`);
-  if (failures.length) process.exitCode = 1;
+function print(failures, failProcess = true) {
+  process.stdout.write(`${JSON.stringify({ ok: failures.length === 0, ready: failures.length === 0, failures }, null, 2)}\n`);
+  if (failProcess && failures.length) process.exitCode = 1;
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const [command = "check", directory = process.cwd()] = process.argv.slice(2);
   if (command === "setup") {
     setup(resolve(directory));
-    print(check(resolve(directory)));
+    print(check(resolve(directory)), false);
   } else if (command === "check") {
     print(check(resolve(directory)));
   } else {

@@ -1,124 +1,109 @@
 # Simple
 
-Simple gives coding agents one rule: solve the real problem with the smallest
-truthful design.
+Simple helps coding agents solve the real problem with the smallest truthful design.
 
-Software agents often enter a repository without knowing its stage, users or real
-obligations. They see an old interface and preserve it. They see a schema change and
-invent a migration system. They see one future possibility and build an abstraction.
+Agents often enter a repository without knowing its stage, users, data, or promises.
+That missing context makes speculative architecture look responsible: old interfaces
+are preserved without consumers, migration systems appear without production data,
+and one future possibility becomes an abstraction.
 
-Sometimes those mechanisms are necessary. Often the repository has no external
-consumers, no production data and no reason to carry them yet. Simple makes that
-difference explicit.
+Simple combines a small design method with a local `SIMPLE.md` containing the facts
+that change those decisions.
 
-## The idea
-
-Simple combines two kinds of knowledge:
-
-- a small, general method for reducing software complexity;
-- a local `SIMPLE.md` describing what is true in this repository.
-
-The same change can then produce different—and correct—solutions:
-
-| Repository reality | Appropriate design |
+| Repository reality | Smallest truthful design |
 | --- | --- |
-| Pre-launch, no consumers, no retained data | Replace directly |
+| No consumers or retained data | Replace directly |
 | Retained data, no old callers | Migrate the data, not the interface |
-| External consumers with a deprecation promise | Use bounded compatibility with a removal condition |
+| Consumers with a real promise | Use bounded compatibility with a removal condition |
 
 Simple does not mean fewer lines at any cost. It means fewer concepts, states,
-workflows and decisions while preserving real behaviour, safety and proof.
+workflows, and decisions while preserving real behaviour, safety, and proof.
 
-## Inspiration
+## The Raptor test
 
-Simple draws from a few durable ideas:
+SpaceX's Raptor 1 → 2 → 3 evolution is the clearest physical example of the idea.
+Raptor 3 internalised flow paths and cooling so exposed plumbing, engine shielding,
+and supporting vehicle hardware could be removed. The engineering remained
+sophisticated inside while the engine imposed less complexity on the whole vehicle.
 
-- simple design: complexity must earn its place;
+That is the standard for software simplification: put necessary complexity behind
+one clear owner, then remove the adapters, parallel paths, and support machinery the
+stronger boundary makes unnecessary. Judge the system, not one component's line
+count.
+
+Sources: [SpaceX's Raptor comparison](https://x.com/SpaceX/status/1819795288116330594)
+and [SpaceX's 2026 technical disclosure](https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf).
+
+## Method
+
+The core uses a few established ideas as compact decision anchors:
+
+- KISS: minimise concepts and coordination, not merely lines;
 - YAGNI: hypothetical requirements are not present obligations;
-- information hiding: necessary complexity belongs behind a clear owner;
-- progressive disclosure: load specialist knowledge only when the task needs it;
-- evidence-based refactoring: removal is complete only when behaviour is proved.
+- Chesterton's Fence: establish why something exists before removing it;
+- information hiding: keep necessary complexity behind one clear owner;
+- progressive disclosure: load specialist knowledge only when it changes the task.
 
-Frontier models need less generic instruction than earlier models, but they still
-need the right facts. Simple keeps the general prompt small and supplies repository
-reality at the moment it matters.
-
-## How it works
+Repository evidence decides what those principles mean in each codebase.
 
 ```text
-Simple plugin
-├── small core skill
-├── specialist references
-├── repository setup and validation
-├── lifecycle hooks
-└── behavioural evals
-        ↓
-    SIMPLE.md
-        ↓
+small core skill
+      +
+verified SIMPLE.md
+      +
+specialist references when needed
+      ↓
 smallest truthful solution
 ```
 
-The core contains the shared decision method. References hold focused guidance for
-architecture, compatibility, refactoring, writing and development communication.
-Only the relevant reference is loaded.
-
-Lifecycle hooks inject the nearest `SIMPLE.md` when a session or subagent starts,
-including after context compaction. Pre-write hooks add short reminders only when an
-edit touches Markdown, comments or likely structural complexity. Repositories without
-a profile remain quiet.
+The specialist references cover architecture, compatibility, refactoring, writing,
+development communication, and deletion tools. They stay out of ordinary context
+until the task needs them.
 
 ## Repository context
 
-`SIMPLE.md` records facts that materially change design decisions:
+Run setup from this repository:
 
-```md
-# Simple
-
-## Reality
-
-- Stage and users: Pre-launch; internal development only.
-- External consumers: None.
-- Persistent production data: None.
-- Compatibility commitments: None.
-
-## Preserve
-
-- Import files must remain reproducible.
-
-## Does not need yet
-
-- Backwards-compatible APIs: there are no external consumers.
-- Migration infrastructure: there is no production data.
-
-## Ordinary paths
-
-- Scheduled work uses the existing job runner.
-
-## Proof
-
-- `npm test`
-- `npm run build`
-
-## Reconsider when
-
-- Another repository consumes the API.
-- Production data must survive schema changes.
+```sh
+node skills/simple/scripts/simple.mjs setup /path/to/repository
 ```
 
-“Yet” matters. The profile records current truth, not permanent doctrine. A concrete
-reconsideration condition tells future agents when more complexity has become valid.
+Setup creates `AGENTS.md`, `CLAUDE.md`, and `SIMPLE.md`. The new profile is marked
+incomplete because a script cannot know the repository's users, production data, or
+promises. Replace its prompts with observed facts, remove the incomplete marker, and
+validate it:
 
-## Clear writing
+```sh
+node skills/simple/scripts/simple.mjs check /path/to/repository
+```
+
+The canonical generated profile lives at
+`skills/simple/assets/SIMPLE.template.md`. Keep the completed profile short and
+record only reality, knowledge to preserve, the current design boundary, ordinary
+paths, proof, and observable reconsideration conditions.
+
+## Writing
 
 Simple treats prose as part of the design:
 
-- code explains what happens;
-- comments preserve non-obvious reasons, contracts and invariants;
-- documentation preserves knowledge needed to decide, operate, recover or verify;
-- agent updates lead with outcomes, evidence, blockers and meaningful next actions.
+- code shows what happens;
+- comments preserve non-obvious reasons, contracts, and invariants;
+- documentation preserves knowledge needed to decide, operate, recover, or verify;
+- development updates lead with the outcome and material evidence.
 
-The goal is not aggressive compression. It is load-bearing prose: concise without
-discarding information that future work needs.
+The goal is load-bearing prose, not aggressive compression.
+
+## Hosts
+
+Both hosts use the same skill and repository profile.
+
+- Codex follows the repository route in `AGENTS.md` and loads specialist references
+  through the skill.
+- Claude Code also uses lifecycle hooks to inject the nearest profile and gives short
+  reminders when an edit actually writes Markdown or comments.
+
+The hooks are intentionally not described as cross-host. Codex's current accepted
+plugin manifest does not register them.
 
 ## Install
 
@@ -136,69 +121,39 @@ claude plugin marketplace add timc0y/simple
 claude plugin install simple@timc0y-simple
 ```
 
-For skill-only local development:
+For local skill development:
 
 ```sh
 npm run install:local
 ```
 
-## Initialize a repository
+## Evidence
 
-Run setup from the cloned Simple repository:
-
-```sh
-node /path/to/simple/skills/simple/scripts/simple.mjs setup /path/to/repository
-```
-
-Setup adds the agent route and a deliberately cautious profile. Replace its discovery
-prompts with observed facts from the repository or its owner, then validate it:
-
-```sh
-node /path/to/simple/skills/simple/scripts/simple.mjs check /path/to/repository
-```
-
-Do not infer users, production data or promises from weak signals. Uncertainty is not
-permission to delete, and existing code is not proof that compatibility is required.
-
-## Direction
-
-Simple should remain small at the point of use.
-
-- Keep the core stable and concise.
-- Preserve specialist knowledge behind explicit context pointers.
-- Add guidance only when observed failures show that models need it.
-- Keep hooks deterministic and quiet.
-- Let repository profiles carry local truth.
-- Use evals to detect regressions before adding more instruction.
-
-The project should become more capable through better routing, evidence and local
-context—not through a growing universal prompt.
-
-## Proof
-
-Deterministic behaviour:
+Run deterministic checks with:
 
 ```sh
 npm test
 node skills/simple/scripts/simple.mjs check
 ```
 
-The test suite proves setup idempotence, profile validation, nested profile discovery,
-session injection and targeted pre-write reminders. Skill, plugin and marketplace
-manifests are also checked with their host validators.
-
-Behavioural evals cover four decisions:
-
-- direct replacement in a pre-launch repository;
-- preservation of real production data and consumers;
-- reuse of an existing ordinary path;
-- concise comments, Markdown and development updates.
-
-Run one pass locally with:
+The tests cover incomplete setup, completed profile validation, nearest nested
+profile discovery, profile injection, and targeted writing reminders. Behavioural
+eval cases cover pre-launch replacement, retained production data, reuse of an
+ordinary path, and concise development writing:
 
 ```sh
 claude plugin eval simple@timc0y-simple --runs 1 --no-publish
 ```
+
+These evals are evidence only after they have been run and reviewed. Add instruction
+for a measured failure, then remove or replace it when the same evals show it is no
+longer useful.
+
+## Direction
+
+Simple should become more capable through better local facts, routing, and evidence—not
+through a growing universal prompt. State each rule once. Keep examples only when
+they encode a real requirement or correct a measured gap.
 
 ## License
 

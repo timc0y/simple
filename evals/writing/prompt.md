@@ -1,4 +1,4 @@
-Use Simple to write:
+Read this case's `SIMPLE.md`, then use Simple to write:
 
 1. A code comment explaining that only network failures are retried because validation
    failures are permanent.

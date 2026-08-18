@@ -1,0 +1,10 @@
+{
+  "name": "@timc0y/simple-skill",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "install:local": "node scripts/link-skill.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}

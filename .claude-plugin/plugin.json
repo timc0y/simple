@@ -1,0 +1,12 @@
+{
+  "name": "simple",
+  "version": "0.1.0",
+  "description": "Delete software complexity that observed reality does not require.",
+  "author": {
+    "name": "Tim Coy",
+    "url": "https://github.com/timc0y"
+  },
+  "homepage": "https://github.com/timc0y/simple",
+  "repository": "https://github.com/timc0y/simple",
+  "license": "MIT"
+}

@@ -1,0 +1,17 @@
+{
+  "description": "Route design work through the simple method and repository reality.",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/hook.mjs"],
+            "timeout": 3
+          }
+        ]
+      }
+    ]
+  }
+}

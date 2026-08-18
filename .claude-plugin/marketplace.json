@@ -1,0 +1,15 @@
+{
+  "name": "timc0y-simple",
+  "description": "Tim Coy's lightweight software-design skill for Codex and Claude Code.",
+  "owner": {
+    "name": "Tim Coy"
+  },
+  "plugins": [
+    {
+      "name": "simple",
+      "source": "./",
+      "description": "Delete software complexity that observed reality does not require.",
+      "version": "0.1.0"
+    }
+  ]
+}

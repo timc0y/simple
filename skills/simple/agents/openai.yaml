@@ -1,0 +1,4 @@
+interface:
+  display_name: "Simple"
+  short_description: "Delete complexity reality does not require"
+  default_prompt: "Use $simple to simplify this design against the repository's real obligations."

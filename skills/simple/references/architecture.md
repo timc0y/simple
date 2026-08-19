@@ -35,6 +35,30 @@ Prefer deep modules over pass-through layers. Keep related knowledge local. Extr
 shared knowledge, not incidental syntax. Use linear control flow and explicit state
 transitions.
 
+## Preserve the owner; supply the missing precondition
+
+When the desired state already has the right owner but the ordinary path cannot
+operate on it:
+
+1. Classify the exact obstruction: ownership, addressability, identity, selection,
+   timing, representation, authority, or missing evidence.
+2. Ask what single fact would let the ordinary operation succeed unchanged.
+3. Test whether a native mechanism can supply that fact temporarily.
+4. If it works, decide whether the mechanism should disappear or remain as one
+   bounded, owned adapter.
+5. Keep the original owner and source of truth unless evidence requires moving them.
+6. Prove the result through both the adapter and the original consumer.
+
+Generate counterfactuals before replacing the path: What would have to become true?
+Can it be introduced temporarily? Can a native object expose another supported route
+to the same state? Am I confusing inaccessible with unrepresentable or wrongly owned?
+
+A second supported address to the same state is not necessarily a second source of
+truth. Do not reject a bounded experiment merely because its mechanism would be a
+poor universal product design. Unusual solutions require stronger proof, not
+automatic rejection: test native acceptance, observation by the original consumer,
+survival across removal or reload, repeated use, and contained failure.
+
 ## Make complexity pay rent
 
 Before adding architecture, answer:
@@ -43,8 +67,11 @@ Before adding architecture, answer:
 Observed need:
 Existing owner:
 Ordinary path:
-Why the ordinary path is insufficient:
-New concept, state, or workflow:
+Exact obstruction:
+Missing precondition:
+Smallest reversible experiment:
+Can the existing owner remain?
+New concept or state, only if still required:
 Failure and cleanup states:
 Independent proof:
 Reconsideration condition:

@@ -23,10 +23,12 @@ uncertainty. Absence of evidence grants neither an obligation nor deletion permi
 1. Establish the actual users, operators, consumers, contracts, retained data,
    commitments, scale, and failure consequences.
 2. Find the existing owner and ordinary path.
-3. Decide what must be preserved and what may be replaced.
-4. Choose the smallest design that satisfies those present obligations.
-5. Remove the route, state, explanation, and cleanup displaced by the change.
-6. Prove the result through a surface independent enough to distinguish requested
+3. Name the exact missing capability. Before moving ownership or adding a workflow,
+   try to supply only that missing precondition through the ordinary path.
+4. Decide what must be preserved and what may be replaced.
+5. Choose the smallest design that satisfies those present obligations.
+6. Remove the route, state, explanation, and cleanup displaced by the change.
+7. Prove the result through a surface independent enough to distinguish requested
    behaviour from the implementation itself.
 
 Apply KISS to the solution shape and YAGNI to hypothetical obligations. Use
@@ -39,6 +41,8 @@ through a present requirement. Repository evidence decides what these principles
 - A future possibility is the reason for a new concept.
 - Existing code is the only evidence for compatibility.
 - A second path is being added beside the ordinary path.
+- Inaccessible state is being moved before ownership and access are distinguished.
+- A replacement design does not name the ordinary path's exact obstruction.
 - An adapter has no named consumer or retained-state obligation.
 - A named standard or engineering story is creating its own prerequisites.
 - You cannot state how the result will be proved independently.

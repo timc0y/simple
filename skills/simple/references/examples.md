@@ -47,5 +47,22 @@ ban on sophistication. When measured constraints require complexity, put it behi
 a clear owner and record the obligation, failure model, proof, and reconsideration
 condition.
 
+## Native address: preserve the owner
+
+A structured document was correctly stored as a per-instance property and rendered
+through a nested component. The supported API could edit documents but could not
+address that property through the nested instance path. Moving the document, cloning
+component definitions, keeping an external mapping, and automating the editor all
+added ownership or workflow.
+
+Instead, one hidden native document element was bound directly to the same outer
+property. It gave the supported API an ordinary address to existing state while the
+visible nested component remained its consumer and the platform remained its sole
+owner. The first operation created the address; later operations reused it.
+
+The precedent is not "add hidden elements." Separate ownership from addressability.
+When state has the right owner, try supplying the smallest missing precondition before
+redesigning where the state lives.
+
 Use the smallest relevant analogy. State it in the output only when it helps the
 reader understand or challenge the decision.

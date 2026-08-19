@@ -2,6 +2,19 @@
 
 Simple helps coding agents solve the real problem with the smallest truthful design.
 
+It is a portable agent skill with a repository context layer—not a replacement agent,
+runtime wrapper, or development framework. The skill teaches one general method. A
+short local `SIMPLE.md` supplies the users, contracts, retained data, ordinary paths,
+proof, and reconsideration conditions that generic model training cannot know.
+
+**[Visit the Simple site](https://timc0y.github.io/simple/)** · Open source · MIT
+
+[![skills.sh](https://skills.sh/b/timc0y/simple)](https://skills.sh/timc0y/simple)
+
+```sh
+npx skills add timc0y/simple
+```
+
 Agents often enter a repository without knowing its stage, users, data, or promises.
 That missing context makes speculative architecture look responsible: old interfaces
 are preserved without consumers, migration systems appear without production data,
@@ -9,6 +22,14 @@ and one future possibility becomes an abstraction.
 
 Simple combines a small design method with a local `SIMPLE.md` containing the facts
 that change those decisions.
+
+The public repository packages four parts around that method:
+
+- the portable `simple` skill and selectively loaded specialist references;
+- `simple init` and `simple check` for repository routing and profile structure;
+- thin audit, plan, and review workflows, plus hooks where a host supports them;
+- behavioural evals that test deletion, compatibility, ownership, proof, missing
+  addresses, root causes, and complexity that genuinely pays rent.
 
 | Repository reality | Smallest truthful design |
 | --- | --- |
@@ -137,6 +158,22 @@ plugin manifest does not register them.
 
 ## Install
 
+The open Agent Skills CLI discovers Simple directly from this repository and installs
+it for Codex, Claude Code, Cursor, OpenCode, and other supported agents:
+
+```sh
+npx skills add timc0y/simple
+```
+
+To select one agent and install globally:
+
+```sh
+npx skills add timc0y/simple --skill simple -g -a codex -y
+```
+
+The host-specific plugin routes remain available when their hooks or command surfaces
+are useful.
+
 Codex:
 
 ```sh
@@ -160,6 +197,17 @@ npm run install:local
 The local installer links the same skill source into Codex, Claude Code, OpenCode,
 and Gemini. There is one maintained copy of the guidance, not a host-specific fork.
 
+## Website
+
+The public site is a static Astro build from `src/pages/index.astro`. Run it locally:
+
+```sh
+npm install
+npm run dev
+```
+
+Build the deployable site with `npm run build`; output is written to `dist/`.
+
 ## Evidence
 
 Run deterministic checks with:
@@ -173,7 +221,10 @@ The tests cover incomplete init, completed profile validation, nearest nested
 profile discovery, profile injection, and targeted writing reminders. Behavioural
 eval cases cover pre-launch replacement, retained production data, reuse of an
 ordinary path, concise development writing, and adversarial pressure to invent
-compatibility or architecture:
+compatibility or architecture. A missing-precondition case tests whether the agent
+preserves correctly owned state and repairs only its supported address. Root-cause,
+unknown-write, and mutation-interval cases distinguish accidental machinery from
+complexity earned by a real consequence and assign invariants to one owner:
 
 ```sh
 claude plugin eval simple@timc0y-simple --runs 1 --no-publish

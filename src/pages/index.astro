@@ -1,0 +1,490 @@
+---
+import "@fontsource-variable/manrope";
+import "@fontsource-variable/newsreader";
+
+const install = "npx skills add timc0y/simple";
+const heroImage = `${import.meta.env.BASE_URL.replace(/\/?$/, "/")}simple-field.jpg`;
+
+const decisions = [
+  {
+    title: "What is actually true?",
+    body: "Establish the users, consumers, data, promises, scale and consequences before choosing a design."
+  },
+  {
+    title: "Where is the ordinary path?",
+    body: "Find the existing owner. Name the exact obstruction before introducing another route, state or workflow."
+  },
+  {
+    title: "What complexity pays rent?",
+    body: "Keep only the machinery required by a present obligation. Put it behind one clear, accountable boundary."
+  },
+  {
+    title: "How will we know?",
+    body: "Prove the result through a surface independent enough to distinguish behaviour from implementation."
+  }
+];
+
+const cases = [
+  {
+    title: "A slow command became an entire server.",
+    trap: "Daemon · HTTP server · second composition root · duplicate routes · parity tests",
+    result: "One path constant had accidentally imported a compiler into every command.",
+    lesson: "Measure the cause before building a system around its symptom.",
+    source: "Observed while rebuilding a private, single-operator design CLI."
+  },
+  {
+    title: "A rejected reply did not mean the write failed.",
+    trap: "Stateless at any cost · retry the request · trust the rejected response",
+    result: "Persist one uncertainty receipt and keep safe reads open for recovery.",
+    lesson: "Complexity earns its place when the real consequence outlives the process.",
+    source: "Observed after a remote write could land without its response returning."
+  },
+  {
+    title: "The document needed an address, not a new home.",
+    trap: "Move the state · clone definitions · automate the UI · build another editor",
+    result: "Add one native address to the same platform-owned state.",
+    lesson: "Preserve a truthful owner. Supply only the missing precondition.",
+    source: "Observed where a public SDK could store structured state but not select it."
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#102434" />
+    <meta
+      name="description"
+      content="Simple gives coding agents the repository truth and engineering judgement to find the smallest design that fully meets real obligations."
+    />
+    <meta property="og:title" content="Simple — truthful software design for coding agents" />
+    <meta property="og:description" content="Complex problems. Simple systems." />
+    <meta property="og:image" content={new URL(heroImage, Astro.site)} />
+    <meta property="og:type" content="website" />
+    <title>Simple — truthful software design for coding agents</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>S</text></svg>" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="wordmark" href="#top" aria-label="Simple home">Simple<span>.</span></a>
+      <nav aria-label="Primary navigation">
+        <a href="#product">What it is</a>
+        <a href="#method">Method</a>
+        <a href="#proof">Proof</a>
+      </nav>
+      <a class="nav-install" href="#install">Install</a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <img src={heroImage} alt="A sunlit field beneath a sky dissolving into code" fetchpriority="high" />
+        <div class="hero-wash"></div>
+        <div class="hero-content">
+          <h1 class="hero-title hero-reveal">
+            Complex problems.<br /><em>Simple systems.</em>
+          </h1>
+          <p class="hero-copy hero-reveal" style="--delay: 140ms">
+            Give agents the facts that change the answer—and a method for finding the
+            least complicated design that fully meets them.
+          </p>
+          <div class="hero-actions hero-reveal" style="--delay: 240ms">
+            <a class="button button-light" href="#install">Use Simple</a>
+            <a class="text-link" href="https://github.com/timc0y/simple">View source <span>↗</span></a>
+          </div>
+        </div>
+        <p class="hero-note">A small reasoning kernel. Repository truth. Independent proof.</p>
+      </section>
+
+      <section id="product" class="product section-pad">
+        <div class="product-intro reveal">
+          <p class="product-kind">A portable software-design skill with a repository context layer.</p>
+          <h2>Not a harness.<br /><em>More than a prompt.</em></h2>
+          <p>
+            Simple does not replace your coding agent, wrap its runtime, or invent a
+            development framework. It gives compatible agents one shared way to reason,
+            then supplies the local facts that generic model training cannot know.
+          </p>
+          <button class="command compact" data-copy={install} aria-label="Copy install command">
+            <code>{install}</code><span aria-live="polite">Copy</span>
+          </button>
+        </div>
+        <div class="product-parts reveal">
+          <article>
+            <p>Installed once</p>
+            <h3>The skill</h3>
+            <span>Judgement, specialist references and the smallest-truthful-solution loop.</span>
+          </article>
+          <article>
+            <p>Grounded per repository</p>
+            <h3><code>SIMPLE.md</code></h3>
+            <span>Users, contracts, retained data, ordinary paths, proof and reconsideration conditions.</span>
+          </article>
+          <article>
+            <p>Used when needed</p>
+            <h3>Init · audit · plan · review · check</h3>
+            <span>Thin workflows and supported host integrations around one method—not five competing skills.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="manifesto section-pad">
+        <h2 class="display reveal">
+          Agents know how to build almost anything.<br />They do not know what your
+          repository <em>actually needs.</em>
+        </h2>
+        <div class="manifesto-grid reveal">
+          <p>
+            Missing context makes speculative architecture look responsible. Old
+            interfaces survive without consumers. Migration systems appear without
+            production data. A possible future becomes today’s framework.
+          </p>
+          <p>
+            Simple joins a compact design method with a local <code>SIMPLE.md</code>:
+            the users, contracts, retained data, ordinary paths and consequences that
+            make good judgement possible.
+          </p>
+        </div>
+      </section>
+
+      <section id="method" class="method section-pad">
+        <div class="method-heading reveal">
+          <h2>Make every concept<br /><em>pay rent.</em></h2>
+        </div>
+        <div class="decision-list">
+          {decisions.map((decision, index) => (
+            <article class="decision reveal" style={`--delay: ${index * 60}ms`}>
+              <h3>{decision.title}</h3>
+              <p>{decision.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="raptor section-pad">
+        <div class="raptor-mark reveal" aria-hidden="true">R3</div>
+        <div class="raptor-copy reveal">
+          <h2>The component became more capable. The system around it became simpler.</h2>
+          <p>
+            SpaceX’s Raptor evolution internalised flow paths, cooling and protection.
+            The difficult engineering did not disappear. It moved behind a stronger
+            boundary, allowing exposed plumbing and supporting hardware to disappear.
+          </p>
+          <p>
+            Judge software the same way: not by one file’s line count, but by the
+            concepts, states and coordination imposed on the whole system.
+          </p>
+          <div class="raptor-equation" aria-label="A stronger owner creates a simpler surrounding system">
+            <span>Stronger owner</span><span aria-hidden="true">→</span><span>Less system around it</span>
+          </div>
+          <a class="text-link pale" href="https://x.com/SpaceX/status/1819795288116330594">See the comparison <span>↗</span></a>
+        </div>
+      </section>
+
+      <section id="proof" class="proof section-pad">
+        <div class="proof-intro reveal">
+          <h2>Simple is not<br />“always less.”</h2>
+          <p>Sometimes the truthful answer deletes a system. Sometimes it adds one small, durable state. The facts decide.</p>
+        </div>
+        <div class="case-list">
+          {cases.map((item, index) => (
+            <article class="case reveal" style={`--delay: ${index * 80}ms`}>
+              <h3>{item.title}</h3>
+              <div class="case-change">
+                <p><span>Tempting</span>{item.trap}</p>
+                <div class="case-arrow" aria-hidden="true">→</div>
+                <p><span>Truthful</span>{item.result}</p>
+              </div>
+              <p class="case-lesson">{item.lesson}</p>
+              <p class="case-source">{item.source}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="profile section-pad">
+        <div class="profile-copy reveal">
+          <h2>General judgement.<br />Local facts.</h2>
+          <p>
+            The skill teaches the method once. The nearest repository profile says
+            what is true here—without turning agent instructions into a second
+            architecture manual.
+          </p>
+        </div>
+        <pre class="profile-card reveal"><code><span># SIMPLE.md</span>
+
+Reality
+  One trusted operator
+  No external consumers
+  Production data: none
+
+Ordinary path
+  One process, one command
+
+Proof
+  Public result + fresh readback
+
+Reconsider when
+  A real consumer requires it</code></pre>
+      </section>
+
+      <section class="questions section-pad">
+        <h2 class="reveal">What Simple is—and what it is not.</h2>
+        <div class="question-list reveal">
+          <details open>
+            <summary>Is Simple a harness?</summary>
+            <p>No. It does not control the agent runtime. It is a portable skill plus a repository-local decision layer that works inside the harness you already use.</p>
+          </details>
+          <details>
+            <summary>Is it just another prompt?</summary>
+            <p>The installable unit is a skill. The repository package also provides a validated local profile, targeted references, commands, host routing, deterministic checks and behavioural evals.</p>
+          </details>
+          <details>
+            <summary>Does Simple always choose less?</summary>
+            <p>No. It chooses the least complicated design that fully accounts for real obligations. A production migration or crash-spanning safety receipt may be the simple answer.</p>
+          </details>
+          <details>
+            <summary>What changes in my repository?</summary>
+            <p><code>simple init</code> creates short routing files and an intentionally incomplete <code>SIMPLE.md</code>. A human completes the facts; <code>simple check</code> validates the structure, not the truth of the claims.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="install" class="install section-pad">
+        <h2 class="display reveal">Make the next decision<br /><em>simpler.</em></h2>
+        <div class="install-row reveal">
+          <button class="command" data-copy={install} aria-label="Copy install command">
+            <code>{install}</code><span aria-live="polite">Copy</span>
+          </button>
+          <a class="button button-dark" href="https://github.com/timc0y/simple">Read the docs</a>
+        </div>
+        <p class="install-note reveal">Open source · MIT · installs to Codex, Claude Code, Cursor and other compatible agents.</p>
+      </section>
+    </main>
+
+    <footer>
+      <a class="wordmark dark" href="#top">Simple<span>.</span></a>
+      <p>Smallest truthful solutions.</p>
+      <p>Built by <a href="https://github.com/timc0y">Tim Coy</a>.</p>
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.13 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+
+      document.querySelectorAll("[data-copy]").forEach((button) => {
+        button.addEventListener("click", async () => {
+          const value = button.getAttribute("data-copy");
+          if (!value) return;
+          const label = button.querySelector("span");
+          if (!label) return;
+          try {
+            await navigator.clipboard.writeText(value);
+            label.textContent = "Copied";
+          } catch {
+            const code = button.querySelector("code");
+            const selection = window.getSelection();
+            if (code && selection) {
+              const range = document.createRange();
+              range.selectNodeContents(code);
+              selection.removeAllRanges();
+              selection.addRange(range);
+            }
+            label.textContent = "Selected";
+          }
+          window.setTimeout(() => (label.textContent = "Copy"), 1600);
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --ink: #172018;
+    --paper: #f1f0e8;
+    --line: rgba(23, 32, 24, 0.18);
+    --blue: #153149;
+    --acid: #d8f265;
+    --serif: "Newsreader Variable", "Newsreader", serif;
+    --sans: "Manrope Variable", "Manrope", sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: var(--paper); }
+  body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; }
+  ::selection { color: var(--ink); background: var(--acid); }
+  :focus-visible { outline: 2px solid var(--acid); outline-offset: 5px; }
+  * { scrollbar-color: #72836b var(--paper); }
+
+  .nav {
+    position: absolute; z-index: 10; inset: 0 0 auto; height: 88px; padding: 0 clamp(24px, 4vw, 72px);
+    display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; color: white;
+    border-bottom: 1px solid rgba(255,255,255,.22);
+  }
+  .wordmark { font-family: var(--serif); font-size: 31px; letter-spacing: -.04em; font-weight: 600; }
+  .wordmark span { color: var(--acid); }
+  .nav nav { display: flex; gap: 30px; font-size: 13px; }
+  .nav nav a, .nav-install { transition: opacity .25s ease; }
+  .nav nav a:hover, .nav-install:hover { opacity: .62; }
+  .nav-install { justify-self: end; font-size: 13px; padding-bottom: 4px; border-bottom: 1px solid currentColor; }
+
+  .hero { position: relative; min-height: 100svh; height: 900px; color: white; overflow: hidden; background: #18344b; }
+  .hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.015); animation: settle 2.2s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-wash { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,26,37,.76) 0%, rgba(12,27,37,.36) 47%, rgba(13,29,40,.07) 75%), linear-gradient(0deg, rgba(7,20,24,.25), transparent 45%); }
+  .hero-content { position: relative; z-index: 2; padding: 190px clamp(24px, 7vw, 132px) 120px; max-width: 1050px; }
+  .hero-title, .display, .method-heading h2, .raptor h2, .proof h2, .profile h2, .install h2 { margin: 0; font-family: var(--serif); font-weight: 400; letter-spacing: -.04em; line-height: .94; }
+  .hero-title { max-width: 990px; font-size: clamp(58px, 7.1vw, 96px); text-wrap: balance; }
+  em { font-weight: 400; }
+  .hero-copy { max-width: 570px; margin: 32px 0 0; font-size: clamp(18px, 1.4vw, 22px); line-height: 1.5; }
+  .hero-actions { display: flex; align-items: center; gap: 30px; margin-top: 42px; }
+  .button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 25px; border-radius: 999px; font-size: 13px; font-weight: 650; transition: transform .25s ease, background .25s ease; }
+  .button:hover { transform: translateY(-2px); }
+  .button-light { background: white; color: #172c39; }
+  .button-light:hover { background: var(--acid); }
+  .button-dark { background: var(--ink); color: white; }
+  .text-link { display: inline-flex; gap: 8px; align-items: center; font-size: 13px; font-weight: 600; }
+  .text-link span { transition: transform .2s ease; }
+  .text-link:hover span { transform: translate(3px, -3px); }
+  .hero-note { position: absolute; z-index: 2; right: clamp(24px,4vw,72px); bottom: 31px; margin: 0; font-size: 11px; letter-spacing: .06em; }
+
+  .section-pad { padding: clamp(90px, 11vw, 180px) clamp(24px, 7vw, 132px); }
+  .product { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(70px, 11vw, 180px); align-items: center; background: #e2e8ef; }
+  .product-kind { max-width: 470px; margin: 0 0 34px; font-size: 15px; font-weight: 700; }
+  .product h2 { margin: 0; font-family: var(--serif); font-size: clamp(52px, 6vw, 92px); font-weight: 400; letter-spacing: -.04em; line-height: .94; text-wrap: balance; }
+  .product-intro > p:not(.product-kind) { max-width: 560px; margin: 34px 0 0; line-height: 1.65; }
+  .product .compact { margin-top: 36px; }
+  .product-parts { border-top: 1px solid var(--line); }
+  .product-parts article { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 30px 0 34px; border-bottom: 1px solid var(--line); }
+  .product-parts p { margin: 5px 0 0; font-size: 11px; font-weight: 700; color: rgba(23,32,24,.58); }
+  .product-parts h3 { margin: 0; font-family: var(--serif); font-size: clamp(27px, 2.4vw, 38px); font-weight: 400; letter-spacing: -.025em; }
+  .product-parts span { grid-column: 2; max-width: 500px; margin-top: -10px; line-height: 1.55; color: rgba(23,32,24,.68); }
+  .manifesto { min-height: 700px; display: flex; flex-direction: column; justify-content: center; }
+  .manifesto .display { max-width: 1190px; font-size: clamp(47px, 6.2vw, 96px); text-wrap: balance; }
+  .manifesto-grid { margin: 78px 0 0 auto; max-width: 780px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; font-size: 16px; line-height: 1.65; }
+  .manifesto-grid p { margin: 0; }
+  code { font-family: "SFMono-Regular", Consolas, monospace; font-size: .88em; }
+
+  .method { background: #dce0d3; display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(70px, 10vw, 180px); }
+  .method-heading { position: sticky; top: 70px; align-self: start; }
+  .method-heading h2 { font-size: clamp(56px, 6vw, 92px); }
+  .decision { padding: 34px 0 42px; border-top: 1px solid var(--line); }
+  .decision:last-child { border-bottom: 1px solid var(--line); }
+  .decision h3 { margin: 0; font-family: var(--serif); font-size: clamp(27px, 2.3vw, 38px); font-weight: 400; letter-spacing: -.025em; }
+  .decision p { max-width: 500px; margin: 14px 0 0; line-height: 1.55; color: rgba(23,32,24,.72); }
+
+  .raptor { position: relative; min-height: 830px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; align-items: center; background: var(--blue); color: white; }
+  .raptor-mark { font-family: var(--serif); font-size: clamp(220px, 32vw, 540px); line-height: .7; letter-spacing: -.11em; color: rgba(180,218,225,.07); transform: translateX(-8%); }
+  .raptor-copy { position: relative; max-width: 640px; }
+  .raptor h2 { font-size: clamp(47px, 5vw, 78px); }
+  .raptor-copy > p:not(.section-label) { max-width: 570px; line-height: 1.65; color: rgba(255,255,255,.7); }
+  .raptor-copy h2 + p { margin-top: 38px; }
+  .raptor-equation { max-width: 570px; margin: 30px 0 8px; padding: 22px 0; display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: center; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); font-family: var(--serif); font-size: 21px; text-align: center; }
+  .raptor-equation span:nth-child(2) { color: var(--acid); }
+  .pale { margin-top: 18px; color: var(--acid); }
+
+  .proof { background: #f1efe6; }
+  .proof-intro { display: grid; grid-template-columns: 1.25fr .55fr; gap: 90px; align-items: end; }
+  .proof h2 { font-size: clamp(53px, 6vw, 92px); }
+  .proof-intro > p:last-child { margin: 0 0 8px; line-height: 1.55; }
+  .case-list { margin-top: 100px; border-top: 1px solid var(--line); }
+  .case { display: grid; grid-template-columns: .7fr 1.3fr; column-gap: clamp(40px, 8vw, 120px); row-gap: 22px; padding: 54px 0 60px; border-bottom: 1px solid var(--line); }
+  .case h3 { margin: 0; max-width: 440px; font-family: var(--serif); font-size: clamp(34px, 3.6vw, 56px); font-weight: 400; line-height: 1.02; letter-spacing: -.035em; text-wrap: balance; }
+  .case-change { display: grid; grid-template-columns: 1fr 32px 1fr; gap: 22px; align-items: center; }
+  .case-change p { margin: 0; line-height: 1.5; }
+  .case-change span { display: block; margin-bottom: 12px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(23,32,24,.58); }
+  .case-change p:first-child { color: rgba(23,32,24,.5); text-decoration: line-through; text-decoration-thickness: 1px; }
+  .case-arrow { font-family: var(--serif); font-size: 27px; color: #69823d; }
+  .case-lesson { grid-column: 2; margin: 0; padding-top: 25px; border-top: 1px solid var(--line); font-weight: 650; }
+  .case-source { grid-column: 2; margin: -10px 0 0; font-size: 12px; line-height: 1.5; color: rgba(23,32,24,.55); }
+
+  .profile { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(70px, 12vw, 190px); align-items: center; background: #e2e8ef; }
+  .profile h2 { font-size: clamp(52px, 6vw, 88px); }
+  .profile-copy > p:last-child { max-width: 520px; margin-top: 35px; line-height: 1.65; }
+  .profile-card { margin: 0; padding: clamp(35px,5vw,70px); overflow: auto; background: #17221d; color: #c9d2c9; border-radius: 3px; box-shadow: 0 35px 80px rgba(31,44,48,.16); font-size: 14px; line-height: 1.7; }
+  .profile-card span { color: var(--acid); }
+
+  .questions { background: #dce0d3; display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(70px, 11vw, 180px); }
+  .questions > h2 { margin: 0; max-width: 500px; font-family: var(--serif); font-size: clamp(52px, 5.8vw, 88px); font-weight: 400; line-height: .95; letter-spacing: -.04em; text-wrap: balance; }
+  .question-list { border-top: 1px solid var(--line); }
+  .question-list details { border-bottom: 1px solid var(--line); }
+  .question-list summary { padding: 25px 40px 25px 0; cursor: pointer; list-style: none; font-family: var(--serif); font-size: 26px; position: relative; }
+  .question-list summary::-webkit-details-marker { display: none; }
+  .question-list summary::after { content: "+"; position: absolute; right: 4px; font-family: var(--sans); font-size: 20px; }
+  .question-list details[open] summary::after { content: "−"; }
+  .question-list p { max-width: 650px; margin: -4px 50px 28px 0; line-height: 1.65; color: rgba(23,32,24,.72); }
+
+  .install { text-align: center; min-height: 680px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .install .display { font-size: clamp(60px, 7vw, 96px); }
+  .install-row { margin-top: 60px; display: flex; align-items: center; gap: 12px; }
+  .command { min-height: 52px; padding: 0 8px 0 21px; display: flex; gap: 28px; align-items: center; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.4); color: var(--ink); cursor: pointer; }
+  .command span { padding: 10px 15px; border-radius: 999px; background: white; font-size: 11px; font-weight: 650; }
+  .install-note { margin-top: 23px; font-size: 13px; color: rgba(23,32,24,.6); }
+
+  footer { min-height: 120px; padding: 0 clamp(24px, 4vw, 72px); display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; border-top: 1px solid var(--line); font-size: 12px; }
+  footer p:nth-child(2) { text-align: center; }
+  footer p:last-child { text-align: right; }
+  footer a:not(.wordmark) { text-decoration: underline; text-underline-offset: 3px; }
+  .wordmark.dark span { color: #67883b; }
+
+  .hero-reveal { opacity: 0; filter: blur(13px); transform: translateY(32px); animation: hero-in .95s cubic-bezier(.16,1,.3,1) var(--delay, 40ms) forwards; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease var(--delay, 0ms), transform .7s cubic-bezier(.16,1,.3,1) var(--delay, 0ms); }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  @keyframes settle { from { transform: scale(1.07); filter: blur(5px); } to { transform: scale(1.015); filter: blur(0); } }
+  @keyframes hero-in { to { opacity: 1; filter: blur(0); transform: translateY(0); } }
+
+  @media (max-width: 900px) {
+    .nav { grid-template-columns: 1fr 1fr; }
+    .nav nav { display: none; }
+    .hero { height: 780px; }
+    .hero-content { padding-top: 180px; }
+    .hero-note { display: none; }
+    .product, .manifesto-grid, .method, .raptor, .profile, .questions { grid-template-columns: 1fr; }
+    .product-parts article { grid-template-columns: 130px 1fr; }
+    .manifesto-grid { margin-left: 0; }
+    .method-heading { position: static; }
+    .raptor { gap: 60px; }
+    .raptor-mark { position: absolute; inset: 18% auto auto -5%; }
+    .raptor-copy { grid-column: 1; }
+    .proof-intro { grid-template-columns: 1fr; }
+    .case { grid-template-columns: 1fr; gap: 34px; }
+    .case-lesson, .case-source { grid-column: 1; }
+  }
+
+  @media (max-width: 600px) {
+    .hero { min-height: 760px; }
+    .hero > img { object-position: 63% center; }
+    .hero-wash { background: linear-gradient(90deg, rgba(10,26,37,.72), rgba(10,26,37,.12)), linear-gradient(0deg, rgba(7,20,24,.35), transparent 55%); }
+    .hero-actions, .install-row { align-items: flex-start; flex-direction: column; }
+    .manifesto { min-height: auto; }
+    .manifesto-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 50px; }
+    .product-parts article { grid-template-columns: 1fr; gap: 12px; }
+    .product-parts span { grid-column: 1; margin-top: 0; }
+    .proof-intro { gap: 24px; }
+    .case-change { grid-template-columns: 1fr; }
+    .case-arrow { transform: rotate(90deg); }
+    .command { max-width: 100%; gap: 12px; }
+    .command code { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 235px; }
+    footer { padding-block: 32px; grid-template-columns: 1fr 1fr; }
+    footer p:nth-child(2) { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero > img { animation: none; }
+    .hero-reveal, .reveal { opacity: 1; filter: none; transform: none; animation: none; transition: none; }
+  }
+</style>

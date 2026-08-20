@@ -4,9 +4,15 @@ Use this when creating or substantially changing comments, Markdown, prompts,
 templates, help text, or internal technical prose.
 
 Use the established conventions of the document's field. For operational and
-instructional English, apply ASD-STE100-style discipline where useful: one term per
-concept, direct constructions, explicit actors, short sentences, and concrete
-conditions. The model already knows the standard; do not reproduce its rulebook.
+instructional English, apply ASD-STE100-style discipline where useful. Do not depend
+on the model recalling the standard. Use this small local checklist:
+
+- name the actor when responsibility matters;
+- use one term for one concept;
+- prefer direct constructions and short sentences;
+- state concrete conditions, limits, units, and failure behaviour;
+- separate observed fact, inference, and unknown.
+
 Do not force controlled English onto prose whose purpose is persuasion, narrative,
 or natural conversation.
 

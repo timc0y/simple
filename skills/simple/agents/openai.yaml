@@ -1,4 +1,4 @@
 interface:
   display_name: "Simple"
   short_description: "Smallest truthful solution for this repository"
-  default_prompt: "Use $simple and the nearest SIMPLE.md to find the smallest truthful solution."
+  default_prompt: "Use $simple and the nearest SIMPLE.md for this architecture or change-design decision. Preserve present obligations and prove the smallest truthful solution."

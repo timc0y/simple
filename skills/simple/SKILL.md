@@ -1,11 +1,12 @@
 ---
 name: simple
 description: >-
-  Find the smallest truthful solution for architecture, refactoring, deletion,
-  compatibility, migration, repository audits, implementation plans, or work that
-  is becoming more complex than its demonstrated requirements. Read the nearest
-  SIMPLE.md before decisions whose answer depends on repository facts. Also use for
-  concise development comments, Markdown, prompts, and communication.
+  Find the smallest truthful software design when a repository change raises
+  architecture, ownership, refactoring, deletion, compatibility, migration, or
+  unjustified-complexity decisions. Read the nearest SIMPLE.md before decisions
+  whose answer depends on repository facts. Use the explicit Simple audit, plan,
+  review, or check workflow when requested. Do not activate solely for routine
+  implementation, copy-editing, comments, Markdown, prompts, or status updates.
 ---
 
 # Simple
@@ -17,6 +18,24 @@ or explicit commitments—not hypothetical future needs.
 Before a decision whose implementation could change with repository facts, read the
 nearest `SIMPLE.md`. If a material fact is absent, establish it or state the
 uncertainty. Absence of evidence grants neither an obligation nor deletion permission.
+
+Use Simple when the answer depends on present obligations, ownership, compatibility,
+or system shape. For routine implementation or prose with no such decision, use the
+ordinary repository workflow instead of expanding the task into a Simple review.
+
+## Match guidance to capability
+
+Start with the least prescriptive profile that can complete the work:
+
+- `autonomous`: give a strong frontier model the outcome, relevant repository facts,
+  hard constraints, authority boundary, proof, and stop conditions.
+- `guided`: make the decision stages and checkpoints explicit when the model or task
+  needs more structure.
+- `scripted`: use deterministic scripts, narrow inputs, typed outputs, fixed validation,
+  and bounded retries for fragile or repetitive operations.
+
+Escalate only after an observed failure. Do not maintain complete model-specific copies
+of the skill. Read `references/model-profiles.md` when selecting or evaluating a profile.
 
 ## Decide in order
 
@@ -64,7 +83,10 @@ blockers, risk, and the next relevant action. Do not narrate routine tool use.
 - `simple audit`: read `references/audit.md` and use objective crawling agents when
   available; keep architectural judgement with the lead agent.
 - `simple init`, `plan`, `review`, or `check`: read `references/commands.md`.
-- Comments, Markdown, prompts, or technical prose: read `references/writing.md`.
+- Model or harness adaptation: read `references/model-profiles.md`.
+- Comments, Markdown, prompts, or technical prose: read `references/writing.md` only
+  when the user explicitly requests Simple for the writing or the prose records a
+  design, operational, recovery, or verification decision.
 - Refactoring or deletion: read `references/refactoring.md`; for deletion tooling,
   also read `references/deletion-tools.md`.
 - Plans, progress, reviews, or handoffs: read `references/communication.md`.

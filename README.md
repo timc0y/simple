@@ -23,6 +23,11 @@ and one future possibility becomes an abstraction.
 Simple combines a small design method with a local `SIMPLE.md` containing the facts
 that change those decisions.
 
+Simple should activate for architecture, ownership, compatibility, migration,
+deletion, broad refactoring, or explicit `simple audit`, `plan`, `review`, and `check`
+workflows. It should not hijack routine implementation, copy-editing, comments,
+Markdown, prompts, or status updates that contain no design decision.
+
 The public repository packages four parts around that method:
 
 - the portable `simple` skill and selectively loaded specialist references;
@@ -78,8 +83,19 @@ smallest truthful solution
 ```
 
 The specialist references cover architecture, compatibility, refactoring, writing,
-development communication, and deletion tools. They stay out of ordinary context
-until the task needs them.
+development communication, deletion tools, and capability-based model guidance. They
+stay out of ordinary context until the task needs them.
+
+### Capability profiles
+
+Simple keeps one canonical skill rather than model-specific copies. Start strong
+frontier models with the outcome, repository facts, constraints, authority boundary,
+proof, and stop conditions. Add explicit stages for models or tasks that need more
+structure. Move fragile repetitive mechanics into deterministic scripts with narrow
+inputs and validation. Keep an adapter only when paired evaluations show a repeatable
+benefit.
+
+See `skills/simple/references/model-profiles.md`.
 
 ## Repository context
 

@@ -85,14 +85,19 @@ test("pre-write hook adds only relevant reminders", () => {
     cwd: root,
     tool_input: { command: "*** Update File: docs/design.md" }
   });
-  assert.match(JSON.parse(markdown.stdout).hookSpecificOutput.additionalContext, /Markdown load-bearing/);
+  const markdownReminder = JSON.parse(markdown.stdout).hookSpecificOutput.additionalContext;
+  assert.match(markdownReminder, /Markdown load-bearing/);
+  assert.match(markdownReminder, /plain/);
+  assert.match(markdownReminder, /no decorative styling/);
 
   const code = runHook({
     hook_event_name: "PreToolUse",
     cwd: root,
     tool_input: { command: "+// Explain the retry." }
   });
-  assert.match(JSON.parse(code.stdout).hookSpecificOutput.additionalContext, /Use comments/);
+  const commentReminder = JSON.parse(code.stdout).hookSpecificOutput.additionalContext;
+  assert.match(commentReminder, /Use comments/);
+  assert.match(commentReminder, /concise/);
 
   const ordinary = runHook({
     hook_event_name: "PreToolUse",
@@ -118,19 +123,25 @@ test("local install exposes one skill through each supported host", () => {
   ]);
 });
 
-test("skill activation stays narrow and capability profiles are bundled", () => {
+test("design and writing modes stay distinct and capability profiles are bundled", () => {
   const skill = readFileSync(join(process.cwd(), "skills", "simple", "SKILL.md"), "utf8");
+  const writing = readFileSync(join(process.cwd(), "skills", "simple", "references", "writing.md"), "utf8");
+  const writeCommand = readFileSync(join(process.cwd(), "commands", "write.md"), "utf8");
   const profiles = readFileSync(join(process.cwd(), "skills", "simple", "references", "model-profiles.md"), "utf8");
   const schema = JSON.parse(readFileSync(join(process.cwd(), "evals", "results.schema.json"), "utf8"));
   const site = readFileSync(join(process.cwd(), "src", "pages", "index.astro"), "utf8");
 
-  assert.match(skill, /Do not activate solely for routine/);
+  assert.match(skill, /Writing is a first-class Simple mode/);
+  assert.match(skill, /Do not turn a writing task into an architecture review/);
+  assert.match(writing, /Plain writing standard/);
+  assert.match(writing, /Avoid decorative formatting/);
+  assert.match(writeCommand, /smallest useful Markdown structure/);
   assert.match(skill, /autonomous/);
   assert.match(skill, /guided/);
   assert.match(skill, /scripted/);
   assert.match(profiles, /Start with the autonomous profile/);
   assert.equal(schema.properties.condition.enum.length, 3);
-  assert.match(site, /Does Simple run on every task/);
+  assert.match(site, /What does writing mode produce/);
   assert.match(site, /How does it adapt to frontier models/);
 });
 

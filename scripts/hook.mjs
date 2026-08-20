@@ -45,11 +45,11 @@ export function writingReminder(input) {
   const reminders = [];
 
   if (/\.(?:md|mdx)(?:\b|["'])/i.test(text)) {
-    reminders.push("Keep Markdown load-bearing. Preserve the decisions, contracts, constraints, proof, and operational knowledge the next reader needs; update the source of truth directly.");
+    reminders.push("Keep Markdown load-bearing and plain. Preserve decisions, contracts, constraints, proof, and operational knowledge; use few sentence-case headings, shallow lists, restrained emphasis, and no decorative styling.");
   }
 
   if (hasAddedComment(text)) {
-    reminders.push("Use comments for non-obvious reasons, contracts, invariants, traps, and reconsideration conditions. Let the code show the operation.");
+    reminders.push("Use comments for concise non-obvious reasons, contracts, invariants, traps, and reconsideration conditions. Let the code show the operation.");
   }
 
   return reminders.join("\n");

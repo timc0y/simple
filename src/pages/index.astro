@@ -57,7 +57,7 @@ const cases = [
     <meta name="theme-color" content="#102434" />
     <meta
       name="description"
-      content="Simple gives coding agents the repository truth and engineering judgement to find the smallest design that fully meets real obligations."
+      content="Simple gives coding agents repository truth for software decisions and a plain writing mode for concise plans, documentation, comments, prompts, reviews, and handoffs."
     />
     <meta property="og:title" content="Simple — truthful software design for coding agents" />
     <meta property="og:description" content="Complex problems. Simple systems." />
@@ -87,7 +87,7 @@ const cases = [
           </h1>
           <p class="hero-copy hero-reveal" style="--delay: 140ms">
             Give agents the facts that change the answer—and a method for finding the
-            least complicated design that fully meets them.
+            least complicated design or clearest explanation that fully meets them.
           </p>
           <div class="hero-actions hero-reveal" style="--delay: 240ms">
             <a class="button button-light" href="#install">Use Simple</a>
@@ -99,12 +99,12 @@ const cases = [
 
       <section id="product" class="product section-pad">
         <div class="product-intro reveal">
-          <p class="product-kind">A portable software-design skill with a repository context layer.</p>
+          <p class="product-kind">A portable software-design and developer-writing skill with a repository context layer.</p>
           <h2>Not a harness.<br /><em>More than a prompt.</em></h2>
           <p>
             Simple does not replace your coding agent, wrap its runtime, or invent a
-            development framework. It gives compatible agents one shared way to reason,
-            then supplies the local facts that generic model training cannot know.
+            development framework. It gives compatible agents one shared way to reason and write, then supplies
+            the local facts that generic model training cannot know.
           </p>
           <button class="command compact" data-copy={install} aria-label="Copy install command">
             <code>{install}</code><span aria-live="polite">Copy</span>
@@ -114,7 +114,7 @@ const cases = [
           <article>
             <p>Installed once</p>
             <h3>The skill</h3>
-            <span>Judgement for architecture and change-design decisions, with specialist references loaded only when they matter.</span>
+            <span>Design judgement plus a first-class writing mode for plain plans, docs, comments, prompts, reviews, updates, and handoffs.</span>
           </article>
           <article>
             <p>Grounded per repository</p>
@@ -123,7 +123,7 @@ const cases = [
           </article>
           <article>
             <p>Used when needed</p>
-            <h3>Init · audit · plan · review · check</h3>
+            <h3>Init · audit · plan · review · write · check</h3>
             <span>Thin workflows and supported host integrations around one method—not five competing skills.</span>
           </article>
         </div>
@@ -242,7 +242,11 @@ Reconsider when
           </details>
           <details>
             <summary>Does Simple run on every task?</summary>
-            <p>No. It activates for architecture, ownership, compatibility, migration, deletion, broad refactoring and explicit Simple workflows. Routine implementation and prose stay on the repository’s ordinary path.</p>
+            <p>No. Design mode handles architecture and change decisions. Writing mode handles plans, documentation, comments, Markdown, prompts, reviews, updates and handoffs without turning them into an architecture audit.</p>
+          </details>
+          <details>
+            <summary>What does writing mode produce?</summary>
+            <p>Concise plain text with the smallest useful Markdown structure: few headings, shallow lists, restrained emphasis, no decorative styling, and no table unless comparison genuinely needs one.</p>
           </details>
           <details>
             <summary>How does it adapt to frontier models?</summary>

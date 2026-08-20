@@ -1,11 +1,14 @@
 # Simple
 
-Simple helps coding agents solve the real problem with the smallest truthful design.
+Simple helps coding agents make the smallest truthful software decision and explain it
+clearly.
 
 It is a portable agent skill with a repository context layer—not a replacement agent,
-runtime wrapper, or development framework. The skill teaches one general method. A
-short local `SIMPLE.md` supplies the users, contracts, retained data, ordinary paths,
-proof, and reconsideration conditions that generic model training cannot know.
+runtime wrapper, or development framework. The skill has two connected modes: design
+for architecture and change decisions, and writing for concise plans, documentation,
+comments, Markdown, prompts, reviews, updates, and handoffs. A short local `SIMPLE.md`
+supplies the users, contracts, retained data, ordinary paths, proof, and
+reconsideration conditions that generic model training cannot know.
 
 **[Visit the Simple site](https://timc0y.github.io/simple/)** · Open source · MIT
 
@@ -23,16 +26,17 @@ and one future possibility becomes an abstraction.
 Simple combines a small design method with a local `SIMPLE.md` containing the facts
 that change those decisions.
 
-Simple should activate for architecture, ownership, compatibility, migration,
-deletion, broad refactoring, or explicit `simple audit`, `plan`, `review`, and `check`
-workflows. It should not hijack routine implementation, copy-editing, comments,
-Markdown, prompts, or status updates that contain no design decision.
+Simple uses design mode for architecture, ownership, compatibility, migration,
+deletion, broad refactoring, and explicit audit, plan, or review work. Writing mode is
+also first class: it helps agents produce plain, concise plans, documentation, comments,
+Markdown, prompts, reviews, updates, and handoffs without turning each writing task into
+an architecture audit.
 
 The public repository packages four parts around that method:
 
 - the portable `simple` skill and selectively loaded specialist references;
 - `simple init` and `simple check` for repository routing and profile structure;
-- thin audit, plan, and review workflows, plus hooks where a host supports them;
+- thin audit, plan, review, and write workflows, plus hooks where a host supports them;
 - behavioural evals that test deletion, compatibility, ownership, proof, missing
   addresses, root causes, and complexity that genuinely pays rent.
 
@@ -129,13 +133,14 @@ mandatory lifecycle.
 | `simple init` | Establish repository truth and create its profile | Profile and routing files only |
 | `simple audit` | Find ownership seams, parallel paths, invented obligations, and unpaid complexity | Read-only |
 | `simple plan` | Design the smallest truthful change | Read-only |
-| `simple review` | Judge a design, plan, or diff | Read-only |
+| `simple review` | Judge a design, plan, document, or diff | Read-only |
+| `simple write` | Create or revise concise developer writing in plain Markdown | Requested writing only |
 | `simple check` | Validate routing and profile structure | Read-only |
 
-`init` and `check` have deterministic CLI implementations. `audit`, `plan`, and
-`review` require model judgement and remain thin prompt entry points into `$simple`.
-Claude Code exposes the files in `commands/` as slash commands; Codex exposes the
-same workflows through the skill and starter prompts.
+`init` and `check` have deterministic CLI implementations. `audit`, `plan`, `review`,
+and `write` require model judgement and remain thin prompt entry points into `$simple`.
+Claude Code exposes the files in `commands/` as slash commands; Codex exposes the same
+workflows through the skill and starter prompts.
 
 ### Evidence-led audits
 
@@ -147,18 +152,22 @@ judgement. A crawler's `not_found` result never becomes proof of absence.
 
 ## Writing
 
-Simple treats prose as part of the design:
+Writing is a first-class Simple mode. Use it for technical plans, documentation,
+comments, Markdown, prompts, reviews, progress updates, and handoffs. It applies a plain
+writing standard without expanding the task into architecture analysis unless the
+content genuinely requires a design decision.
 
-- code shows what happens;
-- comments preserve non-obvious reasons, contracts, and invariants;
-- documentation preserves knowledge needed to decide, operate, recover, or verify;
-- development updates lead with the outcome and material evidence.
+- Code shows what happens; comments preserve non-obvious reasons, contracts, and
+  invariants.
+- Plans cover the requested outcome, relevant facts, necessary steps, proof, and only
+  the risks or unknowns that affect action.
+- Documentation preserves what the reader needs to decide, operate, recover, or verify.
+- Updates and handoffs lead with the outcome and material evidence.
+- Markdown stays plain: few sentence-case headings, shallow lists, restrained emphasis,
+  no decorative styling, and no table unless comparison genuinely needs one.
 
-For operational and instructional English, Simple can invoke established technical
-English discipline such as ASD-STE100 rather than restating a language rulebook.
-Named standards guide execution only when their prerequisites and purpose fit.
-
-The goal is load-bearing prose, not aggressive compression.
+The goal is clear, load-bearing prose—not ceremonial formatting or aggressive
+compression.
 
 ## Hosts
 

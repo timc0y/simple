@@ -143,6 +143,9 @@ test("design and writing modes stay distinct and capability profiles are bundled
   assert.match(skill, /scripted/);
   assert.match(profiles, /Start with the autonomous profile/);
   assert.equal(schema.properties.condition.enum.length, 3);
+  const taskSchema = schema.properties.tasks.items;
+  assert.ok(taskSchema.required.includes("lostFacts"));
+  assert.ok(taskSchema.required.includes("formattingViolations"));
   assert.match(site, /What does writing mode produce/);
   assert.match(site, /How does it adapt to frontier models/);
   assert.match(marketplace, /plain developer-writing/);

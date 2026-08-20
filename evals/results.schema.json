@@ -35,12 +35,21 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["id", "passed", "interventions", "unsupportedClaims"],
+        "required": [
+          "id",
+          "passed",
+          "interventions",
+          "unsupportedClaims",
+          "lostFacts",
+          "formattingViolations"
+        ],
         "properties": {
           "id": { "type": "string" },
           "passed": { "type": "boolean" },
           "interventions": { "type": "integer", "minimum": 0 },
           "unsupportedClaims": { "type": "integer", "minimum": 0 },
+          "lostFacts": { "type": "integer", "minimum": 0 },
+          "formattingViolations": { "type": "integer", "minimum": 0 },
           "inputTokens": { "type": ["integer", "null"], "minimum": 0 },
           "outputTokens": { "type": ["integer", "null"], "minimum": 0 },
           "latencyMs": { "type": ["integer", "null"], "minimum": 0 },

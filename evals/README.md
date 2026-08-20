@@ -21,8 +21,11 @@ Record:
 
 - pass or fail against the task grader;
 - invented obligations, compatibility, state, owners, or workflows;
-- preservation of real users, data, contracts, and recovery needs;
+- preservation of real users, data, contracts, recovery needs, and supplied writing facts;
 - independent proof quality;
+- lost material facts and unsupported claims;
+- plain-writing violations such as decorative structure, unnecessary tables, repetition,
+  or invented background;
 - unsupported progress claims;
 - human interventions;
 - token use, latency, and cost;
@@ -40,5 +43,5 @@ failures as evidence; do not rewrite graders after seeing one model's answer unl
 task contract was genuinely wrong.
 
 Keep an adapter only when repeated paired runs improve quality or cost without weakening
-present-obligation, authority, or proof boundaries. Remove it when later model versions
+present-obligation, authority, proof, factual preservation, or plain-writing boundaries. Remove it when later model versions
 pass without it.

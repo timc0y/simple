@@ -23,8 +23,8 @@ That missing context makes speculative architecture look responsible: old interf
 are preserved without consumers, migration systems appear without production data,
 and one future possibility becomes an abstraction.
 
-Simple combines a small design method with a local `SIMPLE.md` containing the facts
-that change those decisions.
+Simple combines a small design-and-writing method with a local `SIMPLE.md` containing
+the facts that change those decisions and explanations.
 
 Simple uses design mode for architecture, ownership, compatibility, migration,
 deletion, broad refactoring, and explicit audit, plan, or review work. Writing mode is
@@ -38,7 +38,8 @@ The public repository packages four parts around that method:
 - `simple init` and `simple check` for repository routing and profile structure;
 - thin audit, plan, review, and write workflows, plus hooks where a host supports them;
 - behavioural evals that test deletion, compatibility, ownership, proof, missing
-  addresses, root causes, and complexity that genuinely pays rent.
+  addresses, root causes, plain developer writing, and complexity that genuinely pays
+  rent.
 
 | Repository reality | Smallest truthful design |
 | --- | --- |

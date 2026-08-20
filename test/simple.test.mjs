@@ -130,6 +130,8 @@ test("design and writing modes stay distinct and capability profiles are bundled
   const profiles = readFileSync(join(process.cwd(), "skills", "simple", "references", "model-profiles.md"), "utf8");
   const schema = JSON.parse(readFileSync(join(process.cwd(), "evals", "results.schema.json"), "utf8"));
   const site = readFileSync(join(process.cwd(), "src", "pages", "index.astro"), "utf8");
+  const marketplace = readFileSync(join(process.cwd(), ".claude-plugin", "marketplace.json"), "utf8");
+  const codexPlugin = readFileSync(join(process.cwd(), ".codex-plugin", "plugin.json"), "utf8");
 
   assert.match(skill, /Writing is a first-class Simple mode/);
   assert.match(skill, /Do not turn a writing task into an architecture review/);
@@ -143,6 +145,9 @@ test("design and writing modes stay distinct and capability profiles are bundled
   assert.equal(schema.properties.condition.enum.length, 3);
   assert.match(site, /What does writing mode produce/);
   assert.match(site, /How does it adapt to frontier models/);
+  assert.match(marketplace, /plain developer-writing/);
+  assert.match(codexPlugin, /technical-writing/);
+  assert.match(codexPlugin, /plain Markdown/);
 });
 
 function completedProfile(root, label) {

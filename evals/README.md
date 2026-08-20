@@ -28,8 +28,9 @@ Record:
 - token use, latency, and cost;
 - model revision, harness, reasoning setting, skill commit, and adapter identity.
 
-Include routine near-miss tasks such as `routine-edit`. A strong skill must improve the
-decisions it owns without hijacking unrelated implementation or prose.
+Include routine and writing controls such as `routine-edit`, `writing`, and
+`plain-writing`. A strong skill must improve the design and prose it owns without
+turning a small comment into an audit or decorating a simple document.
 
 ## Runs
 

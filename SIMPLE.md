@@ -12,7 +12,7 @@
 
 ## Preserve
 
-- Progressive disclosure: the core stays small while specialist knowledge remains available.
+- Progressive disclosure: the core stays small while design and plain-writing guidance remains focused and specialist knowledge stays available.
 - One shared skill and repository context across supported agent hosts.
 - Repository facts and reconsideration conditions that prevent speculative architecture.
 
@@ -28,7 +28,7 @@
 - Shared guidance lives in `skills/simple`; host manifests only package it.
 - `scripts/link-skill.mjs` owns the four local host routes; it does not copy the skill.
 - `simple.mjs init` creates the route and profile; `setup` remains an alias for existing users; `check` validates their shape.
-- `audit`, `plan`, and `review` are thin judgement modes over the shared skill; they do not duplicate its rules.
+- `audit`, `plan`, `review`, and `write` are thin judgement modes over the shared skill; they do not duplicate its rules.
 - Audit crawlers collect bounded evidence; the lead agent owns synthesis and recommendations.
 - One Claude Code hook script handles session, subagent, and relevant pre-write events.
 

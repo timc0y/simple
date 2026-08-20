@@ -1,7 +1,7 @@
 {
   "name": "simple",
   "version": "0.5.0+codex.20260818212316",
-  "description": "Solve complex software problems without unnecessary architecture.",
+  "description": "Make truthful software decisions and write concise developer prose in plain Markdown.",
   "author": {
     "name": "Tim Coy",
     "url": "https://github.com/timc0y"
@@ -14,7 +14,10 @@
     "software-design",
     "refactoring",
     "deletion",
-    "agent-skill"
+    "agent-skill",
+    "technical-writing",
+    "documentation",
+    "markdown"
   ],
   "skills": "./skills/",
   "interface": {

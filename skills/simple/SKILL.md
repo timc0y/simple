@@ -1,12 +1,13 @@
 ---
 name: simple
 description: >-
-  Find the smallest truthful software design when a repository change raises
-  architecture, ownership, refactoring, deletion, compatibility, migration, or
-  unjustified-complexity decisions. Read the nearest SIMPLE.md before decisions
-  whose answer depends on repository facts. Use the explicit Simple audit, plan,
-  review, or check workflow when requested. Do not activate solely for routine
-  implementation, copy-editing, comments, Markdown, prompts, or status updates.
+  Find the smallest truthful software design and produce concise, plain developer
+  writing. Use for architecture, ownership, refactoring, deletion, compatibility,
+  migration, or unjustified-complexity decisions; and for technical plans,
+  documentation, comments, Markdown, prompts, reviews, progress updates, or handoffs
+  that should be clear, load-bearing, and free of decorative formatting. Read the
+  nearest SIMPLE.md when repository facts change the answer. Use the explicit Simple
+  init, audit, plan, review, write, or check workflow when requested.
 ---
 
 # Simple
@@ -19,9 +20,16 @@ Before a decision whose implementation could change with repository facts, read 
 nearest `SIMPLE.md`. If a material fact is absent, establish it or state the
 uncertainty. Absence of evidence grants neither an obligation nor deletion permission.
 
-Use Simple when the answer depends on present obligations, ownership, compatibility,
-or system shape. For routine implementation or prose with no such decision, use the
-ordinary repository workflow instead of expanding the task into a Simple review.
+## Choose the mode
+
+- `design`: use the repository facts and decision method for architecture, ownership,
+  compatibility, migration, deletion, refactoring, or system-shape decisions.
+- `writing`: create or revise plans, documentation, comments, Markdown, prompts,
+  reviews, updates, and handoffs as concise, plain, load-bearing prose.
+
+Writing is a first-class Simple mode. Do not turn a writing task into an architecture
+review unless the content itself requires a design decision. Read the nearest
+`SIMPLE.md` only when repository facts materially change what the writing must say.
 
 ## Match guidance to capability
 
@@ -37,7 +45,7 @@ Start with the least prescriptive profile that can complete the work:
 Escalate only after an observed failure. Do not maintain complete model-specific copies
 of the skill. Read `references/model-profiles.md` when selecting or evaluating a profile.
 
-## Decide in order
+## Design in order
 
 1. Establish the actual users, operators, consumers, contracts, retained data,
    commitments, scale, and failure consequences.
@@ -49,6 +57,18 @@ of the skill. Read `references/model-profiles.md` when selecting or evaluating a
 6. Remove the route, state, explanation, and cleanup displaced by the change.
 7. Prove the result through a surface independent enough to distinguish requested
    behaviour from the implementation itself.
+
+## Write in order
+
+1. Identify the reader, purpose, destination, and source of truth.
+2. Preserve every material fact, decision, constraint, caveat, and next action.
+3. Choose the smallest structure that makes the content easy to use.
+4. Write direct sentences with one term per concept and explicit actors where needed.
+5. Use plain Markdown: few headings, shallow lists, restrained emphasis, and no
+   decorative formatting unless the destination requires it.
+6. Remove generic introductions, repetition, filler, and formatting that carries no
+   meaning.
+7. Check that compression did not remove a reason, boundary, risk, proof, or unknown.
 
 Apply KISS to the solution shape and YAGNI to hypothetical obligations. Use
 Chesterton's Fence before removal. Hide necessary complexity behind one clear owner.
@@ -82,11 +102,11 @@ blockers, risk, and the next relevant action. Do not narrate routine tool use.
 - Engineering precedents and examples: read `references/examples.md`.
 - `simple audit`: read `references/audit.md` and use objective crawling agents when
   available; keep architectural judgement with the lead agent.
-- `simple init`, `plan`, `review`, or `check`: read `references/commands.md`.
+- `simple init`, `plan`, `review`, `write`, or `check`: read `references/commands.md`.
 - Model or harness adaptation: read `references/model-profiles.md`.
-- Comments, Markdown, prompts, or technical prose: read `references/writing.md` only
-  when the user explicitly requests Simple for the writing or the prose records a
-  design, operational, recovery, or verification decision.
+- Plans, documentation, comments, Markdown, prompts, reviews, updates, or handoffs:
+  read `references/writing.md` and `references/communication.md`. Use writing mode
+  without expanding into design analysis unless the content requires it.
 - Refactoring or deletion: read `references/refactoring.md`; for deletion tooling,
   also read `references/deletion-tools.md`.
 - Plans, progress, reviews, or handoffs: read `references/communication.md`.

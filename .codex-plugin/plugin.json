@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "Simple",
     "shortDescription": "Simple solutions grounded in repository reality",
-    "longDescription": "Ground architecture and change-design decisions in repository truth, objective evidence, and capability-based guidance so real obligations are preserved without speculative machinery or hijacking routine work.",
+    "longDescription": "Ground software design in repository truth and help agents write concise plans, documentation, comments, prompts, reviews, and handoffs in plain Markdown without speculative machinery or decorative prose.",
     "developerName": "Tim Coy",
     "category": "Developer Tools",
     "capabilities": [
@@ -29,9 +29,10 @@
     "websiteURL": "https://timc0y.github.io/simple/",
     "defaultPrompt": [
       "Use Simple for this architecture or change-design decision",
+      "Use Simple to write or revise this technical plan or documentation in plain Markdown",
       "Run a read-only Simple audit of this repository",
       "Use Simple to plan this change without implementing it",
-      "Review this design or diff with Simple"
+      "Review this design, document, or diff with Simple"
     ]
   }
 }

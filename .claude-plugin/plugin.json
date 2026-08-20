@@ -1,7 +1,7 @@
 {
   "name": "simple",
   "version": "0.5.0",
-  "description": "Ground architecture and change-design decisions in repository truth without unnecessary machinery.",
+  "description": "Ground software design in repository truth and write concise plans, documentation, comments, prompts, and handoffs in plain Markdown.",
   "author": {
     "name": "Tim Coy",
     "url": "https://github.com/timc0y"

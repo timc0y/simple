@@ -118,6 +118,19 @@ test("local install exposes one skill through each supported host", () => {
   ]);
 });
 
+test("skill activation stays narrow and capability profiles are bundled", () => {
+  const skill = readFileSync(join(process.cwd(), "skills", "simple", "SKILL.md"), "utf8");
+  const profiles = readFileSync(join(process.cwd(), "skills", "simple", "references", "model-profiles.md"), "utf8");
+  const schema = JSON.parse(readFileSync(join(process.cwd(), "evals", "results.schema.json"), "utf8"));
+
+  assert.match(skill, /Do not activate solely for routine/);
+  assert.match(skill, /autonomous/);
+  assert.match(skill, /guided/);
+  assert.match(skill, /scripted/);
+  assert.match(profiles, /Start with the autonomous profile/);
+  assert.equal(schema.properties.condition.enum.length, 3);
+});
+
 function completedProfile(root, label) {
   return readFileSync(join(root, "SIMPLE.md"), "utf8")
     .replace(/^<!-- simple-profile: incomplete.*-->\n\n/m, "")

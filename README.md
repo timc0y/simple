@@ -246,9 +246,11 @@ complexity earned by a real consequence and assign invariants to one owner:
 claude plugin eval simple@timc0y-simple --runs 1 --no-publish
 ```
 
-These evals are evidence only after they have been run and reviewed. Add instruction
-for a measured failure, then remove or replace it when the same evals show it is no
-longer useful.
+These evals are evidence only after they have been run and reviewed. Run paired
+`no-skill`, `canonical`, and `canonical-plus-adapter` conditions using the protocol in
+`evals/README.md`, and store results against `evals/results.schema.json`. Add
+instruction for a measured failure, then remove or replace it when the same evals show
+it is no longer useful.
 
 ## Direction
 

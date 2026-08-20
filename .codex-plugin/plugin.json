@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "Simple",
     "shortDescription": "Simple solutions grounded in repository reality",
-    "longDescription": "Give agents repository truth, explicit decision commands, objective evidence crawls, and engineering precedents so real obligations are preserved without speculative architecture.",
+    "longDescription": "Ground architecture and change-design decisions in repository truth, objective evidence, and capability-based guidance so real obligations are preserved without speculative machinery or hijacking routine work.",
     "developerName": "Tim Coy",
     "category": "Developer Tools",
     "capabilities": [
@@ -28,7 +28,7 @@
     ],
     "websiteURL": "https://timc0y.github.io/simple/",
     "defaultPrompt": [
-      "Use Simple to find the smallest truthful solution",
+      "Use Simple for this architecture or change-design decision",
       "Run a read-only Simple audit of this repository",
       "Use Simple to plan this change without implementing it",
       "Review this design or diff with Simple"

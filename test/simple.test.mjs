@@ -122,6 +122,7 @@ test("skill activation stays narrow and capability profiles are bundled", () => 
   const skill = readFileSync(join(process.cwd(), "skills", "simple", "SKILL.md"), "utf8");
   const profiles = readFileSync(join(process.cwd(), "skills", "simple", "references", "model-profiles.md"), "utf8");
   const schema = JSON.parse(readFileSync(join(process.cwd(), "evals", "results.schema.json"), "utf8"));
+  const site = readFileSync(join(process.cwd(), "src", "pages", "index.astro"), "utf8");
 
   assert.match(skill, /Do not activate solely for routine/);
   assert.match(skill, /autonomous/);
@@ -129,6 +130,8 @@ test("skill activation stays narrow and capability profiles are bundled", () => 
   assert.match(skill, /scripted/);
   assert.match(profiles, /Start with the autonomous profile/);
   assert.equal(schema.properties.condition.enum.length, 3);
+  assert.match(site, /Does Simple run on every task/);
+  assert.match(site, /How does it adapt to frontier models/);
 });
 
 function completedProfile(root, label) {

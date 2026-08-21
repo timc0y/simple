@@ -6,9 +6,10 @@ clearly.
 It is a portable agent skill with a repository context layer—not a replacement agent,
 runtime wrapper, or development framework. The skill has two connected modes: design
 for architecture and change decisions, and writing for concise plans, documentation,
-comments, Markdown, prompts, reviews, updates, and handoffs. A short local `SIMPLE.md`
-supplies the users, contracts, retained data, ordinary paths, proof, and
-reconsideration conditions that generic model training cannot know.
+comments, Markdown, prompts, reviews, updates, and handoffs. Source-backed operator
+lenses can challenge either mode without turning famous people into fictional personas.
+A short local `SIMPLE.md` supplies the users, contracts, retained data, ordinary paths,
+proof, and reconsideration conditions that generic model training cannot know.
 
 **[Visit the Simple site](https://timc0y.github.io/simple/)** · Open source · MIT
 
@@ -36,10 +37,11 @@ The public repository packages four parts around that method:
 
 - the portable `simple` skill and selectively loaded specialist references;
 - `simple init` and `simple check` for repository routing and profile structure;
-- thin audit, plan, review, and write workflows, plus hooks where a host supports them;
+- thin audit, plan, review, write, and source-backed emulate workflows, plus hooks where
+  a host supports them;
 - behavioural evals that test deletion, compatibility, ownership, proof, missing
-  addresses, root causes, plain developer writing, and complexity that genuinely pays
-  rent.
+  addresses, root causes, plain developer writing, operator attribution, implementation
+  safety, and complexity that genuinely pays rent.
 
 | Repository reality | Smallest truthful design |
 | --- | --- |
@@ -136,10 +138,12 @@ mandatory lifecycle.
 | `simple plan` | Design the smallest truthful change | Read-only |
 | `simple review` | Judge a design, plan, document, or diff | Read-only |
 | `simple write` | Create or revise concise developer writing in plain Markdown | Requested writing only |
+| `simple emulate` | Challenge a real problem with a sourced operator doctrine, then synthesize | Read-only |
 | `simple check` | Validate routing and profile structure | Read-only |
 
 `init` and `check` have deterministic CLI implementations. `audit`, `plan`, `review`,
-and `write` require model judgement and remain thin prompt entry points into `$simple`.
+`write`, and `emulate` require model judgement and remain thin prompt entry points into
+`$simple`.
 Claude Code exposes the files in `commands/` as slash commands; Codex exposes the same
 workflows through the skill and starter prompts.
 
@@ -169,6 +173,33 @@ content genuinely requires a design decision.
 
 The goal is clear, load-bearing prose—not ceremonial formatting or aggressive
 compression.
+
+## Operator emulation
+
+Simple can apply a documented engineering doctrine when you ask what a strong operator
+would do. It emulates the decision process, not voice, mannerisms, biography, private
+thoughts, or presumed current opinions.
+
+The default sequence is:
+
+```text
+baseline Simple solution
+→ independent operator lens
+→ lens blind spot
+→ optional contrasting lens
+→ synthesis against repository truth
+→ independent proof
+```
+
+Bundled lenses include SpaceX's documented five-step engineering sequence, a scoped
+Theo/T3 web-product lens, and a repository-first minimal-implementation ladder informed
+by Ponytail's public work. Each lens records provenance, scope, blind spots, and an
+output contract. `consult`, `challenge`, and `enforce` control its influence; repository
+truth, safety, authority, and proof always override operator prestige.
+
+This is separate from Parallax persona review. Parallax represents the person
+experiencing a rendered product. Simple emulates the engineer or operator solving the
+problem. Simulated reactions remain hypotheses, never user research or runtime proof.
 
 ## Hosts
 

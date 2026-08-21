@@ -37,6 +37,20 @@ test("init is the public setup command", () => {
   assert.equal(init, setup);
 });
 
+test("init upgrades the canonical legacy route without replacing custom instructions", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-"));
+  const legacy = "Before a change where repository facts could change the implementation, invoke `$simple` and read the nearest `SIMPLE.md`. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `plan`, `review`, or `check` for an explicit Simple workflow.";
+  writeFileSync(join(root, "AGENTS.md"), `# Repository instructions\n\nKeep this custom rule.\n\n## Simple\n\n${legacy}\n`);
+
+  init(root);
+
+  const agents = readFileSync(join(root, "AGENTS.md"), "utf8");
+  assert.match(agents, /Keep this custom rule/);
+  assert.match(agents, /simple write/);
+  assert.match(agents, /simple emulate/);
+  assert.doesNotMatch(agents, /Before a change where repository facts could change/);
+});
+
 test("check accepts a completed repository profile", () => {
   const root = mkdtempSync(join(tmpdir(), "simple-"));
   setup(root);
@@ -74,6 +88,8 @@ test("session hook injects the nearest nested profile", () => {
   const output = JSON.parse(result.stdout);
   assert.match(output.hookSpecificOutput.additionalContext, /Repository-specific Simple context/);
   assert.match(output.hookSpecificOutput.additionalContext, /app profile/);
+  assert.match(output.hookSpecificOutput.additionalContext, /design or writing/);
+  assert.match(output.hookSpecificOutput.additionalContext, /operator lens only when requested/);
   assert.doesNotMatch(output.hookSpecificOutput.additionalContext, /root profile/);
 });
 

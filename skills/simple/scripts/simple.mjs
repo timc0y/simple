@@ -6,6 +6,7 @@ import { pathToFileURL } from "node:url";
 
 export const MAX_PROFILE_CHARS = 6000;
 
+const LEGACY_ROUTE = "Before a change where repository facts could change the implementation, invoke `$simple` and read the nearest `SIMPLE.md`. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `plan`, `review`, or `check` for an explicit Simple workflow.";
 const ROUTE = "Invoke `$simple` and read the nearest `SIMPLE.md` before architecture, ownership, compatibility, migration, deletion, or broad refactoring decisions. Also use Simple writing mode for technical plans, documentation, comments, Markdown, prompts, reviews, progress updates, and handoffs that should be concise, plain, and load-bearing. Use `simple emulate` only when a source-backed operator lens is requested; emulate the decision doctrine, not personality, and synthesize against repository truth. Repository facts override speculative compatibility, migration, scale, and operator prestige. Use `simple init`, `audit`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow.";
 const PROFILE_TEMPLATE_PATH = new URL("../assets/SIMPLE.template.md", import.meta.url);
 const PROFILE = readFileSync(PROFILE_TEMPLATE_PATH, "utf8");
@@ -45,9 +46,12 @@ export function init(root = process.cwd()) {
   const agentsPath = resolve(root, "AGENTS.md");
   const claudePath = resolve(root, "CLAUDE.md");
   const profilePath = resolve(root, "SIMPLE.md");
-  const agents = existsSync(agentsPath) ? readFileSync(agentsPath, "utf8") : "";
+  let agents = existsSync(agentsPath) ? readFileSync(agentsPath, "utf8") : "";
 
-  if (!agents.includes("$simple") || !agents.includes("SIMPLE.md")) {
+  if (agents.includes(LEGACY_ROUTE)) {
+    agents = agents.replace(LEGACY_ROUTE, ROUTE);
+    writeFileSync(agentsPath, agents);
+  } else if (!agents.includes("$simple") || !agents.includes("SIMPLE.md")) {
     writeFileSync(agentsPath, `${agents.trimEnd()}${agents.trim() ? "\n\n" : ""}## Simple\n\n${ROUTE}\n`);
   }
 

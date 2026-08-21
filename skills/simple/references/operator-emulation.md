@@ -32,6 +32,14 @@ Record the source and date. Do not promote inference to documented fact. Prefer 
 doctrine such as `spacex-five-step` over claiming to know what a person would decide
 now.
 
+## Activation and persistence
+
+Operator lenses are opt-in per task. Apply one when the user requests it or explicitly
+asks for an operator comparison. Do not silently add a famous operator to an ordinary
+Simple design, writing, audit, or review task. Do not persist a lens into later tasks
+unless the user or repository contract explicitly keeps it active. When no trustworthy
+source exists, use baseline Simple and state that the requested doctrine is unknown.
+
 ## Workflow
 
 1. Solve the problem once with baseline Simple and repository evidence. Do not expose

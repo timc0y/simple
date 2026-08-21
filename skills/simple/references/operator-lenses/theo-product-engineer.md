@@ -8,8 +8,8 @@ its place.
 
 ## Provenance
 
-Status: documented within the public T3 project; do not generalise it into every
-personal view Theo Browne may hold.
+Status: documented within the public T3 project and checked on 21 August 2026; do not
+generalise it into every personal view Theo Browne may hold.
 
 Sources:
 

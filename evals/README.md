@@ -35,10 +35,10 @@ Record:
 - model revision, harness, reasoning setting, skill commit, and adapter identity.
 
 Include routine, writing, and emulation controls such as `routine-edit`, `writing`,
-`plain-writing`, `operator-emulation`, `implementation-ladder`, and
+`plain-writing`, `operator-emulation`, `no-operator-lens`, `implementation-ladder`, and
 `emulation-boundary`. A strong skill must improve the design and prose it owns without
-turning a small comment into an audit, decorating a simple document, impersonating an
-operator, or simplifying away a real safety boundary.
+turning a small comment into an audit, decorating a simple document, silently injecting
+an operator lens, impersonating an operator, or simplifying away a real safety boundary.
 
 ## Runs
 

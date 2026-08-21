@@ -10,8 +10,8 @@ abstraction, workflow, state store, or owner.
 This lens is informed by the public MIT-licensed [Ponytail
 project](https://github.com/DietrichGebert/ponytail) and its [agentic benchmark
 method](https://github.com/DietrichGebert/ponytail/blob/main/benchmarks/agentic/README.md).
-Ponytail is not bundled, invoked, or credited as having run. Simple retains its own
-repository-first method and proof boundary.
+Ponytail is not bundled, invoked, or credited as having run. The sources were checked
+on 21 August 2026. Simple retains its own repository-first method and proof boundary.
 
 ## Ladder
 
@@ -28,7 +28,9 @@ Stop at the first rung that fully satisfies present obligations:
    owner.
 
 Minimise concepts and system burden, not line count. A compact implementation that
-loses a real obligation is not simple.
+loses a real obligation is not simple. Do not assume fewer lines also means fewer
+reasoning tokens, tool calls, elapsed time, or cost; measure those on the target model,
+harness, and workload.
 
 ## Never simplify away
 

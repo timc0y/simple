@@ -11,7 +11,8 @@ Status: documented.
 
 Primary public source: Everyday Astronaut, [Starbase Tour and Interview with Elon
 Musk](https://everydayastronaut.com/starbase-tour-and-interview-with-elon-musk/),
-published in 2021. The source records an ordered five-step engineering process.
+published in 2021 and checked on 21 August 2026. The source records an ordered
+five-step engineering process.
 
 This lens applies that documented process. It does not claim to reproduce Musk's
 private reasoning or current opinion.

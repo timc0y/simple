@@ -1,4 +1,4 @@
-import { mkdtempSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
@@ -134,10 +134,14 @@ test("design, writing, and source-backed operator workflows stay distinct", () =
   const minimal = readFileSync(join(process.cwd(), "skills", "simple", "references", "operator-lenses", "minimal-implementation.md"), "utf8");
   const operatorEval = readFileSync(join(process.cwd(), "evals", "operator-emulation", "graders", "criteria.md"), "utf8");
   const boundaryEval = readFileSync(join(process.cwd(), "evals", "emulation-boundary", "graders", "criteria.md"), "utf8");
+  const noLensEval = readFileSync(join(process.cwd(), "evals", "no-operator-lens", "graders", "criteria.md"), "utf8");
   const profiles = readFileSync(join(process.cwd(), "skills", "simple", "references", "model-profiles.md"), "utf8");
+  const commandReference = readFileSync(join(process.cwd(), "skills", "simple", "references", "commands.md"), "utf8");
+  const openaiPrompt = readFileSync(join(process.cwd(), "skills", "simple", "agents", "openai.yaml"), "utf8");
   const schema = JSON.parse(readFileSync(join(process.cwd(), "evals", "results.schema.json"), "utf8"));
-  const site = readFileSync(join(process.cwd(), "src", "pages", "index.astro"), "utf8");
+  const readme = readFileSync(join(process.cwd(), "README.md"), "utf8");
   const marketplace = readFileSync(join(process.cwd(), ".claude-plugin", "marketplace.json"), "utf8");
+  const claudePlugin = readFileSync(join(process.cwd(), ".claude-plugin", "plugin.json"), "utf8");
   const codexPlugin = readFileSync(join(process.cwd(), ".codex-plugin", "plugin.json"), "utf8");
 
   assert.match(skill, /Writing is a first-class Simple mode/);
@@ -155,6 +159,8 @@ test("design, writing, and source-backed operator workflows stay distinct", () =
   assert.match(minimal, /Never simplify away/);
   assert.match(operatorEval, /operator prestige/);
   assert.match(boundaryEval, /customer feelings/);
+  assert.match(noLensEval, /does not name or apply/);
+  assert.match(operator, /opt-in per task/);
   assert.match(skill, /autonomous/);
   assert.match(skill, /guided/);
   assert.match(skill, /scripted/);
@@ -166,12 +172,17 @@ test("design, writing, and source-backed operator workflows stay distinct", () =
   assert.ok(taskSchema.required.includes("operatorAttributionErrors"));
   assert.ok(taskSchema.required.includes("safetyBoundaryViolations"));
   assert.ok(taskSchema.required.includes("unprovenSimulationClaims"));
-  assert.match(site, /What does writing mode produce/);
-  assert.match(site, /Can it emulate engineers or companies/);
-  assert.match(site, /How does it adapt to frontier models/);
+  assert.match(commandReference, /what must be preserved and what may be replaced/);
+  assert.match(commandReference, /complexity removed or avoided/);
+  assert.match(openaiPrompt, /operator emulation when requested/);
+  assert.equal(existsSync(join(process.cwd(), "src", "pages", "index.astro")), false);
+  assert.match(readme, /timcoy\.uk\/simple/);
+  assert.doesNotMatch(readme, /timc0y\.github\.io\/simple/);
   assert.match(marketplace, /plain developer-writing/);
+  assert.match(claudePlugin, /timcoy\.uk\/simple/);
   assert.match(codexPlugin, /technical-writing/);
   assert.match(codexPlugin, /plain Markdown/);
+  assert.match(codexPlugin, /timcoy\.uk\/simple/);
 });
 
 function completedProfile(root, label) {

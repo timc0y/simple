@@ -4,17 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
     "install:local": "node scripts/link-skill.mjs",
-    "test": "node --test test/*.test.mjs && astro check && astro build"
+    "test": "node --test test/*.test.mjs"
   },
-  "devDependencies": {
-    "@fontsource-variable/manrope": "^5.3.0",
-    "@fontsource-variable/newsreader": "^5.3.0",
-    "@astrojs/check": "^0.9.4",
-    "astro": "^7.2.3",
-    "typescript": "^5.9.3"
-  }
+  "devDependencies": {}
 }

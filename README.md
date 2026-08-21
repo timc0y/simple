@@ -7,7 +7,7 @@ runtime wrapper, or development framework. The skill teaches one general method.
 short local `SIMPLE.md` supplies the users, contracts, retained data, ordinary paths,
 proof, and reconsideration conditions that generic model training cannot know.
 
-**[Visit the Simple site](https://timc0y.github.io/simple/)** · Open source · MIT
+**[Visit the Simple site](https://timcoy.uk/simple/)** · Open source · MIT
 
 [![skills.sh](https://skills.sh/b/timc0y/simple)](https://skills.sh/timc0y/simple)
 
@@ -199,14 +199,9 @@ and Gemini. There is one maintained copy of the guidance, not a host-specific fo
 
 ## Website
 
-The public site is a static Astro build from `src/pages/index.astro`. Run it locally:
-
-```sh
-npm install
-npm run dev
-```
-
-Build the deployable site with `npm run build`; output is written to `dist/`.
+The public site is part of Tim's personal site and is published at
+[timcoy.uk/simple](https://timcoy.uk/simple/). This repository owns the skill; the
+personal-site repository owns the page and its deployment.
 
 ## Evidence
 

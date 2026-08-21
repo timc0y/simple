@@ -88,4 +88,5 @@ Write in plain Markdown. Do not perform an impression or write in the operator's
   safety boundaries, and explicit upgrade triggers.
 
 A user-supplied lens is valid when its sources, scope, principles, blind spots, and
-output contract are equally explicit.
+output contract are equally explicit. Start from `operator-lenses/TEMPLATE.md` rather
+than inventing a personality prompt.

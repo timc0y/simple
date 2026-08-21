@@ -15,7 +15,8 @@ authorizes more.
 Read `audit.md`. Audit is read-only unless the user separately requests fixes. Return a
 verdict, evidence, present obligations, ownership and ordinary-path findings, unpaid
 complexity, profile contradictions, proof gaps, highest-value actions, and material
-unknowns.
+unknowns. When an operator lens is requested, establish the baseline audit first and
+apply the lens independently before synthesis.
 
 ## `simple plan`
 
@@ -42,7 +43,9 @@ Create or revise a plan, document, comment, Markdown file, prompt, review, updat
 handoff. Read `writing.md` and `communication.md`. Read the nearest `SIMPLE.md` only for
 facts the content depends on. Preserve the meaning, use the smallest useful structure,
 and return plain Markdown or the requested comment without meta-commentary. Do not
-expand the task into design analysis unless the content requires it.
+expand the task into design analysis unless the content requires it. When an operator
+lens is requested, use it to challenge the content or underlying decision; never imitate
+its voice or mannerisms.
 
 ## `simple emulate`
 

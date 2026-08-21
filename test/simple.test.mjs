@@ -1,4 +1,4 @@
-import { existsSync, mkdtempSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
@@ -30,7 +30,10 @@ test("init is the public setup command", () => {
   const result = spawnSync(process.execPath, [simpleCli, "init", root], { encoding: "utf8" });
   assert.equal(result.status, 0);
   assert.equal(JSON.parse(result.stdout).ready, false);
-  assert.ok(readFileSync(join(root, "AGENTS.md"), "utf8").includes("simple init"));
+  const route = readFileSync(join(root, "AGENTS.md"), "utf8");
+  assert.ok(route.includes("simple init"));
+  assert.ok(route.includes("simple write"));
+  assert.ok(route.includes("simple emulate"));
   assert.equal(init, setup);
 });
 
@@ -183,6 +186,19 @@ test("design, writing, and source-backed operator workflows stay distinct", () =
   assert.match(codexPlugin, /technical-writing/);
   assert.match(codexPlugin, /plain Markdown/);
   assert.match(codexPlugin, /timcoy\.uk\/simple/);
+});
+
+test("evals that request repository context include a SIMPLE.md fixture", () => {
+  const evalRoot = join(process.cwd(), "evals");
+  for (const entry of readdirSync(evalRoot, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const prompt = join(evalRoot, entry.name, "prompt.md");
+    if (!existsSync(prompt)) continue;
+    const text = readFileSync(prompt, "utf8");
+    if (text.includes("SIMPLE.md")) {
+      assert.equal(existsSync(join(evalRoot, entry.name, "SIMPLE.md")), true, entry.name);
+    }
+  }
 });
 
 function completedProfile(root, label) {

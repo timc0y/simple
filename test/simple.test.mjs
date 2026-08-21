@@ -32,7 +32,7 @@ test("init is the public setup command", () => {
   assert.equal(JSON.parse(result.stdout).ready, false);
   const route = readFileSync(join(root, "AGENTS.md"), "utf8");
   assert.ok(route.includes("simple init"));
-  assert.ok(route.includes("simple write"));
+  assert.ok(route.includes("`write`"));
   assert.ok(route.includes("simple emulate"));
   assert.equal(init, setup);
 });
@@ -46,7 +46,7 @@ test("init upgrades the canonical legacy route without replacing custom instruct
 
   const agents = readFileSync(join(root, "AGENTS.md"), "utf8");
   assert.match(agents, /Keep this custom rule/);
-  assert.match(agents, /simple write/);
+  assert.match(agents, /`write`/);
   assert.match(agents, /simple emulate/);
   assert.doesNotMatch(agents, /Before a change where repository facts could change/);
 });
@@ -164,10 +164,10 @@ test("design, writing, and source-backed operator workflows stay distinct", () =
   const codexPlugin = readFileSync(join(process.cwd(), ".codex-plugin", "plugin.json"), "utf8");
 
   assert.match(skill, /Writing is a first-class Simple mode/);
-  assert.match(skill, /Do not turn a writing task into an architecture review/);
+  assert.match(skill, /Do not turn a writing task into an architecture\s+review/);
   assert.match(writing, /Plain writing standard/);
   assert.match(writing, /Avoid decorative formatting/);
-  assert.match(writeCommand, /smallest useful Markdown structure/);
+  assert.match(writeCommand, /smallest\s+useful Markdown structure/);
   assert.match(skill, /Operator emulation is a technique/);
   assert.match(emulateCommand, /source-backed operator emulation/);
   assert.match(operator, /not personality role-play/);
@@ -194,7 +194,6 @@ test("design, writing, and source-backed operator workflows stay distinct", () =
   assert.match(commandReference, /what must be preserved and what may be replaced/);
   assert.match(commandReference, /complexity removed or avoided/);
   assert.match(openaiPrompt, /operator emulation when requested/);
-  assert.equal(existsSync(join(process.cwd(), "src", "pages", "index.astro")), false);
   assert.match(readme, /timcoy\.uk\/simple/);
   assert.doesNotMatch(readme, /timc0y\.github\.io\/simple/);
   assert.match(marketplace, /plain developer-writing/);

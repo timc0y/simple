@@ -75,6 +75,22 @@ strong baseline model on this suite at one run per condition. The suite's remain
 value is concentrated in the adversarial cases; the two all-fail cases need contract
 review before their results count as evidence.
 
+## Correction, 21 August 2026
+
+The `no-skill` baseline was contaminated. The Simple plugin's `SubagentStart` hook
+fired for all 96 agents, injecting this repository's `SIMPLE.md` and the "smallest
+truthful design, plain prose" instruction into every solver — including the no-skill
+arm. Transcript check: 96 of 96 agent transcripts contain "Repository-specific Simple
+context". Ponytail retracted its 2026-06-17 agentic run for the same defect (its
+SessionStart hook ran on every arm).
+
+Read the tally accordingly: `no-skill 13/16` measures a hook-injected mini-Simple
+floor, not a bare model, so the near-parity across conditions overstates the baseline
+and understates any skill-file effect. Cross-condition deltas (the `mutation-interval`
+win, the `unknown-write` regression) compare skill files on top of that shared floor
+and remain informative. The next run must isolate arms: run solvers with hooks
+disabled or in a workspace outside this repository.
+
 ## Repeat this run
 
 1. Snapshot each skill version: `git archive <ref> skills/simple | tar -x -C <dir>`.

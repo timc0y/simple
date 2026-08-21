@@ -1,0 +1,1 @@
+// Returns milliseconds, not seconds.

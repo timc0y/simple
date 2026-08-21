@@ -1,0 +1,394 @@
+{
+  "run": "2026-08-21-local-sonnet",
+  "date": "2026-08-21",
+  "harness": "Claude Code Workflow, 1 run per case-condition, run id wf_89f08d08-2f9",
+  "solverModel": "claude-sonnet-5",
+  "graderModel": "claude-fable-5 (effort low), one grader per solution, strict criteria match",
+  "conditions": {
+    "no-skill": null,
+    "v0.5": "skills/simple at main 399ebe5",
+    "forge": "skills/simple at forge/skill-activation-and-model-profiles dc08b28"
+  },
+  "isolation": "solvers saw prompt.md and SIMPLE.md fixtures only (graders/ hidden); skill versions snapshotted via git archive",
+  "tally": {
+    "no-skill": {
+      "pass": 13,
+      "fail": 3
+    },
+    "v0.5": {
+      "pass": 12,
+      "fail": 4
+    },
+    "forge": {
+      "pass": 13,
+      "fail": 3
+    }
+  },
+  "results": [
+    {
+      "caseName": "emulation-boundary",
+      "condition": "forge",
+      "pass": false,
+      "failures": [
+        "Does not distinguish Simple operator emulation from Parallax audience/product review \u2014 Parallax is never mentioned anywhere; the solution only contrasts emulating a 'documented decision process, never the person', so this required distinction is absent.",
+        "Only partially satisfies the proof-route condition: it names real user evidence ('support tickets, drop-off data, feedback') but never offers Parallax review as an alternative proof route; passes on the 'real user evidence' arm, noted here only insofar as Parallax is absent throughout."
+      ],
+      "notable": "The solution is otherwise strong: it refuses the persona and fabricated sentiment cleanly, marks customer reaction as 'a hypothesis at best... never user research', avoids all fail conditions, and correctly offers only the source-backed SpaceX five-step doctrine (with its compliance blind spot flagged). It fails solely because the required Simple-vs-Parallax distinction never appears."
+    },
+    {
+      "caseName": "emulation-boundary",
+      "condition": "no-skill",
+      "pass": false,
+      "failures": [
+        "Does not distinguish Simple operator emulation from Parallax audience/product review; neither the emulation reference nor Parallax is mentioned anywhere (the closest is a generic 'Applying the smallest-truthful-design standard here').",
+        "Does not offer the source-backed SpaceX five-step doctrine as the legitimate way to challenge the page's requirements, distinctions, process, or implementation; the counter-offer is generic pricing-page best practices ('review it against established, checkable pricing-page practices \u2014 clarity of tiers, anchoring, plan naming...').",
+        "Does not identify Parallax review as a proof route; only generic real customer signal is proposed ('support tickets about pricing confusion, churn survey comments...')."
+      ],
+      "notable": "The solution cleanly avoids all fail conditions \u2014 it refuses the impression, fabricates nothing, and marks customer reactions as unknown \u2014 but it appears not to have consulted the Simple operator-emulation reference at all, so it misses the doctrine-based redirect the eval is designed to test."
+    },
+    {
+      "caseName": "emulation-boundary",
+      "condition": "v0.5",
+      "pass": false,
+      "failures": [
+        "Does not distinguish Simple operator emulation from Parallax audience and product review \u2014 neither 'operator emulation' nor 'Parallax' appears anywhere in the solution.",
+        "Does not offer the source-backed SpaceX five-step doctrine for challenging the page's requirements/process/implementation \u2014 the alternatives offered are generic ('established conversion and pricing UX practice \u2014 clarity of tiers, anchoring, comparison tables, CTA hierarchy, trust signals'), with no five-step algorithm.",
+        "Does not identify Parallax review as a proof route; it names only 'real customer evidence (support tickets, churn interviews, funnel drop-off data, survey verbatims)' and omits the Parallax half of the required proof route."
+      ],
+      "notable": "The refusal itself is strong: it avoids every fail condition (no impression, no fabricated sentiment, no appeal to Musk's authority) and correctly marks customer reaction as unknown, but it fails because it substitutes generic UX practice for the specific Simple/Parallax/SpaceX-doctrine framing the criteria require."
+    },
+    {
+      "caseName": "fake-compatibility",
+      "condition": "forge",
+      "pass": true,
+      "failures": [],
+      "notable": "The solution meets every pass condition precisely: it rejects compatibility machinery on the grounds of no present consumer, data, or promise (\"no external consumer is observed... no compatibility commitments\"), routes the change \"through the existing account module,\" and cites the fixture's exact proof (\"Run the account tests and type-check\" the caller). It even correctly quotes the Reconsider trigger and defers any adapter until a real consumer exists, with no invented versions, aliases, or dual paths."
+    },
+    {
+      "caseName": "fake-compatibility",
+      "condition": "no-skill",
+      "pass": true,
+      "failures": [],
+      "notable": "The solution meets every pass condition: it rejects compatibility machinery citing the absence of consumers, data, and commitments (\"Don't add a backwards-compatible version\"), directs the change through the existing module with its one caller, and cites the profile's proof step (\"Run the account tests and type-check the callers\"). It invents no versions, dual paths, or API prerequisites, and correctly quotes the reconsideration condition; a notably clean, fact-grounded answer."
+    },
+    {
+      "caseName": "fake-compatibility",
+      "condition": "v0.5",
+      "pass": true,
+      "failures": [],
+      "notable": "The solution meets every pass condition: it rejects compatibility machinery citing no present consumer, data, or promise (\"no published client, no external consumer, and no retained data\"), directs a direct in-place change (\"no versioned/parallel API, no adapter, no deprecation shim\"), and includes the profile's proof step (account tests plus type-check of callers), with a correct reconsideration trigger."
+    },
+    {
+      "caseName": "future-service",
+      "condition": "forge",
+      "pass": true,
+      "failures": [],
+      "notable": "The solution cleanly refuses both service and queue (\"Keep report generation and persistence in the report module, unchanged\"), cites only the fixture's facts, quotes the exact reconsideration trigger (\"measured load or an independent operational lifecycle requiring isolation\"), and never substitutes a story or best practice for the missing requirement; the closing section on near-term certainty still demands concrete evidence rather than conceding."
+    },
+    {
+      "caseName": "future-service",
+      "condition": "no-skill",
+      "pass": true,
+      "failures": [],
+      "notable": "The solution refuses the service and queue (\"I'm not going to introduce a service abstraction and queue\"), keeps generation \"owned by the report module, in-process, using the current store\", and its reconsideration conditions (measured load, independent operational lifecycle) mirror the fixture's SIMPLE.md exactly; no engineering story or generic best practice supplies a missing requirement."
+    },
+    {
+      "caseName": "future-service",
+      "condition": "v0.5",
+      "pass": true,
+      "failures": [],
+      "notable": "Clean pass: it refuses the service/queue (\"don't introduce a service abstraction or queue\"), keeps ownership with the report module, cites the fixture's exact reconsideration condition rather than inventing requirements, and even proposes measuring first before revisiting. The \"pay rent\" worksheet is filled truthfully with \"None measured\" rather than smuggling in best-practice justifications."
+    },
+    {
+      "caseName": "implementation-ladder",
+      "condition": "forge",
+      "pass": true,
+      "failures": [],
+      "notable": "Exemplary answer: it stops at the native rung with a labelled input wired into the existing path (\"same name/onChange/validation call\"), explicitly rejects libraries and wrappers, records the ceiling with SIMPLE.md's exact reconsider triggers, and proposes real component/keyboard/browser proofs rather than treating the ladder itself as verification."
+    },
+    {
+      "caseName": "implementation-ladder",
+      "condition": "no-skill",
+      "pass": true,
+      "failures": [],
+      "notable": "Cleanly hits every pass condition: stops at native `<input type=\"date\">` with a programmatic label (\"via `htmlFor`/`id`, not `aria-label`\"), reuses the existing validation/submission path, explicitly rejects picker libraries and wrappers, records the styling/range/timezone ceiling with concrete upgrade triggers matching the fixture's reconsider conditions, and specifies a focused component test, keyboard check, and browser verification rather than treating the ladder as proof."
+    },
+    {
+      "caseName": "implementation-ladder",
+      "condition": "v0.5",
+      "pass": true,
+      "failures": [],
+      "notable": "Meets every pass condition explicitly: native labelled `<input type=\"date\">` on the existing validation/submit path, rejects library/wrapper/custom calendar, states the ceiling with the range/timezone trigger, and notably distinguishes real-browser verification from jsdom approximation (\"the layer a test-environment approximation ... cannot substitute for\"), directly avoiding the ladder-as-proof fail condition."
+    },
+    {
+      "caseName": "missing-precondition",
+      "condition": "forge",
+      "pass": false,
+      "failures": [
+        "Does not test a temporary hidden native element bound to the same record as the supported address; instead the entire design rests on a selection-scoped handle: \"Select the target placed instance on the canvas or in the object tree... request the structured editor handle for the property, scoped to the current selection\"",
+        "Never considers retaining an idempotently discoverable adapter after the experiment; retention is required to be conditioned on creation, reload, reuse, failure cleanup, API readback, and original-renderer proof, but the solution has no adapter at all and no reuse or cleanup steps: \"Supply the missing precondition through a supported selection API, nothing else\""
+      ],
+      "notable": "The solution correctly frames the problem as addressability rather than ownership, preserves the platform as sole owner, fails closed, and includes a genuine falsifiable experiment with sibling-instance bleed checks \u2014 but it solves via a selection API the case says the SDK never exposes, missing the intended hidden-native-element adapter design entirely."
+    },
+    {
+      "caseName": "missing-precondition",
+      "condition": "no-skill",
+      "pass": false,
+      "failures": [
+        "Does not test a temporary hidden native element bound to the same record as a supported address \u2014 the required first experiment. Instead it bets entirely on navigation/selection state: \"Use the SDK's supported entry/selection operation to move into the specific placed instance\" and \"Navigate, don't identify.\"",
+        "Does not consider the retained idempotently discoverable adapter at all; the design ends at \"navigate to establish occurrence identity, then use the existing write path,\" with no adapter retention decision gated on creation, reload, reuse, failure cleanup, API readback, and renderer proof.",
+        "Borderline fail condition on automating private UI behaviour: the approach depends on live editor selection state (\"entering a nested instance on the canvas resolves the instance path implicitly, the same way double-clicking through instances always has\"). It disclaims scripting keystrokes, but the fixture says the supported API \"cannot select this nested placement directly,\" so relying on canvas-entry selection leans on editor UI behaviour rather than a supported address."
+      ],
+      "notable": "Strong reasoning quality: it correctly frames the problem as addressability vs identity, preserves platform ownership, avoids cloning/duplication/second write paths, and includes a genuinely falsifiable, reversible experiment with explicit dead-end criteria \u2014 but it solves it with the wrong mechanism (selection-derived handles) and never reaches the hidden-native-element address the criteria require."
+    },
+    {
+      "caseName": "missing-precondition",
+      "condition": "v0.5",
+      "pass": false,
+      "failures": [
+        "Pass condition not met: the solution never tests 'a temporary hidden native element bound to the same record as a supported address'. Instead it proposes only a traversal resolver: 'the fix is a resolver, not a mechanism: starting from the specific placed instance... walk its own children down the same structural path'.",
+        "Pass condition not met: it never considers 'retaining one idempotently discoverable adapter' after proof of creation, reload, reuse, failure cleanup, API readback, and original-renderer proof; its experiment covers readback and renderer checks but no adapter, creation, reuse, or failure-cleanup steps ('If all five hold, the resolver is sufficient and no new mechanism... is needed')."
+      ],
+      "notable": "The solution cleanly distinguishes ownership from addressability ('The missing precondition is a correct address... not a new capability, not moved ownership') and avoids every fail condition (no duplication, cloning, external mapping, UI automation, or second source of truth), with a well-designed two-instance reversible experiment \u2014 but it bets on direct subtree addressability rather than the criteria's required temporary-hidden-element bridge, so it misses the specific pass mechanism."
+    },
+    {
+      "caseName": "mutation-interval",
+      "condition": "forge",
+      "pass": true,
+      "failures": [],
+      "notable": "Unusually complete: dead-holder conversion is fused into the acquire critical section, receipt-write failure fails closed and reuses the same crash-recovery path, and the test plan uses real processes with SIGKILL at every named transition plus an idempotency-keyed fake endpoint. The uncertainty check correctly happens after acquire, avoiding the check-before-acquire trap."
+    },
+    {
+      "caseName": "mutation-interval",
+      "condition": "no-skill",
+      "pass": false,
+      "failures": [
+        "Fail condition 'checks before acquiring': the solution orders dead-holder conversion and the receipt check before lock acquisition rather than inside a held lock. Evidence: begin() step 1 converts a dead holder \"before acquisition can proceed\", step 2 checks the receipt, and only in step 3 \"Only if no receipt exists does begin() return a held lock.\" The criteria's required interval is \"acquire the lock, convert a dead holder, reject outstanding uncertainty...\", so performing the conversion and uncertainty check outside the lock leaves a check-then-acquire window between competing processes."
+      ],
+      "notable": "Otherwise a strong answer: single owner with begin()/end(), release conditioned on durable receipt, fail-closed receipt-write failure that reuses the dead-holder path as equivalent durable evidence, and a genuine multi-process kill-at-every-transition test. The only defect is the check/convert-before-acquire ordering, which is an explicit fail condition."
+    },
+    {
+      "caseName": "mutation-interval",
+      "condition": "v0.5",
+      "pass": false,
+      "failures": [
+        "Fail condition 'checks before acquiring': the canonical sequence performs the receipt check and dead-holder conversion before lock acquisition \u2014 \"1. inspect the lock ... 2. if a receipt exists ... refuse ... 3. acquire the lock\" \u2014 leaving a window where a receipt recorded by another process between step 2 and step 3 is not seen, whereas the criteria require acquire first, then convert/reject under the lock. The prose claim that \"the conversion is what acquiring means now\" contradicts, but does not correct, the stated check-then-acquire ordering."
+      ],
+      "notable": "Otherwise strong: single owner for the whole interval, release strictly after recording, fail-closed handling of receipt-write failure (lock kept held, crash recovered via dead-holder conversion), no new coordinator, no per-feature duplication, and a genuinely external test plan using real processes, forced kills, and endpoint call counts. The one ordering flaw (check before acquire) is exactly the kind of TOCTOU gap the task is about."
+    },
+    {
+      "caseName": "no-operator-lens",
+      "condition": "forge",
+      "pass": true,
+      "failures": [],
+      "notable": "The review grounds every point in the fixture's SIMPLE.md facts (internal helper, three callers, no consumers), preserves behaviour and the stated proof steps, and never invokes SpaceX, Musk, or any operator doctrine; the bolded bullet labels are functional rather than decorative, and the closing reconsideration condition mirrors the fixture exactly."
+    },
+    {
+      "caseName": "no-operator-lens",
+      "condition": "no-skill",
+      "pass": true,
+      "failures": [],
+      "notable": "Exemplary: the solution grounds every judgement in the fixture's stated facts, explicitly declines aliases, phased renames, and changelog ceremony, and reproduces the fixture's proof steps and reconsideration condition without naming any operator doctrine."
+    },
+    {
+      "caseName": "no-operator-lens",
+      "condition": "v0.5",
+      "pass": true,
+      "failures": [],
+      "notable": "The review is grounded entirely in the fixture's repository facts (\"SIMPLE.md states no external consumers... no compatibility commitment\"), preserves the stated proof (tests, type-check, grep for old name) and reconsideration condition, and never names SpaceX, Musk, or any operator doctrine. The checklist structure is functional rather than decorative, and it explicitly rejects unjustified compatibility shims and unrelated changes."
+    },
+    {
+      "caseName": "operator-emulation",
+      "condition": "forge",
+      "pass": true,
+      "failures": [],
+      "notable": "Strong solution: the baseline reuses the runner, report module, mailer, and Zod; the five-step pass deletes all four proposed pieces with per-item requirement challenges, cites the doctrine's documented source rather than impersonating or claiming current opinions, and states the blind spot with why it does not apply here; synthesis names the SIMPLE.md proof set and the exact reconsideration condition for a queue or worker."
+    },
+    {
+      "caseName": "operator-emulation",
+      "condition": "no-skill",
+      "pass": true,
+      "failures": [],
+      "notable": "Strong solution: the baseline reuses the runner, report module, mailer, and Zod; the doctrine pass deletes all four proposed pieces with fact-backed reasons; the blind spot (\"no built-in step that verifies against the specific system's source and facts\") is plausible; synthesis names focused proof and the exact reconsideration condition from the fixture, with no impersonation or invented requirements."
+    },
+    {
+      "caseName": "operator-emulation",
+      "condition": "v0.5",
+      "pass": true,
+      "failures": [],
+      "notable": "Strong answer: the baseline rests entirely on the fixture's facts (existing runner, report module, mailer, Zod), the SpaceX pass explicitly deletes the queue, event bus, microservice, and schema language with reasons, and the blind spot is well-argued (the doctrine assumes grounding it does not produce, and unguarded deletion could remove obligations like retry and boundary validation). Proof and the reconsider-when condition mirror the SIMPLE.md verbatim; no impersonation or invented requirements. Minor quibble: the synthesis's claim that proof exercises \"not the new job's internal code path\" slightly contradicts the named \"focused job test\", but it does not violate any criterion."
+    },
+    {
+      "caseName": "ordinary-path",
+      "condition": "forge",
+      "pass": true,
+      "failures": [],
+      "notable": "The solution adds exactly one job on the existing runner (\"register a job with the existing runner on a daily schedule\"), explicitly declines new machinery (\"Not introduced: a new worker system, a new scheduler, a new queue, or a second retry mechanism\"), and proves all four required behaviours (scheduling, execution, retry, idempotency) through the runner. The \"Missing precondition\" section on upsert keys and partial-failure semantics is a notably strong, non-speculative addition."
+    },
+    {
+      "caseName": "ordinary-path",
+      "condition": "no-skill",
+      "pass": true,
+      "failures": [],
+      "notable": "The solution adds exactly one job to the existing runner (\"one job function registered with the existing runner\") and its Proof section verifies all four required properties (scheduling, execution, retry, idempotency); it explicitly declines new queue/worker/scheduler infrastructure and speculative abstractions, and even gates optional additions (checkpoints, locking) behind observed need."
+    },
+    {
+      "caseName": "ordinary-path",
+      "condition": "v0.5",
+      "pass": true,
+      "failures": [],
+      "notable": "Exemplary: single job on the existing runner with upsert-by-external-ID as the only new logic, proof steps run through the runner itself, and each omitted component (queue, worker, scheduler, batching framework) is tied to a stated repository fact and a reconsideration condition. It also lists genuinely missing facts (source, external ID, field ownership) without inventing assumptions."
+    },
+    {
+      "caseName": "plain-writing",
+      "condition": "forge",
+      "pass": true,
+      "failures": [],
+      "notable": "Clean minimal plan: preserves the supplied facts (\"three internal callers, no external consumers... no compatibility promises\"), proposes a direct rename with no aliases, phases, or migration, and names three proof surfaces (tests, type-check, repository search). Step 3's mention of \"imports, re-exports, mocks, comments, docs\" is search hygiene rather than invented facts, so it does not trip the fail conditions."
+    },
+    {
+      "caseName": "plain-writing",
+      "condition": "no-skill",
+      "pass": true,
+      "failures": [],
+      "notable": "Clean minimal plan: direct rename, no compatibility inventions, all three proof surfaces (tests, type-check, reference search) named. The fixture SIMPLE.md at evals/plain-writing/SIMPLE.md does not exist, so grading relied on criteria.md only."
+    },
+    {
+      "caseName": "plain-writing",
+      "condition": "v0.5",
+      "pass": true,
+      "failures": [],
+      "notable": "Clean minimal plan: explicitly rules out alias/deprecation (\"no alias or deprecation step is needed\") and names all three proof surfaces. The task fixture SIMPLE.md was absent, so grading relied on criteria.md alone."
+    },
+    {
+      "caseName": "prelaunch",
+      "condition": "forge",
+      "pass": true,
+      "failures": [],
+      "notable": "The plan grounds each avoided mechanism in specific fixture facts (\"no persistent production data and no external consumer to migrate\") rather than a bare \"no users\" claim, includes concrete verification (tests, type-check, full-text search for residual account_id), and adds a sound reconsideration condition mirroring the fixture's."
+    },
+    {
+      "caseName": "prelaunch",
+      "condition": "no-skill",
+      "pass": true,
+      "failures": [],
+      "notable": "Strong answer: it grounds the direct rename in all three stated facts (\"no external consumers, no persistent production data, no compatibility commitments\"), explicitly rules out aliases, dual writes, phased migrations, flags and versioned fields, verifies via the fixture's tests and type-check, and reproduces the reconsideration condition. Slightly more elaborate than the fixture's \"rename through the existing model and its callers\", but nothing added violates the criteria."
+    },
+    {
+      "caseName": "prelaunch",
+      "condition": "v0.5",
+      "pass": true,
+      "failures": [],
+      "notable": "Strong answer: direct rename with full-fidelity verification (tests, type-check, plus a literal-string grep for account_id/accountId to catch stringly-typed uses), explicitly justified by the combined absence of external consumers, production data, and compatibility commitments rather than \"no users\" alone, with a correct reconsideration trigger."
+    },
+    {
+      "caseName": "production-data",
+      "condition": "forge",
+      "pass": true,
+      "failures": [],
+      "notable": "Strong answer: it cleanly separates the internal column rename (backfill, verify, drop after rollback window) from the externally promised API field name (single serialization adapter emitting/accepting both names), covers all four proof items (stored data, both representations, rollback, removal criteria), and ties removal to the 90-day window plus zero old-name traffic. A nice extra is rejecting requests that send both field names with conflicting values."
+    },
+    {
+      "caseName": "production-data",
+      "condition": "no-skill",
+      "pass": true,
+      "failures": [],
+      "notable": "Strong answer: expand/migrate/contract with dual read/write preserves data and the 90-day contract, maps proof directly to the fixture's Proof section, gates removal on the exact Reconsider condition (\"90-day period has elapsed, and measured old-client traffic ... is zero\"), includes a rehearsed rollback, and adds no unrelated infrastructure."
+    },
+    {
+      "caseName": "production-data",
+      "condition": "v0.5",
+      "pass": true,
+      "failures": [],
+      "notable": "Unusually thorough: it flags the atomic-vs-expand/contract question as a material unknown to establish from the mechanism rather than assuming, ties the removal condition to observed traffic plus the 90-day clock, and even schedules deletion of the transition-only monitoring itself."
+    },
+    {
+      "caseName": "routine-edit",
+      "condition": "forge",
+      "pass": true,
+      "failures": [],
+      "notable": "The solution is exactly one concise code comment (\"// Returns the value in milliseconds.\") with no audit, plan, or extra prose \u2014 a clean minimal pass. Note the fixture SIMPLE.md at /Users/tim/Code/personal/simple/evals/routine-edit/SIMPLE.md does not exist."
+    },
+    {
+      "caseName": "routine-edit",
+      "condition": "no-skill",
+      "pass": true,
+      "failures": [],
+      "notable": "Solution is exactly one concise code comment (\"// Returns the value in milliseconds.\") with no audit, plan, formatting, or extra prose \u2014 a clean minimal pass."
+    },
+    {
+      "caseName": "routine-edit",
+      "condition": "v0.5",
+      "pass": true,
+      "failures": [],
+      "notable": "The solution is exactly one concise comment (\"// Returns milliseconds, not seconds.\") with no audit, plan, architecture talk, or extra prose \u2014 a clean, minimal pass."
+    },
+    {
+      "caseName": "startup-root-cause",
+      "condition": "forge",
+      "pass": true,
+      "failures": [],
+      "notable": "Exemplary: it explicitly withholds the fix pending attribution (\"If it doesn't account for most of the 180 ms... the search continues before anything ships\"), separates the path constant/generated JSON from the generator/compiler as the smallest change, enumerates the full daemon removal list including parity tests and the compensating lazy route loader, treats bundling as measure-only fallback, keeps task records as durable data, and grounds residency reconsideration in measured capability rather than one-user status."
+    },
+    {
+      "caseName": "startup-root-cause",
+      "condition": "no-skill",
+      "pass": true,
+      "failures": [],
+      "notable": "Meets every pass condition explicitly: demands an import-time breakdown (\"`-X importtime` or an equivalent per-module timer\") before relying on attribution, isolates the inert path constant/JSON from the generator/compiler as the smallest change, remeasures cold latency, removes the full daemon apparatus while noting task records are \"durable data on disk\", defers bundling (\"suggested but not measured\"), and gives a capability-based residency condition rather than one-user status. Unusually complete and well-ordered solution."
+    },
+    {
+      "caseName": "startup-root-cause",
+      "condition": "v0.5",
+      "pass": true,
+      "failures": [],
+      "notable": "Strong solution: it explicitly demands an import-time trace before relying on the diagnosis (\"confirm the generator \u2192 compiler import chain is on the critical path\"), separates the inert path constant into reading generated JSON, remeasures cold starts, enumerates the full daemon apparatus for removal (server, second composition root, duplicate route table, parity tests, lazy loader) while noting durable records stay as data on disk, rejects unmeasured bundling, and justifies residency by capability rather than user count."
+    },
+    {
+      "caseName": "unknown-write",
+      "condition": "forge",
+      "pass": false,
+      "failures": [
+        "Pass condition not met: 'explicit human resolution records what was inspected' \u2014 the solution's recovery only deletes the marker without recording the operator's finding: 'then runs the recovery command to remove the record'. Nothing is written about what was inspected or what outcome was determined."
+      ],
+      "notable": "Otherwise an exemplary answer: exactly one durable pre-dispatch record with conservative failure direction, reads stay open, mutations fail closed on malformed state, enforcement lives in the shared mutation startup path, and it includes a correct reconsider-when trigger matching the fixture. It misses only the requirement that recovery record the inspection result."
+    },
+    {
+      "caseName": "unknown-write",
+      "condition": "no-skill",
+      "pass": true,
+      "failures": [],
+      "notable": "Unusually complete: it also covers the force-clear path for markers that no longer name their target, and explicitly cites the Reconsider-when condition for removing durable local uncertainty. Write-before-dispatch atomic marker semantics are correctly reasoned in both crash directions."
+    },
+    {
+      "caseName": "unknown-write",
+      "condition": "v0.5",
+      "pass": false,
+      "failures": [
+        "Pass condition 'explicit human resolution records what was inspected' is not met: the recovery command is defined as clearing only, with no record of the operator's findings \u2014 \"an explicit recovery command remains available ... whose only job is to clear the marker. It performs no retry and no mutation itself\" and \"runs the explicit recovery command to clear the marker\". Nothing in the design captures what was inspected or decided at resolution time."
+      ],
+      "notable": "Otherwise an exemplary answer: exactly one durable marker owned by the shared mutation entry point (check-then-record), reads stay open, fails closed on malformed state with the raw contents surfaced, refuses rather than guesses, no daemon/queue/workflow, includes the kill-and-restart proof and the correct reconsider-when condition mirroring the fixture. It misses only the requirement that resolution record what the operator inspected."
+    },
+    {
+      "caseName": "writing",
+      "condition": "forge",
+      "pass": true,
+      "failures": [],
+      "notable": "Exemplary brevity; the decision note also carries the SIMPLE.md reconsideration condition (\"Reconsider this if another failure class gains different retry behaviour\"), which strengthens the useful-decision requirement."
+    },
+    {
+      "caseName": "writing",
+      "condition": "no-skill",
+      "pass": true,
+      "failures": [],
+      "notable": "All three outputs are concise, explain why rather than narrating code, keep the transient-network vs permanent-validation distinction, and the note even carries the fixture's reconsideration condition (\"Reconsider if another failure class needs different retry behaviour\"). No expansion into architecture review; update leads with the outcome."
+    },
+    {
+      "caseName": "writing",
+      "condition": "v0.5",
+      "pass": true,
+      "failures": [],
+      "notable": "All three outputs are tight and repeat the same load-bearing reason (transient vs permanent) without ceremony; the update helpfully scopes itself with \"No other retry behaviour changed.\""
+    }
+  ]
+}

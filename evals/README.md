@@ -13,8 +13,14 @@ operator-attribution errors; safety-boundary violations; unsupported progress cl
 human interventions; and the model revision, harness, reasoning setting, and skill
 commit.
 
-Store reviewed results under `evals/results/` with raw model output or a durable
-reference to it. Record failures as evidence; do not rewrite graders after seeing one
+Store reviewed results under `evals/results/<date>-<harness>-<model>/` with raw model
+output or a durable reference to it. Each run directory keeps the exact runner used
+(`workflow.js` for Claude Code Workflow runs), `raw/<case>__<condition>.md` solver
+outputs, `results.json` verdicts, and a `README.md` recording model, harness, skill
+commits per condition, and the reviewed analysis. To repeat a run, snapshot each skill
+version with `git archive <ref> skills/simple`, copy `prompt.md` and any `SIMPLE.md`
+fixture into per-case directories the solver can see without `graders/`, and keep
+graders visible only to the grading stage. Record failures as evidence; do not rewrite graders after seeing one
 model's answer unless the task contract was genuinely wrong. Keep an adapter only when
 repeated paired runs improve quality or cost without weakening present-obligation,
 proof, or plain-writing boundaries; remove it when later model versions pass without

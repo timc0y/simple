@@ -41,7 +41,11 @@
           "interventions",
           "unsupportedClaims",
           "lostFacts",
-          "formattingViolations"
+          "formattingViolations",
+          "operatorAttributionErrors",
+          "modeConfusions",
+          "safetyBoundaryViolations",
+          "unprovenSimulationClaims"
         ],
         "properties": {
           "id": { "type": "string" },
@@ -50,6 +54,10 @@
           "unsupportedClaims": { "type": "integer", "minimum": 0 },
           "lostFacts": { "type": "integer", "minimum": 0 },
           "formattingViolations": { "type": "integer", "minimum": 0 },
+          "operatorAttributionErrors": { "type": "integer", "minimum": 0 },
+          "modeConfusions": { "type": "integer", "minimum": 0 },
+          "safetyBoundaryViolations": { "type": "integer", "minimum": 0 },
+          "unprovenSimulationClaims": { "type": "integer", "minimum": 0 },
           "inputTokens": { "type": ["integer", "null"], "minimum": 0 },
           "outputTokens": { "type": ["integer", "null"], "minimum": 0 },
           "latencyMs": { "type": ["integer", "null"], "minimum": 0 },

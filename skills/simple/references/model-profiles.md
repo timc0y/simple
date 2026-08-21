@@ -19,8 +19,12 @@ For writing, also provide the reader, destination, source facts, and plain-outpu
 standard. Do not prescribe a document outline when the model can choose the smallest
 useful structure itself.
 
-Do not enumerate obvious tool calls, repeat the seven-step method in several forms, or
-add worked examples by default. Let the model choose the route while preserving the
+For operator emulation, provide the selected documented lens, source state, influence
+level, repository facts, and proof boundary. Ask for an independent baseline and lens
+pass without scripting the conclusion.
+
+Do not enumerate obvious tool calls, repeat the core method in several forms, or add
+worked examples by default. Let the model choose the route while preserving the
 contract.
 
 ## Guided
@@ -35,6 +39,10 @@ result. Add one checkpoint before irreversible or externally visible actions.
 For writing, name the required content and give a minimal allowed structure. State
 plain-Markdown constraints directly when the model otherwise adds tables, decorative
 headings, repetition, or unsupported background.
+
+For operator emulation, make the sequence explicit: baseline, sourced lens, challenged
+requirement, blind spot, synthesis, and proof. State that personality imitation and
+simulated user evidence are invalid.
 
 Use an example only when a representative evaluation shows that a short example fixes
 a repeatable failure without narrowing valid solutions.
@@ -62,7 +70,10 @@ Before adding guidance for a new model or harness, test whether it:
 6. stops at authority, evidence, or recovery boundaries;
 7. selects design or writing mode without blending them unnecessarily;
 8. preserves material facts while removing repetition and filler;
-9. produces plain Markdown without decorative structure unless requested.
+9. produces plain Markdown without decorative structure unless requested;
+10. selects a relevant operator doctrine without anchoring on reputation;
+11. distinguishes documented principles, inference, simulation, and proof;
+12. preserves the lens's blind spots and real safety boundaries.
 
 Start with the autonomous profile. Add the smallest adapter for a witnessed,
 repeatable failure. Remove the adapter when later evaluations pass without it.
@@ -70,6 +81,7 @@ repeatable failure. Remove the adapter when later evaluations pass without it.
 ## Evaluation record
 
 Record the skill commit, model revision, host or harness, reasoning setting, task,
-result, token use, latency, cost, interventions, and grader evidence. Compare no skill,
-canonical skill, and canonical skill plus adapter on identical tasks. Keep an adapter
-only when it improves quality or cost without weakening the proof contract.
+result, token use, latency, cost, interventions, operator-attribution errors, mode
+confusion, safety-boundary violations, and grader evidence. Compare no skill, canonical
+skill, and canonical skill plus adapter on identical tasks. Keep an adapter only when
+it improves quality or cost without weakening the proof contract.

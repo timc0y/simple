@@ -1,7 +1,7 @@
 {
   "name": "simple",
   "version": "0.5.0+codex.20260818212316",
-  "description": "Make truthful software decisions and write concise developer prose in plain Markdown.",
+  "description": "Make truthful software decisions, write concise developer prose, and apply source-backed operator lenses.",
   "author": {
     "name": "Tim Coy",
     "url": "https://github.com/timc0y"
@@ -17,13 +17,15 @@
     "agent-skill",
     "technical-writing",
     "documentation",
-    "markdown"
+    "markdown",
+    "operator-emulation",
+    "engineering-methods"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Simple",
     "shortDescription": "Simple solutions grounded in repository reality",
-    "longDescription": "Ground software design in repository truth and help agents write concise plans, documentation, comments, prompts, reviews, and handoffs in plain Markdown without speculative machinery or decorative prose.",
+    "longDescription": "Ground software design in repository truth, write concise developer prose in plain Markdown, and challenge decisions with source-backed operator doctrines rather than personality role-play.",
     "developerName": "Tim Coy",
     "category": "Developer Tools",
     "capabilities": [
@@ -33,6 +35,7 @@
     "defaultPrompt": [
       "Use Simple for this architecture or change-design decision",
       "Use Simple to write or revise this technical plan or documentation in plain Markdown",
+      "Use Simple to compare the baseline with a source-backed SpaceX, Theo, or minimal-implementation operator lens",
       "Run a read-only Simple audit of this repository",
       "Use Simple to plan this change without implementing it",
       "Review this design, document, or diff with Simple"

@@ -1,6 +1,6 @@
 {
   "name": "timc0y-simple",
-  "description": "Tim Coy's lightweight software-design and plain developer-writing skill for Codex and Claude Code.",
+  "description": "Tim Coy's lightweight software-design, plain developer-writing, and source-backed operator-lens skill for Codex and Claude Code.",
   "owner": {
     "name": "Tim Coy"
   },
@@ -8,7 +8,7 @@
     {
       "name": "simple",
       "source": "./",
-      "description": "Make truthful software decisions and write concise plans, documentation, comments, prompts, reviews, and handoffs in plain Markdown.",
+      "description": "Make truthful software decisions, write concise developer prose, and challenge code or architecture with sourced engineering doctrines.",
       "version": "0.5.0"
     }
   ]

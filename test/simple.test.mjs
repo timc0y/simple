@@ -123,10 +123,17 @@ test("local install exposes one skill through each supported host", () => {
   ]);
 });
 
-test("design and writing modes stay distinct and capability profiles are bundled", () => {
+test("design, writing, and source-backed operator workflows stay distinct", () => {
   const skill = readFileSync(join(process.cwd(), "skills", "simple", "SKILL.md"), "utf8");
   const writing = readFileSync(join(process.cwd(), "skills", "simple", "references", "writing.md"), "utf8");
   const writeCommand = readFileSync(join(process.cwd(), "commands", "write.md"), "utf8");
+  const emulateCommand = readFileSync(join(process.cwd(), "commands", "emulate.md"), "utf8");
+  const operator = readFileSync(join(process.cwd(), "skills", "simple", "references", "operator-emulation.md"), "utf8");
+  const spacex = readFileSync(join(process.cwd(), "skills", "simple", "references", "operator-lenses", "spacex-five-step.md"), "utf8");
+  const theo = readFileSync(join(process.cwd(), "skills", "simple", "references", "operator-lenses", "theo-product-engineer.md"), "utf8");
+  const minimal = readFileSync(join(process.cwd(), "skills", "simple", "references", "operator-lenses", "minimal-implementation.md"), "utf8");
+  const operatorEval = readFileSync(join(process.cwd(), "evals", "operator-emulation", "graders", "criteria.md"), "utf8");
+  const boundaryEval = readFileSync(join(process.cwd(), "evals", "emulation-boundary", "graders", "criteria.md"), "utf8");
   const profiles = readFileSync(join(process.cwd(), "skills", "simple", "references", "model-profiles.md"), "utf8");
   const schema = JSON.parse(readFileSync(join(process.cwd(), "evals", "results.schema.json"), "utf8"));
   const site = readFileSync(join(process.cwd(), "src", "pages", "index.astro"), "utf8");
@@ -138,6 +145,16 @@ test("design and writing modes stay distinct and capability profiles are bundled
   assert.match(writing, /Plain writing standard/);
   assert.match(writing, /Avoid decorative formatting/);
   assert.match(writeCommand, /smallest useful Markdown structure/);
+  assert.match(skill, /Operator emulation is a technique/);
+  assert.match(emulateCommand, /source-backed operator emulation/);
+  assert.match(operator, /not personality role-play/);
+  assert.match(operator, /Parallax audiences and personas/);
+  assert.match(spacex, /Apply these steps in order/);
+  assert.match(theo, /full-stack type safety/);
+  assert.match(minimal, /Stop at the first rung/);
+  assert.match(minimal, /Never simplify away/);
+  assert.match(operatorEval, /operator prestige/);
+  assert.match(boundaryEval, /customer feelings/);
   assert.match(skill, /autonomous/);
   assert.match(skill, /guided/);
   assert.match(skill, /scripted/);
@@ -146,7 +163,11 @@ test("design and writing modes stay distinct and capability profiles are bundled
   const taskSchema = schema.properties.tasks.items;
   assert.ok(taskSchema.required.includes("lostFacts"));
   assert.ok(taskSchema.required.includes("formattingViolations"));
+  assert.ok(taskSchema.required.includes("operatorAttributionErrors"));
+  assert.ok(taskSchema.required.includes("safetyBoundaryViolations"));
+  assert.ok(taskSchema.required.includes("unprovenSimulationClaims"));
   assert.match(site, /What does writing mode produce/);
+  assert.match(site, /Can it emulate engineers or companies/);
   assert.match(site, /How does it adapt to frontier models/);
   assert.match(marketplace, /plain developer-writing/);
   assert.match(codexPlugin, /technical-writing/);

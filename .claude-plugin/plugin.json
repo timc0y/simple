@@ -1,7 +1,7 @@
 {
   "name": "simple",
   "version": "0.5.0",
-  "description": "Ground software design in repository truth and write concise plans, documentation, comments, prompts, and handoffs in plain Markdown.",
+  "description": "Ground software design in repository truth, write concise developer prose, and apply source-backed operator lenses.",
   "author": {
     "name": "Tim Coy",
     "url": "https://github.com/timc0y"

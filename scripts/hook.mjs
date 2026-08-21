@@ -37,7 +37,7 @@ export function profileContext(path) {
   const profile = readFileSync(path, "utf8");
   const truncated = profile.length > MAX_PROFILE_CHARS;
   const body = truncated ? `${profile.slice(0, MAX_PROFILE_CHARS)}\n\n[Profile truncated: shorten SIMPLE.md.]` : profile.trim();
-  return `Repository-specific Simple context from ${path}:\n\n${body}\n\nUse these observed facts when they materially affect design or writing. Choose the smallest truthful design, keep prose plain and load-bearing, and apply a source-backed operator lens only when requested. Establish any material unknown before relying on it. Load $simple specialist references only when the task needs them.`;
+  return `Repository-specific Simple context from ${path}:\n\n${body}\n\nUse these observed facts when they materially affect design or writing. Choose the smallest truthful design and keep prose plain and load-bearing. Establish any material unknown before relying on it. Load $simple specialist references only when the task needs them.`;
 }
 
 export function writingReminder(input) {

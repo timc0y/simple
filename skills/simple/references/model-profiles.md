@@ -19,9 +19,9 @@ For writing, also provide the reader, destination, source facts, and plain-outpu
 standard. Do not prescribe a document outline when the model can choose the smallest
 useful structure itself.
 
-For operator emulation, provide the selected documented lens, source state, influence
-level, repository facts, and proof boundary. Ask for an independent baseline and lens
-pass without scripting the conclusion.
+For operator emulation, provide the documented doctrine, its source, repository facts,
+and the proof boundary. Ask for an independent baseline and doctrine pass without
+scripting the conclusion.
 
 Do not enumerate obvious tool calls, repeat the core method in several forms, or add
 worked examples by default. Let the model choose the route while preserving the
@@ -40,9 +40,9 @@ For writing, name the required content and give a minimal allowed structure. Sta
 plain-Markdown constraints directly when the model otherwise adds tables, decorative
 headings, repetition, or unsupported background.
 
-For operator emulation, make the sequence explicit: baseline, sourced lens, challenged
-requirement, blind spot, synthesis, and proof. State that personality imitation and
-simulated user evidence are invalid.
+For operator emulation, make the sequence explicit: baseline, sourced doctrine,
+challenged requirement, blind spot, synthesis, and proof. State that personality
+imitation and simulated user evidence are invalid.
 
 Use an example only when a representative evaluation shows that a short example fixes
 a repeatable failure without narrowing valid solutions.
@@ -73,7 +73,7 @@ Before adding guidance for a new model or harness, test whether it:
 9. produces plain Markdown without decorative structure unless requested;
 10. selects a relevant operator doctrine without anchoring on reputation;
 11. distinguishes documented principles, inference, simulation, and proof;
-12. preserves the lens's blind spots and real safety boundaries.
+12. preserves the doctrine's blind spots and real safety boundaries.
 
 Start with the autonomous profile. Add the smallest adapter for a witnessed,
 repeatable failure. Remove the adapter when later evaluations pass without it.

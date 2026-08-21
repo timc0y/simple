@@ -64,8 +64,16 @@ measured failure.
 ### Reviews, updates, and handoffs
 
 Lead with the outcome or finding. Include evidence that changes confidence, the exact
-blocker or remaining risk, and the next meaningful action. Do not narrate routine tool
-use.
+blocker or remaining risk, and the next meaningful action. State assumptions only when
+they can change the solution, and name a blocker with the exact missing authority,
+fact, or dependency. Do not narrate routine tool use.
+
+> The migration is unnecessary: the repository has no production data or external
+> consumers. I replaced the schema directly and the test suite passes.
+
+For a handoff, report the outcome, why it is sufficient, proof, and any remaining risk
+or reconsideration condition. Repeat earlier commentary only when the final state
+needs it.
 
 ## Editing
 

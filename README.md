@@ -6,8 +6,7 @@ clearly.
 It is a portable agent skill with a repository context layer—not a replacement agent,
 runtime wrapper, or development framework. The skill has two connected modes: design
 for architecture and change decisions, and writing for concise plans, documentation,
-comments, Markdown, prompts, reviews, updates, and handoffs. Source-backed operator
-lenses can challenge either mode without turning famous people into fictional personas.
+comments, Markdown, prompts, reviews, updates, and handoffs.
 A short local `SIMPLE.md` supplies the users, contracts, retained data, ordinary paths,
 proof, and reconsideration conditions that generic model training cannot know.
 
@@ -37,8 +36,8 @@ The public repository packages four parts around that method:
 
 - the portable `simple` skill and selectively loaded specialist references;
 - `simple init` and `simple check` for repository routing and profile structure;
-- thin audit, plan, review, write, and source-backed emulate workflows, plus hooks where
-  a host supports them;
+- thin audit, plan, review, and write workflows, plus hooks where a host supports
+  them;
 - behavioural evals that test deletion, compatibility, ownership, proof, missing
   addresses, root causes, plain developer writing, operator attribution, implementation
   safety, and complexity that genuinely pays rent.
@@ -93,16 +92,9 @@ The specialist references cover architecture, compatibility, refactoring, writin
 development communication, deletion tools, and capability-based model guidance. They
 stay out of ordinary context until the task needs them.
 
-### Capability profiles
-
-Simple keeps one canonical skill rather than model-specific copies. Start strong
-frontier models with the outcome, repository facts, constraints, authority boundary,
-proof, and stop conditions. Add explicit stages for models or tasks that need more
-structure. Move fragile repetitive mechanics into deterministic scripts with narrow
-inputs and validation. Keep an adapter only when paired evaluations show a repeatable
-benefit.
-
-See `skills/simple/references/model-profiles.md`.
+Simple keeps one canonical skill rather than model-specific copies; when a model or
+harness needs more or less structure, `skills/simple/references/model-profiles.md`
+describes how to adapt the guidance and prove the adapter still earns its place.
 
 ## Repository context
 
@@ -138,12 +130,10 @@ mandatory lifecycle.
 | `simple plan` | Design the smallest truthful change | Read-only |
 | `simple review` | Judge a design, plan, document, or diff | Read-only |
 | `simple write` | Create or revise concise developer writing in plain Markdown | Requested writing only |
-| `simple emulate` | Challenge a real problem with a sourced operator doctrine, then synthesize | Read-only |
 | `simple check` | Validate routing and profile structure | Read-only |
 
 `init` and `check` have deterministic CLI implementations. `audit`, `plan`, `review`,
-`write`, and `emulate` require model judgement and remain thin prompt entry points into
-`$simple`.
+and `write` require model judgement and remain thin prompt entry points into `$simple`.
 Claude Code exposes the files in `commands/` as slash commands; Codex exposes the same
 workflows through the skill and starter prompts.
 
@@ -176,30 +166,12 @@ compression.
 
 ## Operator emulation
 
-Simple can apply a documented engineering doctrine when you ask what a strong operator
-would do. It emulates the decision process, not voice, mannerisms, biography, private
-thoughts, or presumed current opinions.
-
-The default sequence is:
-
-```text
-baseline Simple solution
-→ independent operator lens
-→ lens blind spot
-→ optional contrasting lens
-→ synthesis against repository truth
-→ independent proof
-```
-
-Bundled lenses include SpaceX's documented five-step engineering sequence, a scoped
-Theo/T3 web-product lens, and a repository-first minimal-implementation ladder informed
-by Ponytail's public work. Each lens records provenance, scope, blind spots, and an
-output contract. `consult`, `challenge`, and `enforce` control its influence; repository
-truth, safety, authority, and proof always override operator prestige.
-
-This is separate from Parallax persona review. Parallax represents the person
-experiencing a rendered product. Simple emulates the engineer or operator solving the
-problem. Simulated reactions remain hypotheses, never user research or runtime proof.
+When asked what a documented engineer or company would do, Simple emulates the sourced
+decision doctrine—never the persona—then synthesizes against repository truth and
+independent proof. The specialist reference bundles SpaceX's documented five-step
+engineering sequence and accepts user-supplied doctrines with equally explicit sources
+and blind spots. Simulated reactions remain hypotheses, never user research or runtime
+proof.
 
 ## Hosts
 
@@ -282,11 +254,10 @@ complexity earned by a real consequence and assign invariants to one owner:
 claude plugin eval simple@timc0y-simple --runs 1 --no-publish
 ```
 
-These evals are evidence only after they have been run and reviewed. Run paired
-`no-skill`, `canonical`, and `canonical-plus-adapter` conditions using the protocol in
-`evals/README.md`, and store results against `evals/results.schema.json`. Add
-instruction for a measured failure, then remove or replace it when the same evals show
-it is no longer useful.
+These evals are evidence only after they have been run and reviewed. Compare paired
+no-skill and with-skill runs using the protocol in `evals/README.md`. Add instruction
+for a measured failure, then remove or replace it when the same evals show it is no
+longer useful.
 
 ## Direction
 

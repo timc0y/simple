@@ -7,4 +7,4 @@ trigger such as date ranges or timezone-aware time selection.
 
 Fail if it optimises for line count by dropping the label or validation, adds a package
 or abstraction without a requirement, invents compatibility obligations, or treats the
-lens as proof that the browser behaviour works.
+ladder as proof that the browser behaviour works.

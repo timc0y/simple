@@ -1,15 +1,13 @@
 ---
 name: simple
 description: >-
-  Find the smallest truthful software design and produce concise, plain developer
-  writing. Use for architecture, ownership, refactoring, deletion, compatibility,
-  migration, or unjustified-complexity decisions; for technical plans,
-  documentation, comments, Markdown, prompts, reviews, progress updates, or handoffs
-  that should be clear, load-bearing, and free of decorative formatting; and when the
-  user asks what a documented engineer, company, or operator would do. Read the nearest
-  SIMPLE.md when repository facts change the answer. Use source-backed operator
-  emulation rather than personality role-play. Use the explicit Simple init, audit,
-  plan, review, write, emulate, or check workflow when requested.
+  Find the smallest truthful software design and write concise, plain developer
+  prose. Use for architecture, ownership, refactoring, deletion, compatibility,
+  migration, repository audits, implementation plans, or work that is becoming more
+  complex than its demonstrated requirements; for technical plans, documentation,
+  comments, Markdown, prompts, reviews, updates, and handoffs; and when asked what a
+  documented engineer, company, or operator would do. Read the nearest SIMPLE.md
+  when repository facts change the answer.
 ---
 
 # Simple
@@ -32,26 +30,6 @@ uncertainty. Absence of evidence grants neither an obligation nor deletion permi
 Writing is a first-class Simple mode. Do not turn a writing task into an architecture
 review unless the content itself requires a design decision. Read the nearest
 `SIMPLE.md` only when repository facts materially change what the writing must say.
-
-Operator emulation is a technique that can assist either mode. It applies a documented
-engineering doctrine to the real problem; it does not imitate voice, mannerisms, private
-thoughts, or unsupported biography. Establish a baseline before applying a lens, expose
-the lens's blind spots, and let repository truth and independent proof decide what
-survives. Read `references/operator-emulation.md`.
-
-## Match guidance to capability
-
-Start with the least prescriptive profile that can complete the work:
-
-- `autonomous`: give a strong frontier model the outcome, relevant repository facts,
-  hard constraints, authority boundary, proof, and stop conditions.
-- `guided`: make the decision stages and checkpoints explicit when the model or task
-  needs more structure.
-- `scripted`: use deterministic scripts, narrow inputs, typed outputs, fixed validation,
-  and bounded retries for fragile or repetitive operations.
-
-Escalate only after an observed failure. Do not maintain complete model-specific copies
-of the skill. Read `references/model-profiles.md` when selecting or evaluating a profile.
 
 ## Design in order
 
@@ -112,17 +90,17 @@ blockers, risk, and the next relevant action. Do not narrate routine tool use.
 - Engineering precedents and examples: read `references/examples.md`.
 - `simple audit`: read `references/audit.md` and use objective crawling agents when
   available; keep architectural judgement with the lead agent.
-- `simple init`, `plan`, `review`, `write`, `emulate`, or `check`: read
+- `simple init`, `plan`, `review`, `write`, or `check`: read
   `references/commands.md`.
-- Source-backed operator emulation or comparison: read
-  `references/operator-emulation.md` and only the selected lens files.
-- Model or harness adaptation: read `references/model-profiles.md`.
 - Plans, documentation, comments, Markdown, prompts, reviews, updates, or handoffs:
-  read `references/writing.md` and `references/communication.md`. Use writing mode
-  without expanding into design analysis unless the content requires it.
+  read `references/writing.md`. Use writing mode without expanding into design
+  analysis unless the content requires it.
+- Asked what a documented engineer, company, or operator would do: read
+  `references/operator-emulation.md`. Emulate the documented doctrine, never the
+  persona, and only when requested.
+- Adapting guidance to a model or harness: read `references/model-profiles.md`.
 - Refactoring or deletion: read `references/refactoring.md`; for deletion tooling,
   also read `references/deletion-tools.md`.
-- Plans, progress, reviews, or handoffs: read `references/communication.md`.
 - Repository initiation or profile changes: read `references/profile-template.md`,
   then run `scripts/simple.mjs init` or `scripts/simple.mjs check`.
 

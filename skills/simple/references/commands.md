@@ -21,10 +21,12 @@ unknowns.
 
 Plan the requested outcome from repository evidence. Read `writing.md` and
 `communication.md`; return plain Markdown with only the sections the work needs. Cover
-the outcome, relevant facts, what must be preserved, the existing owner and ordinary
-path, the smallest truthful design, implementation steps, independent proof, and any
-material risk, unknown, or reconsideration condition. Planning is read-only. Do not
-implement without authority.
+the outcome, relevant facts, what must be preserved and what may be replaced, the
+existing owner and ordinary path, the smallest truthful design, implementation steps,
+complexity removed or avoided, independent proof, and any material risk, unknown, or
+reconsideration condition. Include a precedent or named standard only when it improves
+the decision and its prerequisites exist. Planning is read-only. Do not implement
+without authority.
 
 ## `simple review`
 

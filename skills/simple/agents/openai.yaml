@@ -1,4 +1,4 @@
 interface:
   display_name: "Simple"
   short_description: "Truthful design, plain writing, and sourced operator lenses"
-  default_prompt: "Use $simple in design or writing mode. Read the nearest SIMPLE.md when repository facts matter. When an operator lens is requested, emulate its documented decision doctrine rather than personality, state its blind spots, and synthesize against present obligations and independent proof."
+  default_prompt: "Use $simple in design or writing mode, or apply source-backed operator emulation when requested. Read the nearest SIMPLE.md when repository facts matter. Preserve present obligations, use concise plain Markdown, state lens blind spots, and prove consequential claims."

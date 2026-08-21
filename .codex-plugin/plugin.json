@@ -6,7 +6,7 @@
     "name": "Tim Coy",
     "url": "https://github.com/timc0y"
   },
-  "homepage": "https://timc0y.github.io/simple/",
+  "homepage": "https://timcoy.uk/simple/",
   "repository": "https://github.com/timc0y/simple",
   "license": "MIT",
   "keywords": [
@@ -31,7 +31,7 @@
     "capabilities": [
       "Interactive"
     ],
-    "websiteURL": "https://timc0y.github.io/simple/",
+    "websiteURL": "https://timcoy.uk/simple/",
     "defaultPrompt": [
       "Use Simple for this architecture or change-design decision",
       "Use Simple to write or revise this technical plan or documentation in plain Markdown",

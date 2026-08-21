@@ -3,11 +3,13 @@ name: simple
 description: >-
   Find the smallest truthful software design and produce concise, plain developer
   writing. Use for architecture, ownership, refactoring, deletion, compatibility,
-  migration, or unjustified-complexity decisions; and for technical plans,
+  migration, or unjustified-complexity decisions; for technical plans,
   documentation, comments, Markdown, prompts, reviews, progress updates, or handoffs
-  that should be clear, load-bearing, and free of decorative formatting. Read the
-  nearest SIMPLE.md when repository facts change the answer. Use the explicit Simple
-  init, audit, plan, review, write, or check workflow when requested.
+  that should be clear, load-bearing, and free of decorative formatting; and when the
+  user asks what a documented engineer, company, or operator would do. Read the nearest
+  SIMPLE.md when repository facts change the answer. Use source-backed operator
+  emulation rather than personality role-play. Use the explicit Simple init, audit,
+  plan, review, write, emulate, or check workflow when requested.
 ---
 
 # Simple
@@ -30,6 +32,12 @@ uncertainty. Absence of evidence grants neither an obligation nor deletion permi
 Writing is a first-class Simple mode. Do not turn a writing task into an architecture
 review unless the content itself requires a design decision. Read the nearest
 `SIMPLE.md` only when repository facts materially change what the writing must say.
+
+Operator emulation is a technique that can assist either mode. It applies a documented
+engineering doctrine to the real problem; it does not imitate voice, mannerisms, private
+thoughts, or unsupported biography. Establish a baseline before applying a lens, expose
+the lens's blind spots, and let repository truth and independent proof decide what
+survives. Read `references/operator-emulation.md`.
 
 ## Match guidance to capability
 
@@ -54,8 +62,10 @@ of the skill. Read `references/model-profiles.md` when selecting or evaluating a
    try to supply only that missing precondition through the ordinary path.
 4. Decide what must be preserved and what may be replaced.
 5. Choose the smallest design that satisfies those present obligations.
-6. Remove the route, state, explanation, and cleanup displaced by the change.
-7. Prove the result through a surface independent enough to distinguish requested
+6. Before introducing code, a dependency, an abstraction, a workflow, or another owner,
+   walk the implementation ladder in `references/architecture.md`.
+7. Remove the route, state, explanation, and cleanup displaced by the change.
+8. Prove the result through a surface independent enough to distinguish requested
    behaviour from the implementation itself.
 
 ## Write in order
@@ -102,7 +112,10 @@ blockers, risk, and the next relevant action. Do not narrate routine tool use.
 - Engineering precedents and examples: read `references/examples.md`.
 - `simple audit`: read `references/audit.md` and use objective crawling agents when
   available; keep architectural judgement with the lead agent.
-- `simple init`, `plan`, `review`, `write`, or `check`: read `references/commands.md`.
+- `simple init`, `plan`, `review`, `write`, `emulate`, or `check`: read
+  `references/commands.md`.
+- Source-backed operator emulation or comparison: read
+  `references/operator-emulation.md` and only the selected lens files.
 - Model or harness adaptation: read `references/model-profiles.md`.
 - Plans, documentation, comments, Markdown, prompts, reviews, updates, or handoffs:
   read `references/writing.md` and `references/communication.md`. Use writing mode

@@ -35,6 +35,29 @@ Prefer deep modules over pass-through layers. Keep related knowledge local. Extr
 shared knowledge, not incidental syntax. Use linear control flow and explicit state
 transitions.
 
+## Implementation ladder
+
+Before adding code, a dependency, an abstraction, a workflow, state, or another owner,
+stop at the first rung that fully satisfies present obligations:
+
+1. Remove the requirement when no user, contract, retained state, or consequence
+   supports it.
+2. Reuse the existing owner and ordinary path.
+3. Reuse or extend existing repository code locally.
+4. Use the language or standard library.
+5. Use a native platform capability.
+6. Use an already-installed dependency without dividing ownership.
+7. Write one direct local implementation.
+8. Only then introduce new machinery.
+
+Minimise concepts and system burden, not line count. Never simplify away trust-boundary
+validation, data-loss prevention, security, accessibility, recovery, real compatibility,
+audit obligations, or independent proof.
+
+When a deliberate shortcut has a material limit, record the current choice, why it is
+sufficient, its known ceiling, the observable upgrade trigger, owner, and proof. Do not
+create a debt ledger for trivial details.
+
 ## Preserve the owner; supply the missing precondition
 
 When the desired state already has the right owner but the ordinary path cannot

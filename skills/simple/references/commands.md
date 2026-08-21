@@ -42,6 +42,13 @@ facts the content depends on. Preserve the meaning, use the smallest useful stru
 and return plain Markdown or the requested comment without meta-commentary. Do not
 expand the task into design analysis unless the content requires it.
 
+## `simple emulate`
+
+Read `operator-emulation.md` and only the selected operator lens files. Establish a
+baseline Simple solution, run the source-backed lens independently, require its blind
+spot, and synthesize against repository truth. Emulate a documented decision process,
+not personality or voice. Simulation is not proof; identify the independent check.
+
 ## `simple check`
 
 Run `scripts/simple.mjs check`. This validates routing and profile structure; it does

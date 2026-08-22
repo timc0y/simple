@@ -172,7 +172,15 @@ test("published surfaces reference files that exist", () => {
     assert.doesNotMatch(readFileSync(join(root, path), "utf8"), /timc0y\.github\.io/, path);
   }
   assert.match(readFileSync(join(root, ".claude-plugin", "plugin.json"), "utf8"), /timcoy\.uk\/simple/);
-  assert.match(readFileSync(join(root, ".codex-plugin", "plugin.json"), "utf8"), /timcoy\.uk\/simple/);
+  const codexPlugin = JSON.parse(readFileSync(join(root, ".codex-plugin", "plugin.json"), "utf8"));
+  assert.match(codexPlugin.homepage, /timcoy\.uk\/simple/);
+  assert.ok(existsSync(join(root, codexPlugin.hooks)), "codex hooks file");
+  const hooks = JSON.parse(readFileSync(join(root, "hooks", "hooks.json"), "utf8"));
+  for (const event of Object.values(hooks.hooks)) {
+    for (const block of event) {
+      for (const h of block.hooks) assert.match(h.command, /\$\{CLAUDE_PLUGIN_ROOT\}/);
+    }
+  }
 });
 
 test("every eval grader ships self-test references", () => {

@@ -178,15 +178,14 @@ never user research or runtime proof.
 
 ## Hosts
 
-Both hosts use the same skill and repository profile.
+Both hosts use the same skill, repository profile, and lifecycle hooks.
 
-- Codex follows the repository route in `AGENTS.md` and loads specialist references
-  through the skill.
-- Claude Code also uses lifecycle hooks to inject the nearest profile and gives short
-  reminders when an edit actually writes Markdown or comments.
-
-The hooks are intentionally not described as cross-host. Codex's current accepted
-plugin manifest does not register them.
+- Claude Code and Codex both register `hooks/hooks.json`: the nearest profile is
+  injected at session and subagent start, and short reminders fire when an edit
+  actually writes Markdown or comments. Codex asks for a one-time `/hooks` trust
+  approval per machine.
+- Codex also follows the repository route in `AGENTS.md`, so the guidance survives
+  hosts or sessions without hook support.
 
 ## Install
 

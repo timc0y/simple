@@ -19,8 +19,8 @@
 ## Current boundary
 
 - The plugin packages Simple for Codex and Claude Code; the local installer exposes the same source to Codex, Claude Code, OpenCode, and Gemini.
-- Claude Code receives deterministic lifecycle and writing reminders through hooks.
-- Codex receives repository context through `AGENTS.md` and the skill; its current plugin manifest does not register hooks.
+- Both plugin routes register the same lifecycle and writing-reminder hooks; Codex additionally requires a one-time `/hooks` trust approval per machine, observed working with the identical pattern in Ponytail 4.9.0.
+- Codex also receives repository context through `AGENTS.md` and the skill, so the route survives hosts without hook support.
 - Setup records no inferred users or production promises.
 
 ## Ordinary paths
@@ -30,7 +30,7 @@
 - `simple.mjs init` creates the route and profile; `setup` remains an alias for existing users; `check` validates their shape.
 - `audit`, `plan`, `review`, `write`, and `emulate` are thin judgement modes over the shared skill; operator lenses stay sourced specialist references.
 - Audit crawlers collect bounded evidence; the lead agent owns synthesis and recommendations.
-- One Claude Code hook script handles session, subagent, and relevant pre-write events.
+- One hook script handles session, subagent, and relevant pre-write events for both hook-capable hosts.
 
 ## Proof
 
@@ -46,4 +46,4 @@
 - Add compatibility only when a published installer or host requires the old surface.
 - Split a command into another skill only when measured retrieval failures require it.
 - Add an audit crawler lane only when it finds decision-changing evidence in representative repositories.
-- Add Codex hooks when its accepted plugin manifest and runtime expose them reliably.
+- Remove the `AGENTS.md` route only if hook injection is observed reliable across every supported host.

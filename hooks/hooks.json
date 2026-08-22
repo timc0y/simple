@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PLUGIN_ROOT/scripts/hook.mjs\"",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/hook.mjs\"",
             "statusMessage": "Loading repository reality",
             "timeout": 3
           }
@@ -19,7 +19,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PLUGIN_ROOT/scripts/hook.mjs\"",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/hook.mjs\"",
             "statusMessage": "Loading repository reality",
             "timeout": 3
           }
@@ -32,7 +32,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PLUGIN_ROOT/scripts/hook.mjs\"",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/hook.mjs\"",
             "timeout": 3
           }
         ]

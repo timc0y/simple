@@ -9,7 +9,7 @@
       "name": "simple",
       "source": "./",
       "description": "Solve software problems with the smallest truthful design and plain developer writing.",
-      "version": "0.5.0"
+      "version": "0.5.1"
     }
   ]
 }

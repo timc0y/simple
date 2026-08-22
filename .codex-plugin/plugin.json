@@ -1,6 +1,6 @@
 {
   "name": "simple",
-  "version": "0.5.0+codex.20260818212316",
+  "version": "0.5.1+codex.20260822",
   "description": "Solve software problems with the smallest truthful design and plain developer writing.",
   "author": {
     "name": "Tim Coy",
@@ -18,6 +18,7 @@
     "agent-skill"
   ],
   "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
   "interface": {
     "displayName": "Simple",
     "shortDescription": "Simple solutions grounded in repository reality",
@@ -25,7 +26,8 @@
     "developerName": "Tim Coy",
     "category": "Developer Tools",
     "capabilities": [
-      "Interactive"
+      "Interactive",
+      "Lifecycle hooks"
     ],
     "websiteURL": "https://timcoy.uk/simple/",
     "defaultPrompt": [

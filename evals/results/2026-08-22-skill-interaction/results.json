@@ -1,0 +1,36 @@
+{
+  "run": "2026-08-22-skill-interaction",
+  "date": "2026-08-22",
+  "question": "Is Simple better alone, Ponytail alone, or both together?",
+  "harness": "headless claude -p, --model sonnet, --setting-sources project,local (no user plugins); skills installed as project skills per arm; one run per case-arm",
+  "arms": {
+    "simple": "skills/simple at main 856385a",
+    "ponytail": "skills/ponytail at DietrichGebert/ponytail main (4.9.0)",
+    "both": "both project skills together"
+  },
+  "graderSelftests": {
+    "mutation-interval": "ok",
+    "implementation-ladder": "ok",
+    "plain-writing": "ok",
+    "production-data": "ok",
+    "routine-edit": "ok"
+  },
+  "tally": { "simple": "4/5", "ponytail": "5/5", "both": "4/5" },
+  "verdicts": [
+    { "run": "mutation-interval__simple", "pass": true, "notable": "Check inside the lock, fail-closed recording, cross-process SIGKILL proof." },
+    { "run": "mutation-interval__ponytail", "pass": true, "notable": "Terseness did not suppress required content; reaping and refusal inside acquire; real-process proof." },
+    { "run": "mutation-interval__both", "pass": false, "failures": ["Checks before acquiring: pseudocode orders the receipt check before lock acquire, a TOCTOU window and explicit fail condition"], "notable": "Interaction regression: 'a reordering + consolidation, not new machinery' framing preserved the original check-first sequence that each single-skill arm independently fixed." },
+    { "run": "implementation-ladder__simple", "pass": true, "notable": "Native rung, label and validation kept, ceiling with the fixture trigger." },
+    { "run": "implementation-ladder__ponytail", "pass": true, "notable": "Code-first pressure emitted a JSX field despite 'do not write the full component'; no fail condition triggered." },
+    { "run": "implementation-ladder__both", "pass": true, "notable": "Reinforcement: ladder walk plus stop-at-first-rung, fullest proof of the three arms." },
+    { "run": "plain-writing__simple", "pass": false, "failures": ["Title-case heading violates the sentence-case pass condition"], "notable": "The arm carrying the writing skill broke its own style rule; content otherwise intact." },
+    { "run": "plain-writing__ponytail", "pass": true, "notable": "Brevity coincided exactly with Simple's writing standard." },
+    { "run": "plain-writing__both", "pass": true, "notable": "Compliant with slightly more structure than needed." },
+    { "run": "production-data__simple", "pass": true, "notable": "Conservative bounded migration with dual-write and a gated removal condition." },
+    { "run": "production-data__ponytail", "pass": true, "notable": "Laziest safe path: atomic rename plus serializer alias plus usage-counter removal signal; smallest machinery of the three." },
+    { "run": "production-data__both", "pass": true, "notable": "Strongest reinforcement: obligation split from Simple, minimal atomic rename from Ponytail, metered exit condition." },
+    { "run": "routine-edit__simple", "pass": true, "notable": "Exactly one comment; activation gate stayed closed." },
+    { "run": "routine-edit__ponytail", "pass": true, "notable": "One comment, no extra prose." },
+    { "run": "routine-edit__both", "pass": true, "notable": "Passes with the weakest phrasing of the three arms." }
+  ]
+}

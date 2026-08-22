@@ -13,6 +13,17 @@ operator-attribution errors; safety-boundary violations; unsupported progress cl
 human interventions; and the model revision, harness, reasoning setting, and skill
 commit.
 
+Every case carries grader self-test references at
+`graders/references/pass.md` and `graders/references/fail.md`. Before any real answer
+is graded, the grader must pass the pass reference and fail the fail reference against
+the case's criteria; a grader that misranks its references is not trusted and the run
+does not count. This is how a broken contract is caught before it costs a run.
+
+Skill text changes follow the same rule: draft the candidate edit, A/B it against the
+current text on the affected cases, and ship it only when the number moves. Record
+edits that failed to move the number in the run's results; an untested instruction
+never ships.
+
 Store reviewed results under `evals/results/<date>-<harness>-<model>/` with raw model
 output or a durable reference to it, and record each condition's machine-readable
 summary against `evals/results.schema.json` so runs stay comparable across models. Each run directory keeps the exact runner used

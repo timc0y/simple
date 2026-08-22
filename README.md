@@ -229,6 +229,44 @@ npm run install:local
 The local installer links the same skill source into Codex, Claude Code, OpenCode,
 and Gemini. There is one maintained copy of the guidance, not a host-specific fork.
 
+## Using Simple well
+
+Install globally once; invest per repository. A global install (plugin or skills CLI)
+gives every project the method — the design sequence, the writing standard, the
+references. The value concentrates when a repository also has a completed profile:
+run `simple init`, replace the template prompts with observed facts, and validate with
+`simple check`. Paired evals show the profile's facts change outcomes more than any
+phrasing in the skill; treat `SIMPLE.md` as the product and the skill as its reader.
+Record only what you can observe — users, contracts, retained data, proof — never
+aspirations, and keep it short enough to read in one sitting. Nested profiles scope
+facts to a subtree; the nearest one wins.
+
+Use Simple when repository facts could change the implementation: architecture,
+ownership, compatibility, migration, deletion, broad refactoring — and for developer
+writing that must stay plain and load-bearing. Ask for an operator lens only when you
+want a documented doctrine to challenge a decision.
+
+Do not use it as ceremony or as permission. A one-line fix needs a one-line fix, not
+an audit (the `routine-edit` eval enforces exactly this), and "simple" never justifies
+breaking a real consumer, dropping validation at a trust boundary, or deleting
+recovery and audit obligations — the profile's Preserve section outranks minimalism.
+
+How to tell it is active:
+
+- Claude Code shows "Repository-specific Simple context from …/SIMPLE.md" at session
+  start, the `/simple` commands are available, and subagents receive the same profile.
+- Codex, OpenCode, and Gemini activate through the skill listing and the `AGENTS.md`
+  route; if the route paragraph is missing or the skill is not installed for that
+  host, Simple is not in play there.
+- `simple check` verifies the wiring deterministically: routing files present, profile
+  complete and within the injection budget.
+
+It is not active when no `SIMPLE.md` exists in or above the working directory (the
+hook then injects nothing and the skill falls back to generic evidence), when the
+profile still carries the incomplete marker from `init`, or when a host lacks both the
+skill and the route. When in doubt, ask the agent which profile it loaded — the answer
+should name the file path.
+
 ## Website
 
 The public site is part of Tim's personal site and is published at

@@ -175,6 +175,17 @@ test("published surfaces reference files that exist", () => {
   assert.match(readFileSync(join(root, ".codex-plugin", "plugin.json"), "utf8"), /timcoy\.uk\/simple/);
 });
 
+test("every eval grader ships self-test references", () => {
+  const evalRoot = join(process.cwd(), "evals");
+  for (const entry of readdirSync(evalRoot, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    if (!existsSync(join(evalRoot, entry.name, "graders", "criteria.md"))) continue;
+    for (const ref of ["pass.md", "fail.md"]) {
+      assert.ok(existsSync(join(evalRoot, entry.name, "graders", "references", ref)), `${entry.name}/${ref}`);
+    }
+  }
+});
+
 test("evals that request repository context include a SIMPLE.md fixture", () => {
   const evalRoot = join(process.cwd(), "evals");
   for (const entry of readdirSync(evalRoot, { withFileTypes: true })) {

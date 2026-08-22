@@ -251,6 +251,13 @@ an audit (the `routine-edit` eval enforces exactly this), and "simple" never jus
 breaking a real consumer, dropping validation at a trust boundary, or deleting
 recovery and audit obligations — the profile's Preserve section outranks minimalism.
 
+Simple coexists well with other minimalism skills such as Ponytail on most work, and
+measured runs show them reinforcing each other on migration and implementation tasks.
+One measured exception: on lock, interval, or uncertainty-protocol design, the
+combination anchored to an existing broken step order more often than either skill
+alone, and a wording fix failed its A/B (`evals/results/2026-08-22-precedence-edit-ab/`).
+For that class of design, run one minimalism skill, not two.
+
 How to tell it is active:
 
 - Claude Code shows "Repository-specific Simple context from …/SIMPLE.md" at session

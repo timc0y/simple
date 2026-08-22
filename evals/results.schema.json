@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Simple paired evaluation result",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "recordedAt",
+    "skillCommit",
+    "model",
+    "harness",
+    "condition",
+    "tasks"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "recordedAt": { "type": "string", "format": "date-time" },
+    "skillCommit": { "type": "string", "minLength": 7 },
+    "model": {
+      "type": "object",
+      "required": ["name", "revision", "reasoning"],
+      "properties": {
+        "name": { "type": "string" },
+        "revision": { "type": "string" },
+        "reasoning": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "harness": { "type": "string" },
+    "condition": {
+      "enum": ["no-skill", "canonical", "canonical-plus-adapter"]
+    },
+    "adapter": { "type": ["string", "null"] },
+    "tasks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "passed",
+          "interventions",
+          "unsupportedClaims",
+          "lostFacts",
+          "formattingViolations",
+          "operatorAttributionErrors",
+          "modeConfusions",
+          "safetyBoundaryViolations",
+          "unprovenSimulationClaims"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "passed": { "type": "boolean" },
+          "interventions": { "type": "integer", "minimum": 0 },
+          "unsupportedClaims": { "type": "integer", "minimum": 0 },
+          "lostFacts": { "type": "integer", "minimum": 0 },
+          "formattingViolations": { "type": "integer", "minimum": 0 },
+          "operatorAttributionErrors": { "type": "integer", "minimum": 0 },
+          "modeConfusions": { "type": "integer", "minimum": 0 },
+          "safetyBoundaryViolations": { "type": "integer", "minimum": 0 },
+          "unprovenSimulationClaims": { "type": "integer", "minimum": 0 },
+          "inputTokens": { "type": ["integer", "null"], "minimum": 0 },
+          "outputTokens": { "type": ["integer", "null"], "minimum": 0 },
+          "latencyMs": { "type": ["integer", "null"], "minimum": 0 },
+          "costUsd": { "type": ["number", "null"], "minimum": 0 },
+          "evidence": { "type": ["string", "null"] },
+          "notes": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

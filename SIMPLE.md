@@ -28,7 +28,7 @@
 - Shared guidance lives in `skills/simple`; host manifests only package it.
 - `scripts/link-skill.mjs` owns the four local host routes; it does not copy the skill.
 - `simple.mjs init` creates the route and profile; `setup` remains an alias for existing users; `check` validates their shape.
-- `audit`, `plan`, `review`, and `write` are thin judgement modes over the shared skill; operator emulation stays a specialist reference, not a command.
+- `audit`, `plan`, `review`, `write`, and `emulate` are thin judgement modes over the shared skill; operator lenses stay sourced specialist references.
 - Audit crawlers collect bounded evidence; the lead agent owns synthesis and recommendations.
 - One Claude Code hook script handles session, subagent, and relevant pre-write events.
 

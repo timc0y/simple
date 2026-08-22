@@ -1,4 +1,4 @@
 interface:
   display_name: "Simple"
   short_description: "Smallest truthful design and plain developer writing"
-  default_prompt: "Use $simple in design or writing mode. Read the nearest SIMPLE.md when repository facts matter. Preserve present obligations, write concise plain Markdown, and prove consequential claims."
+  default_prompt: "Use $simple in design or writing mode. Read the nearest SIMPLE.md when repository facts matter. Preserve present obligations, write concise plain Markdown, and prove consequential claims. When asked what a documented engineer or company would do, apply source-backed operator emulation, never the persona."

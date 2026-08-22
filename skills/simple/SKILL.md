@@ -90,14 +90,14 @@ blockers, risk, and the next relevant action. Do not narrate routine tool use.
 - Engineering precedents and examples: read `references/examples.md`.
 - `simple audit`: read `references/audit.md` and use objective crawling agents when
   available; keep architectural judgement with the lead agent.
-- `simple init`, `plan`, `review`, `write`, or `check`: read
+- `simple init`, `plan`, `review`, `write`, `emulate`, or `check`: read
   `references/commands.md`.
 - Plans, documentation, comments, Markdown, prompts, reviews, updates, or handoffs:
   read `references/writing.md`. Use writing mode without expanding into design
   analysis unless the content requires it.
 - Asked what a documented engineer, company, or operator would do: read
-  `references/operator-emulation.md`. Emulate the documented doctrine, never the
-  persona, and only when requested.
+  `references/operator-emulation.md` and only the selected lens file. Emulate the
+  documented doctrine, never the persona, and only when requested.
 - Adapting guidance to a model or harness: read `references/model-profiles.md`.
 - Refactoring or deletion: read `references/refactoring.md`; for deletion tooling,
   also read `references/deletion-tools.md`.

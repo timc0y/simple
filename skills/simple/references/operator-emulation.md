@@ -36,3 +36,10 @@ Documented in Everyday Astronaut's
 Blind spot: aggressive deletion and speed are wrong where regulation, retained data,
 public contracts, audit, security, accessibility, recovery, or irreversible failure
 require explicit machinery.
+
+## Bundled lenses
+
+- `operator-lenses/theo-product-engineer.md`: web-product judgement, TypeScript
+  feedback, modularity, and bounded experimental risk.
+- `operator-lenses/minimal-implementation.md`: the repository-first implementation
+  ladder with safety boundaries and known-ceiling records, informed by Ponytail.

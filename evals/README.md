@@ -14,7 +14,8 @@ human interventions; and the model revision, harness, reasoning setting, and ski
 commit.
 
 Store reviewed results under `evals/results/<date>-<harness>-<model>/` with raw model
-output or a durable reference to it. Each run directory keeps the exact runner used
+output or a durable reference to it, and record each condition's machine-readable
+summary against `evals/results.schema.json` so runs stay comparable across models. Each run directory keeps the exact runner used
 (`workflow.js` for Claude Code Workflow runs), `raw/<case>__<condition>.md` solver
 outputs, `results.json` verdicts, and a `README.md` recording model, harness, skill
 commits per condition, and the reviewed analysis. To repeat a run, snapshot each skill

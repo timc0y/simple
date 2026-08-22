@@ -36,8 +36,8 @@ The public repository packages four parts around that method:
 
 - the portable `simple` skill and selectively loaded specialist references;
 - `simple init` and `simple check` for repository routing and profile structure;
-- thin audit, plan, review, and write workflows, plus hooks where a host supports
-  them;
+- thin audit, plan, review, write, and emulate workflows, plus hooks where a host
+  supports them;
 - behavioural evals that test deletion, compatibility, ownership, proof, missing
   addresses, root causes, plain developer writing, operator attribution, implementation
   safety, and complexity that genuinely pays rent.
@@ -130,10 +130,12 @@ mandatory lifecycle.
 | `simple plan` | Design the smallest truthful change | Read-only |
 | `simple review` | Judge a design, plan, document, or diff | Read-only |
 | `simple write` | Create or revise concise developer writing in plain Markdown | Requested writing only |
+| `simple emulate` | Challenge a decision with a sourced operator doctrine, then synthesize | Read-only |
 | `simple check` | Validate routing and profile structure | Read-only |
 
 `init` and `check` have deterministic CLI implementations. `audit`, `plan`, `review`,
-and `write` require model judgement and remain thin prompt entry points into `$simple`.
+`write`, and `emulate` require model judgement and remain thin prompt entry points into
+`$simple`.
 Claude Code exposes the files in `commands/` as slash commands; Codex exposes the same
 workflows through the skill and starter prompts.
 
@@ -169,9 +171,10 @@ compression.
 When asked what a documented engineer or company would do, Simple emulates the sourced
 decision doctrine—never the persona—then synthesizes against repository truth and
 independent proof. The specialist reference bundles SpaceX's documented five-step
-engineering sequence and accepts user-supplied doctrines with equally explicit sources
-and blind spots. Simulated reactions remain hypotheses, never user research or runtime
-proof.
+engineering sequence inline, plus a scoped Theo/T3 web-product lens and a
+minimal-implementation lens informed by Ponytail, and accepts user-supplied doctrines
+with equally explicit sources and blind spots. Simulated reactions remain hypotheses,
+never user research or runtime proof.
 
 ## Hosts
 

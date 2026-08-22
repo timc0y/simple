@@ -162,6 +162,11 @@ test("published surfaces reference files that exist", () => {
     assert.ok(commandReference.includes(`## \`simple ${file.replace(/\.md$/, "")}\``), file);
   }
 
+  for (const lens of ["theo-product-engineer.md", "minimal-implementation.md"]) {
+    assert.ok(existsSync(join(root, "skills", "simple", "references", "operator-lenses", lens)), lens);
+  }
+  JSON.parse(readFileSync(join(root, "evals", "results.schema.json"), "utf8"));
+
   const published = ["README.md", ".claude-plugin/plugin.json", ".claude-plugin/marketplace.json", ".codex-plugin/plugin.json"];
   for (const path of published) {
     assert.doesNotMatch(readFileSync(join(root, path), "utf8"), /timc0y\.github\.io/, path);

@@ -75,6 +75,11 @@ strong baseline model on this suite at one run per condition. The suite's remain
 value is concentrated in the adversarial cases; the two all-fail cases need contract
 review before their results count as evidence.
 
+Superseded for its open questions by `../2026-08-22-isolated-sonnet/`: the isolated
+re-run confirms the mutation-interval win (0/3 vs 2/3), does not reproduce the
+unknown-write regression (3/3 both arms), and shows the skill's real advantage (6/9
+vs 3/9) once the contamination below is removed.
+
 ## Correction, 21 August 2026
 
 The `no-skill` baseline was contaminated. The Simple plugin's `SubagentStart` hook

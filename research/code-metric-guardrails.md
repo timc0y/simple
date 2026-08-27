@@ -163,4 +163,7 @@ Simple needs one rule, not 4 permanent budgets:
 > Do an independent check of the result.
 
 Add this policy to specialist guidance only if an evaluation shows a useful gap.
-It does not support a new dependency, a universal limit, or a change to `simple init`.
+The later [proxy-discipline confirmation](../evals/results/2026-08-27-proxy-discipline-confirmation/README.md)
+did not show that gap. Current Simple and the candidate each passed 38 of 40 strict
+cells across 2 runs. The policy does not support a new dependency, a universal limit,
+or a change to `simple init`.

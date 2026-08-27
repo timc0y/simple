@@ -1,1 +1,0 @@
-The retry was stopped after 30 seconds because three adjacent retries had returned empty text at the ceiling.

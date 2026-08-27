@@ -1,0 +1,542 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-27T19:08:30.750Z",
+    "skillCommit": "98aabe4",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra activation trace with dual anonymous grading",
+    "condition": "current",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "greenfield-start__r1",
+        "passed": true,
+        "evidence": "raw/e8de3e381b96.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "shared-owner-fix__r1",
+        "passed": true,
+        "evidence": "raw/ccafd09be522.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "startup-root-cause__r1",
+        "passed": true,
+        "evidence": "raw/1783c83f9be7.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "implicit-add__r1",
+        "passed": true,
+        "evidence": "raw/807d3a2baeb0.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "qualitative-improve__r1",
+        "passed": true,
+        "evidence": "raw/704cc17d1056.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "trivial-fix__r1",
+        "passed": true,
+        "evidence": "raw/e1e2d792fa70.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": false
+      },
+      {
+        "id": "greenfield-start__r2",
+        "passed": false,
+        "evidence": "raw/eaed03db7a1c.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": false
+        },
+        "invoked": true
+      },
+      {
+        "id": "shared-owner-fix__r2",
+        "passed": true,
+        "evidence": "raw/074806cdca34.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "startup-root-cause__r2",
+        "passed": true,
+        "evidence": "raw/bbd93d4cb7ce.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "implicit-add__r2",
+        "passed": true,
+        "evidence": "raw/8de7c0ff28d6.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "qualitative-improve__r2",
+        "passed": false,
+        "evidence": "raw/f3b4ec9408f1.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        },
+        "invoked": true
+      },
+      {
+        "id": "trivial-fix__r2",
+        "passed": true,
+        "evidence": "raw/d81eb9c02b29.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-27T19:08:30.750Z",
+    "skillCommit": "98aabe4",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra activation trace with dual anonymous grading",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "greenfield-start__r1",
+        "passed": true,
+        "evidence": "raw/e1660547119b.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "shared-owner-fix__r1",
+        "passed": true,
+        "evidence": "raw/915bf317438e.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "startup-root-cause__r1",
+        "passed": false,
+        "evidence": "raw/03328b4b18b5.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "implicit-add__r1",
+        "passed": true,
+        "evidence": "raw/171ac5ba77c3.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "qualitative-improve__r1",
+        "passed": false,
+        "evidence": "raw/8398a76736f9.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        },
+        "invoked": true
+      },
+      {
+        "id": "trivial-fix__r1",
+        "passed": true,
+        "evidence": "raw/c4c33a70ea7d.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": false
+      },
+      {
+        "id": "greenfield-start__r2",
+        "passed": false,
+        "evidence": "raw/23247bbca4e4.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        },
+        "invoked": true
+      },
+      {
+        "id": "shared-owner-fix__r2",
+        "passed": true,
+        "evidence": "raw/f0e4a98a68e1.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "startup-root-cause__r2",
+        "passed": true,
+        "evidence": "raw/58cdf5063ba4.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "implicit-add__r2",
+        "passed": true,
+        "evidence": "raw/52e6704c8fa3.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "qualitative-improve__r2",
+        "passed": false,
+        "evidence": "raw/0fb7e0b059f0.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": false
+        },
+        "invoked": true
+      },
+      {
+        "id": "trivial-fix__r2",
+        "passed": true,
+        "evidence": "raw/91821ff7a7ef.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-27T19:08:30.750Z",
+    "skillCommit": "98aabe4",
+    "model": {
+      "name": "gpt-5.6-terra",
+      "revision": "gpt-5.6-terra",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra activation trace with dual anonymous grading",
+    "condition": "current",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "greenfield-start__r1",
+        "passed": false,
+        "evidence": "raw/6e18f2a34736.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        },
+        "invoked": true
+      },
+      {
+        "id": "shared-owner-fix__r1",
+        "passed": true,
+        "evidence": "raw/6b0c59705b0b.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "startup-root-cause__r1",
+        "passed": false,
+        "evidence": "raw/e60a141ec6f6.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "implicit-add__r1",
+        "passed": true,
+        "evidence": "raw/6132859cd0ff.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "qualitative-improve__r1",
+        "passed": false,
+        "evidence": "raw/7602eeaf2fc8.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        },
+        "invoked": true
+      },
+      {
+        "id": "trivial-fix__r1",
+        "passed": true,
+        "evidence": "raw/4dc3cb067a02.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": false
+      },
+      {
+        "id": "greenfield-start__r2",
+        "passed": true,
+        "evidence": "raw/0867dbf22412.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "shared-owner-fix__r2",
+        "passed": true,
+        "evidence": "raw/9e1988ee7937.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "startup-root-cause__r2",
+        "passed": true,
+        "evidence": "raw/69956c63ee96.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "implicit-add__r2",
+        "passed": true,
+        "evidence": "raw/9a848ce73db3.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "qualitative-improve__r2",
+        "passed": false,
+        "evidence": "raw/5b0fd18a9841.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        },
+        "invoked": true
+      },
+      {
+        "id": "trivial-fix__r2",
+        "passed": true,
+        "evidence": "raw/0fee9452136c.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-27T19:08:30.750Z",
+    "skillCommit": "98aabe4",
+    "model": {
+      "name": "gpt-5.6-terra",
+      "revision": "gpt-5.6-terra",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra activation trace with dual anonymous grading",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "greenfield-start__r1",
+        "passed": false,
+        "evidence": "raw/60dcea71a9c9.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        },
+        "invoked": true
+      },
+      {
+        "id": "shared-owner-fix__r1",
+        "passed": true,
+        "evidence": "raw/db51de4da5d4.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "startup-root-cause__r1",
+        "passed": true,
+        "evidence": "raw/fbd541820d67.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "implicit-add__r1",
+        "passed": true,
+        "evidence": "raw/2211eea8e557.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "qualitative-improve__r1",
+        "passed": true,
+        "evidence": "raw/a1fe69a07635.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "trivial-fix__r1",
+        "passed": true,
+        "evidence": "raw/a5f34681cf4b.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": false
+      },
+      {
+        "id": "greenfield-start__r2",
+        "passed": true,
+        "evidence": "raw/a46b559a5748.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "shared-owner-fix__r2",
+        "passed": true,
+        "evidence": "raw/2565f3f35a57.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "startup-root-cause__r2",
+        "passed": true,
+        "evidence": "raw/3207535dce79.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "implicit-add__r2",
+        "passed": true,
+        "evidence": "raw/0e36ea7cd2eb.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "qualitative-improve__r2",
+        "passed": true,
+        "evidence": "raw/6ee4111e6224.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      },
+      {
+        "id": "trivial-fix__r2",
+        "passed": true,
+        "evidence": "raw/848a1210a409.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        },
+        "invoked": true
+      }
+    ]
+  }
+]

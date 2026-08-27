@@ -213,6 +213,8 @@ summarize() {
     [[ $luna = true && $terra = true ]] && strict=true || strict=false
     print "$run\t$case_name\t$model\t$condition\t$luna\t$terra\t$strict" >> "$record/results.tsv"
   done < "$record/mapping.tsv"
+  node "$repo/evals/normalize-results.mjs" "$record" "$(git -C "$repo" rev-parse HEAD)" \
+    "isolated Codex Luna and Terra with dual anonymous grading"
   awk -F '\t' 'NR > 1 { total[$4]++; if ($7 == "true") pass[$4]++ } END { for (c in total) print c "\t" pass[c]+0 "/" total[c] }' "$record/results.tsv" | sort
 }
 

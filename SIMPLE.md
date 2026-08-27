@@ -19,7 +19,7 @@
 ## Current boundary
 
 - The plugin packages Simple for Codex and Claude Code; the local installer exposes the same source to Codex, Claude Code, OpenCode, and Gemini.
-- Both plugin routes register the same lifecycle and writing-reminder hooks; Codex additionally requires a one-time `/hooks` trust approval per machine, observed working with the identical pattern in Ponytail 4.9.0.
+- Both plugin routes register the same lifecycle and writing-reminder hooks. Codex needs one `/hooks` trust approval on each machine. Ponytail 4.9.0 proves that this pattern works.
 - Pre-write hook context reaches the model after the triggering tool result. It can guide the next step, but it cannot shape edit arguments that the model already chose.
 - Codex also receives repository context through `AGENTS.md` and the skill, so the route survives hosts without hook support.
 - Setup records no inferred users or production promises.
@@ -27,24 +27,27 @@
 ## Ordinary paths
 
 - Shared guidance lives in `skills/simple`; host manifests only package it.
+- `README.md` owns public setup and use; the skill references own detailed method guidance.
 - `scripts/link-skill.mjs` owns the four local host routes; it does not copy the skill.
 - `simple.mjs init` creates the route and profile; `setup` remains an alias for existing users; `check` validates their shape.
 - `audit`, `plan`, `review`, `write`, and `emulate` are thin judgement modes over the shared skill; operator lenses stay sourced specialist references.
 - Audit crawlers collect bounded evidence; the lead agent owns synthesis and recommendations.
+- `evals/README.md` owns the eval protocol; `evals/results/README.md` owns the current decision index; each run owns its raw evidence.
+- `evals/normalize-results.mjs` converts active TSV runner output into the shared result record.
 - One hook script handles session, subagent, and relevant pre-write events for both hook-capable hosts.
 
 ## Proof
 
 - Behaviour: `npm test`
 - Profile: `node skills/simple/scripts/simple.mjs check`
-- Model behaviour: `claude plugin eval simple@timc0y-simple --runs 1 --no-publish`
+- Model behaviour: the isolated Luna and Terra runners under `evals/`
 - Skill and plugin structure: bundled validators
 - Public surface: inspect the skill, references, manifests, hooks, and README together.
 
 ## Reconsider when
 
 - Add parsing only if observed edits cannot be routed reliably with narrow heuristics.
-- Add compatibility only when a published installer or host requires the old surface.
-- Split a command into another skill only when measured retrieval failures require it.
+- Add compatibility only when a published installer or host needs the old surface.
+- Split a command into another skill only when measured retrieval failures make the split necessary.
 - Add an audit crawler lane only when it finds decision-changing evidence in representative repositories.
 - Remove the `AGENTS.md` route only if hook injection is observed reliable across every supported host.

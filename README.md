@@ -1,223 +1,142 @@
 # Simple
 
-Simple helps coding agents make the smallest truthful software decision and explain it
-clearly.
+Simple helps coding agents find the smallest truthful software design. It also helps
+agents write plain developer prose.
 
-It is a portable agent skill with a repository context layer—not a replacement agent,
-runtime wrapper, or development framework. The skill has two connected modes: design
-for architecture and change decisions, and writing for concise plans, documentation,
-comments, Markdown, prompts, reviews, updates, and handoffs.
-A short local `SIMPLE.md` supplies the users, contracts, retained data, ordinary paths,
-proof, and reconsideration conditions that generic model training cannot know.
+Simple is a portable agent skill with a repository context file. It is not an agent,
+runtime wrapper, or development framework.
 
-**[Visit the Simple site](https://timcoy.uk/simple/)** · Open source · MIT
-
-[![skills.sh](https://skills.sh/b/timc0y/simple)](https://skills.sh/timc0y/simple)
+[Website](https://timcoy.uk/simple/) | [MIT license](LICENSE) |
+[skills.sh](https://skills.sh/timc0y/simple)
 
 ```sh
 npx skills add timc0y/simple
 ```
 
-Agents often enter a repository without knowing its stage, users, data, or promises.
-That missing context makes speculative architecture look responsible: old interfaces
-are preserved without consumers, migration systems appear without production data,
-and one future possibility becomes an abstraction.
+## Why Simple exists
 
-Simple combines a small design-and-writing method with a local `SIMPLE.md` containing
-the facts that change those decisions and explanations.
+An agent can know general software patterns but cannot know a repository's current
+users, promises, data, or supported paths. Without those facts, speculative work can
+look responsible.
 
-Simple uses design mode for architecture, ownership, compatibility, migration,
-deletion, broad refactoring, and explicit audit, plan, or review work. Writing mode is
-also first class: it helps agents produce plain, concise plans, documentation, comments,
-Markdown, prompts, reviews, updates, and handoffs without turning each writing task into
-an architecture audit.
+Common errors include these examples:
 
-Simple first separates the human's problem from any proposed implementation. It makes
-the current cause and desired outcome clear, shapes the smallest supported correction,
-then checks that correction against the original problem. Explanations answer the main
-question first and use a small example or visual when prose alone is hard to picture.
+- The agent keeps an old interface that has no consumer.
+- The agent adds a migration when no production data exists.
+- The agent adds a service for growth that nobody measured.
+- The agent creates a second owner instead of using the current path.
 
-The public repository packages four parts around that method:
+Simple separates current facts from assumptions. It then finds the owner, ordinary
+path, exact obstruction, smallest correction, and independent proof.
 
-- the portable `simple` skill and selectively loaded specialist references;
-- `simple init` and `simple check` for repository routing and profile structure;
-- thin audit, plan, review, write, and emulate workflows, plus hooks where a host
-  supports them;
-- behavioural evals that test deletion, compatibility, ownership, proof, missing
-  addresses, root causes, plain developer writing, operator attribution, implementation
-  safety, and complexity that genuinely pays rent.
+```text
+problem
+  + repository facts
+  + existing owner and ordinary path
+  -> smallest truthful change
+  -> independent proof
+```
 
-| Repository reality | Smallest truthful design |
+Simple minimizes concepts, states, workflows, and decisions. It does not reduce line
+count at the cost of behavior, safety, recovery, or proof.
+
+| Current fact | Smallest truthful path |
 | --- | --- |
-| No consumers or retained data | Replace directly |
-| Retained data, no old callers | Migrate the data, not the interface |
-| Consumers with a real promise | Use bounded compatibility with a removal condition |
+| No consumers and no retained data | Replace the old design directly |
+| Retained data and no old callers | Migrate the data, not the interface |
+| A real old consumer has a promise | Use one bounded adapter with an end condition |
 
-Simple does not mean fewer lines at any cost. It means fewer concepts, states,
-workflows, and decisions while preserving real behaviour, safety, and proof.
+The [architecture reference](skills/simple/references/architecture.md) gives the
+implementation ladder. The [examples](skills/simple/references/examples.md) explain
+the Raptor model and other engineering precedents.
 
-## The Raptor test
+## Add repository context
 
-SpaceX's Raptor 1 → 2 → 3 evolution is the clearest physical example of the idea.
-Raptor 3 internalised flow paths and cooling so exposed plumbing, engine shielding,
-and supporting vehicle hardware could be removed. The engineering remained
-sophisticated inside while the engine imposed less complexity on the whole vehicle.
-
-That is the standard for software simplification: put necessary complexity behind
-one clear owner, then remove the adapters, parallel paths, and support machinery the
-stronger boundary makes unnecessary. Judge the system, not one component's line
-count.
-
-Sources: [SpaceX's Raptor comparison](https://x.com/SpaceX/status/1819795288116330594)
-and [SpaceX's 2026 technical disclosure](https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf).
-
-## Method
-
-Simple applies first-principles reasoning by separating repository facts from inherited
-assumptions and stating the required outcome before reusing the current implementation.
-
-```text
-problem -> current cause -> smallest correction -> outcome checked again
-```
-
-The core uses a few established ideas as compact decision anchors:
-
-- KISS: minimise concepts and coordination, not merely lines;
-- YAGNI: hypothetical requirements are not present obligations;
-- Chesterton's Fence: establish why something exists before removing it;
-- information hiding: keep necessary complexity behind one clear owner;
-- progressive disclosure: load specialist knowledge only when it changes the task.
-
-Repository evidence decides what those principles mean in each codebase.
-
-```text
-small reasoning kernel
-      +
-validated SIMPLE.md grounded in repository truth
-      +
-specialist references when needed
-      ↓
-smallest truthful solution
-```
-
-The specialist references cover architecture, compatibility, refactoring, writing,
-development communication, deletion tools, and capability-based model guidance. They
-stay out of ordinary context until the task needs them.
-
-Simple keeps one canonical skill rather than model-specific copies; when a model or
-harness needs more or less structure, `skills/simple/references/model-profiles.md`
-describes how to adapt the guidance and prove the adapter still earns its place.
-
-## Repository context
-
-Run init from this repository:
+Run `init` from this repository:
 
 ```sh
 node skills/simple/scripts/simple.mjs init /path/to/repository
 ```
 
-Init creates `AGENTS.md`, `CLAUDE.md`, and `SIMPLE.md`. The new profile is marked
-incomplete because a script cannot know the repository's users, production data, or
-promises. Replace its prompts with observed facts, remove the incomplete marker, and
-validate it:
+The command creates `AGENTS.md`, `CLAUDE.md`, and `SIMPLE.md`. The new profile stays
+incomplete because a script cannot infer users, production data, or promises.
+
+Replace the prompts with observed facts. Remove the incomplete marker. Then do a
+check of the profile:
 
 ```sh
 node skills/simple/scripts/simple.mjs check /path/to/repository
 ```
 
-The canonical generated profile lives at
-`skills/simple/assets/SIMPLE.template.md`. Keep the completed profile short and
-record only reality, knowledge to preserve, the current design boundary, ordinary
-paths, proof, and observable reconsideration conditions.
+A useful profile records these facts:
+
+- current users, operators, consumers, and public contracts;
+- production data and real compatibility promises;
+- facts that the next change must preserve;
+- the current system boundary;
+- existing owners, workflows, and supported mechanisms;
+- the observable behavior of each useful ordinary path;
+- independent proof and measurable reconsideration conditions.
+
+Keep the profile short. Record facts that can change a design. Do not copy generic
+principles from the skill into the profile.
+
+The canonical template is
+[`skills/simple/assets/SIMPLE.template.md`](skills/simple/assets/SIMPLE.template.md).
+The [profile guide](skills/simple/references/profile-template.md) explains how to
+complete it. The nearest profile applies when a repository has nested profiles.
 
 ## Commands
 
-Commands are human entry points into one Simple method, not separate skills or a
-mandatory lifecycle.
+Commands are entry points into one method. They are not a mandatory sequence.
 
 | Command | Purpose | Default authority |
 | --- | --- | --- |
-| `simple init` | Establish repository truth and create its profile | Profile and routing files only |
-| `simple audit` | Find ownership seams, parallel paths, invented obligations, and unpaid complexity | Read-only |
-| `simple plan` | Design the smallest truthful change | Read-only |
-| `simple review` | Judge a design, plan, document, or diff | Read-only |
-| `simple write` | Create or revise concise developer writing in plain Markdown | Requested writing only |
-| `simple emulate` | Challenge a decision with a sourced operator doctrine, then synthesize | Read-only |
-| `simple check` | Validate routing and profile structure | Read-only |
+| `simple init` | Create the route and repository profile | Profile and route files |
+| `simple audit` | Find ownership seams and unpaid complexity | Read only |
+| `simple plan` | Plan the smallest truthful change | Read only |
+| `simple review` | Review a design, document, plan, or diff | Read only |
+| `simple write` | Write or revise plain developer prose | Requested text |
+| `simple emulate` | Apply one documented operator method | Read only |
+| `simple check` | Check the route and profile structure | Read only |
 
-`init` and `check` have deterministic CLI implementations. `audit`, `plan`, `review`,
-`write`, and `emulate` require model judgement and remain thin prompt entry points into
-`$simple`.
-Claude Code exposes the files in `commands/` as slash commands; Codex exposes the same
-workflows through the skill and starter prompts. Two starter prompts expose problem
-shaping and plain explanations without adding more commands.
+`init` and `check` use deterministic scripts. The other commands use model judgment
+through the shared skill. Their full contracts are in the
+[command reference](skills/simple/references/commands.md).
 
-### Evidence-led audits
-
-When subagents are available, `simple audit` gives inexpensive agents bounded,
-objective crawls for repository reality, ownership, ordinary paths, compatibility,
-complexity candidates, and proof/profile consistency. They return normalized facts,
-scope, and limitations. The lead agent reconciles conflicts and retains all design
-judgement. A crawler's `not_found` result never becomes proof of absence.
+Operator emulation applies a documented decision method. It does not imitate a person
+or invent user evidence. See the
+[operator guide](skills/simple/references/operator-emulation.md).
 
 ## Writing
 
-Writing is a first-class Simple mode. Use it for technical plans, documentation,
-comments, Markdown, prompts, reviews, progress updates, and handoffs. It applies a plain
-writing standard without expanding the task into architecture analysis unless the
-content genuinely requires a design decision.
+Writing is a first-class Simple mode. Use it for plans, documentation, comments,
+prompts, reviews, updates, and handoffs.
 
-- Code shows what happens; comments preserve non-obvious reasons, contracts, and
-  invariants.
-- Plans cover the requested outcome, relevant facts, necessary steps, proof, and only
-  the risks or unknowns that affect action.
-- Documentation preserves what the reader needs to decide, operate, recover, or verify.
-- Updates and handoffs lead with the outcome and material evidence.
-- Markdown stays plain: few sentence-case headings, shallow lists, restrained emphasis,
-  no decorative styling, and no table unless comparison genuinely needs one.
+- Lead with the answer or outcome.
+- Keep each fact in its owning source.
+- Use comments for reasons, contracts, invariants, and traps.
+- Use the smallest structure that makes the subject easy to understand.
+- Keep material constraints, proof, risks, and unknowns.
 
-The goal is clear, load-bearing prose—not ceremonial formatting or aggressive
-compression.
-
-## Operator emulation
-
-When asked what a documented engineer or company would do, Simple emulates the sourced
-decision doctrine—never the persona—then synthesizes against repository truth and
-independent proof. The specialist reference bundles SpaceX's documented five-step
-engineering sequence inline, plus a scoped Theo/T3 web-product lens and a
-minimal-implementation lens informed by Ponytail, and accepts user-supplied doctrines
-with equally explicit sources and blind spots. Simulated reactions remain hypotheses,
-never user research or runtime proof.
-
-## Hosts
-
-Both hosts use the same skill, repository profile, and lifecycle hooks.
-
-- Claude Code and Codex both register `hooks/hooks.json`: the nearest profile is
-  injected at session and subagent start. When an edit contains Markdown or a new
-  comment, short review context is attached to the tool result so the agent can correct
-  the edit on its next step. Codex asks for a one-time `/hooks` trust approval per
-  machine.
-- Codex also follows the repository route in `AGENTS.md`, so the guidance survives
-  hosts or sessions without hook support.
+The [writing reference](skills/simple/references/writing.md) owns the full standard.
+Simple does not turn each writing task into an architecture audit.
 
 ## Install
 
-The open Agent Skills CLI discovers Simple directly from this repository and installs
-it for Codex, Claude Code, Cursor, OpenCode, and other supported agents:
+The Agent Skills command installs Simple for supported coding agents:
 
 ```sh
 npx skills add timc0y/simple
 ```
 
-To select one agent and install globally:
+Select Codex and install the skill globally:
 
 ```sh
 npx skills add timc0y/simple --skill simple -g -a codex -y
 ```
 
-The host-specific plugin routes remain available when their hooks or command surfaces
-are useful.
+The plugin packages add host commands and lifecycle hooks.
 
 Codex:
 
@@ -233,99 +152,66 @@ claude plugin marketplace add timc0y/simple
 claude plugin install simple@timc0y-simple
 ```
 
-For local skill development:
+Use this command for local development:
 
 ```sh
 npm run install:local
 ```
 
-The local installer links the same skill source into Codex, Claude Code, OpenCode,
-and Gemini. There is one maintained copy of the guidance, not a host-specific fork.
+The local command links one skill source into Codex, Claude Code, OpenCode, and
+Gemini. It does not make host-specific copies.
 
-## Using Simple well
+## Activation and hooks
 
-Install globally once; invest per repository. A global install (plugin or skills CLI)
-gives every project the method — the design sequence, the writing standard, the
-references. The value concentrates when a repository also has a completed profile:
-run `simple init`, replace the template prompts with observed facts, and validate with
-`simple check`. Paired evals show the profile's facts change outcomes more than any
-phrasing in the skill; treat `SIMPLE.md` as the product and the skill as its reader.
-Record only what you can observe — users, contracts, retained data, proof — never
-aspirations, and keep it short enough to read in one sitting. Nested profiles scope
-facts to a subtree; the nearest one wins.
+The Codex and Claude Code plugin packages use the same lifecycle hooks. The nearest
+profile enters context at the start of a session and a subagent.
 
-Use Simple when repository facts could change the implementation: architecture,
-ownership, compatibility, migration, deletion, broad refactoring — and for developer
-writing that must stay plain and load-bearing. Ask for an operator lens only when you
-want a documented doctrine to challenge a decision.
+A write hook can add a short review note after a Markdown or comment edit. The note
+arrives after the tool result. It can guide the next correction, but it cannot change
+edit arguments that the model already sent.
 
-Do not use it as ceremony or as permission. A one-line fix needs a one-line fix, not
-an audit (the `routine-edit` eval enforces exactly this), and "simple" never justifies
-breaking a real consumer, dropping validation at a trust boundary, or deleting
-recovery and audit obligations — the profile's Preserve section outranks minimalism.
+Codex needs one `/hooks` trust approval on each machine. Codex also reads the route in
+`AGENTS.md`. This route keeps Simple available when a host does not run hooks.
 
-Simple can coexist with other minimalism skills such as Ponytail. The interaction is
-model-dependent. An earlier Claude run found a failure on lock and interval design. A
-later Codex Luna and Terra matrix did not reproduce a uniform fault, but it also did not
-force every labelled skill to run. Do not choose a skill combination from these small
-samples. Check the required sequence and its independent proof. See the
-[Codex matrix](evals/results/2026-08-26-leading-words-matrix/codex/RESULTS.md).
+The skill can still work without `SIMPLE.md`. In that case, it uses repository evidence
+without a repository-specific profile. The profile context is absent, but the skill is
+not automatically inactive.
 
-How to tell it is active:
-
-- Claude Code shows "Repository-specific Simple context from …/SIMPLE.md" at session
-  start, the `/simple` commands are available, and subagents receive the same profile.
-- Codex, OpenCode, and Gemini activate through the skill listing and the `AGENTS.md`
-  route; if the route paragraph is missing or the skill is not installed for that
-  host, Simple is not in play there.
-- `simple check` verifies the wiring deterministically: routing files present, profile
-  complete and within the injection budget.
-
-It is not active when no `SIMPLE.md` exists in or above the working directory (the
-hook then injects nothing and the skill falls back to generic evidence), when the
-profile still carries the incomplete marker from `init`, or when a host lacks both the
-skill and the route. When in doubt, ask the agent which profile it loaded — the answer
-should name the file path.
-
-## Website
-
-The public site is part of Tim's personal site and is published at
-[timcoy.uk/simple](https://timcoy.uk/simple/). This repository owns the skill; the
-personal-site repository owns the page and its deployment.
+Simple is not ready when a profile still has the incomplete marker. `simple check`
+reports this state. It also checks the route and the profile size.
 
 ## Evidence
 
-Run deterministic checks with:
+The strongest recent result concerns repository facts. A profile that named the
+serialization owner and its supported alias mechanism improved strict passes from
+4 of 12 to 12 of 12.
+
+A focused authoring rule then improved profile output from 2 of 6 to 5 of 6. The rule
+asks for the owner, supported mechanism, and observable behavior in `Ordinary paths`.
+
+Tests of explicit start, fix, improve, and add routing did not earn more runtime text.
+The current skill opened on all 40 substantive activation cells. The candidate also
+opened on 2 of 4 typo-only controls.
+
+See the [evaluation decisions](evals/results/README.md) and the
+[evaluation protocol](evals/README.md). Results are evidence only when their harness,
+grader contract, and skill condition are valid.
+
+## Development
+
+Run the deterministic checks:
 
 ```sh
 npm test
 node skills/simple/scripts/simple.mjs check
+git diff --check
 ```
 
-The tests cover incomplete init, completed profile validation, nearest nested
-profile discovery, profile injection, and targeted writing reminders. Behavioural
-eval cases cover pre-launch replacement, retained production data, reuse of an
-ordinary path, concise development writing, and adversarial pressure to invent
-compatibility or architecture. A missing-precondition case tests whether the agent
-preserves correctly owned state and repairs only its supported address. Root-cause,
-unknown-write, and mutation-interval cases distinguish accidental machinery from
-complexity earned by a real consequence and assign invariants to one owner:
+The tests cover profile setup, nested profile selection, hook routing, host links,
+public references, release versions, eval case structure, and normalized eval records.
 
-```sh
-claude plugin eval simple@timc0y-simple --runs 1 --no-publish
-```
+Change runtime text only after an equal A/B test moves the result. Keep negative
+results. A tie loses because more instruction adds context cost.
 
-These evals are evidence only after they have been run and reviewed. Compare paired
-no-skill and with-skill runs using the protocol in `evals/README.md`. Add instruction
-for a measured failure, then remove or replace it when the same evals show it is no
-longer useful.
-
-## Direction
-
-Simple should become more capable through better local facts, routing, and evidence—not
-through a growing universal prompt. State each rule once. Keep examples only when
-they encode a real requirement or correct a measured gap.
-
-## License
-
-MIT
+The public website is in Tim's personal-site repository. This repository owns the
+skill, plugins, profiles, tests, and evidence.

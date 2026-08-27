@@ -1,1 +1,0 @@
-Let me explore the codebase to understand the current structure and how reports work.This looks like a generated harness. Let me read the key files to understand the actual project.This appears to be a scenario directory. Let me check whether actual source code exists anywhere in the workspace.

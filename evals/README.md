@@ -1,39 +1,56 @@
 # Simple evaluation protocol
 
-Evaluate Simple as a decision skill, not as a collection of preferred phrases.
+Evaluate Simple as a decision skill. Do not grade preferred phrases.
 
-Run every representative task under the same model, harness, tools, repository state,
-and reasoning setting with and without the skill, and with any capability adapter under
-test as a third condition. Do not compare a new model with an adapter against an older
-model without one and call the difference a skill gain.
+## Compare equal conditions
 
-Record pass or fail against the task grader; invented obligations, compatibility,
-state, owners, or workflows; lost material facts; plain-writing violations;
-operator-attribution errors; safety-boundary violations; unsupported progress claims;
-human interventions; and the model revision, harness, reasoning setting, and skill
-commit.
+Use the same model, harness, tools, repository state, and reasoning setting for each
+condition. Compare no skill, the current skill, and one candidate on the same task.
+Add a Ponytail condition only when skill interaction is part of the question.
 
-Every case carries grader self-test references at
-`graders/references/pass.md` and `graders/references/fail.md`. Before any real answer
-is graded, the grader must pass the pass reference and fail the fail reference against
-the case's criteria; a grader that misranks its references is not trusted and the run
-does not count. This is how a broken contract is caught before it costs a run.
+Test activation separately from execution. An activation run must not force the model
+to read the skill. An execution run must make each model read its assigned skill.
 
-Skill text changes follow the same rule: draft the candidate edit, A/B it against the
-current text on the affected cases, and ship it only when the number moves. Record
-edits that failed to move the number in the run's results; an untested instruction
-never ships.
+## Prove the grader first
 
-Store reviewed results under `evals/results/<date>-<harness>-<model>/` with raw model
-output or a durable reference to it, and record each condition's machine-readable
-summary against `evals/results.schema.json` so runs stay comparable across models. Each run directory keeps the exact runner used
-(`workflow.js` for Claude Code Workflow runs), `raw/<case>__<condition>.md` solver
-outputs, `results.json` verdicts, and a `README.md` recording model, harness, skill
-commits per condition, and the reviewed analysis. To repeat a run, snapshot each skill
-version with `git archive <ref> skills/simple`, copy `prompt.md` and any `SIMPLE.md`
-fixture into per-case directories the solver can see without `graders/`, and keep
-graders visible only to the grading stage. Record failures as evidence; do not rewrite graders after seeing one
-model's answer unless the task contract was genuinely wrong. Keep an adapter only when
-repeated paired runs improve quality or cost without weakening present-obligation,
-proof, or plain-writing boundaries; remove it when later model versions pass without
-it.
+Each case must contain these files:
+
+- `prompt.md`;
+- `graders/criteria.md`;
+- `graders/references/pass.md`;
+- `graders/references/fail.md`;
+- `SIMPLE.md` when repository facts affect the answer.
+
+The grader must accept the pass reference and reject the fail reference. Reject the
+run if this check fails. Keep grader files hidden from the solver.
+
+Grade present obligations, ownership, lost facts, independent proof, unsupported
+claims, mode errors, safety boundaries, and writing quality. Do not grade one
+preferred implementation when more than one design satisfies the task.
+
+## Keep a complete run record
+
+Store each reviewed run in `evals/results/<date>-<name>/`. Keep the exact runner, raw
+answers, grader records, condition map, and a short `README.md` with the decision.
+
+Active TSV runners must also call `evals/normalize-results.mjs`. This command writes a
+`results.json` file that matches `evals/results.schema.json`. The normalized record
+keeps each model and condition separate and points each task to its raw answer.
+
+The [result index](results/README.md) marks each run as valid, superseded, invalid, or
+inconclusive. Old runs can keep their first record format. Do not present an old record
+as normalized if it does not match the current schema.
+
+## Change the skill only when the result moves
+
+Change one instruction at a time where possible. Run the current and candidate text
+on the affected cases. Keep the edit only when it improves the result without a new
+failure or unjustified context cost. A tie loses.
+
+Record negative results. Do not change a grader after a model answer unless the task
+contract was wrong. If you change the contract, state why and run the affected answer
+again when the change can alter its grade.
+
+Record the model revision, harness, reasoning setting, skill commit, token use,
+latency, interventions, and limits when those facts are available. Never compare two
+different model revisions and call the difference a skill gain.

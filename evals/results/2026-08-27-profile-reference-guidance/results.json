@@ -1,0 +1,170 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-27T19:07:39.302Z",
+    "skillCommit": "98aabe4",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra with dual anonymous grading",
+    "condition": "simple",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "profile-authoring__r1",
+        "passed": false,
+        "evidence": "raw/63d8c82ec715.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": true
+        }
+      },
+      {
+        "id": "profile-authoring__r2",
+        "passed": true,
+        "evidence": "raw/d36de23830af.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "profile-authoring__r3",
+        "passed": false,
+        "evidence": "raw/2203108cd9e3.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": true
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-27T19:07:39.302Z",
+    "skillCommit": "98aabe4",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra with dual anonymous grading",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "profile-authoring__r1",
+        "passed": true,
+        "evidence": "raw/fc91946d7c3c.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "profile-authoring__r2",
+        "passed": true,
+        "evidence": "raw/f1ee2fc51ac9.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "profile-authoring__r3",
+        "passed": false,
+        "evidence": "raw/ab566f21416b.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": true
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-27T19:07:39.302Z",
+    "skillCommit": "98aabe4",
+    "model": {
+      "name": "gpt-5.6-terra",
+      "revision": "gpt-5.6-terra",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra with dual anonymous grading",
+    "condition": "simple",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "profile-authoring__r1",
+        "passed": false,
+        "evidence": "raw/9204f38b8cba.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": true
+        }
+      },
+      {
+        "id": "profile-authoring__r2",
+        "passed": false,
+        "evidence": "raw/1b11268ee9a1.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": true
+        }
+      },
+      {
+        "id": "profile-authoring__r3",
+        "passed": true,
+        "evidence": "raw/fe7ea2802c29.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-27T19:07:39.302Z",
+    "skillCommit": "98aabe4",
+    "model": {
+      "name": "gpt-5.6-terra",
+      "revision": "gpt-5.6-terra",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra with dual anonymous grading",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "profile-authoring__r1",
+        "passed": true,
+        "evidence": "raw/352e43551309.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "profile-authoring__r2",
+        "passed": true,
+        "evidence": "raw/3ef72443bb3e.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "profile-authoring__r3",
+        "passed": true,
+        "evidence": "raw/b9984119d109.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      }
+    ]
+  }
+]

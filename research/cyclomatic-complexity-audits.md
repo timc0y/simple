@@ -265,6 +265,11 @@ Those facts can change and cannot come from model training data.
 
 ## Useful evals
 
+The later [proxy-discipline suite](../evals/results/2026-08-27-proxy-discipline-confirmation/README.md)
+tested score pursuit, ownership, generated files, comments, and direct production
+budgets. Current Simple and the candidate tied across the 2 runs. Keep the cases, but
+do not add the candidate text.
+
 Use contrastive cases that separate a useful audit from score pursuit:
 
 1. Replace interval branches that overlap with boundary algebra and use a finite differential check.

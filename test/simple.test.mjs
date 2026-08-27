@@ -1,10 +1,11 @@
 import { existsSync, mkdtempSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 import { spawnSync } from "node:child_process";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
+import { validateResults } from "../evals/normalize-results.mjs";
 import { check, init, MAX_PROFILE_CHARS, setup } from "../skills/simple/scripts/simple.mjs";
 import { skillLinks } from "../scripts/link-skill.mjs";
 
@@ -32,7 +33,9 @@ test("init is the public setup command", () => {
   assert.equal(JSON.parse(result.stdout).ready, false);
   const route = readFileSync(join(root, "AGENTS.md"), "utf8");
   assert.ok(route.includes("simple init"));
-  assert.ok(route.includes("`write`"));
+  for (const command of publicCommands().filter((command) => command !== "init")) {
+    assert.ok(route.includes(`\`${command}\``), command);
+  }
   assert.equal(init, setup);
 });
 
@@ -177,8 +180,11 @@ test("published surfaces reference files that exist", () => {
   }
 
   const commandReference = readFileSync(join(root, "skills", "simple", "references", "commands.md"), "utf8");
+  const readme = readFileSync(join(root, "README.md"), "utf8");
   for (const file of readdirSync(join(root, "commands"))) {
-    assert.ok(commandReference.includes(`## \`simple ${file.replace(/\.md$/, "")}\``), file);
+    const command = file.replace(/\.md$/, "");
+    assert.ok(commandReference.includes(`## \`simple ${command}\``), file);
+    assert.ok(readme.includes(`| \`simple ${command}\``), file);
   }
 
   for (const lens of ["theo-product-engineer.md", "minimal-implementation.md"]) {
@@ -205,26 +211,86 @@ test("published surfaces reference files that exist", () => {
   }
 });
 
+test("maintained Markdown links resolve", () => {
+  const root = process.cwd();
+  const maintained = [
+    join(root, "README.md"),
+    join(root, "SIMPLE.md"),
+    join(root, "evals", "README.md"),
+    ...walkFiles(join(root, "commands")).filter((path) => path.endsWith(".md")),
+    ...walkFiles(join(root, "skills", "simple")).filter((path) => path.endsWith(".md")),
+    ...walkFiles(join(root, "research")).filter((path) => path.endsWith(".md")),
+    ...walkFiles(join(root, "evals", "results")).filter((path) => /\/(README|RESULTS)\.md$/.test(path))
+  ];
+
+  for (const source of maintained) {
+    for (const match of readFileSync(source, "utf8").matchAll(/\[[^\]]*\]\(([^)]+)\)/g)) {
+      const target = match[1].split("#")[0];
+      if (!target || /^[a-z]+:/i.test(target)) continue;
+      assert.ok(existsSync(resolveMarkdownLink(source, target)), `${source} -> ${target}`);
+    }
+  }
+});
+
+test("release surfaces share one base version", () => {
+  const root = process.cwd();
+  const packageVersion = JSON.parse(readFileSync(join(root, "package.json"), "utf8")).version;
+  const claudeVersion = JSON.parse(readFileSync(join(root, ".claude-plugin", "plugin.json"), "utf8")).version;
+  const marketplaceVersion = JSON.parse(readFileSync(join(root, ".claude-plugin", "marketplace.json"), "utf8")).plugins[0].version;
+  const codexVersion = JSON.parse(readFileSync(join(root, ".codex-plugin", "plugin.json"), "utf8")).version;
+  assert.equal(claudeVersion, packageVersion);
+  assert.equal(marketplaceVersion, packageVersion);
+  assert.equal(codexVersion.split("+")[0], packageVersion);
+});
+
 test("every eval grader ships self-test references", () => {
   const evalRoot = join(process.cwd(), "evals");
-  for (const entry of readdirSync(evalRoot, { withFileTypes: true })) {
-    if (!entry.isDirectory()) continue;
-    if (!existsSync(join(evalRoot, entry.name, "graders", "criteria.md"))) continue;
+  const criteriaFiles = walkFiles(evalRoot).filter((path) => path.endsWith(join("graders", "criteria.md")) && !path.includes(join("evals", "results")));
+  assert.ok(criteriaFiles.length >= 30);
+  for (const criteria of criteriaFiles) {
+    const graderRoot = dirname(criteria);
     for (const ref of ["pass.md", "fail.md"]) {
-      assert.ok(existsSync(join(evalRoot, entry.name, "graders", "references", ref)), `${entry.name}/${ref}`);
+      assert.ok(existsSync(join(graderRoot, "references", ref)), `${criteria}/${ref}`);
     }
   }
 });
 
 test("evals that request repository context include a SIMPLE.md fixture", () => {
   const evalRoot = join(process.cwd(), "evals");
-  for (const entry of readdirSync(evalRoot, { withFileTypes: true })) {
-    if (!entry.isDirectory()) continue;
-    const prompt = join(evalRoot, entry.name, "prompt.md");
-    if (!existsSync(prompt)) continue;
+  const prompts = walkFiles(evalRoot).filter((path) => path.endsWith("prompt.md") && !path.includes(join("evals", "results")));
+  for (const prompt of prompts) {
     const text = readFileSync(prompt, "utf8");
     if (text.includes("SIMPLE.md")) {
-      assert.equal(existsSync(join(evalRoot, entry.name, "SIMPLE.md")), true, entry.name);
+      assert.equal(existsSync(join(dirname(prompt), "SIMPLE.md")), true, prompt);
+    }
+  }
+});
+
+test("normalized eval results match their evidence", () => {
+  const resultRoot = join(process.cwd(), "evals", "results");
+  const legacyObjects = new Set([
+    join(resultRoot, "2026-08-21-local-sonnet", "results.json"),
+    join(resultRoot, "2026-08-22-skill-interaction", "results.json")
+  ]);
+
+  const resultFiles = readdirSync(resultRoot, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => join(resultRoot, entry.name, "results.json"))
+    .filter(existsSync);
+  for (const resultFile of resultFiles) {
+    const result = JSON.parse(readFileSync(resultFile, "utf8"));
+    if (legacyObjects.has(resultFile)) {
+      assert.equal(Array.isArray(result), false, resultFile);
+      continue;
+    }
+    assert.deepEqual(validateResults(result, dirname(resultFile)), [], resultFile);
+  }
+
+  for (const entry of readdirSync(resultRoot, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const run = join(resultRoot, entry.name);
+    if (existsSync(join(run, "mapping.tsv")) && existsSync(join(run, "results.tsv"))) {
+      assert.ok(existsSync(join(run, "results.json")), `${entry.name}/results.json`);
     }
   }
 });
@@ -244,4 +310,22 @@ function runHook(payload) {
     input: JSON.stringify(payload),
     encoding: "utf8"
   });
+}
+
+function walkFiles(root) {
+  return readdirSync(root, { withFileTypes: true }).flatMap((entry) => {
+    const path = join(root, entry.name);
+    return entry.isDirectory() ? walkFiles(path) : [path];
+  });
+}
+
+function publicCommands() {
+  return readdirSync(join(process.cwd(), "commands"))
+    .filter((name) => name.endsWith(".md"))
+    .map((name) => name.replace(/\.md$/, ""))
+    .sort();
+}
+
+function resolveMarkdownLink(source, target) {
+  return join(dirname(source), decodeURIComponent(target));
 }

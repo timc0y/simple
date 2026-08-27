@@ -1,0 +1,602 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-27T19:07:39.430Z",
+    "skillCommit": "98aabe4",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra with dual anonymous grading",
+    "condition": "simple",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "generated-file__r1",
+        "passed": true,
+        "evidence": "raw/4d1adf7398f2.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "ownership-hotspot__r1",
+        "passed": true,
+        "evidence": "raw/186958928953.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "comment-causality__r1",
+        "passed": true,
+        "evidence": "raw/1b662e1bbbfa.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "direct-budget__r1",
+        "passed": true,
+        "evidence": "raw/c51958167170.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "semantic-compression__r1",
+        "passed": true,
+        "evidence": "raw/8c3e89cab233.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "generated-file__r2",
+        "passed": true,
+        "evidence": "raw/96923096723e.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "ownership-hotspot__r2",
+        "passed": false,
+        "evidence": "raw/be51d60107dd.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "comment-causality__r2",
+        "passed": true,
+        "evidence": "raw/71804073d0dc.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "direct-budget__r2",
+        "passed": true,
+        "evidence": "raw/a2fae64da980.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "semantic-compression__r2",
+        "passed": true,
+        "evidence": "raw/2b75ef4e9c40.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "generated-file__r3",
+        "passed": true,
+        "evidence": "raw/525355abb9e7.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "ownership-hotspot__r3",
+        "passed": true,
+        "evidence": "raw/c8a8ff29a7ac.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "comment-causality__r3",
+        "passed": true,
+        "evidence": "raw/5cd902407e79.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "direct-budget__r3",
+        "passed": false,
+        "evidence": "raw/fb08d3303c45.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "semantic-compression__r3",
+        "passed": true,
+        "evidence": "raw/8ee836570563.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-27T19:07:39.430Z",
+    "skillCommit": "98aabe4",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra with dual anonymous grading",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "generated-file__r1",
+        "passed": true,
+        "evidence": "raw/685b04d77f6b.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "ownership-hotspot__r1",
+        "passed": true,
+        "evidence": "raw/66d0bd773582.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "comment-causality__r1",
+        "passed": true,
+        "evidence": "raw/df3d410eb0aa.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "direct-budget__r1",
+        "passed": true,
+        "evidence": "raw/c899020bc624.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "semantic-compression__r1",
+        "passed": true,
+        "evidence": "raw/8866b939926e.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "generated-file__r2",
+        "passed": true,
+        "evidence": "raw/a0d3aaa6d5c6.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "ownership-hotspot__r2",
+        "passed": false,
+        "evidence": "raw/3925a5656b79.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": true
+        }
+      },
+      {
+        "id": "comment-causality__r2",
+        "passed": true,
+        "evidence": "raw/b6785a164e2a.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "direct-budget__r2",
+        "passed": true,
+        "evidence": "raw/f141680c35bf.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "semantic-compression__r2",
+        "passed": true,
+        "evidence": "raw/e76be8ce4243.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "generated-file__r3",
+        "passed": true,
+        "evidence": "raw/904e202fb6b4.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "ownership-hotspot__r3",
+        "passed": true,
+        "evidence": "raw/08eb4977409a.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "comment-causality__r3",
+        "passed": true,
+        "evidence": "raw/712342d4511a.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "direct-budget__r3",
+        "passed": true,
+        "evidence": "raw/2eef2fe7fe91.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "semantic-compression__r3",
+        "passed": true,
+        "evidence": "raw/050e2998844b.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-27T19:07:39.430Z",
+    "skillCommit": "98aabe4",
+    "model": {
+      "name": "gpt-5.6-terra",
+      "revision": "gpt-5.6-terra",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra with dual anonymous grading",
+    "condition": "simple",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "generated-file__r1",
+        "passed": true,
+        "evidence": "raw/33988158366d.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "ownership-hotspot__r1",
+        "passed": true,
+        "evidence": "raw/a8b456fc3e04.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "comment-causality__r1",
+        "passed": true,
+        "evidence": "raw/427a63cda89b.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "direct-budget__r1",
+        "passed": true,
+        "evidence": "raw/dbbae77c7f6e.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "semantic-compression__r1",
+        "passed": true,
+        "evidence": "raw/8a8efa69e8b7.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "generated-file__r2",
+        "passed": true,
+        "evidence": "raw/9e5c3e7fe36e.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "ownership-hotspot__r2",
+        "passed": true,
+        "evidence": "raw/cd0166dd5b33.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "comment-causality__r2",
+        "passed": true,
+        "evidence": "raw/1e92aa10ea24.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "direct-budget__r2",
+        "passed": true,
+        "evidence": "raw/08f80e55f283.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "semantic-compression__r2",
+        "passed": true,
+        "evidence": "raw/e6dd02b73a06.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "generated-file__r3",
+        "passed": true,
+        "evidence": "raw/5eb7236bb846.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "ownership-hotspot__r3",
+        "passed": true,
+        "evidence": "raw/7bc5bb132da1.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "comment-causality__r3",
+        "passed": true,
+        "evidence": "raw/4589614f91fc.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "direct-budget__r3",
+        "passed": true,
+        "evidence": "raw/35fc2656a95c.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "semantic-compression__r3",
+        "passed": true,
+        "evidence": "raw/c44e21e41b7e.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-27T19:07:39.430Z",
+    "skillCommit": "98aabe4",
+    "model": {
+      "name": "gpt-5.6-terra",
+      "revision": "gpt-5.6-terra",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra with dual anonymous grading",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "generated-file__r1",
+        "passed": true,
+        "evidence": "raw/f450819140d8.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "ownership-hotspot__r1",
+        "passed": true,
+        "evidence": "raw/57057b46720a.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "comment-causality__r1",
+        "passed": true,
+        "evidence": "raw/730de403e1ab.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "direct-budget__r1",
+        "passed": true,
+        "evidence": "raw/70b2a916e02c.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "semantic-compression__r1",
+        "passed": true,
+        "evidence": "raw/f8e74118075c.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "generated-file__r2",
+        "passed": true,
+        "evidence": "raw/9e148077809d.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "ownership-hotspot__r2",
+        "passed": true,
+        "evidence": "raw/7e1bf0ead631.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "comment-causality__r2",
+        "passed": true,
+        "evidence": "raw/fc486289d58c.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "direct-budget__r2",
+        "passed": true,
+        "evidence": "raw/3e41d0f3d7b7.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "semantic-compression__r2",
+        "passed": true,
+        "evidence": "raw/58590a197956.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "generated-file__r3",
+        "passed": true,
+        "evidence": "raw/3f7642112f47.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "ownership-hotspot__r3",
+        "passed": false,
+        "evidence": "raw/08665f140e8e.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "comment-causality__r3",
+        "passed": true,
+        "evidence": "raw/43a6c9952eb1.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "direct-budget__r3",
+        "passed": true,
+        "evidence": "raw/761a1e777070.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "semantic-compression__r3",
+        "passed": true,
+        "evidence": "raw/27d429552237.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      }
+    ]
+  }
+]

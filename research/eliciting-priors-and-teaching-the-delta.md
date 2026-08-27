@@ -306,10 +306,19 @@ misroute on another.
 
 ## Repository recommendation
 
-Do not add more leading words to `SKILL.md` now. Keep the implemented first-principles
-candidate because it moved a hard behavioural case. The next useful change is an eval
-change: add implicit invocation prompts and isolate the four co-changed instructions.
+Do not add more leading words to `SKILL.md`. Keep the first-principles text because it
+moved a hard behavior case.
 
-Add explicit prose only for a demonstrated semantic gap or missing local fact. Prefer
-one local binding for an overloaded pretrained concept over a second slogan that repeats
-it.
+The later activation run tested implicit repository tasks. Current and candidate
+descriptions opened Simple in all 40 substantive cells. The candidate also opened on
+2 of 4 typo-only controls. More task verbs did not earn their context cost.
+
+The strongest later result came from live state. A profile that named the current
+owner, supported mechanism, and observable behavior improved from 4 of 12 to 12 of 12.
+Focused profile guidance improved profile output from 2 of 6 to 5 of 6.
+
+See the [activation result](../evals/results/2026-08-27-repository-work-shapes-activation/README.md),
+[repository-fact result](../evals/results/2026-08-27-repository-fact-profile/README.md),
+and [profile-guidance result](../evals/results/2026-08-27-profile-reference-guidance/README.md).
+Add runtime prose only for a measured semantic gap. Put current facts in the repository
+profile.

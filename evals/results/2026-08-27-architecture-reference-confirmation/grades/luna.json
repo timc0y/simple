@@ -1,0 +1,136 @@
+{
+  "selfTests": [
+    {
+      "case": "shared-owner-fix",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "startup-root-cause",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "2bcf4b8cc73d",
+      "passed": true,
+      "reason": "Places the rule in the shared parser, covers CSV and JSON null results, preserves valid and malformed behavior, and leaves string-only callers unchanged."
+    },
+    {
+      "id": "397348020184",
+      "passed": true,
+      "reason": "Uses parser ownership, explicitly covers both affected importers, preserves validation, and avoids caller guards."
+    },
+    {
+      "id": "50ecccdf1fac",
+      "passed": true,
+      "reason": "Correctly scopes null handling to undefined, proves both import paths, and preserves valid, malformed, and unaffected caller behavior."
+    },
+    {
+      "id": "534afc5aec21",
+      "passed": true,
+      "reason": "Puts the fix in parseLedgerTag, distinguishes absent from malformed input, and tests both CSV and JSON paths."
+    },
+    {
+      "id": "59d5f5680b62",
+      "passed": true,
+      "reason": "Identifies shared ownership, requires both importer outcomes, retains malformed validation and valid parsing, and avoids CSV-only changes."
+    },
+    {
+      "id": "865b2bd484bc",
+      "passed": true,
+      "reason": "Handles only undefined in the parser, covers both public paths and parser cases, and preserves all required behavior."
+    },
+    {
+      "id": "9978e3c679e9",
+      "passed": true,
+      "reason": "Specifies parser-level undefined handling, both CSV and JSON proofs, and unchanged valid/malformed behavior and callers."
+    },
+    {
+      "id": "a1e03e674817",
+      "passed": true,
+      "reason": "Explicitly limits normalization to undefined, preserves malformed strings, covers both importers, and avoids caller-specific changes."
+    },
+    {
+      "id": "a33551e6ae63",
+      "passed": true,
+      "reason": "Places the rule at the shared parser boundary and proves absent CSV/JSON behavior plus malformed validation."
+    },
+    {
+      "id": "d3fecdf2a454",
+      "passed": true,
+      "reason": "Uses parser ownership, covers both affected paths and all required regressions, and leaves string-only callers unchanged."
+    },
+    {
+      "id": "e3335dbab968",
+      "passed": true,
+      "reason": "Clearly distinguishes absent, valid, and malformed parser inputs and requires CSV/JSON importer verification without caller guards."
+    },
+    {
+      "id": "f89f7068c39a",
+      "passed": true,
+      "reason": "Specifies the shared parser fix, tests both importers, preserves valid and malformed behavior, and avoids importer-specific guards."
+    },
+    {
+      "id": "1eb2163455cf",
+      "passed": true,
+      "reason": "Measures cold startup and import causes, tests the direct JSON fix first, preserves behavior, and removes unnecessary daemon machinery."
+    },
+    {
+      "id": "1f87df9cdc4a",
+      "passed": true,
+      "reason": "Separates startup costs, tests the dependency fix before bundling, preserves records, and limits residency to measured continuity needs."
+    },
+    {
+      "id": "2301da65a435",
+      "passed": true,
+      "reason": "Attributes the regression through profiling, tests the smallest import change, preserves durable records, and removes compensating architecture."
+    },
+    {
+      "id": "30c60cfe3455",
+      "passed": true,
+      "reason": "Requires cold-path measurement, isolates the generator/compiler import, preserves task records, and defers bundling."
+    },
+    {
+      "id": "3100763ae8d2",
+      "passed": true,
+      "reason": "Treats the slowdown as unattributed, profiles the common path, tests the static artifact first, and preserves durable records."
+    },
+    {
+      "id": "5c54cbddda1e",
+      "passed": false,
+      "reason": "Allows residency based on residual latency benefit alone, without requiring a capability needing continuity across commands."
+    },
+    {
+      "id": "8847998ba077",
+      "passed": true,
+      "reason": "Profiles and tests the direct artifact path first, checks remaining consumers, preserves durable data, and removes the daemon prototype."
+    },
+    {
+      "id": "9c5c6c43d836",
+      "passed": true,
+      "reason": "Measures import and cold latency, avoids unmeasured bundling, preserves records, and requires measured continuity for residency."
+    },
+    {
+      "id": "9fcdeb8f8057",
+      "passed": true,
+      "reason": "Tests the smallest dependency change with cold measurements, preserves durable records, and removes the daemon if the gap closes."
+    },
+    {
+      "id": "c35ad0a3d2b6",
+      "passed": true,
+      "reason": "Separates import and remote costs, tests the static/generated artifact first, preserves completed records, and limits residency appropriately."
+    },
+    {
+      "id": "c597bc4163a6",
+      "passed": true,
+      "reason": "Profiles the import chain, validates generated data and records, tests the direct fix first, and requires measured continuity."
+    },
+    {
+      "id": "cc5b67a81acf",
+      "passed": true,
+      "reason": "Measures repeated cold paths, separates generated output from generation code, preserves durable task data, and removes the daemon after success."
+    }
+  ]
+}

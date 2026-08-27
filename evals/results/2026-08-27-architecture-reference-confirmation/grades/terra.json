@@ -1,0 +1,136 @@
+{
+  "selfTests": [
+    {
+      "case": "shared-owner-fix",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "startup-root-cause",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "2bcf4b8cc73d",
+      "passed": true,
+      "reason": "Places absent handling in parser and proves both import paths and preserved validation."
+    },
+    {
+      "id": "397348020184",
+      "passed": true,
+      "reason": "Covers shared parser fix, both importers, valid parsing, malformed errors, and string-only callers."
+    },
+    {
+      "id": "50ecccdf1fac",
+      "passed": true,
+      "reason": "Correct parser ownership with explicit CSV/JSON null tests and preserved behavior."
+    },
+    {
+      "id": "534afc5aec21",
+      "passed": true,
+      "reason": "Uses parser-level absent rule and verifies both public import paths and regressions."
+    },
+    {
+      "id": "59d5f5680b62",
+      "passed": true,
+      "reason": "Correctly centralizes rule, accounts for all callers, and requires CSV/JSON null results."
+    },
+    {
+      "id": "865b2bd484bc",
+      "passed": true,
+      "reason": "Fully specifies parser fix, both affected paths, regression coverage, and unchanged string callers."
+    },
+    {
+      "id": "9978e3c679e9",
+      "passed": true,
+      "reason": "Central parser fix with direct and CSV/JSON proof plus valid and malformed preservation."
+    },
+    {
+      "id": "a1e03e674817",
+      "passed": true,
+      "reason": "Correct undefined-only parser behavior and explicit proof for both import paths."
+    },
+    {
+      "id": "a33551e6ae63",
+      "passed": true,
+      "reason": "Accounts for four callers and tests parser, CSV, JSON, and malformed behavior."
+    },
+    {
+      "id": "d3fecdf2a454",
+      "passed": true,
+      "reason": "Correct shared-owner fix with both importer checks and preserved supplied-string behavior."
+    },
+    {
+      "id": "e3335dbab968",
+      "passed": true,
+      "reason": "Meets parser ownership, CSV/JSON null proof, valid parsing, malformed error, and caller constraints."
+    },
+    {
+      "id": "f89f7068c39a",
+      "passed": true,
+      "reason": "Complete shared parser solution with direct and importer-level regression proof."
+    },
+    {
+      "id": "1eb2163455cf",
+      "passed": true,
+      "reason": "Measures and isolates import cause before removing daemon machinery."
+    },
+    {
+      "id": "1f87df9cdc4a",
+      "passed": true,
+      "reason": "Attributes cold startup, separates generated data from generator, then remeasures."
+    },
+    {
+      "id": "2301da65a435",
+      "passed": true,
+      "reason": "Tests direct generated-data path first and preserves durable records."
+    },
+    {
+      "id": "30c60cfe3455",
+      "passed": true,
+      "reason": "Profiles import chain, avoids unmeasured bundling, and removes compensating daemon path."
+    },
+    {
+      "id": "3100763ae8d2",
+      "passed": true,
+      "reason": "Investigates cold imports first and conditions removal on measured success."
+    },
+    {
+      "id": "5c54cbddda1e",
+      "passed": false,
+      "reason": "Allows residual latency and repeated-command benefit alone to justify residency."
+    },
+    {
+      "id": "8847998ba077",
+      "passed": true,
+      "reason": "Measures the specific import chain and retains required generation consumers."
+    },
+    {
+      "id": "9c5c6c43d836",
+      "passed": true,
+      "reason": "Separates generated artifact from generator and remeasures cold CLI behavior."
+    },
+    {
+      "id": "9fcdeb8f8057",
+      "passed": true,
+      "reason": "Uses the smallest dependency change before daemon or bundling."
+    },
+    {
+      "id": "c35ad0a3d2b6",
+      "passed": true,
+      "reason": "Attributes import cost, remeasures, and preserves durable task records."
+    },
+    {
+      "id": "c597bc4163a6",
+      "passed": false,
+      "reason": "Suggests unacceptable residual startup latency could itself justify residency."
+    },
+    {
+      "id": "cc5b67a81acf",
+      "passed": true,
+      "reason": "Measures fresh cold paths, isolates generator import, and removes daemon if fixed."
+    }
+  ]
+}

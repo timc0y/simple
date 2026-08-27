@@ -1,0 +1,30 @@
+diff --git a/references/architecture.md b/references/architecture.md
+--- a/references/architecture.md
++++ b/references/architecture.md
+@@ -6,18 +6,8 @@
+-## Raptor: simplify the system boundary
+-
+-SpaceX's Raptor evolution is a useful model for deep modules. Raptor 3 did not make
+-rocket engineering easy. It internalised secondary flow paths and cooling so exposed
+-plumbing, engine heat shields, and supporting vehicle hardware could be removed. The
+-engine became more capable inside and imposed less complexity on everything around
+-it.
+-
+-Software simplification should work the same way: put unavoidable complexity behind
+-one clear owner, then remove the adapters, parallel paths, and support machinery that
+-the stronger boundary makes unnecessary. Judge the whole system, not the visible
+-line count of one component.
+-
+-Sources: [SpaceX's Raptor comparison](https://x.com/SpaceX/status/1819795288116330594)
+-and [SpaceX's 2026 technical disclosure](https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf).
+-
+-Use `examples.md` when another engineering precedent would expose the decision more
+-clearly. A precedent guides attention; it does not supply missing repository facts.
++## Simplify the system boundary
++
++Put unavoidable complexity behind one clear owner. Remove the adapters, parallel
++paths, and support work that the stronger boundary makes unnecessary. Judge the
++whole system, not one component's line count.
++
++`examples.md` contains the Raptor precedent and its sources. A precedent can guide
++attention, but it cannot supply missing repository facts.

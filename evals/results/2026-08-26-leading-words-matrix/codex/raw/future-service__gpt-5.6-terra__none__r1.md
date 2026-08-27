@@ -1,0 +1,1 @@
+No change made: this workspace contains no report implementation to adapt, and the stated architecture says to keep generation in-process until measured load or an independent lifecycle requires isolation. A speculative queue/service would add complexity without a current integration point.

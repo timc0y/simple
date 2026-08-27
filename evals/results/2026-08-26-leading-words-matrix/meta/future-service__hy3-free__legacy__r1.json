@@ -1,0 +1,11 @@
+{
+  "model": "opencode/hy3-free",
+  "arm": "legacy",
+  "case": "future-service",
+  "repetition": 1,
+  "inputTokens": 22240,
+  "outputTokens": 974,
+  "latencyMs": 56702,
+  "costUsd": 0,
+  "turns": 5
+}

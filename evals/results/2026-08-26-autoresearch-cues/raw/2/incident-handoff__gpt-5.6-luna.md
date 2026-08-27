@@ -1,0 +1,1 @@
+Release remains paused. Verification found 14 checksum mismatches across 700 records. Rollback is complete, and retained production records remain readable. The cause is unknown. Identify and correct the cause, then rerun all 700 checksum checks before release.

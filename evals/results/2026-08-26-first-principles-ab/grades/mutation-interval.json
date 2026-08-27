@@ -1,0 +1,37 @@
+```json
+{
+  "selfTestPassed": true,
+  "grades": [
+    {
+      "id": "current-r1",
+      "passed": false,
+      "reason": "The receipt check remains in the composition root as a pre-acquire startup step used to 'block a retry', and the gateway's sequence has no reject-outstanding-uncertainty step under the lock, matching the 'checks before acquiring' fail condition; its proof also only restarts and observes state rather than racing a concurrent mutator at the transitions."
+    },
+    {
+      "id": "current-r2",
+      "passed": false,
+      "reason": "Its sequence explicitly keeps 'composition root: check outstanding receipt' outside and before the gateway's acquire, so the uncertainty check is a check-before-acquire by a second owner rather than a rejection inside the single protected interval."
+    },
+    {
+      "id": "current-r3",
+      "passed": true,
+      "reason": "One boundary owns the whole guarded sequence (dead-holder conversion inside acquire, refuse on outstanding receipt, record-before-release), receipt-write failure fails closed with the lock held and the conversion path refusing to grant the lock until it succeeds, and proof uses real OS processes with SIGKILL at each transition plus a competing fresh process."
+    },
+    {
+      "id": "candidate-r2",
+      "passed": true,
+      "reason": "The gateway absorbs check/convert/record with release strictly after durable record, receipt-write failure holds the lock and even a failed conversion retry refuses acquisition, features get the check via the one boundary call, and the test SIGKILLs a real process at each transition while a second real process must block/error/resolve before mutating."
+    },
+    {
+      "id": "candidate-r3",
+      "passed": true,
+      "reason": "Single gateway-owned interval with conversion inside acquire, the receipt check performed after acquiring ('now safe'), release gated on record, fail-closed exit holding the lock reusing the conversion path as retry, and proof via real OS processes killed at each transition with process B forbidden from proceeding straight to a mutation."
+    },
+    {
+      "id": "candidate-r4",
+      "passed": true,
+      "reason": "The gateway owns acquire-with-conversion, explicit refusal on an outstanding receipt, durable record before release, fail-closed lock retention with bounded retries reusing the dead-holder path, one operation all features call, and a real-process kill -9 proof at every transition including mid-record asserting at-most-once remote mutation."
+    }
+  ]
+}
+```

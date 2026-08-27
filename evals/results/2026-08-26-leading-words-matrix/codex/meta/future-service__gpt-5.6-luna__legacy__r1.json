@@ -1,0 +1,10 @@
+{
+  "model": "gpt-5.6-luna",
+  "arm": "legacy",
+  "case": "future-service",
+  "repetition": 1,
+  "inputTokens": 166612,
+  "outputTokens": 3248,
+  "reasoningTokens": 408,
+  "latencyMs": 69497
+}

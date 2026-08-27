@@ -1,0 +1,31 @@
+diff --git a/skills/simple/SKILL.md b/skills/simple/SKILL.md
+index 67338d3..4b08311 100644
+--- a/skills/simple/SKILL.md
++++ b/skills/simple/SKILL.md
+@@ -1,9 +1,10 @@
+ ---
+ name: simple
+ description: >-
+-  Find the smallest truthful software design and write concise, plain developer
+-  prose. Use for architecture, ownership, refactoring, deletion, compatibility,
+-  migration, repository audits, implementation plans, or work that is becoming more
++  Apply first-principles reasoning grounded in repository evidence to find the
++  smallest truthful software design and write concise, plain developer prose. Use
++  for architecture, ownership, refactoring, deletion, compatibility, migration,
++  repository audits, implementation plans, or work that is becoming more
+   complex than its demonstrated requirements; for technical plans, documentation,
+   comments, Markdown, prompts, reviews, updates, and handoffs; and when asked what a
+   documented engineer, company, or operator would do. Read the nearest SIMPLE.md
+@@ -13,9 +14,9 @@ description: >-
+ 
+ # Simple
+ 
+-Find the least complicated solution that fully accounts for the obligations that
+-actually exist. Truthful means supported by observed requirements, repository facts,
+-or explicit commitments—not hypothetical future needs.
++Apply first-principles reasoning to find the least complicated solution that fully
++accounts for the obligations that actually exist. Truthful means supported by observed
++requirements, repository facts, or explicit commitments—not hypothetical future needs.
+ 
+ Before a decision whose implementation could change with repository facts, read the
+ nearest `SIMPLE.md`. If a material fact is absent, establish it or state the

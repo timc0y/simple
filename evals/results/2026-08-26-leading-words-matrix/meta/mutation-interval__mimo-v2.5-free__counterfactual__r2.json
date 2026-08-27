@@ -1,0 +1,11 @@
+{
+  "model": "opencode/mimo-v2.5-free",
+  "arm": "counterfactual",
+  "case": "mutation-interval",
+  "repetition": 2,
+  "inputTokens": 19045,
+  "outputTokens": 1649,
+  "latencyMs": 38715,
+  "costUsd": 0,
+  "turns": 6
+}

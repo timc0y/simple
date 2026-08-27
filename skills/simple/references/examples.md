@@ -1,8 +1,9 @@
 # Engineering precedents
 
-Use a precedent to activate a learned engineering pattern when it makes the present
-decision clearer. Do not turn stories into slogans, imitate incidental details, or
-let a precedent create requirements absent from the repository.
+Use precedents and analogies to generate hypotheses, then test them against repository
+evidence. Keep one only when it makes the present decision clearer. Do not turn stories
+into slogans, imitate incidental details, or let a precedent create requirements absent
+from the repository.
 
 ## Raptor: move complexity inward
 

@@ -1,0 +1,25 @@
+diff --git a/SKILL.md b/SKILL.md
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -17,5 +17,10 @@ accounts for the obligations that actually exist. Truthful means supported by observed
+ requirements, repository facts, or explicit commitments—not hypothetical future needs.
+ 
++Prefer evidence nearest the consequence. Treat indirect measures as clues, not causes
++or targets. A shorter implementation is simpler only when it removes an obligation,
++concept, state, decision, owner, dependency, or repeated rule; shorter syntax alone is
++compression.
++
+ Before a decision whose implementation could change with repository facts, read the
+ nearest `SIMPLE.md`. If a material fact is absent, establish it or state the
+ uncertainty. Absence of evidence grants neither an obligation nor deletion permission.
+diff --git a/references/writing.md b/references/writing.md
+--- a/references/writing.md
++++ b/references/writing.md
+@@ -35,6 +35,7 @@ not require an architecture review unless the content itself depends on one.
+ ### Comments
+ 
+ Explain a non-obvious reason, contract, invariant, trap, or invalidation condition.
++Ask what plausible wrong edit the comment prevents.
+ Let the code show the visible operation. Keep the comment beside the rule it protects.
+ 
+ ```js

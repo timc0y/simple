@@ -1,0 +1,11 @@
+{
+  "model": "opencode/hy3-free",
+  "arm": "counterfactual",
+  "case": "production-data",
+  "repetition": 1,
+  "inputTokens": 22782,
+  "outputTokens": 1239,
+  "latencyMs": 56919,
+  "costUsd": 0,
+  "turns": 5
+}

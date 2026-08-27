@@ -1,0 +1,1 @@
+I didn’t add a service or queue: there’s no report code here, and the repository explicitly says reports are in-process for one local operator. Add isolation only when measured load or an independent lifecycle requires it.

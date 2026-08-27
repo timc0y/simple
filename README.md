@@ -32,6 +32,11 @@ also first class: it helps agents produce plain, concise plans, documentation, c
 Markdown, prompts, reviews, updates, and handoffs without turning each writing task into
 an architecture audit.
 
+Simple first separates the human's problem from any proposed implementation. It makes
+the current cause and desired outcome clear, shapes the smallest supported correction,
+then checks that correction against the original problem. Explanations answer the main
+question first and use a small example or visual when prose alone is hard to picture.
+
 The public repository packages four parts around that method:
 
 - the portable `simple` skill and selectively loaded specialist references;
@@ -67,6 +72,13 @@ Sources: [SpaceX's Raptor comparison](https://x.com/SpaceX/status/18197952881163
 and [SpaceX's 2026 technical disclosure](https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf).
 
 ## Method
+
+Simple applies first-principles reasoning by separating repository facts from inherited
+assumptions and stating the required outcome before reusing the current implementation.
+
+```text
+problem -> current cause -> smallest correction -> outcome checked again
+```
 
 The core uses a few established ideas as compact decision anchors:
 
@@ -137,7 +149,8 @@ mandatory lifecycle.
 `write`, and `emulate` require model judgement and remain thin prompt entry points into
 `$simple`.
 Claude Code exposes the files in `commands/` as slash commands; Codex exposes the same
-workflows through the skill and starter prompts.
+workflows through the skill and starter prompts. Two starter prompts expose problem
+shaping and plain explanations without adding more commands.
 
 ### Evidence-led audits
 
@@ -181,9 +194,10 @@ never user research or runtime proof.
 Both hosts use the same skill, repository profile, and lifecycle hooks.
 
 - Claude Code and Codex both register `hooks/hooks.json`: the nearest profile is
-  injected at session and subagent start, and short reminders fire when an edit
-  actually writes Markdown or comments. Codex asks for a one-time `/hooks` trust
-  approval per machine.
+  injected at session and subagent start. When an edit contains Markdown or a new
+  comment, short review context is attached to the tool result so the agent can correct
+  the edit on its next step. Codex asks for a one-time `/hooks` trust approval per
+  machine.
 - Codex also follows the repository route in `AGENTS.md`, so the guidance survives
   hosts or sessions without hook support.
 
@@ -250,12 +264,12 @@ an audit (the `routine-edit` eval enforces exactly this), and "simple" never jus
 breaking a real consumer, dropping validation at a trust boundary, or deleting
 recovery and audit obligations — the profile's Preserve section outranks minimalism.
 
-Simple coexists well with other minimalism skills such as Ponytail on most work, and
-measured runs show them reinforcing each other on migration and implementation tasks.
-One measured exception: on lock, interval, or uncertainty-protocol design, the
-combination anchored to an existing broken step order more often than either skill
-alone, and a wording fix failed its A/B (`evals/results/2026-08-22-precedence-edit-ab/`).
-For that class of design, run one minimalism skill, not two.
+Simple can coexist with other minimalism skills such as Ponytail. The interaction is
+model-dependent. An earlier Claude run found a failure on lock and interval design. A
+later Codex Luna and Terra matrix did not reproduce a uniform fault, but it also did not
+force every labelled skill to run. Do not choose a skill combination from these small
+samples. Check the required sequence and its independent proof. See the
+[Codex matrix](evals/results/2026-08-26-leading-words-matrix/codex/RESULTS.md).
 
 How to tell it is active:
 

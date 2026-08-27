@@ -1,0 +1,10 @@
+{
+  "model": "gpt-5.6-luna",
+  "arm": "first-principles",
+  "case": "production-data",
+  "repetition": 1,
+  "inputTokens": 45756,
+  "outputTokens": 1678,
+  "reasoningTokens": 757,
+  "latencyMs": 39076
+}

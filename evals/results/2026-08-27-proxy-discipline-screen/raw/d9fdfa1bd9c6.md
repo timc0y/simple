@@ -1,0 +1,1 @@
+Choose Option B. Its 14-line switch uses the language directly, avoids an unnecessary dependency and configuration file, and keeps the rule beside the existing order owner. With no other consumers or need for configurable rules, Option A’s shorter source count adds needless maintenance without benefit.

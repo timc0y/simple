@@ -1,20 +1,21 @@
 ---
 name: simple
 description: >-
-  Find the smallest truthful software design and write concise, plain developer
-  prose. Use for architecture, ownership, refactoring, deletion, compatibility,
-  migration, repository audits, implementation plans, or work that is becoming more
-  complex than its demonstrated requirements; for technical plans, documentation,
-  comments, Markdown, prompts, reviews, updates, and handoffs; and when asked what a
-  documented engineer, company, or operator would do. Read the nearest SIMPLE.md
-  when repository facts change the answer.
+  Apply first-principles reasoning grounded in repository evidence to find the
+  smallest truthful software design and write concise, plain developer prose. Use
+  for architecture, ownership, refactoring, deletion, compatibility, migration,
+  repository audits, implementation plans, or work that is becoming more complex
+  than its demonstrated requirements; for technical plans, documentation, comments,
+  Markdown, prompts, reviews, updates, and handoffs; and when asked what a documented
+  engineer, company, or operator would do. Read the nearest SIMPLE.md when repository
+  facts change the answer.
 ---
 
 # Simple
 
-Find the least complicated solution that fully accounts for the obligations that
-actually exist. Truthful means supported by observed requirements, repository facts,
-or explicit commitments—not hypothetical future needs.
+Apply first-principles reasoning to find the least complicated solution that fully
+accounts for the obligations that actually exist. Truthful means supported by observed
+requirements, repository facts, or explicit commitments—not hypothetical future needs.
 
 Before a decision whose implementation could change with repository facts, read the
 nearest `SIMPLE.md`. If a material fact is absent, establish it or state the
@@ -31,32 +32,45 @@ Writing is a first-class Simple mode. Do not turn a writing task into an archite
 review unless the content itself requires a design decision. Read the nearest
 `SIMPLE.md` only when repository facts materially change what the writing must say.
 
-## Design in order
+## Solve with the human
 
-1. Establish the actual users, operators, consumers, contracts, retained data,
-   commitments, scale, and failure consequences.
-2. Find the existing owner and ordinary path.
-3. Name the exact missing capability. Before moving ownership or adding a workflow,
-   try to supply only that missing precondition through the ordinary path.
-4. Decide what must be preserved and what may be replaced.
-5. Choose the smallest design that satisfies those present obligations.
-6. Before introducing code, a dependency, an abstraction, a workflow, or another owner,
-   walk the implementation ladder in `references/architecture.md`.
-7. Remove the route, state, explanation, and cleanup displaced by the change.
-8. Prove the result through a surface independent enough to distinguish requested
+1. Treat a requested implementation as a proposal until the underlying problem is
+   clear. Restate who or what is affected, what happens now, what should happen, and why
+   the difference matters.
+2. Establish the actual users, operators, consumers, contracts, retained data,
+   commitments, scale, and failure consequences. Separate observed facts and explicit
+   commitments from inference, assumptions, and unknowns. Find repository facts before
+   asking the human; ask when their intent or a material choice is missing.
+3. State the required outcome or invariant without naming the current implementation.
+   Find the existing owner and ordinary path, then name the exact obstruction.
+4. Decide what must be preserved and what may be replaced. Before moving ownership or
+   adding a workflow, try to supply only the missing precondition through the ordinary
+   path.
+5. Choose the smallest design that satisfies those present obligations. Before adding
+   code, a dependency, an abstraction, a workflow, or another owner, walk the ladder in
+   `references/architecture.md`.
+6. Make the reasoning easy to inspect: current reality -> obstruction -> change ->
+   outcome. Recheck the proposed change against the original problem and revise any
+   part that does not help.
+7. Remove the route, state, explanation, and cleanup displaced by the change. Try to
+   falsify the result through a surface independent enough to distinguish the requested
    behaviour from the implementation itself.
 
 ## Write in order
 
 1. Identify the reader, purpose, destination, and source of truth.
 2. Preserve every material fact, decision, constraint, caveat, and next action.
-3. Choose the smallest structure that makes the content easy to use.
-4. Write direct sentences with one term per concept and explicit actors where needed.
-5. Use plain Markdown: few headings, shallow lists, restrained emphasis, and no
+3. Answer the reader's main question first. Group the reasons and evidence beneath the
+   answer, and put each detail beside the point it supports.
+4. Choose the smallest structure that makes the content easy to understand and use.
+   When a flow, relationship, comparison, or change is hard to picture in prose, use a
+   short example or the smallest useful visual.
+5. Write direct sentences with one term per concept and explicit actors where needed.
+6. Use plain Markdown: few headings, shallow lists, restrained emphasis, and no
    decorative formatting unless the destination requires it.
-6. Remove generic introductions, repetition, filler, and formatting that carries no
+7. Remove generic introductions, repetition, filler, and formatting that carries no
    meaning.
-7. Check that compression did not remove a reason, boundary, risk, proof, or unknown.
+8. Check that compression did not remove a reason, boundary, risk, proof, or unknown.
 
 Apply KISS to the solution shape and YAGNI to hypothetical obligations. Use
 Chesterton's Fence before removal. Hide necessary complexity behind one clear owner.

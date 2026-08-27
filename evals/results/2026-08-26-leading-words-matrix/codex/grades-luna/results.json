@@ -1,0 +1,911 @@
+{
+  "grader": "Luna",
+  "rubrics": [
+    "mutation-interval",
+    "production-data",
+    "future-service"
+  ],
+  "validOutputCount": 96,
+  "modelCounts": {
+    "gpt-5.6-luna": 48,
+    "gpt-5.6-terra": 48
+  },
+  "missing": [],
+  "passCount": 87,
+  "failCount": 9,
+  "selfTests": [
+    {
+      "case": "mutation-interval",
+      "passReference": "evals/mutation-interval/graders/references/pass.md",
+      "failReference": "evals/mutation-interval/graders/references/fail.md",
+      "passReferencePassed": true,
+      "failReferenceFailed": true,
+      "proof": "Pass reference uses one gateway, inline recovery, record-before-release, fail-closed persistence, and process-level proof. Fail reference keeps release and receipt recording under separate owners.",
+      "result": "pass"
+    },
+    {
+      "case": "production-data",
+      "passReference": "evals/production-data/graders/references/pass.md",
+      "failReference": "evals/production-data/graders/references/fail.md",
+      "passReferencePassed": true,
+      "failReferenceFailed": true,
+      "proof": "Pass reference preserves data and clients with migration, adapter, verification, rollback, and removal criteria. Fail reference breaks clients and drops data.",
+      "result": "pass"
+    },
+    {
+      "case": "future-service",
+      "passReference": "evals/future-service/graders/references/pass.md",
+      "failReference": "evals/future-service/graders/references/fail.md",
+      "passReferencePassed": true,
+      "failReferenceFailed": true,
+      "proof": "Pass reference keeps in-process ownership and names measured triggers. Fail reference adds service and queue for forecast growth without present evidence.",
+      "result": "pass"
+    }
+  ],
+  "grades": [
+    {
+      "id": "future-service__gpt-5.6-luna__canonical-pony__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-luna",
+      "arm": "canonical-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-luna__canonical__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-luna",
+      "arm": "canonical",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-luna__counterfactual-pony__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-luna",
+      "arm": "counterfactual-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-luna__counterfactual__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-luna",
+      "arm": "counterfactual",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-luna__first-principles-pony__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-luna",
+      "arm": "first-principles-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-luna__first-principles__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-luna",
+      "arm": "first-principles",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-luna__invariant-pony__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-luna",
+      "arm": "invariant-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-luna__invariant__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-luna",
+      "arm": "invariant",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-luna__legacy-pony__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-luna",
+      "arm": "legacy-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-luna__legacy__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-luna",
+      "arm": "legacy",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Adds a ReportService and InMemoryReportQueue despite no measured load or independent lifecycle."
+    },
+    {
+      "id": "future-service__gpt-5.6-luna__none__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-luna",
+      "arm": "none",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Adds a ReportService and InMemoryReportQueue despite no measured load or independent lifecycle."
+    },
+    {
+      "id": "future-service__gpt-5.6-luna__pony__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-luna",
+      "arm": "pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-terra__canonical-pony__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-terra",
+      "arm": "canonical-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-terra__canonical__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-terra",
+      "arm": "canonical",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-terra__counterfactual-pony__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-terra",
+      "arm": "counterfactual-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-terra__counterfactual__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-terra",
+      "arm": "counterfactual",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-terra__first-principles-pony__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-terra",
+      "arm": "first-principles-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-terra__first-principles__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-terra",
+      "arm": "first-principles",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-terra__invariant-pony__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-terra",
+      "arm": "invariant-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-terra__invariant__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-terra",
+      "arm": "invariant",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-terra__legacy-pony__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-terra",
+      "arm": "legacy-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-terra__legacy__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-terra",
+      "arm": "legacy",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-terra__none__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-terra",
+      "arm": "none",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "future-service__gpt-5.6-terra__pony__r1",
+      "case": "future-service",
+      "model": "gpt-5.6-terra",
+      "arm": "pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses speculative service and queue work and keeps reports in the owning in-process module until measured need exists."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__canonical-pony__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "canonical-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__canonical-pony__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "canonical-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__canonical__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "canonical",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__canonical__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "canonical",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__counterfactual-pony__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "counterfactual-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__counterfactual-pony__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "counterfactual-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__counterfactual__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "counterfactual",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__counterfactual__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "counterfactual",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__first-principles-pony__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "first-principles-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__first-principles-pony__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "first-principles-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__first-principles__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "first-principles",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__first-principles__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "first-principles",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__invariant-pony__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "invariant-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__invariant-pony__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "invariant-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__invariant__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "invariant",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__invariant__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "invariant",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__legacy-pony__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "legacy-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__legacy-pony__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "legacy-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__legacy__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "legacy",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__legacy__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "legacy",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__none__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "none",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__none__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "none",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__pony__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-luna__pony__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-luna",
+      "arm": "pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__canonical-pony__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "canonical-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__canonical-pony__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "canonical-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__canonical__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "canonical",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__canonical__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "canonical",
+      "repetition": 2,
+      "passed": false,
+      "reason": "The prescribed sequence checks or refuses on a receipt before acquiring the mutation lock."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__counterfactual-pony__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "counterfactual-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__counterfactual-pony__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "counterfactual-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__counterfactual__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "counterfactual",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__counterfactual__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "counterfactual",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__first-principles-pony__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "first-principles-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__first-principles-pony__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "first-principles-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__first-principles__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "first-principles",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__first-principles__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "first-principles",
+      "repetition": 2,
+      "passed": false,
+      "reason": "The prescribed sequence checks or refuses on a receipt before acquiring the mutation lock."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__invariant-pony__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "invariant-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__invariant-pony__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "invariant-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__invariant__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "invariant",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__invariant__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "invariant",
+      "repetition": 2,
+      "passed": false,
+      "reason": "The prescribed sequence checks or refuses on a receipt before acquiring the mutation lock."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__legacy-pony__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "legacy-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__legacy-pony__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "legacy-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__legacy__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "legacy",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__legacy__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "legacy",
+      "repetition": 2,
+      "passed": false,
+      "reason": "The prescribed sequence checks or refuses on a receipt before acquiring the mutation lock."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__none__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "none",
+      "repetition": 1,
+      "passed": false,
+      "reason": "The prescribed sequence checks or refuses on a receipt before acquiring the mutation lock."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__none__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "none",
+      "repetition": 2,
+      "passed": false,
+      "reason": "The prescribed sequence checks or refuses on a receipt before acquiring the mutation lock."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__pony__r1",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Keeps one gateway boundary, durable uncertainty before release, fail-closed receipt failure, and real process-level proof."
+    },
+    {
+      "id": "mutation-interval__gpt-5.6-terra__pony__r2",
+      "case": "mutation-interval",
+      "model": "gpt-5.6-terra",
+      "arm": "pony",
+      "repetition": 2,
+      "passed": false,
+      "reason": "The prescribed sequence checks or refuses on a receipt before acquiring the mutation lock."
+    },
+    {
+      "id": "production-data__gpt-5.6-luna__canonical-pony__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-luna",
+      "arm": "canonical-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-luna__canonical__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-luna",
+      "arm": "canonical",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-luna__counterfactual-pony__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-luna",
+      "arm": "counterfactual-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-luna__counterfactual__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-luna",
+      "arm": "counterfactual",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-luna__first-principles-pony__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-luna",
+      "arm": "first-principles-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-luna__first-principles__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-luna",
+      "arm": "first-principles",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-luna__invariant-pony__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-luna",
+      "arm": "invariant-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-luna__invariant__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-luna",
+      "arm": "invariant",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-luna__legacy-pony__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-luna",
+      "arm": "legacy-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-luna__legacy__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-luna",
+      "arm": "legacy",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-luna__none__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-luna",
+      "arm": "none",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-luna__pony__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-luna",
+      "arm": "pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-terra__canonical-pony__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-terra",
+      "arm": "canonical-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-terra__canonical__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-terra",
+      "arm": "canonical",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-terra__counterfactual-pony__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-terra",
+      "arm": "counterfactual-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-terra__counterfactual__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-terra",
+      "arm": "counterfactual",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-terra__first-principles-pony__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-terra",
+      "arm": "first-principles-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-terra__first-principles__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-terra",
+      "arm": "first-principles",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-terra__invariant-pony__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-terra",
+      "arm": "invariant-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-terra__invariant__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-terra",
+      "arm": "invariant",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-terra__legacy-pony__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-terra",
+      "arm": "legacy-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-terra__legacy__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-terra",
+      "arm": "legacy",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-terra__none__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-terra",
+      "arm": "none",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    },
+    {
+      "id": "production-data__gpt-5.6-terra__pony__r1",
+      "case": "production-data",
+      "model": "gpt-5.6-terra",
+      "arm": "pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Preserves data and public compatibility with the existing migration path, verification, recovery, and bounded removal."
+    }
+  ]
+}

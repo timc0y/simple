@@ -20,6 +20,7 @@
 
 - The plugin packages Simple for Codex and Claude Code; the local installer exposes the same source to Codex, Claude Code, OpenCode, and Gemini.
 - Both plugin routes register the same lifecycle and writing-reminder hooks; Codex additionally requires a one-time `/hooks` trust approval per machine, observed working with the identical pattern in Ponytail 4.9.0.
+- Pre-write hook context reaches the model after the triggering tool result. It can guide the next step, but it cannot shape edit arguments that the model already chose.
 - Codex also receives repository context through `AGENTS.md` and the skill, so the route survives hosts without hook support.
 - Setup records no inferred users or production promises.
 

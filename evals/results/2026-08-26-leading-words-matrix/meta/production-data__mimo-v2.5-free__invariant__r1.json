@@ -1,0 +1,11 @@
+{
+  "model": "opencode/mimo-v2.5-free",
+  "arm": "invariant",
+  "case": "production-data",
+  "repetition": 1,
+  "inputTokens": 18535,
+  "outputTokens": 1409,
+  "latencyMs": 35401,
+  "costUsd": 0,
+  "turns": 5
+}

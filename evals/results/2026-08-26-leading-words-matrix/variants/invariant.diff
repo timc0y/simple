@@ -1,0 +1,29 @@
+diff --git a/skills/simple/SKILL.md b/skills/simple/SKILL.md
+index 67338d3..6ef3a21 100644
+--- a/skills/simple/SKILL.md
++++ b/skills/simple/SKILL.md
+@@ -35,15 +35,17 @@ review unless the content itself requires a design decision. Read the nearest
+ 
+ 1. Establish the actual users, operators, consumers, contracts, retained data,
+    commitments, scale, and failure consequences.
+-2. Find the existing owner and ordinary path.
+-3. Name the exact missing capability. Before moving ownership or adding a workflow,
++2. State the required outcome or invariant without naming the current implementation.
++3. Find the existing owner and ordinary path. Reuse them when they satisfy that outcome
++   or invariant.
++4. Name the exact missing capability. Before moving ownership or adding a workflow,
+    try to supply only that missing precondition through the ordinary path.
+-4. Decide what must be preserved and what may be replaced.
+-5. Choose the smallest design that satisfies those present obligations.
+-6. Before introducing code, a dependency, an abstraction, a workflow, or another owner,
++5. Decide what must be preserved and what may be replaced.
++6. Choose the smallest design that satisfies those present obligations.
++7. Before introducing code, a dependency, an abstraction, a workflow, or another owner,
+    walk the implementation ladder in `references/architecture.md`.
+-7. Remove the route, state, explanation, and cleanup displaced by the change.
+-8. Prove the result through a surface independent enough to distinguish requested
++8. Remove the route, state, explanation, and cleanup displaced by the change.
++9. Prove the result through a surface independent enough to distinguish requested
+    behaviour from the implementation itself.
+ 
+ ## Write in order

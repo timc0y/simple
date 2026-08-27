@@ -1,0 +1,3 @@
+Do not extract one-line helpers. The validation owner already owns all input rules, and every branch protects a current requirement. The extraction would add indirection without improving readability or changing behavior.
+
+Treat the complexity value of 22 as an observation, not a mandate. Keep the current owner and rules. Reconsider only if review or repeated defects show a real readability problem; then extract coherent knowledge, not individual conditions. If the lint check blocks delivery, record a narrowly scoped threshold or exception rather than distorting the implementation to satisfy the default.

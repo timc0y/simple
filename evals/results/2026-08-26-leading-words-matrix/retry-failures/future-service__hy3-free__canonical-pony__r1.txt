@@ -1,0 +1,1 @@
+No retry was run after three adjacent retries returned empty text at the ceiling.

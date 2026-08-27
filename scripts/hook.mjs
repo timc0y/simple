@@ -17,7 +17,10 @@ if (event === "SessionStart" || event === "SubagentStart") {
 }
 
 if (event === "PreToolUse") {
-  const reminder = writingReminder(payload.tool_input ?? payload.toolInput ?? {});
+  const reminder = writingReminder(
+    payload.tool_input ?? payload.toolInput ?? {},
+    payload.tool_name ?? payload.toolName ?? ""
+  );
   if (reminder) writeContext(event, reminder);
 }
 
@@ -40,23 +43,32 @@ export function profileContext(path) {
   return `Repository-specific Simple context from ${path}:\n\n${body}\n\nUse these observed facts when they materially affect design or writing. Choose the smallest truthful design and keep prose plain and load-bearing. Establish any material unknown before relying on it. Load $simple specialist references only when the task needs them.`;
 }
 
-export function writingReminder(input) {
+export function writingReminder(input, toolName = "") {
   const text = inputText(input);
   const reminders = [];
 
   if (/\.(?:md|mdx)(?:\b|["'])/i.test(text)) {
-    reminders.push("Keep Markdown load-bearing and plain. Preserve decisions, contracts, constraints, proof, and operational knowledge; use few sentence-case headings, shallow lists, restrained emphasis, and no decorative styling.");
+    reminders.push("Review the Markdown edit after it runs. Keep decisions, contracts, constraints, proof, and operational knowledge; use few sentence-case headings, shallow lists, restrained emphasis, and no decorative styling.");
   }
 
-  if (hasAddedComment(text)) {
-    reminders.push("Use comments for concise non-obvious reasons, contracts, invariants, traps, and reconsideration conditions. Let the code show the operation.");
+  if (hasAddedComment(input, toolName)) {
+    reminders.push("Review each added comment after the edit runs. Keep only non-obvious reasons, contracts, invariants, traps, and reconsideration conditions. Let the code show the operation.");
   }
 
   return reminders.join("\n");
 }
 
-function hasAddedComment(text) {
-  return /(?:^|\n)\s*\+?\s*(?:\/\/|\/\*|<!--)/m.test(text);
+function hasAddedComment(input, toolName) {
+  if (/apply_patch$/i.test(toolName)) {
+    return /(?:^|\n)\+(?!\+\+)\s*(?:\/\/|\/\*|<!--)/m.test(inputText(input));
+  }
+  if (/edit$/i.test(toolName)) {
+    return /(?:^|\n)\s*(?:\/\/|\/\*|<!--)/m.test(inputText(input.new_string ?? input.newString ?? ""));
+  }
+  if (/write$/i.test(toolName)) {
+    return /(?:^|\n)\s*(?:\/\/|\/\*|<!--)/m.test(inputText(input.content ?? ""));
+  }
+  return /(?:^|\n)\s*(?:\/\/|\/\*|<!--)/m.test(inputText(input));
 }
 
 function inputText(input) {

@@ -1,0 +1,1 @@
+I didn’t add a service layer or queue. This workspace has no application code, and its stated design guidance says reports should remain generated and persisted in-process until measured load or an independent lifecycle requires isolation.

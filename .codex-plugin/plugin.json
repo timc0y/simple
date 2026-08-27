@@ -31,10 +31,12 @@
     ],
     "websiteURL": "https://timcoy.uk/simple/",
     "defaultPrompt": [
+      "Use Simple to nail down the problem with me before choosing a solution",
+      "Use Simple to explain this code, workflow, or decision in plain language and make the flow easy to picture",
       "Use Simple for this architecture or change-design decision",
       "Use Simple to write or revise this technical plan or documentation in plain Markdown",
       "Use Simple to challenge this decision with a documented operator doctrine (SpaceX five-step, Theo/T3, or minimal implementation)",
-      "Run a read-only Simple audit of this repository",
+      "Run a read-only Simple audit of this repository, including whether its lint, tests, and code-health checks match observed risks",
       "Use Simple to plan this change without implementing it",
       "Review this design, document, or diff with Simple"
     ]

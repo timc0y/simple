@@ -1,0 +1,874 @@
+{
+  "grader": "Luna",
+  "rubrics": [
+    "mutation-interval",
+    "production-data",
+    "future-service"
+  ],
+  "selfTests": [
+    {
+      "case": "mutation-interval",
+      "passReference": {
+        "passed": true,
+        "reason": "The pass reference has one gateway boundary, inline dead-holder conversion, reject-before-mutate, record-before-release, fail-closed persistence, and OS-process kill proof."
+      },
+      "failReference": {
+        "passed": false,
+        "reason": "The fail reference moves release and recording across owners, so it does not establish one owner for the whole interval."
+      },
+      "passed": true
+    },
+    {
+      "case": "production-data",
+      "passReference": {
+        "passed": true,
+        "reason": "The pass reference preserves data, uses one bounded API adapter, verifies migration and rollback, and gates removal on 90 days plus zero old traffic."
+      },
+      "failReference": {
+        "passed": false,
+        "reason": "The fail reference breaks existing clients, drops data without a migration, and offers only unit-test proof."
+      },
+      "passed": true
+    },
+    {
+      "case": "future-service",
+      "passReference": {
+        "passed": true,
+        "reason": "The pass reference keeps in-process report ownership and defers a service or queue until measured load or lifecycle isolation exists."
+      },
+      "failReference": {
+        "passed": false,
+        "reason": "The fail reference adds a service, queue, and schema for forecast growth without present evidence."
+      },
+      "passed": true
+    }
+  ],
+  "validOutputCount": 90,
+  "modelCounts": {
+    "hy3-free": 44,
+    "mimo-v2.5-free": 46
+  },
+  "missing": [
+    "mutation-interval__mimo-v2.5-free__pony__r1",
+    "future-service__mimo-v2.5-free__canonical-pony__r1",
+    "mutation-interval__hy3-free__invariant-pony__r1",
+    "mutation-interval__hy3-free__first-principles__r2",
+    "mutation-interval__hy3-free__invariant__r2",
+    "future-service__hy3-free__canonical-pony__r1"
+  ],
+  "passCount": 60,
+  "failCount": 30,
+  "grades": [
+    {
+      "id": "future-service__hy3-free__canonical__r1",
+      "case": "future-service",
+      "model": "hy3-free",
+      "arm": "canonical",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Proposes a service seam or asks for clarification instead of refusing the speculative service and queue."
+    },
+    {
+      "id": "future-service__hy3-free__counterfactual__r1",
+      "case": "future-service",
+      "model": "hy3-free",
+      "arm": "counterfactual",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "future-service__hy3-free__counterfactual-pony__r1",
+      "case": "future-service",
+      "model": "hy3-free",
+      "arm": "counterfactual-pony",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Stops at exploration or clarification and does not refuse the speculative service and queue."
+    },
+    {
+      "id": "future-service__hy3-free__first-principles__r1",
+      "case": "future-service",
+      "model": "hy3-free",
+      "arm": "first-principles",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "future-service__hy3-free__first-principles-pony__r1",
+      "case": "future-service",
+      "model": "hy3-free",
+      "arm": "first-principles-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "future-service__hy3-free__invariant__r1",
+      "case": "future-service",
+      "model": "hy3-free",
+      "arm": "invariant",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "future-service__hy3-free__invariant-pony__r1",
+      "case": "future-service",
+      "model": "hy3-free",
+      "arm": "invariant-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "future-service__hy3-free__legacy__r1",
+      "case": "future-service",
+      "model": "hy3-free",
+      "arm": "legacy",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "future-service__hy3-free__legacy-pony__r1",
+      "case": "future-service",
+      "model": "hy3-free",
+      "arm": "legacy-pony",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Stops at exploration or clarification and does not refuse the speculative service and queue."
+    },
+    {
+      "id": "future-service__hy3-free__none__r1",
+      "case": "future-service",
+      "model": "hy3-free",
+      "arm": "none",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Stops at exploration or clarification and does not refuse the speculative service and queue."
+    },
+    {
+      "id": "future-service__hy3-free__pony__r1",
+      "case": "future-service",
+      "model": "hy3-free",
+      "arm": "pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "future-service__mimo-v2.5-free__canonical__r1",
+      "case": "future-service",
+      "model": "mimo-v2.5-free",
+      "arm": "canonical",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Proposes a service seam or asks for clarification instead of refusing the speculative service and queue."
+    },
+    {
+      "id": "future-service__mimo-v2.5-free__counterfactual__r1",
+      "case": "future-service",
+      "model": "mimo-v2.5-free",
+      "arm": "counterfactual",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "future-service__mimo-v2.5-free__counterfactual-pony__r1",
+      "case": "future-service",
+      "model": "mimo-v2.5-free",
+      "arm": "counterfactual-pony",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Stops at exploration or clarification and does not refuse the speculative service and queue."
+    },
+    {
+      "id": "future-service__mimo-v2.5-free__first-principles__r1",
+      "case": "future-service",
+      "model": "mimo-v2.5-free",
+      "arm": "first-principles",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "future-service__mimo-v2.5-free__first-principles-pony__r1",
+      "case": "future-service",
+      "model": "mimo-v2.5-free",
+      "arm": "first-principles-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "future-service__mimo-v2.5-free__invariant__r1",
+      "case": "future-service",
+      "model": "mimo-v2.5-free",
+      "arm": "invariant",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "future-service__mimo-v2.5-free__invariant-pony__r1",
+      "case": "future-service",
+      "model": "mimo-v2.5-free",
+      "arm": "invariant-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "future-service__mimo-v2.5-free__legacy__r1",
+      "case": "future-service",
+      "model": "mimo-v2.5-free",
+      "arm": "legacy",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "future-service__mimo-v2.5-free__legacy-pony__r1",
+      "case": "future-service",
+      "model": "mimo-v2.5-free",
+      "arm": "legacy-pony",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Stops at exploration or clarification and does not refuse the speculative service and queue."
+    },
+    {
+      "id": "future-service__mimo-v2.5-free__none__r1",
+      "case": "future-service",
+      "model": "mimo-v2.5-free",
+      "arm": "none",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Stops at exploration or clarification and does not refuse the speculative service and queue."
+    },
+    {
+      "id": "future-service__mimo-v2.5-free__pony__r1",
+      "case": "future-service",
+      "model": "mimo-v2.5-free",
+      "arm": "pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Refuses the speculative service and queue, keeps the report module in process, and names measured load or lifecycle isolation as the trigger."
+    },
+    {
+      "id": "mutation-interval__hy3-free__canonical__r1",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "canonical",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__canonical__r2",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "canonical",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__canonical-pony__r1",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "canonical-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__canonical-pony__r2",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "canonical-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__counterfactual__r1",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "counterfactual",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__counterfactual__r2",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "counterfactual",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__counterfactual-pony__r1",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "counterfactual-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__counterfactual-pony__r2",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "counterfactual-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__first-principles__r1",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "first-principles",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__first-principles-pony__r1",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "first-principles-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__first-principles-pony__r2",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "first-principles-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__invariant__r1",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "invariant",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Releases the lock after receipt recording fails, which violates the required fail-closed path."
+    },
+    {
+      "id": "mutation-interval__hy3-free__invariant-pony__r2",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "invariant-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__legacy__r1",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "legacy",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__legacy__r2",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "legacy",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__legacy-pony__r1",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "legacy-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__legacy-pony__r2",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "legacy-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__none__r1",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "none",
+      "repetition": 1,
+      "passed": false,
+      "reason": "The first repetition only asks questions and the second does not establish a complete fail-closed boundary."
+    },
+    {
+      "id": "mutation-interval__hy3-free__none__r2",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "none",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__pony__r1",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__hy3-free__pony__r2",
+      "case": "mutation-interval",
+      "model": "hy3-free",
+      "arm": "pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__canonical__r1",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "canonical",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Leaves receipt checking and dead-holder conversion in the composition root, so the mutation interval remains split."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__canonical__r2",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "canonical",
+      "repetition": 2,
+      "passed": false,
+      "reason": "Checks the outstanding receipt before lock acquisition, which the rubric explicitly rejects."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__canonical-pony__r1",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "canonical-pony",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Does not satisfy the single-owner ordering and fail-closed receipt requirements."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__canonical-pony__r2",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "canonical-pony",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__counterfactual__r1",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "counterfactual",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Checks the receipt before acquiring the lock; the rubric rejects this ordering, and one variant also releases before durable recording."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__counterfactual__r2",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "counterfactual",
+      "repetition": 2,
+      "passed": false,
+      "reason": "Checks the receipt before acquiring the lock; the rubric rejects this ordering, and one variant also releases before durable recording."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__counterfactual-pony__r1",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "counterfactual-pony",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Checks the receipt before acquiring the lock; the rubric rejects this ordering, and one variant also releases before durable recording."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__counterfactual-pony__r2",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "counterfactual-pony",
+      "repetition": 2,
+      "passed": false,
+      "reason": "Checks the receipt before acquiring the lock; the rubric rejects this ordering, and one variant also releases before durable recording."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__first-principles__r1",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "first-principles",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Places the receipt check before lock acquisition, so the protocol still has the forbidden check-before-acquire order."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__first-principles__r2",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "first-principles",
+      "repetition": 2,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__first-principles-pony__r1",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "first-principles-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Makes one boundary own receipt checking, dead-holder recovery, durable outcome recording, and gated release, with process-level proof."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__first-principles-pony__r2",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "first-principles-pony",
+      "repetition": 2,
+      "passed": false,
+      "reason": "Leaves startup conversion and receipt checking in the composition root in the proposed sequence."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__invariant__r1",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "invariant",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Checks before lock acquisition and, on receipt-write failure, releases or clears the safety state; the rubric requires fail-closed release."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__invariant__r2",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "invariant",
+      "repetition": 2,
+      "passed": false,
+      "reason": "Checks before lock acquisition and, on receipt-write failure, releases or clears the safety state; the rubric requires fail-closed release."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__invariant-pony__r1",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "invariant-pony",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Does not satisfy the single-owner ordering and fail-closed receipt requirements."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__invariant-pony__r2",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "invariant-pony",
+      "repetition": 2,
+      "passed": false,
+      "reason": "Does not satisfy the single-owner ordering and fail-closed receipt requirements."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__legacy__r1",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "legacy",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Does not move the authoritative receipt check and dead-holder conversion into the single gateway boundary."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__legacy__r2",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "legacy",
+      "repetition": 2,
+      "passed": false,
+      "reason": "Does not move the authoritative receipt check and dead-holder conversion into the single gateway boundary."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__legacy-pony__r1",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "legacy-pony",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Does not reject an outstanding receipt in the gateway sequence before performing a new mutation."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__legacy-pony__r2",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "legacy-pony",
+      "repetition": 2,
+      "passed": false,
+      "reason": "Does not reject an outstanding receipt in the gateway sequence before performing a new mutation."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__none__r1",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "none",
+      "repetition": 1,
+      "passed": false,
+      "reason": "Asks clarification questions and does not provide the complete owner, failure, and process-proof protocol."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__none__r2",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "none",
+      "repetition": 2,
+      "passed": false,
+      "reason": "Records a receipt after stale-lock recovery and then proceeds; it does not reject outstanding uncertainty before a new mutation."
+    },
+    {
+      "id": "mutation-interval__mimo-v2.5-free__pony__r2",
+      "case": "mutation-interval",
+      "model": "mimo-v2.5-free",
+      "arm": "pony",
+      "repetition": 2,
+      "passed": false,
+      "reason": "Moves recording but omits the authoritative receipt check and dead-holder conversion from the new boundary."
+    },
+    {
+      "id": "production-data__hy3-free__canonical__r1",
+      "case": "production-data",
+      "model": "hy3-free",
+      "arm": "canonical",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__hy3-free__canonical-pony__r1",
+      "case": "production-data",
+      "model": "hy3-free",
+      "arm": "canonical-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__hy3-free__counterfactual__r1",
+      "case": "production-data",
+      "model": "hy3-free",
+      "arm": "counterfactual",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__hy3-free__counterfactual-pony__r1",
+      "case": "production-data",
+      "model": "hy3-free",
+      "arm": "counterfactual-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__hy3-free__first-principles__r1",
+      "case": "production-data",
+      "model": "hy3-free",
+      "arm": "first-principles",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__hy3-free__first-principles-pony__r1",
+      "case": "production-data",
+      "model": "hy3-free",
+      "arm": "first-principles-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__hy3-free__invariant__r1",
+      "case": "production-data",
+      "model": "hy3-free",
+      "arm": "invariant",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__hy3-free__invariant-pony__r1",
+      "case": "production-data",
+      "model": "hy3-free",
+      "arm": "invariant-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__hy3-free__legacy__r1",
+      "case": "production-data",
+      "model": "hy3-free",
+      "arm": "legacy",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__hy3-free__legacy-pony__r1",
+      "case": "production-data",
+      "model": "hy3-free",
+      "arm": "legacy-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__hy3-free__none__r1",
+      "case": "production-data",
+      "model": "hy3-free",
+      "arm": "none",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__hy3-free__pony__r1",
+      "case": "production-data",
+      "model": "hy3-free",
+      "arm": "pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__mimo-v2.5-free__canonical__r1",
+      "case": "production-data",
+      "model": "mimo-v2.5-free",
+      "arm": "canonical",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__mimo-v2.5-free__canonical-pony__r1",
+      "case": "production-data",
+      "model": "mimo-v2.5-free",
+      "arm": "canonical-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__mimo-v2.5-free__counterfactual__r1",
+      "case": "production-data",
+      "model": "mimo-v2.5-free",
+      "arm": "counterfactual",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__mimo-v2.5-free__counterfactual-pony__r1",
+      "case": "production-data",
+      "model": "mimo-v2.5-free",
+      "arm": "counterfactual-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__mimo-v2.5-free__first-principles__r1",
+      "case": "production-data",
+      "model": "mimo-v2.5-free",
+      "arm": "first-principles",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__mimo-v2.5-free__first-principles-pony__r1",
+      "case": "production-data",
+      "model": "mimo-v2.5-free",
+      "arm": "first-principles-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__mimo-v2.5-free__invariant__r1",
+      "case": "production-data",
+      "model": "mimo-v2.5-free",
+      "arm": "invariant",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__mimo-v2.5-free__invariant-pony__r1",
+      "case": "production-data",
+      "model": "mimo-v2.5-free",
+      "arm": "invariant-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__mimo-v2.5-free__legacy__r1",
+      "case": "production-data",
+      "model": "mimo-v2.5-free",
+      "arm": "legacy",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__mimo-v2.5-free__legacy-pony__r1",
+      "case": "production-data",
+      "model": "mimo-v2.5-free",
+      "arm": "legacy-pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__mimo-v2.5-free__none__r1",
+      "case": "production-data",
+      "model": "mimo-v2.5-free",
+      "arm": "none",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    },
+    {
+      "id": "production-data__mimo-v2.5-free__pony__r1",
+      "case": "production-data",
+      "model": "mimo-v2.5-free",
+      "arm": "pony",
+      "repetition": 1,
+      "passed": true,
+      "reason": "Uses the existing migration path, a bounded old and new API adapter, verification, rollback, and a 90-day plus zero-traffic exit."
+    }
+  ]
+}
+

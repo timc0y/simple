@@ -1,0 +1,3 @@
+```json
+{"selfTestPassed":true,"grades":[{"id":"current-r1","passed":true,"reason":"Uses expand-contract via the existing migration mechanism with backfill verification and rollback, a single serialization-boundary adapter accepting/emitting both field names through the 90-day window, and an explicit removal condition (window elapsed plus verified zero old-name traffic), preserving both data and API consumers."},{"id":"candidate-r1","passed":true,"reason":"Preserves retained data with an additive expand/backfill/deferred-contract migration, keeps old and new API clients working via one bounded name adapter, includes contract tests, rollback safety, and a concrete telemetry-gated removal trigger, with no unrelated infrastructure."}]}
+```

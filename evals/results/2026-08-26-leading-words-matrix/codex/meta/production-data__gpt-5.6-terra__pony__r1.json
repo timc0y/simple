@@ -1,0 +1,10 @@
+{
+  "model": "gpt-5.6-terra",
+  "arm": "pony",
+  "case": "production-data",
+  "repetition": 1,
+  "inputTokens": 62643,
+  "outputTokens": 1257,
+  "reasoningTokens": 471,
+  "latencyMs": 31609
+}

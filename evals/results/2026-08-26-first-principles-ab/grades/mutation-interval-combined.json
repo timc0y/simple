@@ -1,0 +1,37 @@
+```json
+{
+  "selfTestPassed": true,
+  "grades": [
+    {
+      "id": "current-both-r1",
+      "passed": true,
+      "reason": "Single boundary owns the whole interval with dead-holder conversion made durable inside acquire(), recording before release, fail-closed on record failure degrading into the same dead-holder path, and proof via real OS processes SIGKILLed at each transition with black-box assertions."
+    },
+    {
+      "id": "current-both-r2",
+      "passed": false,
+      "reason": "Its entry sequence explicitly checks the outstanding receipt and inspects lock state before acquiring ('Only once no receipt is outstanding, acquire the lock'), a check-before-acquire ordering the criteria list as a fail condition."
+    },
+    {
+      "id": "current-both-r3",
+      "passed": false,
+      "reason": "The outstanding-receipt check remains in the composition root as a pre-read outside the gateway's locked interval ('Composition root's check outstanding receipt stays'), so uncertainty rejection is checked before and outside acquisition rather than owned by the boundary."
+    },
+    {
+      "id": "candidate-both-r1",
+      "passed": false,
+      "reason": "Its pseudocode performs `if outstanding_receipt_exists(): return` before `acquire_lock()`, explicitly checking uncertainty outside the lock — the check-before-acquire TOCTOU the criteria name as a fail condition."
+    },
+    {
+      "id": "candidate-both-r2",
+      "passed": false,
+      "reason": "Its stated sequence is 'check receipt → acquire lock → mutate → record → release', placing the uncertainty check before lock acquisition instead of inside the protected interval, which the criteria list as a fail condition."
+    },
+    {
+      "id": "candidate-both-r3",
+      "passed": true,
+      "reason": "Acquire comes first with durable dead-holder conversion as part of acquisition, the receipt check runs under the held lock, release is gated on a durable record with fail-closed retention of the lock on write failure, and proof uses real competing processes SIGKILLed at every transition including mid-conversion."
+    }
+  ]
+}
+```

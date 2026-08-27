@@ -1,0 +1,7 @@
+diff --git a/skills/simple/references/architecture.md b/skills/simple/references/architecture.md
+--- a/skills/simple/references/architecture.md
++++ b/skills/simple/references/architecture.md
+@@
+ transitions.
++
++Treat a complexity score as evidence, not as a design target.

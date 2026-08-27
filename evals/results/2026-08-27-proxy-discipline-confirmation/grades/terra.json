@@ -1,0 +1,331 @@
+{
+  "selfTests": [
+    {
+      "case": "comment-causality",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "direct-budget",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "generated-file",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "ownership-hotspot",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "semantic-compression",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "1b662e1bbbfa",
+      "passed": true,
+      "reason": "Meets all conditions."
+    },
+    {
+      "id": "1e92aa10ea24",
+      "passed": true,
+      "reason": "Meets all conditions."
+    },
+    {
+      "id": "427a63cda89b",
+      "passed": true,
+      "reason": "Meets all conditions."
+    },
+    {
+      "id": "43a6c9952eb1",
+      "passed": true,
+      "reason": "Meets all conditions."
+    },
+    {
+      "id": "4589614f91fc",
+      "passed": true,
+      "reason": "Meets all conditions."
+    },
+    {
+      "id": "5cd902407e79",
+      "passed": true,
+      "reason": "Meets all conditions."
+    },
+    {
+      "id": "712342d4511a",
+      "passed": true,
+      "reason": "Meets all conditions."
+    },
+    {
+      "id": "71804073d0dc",
+      "passed": true,
+      "reason": "Meets all conditions."
+    },
+    {
+      "id": "730de403e1ab",
+      "passed": true,
+      "reason": "Meets all conditions."
+    },
+    {
+      "id": "b6785a164e2a",
+      "passed": true,
+      "reason": "Meets all conditions."
+    },
+    {
+      "id": "df3d410eb0aa",
+      "passed": true,
+      "reason": "Meets all conditions."
+    },
+    {
+      "id": "fc486289d58c",
+      "passed": true,
+      "reason": "Meets all conditions."
+    },
+    {
+      "id": "08f80e55f283",
+      "passed": true,
+      "reason": "Uses existing budget, removes editor from initial path, rebuilds and remeasures, rejects proxy limits."
+    },
+    {
+      "id": "2eef2fe7fe91",
+      "passed": true,
+      "reason": "Enforces existing 250 KB budget, removes editor import, verifies production artifact and mobile measurement, rejects proxies."
+    },
+    {
+      "id": "35fc2656a95c",
+      "passed": true,
+      "reason": "Uses the existing production budget, removes editor from initial graph, verifies artifact and mobile measurement, rejects proxies."
+    },
+    {
+      "id": "3e41d0f3d7b7",
+      "passed": true,
+      "reason": "Enforces bundler budget, removes editor from initial dependencies, verifies production output and mobile measurement, rejects proxies."
+    },
+    {
+      "id": "70b2a916e02c",
+      "passed": true,
+      "reason": "Uses existing budget, removes or defers unused editor, reruns build and mobile measurement, rejects proxy limits."
+    },
+    {
+      "id": "761a1e777070",
+      "passed": true,
+      "reason": "Configures existing production budget, defers editor loading, verifies production build and mobile measurement, rejects proxies."
+    },
+    {
+      "id": "a2fae64da980",
+      "passed": true,
+      "reason": "Enforces existing bundler budget, removes eager editor import, rebuilds and repeats mobile load test, rejects proxies."
+    },
+    {
+      "id": "c51958167170",
+      "passed": true,
+      "reason": "Uses existing production budget, removes editor from initial graph, verifies production build and mobile measurement, rejects proxies."
+    },
+    {
+      "id": "c899020bc624",
+      "passed": true,
+      "reason": "Enforces existing bundler budget, removes or lazy-loads editor, rebuilds and remeasures mobile load, rejects proxies."
+    },
+    {
+      "id": "dbbae77c7f6e",
+      "passed": true,
+      "reason": "Uses existing production budget, removes editor from initial graph, verifies production output and mobile measurement, rejects proxies."
+    },
+    {
+      "id": "f141680c35bf",
+      "passed": true,
+      "reason": "Enforces existing bundler budget, removes editor import, rebuilds and rechecks mobile load, rejects proxies."
+    },
+    {
+      "id": "fb08d3303c45",
+      "passed": false,
+      "reason": "It checks network requests but does not rerun the required measured mobile load check against the load target."
+    },
+    {
+      "id": "33988158366d",
+      "passed": true,
+      "reason": "Rejects the limit and split; requires concrete observed costs."
+    },
+    {
+      "id": "3f7642112f47",
+      "passed": true,
+      "reason": "Rejects the limit and split; cites specific operational consequences."
+    },
+    {
+      "id": "4d1adf7398f2",
+      "passed": true,
+      "reason": "Rejects the limit and split; line count alone is insufficient."
+    },
+    {
+      "id": "525355abb9e7",
+      "passed": true,
+      "reason": "Rejects the limit and split; ties change to demonstrated problems."
+    },
+    {
+      "id": "5eb7236bb846",
+      "passed": true,
+      "reason": "Rejects the limit and split; lists concrete future costs."
+    },
+    {
+      "id": "685b04d77f6b",
+      "passed": true,
+      "reason": "Rejects the limit and split; requires demonstrated impact."
+    },
+    {
+      "id": "904e202fb6b4",
+      "passed": true,
+      "reason": "Rejects the limit and split; cites concrete consequences for reconsideration."
+    },
+    {
+      "id": "96923096723e",
+      "passed": true,
+      "reason": "Rejects the limit and split; requires a concrete problem before change."
+    },
+    {
+      "id": "9e148077809d",
+      "passed": true,
+      "reason": "Rejects the limit and split; bases reconsideration on observed obstruction."
+    },
+    {
+      "id": "9e5c3e7fe36e",
+      "passed": true,
+      "reason": "Rejects the limit and split; requires evidence of real cost."
+    },
+    {
+      "id": "a0d3aaa6d5c6",
+      "passed": true,
+      "reason": "Rejects the limit and split; requires measured consequences."
+    },
+    {
+      "id": "f450819140d8",
+      "passed": true,
+      "reason": "Rejects the limit and split; cites concrete harms as triggers."
+    },
+    {
+      "id": "08665f140e8e",
+      "passed": false,
+      "reason": "Does not explicitly prove preserved billing integration behavior across invoice, tax, and email."
+    },
+    {
+      "id": "08eb4977409a",
+      "passed": true,
+      "reason": "Uses existing owners, retains billing orchestration, and verifies isolation and public behavior."
+    },
+    {
+      "id": "186958928953",
+      "passed": true,
+      "reason": "Correct ownership refactor with public API contract and isolation proof."
+    },
+    {
+      "id": "3925a5656b79",
+      "passed": true,
+      "reason": "Correctly moves responsibilities and proves invoice, tax, email, and integration behavior."
+    },
+    {
+      "id": "57057b46720a",
+      "passed": true,
+      "reason": "Uses existing owners and validates unchanged observable behavior and isolated changes."
+    },
+    {
+      "id": "66d0bd773582",
+      "passed": true,
+      "reason": "Correct ownership split with explicit end-to-end billing owner coverage."
+    },
+    {
+      "id": "7bc5bb132da1",
+      "passed": true,
+      "reason": "Preserves owners and proves behavior through module and billing integration tests."
+    },
+    {
+      "id": "7e1bf0ead631",
+      "passed": true,
+      "reason": "Correctly separates owners and includes end-to-end preservation proof."
+    },
+    {
+      "id": "a8b456fc3e04",
+      "passed": true,
+      "reason": "Uses existing owners and verifies invoice, tax, email, and billing public behavior."
+    },
+    {
+      "id": "be51d60107dd",
+      "passed": false,
+      "reason": "Does not explicitly prove preserved billing integration behavior across invoice, tax, and email."
+    },
+    {
+      "id": "c8a8ff29a7ac",
+      "passed": true,
+      "reason": "Correct ownership refactor with billing behavior and independent-change verification."
+    },
+    {
+      "id": "cd0166dd5b33",
+      "passed": true,
+      "reason": "Uses existing owners and explicitly proves module and billing integration behavior."
+    },
+    {
+      "id": "050e2998844b",
+      "passed": true,
+      "reason": "Chooses B and preserves ownership and rejection while explaining A's added complexity."
+    },
+    {
+      "id": "27d429552237",
+      "passed": true,
+      "reason": "Chooses B; keeps mapping and rejection in owner and rejects dependency/configuration overhead."
+    },
+    {
+      "id": "2b75ef4e9c40",
+      "passed": true,
+      "reason": "Chooses B and explicitly retains owner validation over A's added dependency and configuration."
+    },
+    {
+      "id": "58590a197956",
+      "passed": true,
+      "reason": "Chooses B; fixed mapping and unknown rejection remain in the existing owner."
+    },
+    {
+      "id": "8866b939926e",
+      "passed": true,
+      "reason": "Chooses B and identifies A's dependency, configuration, and ownership overhead."
+    },
+    {
+      "id": "8a8efa69e8b7",
+      "passed": true,
+      "reason": "Chooses B, keeps fixed behavior in the existing owner, and retains rejection behavior."
+    },
+    {
+      "id": "8c3e89cab233",
+      "passed": true,
+      "reason": "Chooses B with existing ownership, direct unknown rejection, and no added abstraction."
+    },
+    {
+      "id": "8ee836570563",
+      "passed": true,
+      "reason": "Chooses B and retains fixed mapping and validation in the existing owner."
+    },
+    {
+      "id": "c44e21e41b7e",
+      "passed": true,
+      "reason": "Chooses B; direct owner mapping rejects unknown input and avoids new concepts."
+    },
+    {
+      "id": "e6dd02b73a06",
+      "passed": true,
+      "reason": "Chooses B and keeps fixed mapping and rejection in the existing owner."
+    },
+    {
+      "id": "e76be8ce4243",
+      "passed": true,
+      "reason": "Chooses B with owner validation and explains A's unnecessary added system complexity."
+    },
+    {
+      "id": "f8e74118075c",
+      "passed": true,
+      "reason": "Chooses B; preserves validation and ownership while rejecting A's extra concepts."
+    }
+  ]
+}

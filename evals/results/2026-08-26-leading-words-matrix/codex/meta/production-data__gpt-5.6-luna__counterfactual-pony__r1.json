@@ -1,0 +1,10 @@
+{
+  "model": "gpt-5.6-luna",
+  "arm": "counterfactual-pony",
+  "case": "production-data",
+  "repetition": 1,
+  "inputTokens": 51720,
+  "outputTokens": 1473,
+  "reasoningTokens": 614,
+  "latencyMs": 33463
+}

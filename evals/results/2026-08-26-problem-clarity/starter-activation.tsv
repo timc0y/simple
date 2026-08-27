@@ -1,0 +1,5 @@
+case	solver_model	skill_opened	writing_reference_opened	luna_grader	terra_grader
+problem-first	gpt-5.6-luna	true	true	pass	pass
+problem-first	gpt-5.6-terra	true	true	pass	pass
+clear-explanation	gpt-5.6-luna	true	true	pass	pass
+clear-explanation	gpt-5.6-terra	true	true	pass	pass

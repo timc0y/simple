@@ -1,0 +1,10 @@
+{
+  "model": "gpt-5.6-terra",
+  "arm": "counterfactual-pony",
+  "case": "mutation-interval",
+  "repetition": 2,
+  "inputTokens": 34874,
+  "outputTokens": 1097,
+  "reasoningTokens": 540,
+  "latencyMs": 31845
+}

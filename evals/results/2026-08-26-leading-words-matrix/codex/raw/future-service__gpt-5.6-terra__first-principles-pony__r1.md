@@ -1,0 +1,1 @@
+I didn’t add a service or queue: the repository has no report implementation to change, and its stated boundary is in-process generation for one local operator. Add isolation only after measured load or an independent lifecycle requires it.

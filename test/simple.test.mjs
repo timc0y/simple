@@ -91,7 +91,7 @@ test("session hook injects the nearest nested profile", () => {
   assert.doesNotMatch(output.hookSpecificOutput.additionalContext, /root profile/);
 });
 
-test("pre-write hook adds only relevant reminders", () => {
+test("edit hook routes only relevant review reminders", () => {
   const root = mkdtempSync(join(tmpdir(), "simple-"));
   mkdirSync(join(root, ".git"));
   setup(root);
@@ -100,25 +100,43 @@ test("pre-write hook adds only relevant reminders", () => {
   const markdown = runHook({
     hook_event_name: "PreToolUse",
     cwd: root,
+    tool_name: "apply_patch",
     tool_input: { command: "*** Update File: docs/design.md" }
   });
   const markdownReminder = JSON.parse(markdown.stdout).hookSpecificOutput.additionalContext;
-  assert.match(markdownReminder, /Markdown load-bearing/);
-  assert.match(markdownReminder, /plain/);
+  assert.match(markdownReminder, /Review the Markdown edit/);
   assert.match(markdownReminder, /no decorative styling/);
 
   const code = runHook({
     hook_event_name: "PreToolUse",
     cwd: root,
+    tool_name: "apply_patch",
     tool_input: { command: "+// Explain the retry." }
   });
   const commentReminder = JSON.parse(code.stdout).hookSpecificOutput.additionalContext;
-  assert.match(commentReminder, /Use comments/);
-  assert.match(commentReminder, /concise/);
+  assert.match(commentReminder, /Review each added comment/);
+  assert.match(commentReminder, /non-obvious reasons/);
+
+  const removedComment = runHook({
+    hook_event_name: "PreToolUse",
+    cwd: root,
+    tool_name: "Edit",
+    tool_input: { old_string: "// Narrate the call.", new_string: "run();" }
+  });
+  assert.equal(removedComment.stdout, "");
+
+  const unchangedComment = runHook({
+    hook_event_name: "PreToolUse",
+    cwd: root,
+    tool_name: "apply_patch",
+    tool_input: { patch: " // Existing context.\n+run();" }
+  });
+  assert.equal(unchangedComment.stdout, "");
 
   const ordinary = runHook({
     hook_event_name: "PreToolUse",
     cwd: root,
+    tool_name: "apply_patch",
     tool_input: { command: "+const answer = 42;" }
   });
   assert.equal(ordinary.stdout, "");
@@ -126,6 +144,7 @@ test("pre-write hook adds only relevant reminders", () => {
   const architectureWords = runHook({
     hook_event_name: "PreToolUse",
     cwd: root,
+    tool_name: "apply_patch",
     tool_input: { command: "+const migrationFramework = existingOwner;" }
   });
   assert.equal(architectureWords.stdout, "");
@@ -175,6 +194,9 @@ test("published surfaces reference files that exist", () => {
   const codexPlugin = JSON.parse(readFileSync(join(root, ".codex-plugin", "plugin.json"), "utf8"));
   assert.match(codexPlugin.homepage, /timcoy\.uk\/simple/);
   assert.ok(existsSync(join(root, codexPlugin.hooks)), "codex hooks file");
+  assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("nail down the problem")));
+  assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("flow easy to picture")));
+  assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("lint, tests, and code-health checks")));
   const hooks = JSON.parse(readFileSync(join(root, "hooks", "hooks.json"), "utf8"));
   for (const event of Object.values(hooks.hooks)) {
     for (const block of event) {

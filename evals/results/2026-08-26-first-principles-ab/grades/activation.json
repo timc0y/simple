@@ -1,0 +1,3 @@
+```json
+{"selfTestPassed":true,"grades":[{"id":"current-r1","passed":true,"reason":"Rejects the service and queue as answering a future possibility rather than a present requirement, keeps generation and persistence in the owning report module, and names measured load or an independent operational lifecycle as the reconsideration trigger without importing any external standard."},{"id":"candidate-r1","passed":true,"reason":"Refuses to add the service abstraction or queue, keeps the work in the report module's ordinary in-process path, and grounds any future reconsideration in observable conditions (measured load, a second consumer, independent lifecycle) rather than generic best practice."}]}
+```

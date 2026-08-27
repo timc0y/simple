@@ -1,0 +1,1 @@
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’m using the Simple skill because this is an implementation proposal involving a persisted/public-field migration. I’ll read the case guidance and repository evidence, then give the smallest safe design."}}

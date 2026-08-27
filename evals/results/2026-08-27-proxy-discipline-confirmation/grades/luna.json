@@ -1,0 +1,331 @@
+{
+  "selfTests": [
+    {
+      "case": "comment-causality",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "direct-budget",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "generated-file",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "ownership-hotspot",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "semantic-compression",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "1b662e1bbbfa",
+      "passed": true,
+      "reason": "Removes only redundant comments, preserves the provider contract, and rejects fake-test proof."
+    },
+    {
+      "id": "1e92aa10ea24",
+      "passed": true,
+      "reason": "Preserves the non-local contract and accurately states the integration-test gap."
+    },
+    {
+      "id": "427a63cda89b",
+      "passed": true,
+      "reason": "Removes 37 comments, preserves the contract warning, and rejects causal inference and fake-test proof."
+    },
+    {
+      "id": "43a6c9952eb1",
+      "passed": true,
+      "reason": "Keeps the load-bearing provider contract and correctly notes the fake-test limitation."
+    },
+    {
+      "id": "4589614f91fc",
+      "passed": true,
+      "reason": "Removes redundant narration while preserving the unproven external retry invariant."
+    },
+    {
+      "id": "5cd902407e79",
+      "passed": true,
+      "reason": "Correctly distinguishes redundant comments from the provider contract and test gap."
+    },
+    {
+      "id": "712342d4511a",
+      "passed": true,
+      "reason": "Preserves the retry contract, rejects comment causality, and does not claim test proof."
+    },
+    {
+      "id": "71804073d0dc",
+      "passed": true,
+      "reason": "Keeps the non-obvious provider invariant and identifies the fake-provider limitation."
+    },
+    {
+      "id": "730de403e1ab",
+      "passed": true,
+      "reason": "Preserves the contract comment and explicitly rejects both causal inference and fake-test proof."
+    },
+    {
+      "id": "b6785a164e2a",
+      "passed": true,
+      "reason": "Separately identifies the missing provider test while preserving the contract comment."
+    },
+    {
+      "id": "df3d410eb0aa",
+      "passed": true,
+      "reason": "Removes narration, preserves the unverified contract, and recommends future provider-backed coverage."
+    },
+    {
+      "id": "fc486289d58c",
+      "passed": true,
+      "reason": "Preserves the load-bearing contract and correctly states that the fake test does not prove it."
+    },
+    {
+      "id": "08f80e55f283",
+      "passed": true,
+      "reason": "Uses the existing budget, removes or lazy-loads the unused editor, rebuilds, remeasures mobile loading, and rejects LOC and complexity limits."
+    },
+    {
+      "id": "2eef2fe7fe91",
+      "passed": true,
+      "reason": "Enforces the existing 250 KB budget, removes the editor import, rebuilds and measures mobile loading, and rejects proxy metrics."
+    },
+    {
+      "id": "35fc2656a95c",
+      "passed": true,
+      "reason": "Applies the existing production budget, corrects the eager editor import, verifies the build and mobile measurement, and rejects LOC and complexity."
+    },
+    {
+      "id": "3e41d0f3d7b7",
+      "passed": true,
+      "reason": "Uses the existing budget, identifies the editor import graph as the cause, rebuilds and measures mobile loading, and rejects source metrics."
+    },
+    {
+      "id": "70b2a916e02c",
+      "passed": true,
+      "reason": "Enforces the existing budget, removes or defers the unused editor, reruns build and mobile measurement, and rejects LOC and complexity."
+    },
+    {
+      "id": "761a1e777070",
+      "passed": true,
+      "reason": "Sets the existing budget, removes the unnecessary static editor import, rebuilds and remeasures, and rejects proxy limits."
+    },
+    {
+      "id": "a2fae64da980",
+      "passed": true,
+      "reason": "Uses the existing budget, corrects the unused eager editor import, rebuilds and repeats mobile testing, and rejects proxy metrics."
+    },
+    {
+      "id": "c51958167170",
+      "passed": true,
+      "reason": "Enforces the existing budget, removes the editor from checkout’s initial imports, rebuilds and measures mobile loading, and rejects LOC and complexity."
+    },
+    {
+      "id": "c899020bc624",
+      "passed": true,
+      "reason": "Uses the existing budget, removes or lazy-loads the unused editor import, rebuilds and runs the load measurement, and rejects proxy limits."
+    },
+    {
+      "id": "dbbae77c7f6e",
+      "passed": true,
+      "reason": "Removes the unused initial editor dependency, applies the existing budget, verifies build and mobile measurement, and rejects LOC and complexity."
+    },
+    {
+      "id": "f141680c35bf",
+      "passed": true,
+      "reason": "Enforces the existing budget, removes the unnecessary editor import, rebuilds and rechecks mobile loading, and rejects proxy metrics."
+    },
+    {
+      "id": "fb08d3303c45",
+      "passed": false,
+      "reason": "Enforces the budget and corrects the editor import, but does not explicitly rerun the required measured mobile load check against its target."
+    },
+    {
+      "id": "33988158366d",
+      "passed": true,
+      "reason": "Rejects the limit and split, cites no current problem, and gives concrete consequences for reconsideration."
+    },
+    {
+      "id": "3f7642112f47",
+      "passed": true,
+      "reason": "Rejects both changes, explains the lack of an observed problem, and ties reconsideration to specific operational consequences."
+    },
+    {
+      "id": "4d1adf7398f2",
+      "passed": true,
+      "reason": "Keeps the generated module intact and identifies measured performance, review, defect, or consumer consequences."
+    },
+    {
+      "id": "525355abb9e7",
+      "passed": true,
+      "reason": "Rejects line count as a constraint and requires demonstrated operational, tooling, defect, or ownership consequences."
+    },
+    {
+      "id": "5eb7236bb846",
+      "passed": true,
+      "reason": "Rejects both changes and ties reconsideration to concrete review, tooling, production, consumer, or ownership problems."
+    },
+    {
+      "id": "685b04d77f6b",
+      "passed": true,
+      "reason": "Explains that length alone is not a cost and lists concrete tooling, production, conflict, and consumption triggers."
+    },
+    {
+      "id": "904e202fb6b4",
+      "passed": true,
+      "reason": "Rejects the limit and split, distinguishes line count from a real problem, and names concrete consequences."
+    },
+    {
+      "id": "96923096723e",
+      "passed": true,
+      "reason": "Rejects the ESLint rule and split, explains the absent defect, and includes valid concrete triggers for reconsideration."
+    },
+    {
+      "id": "9e148077809d",
+      "passed": true,
+      "reason": "Rejects both changes and ties reconsideration to observed tooling, production, conflict, defect, or ownership consequences."
+    },
+    {
+      "id": "9e5c3e7fe36e",
+      "passed": true,
+      "reason": "Rejects both changes and requires concrete production, generator, review, defect, or ownership consequences."
+    },
+    {
+      "id": "a0d3aaa6d5c6",
+      "passed": true,
+      "reason": "Rejects the limit and split, explains the lack of a demonstrated problem, and names measurable consequences."
+    },
+    {
+      "id": "f450819140d8",
+      "passed": true,
+      "reason": "Rejects both changes, states there is no observed problem, and gives concrete triggers for reconsideration."
+    },
+    {
+      "id": "08665f140e8e",
+      "passed": false,
+      "reason": "Correct ownership refactor, but does not explicitly prove preserved billing integration behavior."
+    },
+    {
+      "id": "08eb4977409a",
+      "passed": true,
+      "reason": "Uses conflict evidence, existing owners, retained orchestration, and verifies invoice, tax, email, and integration behavior."
+    },
+    {
+      "id": "186958928953",
+      "passed": true,
+      "reason": "Treats line count as secondary, preserves ownership boundaries, and verifies public and isolated behavior."
+    },
+    {
+      "id": "3925a5656b79",
+      "passed": false,
+      "reason": "Covers totals and emails but does not clearly prove preserved invoice-validation behavior."
+    },
+    {
+      "id": "57057b46720a",
+      "passed": true,
+      "reason": "Identifies coupled ownership, uses existing owners, retains orchestration, and tests preserved outputs and isolation."
+    },
+    {
+      "id": "66d0bd773582",
+      "passed": true,
+      "reason": "Refactors to existing owners while retaining billing orchestration and explicitly verifies integration and change isolation."
+    },
+    {
+      "id": "7bc5bb132da1",
+      "passed": true,
+      "reason": "Addresses mixed ownership, preserves public behavior, and verifies tax, email, invoice, and integration paths."
+    },
+    {
+      "id": "7e1bf0ead631",
+      "passed": true,
+      "reason": "Uses the existing owners, retains billing responsibilities, and provides end-to-end and isolation evidence."
+    },
+    {
+      "id": "a8b456fc3e04",
+      "passed": true,
+      "reason": "Treats the limit as a guardrail, separates ownership through existing modules, and verifies preserved public behavior."
+    },
+    {
+      "id": "be51d60107dd",
+      "passed": false,
+      "reason": "Correct refactor and isolation evidence, but does not explicitly prove preserved billing integration behavior."
+    },
+    {
+      "id": "c8a8ff29a7ac",
+      "passed": true,
+      "reason": "Uses the conflict evidence, existing owners, retained orchestration, and verifies behavior plus independent change paths."
+    },
+    {
+      "id": "cd0166dd5b33",
+      "passed": true,
+      "reason": "Moves responsibilities to existing owners, preserves contracts and orchestration, and tests integration and isolation."
+    },
+    {
+      "id": "050e2998844b",
+      "passed": true,
+      "reason": "Chooses B and explains that A’s dependency and configuration outweigh its line-count savings while preserving ownership and rejection."
+    },
+    {
+      "id": "27d429552237",
+      "passed": true,
+      "reason": "Chooses B, preserves ownership and rejection, and correctly weighs A’s dependency, rule-engine concept, and configuration."
+    },
+    {
+      "id": "2b75ef4e9c40",
+      "passed": true,
+      "reason": "Chooses B, retains validation and ownership, and explains A’s unnecessary dependency and configuration."
+    },
+    {
+      "id": "58590a197956",
+      "passed": true,
+      "reason": "Chooses B, preserves rejection in the existing owner, and identifies A’s dependency, configuration, and extra concept."
+    },
+    {
+      "id": "8866b939926e",
+      "passed": true,
+      "reason": "Chooses B and explicitly addresses dependency, configuration, ownership boundaries, and unknown-input rejection."
+    },
+    {
+      "id": "8a8efa69e8b7",
+      "passed": true,
+      "reason": "Chooses B, keeps mapping and rejection in the existing owner, and rejects A’s unnecessary dependency and configuration."
+    },
+    {
+      "id": "8c3e89cab233",
+      "passed": true,
+      "reason": "Chooses B, preserves ownership and rejection, and explains A’s added dependency, configuration, and system complexity."
+    },
+    {
+      "id": "8ee836570563",
+      "passed": true,
+      "reason": "Chooses B and preserves ownership and rejection while explaining why A’s dependency and configuration are unnecessary."
+    },
+    {
+      "id": "c44e21e41b7e",
+      "passed": true,
+      "reason": "Chooses B, explicitly retains ownership and rejection, and identifies A’s unnecessary dependency, configuration, and moving parts."
+    },
+    {
+      "id": "e6dd02b73a06",
+      "passed": true,
+      "reason": "Chooses B, keeps validation in the existing owner, and explains A’s unnecessary dependency, configuration, and added concepts."
+    },
+    {
+      "id": "e76be8ce4243",
+      "passed": true,
+      "reason": "Chooses B and explicitly identifies A’s dependency, configuration, extra rule boundary, and lack of preserved simplicity."
+    },
+    {
+      "id": "f8e74118075c",
+      "passed": true,
+      "reason": "Chooses B, preserves ownership and validation, and explains that A’s dependency and rule-system concepts outweigh fewer lines."
+    }
+  ]
+}

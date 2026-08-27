@@ -1,0 +1,11 @@
+{
+  "model": "opencode/hy3-free",
+  "arm": "legacy-pony",
+  "case": "production-data",
+  "repetition": 1,
+  "inputTokens": 17350,
+  "outputTokens": 727,
+  "latencyMs": 49581,
+  "costUsd": 0,
+  "turns": 3
+}

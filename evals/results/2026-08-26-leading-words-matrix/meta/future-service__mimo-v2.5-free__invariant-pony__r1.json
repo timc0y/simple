@@ -1,0 +1,11 @@
+{
+  "model": "opencode/mimo-v2.5-free",
+  "arm": "invariant-pony",
+  "case": "future-service",
+  "repetition": 1,
+  "inputTokens": 23179,
+  "outputTokens": 1210,
+  "latencyMs": 29060,
+  "costUsd": 0,
+  "turns": 5
+}

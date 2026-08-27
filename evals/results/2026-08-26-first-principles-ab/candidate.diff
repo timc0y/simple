@@ -1,0 +1,83 @@
+diff --git a/skills/simple/SKILL.md b/skills/simple/SKILL.md
+index 67338d3..24e39e0 100644
+--- a/skills/simple/SKILL.md
++++ b/skills/simple/SKILL.md
+@@ -1,20 +1,21 @@
+ ---
+ name: simple
+ description: >-
+-  Find the smallest truthful software design and write concise, plain developer
+-  prose. Use for architecture, ownership, refactoring, deletion, compatibility,
+-  migration, repository audits, implementation plans, or work that is becoming more
+-  complex than its demonstrated requirements; for technical plans, documentation,
+-  comments, Markdown, prompts, reviews, updates, and handoffs; and when asked what a
+-  documented engineer, company, or operator would do. Read the nearest SIMPLE.md
+-  when repository facts change the answer.
++  Apply first-principles reasoning grounded in repository evidence to find the
++  smallest truthful software design and write concise, plain developer prose. Use
++  for architecture, ownership, refactoring, deletion, compatibility, migration,
++  repository audits, implementation plans, or work that is becoming more complex
++  than its demonstrated requirements; for technical plans, documentation, comments,
++  Markdown, prompts, reviews, updates, and handoffs; and when asked what a documented
++  engineer, company, or operator would do. Read the nearest SIMPLE.md when repository
++  facts change the answer.
+ ---
+ 
+ # Simple
+ 
+-Find the least complicated solution that fully accounts for the obligations that
+-actually exist. Truthful means supported by observed requirements, repository facts,
+-or explicit commitments—not hypothetical future needs.
++Apply first-principles reasoning to find the least complicated solution that fully
++accounts for the obligations that actually exist. Truthful means supported by observed
++requirements, repository facts, or explicit commitments—not hypothetical future needs.
+ 
+ Before a decision whose implementation could change with repository facts, read the
+ nearest `SIMPLE.md`. If a material fact is absent, establish it or state the
+@@ -34,17 +35,20 @@ review unless the content itself requires a design decision. Read the nearest
+ ## Design in order
+ 
+ 1. Establish the actual users, operators, consumers, contracts, retained data,
+-   commitments, scale, and failure consequences.
+-2. Find the existing owner and ordinary path.
+-3. Name the exact missing capability. Before moving ownership or adding a workflow,
++   commitments, scale, and failure consequences. Separate observed facts and explicit
++   commitments from inference, assumptions, and unknowns.
++2. State the required outcome or invariant without naming the current implementation.
++3. Find the existing owner and ordinary path. Reuse them when they satisfy that outcome
++   or invariant.
++4. Name the exact missing capability. Before moving ownership or adding a workflow,
+    try to supply only that missing precondition through the ordinary path.
+-4. Decide what must be preserved and what may be replaced.
+-5. Choose the smallest design that satisfies those present obligations.
+-6. Before introducing code, a dependency, an abstraction, a workflow, or another owner,
++5. Decide what must be preserved and what may be replaced.
++6. Choose the smallest design that satisfies those present obligations.
++7. Before introducing code, a dependency, an abstraction, a workflow, or another owner,
+    walk the implementation ladder in `references/architecture.md`.
+-7. Remove the route, state, explanation, and cleanup displaced by the change.
+-8. Prove the result through a surface independent enough to distinguish requested
+-   behaviour from the implementation itself.
++8. Remove the route, state, explanation, and cleanup displaced by the change.
++9. Try to falsify the result through a surface independent enough to distinguish the
++   requested behaviour from the implementation itself.
+ 
+ ## Write in order
+ 
+diff --git a/skills/simple/references/examples.md b/skills/simple/references/examples.md
+index 9b417e3..1218498 100644
+--- a/skills/simple/references/examples.md
++++ b/skills/simple/references/examples.md
+@@ -1,8 +1,9 @@
+ # Engineering precedents
+ 
+-Use a precedent to activate a learned engineering pattern when it makes the present
+-decision clearer. Do not turn stories into slogans, imitate incidental details, or
+-let a precedent create requirements absent from the repository.
++Use precedents and analogies to generate hypotheses, then test them against repository
++evidence. Keep one only when it makes the present decision clearer. Do not turn stories
++into slogans, imitate incidental details, or let a precedent create requirements absent
++from the repository.
+ 
+ ## Raptor: move complexity inward
+ 

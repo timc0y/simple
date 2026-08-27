@@ -1,0 +1,10 @@
+{
+  "model": "gpt-5.6-terra",
+  "arm": "invariant",
+  "case": "future-service",
+  "repetition": 1,
+  "inputTokens": 38103,
+  "outputTokens": 475,
+  "reasoningTokens": 113,
+  "latencyMs": 15733
+}

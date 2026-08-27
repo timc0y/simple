@@ -1,0 +1,8 @@
+diff --git a/skills/simple/references/architecture.md b/skills/simple/references/architecture.md
+--- a/skills/simple/references/architecture.md
++++ b/skills/simple/references/architecture.md
+@@
+ transitions.
++
++Treat cyclomatic complexity as a branch-count signal, not a system-design limit. Use a
++repository threshold justified by observed code, not a tool default.

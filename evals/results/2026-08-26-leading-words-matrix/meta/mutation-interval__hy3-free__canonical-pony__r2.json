@@ -1,0 +1,11 @@
+{
+  "model": "opencode/hy3-free",
+  "arm": "canonical-pony",
+  "case": "mutation-interval",
+  "repetition": 2,
+  "inputTokens": 23504,
+  "outputTokens": 1294,
+  "latencyMs": 63047,
+  "costUsd": 0,
+  "turns": 3
+}

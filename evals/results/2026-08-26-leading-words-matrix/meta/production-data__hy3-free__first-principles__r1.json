@@ -1,0 +1,11 @@
+{
+  "model": "opencode/hy3-free",
+  "arm": "first-principles",
+  "case": "production-data",
+  "repetition": 1,
+  "inputTokens": 20675,
+  "outputTokens": 991,
+  "latencyMs": 46772,
+  "costUsd": 0,
+  "turns": 7
+}

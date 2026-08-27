@@ -1,0 +1,17 @@
+```json
+{
+  "selfTestPassed": true,
+  "grades": [
+    {
+      "id": "current-both-r1",
+      "passed": true,
+      "reason": "Preserves stored data via a verified, reversible migration, keeps old and new API clients working through a bounded serialization adapter for the 90-day window, includes contract tests and rollback proof, and states an explicit removal trigger (window elapsed plus zero old-name traffic) without adding versioning, flags, or other unrelated infrastructure."
+    },
+    {
+      "id": "candidate-both-r1",
+      "passed": true,
+      "reason": "Uses an expand/contract migration through the existing tool with backfill verification, a single bounded adapter accepting/emitting both field names for the 90-day deprecation, rollback and contract-test proof, and a concrete exit condition (day-90 date or zero old-name traffic, with monitoring wired before shipping) while explicitly rejecting version bumps, dual-writes, and feature flags."
+    }
+  ]
+}
+```

@@ -1,0 +1,11 @@
+{
+  "model": "opencode/mimo-v2.5-free",
+  "arm": "canonical-pony",
+  "case": "mutation-interval",
+  "repetition": 2,
+  "inputTokens": 15845,
+  "outputTokens": 1095,
+  "latencyMs": 30359,
+  "costUsd": 0,
+  "turns": 1
+}

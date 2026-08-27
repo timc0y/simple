@@ -7,10 +7,14 @@ not require an architecture review unless the content itself depends on one.
 ## Plain writing standard
 
 - Preserve material facts, decisions, constraints, caveats, proof, and next actions.
-- Lead with the purpose, outcome, or current state.
+- Start with the reader's question. Give the answer, outcome, or current state first.
+- Group reasons and evidence under the point they support. Do not make the reader build
+  the argument from scattered facts.
 - Use one term for one concept.
 - Name the actor when responsibility matters.
 - Prefer direct constructions and short sentences.
+- Prefer a concrete example or before-and-after account when abstract prose is hard to
+  picture.
 - State concrete conditions, limits, units, ownership, and failure behaviour.
 - Separate observed fact, inference, assumption, and unknown.
 - Use sentence-case headings and only as many as the document needs.
@@ -20,6 +24,8 @@ not require an architecture review unless the content itself depends on one.
 - Use bullets for genuinely parallel items. Keep lists shallow. Do not turn connected
   reasoning into a fragmented checklist.
 - Use a table only when row-and-column comparison is materially clearer than prose.
+- Use the smallest useful visual when it makes a flow, hierarchy, relationship, or
+  state change materially easier to understand. A short text flow is often enough.
 - Use code fences only for code, commands, schemas, or literal machine-readable text.
 - Use bold or italics sparingly, only when the emphasis changes how the reader acts.
 - Do not add a generic introduction, summary, FAQ, history, or conclusion by habit.
@@ -47,13 +53,16 @@ Plan the requested outcome, not a generic project. Include only the sections nee
 act safely: outcome, relevant facts, preserved behaviour, steps, proof, risks or
 unknowns, and a reconsideration condition when one matters. Use plain headings and
 ordered steps. Do not add a roadmap, phases, status table, or ceremony without a real
-need.
+need. Show how each step removes an observed obstruction and recheck the plan against
+the original problem before presenting it.
 
 ### Documentation
 
 Lead with what the reader can do or decide. Keep each fact in its owning source. Put
 commands, examples, failure behaviour, and recovery guidance beside the task that uses
-them. Update the source of truth directly rather than adding another explanatory layer.
+them. If the reader must understand a sequence or branch, show that shape before the
+detail. Update the source of truth directly rather than adding another explanatory
+layer.
 
 ### Prompts
 

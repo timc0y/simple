@@ -1,0 +1,12 @@
+diff --git a/SIMPLE.md b/SIMPLE.md
+--- a/SIMPLE.md
++++ b/SIMPLE.md
+@@ -23,7 +23,7 @@
+ 
+ ## Ordinary paths
+ 
+-- Record the existing owners and workflows agents should reuse.
++- Record the existing owners, workflows, and supported mechanisms agents should reuse.
+ 
+ ## Proof
+ 

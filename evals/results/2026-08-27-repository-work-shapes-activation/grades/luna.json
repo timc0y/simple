@@ -1,0 +1,276 @@
+{
+  "selfTests": [
+    {
+      "case": "greenfield-start",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "implicit-add",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "qualitative-improve",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "shared-owner-fix",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "startup-root-cause",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "trivial-fix",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "0867dbf22412",
+      "passed": true,
+      "reason": "Directly specifies one native route, exact response, and real request verification without unjustified machinery."
+    },
+    {
+      "id": "23247bbca4e4",
+      "passed": false,
+      "reason": "Makes the faithful request proof conditional and primarily validates registration and handler invocation rather than a GET request."
+    },
+    {
+      "id": "60dcea71a9c9",
+      "passed": false,
+      "reason": "Blocks implementation on confirming a host detail instead of using the supplied requirements directly."
+    },
+    {
+      "id": "6e18f2a34736",
+      "passed": false,
+      "reason": "Only proposes a registration spy and handler invocation, not a real or faithful GET /pulse request."
+    },
+    {
+      "id": "a46b559a5748",
+      "passed": true,
+      "reason": "Uses one direct native route, exact body, real host verification, and no unnecessary architecture."
+    },
+    {
+      "id": "e1660547119b",
+      "passed": true,
+      "reason": "Requires the first end-to-end GET request as completion and rejects unnecessary supporting machinery."
+    },
+    {
+      "id": "e8de3e381b96",
+      "passed": true,
+      "reason": "Explicitly includes real GET verification with exact body and keeps all extra testing optional."
+    },
+    {
+      "id": "eaed03db7a1c",
+      "passed": true,
+      "reason": "Directly specifies the single route and real request completion, with a proportionate fallback harness."
+    },
+    {
+      "id": "0e36ea7cd2eb",
+      "passed": true,
+      "reason": "Uses one existing-runner job and specifies scheduling, execution, retry, and idempotency proofs."
+    },
+    {
+      "id": "171ac5ba77c3",
+      "passed": true,
+      "reason": "Adds one daily runner job, preserves existing retry ownership, and defines behavioral proofs."
+    },
+    {
+      "id": "2211eea8e557",
+      "passed": true,
+      "reason": "Uses the existing runner only and provides comprehensive scheduling, execution, retry, and idempotency tests."
+    },
+    {
+      "id": "52e6704c8fa3",
+      "passed": true,
+      "reason": "Adds one daily in-process job and specifies runner-level proofs for all required behavior."
+    },
+    {
+      "id": "6132859cd0ff",
+      "passed": true,
+      "reason": "Clearly implements one existing-runner job with detailed proofs and no new infrastructure."
+    },
+    {
+      "id": "807d3a2baeb0",
+      "passed": true,
+      "reason": "Uses one daily existing-runner job and covers execution, retry, scheduling, and idempotency."
+    },
+    {
+      "id": "8de7c0ff28d6",
+      "passed": true,
+      "reason": "Adds one runner-managed job and defines proofs for each required behavior without new systems."
+    },
+    {
+      "id": "9a848ce73db3",
+      "passed": true,
+      "reason": "Uses the existing runner as sole owner and provides concrete proofs of behavior and idempotency."
+    },
+    {
+      "id": "0fb7e0b059f0",
+      "passed": true,
+      "reason": "Uses conflict evidence, existing owners, billing orchestration, and explicitly runs integration and behavior tests."
+    },
+    {
+      "id": "5b0fd18a9841",
+      "passed": false,
+      "reason": "Correct refactor and evidence, but does not explicitly prove preserved billing integration behavior."
+    },
+    {
+      "id": "6ee4111e6224",
+      "passed": true,
+      "reason": "Uses coupled-change evidence, existing owners, retained orchestration, and end-to-end behavior verification."
+    },
+    {
+      "id": "704cc17d1056",
+      "passed": true,
+      "reason": "Aligns existing ownership, cites conflicts, retains orchestration, and includes integration and behavior tests."
+    },
+    {
+      "id": "7602eeaf2fc8",
+      "passed": false,
+      "reason": "Correct ownership fix and conflict evidence, but lacks explicit proof of preserved integration behavior."
+    },
+    {
+      "id": "8398a76736f9",
+      "passed": false,
+      "reason": "Correct ownership refactor, but its listed tests do not explicitly prove preserved integration behavior."
+    },
+    {
+      "id": "a1fe69a07635",
+      "passed": true,
+      "reason": "Moves logic to existing owners, uses coupling evidence, retains billing boundary, and includes integration verification."
+    },
+    {
+      "id": "f3b4ec9408f1",
+      "passed": false,
+      "reason": "Correct ownership and coupling diagnosis, but does not explicitly prove preserved billing integration behavior."
+    },
+    {
+      "id": "074806cdca34",
+      "passed": true,
+      "reason": "Correctly places the undefined rule in the shared parser and covers CSV, JSON, valid, and malformed cases."
+    },
+    {
+      "id": "2565f3f35a57",
+      "passed": true,
+      "reason": "Identifies the shared fix, preserves validation, avoids caller guards, and specifies all required proof cases."
+    },
+    {
+      "id": "6b0c59705b0b",
+      "passed": true,
+      "reason": "Correctly handles only undefined in the parser, preserves callers and validation, and covers both import paths."
+    },
+    {
+      "id": "915bf317438e",
+      "passed": true,
+      "reason": "Explicitly distinguishes undefined from malformed falsy strings and covers all required callers and behaviors."
+    },
+    {
+      "id": "9e1988ee7937",
+      "passed": true,
+      "reason": "Uses the shared parser contract, preserves existing behavior, and requires CSV/JSON regression coverage."
+    },
+    {
+      "id": "ccafd09be522",
+      "passed": true,
+      "reason": "Specifies the exact undefined guard in parseLedgerTag and preserves malformed-string validation and caller behavior."
+    },
+    {
+      "id": "db51de4da5d4",
+      "passed": true,
+      "reason": "Correctly rejects truthiness guards, preserves malformed errors, and covers parser plus CSV/JSON behavior."
+    },
+    {
+      "id": "f0e4a98a68e1",
+      "passed": true,
+      "reason": "Places the fix at the shared parser boundary and covers absent, valid, malformed, CSV, and JSON cases."
+    },
+    {
+      "id": "03328b4b18b5",
+      "passed": false,
+      "reason": "Correct root-cause approach, but does not explicitly preserve durable task records as data."
+    },
+    {
+      "id": "1783c83f9be7",
+      "passed": true,
+      "reason": "Attributes startup cost, tests the import fix first, removes unnecessary residency, and preserves durable records."
+    },
+    {
+      "id": "3207535dce79",
+      "passed": true,
+      "reason": "Measures cold startup, isolates the import chain, defers bundling, removes daemon machinery, and preserves durable data."
+    },
+    {
+      "id": "58cdf5063ba4",
+      "passed": true,
+      "reason": "Separates startup causes, tests direct artifact loading, removes compensating architecture, and retains durable records."
+    },
+    {
+      "id": "69956c63ee96",
+      "passed": true,
+      "reason": "Profiles and tests the targeted fix, removes the daemon path, and preserves completed records."
+    },
+    {
+      "id": "bbd93d4cb7ce",
+      "passed": true,
+      "reason": "Measures before changing architecture, avoids premature bundling, retains durable records, and defines a measured residency threshold."
+    },
+    {
+      "id": "e60a141ec6f6",
+      "passed": false,
+      "reason": "Correctly isolates the import issue but does not explicitly preserve durable task records as data."
+    },
+    {
+      "id": "fbd541820d67",
+      "passed": true,
+      "reason": "Measures and isolates the import regression, removes the daemon machinery, and preserves readable durable records."
+    },
+    {
+      "id": "0fee9452136c",
+      "passed": true,
+      "reason": "Exact required response."
+    },
+    {
+      "id": "4dc3cb067a02",
+      "passed": true,
+      "reason": "Exact required response."
+    },
+    {
+      "id": "848a1210a409",
+      "passed": true,
+      "reason": "Exact required response."
+    },
+    {
+      "id": "91821ff7a7ef",
+      "passed": true,
+      "reason": "Exact required response."
+    },
+    {
+      "id": "a5f34681cf4b",
+      "passed": true,
+      "reason": "Exact required response."
+    },
+    {
+      "id": "c4c33a70ea7d",
+      "passed": true,
+      "reason": "Exact required response."
+    },
+    {
+      "id": "d81eb9c02b29",
+      "passed": true,
+      "reason": "Exact required response."
+    },
+    {
+      "id": "e1e2d792fa70",
+      "passed": true,
+      "reason": "Exact required response."
+    }
+  ]
+}

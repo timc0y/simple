@@ -12,6 +12,10 @@ owner, then remove the incomplete marker and run `scripts/simple.mjs check`.
 evidence for that boundary. Express exclusions as positive current facts rather than
 as a catalogue of architectures to avoid.
 
+`Ordinary paths` records the reusable route. Name each existing owner, workflow, or
+supported mechanism that materially changes the design, together with the observable
+behaviour the next agent can rely on.
+
 Prefer concrete statements such as:
 
 > The current API serves only this application. Reconsider compatibility when another

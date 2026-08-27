@@ -1,0 +1,276 @@
+{
+  "selfTests": [
+    {
+      "case": "greenfield-start",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "implicit-add",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "qualitative-improve",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "shared-owner-fix",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "startup-root-cause",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "trivial-fix",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "0867dbf22412",
+      "passed": true,
+      "reason": "Direct single-file route and real host GET proof; rejects unjustified machinery."
+    },
+    {
+      "id": "23247bbca4e4",
+      "passed": false,
+      "reason": "Makes real host request conditional and primary harness only invokes handler, not a GET request."
+    },
+    {
+      "id": "60dcea71a9c9",
+      "passed": false,
+      "reason": "Delays implementation pending confirmation of handler behavior already supplied by the criteria."
+    },
+    {
+      "id": "6e18f2a34736",
+      "passed": false,
+      "reason": "Proof is only a registration/handler mock, not a real or faithful GET request."
+    },
+    {
+      "id": "a46b559a5748",
+      "passed": true,
+      "reason": "Uses one direct route, requires an actual host GET proof, and rejects extra machinery."
+    },
+    {
+      "id": "e1660547119b",
+      "passed": true,
+      "reason": "Requires a direct host route and end-to-end GET /pulse result with no speculative setup."
+    },
+    {
+      "id": "e8de3e381b96",
+      "passed": true,
+      "reason": "Requires real-host GET proof alongside a minimal native registration check."
+    },
+    {
+      "id": "eaed03db7a1c",
+      "passed": false,
+      "reason": "Fallback harness checks registration and handler invocation, not a faithful GET request."
+    },
+    {
+      "id": "0e36ea7cd2eb",
+      "passed": true,
+      "reason": "Uses one existing-runner job and gives runner-level behavioral proof."
+    },
+    {
+      "id": "171ac5ba77c3",
+      "passed": true,
+      "reason": "Adds one daily existing-runner job with scheduling, retry, and idempotency proof."
+    },
+    {
+      "id": "2211eea8e557",
+      "passed": true,
+      "reason": "Keeps ownership in the existing runner and specifies complete runner-level proof."
+    },
+    {
+      "id": "52e6704c8fa3",
+      "passed": true,
+      "reason": "Uses a single runner job, avoids new infrastructure, and proves required behavior."
+    },
+    {
+      "id": "6132859cd0ff",
+      "passed": true,
+      "reason": "Adds one existing-runner job and thoroughly verifies scheduling, retry, execution, and idempotency."
+    },
+    {
+      "id": "807d3a2baeb0",
+      "passed": true,
+      "reason": "Keeps the existing runner as owner and includes the required proof path."
+    },
+    {
+      "id": "8de7c0ff28d6",
+      "passed": true,
+      "reason": "Registers one runner job, introduces no parallel system, and provides behavioral tests."
+    },
+    {
+      "id": "9a848ce73db3",
+      "passed": true,
+      "reason": "Uses the existing runner exclusively and defines proof for all required behavior."
+    },
+    {
+      "id": "0fb7e0b059f0",
+      "passed": false,
+      "reason": "Uses ownership and conflict evidence, but does not prove preserved billing integration behavior."
+    },
+    {
+      "id": "5b0fd18a9841",
+      "passed": false,
+      "reason": "Addresses owners and coupled conflicts, but omits proof of preserved billing integration behavior."
+    },
+    {
+      "id": "6ee4111e6224",
+      "passed": true,
+      "reason": "Uses the conflict evidence, retains existing owners and billing orchestration, and verifies end-to-end behavior."
+    },
+    {
+      "id": "704cc17d1056",
+      "passed": true,
+      "reason": "Treats size as secondary, uses conflict evidence, preserves owners, and includes integration proof."
+    },
+    {
+      "id": "7602eeaf2fc8",
+      "passed": false,
+      "reason": "Correct ownership refactor and coupling evidence, but no explicit proof of preserved integration behavior."
+    },
+    {
+      "id": "8398a76736f9",
+      "passed": false,
+      "reason": "Preserves existing owners and tests outputs, but does not explicitly prove billing integration behavior."
+    },
+    {
+      "id": "a1fe69a07635",
+      "passed": true,
+      "reason": "Uses coupled-change evidence, routes work to existing owners, retains billing orchestration, and proves integration behavior."
+    },
+    {
+      "id": "f3b4ec9408f1",
+      "passed": false,
+      "reason": "Correct ownership approach, but lacks explicit proof of preserved billing integration behavior."
+    },
+    {
+      "id": "074806cdca34",
+      "passed": true,
+      "reason": "Places absent handling in shared parser and covers CSV, JSON, valid, and malformed cases."
+    },
+    {
+      "id": "2565f3f35a57",
+      "passed": true,
+      "reason": "Defines the parser contract and proves both import paths plus preserved behavior."
+    },
+    {
+      "id": "6b0c59705b0b",
+      "passed": true,
+      "reason": "Uses shared parser ownership and explicitly covers both optional import paths."
+    },
+    {
+      "id": "915bf317438e",
+      "passed": true,
+      "reason": "Handles only undefined in the parser and preserves malformed-string validation."
+    },
+    {
+      "id": "9e1988ee7937",
+      "passed": true,
+      "reason": "Correct shared-owner fix with CSV/JSON null regressions and behavior preservation."
+    },
+    {
+      "id": "ccafd09be522",
+      "passed": true,
+      "reason": "Explicit undefined-only parser guard and complete required proof coverage."
+    },
+    {
+      "id": "db51de4da5d4",
+      "passed": true,
+      "reason": "Correct parser-level change with CSV/JSON, valid, and malformed coverage."
+    },
+    {
+      "id": "f0e4a98a68e1",
+      "passed": true,
+      "reason": "Correctly fixes shared parser and verifies both affected public paths."
+    },
+    {
+      "id": "03328b4b18b5",
+      "passed": true,
+      "reason": "Attributes and fixes import path before removing daemon machinery while retaining durable records."
+    },
+    {
+      "id": "1783c83f9be7",
+      "passed": true,
+      "reason": "Measures the import chain, tests direct generated JSON, and removes compensating daemon path."
+    },
+    {
+      "id": "3207535dce79",
+      "passed": true,
+      "reason": "Correctly isolates generator/compiler imports and makes bundling conditional on measurement."
+    },
+    {
+      "id": "58cdf5063ba4",
+      "passed": true,
+      "reason": "Tests the minimal dependency change first and preserves durable task records."
+    },
+    {
+      "id": "69956c63ee96",
+      "passed": true,
+      "reason": "Treats latency as unattributed, measures it, and removes daemon machinery only after success."
+    },
+    {
+      "id": "bbd93d4cb7ce",
+      "passed": true,
+      "reason": "Separates generated JSON from generation, verifies cold latency, and preserves build-time generation."
+    },
+    {
+      "id": "e60a141ec6f6",
+      "passed": true,
+      "reason": "Profiles the import cause before shipping and removes the second execution path if fixed."
+    },
+    {
+      "id": "fbd541820d67",
+      "passed": true,
+      "reason": "Measures and eliminates the unnecessary runtime import before considering residency or bundling."
+    },
+    {
+      "id": "0fee9452136c",
+      "passed": true,
+      "reason": "Exact required text."
+    },
+    {
+      "id": "4dc3cb067a02",
+      "passed": true,
+      "reason": "Exact required text."
+    },
+    {
+      "id": "848a1210a409",
+      "passed": true,
+      "reason": "Exact required text."
+    },
+    {
+      "id": "91821ff7a7ef",
+      "passed": true,
+      "reason": "Exact required text."
+    },
+    {
+      "id": "a5f34681cf4b",
+      "passed": true,
+      "reason": "Exact required text."
+    },
+    {
+      "id": "c4c33a70ea7d",
+      "passed": true,
+      "reason": "Exact required text."
+    },
+    {
+      "id": "d81eb9c02b29",
+      "passed": true,
+      "reason": "Exact required text."
+    },
+    {
+      "id": "e1e2d792fa70",
+      "passed": true,
+      "reason": "Exact required text."
+    }
+  ]
+}

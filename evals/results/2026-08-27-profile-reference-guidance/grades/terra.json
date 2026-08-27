@@ -1,0 +1,71 @@
+{
+  "selfTests": [
+    {
+      "case": "profile-authoring",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "1b11268ee9a1",
+      "passed": true,
+      "reason": "All supplied facts, mechanisms, behaviors, proof surfaces, and removal condition are retained."
+    },
+    {
+      "id": "2203108cd9e3",
+      "passed": true,
+      "reason": "Retains both mechanisms and all transition behavior, obligations, proof, and removal condition."
+    },
+    {
+      "id": "352e43551309",
+      "passed": true,
+      "reason": "Complete profile with both mechanisms under Ordinary paths and all required conditions."
+    },
+    {
+      "id": "3ef72443bb3e",
+      "passed": true,
+      "reason": "Includes all supplied facts, mechanisms, behaviors, proof surfaces, and conjunctive removal rule."
+    },
+    {
+      "id": "63d8c82ec715",
+      "passed": true,
+      "reason": "Complete and factual; both existing mechanisms and required transition details are preserved."
+    },
+    {
+      "id": "9204f38b8cba",
+      "passed": true,
+      "reason": "Records the serializer behavior, migration runner, proof surfaces, and 90-day-plus-zero-traffic condition."
+    },
+    {
+      "id": "ab566f21416b",
+      "passed": true,
+      "reason": "Retains all obligations, both mechanisms, observable alias behavior, proof, and removal condition."
+    },
+    {
+      "id": "b9984119d109",
+      "passed": true,
+      "reason": "Complete profile with explicit alias behavior, migration runner, proof, and removal condition."
+    },
+    {
+      "id": "d36de23830af",
+      "passed": true,
+      "reason": "Includes all supplied consumers, data, mechanisms, transition behavior, proof, and removal condition."
+    },
+    {
+      "id": "f1ee2fc51ac9",
+      "passed": true,
+      "reason": "Retains both mechanisms and all material transition, proof, and removal obligations."
+    },
+    {
+      "id": "fc91946d7c3c",
+      "passed": true,
+      "reason": "Complete and factual profile with required mechanisms, behaviors, proof surfaces, and removal rule."
+    },
+    {
+      "id": "fe7ea2802c29",
+      "passed": true,
+      "reason": "Includes all required facts, both mechanisms, alias behavior, proof surfaces, and conjunctive removal condition."
+    }
+  ]
+}

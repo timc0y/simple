@@ -1,0 +1,131 @@
+{
+  "selfTests": [
+    {
+      "case": "production-data",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "07ecfdc86510",
+      "passed": true,
+      "reason": "Preserves data, supports both API names during 90 days, verifies rollback, and defines removal criteria."
+    },
+    {
+      "id": "0b90daf0818e",
+      "passed": true,
+      "reason": "Uses bounded migration and API aliasing with data preservation, verification, rollback, and removal conditions."
+    },
+    {
+      "id": "1bd7845f1c2e",
+      "passed": true,
+      "reason": "Provides reversible migration, bounded API compatibility, verification, and traffic-based removal."
+    },
+    {
+      "id": "24d5b9ea7637",
+      "passed": true,
+      "reason": "Preserves one stored value while supporting both API names and specifying verification and removal."
+    },
+    {
+      "id": "3455609eb898",
+      "passed": false,
+      "reason": "Unnecessarily removes the down migration, weakening recovery, and leaves response compatibility dependent on an unspecified discriminator."
+    },
+    {
+      "id": "3e7a5f39734c",
+      "passed": true,
+      "reason": "Clearly preserves records, supports both API names, verifies rollback, and defines bounded removal."
+    },
+    {
+      "id": "40fa1b6c780c",
+      "passed": true,
+      "reason": "Uses the existing migration and serializer alias with complete compatibility, verification, rollback, and removal criteria."
+    },
+    {
+      "id": "4776a28e1cf6",
+      "passed": true,
+      "reason": "Provides a bounded migration fallback, API compatibility, monitoring, rollback, and cleanup conditions."
+    },
+    {
+      "id": "480ac9628524",
+      "passed": true,
+      "reason": "Covers reversible migration, both API representations, data verification, rollback, and zero-traffic removal."
+    },
+    {
+      "id": "630f91fa33dd",
+      "passed": true,
+      "reason": "Preserves data and compatibility through an existing alias with verification and explicit deprecation removal."
+    },
+    {
+      "id": "753b54cc028a",
+      "passed": true,
+      "reason": "Uses expand-and-contract safely, verifies data and rollback, and delays cleanup until the commitment ends."
+    },
+    {
+      "id": "a1c9172f47b0",
+      "passed": true,
+      "reason": "Maintains a single source of truth with bounded API aliases, verification, rollback, and removal checks."
+    },
+    {
+      "id": "abf722c0fef6",
+      "passed": true,
+      "reason": "Defines a reversible data migration and bounded boundary adapter with compatibility and traffic-based removal."
+    },
+    {
+      "id": "b1ac9eac3901",
+      "passed": true,
+      "reason": "Preserves data and public compatibility via a temporary serializer alias with rollback and removal conditions."
+    },
+    {
+      "id": "b3ff7ad7d502",
+      "passed": true,
+      "reason": "Provides safe migration and adapter behavior, while identifying the necessary response-selection constraint."
+    },
+    {
+      "id": "baeceede3a3e",
+      "passed": true,
+      "reason": "Includes reversible migration, both API representations, conflict handling, verification, and rollout safety."
+    },
+    {
+      "id": "bbc4a6afb4d6",
+      "passed": true,
+      "reason": "Preserves one data owner and both API contracts with migration verification and zero-traffic removal."
+    },
+    {
+      "id": "bd2133480bef",
+      "passed": true,
+      "reason": "Explicitly preserves records and supports both API clients through a bounded adapter and removal trigger."
+    },
+    {
+      "id": "d6b5825f2e5c",
+      "passed": true,
+      "reason": "Covers expand migration, compatibility, rollback, verification, backup, and eventual old-column removal."
+    },
+    {
+      "id": "de5075015746",
+      "passed": true,
+      "reason": "Provides reversible migration, dual API compatibility, monitoring, verification, and a bounded exit."
+    },
+    {
+      "id": "ea17a48955d7",
+      "passed": true,
+      "reason": "Preserves customer data with reversible migration and a verified 90-day API compatibility adapter."
+    },
+    {
+      "id": "eb2874fa3b2b",
+      "passed": true,
+      "reason": "Uses existing mechanisms, verifies records and rollback, and removes the alias only after zero traffic."
+    },
+    {
+      "id": "f4f7c95fb9bf",
+      "passed": true,
+      "reason": "Maintains compatibility and data integrity with existing tooling, rollback checks, and a safe fallback."
+    },
+    {
+      "id": "f6a2608c17f2",
+      "passed": true,
+      "reason": "Provides comprehensive migration preservation, API aliasing, production-like verification, rollback, and removal criteria."
+    }
+  ]
+}

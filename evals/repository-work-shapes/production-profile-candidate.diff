@@ -1,0 +1,12 @@
+diff --git a/SIMPLE.md b/SIMPLE.md
+--- a/SIMPLE.md
++++ b/SIMPLE.md
+@@ -18,5 +18,8 @@
+ ## Ordinary paths
+ 
+ - Schema changes use the service's existing migration mechanism.
++- `CustomerSerializer` owns request parsing and response serialization. Its existing
++  deprecation-alias facility accepts either field name, rejects conflicting values,
++  and emits both names from one internal value during a bounded transition.
+ 
+ ## Proof

@@ -1,0 +1,331 @@
+{
+  "selfTests": [
+    {
+      "case": "greenfield-start",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "ordinary-path",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "routine-edit",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "shared-owner-fix",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "startup-root-cause",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "0bda19cc68e2",
+      "passed": true,
+      "reason": "Direct single route and faithful minimal verification; rejects unjustified machinery."
+    },
+    {
+      "id": "198f2919eb08",
+      "passed": true,
+      "reason": "Direct registration, real request proof, and no speculative setup."
+    },
+    {
+      "id": "4a0edd73bb0e",
+      "passed": true,
+      "reason": "Single direct route with a minimal host-shaped smoke check."
+    },
+    {
+      "id": "573b1913dd80",
+      "passed": true,
+      "reason": "Uses one direct route and makes the first host request the proof."
+    },
+    {
+      "id": "58b20d2ce003",
+      "passed": true,
+      "reason": "Direct host route and a focused faithful smoke check without added structure."
+    },
+    {
+      "id": "608653fe416f",
+      "passed": true,
+      "reason": "Direct route plus one real host request proving the exact body."
+    },
+    {
+      "id": "60cad333fbe9",
+      "passed": false,
+      "reason": "Claims file creation/documentation rather than proving a working request."
+    },
+    {
+      "id": "960daa345b15",
+      "passed": true,
+      "reason": "Direct host registration, real request proof, and rejects extra setup."
+    },
+    {
+      "id": "b2b6da97ae9a",
+      "passed": true,
+      "reason": "Direct single route with public-path verification and no speculative machinery."
+    },
+    {
+      "id": "df08e24947ca",
+      "passed": false,
+      "reason": "Adds unrelated-route verification, so the first working request is not the completion condition."
+    },
+    {
+      "id": "e567ae950c4d",
+      "passed": true,
+      "reason": "Uses a minimal host-shaped harness to verify the one direct route and exact result."
+    },
+    {
+      "id": "f234b7847dac",
+      "passed": true,
+      "reason": "Direct route and one successful public request prove the required response."
+    },
+    {
+      "id": "2f5bde422736",
+      "passed": true,
+      "reason": "Uses existing runner and verifies schedule, execution, retry, and idempotency."
+    },
+    {
+      "id": "427eaefc65c0",
+      "passed": true,
+      "reason": "Adds one runner job, avoids new infrastructure, and proves required behavior."
+    },
+    {
+      "id": "4d3ce6a41455",
+      "passed": true,
+      "reason": "Keeps one import job on the existing runner with runner-based verification."
+    },
+    {
+      "id": "6799e23826e9",
+      "passed": true,
+      "reason": "Uses the existing runner and verifies scheduling, retry, and repeat-run safety."
+    },
+    {
+      "id": "8032196b46cf",
+      "passed": true,
+      "reason": "Keeps scheduling and retries with the runner and includes required proof."
+    },
+    {
+      "id": "88fe4b1d3525",
+      "passed": true,
+      "reason": "Adds one existing-runner job and proves execution, retry, and idempotency."
+    },
+    {
+      "id": "a62e8db645c9",
+      "passed": true,
+      "reason": "Uses the existing runner without new systems and verifies its behavior."
+    },
+    {
+      "id": "e049b8644451",
+      "passed": true,
+      "reason": "Keeps the import on the existing runner and provides schedule, retry, and idempotency proof."
+    },
+    {
+      "id": "e10863fcfa73",
+      "passed": true,
+      "reason": "Uses one in-process runner job and verifies daily execution, retry, and safe reruns."
+    },
+    {
+      "id": "e9b7701d8592",
+      "passed": true,
+      "reason": "Uses the existing runner, avoids prohibited infrastructure, and proves required behavior."
+    },
+    {
+      "id": "ecaeac3a7bd8",
+      "passed": true,
+      "reason": "Defines one existing-runner job and verifies scheduling, execution, retry, and idempotency."
+    },
+    {
+      "id": "ecafba816af5",
+      "passed": true,
+      "reason": "Adds one job to the existing runner and proves the required runner-path behavior."
+    },
+    {
+      "id": "03186a053edc",
+      "passed": true,
+      "reason": "Concise code comment states milliseconds."
+    },
+    {
+      "id": "24fa7f3c82fc",
+      "passed": true,
+      "reason": "Concise code comment states returned value is milliseconds."
+    },
+    {
+      "id": "25edb80273ad",
+      "passed": true,
+      "reason": "Concise code comment states milliseconds."
+    },
+    {
+      "id": "3c770a79ea50",
+      "passed": true,
+      "reason": "Concise code comment states returned value is milliseconds."
+    },
+    {
+      "id": "3f117bdec3a6",
+      "passed": true,
+      "reason": "Concise code comment states milliseconds."
+    },
+    {
+      "id": "851231459978",
+      "passed": true,
+      "reason": "Concise code comment states returned value is milliseconds."
+    },
+    {
+      "id": "ad9d539a49a4",
+      "passed": true,
+      "reason": "Concise code comment states duration is milliseconds."
+    },
+    {
+      "id": "ba931d142c8e",
+      "passed": true,
+      "reason": "Concise code comment states returned value is milliseconds."
+    },
+    {
+      "id": "cb46f4b85a25",
+      "passed": true,
+      "reason": "Concise code comment states milliseconds."
+    },
+    {
+      "id": "cc1c78f2d9a9",
+      "passed": true,
+      "reason": "Concise code comment states milliseconds."
+    },
+    {
+      "id": "f6283d8f96a6",
+      "passed": true,
+      "reason": "Concise code comment states converted duration is milliseconds."
+    },
+    {
+      "id": "fcbe2c3b4c4e",
+      "passed": true,
+      "reason": "Concise code comment states milliseconds."
+    },
+    {
+      "id": "049ff43a8df3",
+      "passed": false,
+      "reason": "Does not explicitly prove valid team:item parsing remains intact."
+    },
+    {
+      "id": "2aa33e620df8",
+      "passed": true,
+      "reason": "Places undefined handling in the shared parser and proves both import paths and preserved behavior."
+    },
+    {
+      "id": "2bcf4b8cc73d",
+      "passed": true,
+      "reason": "Correct shared-owner fix with CSV/JSON coverage and valid/malformed behavior checks."
+    },
+    {
+      "id": "397348020184",
+      "passed": true,
+      "reason": "Correctly limits null behavior to undefined and includes required parser and importer proof."
+    },
+    {
+      "id": "4a4693694f32",
+      "passed": false,
+      "reason": "States valid parsing is preserved but does not include it in the proof."
+    },
+    {
+      "id": "534afc5aec21",
+      "passed": true,
+      "reason": "Correct parser-boundary rule, no unnecessary caller edits, and complete required coverage."
+    },
+    {
+      "id": "75320d898adf",
+      "passed": true,
+      "reason": "Correct shared parser fix with explicit CSV/JSON, valid, and malformed coverage."
+    },
+    {
+      "id": "865b2bd484bc",
+      "passed": true,
+      "reason": "Correctly handles only undefined and calls for proof across both importers and preserved cases."
+    },
+    {
+      "id": "9c4e721457fe",
+      "passed": false,
+      "reason": "Does not explicitly prove valid team:item parsing remains intact."
+    },
+    {
+      "id": "b51f2895a022",
+      "passed": true,
+      "reason": "Correct shared-owner correction with complete absent, valid, malformed, CSV, and JSON coverage."
+    },
+    {
+      "id": "ed002fa8c828",
+      "passed": false,
+      "reason": "Treats null as absent too, expanding the required undefined-only behavior."
+    },
+    {
+      "id": "f2b46a6172e1",
+      "passed": false,
+      "reason": "Does not explicitly include a valid team:item test in its proof."
+    },
+    {
+      "id": "179b3bfa5ca5",
+      "passed": false,
+      "reason": "Allows residency based on latency/workload rather than a required non-durable continuity capability."
+    },
+    {
+      "id": "348c30fbe33f",
+      "passed": false,
+      "reason": "Justifies residency from startup dominance and command frequency without requiring non-durable continuity."
+    },
+    {
+      "id": "46403d1256f0",
+      "passed": true,
+      "reason": "Attributes the import cause, tests the smallest direct-artifact fix, remeasures, and removes compensating daemon machinery while retaining durable records."
+    },
+    {
+      "id": "4815e94b1781",
+      "passed": false,
+      "reason": "Allows residency based on latency sensitivity and command frequency without requiring non-durable continuity."
+    },
+    {
+      "id": "8847998ba077",
+      "passed": true,
+      "reason": "Correctly isolates the generator/compiler import, remeasures cold behavior, and limits residency to measured non-durable continuity needs."
+    },
+    {
+      "id": "942953f3e611",
+      "passed": false,
+      "reason": "Permits residency for latency or throughput requirements without requiring a capability that cannot be durable data."
+    },
+    {
+      "id": "9c5c6c43d836",
+      "passed": true,
+      "reason": "Measures and isolates the import path first, defers bundling, removes daemon compensation after success, and preserves durable records."
+    },
+    {
+      "id": "9fcdeb8f8057",
+      "passed": true,
+      "reason": "Directly separates the generated artifact from its generator/compiler, remeasures, removes the daemon, and requires non-durable continuity for residency."
+    },
+    {
+      "id": "c35ad0a3d2b6",
+      "passed": true,
+      "reason": "Tests the dependency-free artifact path first, remeasures cold behavior, removes compensating architecture, and preserves durable task data."
+    },
+    {
+      "id": "c425864ac460",
+      "passed": true,
+      "reason": "Properly attributes and fixes the import chain before shipping architecture, remeasures, and requires continuity unmet by durable data for residency."
+    },
+    {
+      "id": "c8347e55d8b0",
+      "passed": false,
+      "reason": "Allows a daemon based on unacceptable latency and repeated workloads without requiring non-durable continuity."
+    },
+    {
+      "id": "df22038b678d",
+      "passed": true,
+      "reason": "Correctly attributes and tests the import cause, remeasures, removes daemon machinery on success, and preserves durable records."
+    }
+  ]
+}

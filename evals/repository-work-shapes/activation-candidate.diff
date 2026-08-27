@@ -1,0 +1,22 @@
+diff --git a/SKILL.md b/SKILL.md
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -1,12 +1,12 @@
+ ---
+ name: simple
+ description: >-
+   Apply first-principles reasoning grounded in repository evidence to find the
+   smallest truthful software design and write concise, plain developer prose. Use
+-  for architecture, ownership, refactoring, deletion, compatibility, migration,
+-  repository audits, implementation plans, or work that is becoming more complex
+-  than its demonstrated requirements; for technical plans, documentation, comments,
+-  Markdown, prompts, reviews, updates, and handoffs; and when asked what a documented
+-  engineer, company, or operator would do. Read the nearest SIMPLE.md when repository
+-  facts change the answer.
++  when starting a repository; shaping a fix, improvement, or addition whose owner,
++  scope, solution, or proof depends on repository facts; deciding architecture,
++  ownership, refactoring, deletion, compatibility, or migration; writing technical
++  plans, documentation, comments, Markdown, prompts, reviews, updates, or handoffs;
++  or applying a documented engineering doctrine. Read the nearest SIMPLE.md when
++  repository facts change the answer.
+ ---

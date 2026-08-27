@@ -1,0 +1,13 @@
+diff --git a/SKILL.md b/SKILL.md
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -55,5 +55,9 @@
+ 7. Remove the route, state, explanation, and cleanup displaced by the change. Try to
+    falsify the result through a surface independent enough to distinguish the requested
+    behaviour from the implementation itself.
++   Match proof to the change: for a start or addition, run one caller-visible path end
++   to end; for a fix, make the smallest reliable reproduction fail before the owning
++   correction and pass after; for an improvement, compare the same real outcome before
++   and after, using a metric only when it represents that outcome.
+ 
+ ## Write in order

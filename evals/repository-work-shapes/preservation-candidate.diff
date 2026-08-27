@@ -1,0 +1,11 @@
+diff --git a/SKILL.md b/SKILL.md
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -55,5 +55,7 @@
+ 7. Remove the route, state, explanation, and cleanup displaced by the change. Try to
+    falsify the result through a surface independent enough to distinguish the requested
+    behaviour from the implementation itself.
++   Before finishing, pair every preserved contract and material failure consequence
++   with an independent check. Stating that behaviour will be preserved is not proof.
+ 
+ ## Write in order

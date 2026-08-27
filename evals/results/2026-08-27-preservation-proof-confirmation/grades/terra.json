@@ -1,0 +1,256 @@
+{
+  "selfTests": [
+    {
+      "case": "production-data",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "startup-root-cause",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "07ecfdc86510",
+      "passed": true,
+      "reason": "Preserves data, provides a 90-day API alias, verification, rollback, and zero-traffic removal."
+    },
+    {
+      "id": "0b90daf0818e",
+      "passed": true,
+      "reason": "Uses bounded expand/contract migration, API adapter, rollback checks, and explicit removal criteria."
+    },
+    {
+      "id": "1bd7845f1c2e",
+      "passed": true,
+      "reason": "Preserves canonical storage with a bounded API adapter, testing, rollback, and traffic-based removal."
+    },
+    {
+      "id": "24d5b9ea7637",
+      "passed": true,
+      "reason": "Protects retained data, supports both clients, verifies rollback, and removes compatibility after 90 days and zero traffic."
+    },
+    {
+      "id": "3455609eb898",
+      "passed": true,
+      "reason": "Provides reversible migration, temporary API translation, verification, telemetry, and a clear removal condition."
+    },
+    {
+      "id": "3e7a5f39734c",
+      "passed": true,
+      "reason": "Keeps one stored value, supports both API forms for 90 days, verifies rollback, and requires zero traffic for removal."
+    },
+    {
+      "id": "40fa1b6c780c",
+      "passed": true,
+      "reason": "Uses a reversible persisted rename plus bounded dual API representation and explicit verification/removal conditions."
+    },
+    {
+      "id": "4776a28e1cf6",
+      "passed": true,
+      "reason": "Preserves data through backfill and temporary rollback-compatible writes, with bounded API compatibility and removal criteria."
+    },
+    {
+      "id": "480ac9628524",
+      "passed": true,
+      "reason": "Preserves data and old clients via a temporary boundary adapter, with rollback, testing, and zero-traffic removal."
+    },
+    {
+      "id": "630f91fa33dd",
+      "passed": true,
+      "reason": "Uses safe backfill and rollback-compatible dual writes, bounded API support, verification, and removal conditions."
+    },
+    {
+      "id": "753b54cc028a",
+      "passed": true,
+      "reason": "Provides safe migration, API translation, recovery checks, telemetry, and conditional removal after the promised period."
+    },
+    {
+      "id": "a1c9172f47b0",
+      "passed": true,
+      "reason": "Preserves records and rolling rollback safety while keeping API compatibility bounded with a stated exit condition."
+    },
+    {
+      "id": "abf722c0fef6",
+      "passed": true,
+      "reason": "Uses one canonical stored field, bounded API mapping, rollback verification, and 90-day zero-traffic removal."
+    },
+    {
+      "id": "b1ac9eac3901",
+      "passed": true,
+      "reason": "Preserves data and published clients with a temporary adapter, rollback tests, telemetry, and removal criteria."
+    },
+    {
+      "id": "b3ff7ad7d502",
+      "passed": true,
+      "reason": "Uses reversible migration, boundary-only compatibility, verification, and removal after 90 days and zero legacy traffic."
+    },
+    {
+      "id": "baeceede3a3e",
+      "passed": false,
+      "reason": "Allows removing the old-client adapter with an explicit waiver despite nonzero old-client traffic."
+    },
+    {
+      "id": "bbc4a6afb4d6",
+      "passed": true,
+      "reason": "Preserves values, exposes both names temporarily, verifies rollback, and removes compatibility only after the stated conditions."
+    },
+    {
+      "id": "bd2133480bef",
+      "passed": true,
+      "reason": "Maintains API compatibility and retained data with reversible migration, testing, and zero-traffic removal."
+    },
+    {
+      "id": "d6b5825f2e5c",
+      "passed": false,
+      "reason": "Permits removal of compatibility when old-client traffic is nonzero if it is explicitly waived."
+    },
+    {
+      "id": "de5075015746",
+      "passed": true,
+      "reason": "Provides a reversible data migration, bounded API adapter, verification, recovery, and explicit removal trigger."
+    },
+    {
+      "id": "ea17a48955d7",
+      "passed": true,
+      "reason": "Preserves data and both API contracts with rollback testing and removal only after 90 days and zero traffic."
+    },
+    {
+      "id": "eb2874fa3b2b",
+      "passed": true,
+      "reason": "Covers safe migration branches, temporary API compatibility, verification, rollback, and explicit removal criteria."
+    },
+    {
+      "id": "f4f7c95fb9bf",
+      "passed": false,
+      "reason": "Allows removal when the commitment is otherwise considered satisfied, rather than requiring zero old-client traffic."
+    },
+    {
+      "id": "f6a2608c17f2",
+      "passed": true,
+      "reason": "Uses a bounded API adapter, safe migration and rollback, verification, telemetry, and a clear removal condition."
+    },
+    {
+      "id": "1eb2163455cf",
+      "passed": true,
+      "reason": "Measurably isolates the import chain, tests direct JSON use, and removes compensating daemon machinery while preserving records."
+    },
+    {
+      "id": "1f87df9cdc4a",
+      "passed": true,
+      "reason": "Correctly measures and removes the generator/compiler startup path before deleting daemon machinery and retaining durable records."
+    },
+    {
+      "id": "2301da65a435",
+      "passed": true,
+      "reason": "Attributes the import path, separates generated data from generation, and removes the daemon only after success."
+    },
+    {
+      "id": "30c60cfe3455",
+      "passed": true,
+      "reason": "Uses the required measured, minimal direct-JSON fix and preserves durable records while removing compensating architecture."
+    },
+    {
+      "id": "3100763ae8d2",
+      "passed": true,
+      "reason": "Measures the import cause, tests a leaf constant/direct artifact, and removes daemon infrastructure after improvement."
+    },
+    {
+      "id": "33bf1e901178",
+      "passed": true,
+      "reason": "Appropriately profiles the import path, avoids unmeasured bundling, and retains durable records after daemon removal."
+    },
+    {
+      "id": "42de3c226872",
+      "passed": true,
+      "reason": "Explicitly attributes the 180 ms, isolates static JSON data from generator/compiler, and removes the resident prototype on success."
+    },
+    {
+      "id": "46403d1256f0",
+      "passed": true,
+      "reason": "Tests the measured import chain first, preserves task records, and makes residency contingent on non-durable continuity needs."
+    },
+    {
+      "id": "4980e81fefe7",
+      "passed": true,
+      "reason": "Profiles the symptom, decouples the JSON path from generation, and removes daemon compensation after validation."
+    },
+    {
+      "id": "5644249b3dc2",
+      "passed": true,
+      "reason": "Correctly focuses on the generator/compiler import cause before removing daemon machinery and preserving records."
+    },
+    {
+      "id": "5c54cbddda1e",
+      "passed": true,
+      "reason": "Provides the required measurement, direct-artifact fix, bundling fallback, and removal of redundant resident architecture."
+    },
+    {
+      "id": "72efa19cc4ab",
+      "passed": false,
+      "reason": "It says startup overhead alone can justify residency after other fixes, contrary to the required continuity-not-representable-as-data condition."
+    },
+    {
+      "id": "78f07de8125e",
+      "passed": true,
+      "reason": "Measures and removes the unnecessary import path first, then removes daemon machinery while retaining durable records."
+    },
+    {
+      "id": "8847998ba077",
+      "passed": true,
+      "reason": "Correctly isolates the generated artifact from generator/compiler imports and removes the daemon after measured success."
+    },
+    {
+      "id": "8c6d404bd6cf",
+      "passed": true,
+      "reason": "Profiles the root cause, tests a dependency-free path constant, and preserves records while deleting compensating machinery."
+    },
+    {
+      "id": "942953f3e611",
+      "passed": true,
+      "reason": "Attributes the import chain and directly separates the generated JSON path before removing the daemon architecture."
+    },
+    {
+      "id": "9c5c6c43d836",
+      "passed": true,
+      "reason": "Uses a measured direct-artifact change first and explicitly preserves durable records while removing the daemon prototype."
+    },
+    {
+      "id": "9fcdeb8f8057",
+      "passed": true,
+      "reason": "Correctly measures the import regression, tests direct JSON access, and retains durable records when removing daemon machinery."
+    },
+    {
+      "id": "bcf476f1f767",
+      "passed": true,
+      "reason": "Separates generated data from generation, requires cold measurements, and removes the compensating resident design on success."
+    },
+    {
+      "id": "c35ad0a3d2b6",
+      "passed": true,
+      "reason": "Applies the required measured direct-JSON fix before considering bundling or residency, then removes daemon machinery."
+    },
+    {
+      "id": "c425864ac460",
+      "passed": true,
+      "reason": "Correctly measures and removes the startup import path, preserves records, and conditions residency on non-durable continuity."
+    },
+    {
+      "id": "c597bc4163a6",
+      "passed": true,
+      "reason": "Thoroughly isolates the import cause, preserves durable records, and removes all compensating daemon machinery after success."
+    },
+    {
+      "id": "cc5b67a81acf",
+      "passed": false,
+      "reason": "It omits preserving durable task records and permits residency based on startup requirements without requiring continuity that durable data cannot represent."
+    },
+    {
+      "id": "df22038b678d",
+      "passed": true,
+      "reason": "Meets the measured import-path-first approach, preserves durable records, and removes the daemon only if the regression is fixed."
+    }
+  ]
+}

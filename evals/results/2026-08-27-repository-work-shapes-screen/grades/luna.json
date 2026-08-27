@@ -1,0 +1,331 @@
+{
+  "selfTests": [
+    {
+      "case": "greenfield-start",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "ordinary-path",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "routine-edit",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "shared-owner-fix",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "startup-root-cause",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "0bda19cc68e2",
+      "passed": true,
+      "reason": "Direct route and faithful handler check; rejects unnecessary machinery."
+    },
+    {
+      "id": "198f2919eb08",
+      "passed": true,
+      "reason": "Direct registration with real-request proof and appropriate minimal scope."
+    },
+    {
+      "id": "4a0edd73bb0e",
+      "passed": true,
+      "reason": "Direct route with a minimal faithful smoke check; no scaffolding."
+    },
+    {
+      "id": "573b1913dd80",
+      "passed": true,
+      "reason": "Uses the host request as completion proof and avoids extra machinery."
+    },
+    {
+      "id": "58b20d2ce003",
+      "passed": true,
+      "reason": "Direct host registration with a faithful harness and minimal scope."
+    },
+    {
+      "id": "608653fe416f",
+      "passed": true,
+      "reason": "Direct route and explicit real GET proof; no unnecessary setup."
+    },
+    {
+      "id": "60cad333fbe9",
+      "passed": false,
+      "reason": "Only documents an answer; it does not build or prove the endpoint."
+    },
+    {
+      "id": "960daa345b15",
+      "passed": true,
+      "reason": "Direct route with real GET proof and no speculative infrastructure."
+    },
+    {
+      "id": "b2b6da97ae9a",
+      "passed": true,
+      "reason": "Direct host route, exact request proof, and appropriate deferral."
+    },
+    {
+      "id": "df08e24947ca",
+      "passed": true,
+      "reason": "Direct route with host-surface proof and no unnecessary architecture."
+    },
+    {
+      "id": "e567ae950c4d",
+      "passed": true,
+      "reason": "Direct registration with faithful harness verification and minimal scope."
+    },
+    {
+      "id": "f234b7847dac",
+      "passed": true,
+      "reason": "Direct route with real request and status/body assertions; no scaffolding."
+    },
+    {
+      "id": "2f5bde422736",
+      "passed": true,
+      "reason": "Uses one existing-runner job and verifies scheduling, execution, retry, and idempotency."
+    },
+    {
+      "id": "427eaefc65c0",
+      "passed": true,
+      "reason": "Adds one runner job, preserves existing mechanisms, and specifies runner-based proof."
+    },
+    {
+      "id": "4d3ce6a41455",
+      "passed": true,
+      "reason": "Defines one in-process runner job and verifies its behavior, including retries and reruns."
+    },
+    {
+      "id": "6799e23826e9",
+      "passed": true,
+      "reason": "Keeps scheduling and retries with the existing runner and provides behavioral verification."
+    },
+    {
+      "id": "8032196b46cf",
+      "passed": true,
+      "reason": "Uses a single existing-runner job and proves scheduling, persistence, retry, and idempotency."
+    },
+    {
+      "id": "88fe4b1d3525",
+      "passed": true,
+      "reason": "Adds one daily runner job, preserves ownership, and specifies comprehensive proof."
+    },
+    {
+      "id": "a62e8db645c9",
+      "passed": true,
+      "reason": "Uses the existing in-process runner and verifies scheduling, retries, and duplicate prevention."
+    },
+    {
+      "id": "e049b8644451",
+      "passed": true,
+      "reason": "Adds one runner job with existing retry behavior and explicit execution proof."
+    },
+    {
+      "id": "e10863fcfa73",
+      "passed": true,
+      "reason": "Keeps the import as one existing-runner job and verifies successful, retry, and repeated execution."
+    },
+    {
+      "id": "e9b7701d8592",
+      "passed": true,
+      "reason": "Uses one daily existing-runner job and proves execution, retry, and idempotency."
+    },
+    {
+      "id": "ecaeac3a7bd8",
+      "passed": true,
+      "reason": "Specifies one existing-runner job and verifies scheduling, execution, retry, and rerun safety."
+    },
+    {
+      "id": "ecafba816af5",
+      "passed": true,
+      "reason": "Adds one daily runner job, avoids new infrastructure, and provides behavioral proof."
+    },
+    {
+      "id": "03186a053edc",
+      "passed": true,
+      "reason": "Concise comment states the returned value is milliseconds."
+    },
+    {
+      "id": "24fa7f3c82fc",
+      "passed": true,
+      "reason": "Concise comment states the returned value is milliseconds."
+    },
+    {
+      "id": "25edb80273ad",
+      "passed": true,
+      "reason": "Concise comment states the returned value is milliseconds."
+    },
+    {
+      "id": "3c770a79ea50",
+      "passed": true,
+      "reason": "Concise comment states the returned value is milliseconds."
+    },
+    {
+      "id": "3f117bdec3a6",
+      "passed": true,
+      "reason": "Concise comment states the returned value is milliseconds."
+    },
+    {
+      "id": "851231459978",
+      "passed": true,
+      "reason": "Concise comment states the returned value is milliseconds."
+    },
+    {
+      "id": "ad9d539a49a4",
+      "passed": true,
+      "reason": "Concise comment states the returned duration is milliseconds."
+    },
+    {
+      "id": "ba931d142c8e",
+      "passed": true,
+      "reason": "Concise comment states the returned value is milliseconds."
+    },
+    {
+      "id": "cb46f4b85a25",
+      "passed": true,
+      "reason": "Concise comment states the returned value is milliseconds."
+    },
+    {
+      "id": "cc1c78f2d9a9",
+      "passed": true,
+      "reason": "Concise comment states the returned value is milliseconds."
+    },
+    {
+      "id": "f6283d8f96a6",
+      "passed": true,
+      "reason": "Concise comment states the returned duration is milliseconds."
+    },
+    {
+      "id": "fcbe2c3b4c4e",
+      "passed": true,
+      "reason": "Concise comment states the returned value is milliseconds."
+    },
+    {
+      "id": "049ff43a8df3",
+      "passed": false,
+      "reason": "It does not explicitly prove that valid team:item parsing remains intact."
+    },
+    {
+      "id": "2aa33e620df8",
+      "passed": true,
+      "reason": "Places the undefined rule in the parser and explicitly covers both importers, valid parsing, and malformed errors."
+    },
+    {
+      "id": "2bcf4b8cc73d",
+      "passed": true,
+      "reason": "Uses the shared parser and explicitly verifies CSV, JSON, valid tags, and malformed errors."
+    },
+    {
+      "id": "397348020184",
+      "passed": true,
+      "reason": "Correctly scopes undefined handling and specifies all required regression checks."
+    },
+    {
+      "id": "4a4693694f32",
+      "passed": false,
+      "reason": "It does not explicitly prove that valid team:item parsing remains intact."
+    },
+    {
+      "id": "534afc5aec21",
+      "passed": true,
+      "reason": "Restricts null conversion to undefined and covers both import paths plus valid and malformed inputs."
+    },
+    {
+      "id": "75320d898adf",
+      "passed": true,
+      "reason": "Correctly identifies shared ownership and explicitly tests absent, valid, and malformed cases."
+    },
+    {
+      "id": "865b2bd484bc",
+      "passed": true,
+      "reason": "Preserves string behavior, covers both public import paths, and includes valid and malformed regression coverage."
+    },
+    {
+      "id": "9c4e721457fe",
+      "passed": false,
+      "reason": "It does not explicitly prove that valid team:item parsing remains intact."
+    },
+    {
+      "id": "b51f2895a022",
+      "passed": true,
+      "reason": "Correct parser-level fix with both importer paths and explicit valid and malformed regression coverage."
+    },
+    {
+      "id": "ed002fa8c828",
+      "passed": false,
+      "reason": "It incorrectly converts null to null; only undefined should receive the absent-value rule."
+    },
+    {
+      "id": "f2b46a6172e1",
+      "passed": true,
+      "reason": "Correctly handles only absent undefined values and explicitly preserves empty, valid, and malformed string behavior."
+    },
+    {
+      "id": "179b3bfa5ca5",
+      "passed": false,
+      "reason": "Correct diagnosis and fix, but justifies residency from workload latency without requiring a measured cross-command continuity capability."
+    },
+    {
+      "id": "348c30fbe33f",
+      "passed": true,
+      "reason": "Profiles the import path, tests direct generated-JSON access, remeasures cold commands, and removes unnecessary daemon machinery while preserving records."
+    },
+    {
+      "id": "46403d1256f0",
+      "passed": true,
+      "reason": "Separates the generator/compiler from the inert artifact path, validates cold behavior, and conditionally removes the daemon and support code."
+    },
+    {
+      "id": "4815e94b1781",
+      "passed": true,
+      "reason": "Attributes startup cost before acting, tests the smallest import fix, remeasures behavior, and preserves regeneration and durable data."
+    },
+    {
+      "id": "8847998ba077",
+      "passed": true,
+      "reason": "Measures the common import chain and cold latency, tests direct artifact use, removes compensating architecture, and preserves durable records."
+    },
+    {
+      "id": "942953f3e611",
+      "passed": false,
+      "reason": "Correctly tests the import fix, but permits residency for a general latency or throughput requirement without requiring unrepresentable cross-command continuity."
+    },
+    {
+      "id": "9c5c6c43d836",
+      "passed": true,
+      "reason": "Requires attribution and cold remeasurement, tests the direct artifact path first, and conditions removal and residency on measured requirements."
+    },
+    {
+      "id": "9fcdeb8f8057",
+      "passed": true,
+      "reason": "Treats startup as unattributed, isolates the artifact from generator/compiler imports, remeasures, removes the daemon, and preserves records."
+    },
+    {
+      "id": "c35ad0a3d2b6",
+      "passed": true,
+      "reason": "Tests the smallest dependency fix with cold measurements, removes the daemon if successful, and requires continuity beyond durable data for residency."
+    },
+    {
+      "id": "c425864ac460",
+      "passed": true,
+      "reason": "Profiles the generator/compiler path, tests direct generated-JSON loading, remeasures behavior, and removes the unnecessary resident architecture."
+    },
+    {
+      "id": "c8347e55d8b0",
+      "passed": true,
+      "reason": "Uses detailed cold measurements, tests the local artifact path before bundling, and makes daemon removal conditional on independent requirements."
+    },
+    {
+      "id": "df22038b678d",
+      "passed": true,
+      "reason": "Attributes cold import cost, tests direct JSON access first, remeasures behavior, removes the daemon machinery, and rejects residency as concealment."
+    }
+  ]
+}

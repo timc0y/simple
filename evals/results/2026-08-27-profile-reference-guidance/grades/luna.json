@@ -1,0 +1,71 @@
+{
+  "selfTests": [
+    {
+      "case": "profile-authoring",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "1b11268ee9a1",
+      "passed": false,
+      "reason": "Serializer behavior is not placed under Ordinary paths."
+    },
+    {
+      "id": "2203108cd9e3",
+      "passed": false,
+      "reason": "Serializer behavior is stated outside Ordinary paths."
+    },
+    {
+      "id": "352e43551309",
+      "passed": true,
+      "reason": "Preserves supplied facts, mechanisms, behavior, proof, and removal gate."
+    },
+    {
+      "id": "3ef72443bb3e",
+      "passed": true,
+      "reason": "Complete profile with both mechanisms and all required behavior and conditions."
+    },
+    {
+      "id": "63d8c82ec715",
+      "passed": false,
+      "reason": "Invents existing verification coverage."
+    },
+    {
+      "id": "9204f38b8cba",
+      "passed": false,
+      "reason": "Serializer behavior is not placed under Ordinary paths."
+    },
+    {
+      "id": "ab566f21416b",
+      "passed": false,
+      "reason": "Invents telemetry and verification coverage; behavior is not under Ordinary paths."
+    },
+    {
+      "id": "b9984119d109",
+      "passed": true,
+      "reason": "Preserves all required facts, mechanisms, behavior, proof, and conjunctive removal condition."
+    },
+    {
+      "id": "d36de23830af",
+      "passed": true,
+      "reason": "Complete and fact-grounded profile with required mechanisms and conditions."
+    },
+    {
+      "id": "f1ee2fc51ac9",
+      "passed": true,
+      "reason": "Includes both mechanisms, observable behavior, consumers, proof, and exact removal gate."
+    },
+    {
+      "id": "fc91946d7c3c",
+      "passed": true,
+      "reason": "Complete profile retaining supplied facts, behavior, proof surfaces, and removal condition."
+    },
+    {
+      "id": "fe7ea2802c29",
+      "passed": true,
+      "reason": "Complete fact-grounded profile with both mechanisms and required transition details."
+    }
+  ]
+}

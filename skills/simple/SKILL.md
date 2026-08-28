@@ -4,7 +4,7 @@ description: >-
   Apply first-principles reasoning grounded in repository evidence to find the
   smallest truthful software design and write concise, plain developer prose. Use
   for architecture, ownership, refactoring, deletion, compatibility, migration,
-  repository audits, implementation plans, or work that is becoming more complex
+  repository audits, decision reviews, implementation plans, or work that is becoming more complex
   than its demonstrated requirements; for technical plans, documentation, comments,
   Markdown, prompts, reviews, updates, and handoffs; and when asked what a documented
   engineer, company, or operator would do. Read the nearest SIMPLE.md when repository
@@ -104,6 +104,8 @@ blockers, risk, and the next relevant action. Do not narrate routine tool use.
 - Engineering precedents and examples: read `references/examples.md`.
 - `simple audit`: read `references/audit.md` and use objective crawling agents when
   available; keep architectural judgement with the lead agent.
+- `simple board`: read `references/board.md` and `references/model-profiles.md`. Use
+  optional independent views for consequential decisions; synthesise in the lead.
 - `simple init`, `plan`, `review`, `write`, `emulate`, or `check`: read
   `references/commands.md`.
 - Plans, documentation, comments, Markdown, prompts, reviews, updates, or handoffs:

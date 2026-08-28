@@ -6,8 +6,11 @@ import { pathToFileURL } from "node:url";
 
 export const MAX_PROFILE_CHARS = 6000;
 
-const LEGACY_ROUTE = "Before a change where repository facts could change the implementation, invoke `$simple` and read the nearest `SIMPLE.md`. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `plan`, `review`, or `check` for an explicit Simple workflow.";
-const ROUTE = "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow.";
+const LEGACY_ROUTES = [
+  "Before a change where repository facts could change the implementation, invoke `$simple` and read the nearest `SIMPLE.md`. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `plan`, `review`, or `check` for an explicit Simple workflow.",
+  "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow."
+];
+const ROUTE = "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `board`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow.";
 const PROFILE_TEMPLATE_PATH = new URL("../assets/SIMPLE.template.md", import.meta.url);
 const PROFILE = readFileSync(PROFILE_TEMPLATE_PATH, "utf8");
 const REQUIRED_HEADINGS = [...PROFILE.matchAll(/^## .+$/gm)].map(([heading]) => heading);
@@ -48,8 +51,9 @@ export function init(root = process.cwd()) {
   const profilePath = resolve(root, "SIMPLE.md");
   let agents = existsSync(agentsPath) ? readFileSync(agentsPath, "utf8") : "";
 
-  if (agents.includes(LEGACY_ROUTE)) {
-    agents = agents.replace(LEGACY_ROUTE, ROUTE);
+  const legacyRoute = LEGACY_ROUTES.find((route) => agents.includes(route));
+  if (legacyRoute) {
+    agents = agents.replace(legacyRoute, ROUTE);
     writeFileSync(agentsPath, agents);
   } else if (!agents.includes("$simple") || !agents.includes("SIMPLE.md")) {
     writeFileSync(agentsPath, `${agents.trimEnd()}${agents.trim() ? "\n\n" : ""}## Simple\n\n${ROUTE}\n`);

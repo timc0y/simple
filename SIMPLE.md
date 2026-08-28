@@ -30,8 +30,9 @@
 - `README.md` owns public setup and use; the skill references own detailed method guidance.
 - `scripts/link-skill.mjs` owns the four local host routes; it does not copy the skill.
 - `simple.mjs init` creates the route and profile; `setup` remains an alias for existing users; `check` validates their shape.
-- `audit`, `plan`, `review`, `write`, and `emulate` are thin judgement modes over the shared skill; operator lenses stay sourced specialist references.
+- `audit`, `board`, `plan`, `review`, `write`, and `emulate` are thin judgement modes over the shared skill; operator lenses stay sourced specialist references.
 - Audit crawlers collect bounded evidence; the lead agent owns synthesis and recommendations.
+- Board reviewers provide optional read-only views; the lead resolves them through evidence, not vote.
 - `evals/README.md` owns the eval protocol; `evals/results/README.md` owns the current decision index; each run owns its raw evidence.
 - `evals/normalize-results.mjs` converts active TSV runner output into the shared result record.
 - One hook script handles session, subagent, and relevant pre-write events for both hook-capable hosts.

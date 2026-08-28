@@ -101,6 +101,7 @@ Commands are entry points into one method. They are not a mandatory sequence.
 | --- | --- | --- |
 | `simple init` | Create the route and repository profile | Profile and route files |
 | `simple audit` | Find ownership seams and unpaid complexity | Read only |
+| `simple board` | Challenge a decision with evidence-backed views | Read only |
 | `simple plan` | Plan the smallest truthful change | Read only |
 | `simple review` | Review a design, document, plan, or diff | Read only |
 | `simple write` | Write or revise plain developer prose | Requested text |
@@ -110,6 +111,10 @@ Commands are entry points into one method. They are not a mandatory sequence.
 `init` and `check` use deterministic scripts. The other commands use model judgment
 through the shared skill. Their full contracts are in the
 [command reference](skills/simple/references/commands.md).
+
+`simple board` suggests subagents when the host supports them and another view could
+change a consequential decision. It does not require delegation. Reviewers stay
+read-only, and the lead resolves disagreement through evidence rather than vote.
 
 Operator emulation applies a documented decision method. It does not imitate a person
 or invent user evidence. See the

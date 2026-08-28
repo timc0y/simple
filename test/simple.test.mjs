@@ -52,6 +52,16 @@ test("init upgrades the canonical legacy route without replacing custom instruct
   assert.doesNotMatch(agents, /Before a change where repository facts could change/);
 });
 
+test("init adds board to the previous public route", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-"));
+  const previous = "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow.";
+  writeFileSync(join(root, "AGENTS.md"), `## Simple\n\n${previous}\n`);
+
+  init(root);
+
+  assert.match(readFileSync(join(root, "AGENTS.md"), "utf8"), /`board`/);
+});
+
 test("check accepts a completed repository profile", () => {
   const root = mkdtempSync(join(tmpdir(), "simple-"));
   setup(root);
@@ -203,6 +213,7 @@ test("published surfaces reference files that exist", () => {
   assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("nail down the problem")));
   assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("flow easy to picture")));
   assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("lint, tests, and code-health checks")));
+  assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("evidence-backed second opinion")));
   const hooks = JSON.parse(readFileSync(join(root, "hooks", "hooks.json"), "utf8"));
   for (const event of Object.values(hooks.hooks)) {
     for (const block of event) {

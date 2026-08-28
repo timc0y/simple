@@ -17,6 +17,15 @@ verdict, evidence, present obligations, ownership and ordinary-path findings, un
 complexity, profile contradictions, proof gaps, highest-value actions, and material
 unknowns.
 
+## `simple board`
+
+Read `board.md` and `model-profiles.md`. Review a consequential decision through the
+smallest set of views that could change it. Delegation is optional. When subagents are
+available, keep them read-only and assign capability by task shape. When they are not,
+apply the views sequentially and disclose that they were not independent. Return the
+recommendation, strongest material dissent, unknowns, and discriminating proof. Do
+not decide by vote.
+
 ## `simple plan`
 
 Plan the requested outcome from repository evidence. Read `writing.md`; return plain

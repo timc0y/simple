@@ -1,0 +1,131 @@
+{
+  "selfTests": [
+    {
+      "case": "board-majority-trap",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "board-no-delegation",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "board-restraint",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "board-routing-closed",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "board-routing",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "68fbbd892ad9",
+      "passed": false,
+      "reason": "Rejects the split and prioritizes measured facts, but does not explicitly use the existing command to compare output and latency."
+    },
+    {
+      "id": "7f99c5d51467",
+      "passed": true,
+      "reason": "Rejects the split, treats board agreement as a hypothesis, prioritizes measured facts, preserves the in-process runner, compares output and latency with the existing command, and sets measured workload or isolation needs as the reconsideration threshold."
+    },
+    {
+      "id": "a3f594e4cb8e",
+      "passed": true,
+      "reason": "Rejects the split, treats agreement as non-evidence, prioritizes measurements, preserves the in-process runner, compares output and latency using the existing command, and uses workload or isolation limits as the reconsideration condition."
+    },
+    {
+      "id": "c6a6e21296cf",
+      "passed": true,
+      "reason": "Rejects the split, characterizes agreement as hypothetical opinion, prioritizes repository and measured evidence, preserves the in-process runner, compares output and latency through the existing command, and retains workload or isolation thresholds for reconsideration."
+    },
+    {
+      "id": "2ce2ea6fec21",
+      "passed": false,
+      "reason": "Does not name restoration through the public command as proof and does not explicitly ask the owner the required question."
+    },
+    {
+      "id": "6e4ad831895c",
+      "passed": false,
+      "reason": "Does not name restoration through the public command as proof and does not explicitly ask the owner the required question."
+    },
+    {
+      "id": "ca6c12f80f6d",
+      "passed": true,
+      "reason": "Completes the review without delegation, disclaims an independent second opinion, refuses to infer off-site inventory or retention, asks the owner whether retained version-one archives remain, keeps the decoder, and names restoration through the public restore command as proof."
+    },
+    {
+      "id": "dfcd2f534e90",
+      "passed": true,
+      "reason": "Completes the review without delegation, disclaims an independent second opinion, refuses to infer off-site inventory or retention, keeps the decoder until owner confirmation, and names restoration through the public restore command as proof."
+    },
+    {
+      "id": "55f4338f45e4",
+      "passed": true,
+      "reason": "Declines escalation, identifies the correction as routine and reversible, changes only the source literal and expected fixture, and runs the existing help-output test."
+    },
+    {
+      "id": "793274446b25",
+      "passed": true,
+      "reason": "Declines the board, specifies only the source literal and expected fixture changes, and runs the existing help-output test."
+    },
+    {
+      "id": "a6efaee4f4e6",
+      "passed": true,
+      "reason": "Declines the board for a routine reversible correction, limits changes to the source literal and expected fixture, and runs the existing help-output test."
+    },
+    {
+      "id": "b81106495bcf",
+      "passed": false,
+      "reason": "Specifies the local edits and existing test but does not decline the board or subagents or provide the required rationale."
+    },
+    {
+      "id": "453b81280b03",
+      "passed": false,
+      "reason": "It says rollback support remains available, so the rollback obligation has not cleared."
+    },
+    {
+      "id": "b9646bced4b6",
+      "passed": false,
+      "reason": "It proves rejection of the old field but does not explicitly verify that display_name still round-trips in the current binary."
+    },
+    {
+      "id": "ed34920bc473",
+      "passed": true,
+      "reason": "Deletes the adapter after all obligations clear, rejects a large board, avoids hypothetical consumers, and verifies both display_name operation and account_name rejection using the current binary."
+    },
+    {
+      "id": "fdc4fceb8032",
+      "passed": false,
+      "reason": "It says rollback support remains available, so the rollback obligation has not cleared."
+    },
+    {
+      "id": "057f47d7f289",
+      "passed": false,
+      "reason": "Does not state that reviewers remain read-only."
+    },
+    {
+      "id": "19eeaceb4219",
+      "passed": true,
+      "reason": "Retains the adapter based on rollback evidence, uses two read-only Terra reviewers, identifies the bounded unknown, avoids heavy adjudication, and tests current and previous binaries against the same fixture."
+    },
+    {
+      "id": "3db06bb908d2",
+      "passed": true,
+      "reason": "Retains the adapter based on rollback evidence, assigns read-only Terra roles, synthesizes through evidence, and tests both binaries against the same fixture."
+    },
+    {
+      "id": "d092891bc284",
+      "passed": true,
+      "reason": "Retains the adapter based on rollback support, limits Luna to independent evidence review, identifies bounded checks, and tests both binaries against the same fixture."
+    }
+  ]
+}

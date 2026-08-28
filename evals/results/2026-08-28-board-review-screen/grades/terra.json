@@ -1,0 +1,131 @@
+{
+  "selfTests": [
+    {
+      "case": "board-majority-trap",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "board-no-delegation",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "board-restraint",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "board-routing-closed",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "board-routing",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "68fbbd892ad9",
+      "passed": false,
+      "reason": "Rejects the split and prioritizes measured facts, but does not state that the existing command will be used to compare output and latency; it only reports its current results."
+    },
+    {
+      "id": "7f99c5d51467",
+      "passed": true,
+      "reason": "Rejects the split, treats board agreement as a hypothesis rather than evidence, prioritizes measured repository facts, preserves the in-process owner, uses the existing command to compare output and latency, and sets measured workload or isolation need as the reconsideration condition."
+    },
+    {
+      "id": "a3f594e4cb8e",
+      "passed": true,
+      "reason": "Rejects the split, treats reviewer agreement as non-evidence, prioritizes measured facts, keeps the in-process runner, compares output and latency with the existing command, and limits reconsideration to measured workload or demonstrated isolation need."
+    },
+    {
+      "id": "c6a6e21296cf",
+      "passed": true,
+      "reason": "Rejects the split, correctly frames board agreement as hypothetical opinion, prioritizes measured repository evidence, preserves the current in-process runner, uses the existing command for output and latency comparison, and retains measured workload or isolation needs as the threshold."
+    },
+    {
+      "id": "2ce2ea6fec21",
+      "passed": false,
+      "reason": "Does not name restoration through the public restore command as proof."
+    },
+    {
+      "id": "6e4ad831895c",
+      "passed": false,
+      "reason": "Does not name restoration through the public restore command as proof."
+    },
+    {
+      "id": "ca6c12f80f6d",
+      "passed": true,
+      "reason": "Meets all material conditions, including retaining the decoder pending the owner’s answer and proving restoration through the public restore command."
+    },
+    {
+      "id": "dfcd2f534e90",
+      "passed": true,
+      "reason": "Meets all material conditions, including no independent second opinion, owner-controlled retention, and public-command restoration proof."
+    },
+    {
+      "id": "55f4338f45e4",
+      "passed": true,
+      "reason": "Declines escalation for a routine, reversible local correction; limits changes to the source literal and fixture, and runs the existing help-output test."
+    },
+    {
+      "id": "793274446b25",
+      "passed": true,
+      "reason": "Explicitly declines a board, limits the reversible typo fix to the help literal and expected fixture, and runs the existing help-output test."
+    },
+    {
+      "id": "a6efaee4f4e6",
+      "passed": true,
+      "reason": "Explicitly declines a board for a routine, reversible correction, limits changes to the source literal and fixture, and runs the existing help-output test."
+    },
+    {
+      "id": "b81106495bcf",
+      "passed": false,
+      "reason": "It gives the edit and test but does not decline a board or subagents, nor justify restraint based on the correction's objective, local, reversible nature."
+    },
+    {
+      "id": "453b81280b03",
+      "passed": false,
+      "reason": "It says rollback support remains available, so the rollback obligation has not cleared."
+    },
+    {
+      "id": "b9646bced4b6",
+      "passed": true,
+      "reason": "It establishes all exit conditions, rejects a large board, creates no hypothetical consumer, and verifies removal with the current binary, upgraded settings, and rejection of the old field."
+    },
+    {
+      "id": "ed34920bc473",
+      "passed": false,
+      "reason": "It does not establish that old-field traffic is zero."
+    },
+    {
+      "id": "fdc4fceb8032",
+      "passed": false,
+      "reason": "It says rollback support remains available, so the rollback obligation has not cleared."
+    },
+    {
+      "id": "057f47d7f289",
+      "passed": true,
+      "reason": "Keeps the compatibility path for the supported rollback binary, uses two Terra judgement roles, grounds the decision in rollback evidence, and specifies the required shared-fixture proof."
+    },
+    {
+      "id": "19eeaceb4219",
+      "passed": true,
+      "reason": "Uses two read-only Terra roles, keeps the adapter based on rollback support rather than traffic or time, and requires current and previous binaries to use the same upgraded fixture."
+    },
+    {
+      "id": "3db06bb908d2",
+      "passed": true,
+      "reason": "Keeps the mapping for the supported rollback release, uses two read-only Terra roles with an independent solver, synthesizes on rollback evidence, and requires the shared-fixture binary proof."
+    },
+    {
+      "id": "d092891bc284",
+      "passed": false,
+      "reason": "It does not keep reviewers explicitly read-only and does not clearly assign an independent-solver role; Luna is assigned as an independent reviewer while Terra is the decision owner."
+    }
+  ]
+}

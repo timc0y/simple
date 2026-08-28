@@ -1,8 +1,10 @@
 # Repository audit
 
-Use inexpensive crawling agents for bounded evidence collection when available. The
-lead agent reads the nearest `SIMPLE.md`, assigns non-overlapping questions, reconciles
-the results, and owns every architectural judgement.
+Use light crawling agents for bounded evidence collection when they are available and
+useful. The audit must also work in the lead agent without delegation. The lead reads
+the nearest `SIMPLE.md`, assigns non-overlapping questions, reconciles the results,
+and owns every architectural judgement. Read `model-profiles.md` when the host offers
+model selection.
 
 ## Evidence lanes
 

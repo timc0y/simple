@@ -1,6 +1,6 @@
 {
   "name": "@timc0y/simple-skill",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "private": true,
   "type": "module",
   "scripts": {

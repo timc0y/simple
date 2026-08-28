@@ -1,0 +1,242 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-28T20:22:21.183Z",
+    "skillCommit": "none",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra with dual anonymous grading; multi-agent disabled",
+    "condition": "none",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "board-routing__r1",
+        "passed": true,
+        "evidence": "raw/3db06bb908d2.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "board-routing-closed__r1",
+        "passed": false,
+        "evidence": "raw/fdc4fceb8032.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "board-no-delegation__r1",
+        "passed": false,
+        "evidence": "raw/2ce2ea6fec21.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "board-majority-trap__r1",
+        "passed": true,
+        "evidence": "raw/7f99c5d51467.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "board-restraint__r1",
+        "passed": true,
+        "evidence": "raw/793274446b25.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-28T20:22:21.183Z",
+    "skillCommit": "28af99b31621cd31f772a93b266403abf5c41692+working-tree-board-candidate",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra with dual anonymous grading; multi-agent disabled",
+    "condition": "simple",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "board-routing__r1",
+        "passed": true,
+        "evidence": "raw/19eeaceb4219.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "board-routing-closed__r1",
+        "passed": false,
+        "evidence": "raw/453b81280b03.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "board-no-delegation__r1",
+        "passed": true,
+        "evidence": "raw/ca6c12f80f6d.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "board-majority-trap__r1",
+        "passed": true,
+        "evidence": "raw/c6a6e21296cf.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "board-restraint__r1",
+        "passed": true,
+        "evidence": "raw/a6efaee4f4e6.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-28T20:22:21.183Z",
+    "skillCommit": "none",
+    "model": {
+      "name": "gpt-5.6-terra",
+      "revision": "gpt-5.6-terra",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra with dual anonymous grading; multi-agent disabled",
+    "condition": "none",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "board-routing__r1",
+        "passed": false,
+        "evidence": "raw/d092891bc284.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": false
+        }
+      },
+      {
+        "id": "board-routing-closed__r1",
+        "passed": false,
+        "evidence": "raw/b9646bced4b6.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": true
+        }
+      },
+      {
+        "id": "board-no-delegation__r1",
+        "passed": false,
+        "evidence": "raw/6e4ad831895c.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "board-majority-trap__r1",
+        "passed": false,
+        "evidence": "raw/68fbbd892ad9.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "board-restraint__r1",
+        "passed": false,
+        "evidence": "raw/b81106495bcf.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-08-28T20:22:21.183Z",
+    "skillCommit": "28af99b31621cd31f772a93b266403abf5c41692+working-tree-board-candidate",
+    "model": {
+      "name": "gpt-5.6-terra",
+      "revision": "gpt-5.6-terra",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna and Terra with dual anonymous grading; multi-agent disabled",
+    "condition": "simple",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "board-routing__r1",
+        "passed": false,
+        "evidence": "raw/057f47d7f289.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": true
+        }
+      },
+      {
+        "id": "board-routing-closed__r1",
+        "passed": false,
+        "evidence": "raw/ed34920bc473.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": false
+        }
+      },
+      {
+        "id": "board-no-delegation__r1",
+        "passed": true,
+        "evidence": "raw/dfcd2f534e90.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "board-majority-trap__r1",
+        "passed": true,
+        "evidence": "raw/a3f594e4cb8e.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "board-restraint__r1",
+        "passed": true,
+        "evidence": "raw/55f4338f45e4.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      }
+    ]
+  }
+]

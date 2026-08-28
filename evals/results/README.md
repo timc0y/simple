@@ -23,6 +23,7 @@ grader contract can support the stated decision. It does not mean statistical pr
 | [Work-shape activation](2026-08-27-repository-work-shapes-activation/README.md) | Valid negative | Both descriptions opened on all substantive tasks. The candidate opened on more trivial tasks. |
 | [Architecture reference](2026-08-27-architecture-reference-confirmation/README.md) | Valid negative | Current passed 12 of 12. The shorter Raptor reference passed 10 of 12. |
 | [Profile quality](2026-08-28-profile-quality-confirmation/README.md) | Valid | Evidence, review, and maintenance guidance improved strict passes from 5 of 24 to 9 of 24. |
+| [Board review screen](2026-08-28-board-review-screen/README.md) | Valid screen | Optional delegation and evidence synthesis improved strict passes from 3 of 10 to 7 of 10; host-native orchestration remains untested. |
 
 Runs from 27 August with a condition map and TSV result now also contain normalized
 `results.json` records. Earlier files keep their original format unless the source data

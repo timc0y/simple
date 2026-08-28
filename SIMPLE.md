@@ -2,9 +2,9 @@
 
 ## Reality
 
-- Stage and users: Tim maintains and uses the method; other people may install the public plugin or skill.
+- Stage and users: Tim maintains and uses the method. The repository publishes installation routes for the plugin and skill.
 - Operators: Tim maintains releases and repository profiles.
-- External consumers: plugin and skill installers.
+- External consumers: the repository does not establish whether anyone outside Tim uses an installed surface.
 - Public contracts: the skill, command entry points, references, plugin manifests, hooks, and `simple.mjs` commands.
 - Persistent production data: none.
 - Compatibility commitments: preserve published paths and commands; replace unpublished internals freely.
@@ -19,7 +19,7 @@
 ## Current boundary
 
 - The plugin packages Simple for Codex and Claude Code; the local installer exposes the same source to Codex, Claude Code, OpenCode, and Gemini.
-- Both plugin routes register the same lifecycle and writing-reminder hooks. Codex needs one `/hooks` trust approval on each machine. Ponytail 4.9.0 proves that this pattern works.
+- The Codex package points to the shared lifecycle and writing-reminder hooks; the Claude package uses the same hook bundle. Codex needs one `/hooks` trust approval on each machine.
 - Pre-write hook context reaches the model after the triggering tool result. It can guide the next step, but it cannot shape edit arguments that the model already chose.
 - Codex also receives repository context through `AGENTS.md` and the skill, so the route survives hosts without hook support.
 - Setup records no inferred users or production promises.
@@ -38,11 +38,10 @@
 
 ## Proof
 
-- Behaviour: `npm test`
-- Profile: `node skills/simple/scripts/simple.mjs check`
-- Model behaviour: the isolated Luna and Terra runners under `evals/`
-- Skill and plugin structure: bundled validators
-- Public surface: inspect the skill, references, manifests, hooks, and README together.
+- Repository checks: `npm test`
+- Profile structure: `node skills/simple/scripts/simple.mjs check`
+- Patch formatting: `git diff --check`
+- Model behaviour: reviewed Luna and Terra runs indexed in `evals/results/README.md`
 
 ## Reconsider when
 
@@ -51,3 +50,4 @@
 - Split a command into another skill only when measured retrieval failures make the split necessary.
 - Add an audit crawler lane only when it finds decision-changing evidence in representative repositories.
 - Remove the `AGENTS.md` route only if hook injection is observed reliable across every supported host.
+- Add profile layering only when nested profiles need shared root facts and an isolated evaluation proves the merge rule.

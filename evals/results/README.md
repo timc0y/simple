@@ -22,6 +22,7 @@ grader contract can support the stated decision. It does not mean statistical pr
 | [Work-shape screen](2026-08-27-repository-work-shapes-screen/README.md) | Valid negative | The router tied Simple and regressed the Simple and Ponytail condition. |
 | [Work-shape activation](2026-08-27-repository-work-shapes-activation/README.md) | Valid negative | Both descriptions opened on all substantive tasks. The candidate opened on more trivial tasks. |
 | [Architecture reference](2026-08-27-architecture-reference-confirmation/README.md) | Valid negative | Current passed 12 of 12. The shorter Raptor reference passed 10 of 12. |
+| [Profile quality](2026-08-28-profile-quality-confirmation/README.md) | Valid | Evidence, review, and maintenance guidance improved strict passes from 5 of 24 to 9 of 24. |
 
 Runs from 27 August with a condition map and TSV result now also contain normalized
 `results.json` records. Earlier files keep their original format unless the source data

@@ -1,0 +1,266 @@
+{
+  "selfTests": [
+    {
+      "case": "profile-compression",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "profile-interview",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "profile-maintenance",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "profile-review",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "0536fefefd96",
+      "passed": false,
+      "reason": "Alias mechanism is not under an Ordinary paths section, and the removal condition is repeated outside Reconsider when."
+    },
+    {
+      "id": "1235aac56491",
+      "passed": false,
+      "reason": "The alias mechanism is repeated in Current boundary and Ordinary paths."
+    },
+    {
+      "id": "28de0d3fdc21",
+      "passed": false,
+      "reason": "The removal trigger is under Removal condition rather than Reconsider when."
+    },
+    {
+      "id": "3ea2fb051143",
+      "passed": false,
+      "reason": "The alias mechanism is repeated in Current boundary and Ordinary paths."
+    },
+    {
+      "id": "60392a222682",
+      "passed": true,
+      "reason": "Preserves all required facts, places the alias mechanism once under Ordinary paths, includes all proof surfaces, and uses the conjunctive removal trigger once under Reconsider when."
+    },
+    {
+      "id": "63414c1203c1",
+      "passed": false,
+      "reason": "The alias mechanism is placed under Current boundary instead of once under Ordinary paths."
+    },
+    {
+      "id": "942a29a4247a",
+      "passed": false,
+      "reason": "The alias mechanism is repeated in Current boundary and Ordinary paths."
+    },
+    {
+      "id": "95467e4a3c3e",
+      "passed": false,
+      "reason": "The removal trigger is under Reconsideration rather than Reconsider when."
+    },
+    {
+      "id": "96b17f1216c8",
+      "passed": false,
+      "reason": "The profile lacks the required Ordinary paths and Reconsider when sections, and combines proof with removal."
+    },
+    {
+      "id": "cfa54433fc53",
+      "passed": false,
+      "reason": "The alias mechanism is repeated in Current boundary and Ordinary paths."
+    },
+    {
+      "id": "d043ba17304a",
+      "passed": false,
+      "reason": "The alias mechanism is repeated in Current boundary and Ordinary paths."
+    },
+    {
+      "id": "d3a985f6bfe3",
+      "passed": false,
+      "reason": "The profile lacks the required Ordinary paths and Reconsider when sections."
+    },
+    {
+      "id": "12f1bd4b9e80",
+      "passed": false,
+      "reason": "Asks about what failure behavior and scale the worker must support, which can concern future requirements rather than current or recent reality."
+    },
+    {
+      "id": "147c9ee82042",
+      "passed": true,
+      "reason": "Reports the repository facts, distinguishes documentation from implementation, asks all required current owner-only questions, and keeps the profile incomplete."
+    },
+    {
+      "id": "336ddd67276d",
+      "passed": false,
+      "reason": "Does not clearly ask about existing compatibility commitments and frames failure or scale as requirements rather than current consequences."
+    },
+    {
+      "id": "3ccc76f78016",
+      "passed": true,
+      "reason": "Reports the relevant facts and sources, asks every required current-reality question, and explicitly preserves an incomplete profile."
+    },
+    {
+      "id": "6f59bfc989b3",
+      "passed": true,
+      "reason": "Covers the repository facts and all required owner-only categories, including compatibility, retained data, scale, and failure consequences."
+    },
+    {
+      "id": "9b62c14e6b81",
+      "passed": true,
+      "reason": "Clearly separates repository evidence from unknowns and asks all required current or recent owner questions."
+    },
+    {
+      "id": "b511339ba373",
+      "passed": true,
+      "reason": "Reports the relevant facts and asks about users, operators, consumers, promises, retained data, compatibility, current scale, and failure impact."
+    },
+    {
+      "id": "b6dfcb240909",
+      "passed": true,
+      "reason": "Reports the documented behavior and commands, identifies the incomplete profile, and asks all required material current-reality questions."
+    },
+    {
+      "id": "c33d6db718b6",
+      "passed": true,
+      "reason": "Provides the repository facts and asks about users, operators, external dependencies, compatibility, retained data, scale, and failure consequences."
+    },
+    {
+      "id": "c99b9f99d157",
+      "passed": false,
+      "reason": "Treats the package as internal based on its private status, violating the requirement not to infer an internal-only boundary from private: true."
+    },
+    {
+      "id": "d442ac311c65",
+      "passed": true,
+      "reason": "Reports the owner, behavior, commands, and documentation/implementation discrepancy, then asks the required owner-only questions while keeping the profile incomplete."
+    },
+    {
+      "id": "fb7710b557c3",
+      "passed": false,
+      "reason": "Asks an extra verification-path question about facts and commands already supplied by the repository, rather than limiting questions to material owner-only unknowns."
+    },
+    {
+      "id": "0de6682f5101",
+      "passed": true,
+      "reason": "Updates SIMPLE.md with ApiBoundary ownership, removes expired transition duties, records the canonical post-transition contract, and keeps npm test without alias or conflict-rejection claims."
+    },
+    {
+      "id": "374319990018",
+      "passed": true,
+      "reason": "Updates SIMPLE.md, replaces ownership and transition context, removes preservation and reconsideration duties, and retains npm test for the supported representation."
+    },
+    {
+      "id": "3aa1d032367b",
+      "passed": false,
+      "reason": "Adds an additional published API/client contract documentation update beyond the needed SIMPLE.md maintenance."
+    },
+    {
+      "id": "42b03dd06cc5",
+      "passed": true,
+      "reason": "Updates SIMPLE.md with current ownership and boundary state, removes expired duties and reconsideration, and updates npm test proof appropriately."
+    },
+    {
+      "id": "979c889b7a0f",
+      "passed": true,
+      "reason": "Records the completed transition and current boundary, removes old preservation and reconsideration requirements, and updates npm test proof."
+    },
+    {
+      "id": "9f3bdadd4ba4",
+      "passed": false,
+      "reason": "States the transition is complete but does not explicitly update the proof description to remove prior alias or conflict-rejection claims."
+    },
+    {
+      "id": "ae60197d8a1f",
+      "passed": true,
+      "reason": "Updates SIMPLE.md with completed post-transition ownership and behavior, removes reconsideration, and keeps npm test proving current-field acceptance and old-field rejection."
+    },
+    {
+      "id": "afad501f67c4",
+      "passed": true,
+      "reason": "Makes the required SIMPLE.md ownership, boundary, duty, and proof updates while retaining npm test and adding no documentation process."
+    },
+    {
+      "id": "b5b22a99a45a",
+      "passed": true,
+      "reason": "Removes expired transition and preservation duties, sets ApiBoundary ownership, removes reconsideration, and updates npm test to the canonical representation."
+    },
+    {
+      "id": "c74872564dc5",
+      "passed": false,
+      "reason": "Although the SIMPLE.md update satisfies the profile criteria, it proposes additional published API documentation updates without a stated present need."
+    },
+    {
+      "id": "c83076bb5a47",
+      "passed": false,
+      "reason": "Records the completed state but does not explicitly update npm test proof to remove alias or conflict-rejection claims."
+    },
+    {
+      "id": "e8e2b4b0d299",
+      "passed": true,
+      "reason": "Updates SIMPLE.md with ApiBoundary ownership, removes expired duties and context, and updates npm test proof for canonical behavior without alias or conflict-rejection claims."
+    },
+    {
+      "id": "084a24637ee1",
+      "passed": false,
+      "reason": "Misses the material contradiction that “Keep the current plugin behavior” is vague and fails to identify the observable behavior to preserve."
+    },
+    {
+      "id": "19d314b2bfc4",
+      "passed": true,
+      "reason": "Identifies every required repository contradiction, rejects both unobservable and vague claims, and distinguishes published contracts from unknown real-world consumers."
+    },
+    {
+      "id": "502b3487722e",
+      "passed": true,
+      "reason": "Covers all required contradictions with exact evidence, rejects the unobservable and vague claims, and requests owner confirmation about consumers and promises."
+    },
+    {
+      "id": "52fe3de0b34d",
+      "passed": true,
+      "reason": "Identifies all contradictions, rejects the unobservable reconsideration and vague preservation claims, and distinguishes repository publication from unknown external use."
+    },
+    {
+      "id": "66150b2aa97a",
+      "passed": true,
+      "reason": "Precisely identifies all required contradictions and appropriately treats external consumers and deployment facts as unknown rather than inferred from private status."
+    },
+    {
+      "id": "7a0367a6e71e",
+      "passed": true,
+      "reason": "Checks all repository facts, identifies every contradiction, rejects vague and unobservable claims, and distinguishes published surface from actual consumers."
+    },
+    {
+      "id": "9dfaaca8dfa2",
+      "passed": false,
+      "reason": "Identifies most contradictions but does not clearly distinguish the published contract from evidence of actual external users or explicitly require owner confirmation of users."
+    },
+    {
+      "id": "9f2c0367e1b4",
+      "passed": true,
+      "reason": "Identifies all required contradictions with exact evidence, rejects both vague claims, and explicitly treats external publication and consumers as requiring owner confirmation."
+    },
+    {
+      "id": "a3bc42d8520d",
+      "passed": false,
+      "reason": "Misses the material contradiction that “Keep the current plugin behavior” is vague and does not specify the observable behavior to preserve."
+    },
+    {
+      "id": "c4328e98c4fb",
+      "passed": false,
+      "reason": "Misses the material contradiction that the profile’s preservation claim is vague and fails to identify the behavior that must be preserved."
+    },
+    {
+      "id": "d9f41917ceab",
+      "passed": false,
+      "reason": "Does not provide exact evidence that README and both manifests publish `ledger check`, and does not clearly distinguish published contracts from actual external users."
+    },
+    {
+      "id": "e81dda2cbd3a",
+      "passed": true,
+      "reason": "Covers every required contradiction, rejects unobservable and vague claims, distinguishes published contracts from unknown external usage, and avoids freshness claims based on age."
+    }
+  ]
+}

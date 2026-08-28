@@ -61,8 +61,9 @@ node skills/simple/scripts/simple.mjs init /path/to/repository
 The command creates `AGENTS.md`, `CLAUDE.md`, and `SIMPLE.md`. The new profile stays
 incomplete because a script cannot infer users, production data, or promises.
 
-Replace the prompts with observed facts. Remove the incomplete marker. Then do a
-check of the profile:
+Start with repository evidence. Ask the owner only for facts that the repository
+cannot establish. Keep each unknown explicit until the owner confirms or corrects it.
+Then remove the incomplete marker and do a check of the profile:
 
 ```sh
 node skills/simple/scripts/simple.mjs check /path/to/repository
@@ -81,10 +82,16 @@ A useful profile records these facts:
 Keep the profile short. Record facts that can change a design. Do not copy generic
 principles from the skill into the profile.
 
+Give each fact one home. Put current reality in `Reality`, obligations in `Preserve`,
+the supported state in `Current boundary`, and reusable mechanisms in `Ordinary
+paths`. Put checks in `Proof` and observable change conditions in `Reconsider when`.
+
 The canonical template is
 [`skills/simple/assets/SIMPLE.template.md`](skills/simple/assets/SIMPLE.template.md).
 The [profile guide](skills/simple/references/profile-template.md) explains how to
 complete it. The nearest profile applies when a repository has nested profiles.
+Hook injection does not merge root and nested profiles. Each nested profile must
+contain every root fact that still applies.
 
 ## Commands
 
@@ -178,7 +185,8 @@ without a repository-specific profile. The profile context is absent, but the sk
 not automatically inactive.
 
 Simple is not ready when a profile still has the incomplete marker. `simple check`
-reports this state. It also checks the route and the profile size.
+reports this state. It also checks the route and the profile size. It does not prove
+that profile claims are true. Use `simple review` to compare them with the repository.
 
 ## Evidence
 
@@ -188,6 +196,10 @@ serialization owner and its supported alias mechanism improved strict passes fro
 
 A focused authoring rule then improved profile output from 2 of 6 to 5 of 6. The rule
 asks for the owner, supported mechanism, and observable behavior in `Ordinary paths`.
+
+The profile-quality confirmation improved strict passes from 5 of 24 to 9 of 24. It
+tested evidence interviews, semantic review, same-change maintenance, and concise
+profile structure on Luna and Terra.
 
 Tests of explicit start, fix, improve, and add routing did not earn more runtime text.
 The current skill opened on all 40 substantive activation cells. The candidate also

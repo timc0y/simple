@@ -1,0 +1,72 @@
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -115,7 +115,8 @@
+ - Adapting guidance to a model or harness: read `references/model-profiles.md`.
+ - Refactoring or deletion: read `references/refactoring.md`; for deletion tooling,
+   also read `references/deletion-tools.md`.
+-- Repository initiation or profile changes: read `references/profile-template.md`,
+-  then run `scripts/simple.mjs init` or `scripts/simple.mjs check`.
++- Any task that creates, reviews, or changes `SIMPLE.md`: always read
++  `references/profile-template.md` before you write. Run `scripts/simple.mjs init` or
++  `scripts/simple.mjs check` when the task needs it.
+
+ Keep the implementation, tests, comments, documentation, and handoff consistent.
+--- a/references/profile-template.md
++++ b/references/profile-template.md
+@@ -8,14 +8,50 @@
+ data, or promises reliably. Establish those facts from repository evidence or its
+ owner, then remove the incomplete marker and run `scripts/simple.mjs check`.
+
+-`Current boundary` should state the system the repository supports today and the
+-evidence for that boundary. Express exclusions as positive current facts rather than
+-as a catalogue of architectures to avoid.
++Before you write, classify each material claim. Use four classes: observed fact, owner
++commitment, explicit inference, or unknown. Cite observed facts. Do not ask the owner
++for these facts again. Package visibility does not establish users, release stage,
++consumers, production data, compatibility, or scale. Files that are not present do not
++establish these facts.
+
+-`Ordinary paths` records the reusable route. Name each existing owner, workflow, or
+-supported mechanism that materially changes the design, together with the observable
+-behaviour the next agent can rely on.
++For `simple init`, report the evidence first. Then ask only for material facts that
++remain unknown:
+
++- Current users and release stage.
++- Operators.
++- Actual external consumers.
++- Published promises.
++- Production data that a change must keep.
++- Compatibility commitments.
++- Current scale and failure consequences.
++
++Ask about current or recent reality. Do not ask about possible future use. Keep the
++profile incomplete until the owner corrects or confirms every owner-only fact.
++
++Keep these headings exactly: `Reality`, `Preserve`, `Current boundary`, `Ordinary
++paths`, `Proof`, and `Reconsider when`. Give each fact one home:
++
++- `Reality`: current users, operators, consumers, contracts, data, compatibility,
++  scale, and failure consequences.
++- `Preserve`: only the obligations a change must keep.
++- `Current boundary`: the supported state today and its evidence. Express exclusions
++  as positive current facts.
++- `Ordinary paths`: each owner and existing mechanism, with observable behaviour the
++  next agent can rely on.
++- `Proof`: commands and independent checks; do not restate the obligation.
++- `Reconsider when`: each observable exit or redesign condition, stated once.
++
++When you review a profile, compare every material claim with current repository
++evidence. Find unsupported obligations, contradictions, absent paths, vague
++preservation or proof, and conditions that you cannot observe. A published surface
++proves a contract. It does not prove that an external user exists. Ask the owner when
++actual consumers remain unknown. Do not use age alone as evidence of staleness.
++
++If a change makes a profile claim false, update `SIMPLE.md` in the same change. Replace
++the old owner. Record the current boundary. Remove fulfilled conditions and expired
++preservation duties. Remove proof for behaviour that no longer exists. Do not add
++another documentation system unless a present need requires it.
++
+ Prefer concrete statements such as:
+
+ > The current API serves only this application. Reconsider compatibility when another

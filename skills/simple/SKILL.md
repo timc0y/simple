@@ -115,7 +115,8 @@ blockers, risk, and the next relevant action. Do not narrate routine tool use.
 - Adapting guidance to a model or harness: read `references/model-profiles.md`.
 - Refactoring or deletion: read `references/refactoring.md`; for deletion tooling,
   also read `references/deletion-tools.md`.
-- Repository initiation or profile changes: read `references/profile-template.md`,
-  then run `scripts/simple.mjs init` or `scripts/simple.mjs check`.
+- Any task that creates, reviews, or changes `SIMPLE.md`: always read
+  `references/profile-template.md` before you write. Run `scripts/simple.mjs init` or
+  `scripts/simple.mjs check` when the task needs it.
 
 Keep the implementation, tests, comments, documentation, and handoff consistent.

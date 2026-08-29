@@ -1,0 +1,16 @@
+7fe4fde93aa4	1	review-auth-plan	gpt-5.6-luna	simple
+dc7f35719155	1	review-auth-plan	gpt-5.6-luna	candidate
+780e6d12b230	1	review-auth-plan	gpt-5.6-terra	simple
+cfd5c4963574	1	review-auth-plan	gpt-5.6-terra	candidate
+7fc7b0b0080b	1	review-retry-doc	gpt-5.6-luna	simple
+3797979e622d	1	review-retry-doc	gpt-5.6-luna	candidate
+f684bb9a7d66	1	review-retry-doc	gpt-5.6-terra	simple
+6b161570d469	1	review-retry-doc	gpt-5.6-terra	candidate
+0e92adf4f069	2	review-auth-plan	gpt-5.6-luna	simple
+319f7ffd2729	2	review-auth-plan	gpt-5.6-luna	candidate
+e4aaedfc0222	2	review-auth-plan	gpt-5.6-terra	simple
+173c63d10f85	2	review-auth-plan	gpt-5.6-terra	candidate
+1f82802d8a78	2	review-retry-doc	gpt-5.6-luna	simple
+4b1dcfa92bab	2	review-retry-doc	gpt-5.6-luna	candidate
+9b5ee1182d58	2	review-retry-doc	gpt-5.6-terra	simple
+be4ddeb8c73c	2	review-retry-doc	gpt-5.6-terra	candidate

@@ -1,0 +1,76 @@
+{
+  "selfTests": [
+    {
+      "case": "explain-patch-values",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "explain-readiness",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "494f3257c59e",
+      "passed": true,
+      "reason": "Direct rule, contrasted PATCH bodies, Grace preservation, null clearing, and Ada replacement."
+    },
+    {
+      "id": "6ca0bfcbe9be",
+      "passed": true,
+      "reason": "Contrasts omission and null with explicit Grace, clear, and Ada results."
+    },
+    {
+      "id": "9c784f6d5a6f",
+      "passed": true,
+      "reason": "States distinct omission/null meanings and all required request outcomes."
+    },
+    {
+      "id": "9fb420150ce0",
+      "passed": true,
+      "reason": "Shows each PATCH body and explicitly distinguishes unchanged, cleared, and replaced values."
+    },
+    {
+      "id": "c9131f9b3801",
+      "passed": true,
+      "reason": "Directly explains the three PATCH behaviors, including preserving Grace and replacing with Ada."
+    },
+    {
+      "id": "e9900c5f4b56",
+      "passed": true,
+      "reason": "Provides direct rules, contrasting examples, outcomes, and the omission-versus-null distinction."
+    },
+    {
+      "id": "0ab0d2473ff9",
+      "passed": false,
+      "reason": "Lacks a concrete contrast with a genuinely storage-incomplete processing export."
+    },
+    {
+      "id": "52bce5929e97",
+      "passed": false,
+      "reason": "Does not give the required concrete storage-incomplete processing contrast."
+    },
+    {
+      "id": "7bd5dbf5f220",
+      "passed": false,
+      "reason": "Lacks a concrete example contrasting incomplete storage with failed or pending email."
+    },
+    {
+      "id": "a27cf6c2d66a",
+      "passed": false,
+      "reason": "Does not include the required concrete genuinely-processing storage-incomplete example."
+    },
+    {
+      "id": "c639a544ee6c",
+      "passed": false,
+      "reason": "Lacks the required concrete contrast with storage still incomplete."
+    },
+    {
+      "id": "d56ce54c5c81",
+      "passed": false,
+      "reason": "Does not provide a concrete contrast with a genuinely processing, storage-incomplete export."
+    }
+  ]
+}

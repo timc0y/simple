@@ -1,0 +1,76 @@
+{
+  "selfTests": [
+    {
+      "case": "explain-patch-values",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "explain-readiness",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "494f3257c59e",
+      "passed": true,
+      "reason": "Clearly contrasts omission preserving Grace, null clearing it, and Ada replacing it."
+    },
+    {
+      "id": "6ca0bfcbe9be",
+      "passed": true,
+      "reason": "Provides contrasting requests, explicit results, and explains omission versus null."
+    },
+    {
+      "id": "9c784f6d5a6f",
+      "passed": true,
+      "reason": "Explicitly shows Grace preserved, the name cleared, and Ada replacing it."
+    },
+    {
+      "id": "9fb420150ce0",
+      "passed": true,
+      "reason": "Clearly states all three outcomes and distinguishes omission from explicit null."
+    },
+    {
+      "id": "c9131f9b3801",
+      "passed": true,
+      "reason": "States preservation, clearing, replacement, and why omission differs from null."
+    },
+    {
+      "id": "e9900c5f4b56",
+      "passed": true,
+      "reason": "Provides explicit PATCH examples, outcomes, and the omission/null distinction."
+    },
+    {
+      "id": "0ab0d2473ff9",
+      "passed": false,
+      "reason": "Explains independent email failure but lacks a concrete contrast with storage-incomplete processing."
+    },
+    {
+      "id": "52bce5929e97",
+      "passed": false,
+      "reason": "Explains the state meaning and hidden download but lacks the required processing contrast."
+    },
+    {
+      "id": "7bd5dbf5f220",
+      "passed": false,
+      "reason": "Rejects reverting state and separates email, but gives no concrete storage-incomplete contrast."
+    },
+    {
+      "id": "a27cf6c2d66a",
+      "passed": false,
+      "reason": "Rejects the proposal and explains hidden access, but lacks a discriminating example."
+    },
+    {
+      "id": "c639a544ee6c",
+      "passed": false,
+      "reason": "Separates readiness from email failure but does not contrast with genuinely incomplete storage."
+    },
+    {
+      "id": "d56ce54c5c81",
+      "passed": false,
+      "reason": "Correctly rejects the change but lacks the required concrete contrast between cases."
+    }
+  ]
+}

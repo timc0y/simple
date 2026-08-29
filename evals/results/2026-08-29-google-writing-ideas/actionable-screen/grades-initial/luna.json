@@ -1,0 +1,76 @@
+{
+  "selfTests": [
+    {
+      "case": "review-auth-plan",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "review-retry-doc",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "57cc62f22689",
+      "passed": false,
+      "reason": "Lists corrections but does not explain each repository fact and resulting consequence."
+    },
+    {
+      "id": "780e6d12b230",
+      "passed": false,
+      "reason": "Omits key repository facts and consequences, and adds an unsupported retry change."
+    },
+    {
+      "id": "79cc4b03438d",
+      "passed": true,
+      "reason": "Identifies all blockers, their consequences, smallest corrections, and treats ttl as optional."
+    },
+    {
+      "id": "7fe4fde93aa4",
+      "passed": false,
+      "reason": "Invents unsupported claims about external consumers and compatibility promises."
+    },
+    {
+      "id": "cfd5c4963574",
+      "passed": true,
+      "reason": "Covers all blockers with consequences and minimal corrections, while omitting ttl optionally."
+    },
+    {
+      "id": "dc7f35719155",
+      "passed": false,
+      "reason": "Invents unsupported claims about external consumers and compatibility needs."
+    },
+    {
+      "id": "3797979e622d",
+      "passed": false,
+      "reason": "Identifies the defect and status 23, but invents a non-configurable retry claim and does not clearly say to rerun after service recovery."
+    },
+    {
+      "id": "6b161570d469",
+      "passed": false,
+      "reason": "Identifies the limit and status 23, but advises rerunning after exit rather than after recovery and invents configuration detail."
+    },
+    {
+      "id": "724c24f426f3",
+      "passed": false,
+      "reason": "Identifies the defect and status 23, but does not explicitly require waiting for service recovery and invents configuration detail."
+    },
+    {
+      "id": "7fc7b0b0080b",
+      "passed": false,
+      "reason": "Covers the limit and status 23, but gives ambiguous recovery advice and invents a non-configurable retry claim."
+    },
+    {
+      "id": "ce8f38a91769",
+      "passed": false,
+      "reason": "Covers the limit and status 23, but does not explicitly instruct rerunning after recovery and invents configuration detail."
+    },
+    {
+      "id": "f684bb9a7d66",
+      "passed": false,
+      "reason": "Identifies the defect and status 23, but omits the explicit instruction to rerun after service recovery and invents configuration detail."
+    }
+  ]
+}

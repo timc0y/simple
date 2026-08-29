@@ -1,0 +1,9 @@
+diff --git a/references/writing.md b/references/writing.md
+--- a/references/writing.md
++++ b/references/writing.md
+@@ -18,3 +18,5 @@
+ - State concrete conditions, limits, units, ownership, and failure behaviour.
+ - Separate observed fact, inference, assumption, and unknown.
++- When readers could confuse two cases, use one contrastive near miss and explain why
++  it fails.
+ - Use sentence-case headings and only as many as the document needs.

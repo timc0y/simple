@@ -1,0 +1,12 @@
+e9900c5f4b56	1	explain-patch-values	gpt-5.6-luna	none
+9fb420150ce0	1	explain-patch-values	gpt-5.6-luna	simple
+494f3257c59e	1	explain-patch-values	gpt-5.6-luna	candidate
+6ca0bfcbe9be	1	explain-patch-values	gpt-5.6-terra	none
+9c784f6d5a6f	1	explain-patch-values	gpt-5.6-terra	simple
+c9131f9b3801	1	explain-patch-values	gpt-5.6-terra	candidate
+7bd5dbf5f220	1	explain-readiness	gpt-5.6-luna	none
+d56ce54c5c81	1	explain-readiness	gpt-5.6-luna	simple
+52bce5929e97	1	explain-readiness	gpt-5.6-luna	candidate
+0ab0d2473ff9	1	explain-readiness	gpt-5.6-terra	none
+a27cf6c2d66a	1	explain-readiness	gpt-5.6-terra	simple
+c639a544ee6c	1	explain-readiness	gpt-5.6-terra	candidate

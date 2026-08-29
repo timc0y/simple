@@ -1,0 +1,96 @@
+{
+  "selfTests": [
+    {
+      "case": "review-auth-plan",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "review-retry-doc",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "0e92adf4f069",
+      "passed": true,
+      "reason": "Identifies all blockers, their consequences, smallest corrections, and clearly treats ttl as optional and unrelated."
+    },
+    {
+      "id": "173c63d10f85",
+      "passed": true,
+      "reason": "Covers divided ownership, credential logging, and required redirect behavior with appropriate corrections; ttl is clearly optional."
+    },
+    {
+      "id": "319f7ffd2729",
+      "passed": true,
+      "reason": "Grounds all three blockers in repository obligations, explains consequences, gives corrections, and separates ttl cleanup."
+    },
+    {
+      "id": "780e6d12b230",
+      "passed": true,
+      "reason": "Covers all three blockers with corrections and clearly identifies ttl as optional and unrelated."
+    },
+    {
+      "id": "7fe4fde93aa4",
+      "passed": true,
+      "reason": "Explicitly explains ownership, credential exposure, and empty-session consequences, with smallest corrections and optional ttl treatment."
+    },
+    {
+      "id": "cfd5c4963574",
+      "passed": true,
+      "reason": "Identifies each blocker, states the required repository behavior and correction, and separates ttl as non-functional cleanup."
+    },
+    {
+      "id": "dc7f35719155",
+      "passed": true,
+      "reason": "Covers all blockers, consequences, corrections, and optional ttl handling; extra testing guidance does not replace the review."
+    },
+    {
+      "id": "e4aaedfc0222",
+      "passed": true,
+      "reason": "Identifies and corrects all three blockers and clearly removes the unrelated ttl rename from scope."
+    },
+    {
+      "id": "1f82802d8a78",
+      "passed": true,
+      "reason": "Identifies the false unlimited-retry claim, the three-attempt limit, status 23, and rerun guidance while treating generic prose as secondary."
+    },
+    {
+      "id": "3797979e622d",
+      "passed": true,
+      "reason": "Correctly describes the finite retry behavior, status 23, recovery action, and separates generic filler from the correctness issue."
+    },
+    {
+      "id": "4b1dcfa92bab",
+      "passed": true,
+      "reason": "States the three-request limit, status 23 meaning, and rerun action, while distinguishing broader writing concerns."
+    },
+    {
+      "id": "6b161570d469",
+      "passed": true,
+      "reason": "Covers the finite limit, status 23 failure, rerun guidance, and identifies generic claims as lower usefulness."
+    },
+    {
+      "id": "7fc7b0b0080b",
+      "passed": true,
+      "reason": "Correctly flags the false claim and specifies the limit, status 23, rerun guidance, and secondary opening issue."
+    },
+    {
+      "id": "9b5ee1182d58",
+      "passed": true,
+      "reason": "Provides the finite limit, status 23 meaning, rerun guidance, and treats generic claims as separate from the defect."
+    },
+    {
+      "id": "be4ddeb8c73c",
+      "passed": true,
+      "reason": "Explains the finite retry contract, status 23, user intervention and rerun need, while separating generic framing."
+    },
+    {
+      "id": "f684bb9a7d66",
+      "passed": true,
+      "reason": "Includes the finite limit, status 23 outcome, status-linked rerun guidance, and distinguishes generic framing as secondary."
+    }
+  ]
+}

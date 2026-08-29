@@ -1,0 +1,76 @@
+{
+  "selfTests": [
+    {
+      "case": "review-auth-plan",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "review-retry-doc",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "57cc62f22689",
+      "passed": false,
+      "reason": "Lists corrections but does not explain each blocker’s repository obligation and consequence."
+    },
+    {
+      "id": "780e6d12b230",
+      "passed": true,
+      "reason": "Identifies all blockers, their consequences, corrections, and clearly treats ttl as unrelated and optional."
+    },
+    {
+      "id": "79cc4b03438d",
+      "passed": true,
+      "reason": "Grounds all blockers in repository behavior, consequences, and corrections; ttl is clearly optional."
+    },
+    {
+      "id": "7fe4fde93aa4",
+      "passed": true,
+      "reason": "Covers all blockers with obligations, consequences, and corrections while separating ttl as optional."
+    },
+    {
+      "id": "cfd5c4963574",
+      "passed": true,
+      "reason": "Clearly identifies each blocker, its consequence, smallest correction, and omits ttl optionally."
+    },
+    {
+      "id": "dc7f35719155",
+      "passed": true,
+      "reason": "Precisely grounds all blockers and corrections, and separates ttl as optional and non-blocking."
+    },
+    {
+      "id": "3797979e622d",
+      "passed": true,
+      "reason": "Identifies the false unlimited-retry claim, states three attempts and status 23, gives rerun guidance, and separates generic prose issues."
+    },
+    {
+      "id": "6b161570d469",
+      "passed": true,
+      "reason": "Clearly states the finite retry limit, status 23, non-automatic recovery, rerun guidance, and lower-priority prose issue."
+    },
+    {
+      "id": "724c24f426f3",
+      "passed": false,
+      "reason": "Identifies the defect and limit but only suggests tying rerun advice to status 23 rather than providing explicit useful guidance."
+    },
+    {
+      "id": "7fc7b0b0080b",
+      "passed": true,
+      "reason": "Covers the finite limit, status 23 meaning, rerun after status 23, and distinguishes vague opening language."
+    },
+    {
+      "id": "ce8f38a91769",
+      "passed": true,
+      "reason": "Covers the three-attempt limit, status 23 meaning, rerun guidance, and treats generic opening claims as secondary."
+    },
+    {
+      "id": "f684bb9a7d66",
+      "passed": false,
+      "reason": "States the limit and status 23 but does not provide concrete rerun guidance, only recommends adding it."
+    }
+  ]
+}

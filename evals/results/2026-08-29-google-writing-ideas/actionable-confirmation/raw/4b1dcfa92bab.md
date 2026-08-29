@@ -1,0 +1,5 @@
+- **Incorrect:** “Keeps retrying until the service recovers” contradicts the limit of two retries. `sync` makes at most three requests total, then exits with status 23.
+- **Misleading:** “Users do not need to intervene” conflicts with the documented recovery action: users must run `sync` again after failure.
+- **Unsupported/vague:** “Reliable,” “robust resilience strategy,” and “transient conditions” are broad claims not established by the observed behavior.
+- **Missing useful detail:** State that retry count is fixed and not configurable.
+- **Clarify recovery:** Explain that exit status 23 means the remote service was unavailable after all three attempts, and that rerunning `sync` is the next action.

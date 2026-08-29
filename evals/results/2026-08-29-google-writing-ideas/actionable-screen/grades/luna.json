@@ -1,0 +1,76 @@
+{
+  "selfTests": [
+    {
+      "case": "review-auth-plan",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "review-retry-doc",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "57cc62f22689",
+      "passed": false,
+      "reason": "Lists the corrections but does not clearly explain each repository obligation and resulting consequence."
+    },
+    {
+      "id": "780e6d12b230",
+      "passed": true,
+      "reason": "Identifies all blockers with consequences and corrections, and clearly treats ttl as unrelated and optional."
+    },
+    {
+      "id": "79cc4b03438d",
+      "passed": true,
+      "reason": "Grounds all three blockers, explains their consequences, gives corrections, and separates ttl as optional."
+    },
+    {
+      "id": "7fe4fde93aa4",
+      "passed": false,
+      "reason": "Invents an unsupported compatibility fact and expands into a replacement testing plan."
+    },
+    {
+      "id": "cfd5c4963574",
+      "passed": true,
+      "reason": "Identifies and grounds all blockers, specifies minimal corrections, and recommends omitting the unrelated ttl rename."
+    },
+    {
+      "id": "dc7f35719155",
+      "passed": true,
+      "reason": "Clearly explains all three contract violations and corrections while separating the optional unrelated cleanup."
+    },
+    {
+      "id": "3797979e622d",
+      "passed": true,
+      "reason": "Identifies the false unlimited-retry claim, three-attempt limit, status 23, rerun guidance, and separates lower-priority wording issues."
+    },
+    {
+      "id": "6b161570d469",
+      "passed": true,
+      "reason": "Clearly states the finite retry limit, status 23, automatic-stop behavior, rerun guidance, and lower-priority opening issue."
+    },
+    {
+      "id": "724c24f426f3",
+      "passed": true,
+      "reason": "Covers the finite limit, status 23, and status-specific rerun guidance while treating generic wording as secondary."
+    },
+    {
+      "id": "7fc7b0b0080b",
+      "passed": true,
+      "reason": "Identifies all required correctness issues and advises rerunning after status 23, while distinguishing vague prose concerns."
+    },
+    {
+      "id": "ce8f38a91769",
+      "passed": true,
+      "reason": "States the three-attempt limit, status 23, unavailable-service meaning, rerun guidance, and secondary opening issue."
+    },
+    {
+      "id": "f684bb9a7d66",
+      "passed": false,
+      "reason": "Identifies the defects but does not provide actual useful rerun guidance for status 23 or service recovery."
+    }
+  ]
+}

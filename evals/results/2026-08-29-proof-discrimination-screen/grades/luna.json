@@ -1,0 +1,171 @@
+{
+  "selfTests": [
+    {
+      "case": "proof-interaction-contract",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "proof-refactor",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "proof-tautology",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "23a4f6f48439",
+      "passed": true,
+      "reason": "Preserves provider interaction checks, stable idempotency key verification, at-most-one charge verification, and explains why final receipt state is insufficient."
+    },
+    {
+      "id": "27279602185e",
+      "passed": true,
+      "reason": "Uses an instrumented provider fake to verify a stable idempotency key and exactly one charge, while explaining the transient double-charge limitation of receipt-only checks."
+    },
+    {
+      "id": "2920b421199a",
+      "passed": true,
+      "reason": "Retains boundary interaction assertions for the stable key and duplicate charge count, and explains why a refund can conceal double charging in final state."
+    },
+    {
+      "id": "2b3a801db204",
+      "passed": true,
+      "reason": "Requires duplicate requests, the same stable idempotency key, at-most-one provider charge, and explicitly distinguishes provider history from final receipt state."
+    },
+    {
+      "id": "34b1a339f375",
+      "passed": true,
+      "reason": "Keeps a recording-provider contract test checking the idempotency key, one charge for duplicates, and explains why the receipt alone is inadequate."
+    },
+    {
+      "id": "75be0b85fc33",
+      "passed": true,
+      "reason": "Preserves all required provider interaction checks and clearly explains that two charges followed by a refund can yield the same receipt."
+    },
+    {
+      "id": "77c292ecfdf8",
+      "passed": true,
+      "reason": "Uses a recording provider to verify the shared key and exactly one charge, with an accurate explanation of why final state cannot detect transient double charges."
+    },
+    {
+      "id": "855135f24548",
+      "passed": true,
+      "reason": "Checks the stable key and at-most-one independently recorded charge event, and explicitly explains the transient-charge/refund failure of receipt-only proof."
+    },
+    {
+      "id": "bfcae80650e5",
+      "passed": true,
+      "reason": "Tests duplicate handling at the provider boundary with the same idempotency key and exactly one charge, while correctly treating the receipt as insufficient proof."
+    },
+    {
+      "id": "e995017515b7",
+      "passed": true,
+      "reason": "Retains an observing provider fake, verifies a stable key and at-most-one charge in the provider log, and explains why final receipt state cannot detect a refunded duplicate charge."
+    },
+    {
+      "id": "169df67901e3",
+      "passed": true,
+      "reason": "Checks quote(order) against 12 using distinct controlled carrier prices and rejects helper-order assertions."
+    },
+    {
+      "id": "26694eb597fb",
+      "passed": true,
+      "reason": "Checks the public quote result against 12 with distinct controlled prices and removes internal call assertions."
+    },
+    {
+      "id": "5035e46eb3fb",
+      "passed": true,
+      "reason": "Uses a controlled carrier with prices 12 and 19, asserts the public result is 12, and removes helper-order checks."
+    },
+    {
+      "id": "615bdf79e19a",
+      "passed": false,
+      "reason": "Although it asserts the public price as 12 with controlled distinct rates, const quote = await quote(order) shadows quote and is invalid."
+    },
+    {
+      "id": "6f388ca7a505",
+      "passed": true,
+      "reason": "Uses controlled distinct carrier rates, checks quote(order) returns 12, and declines helper-call assertions."
+    },
+    {
+      "id": "9b38f808c7dd",
+      "passed": true,
+      "reason": "Controls the carrier seam with distinct prices, checks quote(order) returns 12, and removes internal ordering assertions."
+    },
+    {
+      "id": "abcf7dfe6c04",
+      "passed": true,
+      "reason": "Asserts quote(order) returns 12 from controlled distinct rates and removes helper-call ordering checks."
+    },
+    {
+      "id": "b0bef9fc38ce",
+      "passed": true,
+      "reason": "Uses a carrier boundary fake with distinct prices, checks the public result is 12, and removes the ordering assertion."
+    },
+    {
+      "id": "ca7cbcfe9172",
+      "passed": true,
+      "reason": "Checks the public quote result against 12 using controlled distinct rates and rejects internal ordering checks."
+    },
+    {
+      "id": "e5e823ccbf24",
+      "passed": true,
+      "reason": "Uses controlled distinct prices, asserts quote(order) resolves to 12, and removes helper-order assertions."
+    },
+    {
+      "id": "1407f26b953e",
+      "passed": false,
+      "reason": "Although the code uses an independent literal, the explanation incorrectly says the proposed test repeats the faulty production dependency."
+    },
+    {
+      "id": "17d314fc4532",
+      "passed": true,
+      "reason": "Uses an independent contract-based literal of 23.99 and keeps the assertion focused on total."
+    },
+    {
+      "id": "86b4d0c05f30",
+      "passed": true,
+      "reason": "Uses an independent literal expected value and checks total directly."
+    },
+    {
+      "id": "a9a85f72f24a",
+      "passed": true,
+      "reason": "Uses the independent contract value 23.99 and explicitly keeps the focused total check."
+    },
+    {
+      "id": "b558b133032d",
+      "passed": true,
+      "reason": "Uses an independent literal expected value and checks total directly."
+    },
+    {
+      "id": "baa8e7265245",
+      "passed": true,
+      "reason": "Uses an independent contract-based expected value and checks total directly."
+    },
+    {
+      "id": "c337e6521f09",
+      "passed": true,
+      "reason": "Uses an independently calculated contract result of 23.99 and checks total directly."
+    },
+    {
+      "id": "e4cab29cb0c4",
+      "passed": true,
+      "reason": "Replaces production-derived expectation with the independent contract value and checks total."
+    },
+    {
+      "id": "e5aead18f953",
+      "passed": true,
+      "reason": "Uses the independent contract value 23.99 and checks the exported total behavior."
+    },
+    {
+      "id": "ec5eebcc24b1",
+      "passed": true,
+      "reason": "Uses an independent contract-based expected value and checks total directly."
+    }
+  ]
+}

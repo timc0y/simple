@@ -1,0 +1,96 @@
+{
+  "selfTests": [
+    {
+      "case": "review-auth-plan",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "review-retry-doc",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "0e92adf4f069",
+      "passed": true,
+      "reason": "Identifies all blockers and treats ttl as optional."
+    },
+    {
+      "id": "173c63d10f85",
+      "passed": true,
+      "reason": "Identifies all blockers and treats ttl as unrelated optional cleanup."
+    },
+    {
+      "id": "319f7ffd2729",
+      "passed": true,
+      "reason": "Identifies all blockers and treats ttl as optional."
+    },
+    {
+      "id": "780e6d12b230",
+      "passed": true,
+      "reason": "Identifies all blockers and treats ttl as optional."
+    },
+    {
+      "id": "7fe4fde93aa4",
+      "passed": false,
+      "reason": "Does not clearly require that request headers not be logged; redaction still permits header logging."
+    },
+    {
+      "id": "cfd5c4963574",
+      "passed": true,
+      "reason": "Identifies all blockers and treats ttl as separate optional cleanup."
+    },
+    {
+      "id": "dc7f35719155",
+      "passed": true,
+      "reason": "Identifies all blockers and treats ttl as optional unrelated cleanup."
+    },
+    {
+      "id": "e4aaedfc0222",
+      "passed": true,
+      "reason": "Identifies all blockers and requires removing the unrelated ttl rename."
+    },
+    {
+      "id": "1f82802d8a78",
+      "passed": true,
+      "reason": "Identifies finite retries, status 23, recovery risk, rerun guidance, and separates filler."
+    },
+    {
+      "id": "3797979e622d",
+      "passed": true,
+      "reason": "Covers the false unlimited claim, three-attempt limit, status 23, rerun guidance, and separate filler."
+    },
+    {
+      "id": "4b1dcfa92bab",
+      "passed": true,
+      "reason": "States the limit and status 23, explains required intervention, gives rerun guidance, and separates vague framing."
+    },
+    {
+      "id": "6b161570d469",
+      "passed": true,
+      "reason": "Gives the three-request limit, status 23 meaning, rerun guidance, and treats generic claims separately."
+    },
+    {
+      "id": "7fc7b0b0080b",
+      "passed": true,
+      "reason": "Identifies the false claim, finite limit, status 23, specific rerun action, and lower-value opening content."
+    },
+    {
+      "id": "9b5ee1182d58",
+      "passed": true,
+      "reason": "States the finite limit and status 23, explains rerunning is needed, and separates generic claims."
+    },
+    {
+      "id": "be4ddeb8c73c",
+      "passed": true,
+      "reason": "Explains the finite retry behavior, status 23, user rerun choice, and separate generic framing issue."
+    },
+    {
+      "id": "f684bb9a7d66",
+      "passed": true,
+      "reason": "Provides the finite limit, status 23 explanation, status-linked rerun guidance, and separate framing feedback."
+    }
+  ]
+}

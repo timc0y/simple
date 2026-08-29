@@ -1,0 +1,14 @@
+diff --git a/SKILL.md b/SKILL.md
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -58,8 +58,9 @@ clear. Restate who or what is affected, what happens now, what should happen, and why
+    outcome. Recheck the proposed change against the original problem and revise any
+    part that does not help.
+ 7. Remove the route, state, explanation, and cleanup displaced by the change. Try to
+-   falsify the result through a surface independent enough to distinguish the requested
+-   behaviour from the implementation itself.
++   falsify the result through a surface with an expected outcome independent of the
++   implementation. It should reject a plausible wrong behaviour and survive an
++   irrelevant implementation change.
+
+ ## Write in order

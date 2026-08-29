@@ -1,0 +1,13 @@
+run	case	model	condition	luna	terra	strict
+1	review-auth-plan	gpt-5.6-luna	none	true	true	true
+1	review-auth-plan	gpt-5.6-luna	simple	true	false	false
+1	review-auth-plan	gpt-5.6-luna	candidate	true	false	false
+1	review-auth-plan	gpt-5.6-terra	none	false	false	false
+1	review-auth-plan	gpt-5.6-terra	simple	true	false	false
+1	review-auth-plan	gpt-5.6-terra	candidate	true	false	false
+1	review-retry-doc	gpt-5.6-luna	none	false	true	false
+1	review-retry-doc	gpt-5.6-luna	simple	true	true	true
+1	review-retry-doc	gpt-5.6-luna	candidate	true	true	true
+1	review-retry-doc	gpt-5.6-terra	none	true	true	true
+1	review-retry-doc	gpt-5.6-terra	simple	false	false	false
+1	review-retry-doc	gpt-5.6-terra	candidate	true	true	true

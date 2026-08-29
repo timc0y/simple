@@ -1,0 +1,76 @@
+{
+  "selfTests": [
+    {
+      "case": "review-auth-plan",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "review-retry-doc",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "57cc62f22689",
+      "passed": false,
+      "reason": "Lists corrections but does not explain the owner-split or persisted-log consequences."
+    },
+    {
+      "id": "780e6d12b230",
+      "passed": false,
+      "reason": "Omits the repository fact that diagnostic logs are retained, so the logging blocker is incomplete."
+    },
+    {
+      "id": "79cc4b03438d",
+      "passed": false,
+      "reason": "Omits that support retains the proposed logs, a required repository fact for the credential-logging blocker."
+    },
+    {
+      "id": "7fe4fde93aa4",
+      "passed": false,
+      "reason": "Invents unsupported compatibility facts and omits the retained-logs repository fact."
+    },
+    {
+      "id": "cfd5c4963574",
+      "passed": false,
+      "reason": "Does not identify that support retains logs, so it incompletely grounds the credential-logging blocker."
+    },
+    {
+      "id": "dc7f35719155",
+      "passed": false,
+      "reason": "Does not state that support retains logs and adds unsupported compatibility assertions."
+    },
+    {
+      "id": "3797979e622d",
+      "passed": false,
+      "reason": "Invents retry configurability rather than giving only the required correction."
+    },
+    {
+      "id": "6b161570d469",
+      "passed": false,
+      "reason": "Invents a fixed, non-configurable retry setting."
+    },
+    {
+      "id": "724c24f426f3",
+      "passed": false,
+      "reason": "Invents a non-configurable retry setting."
+    },
+    {
+      "id": "7fc7b0b0080b",
+      "passed": false,
+      "reason": "Invents a fixed, non-configurable retry setting."
+    },
+    {
+      "id": "ce8f38a91769",
+      "passed": false,
+      "reason": "Invents a non-configurable retry setting."
+    },
+    {
+      "id": "f684bb9a7d66",
+      "passed": false,
+      "reason": "Does not give the user's next action: rerun sync after the service recovers."
+    }
+  ]
+}

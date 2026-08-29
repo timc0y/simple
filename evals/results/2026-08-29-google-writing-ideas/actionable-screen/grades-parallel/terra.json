@@ -1,0 +1,76 @@
+{
+  "selfTests": [
+    {
+      "case": "review-auth-plan",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "review-retry-doc",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "57cc62f22689",
+      "passed": false,
+      "reason": "Does not explain the split-owner or retained-log consequences."
+    },
+    {
+      "id": "780e6d12b230",
+      "passed": false,
+      "reason": "Adds an unsupported retry requirement beyond the smallest correction."
+    },
+    {
+      "id": "79cc4b03438d",
+      "passed": true,
+      "reason": "Identifies, grounds, and corrects all three blockers; ttl is optional."
+    },
+    {
+      "id": "7fe4fde93aa4",
+      "passed": false,
+      "reason": "Invents repository and retry prerequisites not supplied by the criteria."
+    },
+    {
+      "id": "cfd5c4963574",
+      "passed": false,
+      "reason": "Its retry removal is broader than the required bounded-retry correction."
+    },
+    {
+      "id": "dc7f35719155",
+      "passed": false,
+      "reason": "Invents a transient-failure prerequisite for retries."
+    },
+    {
+      "id": "3797979e622d",
+      "passed": true,
+      "reason": "Identifies the false claim, three-attempt limit, status 23, rerun guidance, and treats the opening as secondary."
+    },
+    {
+      "id": "6b161570d469",
+      "passed": true,
+      "reason": "Covers the finite retry limit, status 23, lack of automatic recovery, rerun advice, and lower-priority generic opening."
+    },
+    {
+      "id": "724c24f426f3",
+      "passed": true,
+      "reason": "States the one-plus-two retry limit, status 23, status-specific rerun advice, and separates the generic opening issue."
+    },
+    {
+      "id": "7fc7b0b0080b",
+      "passed": true,
+      "reason": "Correctly explains the finite retries, status 23, rerun guidance, and that vague opening language is secondary."
+    },
+    {
+      "id": "ce8f38a91769",
+      "passed": true,
+      "reason": "Identifies the false unlimited-retry claim, finite limit, status 23, useful rerun guidance, and lower-priority opening issue."
+    },
+    {
+      "id": "f684bb9a7d66",
+      "passed": false,
+      "reason": "It requests concrete recovery guidance but does not actually provide useful rerun guidance tied to status 23 or service availability."
+    }
+  ]
+}

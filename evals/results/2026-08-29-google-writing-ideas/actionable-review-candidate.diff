@@ -1,0 +1,12 @@
+diff --git a/references/commands.md b/references/commands.md
+--- a/references/commands.md
++++ b/references/commands.md
+@@ -37,6 +37,8 @@ Review a design, plan, document, or diff. Lead with material findings ordered by
+ consequence. Check for invented obligations, divided ownership, second paths,
+ unjustified compatibility, displaced machinery left behind, self-grading proof,
+-unrelated changes, lost facts, and decorative or confusing prose. Report no finding
+-when the evidence does not support one.
++unrelated changes, lost facts, and decorative or confusing prose. For each material
++finding, state the obligation or reader need, evidence, consequence, and smallest
++correction. Mark optional improvements as optional. Report no finding when the
++evidence does not support one.

@@ -24,6 +24,8 @@ grader contract can support the stated decision. It does not mean statistical pr
 | [Architecture reference](2026-08-27-architecture-reference-confirmation/README.md) | Valid negative | Current passed 12 of 12. The shorter Raptor reference passed 10 of 12. |
 | [Profile quality](2026-08-28-profile-quality-confirmation/README.md) | Valid | Evidence, review, and maintenance guidance improved strict passes from 5 of 24 to 9 of 24. |
 | [Board review screen](2026-08-28-board-review-screen/README.md) | Valid screen | Optional delegation and evidence synthesis improved strict passes from 3 of 10 to 7 of 10; host-native orchestration remains untested. |
+| [Proof-discrimination screen](2026-08-29-proof-discrimination-screen/README.md) | Inconclusive negative | The candidate did not beat current Simple reliably; no-skill answers passed every cell and the regrade exposed grader instability. |
+| [Google writing ideas](2026-08-29-google-writing-ideas/README.md) | Inconclusive negative | Contrastive examples did not improve the screen; the actionable-review candidate's apparent gain was a grader false negative. |
 
 Runs from 27 August with a condition map and TSV result now also contain normalized
 `results.json` records. Earlier files keep their original format unless the source data

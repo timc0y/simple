@@ -1,0 +1,6 @@
+diff --git a/references/compatibility.md b/references/compatibility.md
+--- a/references/compatibility.md
++++ b/references/compatibility.md
+@@ -21 +21 @@
+-- No consumers and no retained state: replace directly.
++- No consumers, retained state, published contract, or support promise: replace directly.

@@ -8,7 +8,7 @@ diff --git a/SKILL.md b/SKILL.md
    Apply first-principles reasoning grounded in repository evidence to find the
    smallest truthful software design and write concise, plain developer prose. Use
 -  for architecture, ownership, refactoring, deletion, compatibility, migration,
--  repository audits, implementation plans, or work that is becoming more complex
+-  repository audits, decision reviews, implementation plans, or work that is becoming more complex
 -  than its demonstrated requirements; for technical plans, documentation, comments,
 -  Markdown, prompts, reviews, updates, and handoffs; and when asked what a documented
 -  engineer, company, or operator would do. Read the nearest SIMPLE.md when repository

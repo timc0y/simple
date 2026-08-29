@@ -1,0 +1,48 @@
+Reading additional input from stdin...
+2026-08-29T19:42:11.004938Z ERROR codex_skills_extension::host_service: failed to install system skills: io error while create skills root dir: File exists (os error 17)
+2026-08-29T19:42:11.008271Z ERROR codex_skills_extension::host_service: failed to install system skills: io error while create skills root dir: File exists (os error 17)
+2026-08-29T19:42:11.009527Z ERROR codex_skills_extension::loader::host: failed to walk skills root file:///Users/tim/.codex/skills: Operation not permitted (os error 1)
+2026-08-29T19:42:11.009540Z ERROR codex_skills_extension::loader::host: failed to walk skills root file:///Users/tim/.agents/skills: Operation not permitted (os error 1)
+2026-08-29T19:42:11.009544Z ERROR codex_skills_extension::loader::host: failed to walk skills root file:///Users/tim/.codex/skills/.system: Operation not permitted (os error 1)
+2026-08-29T19:42:11.012989Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.015343Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.017326Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.019236Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.021166Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.023107Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.025000Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.027054Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.028970Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.030865Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.032937Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.035199Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.037456Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.039611Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.041749Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.043866Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.046021Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.048213Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.050428Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.052580Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.054833Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.057396Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.059634Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.061667Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.063833Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.066004Z ERROR codex_skills_extension::host_service: failed to install system skills: io error while create skills root dir: File exists (os error 17)
+2026-08-29T19:42:11.066034Z ERROR codex_skills_extension::host_service: failed to install system skills: io error while create skills root dir: File exists (os error 17)
+2026-08-29T19:42:11.066313Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.068111Z ERROR codex_skills_extension::host_service: failed to install system skills: io error while create skills root dir: File exists (os error 17)
+2026-08-29T19:42:11.069570Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.072008Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.074042Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.076516Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.078545Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.082295Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.084421Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.086383Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.088320Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.090332Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.092274Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.094533Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-08-29T19:42:11.096816Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back

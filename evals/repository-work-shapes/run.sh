@@ -23,7 +23,7 @@ candidate_marker=${CANDIDATE_MARKER:-Match proof to the change}
 profile_patch=${PROFILE_PATCH:-}
 profile_marker=${PROFILE_MARKER:-}
 runs=${RUNS:-1}
-max_jobs=${MAX_JOBS:-4}
+max_jobs=${MAX_JOBS:-1}
 base_profile="(version 1) (allow default) (deny file-read* (subpath \"$repo\")) (deny file-read* (subpath \"/Users/tim/.agents/skills\")) (deny file-read* (subpath \"/Users/tim/.codex/skills\")) (deny file-read* (subpath \"/Users/tim/.codex/plugins\"))"
 
 case_dir() {
@@ -49,6 +49,8 @@ run_codex() {
           --disable apps \
           --disable hooks \
           --disable multi_agent \
+          --disable skill_search \
+          --disable skill_mcp_dependency_install \
           --ephemeral \
           --skip-git-repo-check \
           --dangerously-bypass-approvals-and-sandbox \
@@ -192,12 +194,14 @@ grade_case() {
     "(deny file-read* (subpath \"$record\"))"
   extract_answer "$record/grades/$label-$case_name.events.jsonl" "$record/grades/$label-$case_name.json"
   local total=$(awk -F '\t' -v case_name="$case_name" '$3 == case_name {count++} END {print count+0}' "$record/mapping.tsv")
-  jq -e --arg case_name "$case_name" --argjson total "$total" '
+  local expected=$(awk -F '\t' -v case_name="$case_name" '$3 == case_name {print $1}' "$record/mapping.tsv" | sort | jq -Rsc 'split("\n") | map(select(length > 0))')
+  jq -e --arg case_name "$case_name" --argjson total "$total" --argjson expected "$expected" '
     (.selfTest.case == $case_name) and
     .selfTest.passReferencePassed and
     .selfTest.failReferenceRejected and
     (.grades | length) == $total and
-    ([.grades[].id] | unique | length) == $total
+    ([.grades[].id] | sort) == $expected and
+    ([.grades[].passed] | all(type == "boolean"))
   ' "$record/grades/$label-$case_name.json" >/dev/null
 }
 
@@ -222,6 +226,17 @@ summarize() {
   node "$repo/evals/normalize-results.mjs" "$record" "$(git -C "$repo" rev-parse HEAD)" \
     "isolated Codex Luna and Terra with dual anonymous grading"
   awk -F '\t' 'NR > 1 { total[$4]++; if ($7 == "true") pass[$4]++ } END { for (c in total) print c "\t" pass[c]+0 "/" total[c] }' "$record/results.tsv" | sort
+}
+
+archive_grades() {
+  local archive="$record/grade-history"
+  mkdir -p "$archive"
+  local attempt=$(find "$archive" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')
+  local target="$archive/attempt-$((attempt + 1))"
+  mkdir -p "$target"
+  cp -R "$record/grades" "$target/"
+  [[ ! -e "$record/results.tsv" ]] || cp "$record/results.tsv" "$target/"
+  [[ ! -e "$record/results.json" ]] || cp "$record/results.json" "$target/"
 }
 
 selftest() {
@@ -285,6 +300,7 @@ case ${1:-measure} in
   selftest) selftest ;;
   measure) selftest; measure ;;
   regrade)
+    archive_grades
     grade_all gpt-5.6-luna luna
     grade_all gpt-5.6-terra terra
     summarize

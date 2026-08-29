@@ -130,8 +130,9 @@ Evaluate it on three cases:
 The third case prevents a universal public-interface or never-mock rule. The
 [proof-discrimination screen](../evals/results/2026-08-29-proof-discrimination-screen/README.md)
 compared no skill, current Simple, the candidate, and both Ponytail interaction arms.
-The candidate did not produce a stable improvement, while all no-skill answers passed.
-The replacement does not ship.
+The regrade was unstable, so the run cannot support a runtime change. Uniform sandbox
+startup warnings appeared in all conditions and did not explain the changed verdict.
+The replacement does not ship without stable evidence.
 
 ## Ideas not adopted
 
@@ -154,3 +155,34 @@ The replacement does not ship.
   diff-only check improves them without false positives or awkward substitutions.
 - Add narrower test guidance only when stored failures show the proof sentence is
   insufficient and identify the missing decision.
+
+## Follow-up code and text screen
+
+Two more candidates used repository code and observed review failures. A conditional
+pure-decision rule scored 2 of 4; current Simple scored 3 of 4. A review-resolution
+rule appeared to tie current Simple at 1 of 4, but its rubric rejected valid
+answers. Neither candidate ships; the review result is inconclusive.
+
+The work exposed a useful evaluation rule. Keep each earlier grade before another
+grade. If the same rubric changes its verdict for the same answer, mark the grader as
+unstable. Do not use that change as evidence of a skill gain. This rule now lives in
+the evaluation protocol.
+
+See the [code and text candidate screen](../evals/results/2026-08-29-code-text-candidates/README.md).
+
+## Audit follow-up
+
+A Simple audit found a conflict in the compatibility checklist. Its direct-replacement
+rule omitted published contracts. A focused candidate added that condition.
+
+Current Simple and the candidate each passed 4 of 4 cells. No skill passed 1 of 4.
+The core contract rules already corrected the checklist error during model use. The
+candidate tied and did not ship.
+
+The audit also found defects in deterministic repository paths. The local installer
+missed the shared agent skill directory and could delete a real directory. The profile
+check accepted contradictory route text and could not check a nested target. The eval
+runners could overwrite grades and accept invented answer identifiers.
+
+These findings changed scripts, checks, and the evaluation protocol. They did not add
+more runtime skill text. See the [published contract audit](../evals/results/2026-08-29-published-contract-audit/README.md).

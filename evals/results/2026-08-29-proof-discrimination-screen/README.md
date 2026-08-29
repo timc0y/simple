@@ -3,7 +3,11 @@
 ## Decision
 
 Do not change Simple's runtime proof sentence. The candidate did not produce a stable
-improvement over current Simple, and no-skill answers already passed every strict cell.
+improvement, and the regrade changed a valid answer to a false failure.
+
+Every process also recorded the same system-skill startup warning. A later sequential
+run reproduced it while the copied workspace skills remained readable. The warning did
+not distinguish the conditions, so grader instability makes this run inconclusive.
 
 The first grading pass scored current and candidate Simple at 6 of 6. Current Simple
 with Ponytail scored 5 of 6, while the candidate combination scored 6 of 6. Both
@@ -24,7 +28,8 @@ answers were regraded. The final normalized result was:
 The regrade rejected one current-Simple answer that gives `23.99`, rejects production
 `VAT_RATE`, and explains the tautology. Its recorded reason says that explanation is
 incorrect. This grader instability prevents the remaining one-cell interaction
-difference from supporting a runtime change. A tie or inconclusive result loses.
+difference from supporting a runtime change. The first grade files were overwritten,
+so the record cannot preserve the contradictory verdicts directly.
 
 ## Method
 
@@ -46,11 +51,10 @@ an object. The solver answers were not rerun or edited.
 
 The [runner](run.sh), [candidate](candidate.diff), `mapping.tsv`, `results.tsv`,
 `results.json`, `raw/`, `events/`, `errors/`, and `grades/` preserve the final regrade.
-The initial grading files were replaced by the regrade; its printed aggregate is
-recorded above.
+The first grade files were replaced by the regrade; its printed aggregate is recorded
+above. All 36 files in `errors/` record the uniform sandbox startup warning.
 
 ## Limit
 
-This screen has one run per cell and a ceiling effect: all no-skill answers passed.
-Design a harder contrastive case from an observed failure before testing more runtime
-proof guidance.
+Use immutable regrade records before you use these cases again. Design a harder
+contrastive case if another run shows a no-skill ceiling effect.

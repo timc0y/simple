@@ -1,0 +1,12 @@
+98a7f20ebce6	1	normalize-regrade	gpt-5.6-luna	none
+7d6fd0456427	1	normalize-regrade	gpt-5.6-luna	simple
+507c19e3ff2f	1	normalize-regrade	gpt-5.6-luna	candidate
+50319b0086d5	1	normalize-regrade	gpt-5.6-terra	none
+4413807ab069	1	normalize-regrade	gpt-5.6-terra	simple
+f68bfca1e6f8	1	normalize-regrade	gpt-5.6-terra	candidate
+300952030766	1	link-skill-restraint	gpt-5.6-luna	none
+b9324a89e5a6	1	link-skill-restraint	gpt-5.6-luna	simple
+869ff9523b90	1	link-skill-restraint	gpt-5.6-luna	candidate
+6c2f9846f603	1	link-skill-restraint	gpt-5.6-terra	none
+d44e93538bad	1	link-skill-restraint	gpt-5.6-terra	simple
+f83c9c1b5a14	1	link-skill-restraint	gpt-5.6-terra	candidate

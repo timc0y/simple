@@ -1,0 +1,12 @@
+5e2320935e72	1	reply-header-review	gpt-5.6-luna	none
+2359b684e179	1	reply-header-review	gpt-5.6-luna	simple
+0ec683ca2071	1	reply-header-review	gpt-5.6-luna	candidate
+46b64222c60c	1	reply-header-review	gpt-5.6-terra	none
+8c93d9fb8f02	1	reply-header-review	gpt-5.6-terra	simple
+2e3e273a6da4	1	reply-header-review	gpt-5.6-terra	candidate
+ba8ba88dea02	1	reply-compatibility-review	gpt-5.6-luna	none
+d1cef7a6bcfd	1	reply-compatibility-review	gpt-5.6-luna	simple
+2eafce67fe77	1	reply-compatibility-review	gpt-5.6-luna	candidate
+830e86342cec	1	reply-compatibility-review	gpt-5.6-terra	none
+ea549099f14a	1	reply-compatibility-review	gpt-5.6-terra	simple
+94b707cae50f	1	reply-compatibility-review	gpt-5.6-terra	candidate

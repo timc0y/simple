@@ -1,0 +1,76 @@
+{
+  "selfTests": [
+    {
+      "case": "link-skill-restraint",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "normalize-regrade",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "300952030766",
+      "passed": true,
+      "reason": "Rejects extraction and explains it adds abstraction and proof burden without benefit."
+    },
+    {
+      "id": "6c2f9846f603",
+      "passed": true,
+      "reason": "Keeps filesystem mutation local and rejects artificial abstractions and duplicate tests."
+    },
+    {
+      "id": "869ff9523b90",
+      "passed": true,
+      "reason": "Keeps install imperative and explains a split adds seams without simpler proof."
+    },
+    {
+      "id": "b9324a89e5a6",
+      "passed": true,
+      "reason": "Keeps the current owner and correctly cites direct temporary-home proof."
+    },
+    {
+      "id": "d44e93538bad",
+      "passed": true,
+      "reason": "Rejects the core/shell split as added proof surface without improved coverage."
+    },
+    {
+      "id": "f83c9c1b5a14",
+      "passed": true,
+      "reason": "Keeps install as owner and explains a pure layer adds unnecessary boundary and tests."
+    },
+    {
+      "id": "4413807ab069",
+      "passed": true,
+      "reason": "Keeps I/O at the boundary, preserves grade evidence, uses a pure checkable decision, and covers all required cases."
+    },
+    {
+      "id": "50319b0086d5",
+      "passed": false,
+      "reason": "Retains only the first grade and does not commit to preserving every later grade."
+    },
+    {
+      "id": "507c19e3ff2f",
+      "passed": false,
+      "reason": "Preserves the first grade but does not preserve every grade in the history."
+    },
+    {
+      "id": "7d6fd0456427",
+      "passed": false,
+      "reason": "Reduces to a retained grade without specifying preservation of every grade."
+    },
+    {
+      "id": "98a7f20ebce6",
+      "passed": false,
+      "reason": "Keeps only the first verdict/grade rather than retaining every grade."
+    },
+    {
+      "id": "f68bfca1e6f8",
+      "passed": false,
+      "reason": "Retains the first grade but does not preserve all subsequent grade evidence."
+    }
+  ]
+}

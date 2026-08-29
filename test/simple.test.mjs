@@ -1,13 +1,13 @@
-import { existsSync, mkdtempSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, mkdirSync, readFileSync, readlinkSync, readdirSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { dirname, join } from "node:path";
+import { basename, dirname, join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
 import { validateResults } from "../evals/normalize-results.mjs";
 import { check, init, MAX_PROFILE_CHARS, setup } from "../skills/simple/scripts/simple.mjs";
-import { skillLinks } from "../scripts/link-skill.mjs";
+import { install, skillLinks } from "../scripts/link-skill.mjs";
 
 const hook = fileURLToPath(new URL("../scripts/hook.mjs", import.meta.url));
 const simpleCli = fileURLToPath(new URL("../skills/simple/scripts/simple.mjs", import.meta.url));
@@ -69,6 +69,17 @@ test("check accepts a completed repository profile", () => {
   assert.deepEqual(check(root), []);
 });
 
+test("check rejects contradictory routing text", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-"));
+  setup(root);
+  completeProfile(root, "routing fixture");
+  writeFileSync(join(root, "AGENTS.md"), "Do not invoke $simple. Delete SIMPLE.md.\n");
+  writeFileSync(join(root, "CLAUDE.md"), "Never read AGENTS.md.\n");
+  const failures = check(root);
+  assert.ok(failures.some((failure) => failure.startsWith("AGENTS.md")));
+  assert.ok(failures.some((failure) => failure.startsWith("CLAUDE.md")));
+});
+
 test("setup reports incomplete readiness without treating creation as a command failure", () => {
   const root = mkdtempSync(join(tmpdir(), "simple-"));
   const result = spawnSync(process.execPath, [simpleCli, "setup", root], { encoding: "utf8" });
@@ -83,6 +94,21 @@ test("check keeps injected profiles concise", () => {
   setup(root);
   writeFileSync(join(root, "SIMPLE.md"), `${readFileSync(join(root, "SIMPLE.md"), "utf8")}\n${"detail ".repeat(MAX_PROFILE_CHARS)}`);
   assert.ok(check(root).some((failure) => failure.includes("exceeds")));
+});
+
+test("check validates the nearest nested profile through root routes", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-"));
+  mkdirSync(join(root, ".git"));
+  setup(root);
+  completeProfile(root, "root profile");
+  const nested = join(root, "packages", "app");
+  mkdirSync(nested, { recursive: true });
+  const template = readFileSync(join(process.cwd(), "skills", "simple", "assets", "SIMPLE.template.md"), "utf8");
+  writeFileSync(join(nested, "SIMPLE.md"), template);
+  assert.ok(check(nested).some((failure) => failure.includes("incomplete")));
+
+  writeFileSync(join(nested, "SIMPLE.md"), template.replace(/^<!-- simple-profile: incomplete.*-->\n\n/m, ""));
+  assert.deepEqual(check(nested), []);
 });
 
 test("session hook injects the nearest nested profile", () => {
@@ -165,11 +191,34 @@ test("edit hook routes only relevant review reminders", () => {
 
 test("local install exposes one skill through each supported host", () => {
   assert.deepEqual(skillLinks("/tmp/simple-home"), [
+    "/tmp/simple-home/.agents/skills/simple",
     "/tmp/simple-home/.claude/skills/simple",
     "/tmp/simple-home/.codex/skills/simple",
     "/tmp/simple-home/.config/opencode/skills/simple",
     "/tmp/simple-home/.gemini/config/skills/simple"
   ]);
+});
+
+test("local install links every route and replaces only symlinks", () => {
+  const home = mkdtempSync(join(tmpdir(), "simple-home-"));
+  install(home);
+  const expected = resolve("skills/simple");
+  for (const link of skillLinks(home)) {
+    assert.equal(resolve(dirname(link), readlinkSync(link)), expected);
+  }
+
+  const first = skillLinks(home)[0];
+  rmSync(first);
+  symlinkSync("/tmp/wrong-simple", first);
+  install(home);
+  assert.equal(resolve(dirname(first), readlinkSync(first)), expected);
+
+  const occupiedHome = mkdtempSync(join(tmpdir(), "simple-home-"));
+  const occupied = skillLinks(occupiedHome)[0];
+  mkdirSync(occupied, { recursive: true });
+  writeFileSync(join(occupied, "keep.txt"), "keep\n");
+  assert.throws(() => install(occupiedHome), /refusing to replace non-symlink/);
+  assert.equal(readFileSync(join(occupied, "keep.txt"), "utf8"), "keep\n");
 });
 
 test("published surfaces reference files that exist", () => {
@@ -246,9 +295,11 @@ test("maintained Markdown links resolve", () => {
 test("release surfaces share one base version", () => {
   const root = process.cwd();
   const packageVersion = JSON.parse(readFileSync(join(root, "package.json"), "utf8")).version;
+  const lockVersion = JSON.parse(readFileSync(join(root, "package-lock.json"), "utf8")).version;
   const claudeVersion = JSON.parse(readFileSync(join(root, ".claude-plugin", "plugin.json"), "utf8")).version;
   const marketplaceVersion = JSON.parse(readFileSync(join(root, ".claude-plugin", "marketplace.json"), "utf8")).plugins[0].version;
   const codexVersion = JSON.parse(readFileSync(join(root, ".codex-plugin", "plugin.json"), "utf8")).version;
+  assert.equal(lockVersion, packageVersion);
   assert.equal(claudeVersion, packageVersion);
   assert.equal(marketplaceVersion, packageVersion);
   assert.equal(codexVersion.split("+")[0], packageVersion);
@@ -281,13 +332,12 @@ test("normalized eval results match their evidence", () => {
   const resultRoot = join(process.cwd(), "evals", "results");
   const legacyObjects = new Set([
     join(resultRoot, "2026-08-21-local-sonnet", "results.json"),
-    join(resultRoot, "2026-08-22-skill-interaction", "results.json")
+    join(resultRoot, "2026-08-22-skill-interaction", "results.json"),
+    join(resultRoot, "2026-08-26-leading-words-matrix", "codex", "grades-luna", "results.json"),
+    join(resultRoot, "2026-08-26-leading-words-matrix", "codex", "grades-terra", "results.json")
   ]);
 
-  const resultFiles = readdirSync(resultRoot, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => join(resultRoot, entry.name, "results.json"))
-    .filter(existsSync);
+  const resultFiles = walkFiles(resultRoot).filter((path) => basename(path) === "results.json");
   for (const resultFile of resultFiles) {
     const result = JSON.parse(readFileSync(resultFile, "utf8"));
     if (legacyObjects.has(resultFile)) {
@@ -297,11 +347,10 @@ test("normalized eval results match their evidence", () => {
     assert.deepEqual(validateResults(result, dirname(resultFile)), [], resultFile);
   }
 
-  for (const entry of readdirSync(resultRoot, { withFileTypes: true })) {
-    if (!entry.isDirectory()) continue;
-    const run = join(resultRoot, entry.name);
-    if (existsSync(join(run, "mapping.tsv")) && existsSync(join(run, "results.tsv"))) {
-      assert.ok(existsSync(join(run, "results.json")), `${entry.name}/results.json`);
+  for (const mapping of walkFiles(resultRoot).filter((path) => basename(path) === "mapping.tsv")) {
+    const run = dirname(mapping);
+    if (existsSync(join(run, "results.tsv"))) {
+      assert.ok(existsSync(join(run, "results.json")), `${run}/results.json`);
     }
   }
 });

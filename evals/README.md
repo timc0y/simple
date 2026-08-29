@@ -23,6 +23,8 @@ Each case must contain these files:
 
 The grader must accept the pass reference and reject the fail reference. Reject the
 run if this check fails. Keep grader files hidden from the solver.
+Require the grader to return the exact anonymous identifier set and Boolean verdicts.
+Reject missing, invented, duplicate, or placeholder identifiers.
 
 Grade present obligations, ownership, lost facts, independent proof, unsupported
 claims, mode errors, safety boundaries, and writing quality. Do not grade one
@@ -50,6 +52,16 @@ failure or unjustified context cost. A tie loses.
 Record negative results. Do not change a grader after a model answer unless the task
 contract was wrong. If you change the contract, state why and run the affected answer
 again when the change can alter its grade.
+
+Keep each earlier grade before you grade an answer again. If the same rubric gives a
+different verdict, mark the grader as unstable. Do not use that verdict change as
+evidence of a skill gain. Use a corrected contract, an independent manual review, or an
+inconclusive result. Keep the contradictory evidence.
+
+Run local Codex processes sequentially. Record host setup warnings. Reject a run only
+when a warning changes condition access, inputs, outputs, or another equal condition.
+Disable implicit system-skill discovery in isolated Codex runs. Copy only the selected
+skill condition into the workspace.
 
 Record the model revision, harness, reasoning setting, skill commit, token use,
 latency, interventions, and limits when those facts are available. Never compare two

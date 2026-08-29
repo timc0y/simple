@@ -1,0 +1,12 @@
+d10893b57d8d	1	preserve-published-command	gpt-5.6-luna	none
+65cbe2f59bc3	1	preserve-published-command	gpt-5.6-luna	simple
+c47c5ef611e1	1	preserve-published-command	gpt-5.6-luna	candidate
+b3963ee4e915	1	preserve-published-command	gpt-5.6-terra	none
+fcf1eb08a9d6	1	preserve-published-command	gpt-5.6-terra	simple
+f2a78a11a6d5	1	preserve-published-command	gpt-5.6-terra	candidate
+89a0351dd3f5	1	replace-internal-helper	gpt-5.6-luna	none
+5c7f3c80230a	1	replace-internal-helper	gpt-5.6-luna	simple
+8d6794611ee0	1	replace-internal-helper	gpt-5.6-luna	candidate
+87d55112ce0d	1	replace-internal-helper	gpt-5.6-terra	none
+7131c4cff706	1	replace-internal-helper	gpt-5.6-terra	simple
+1441b3ecafb7	1	replace-internal-helper	gpt-5.6-terra	candidate

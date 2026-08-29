@@ -20,6 +20,8 @@ run_codex() {
         --disable apps \
         --disable hooks \
         --disable multi_agent \
+        --disable skill_search \
+        --disable skill_mcp_dependency_install \
         --ephemeral \
         --skip-git-repo-check \
         --dangerously-bypass-approvals-and-sandbox \
@@ -92,11 +94,13 @@ grade_one() {
   run_codex "$model" "$workspace" "$(<"$workspace/prompt.md")" \
     "$record/grades/$label.events.jsonl" "$record/errors/grader-$label.log"
   extract_answer "$record/grades/$label.events.jsonl" "$record/grades/$label.raw.json"
-  jq -e '
+  local expected=$(find "$record/raw" -type f -name '*.md' -exec basename {} .md \; | sort | jq -Rsc 'split("\n") | map(select(length > 0))')
+  jq -e --argjson expected "$expected" '
     (.selfTests | length) == 5 and
     (.selfTests | all(.passReferencePassed and .failReferenceRejected)) and
     (.grades | length) == 10 and
-    ([.grades[].id] | unique | length) == 10
+    ([.grades[].id] | sort) == $expected and
+    ([.grades[].passed] | all(type == "boolean"))
   ' "$record/grades/$label.raw.json" >/dev/null
   cp "$record/grades/$label.raw.json" "$record/grades/$label.json"
 }
@@ -123,19 +127,15 @@ measure() {
   node skills/simple/scripts/simple.mjs check >/dev/null
 
   local case_name model
-  integer running=0
   for case_name in "${cases[@]}"; do
     for model in "${models[@]}"; do
-      solve_one "$case_name" "$model" &
-      ((++running % 2 == 0)) && wait
+      solve_one "$case_name" "$model"
     done
   done
-  wait
 
   build_grader_prompt "$record/grader-prompt.md"
-  grade_one gpt-5.6-luna luna &
-  grade_one gpt-5.6-terra terra &
-  wait
+  grade_one gpt-5.6-luna luna
+  grade_one gpt-5.6-terra terra
 
   local metric
   metric=$(jq -n --slurpfile luna "$record/grades/luna.json" --slurpfile terra "$record/grades/terra.json" '

@@ -1,0 +1,76 @@
+{
+  "selfTests": [
+    {
+      "case": "preserve-published-command",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "replace-internal-helper",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "65cbe2f59bc3",
+      "passed": true,
+      "reason": "Preserves the published path, sets a removal condition, and proves both commands."
+    },
+    {
+      "id": "b3963ee4e915",
+      "passed": false,
+      "reason": "Keeps an alias but gives no bounded deprecation or removal condition."
+    },
+    {
+      "id": "c47c5ef611e1",
+      "passed": true,
+      "reason": "Preserves the contract, defers removal under explicit conditions, and tests both paths."
+    },
+    {
+      "id": "d10893b57d8d",
+      "passed": false,
+      "reason": "Preserves the alias but gives no bounded removal or deprecation condition."
+    },
+    {
+      "id": "f2a78a11a6d5",
+      "passed": true,
+      "reason": "Keeps a deprecated alias with an explicit removal condition and tests both paths."
+    },
+    {
+      "id": "fcf1eb08a9d6",
+      "passed": true,
+      "reason": "Retains a single alias, states removal conditions, and proves both command paths."
+    },
+    {
+      "id": "1441b3ecafb7",
+      "passed": true,
+      "reason": "Rejects alias, renames helper and three callers, uses repository evidence, and includes tests and searches."
+    },
+    {
+      "id": "5c7f3c80230a",
+      "passed": true,
+      "reason": "Direct rename of helper and three callers with repository evidence and proportionate build/test checks."
+    },
+    {
+      "id": "7131c4cff706",
+      "passed": true,
+      "reason": "Rejects speculative compatibility, changes helper and callers directly, and includes search and validation checks."
+    },
+    {
+      "id": "87d55112ce0d",
+      "passed": false,
+      "reason": "Rejects the alias and specifies the rename, but gives no proportionate verification check."
+    },
+    {
+      "id": "89a0351dd3f5",
+      "passed": true,
+      "reason": "Directly changes the helper and three callers, rejects aliasing, cites repository evidence, and checks search and tests."
+    },
+    {
+      "id": "8d6794611ee0",
+      "passed": true,
+      "reason": "Rejects aliasing, renames helper and three callers directly, and includes repository search and test checks."
+    }
+  ]
+}

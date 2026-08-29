@@ -1,0 +1,8 @@
+diff --git a/references/refactoring.md b/references/refactoring.md
+--- a/references/refactoring.md
++++ b/references/refactoring.md
+@@ -18,0 +19,4 @@
++
++If input and output operations hide branching policy, move only the decision into a
++small pure function. Keep the effects with the current owner. Do this only if the
++split makes proof simpler or removes duplicate policy.

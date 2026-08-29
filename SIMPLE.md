@@ -18,7 +18,8 @@
 
 ## Current boundary
 
-- The plugin packages Simple for Codex and Claude Code; the local installer exposes the same source to Codex, Claude Code, OpenCode, and Gemini.
+- The plugin packages Simple for Codex and Claude Code. The local installer exposes
+  one source through the shared agent directory and four host routes.
 - The Codex package points to the shared lifecycle and writing-reminder hooks; the Claude package uses the same hook bundle. Codex needs one `/hooks` trust approval on each machine.
 - Pre-write hook context reaches the model after the triggering tool result. It can guide the next step, but it cannot shape edit arguments that the model already chose.
 - Codex also receives repository context through `AGENTS.md` and the skill, so the route survives hosts without hook support.
@@ -28,7 +29,8 @@
 
 - Shared guidance lives in `skills/simple`; host manifests only package it.
 - `README.md` owns public setup and use; the skill references own detailed method guidance.
-- `scripts/link-skill.mjs` owns the four local host routes; it does not copy the skill.
+- `scripts/link-skill.mjs` owns the shared agent route and four local host routes. It
+  replaces stale symlinks but refuses to replace a real file or directory.
 - `simple.mjs init` creates the route and profile; `setup` remains an alias for existing users; `check` validates their shape.
 - `audit`, `board`, `plan`, `review`, `write`, and `emulate` are thin judgement modes over the shared skill; operator lenses stay sourced specialist references.
 - Audit crawlers collect bounded evidence; the lead agent owns synthesis and recommendations.

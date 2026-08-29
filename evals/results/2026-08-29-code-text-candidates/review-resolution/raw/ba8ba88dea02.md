@@ -1,0 +1,1 @@
+Resolved: `loadAccount` is an unexported internal helper with no external consumers, stored identifiers, or compatibility promise. Its three repository callers have been updated to `loadCustomer`, so a deprecated alias is not needed.

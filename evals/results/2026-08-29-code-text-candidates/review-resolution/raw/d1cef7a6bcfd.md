@@ -1,0 +1,1 @@
+Resolved: `loadAccount` is an unexported helper with only three repository callers. There are no external consumers, stored identifiers, or compatibility commitments, so a deprecated alias is unnecessary. Renamed it directly to `loadCustomer` and updated all callers.

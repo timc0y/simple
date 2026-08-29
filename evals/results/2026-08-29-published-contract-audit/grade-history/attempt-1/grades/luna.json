@@ -1,0 +1,76 @@
+{
+  "selfTests": [
+    {
+      "case": "preserve-published-command",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "replace-internal-helper",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "65cbe2f59bc3",
+      "passed": true,
+      "reason": "Preserves the published command, adds a bounded alias, and verifies both paths."
+    },
+    {
+      "id": "b3963ee4e915",
+      "passed": true,
+      "reason": "Retains the published alias and requires identical checks through both names."
+    },
+    {
+      "id": "c47c5ef611e1",
+      "passed": true,
+      "reason": "Rejects removal, preserves the contract, and proves both dispatcher paths."
+    },
+    {
+      "id": "d10893b57d8d",
+      "passed": true,
+      "reason": "Keeps the published path, aliases both names, and verifies identical behavior."
+    },
+    {
+      "id": "f2a78a11a6d5",
+      "passed": true,
+      "reason": "Preserves a deprecated alias with an explicit removal condition and tests both commands."
+    },
+    {
+      "id": "fcf1eb08a9d6",
+      "passed": true,
+      "reason": "Preserves the published contract, uses one dispatcher alias, and tests both paths."
+    },
+    {
+      "id": "1441b3ecafb7",
+      "passed": true,
+      "reason": "Direct rename, rejects alias, uses repository evidence, and includes tests, search, and diff checks."
+    },
+    {
+      "id": "5c7f3c80230a",
+      "passed": true,
+      "reason": "Direct rename with no alias, evidence-based rationale, and comprehensive repository and behavior checks."
+    },
+    {
+      "id": "7131c4cff706",
+      "passed": true,
+      "reason": "Direct rename, rejects speculative compatibility, cites repository evidence, and includes proportionate checks."
+    },
+    {
+      "id": "87d55112ce0d",
+      "passed": false,
+      "reason": "Correctly rejects the alias, but provides no explicit proportionate verification check."
+    },
+    {
+      "id": "89a0351dd3f5",
+      "passed": true,
+      "reason": "Direct rename with evidence against compatibility and explicit search and test verification."
+    },
+    {
+      "id": "8d6794611ee0",
+      "passed": true,
+      "reason": "Direct rename, rejects unknown-script compatibility, and includes repository and test checks."
+    }
+  ]
+}

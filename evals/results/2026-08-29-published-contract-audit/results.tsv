@@ -1,0 +1,13 @@
+run	case	model	condition	luna	terra	strict
+1	preserve-published-command	gpt-5.6-luna	none	true	false	false
+1	preserve-published-command	gpt-5.6-luna	simple	true	true	true
+1	preserve-published-command	gpt-5.6-luna	candidate	true	true	true
+1	preserve-published-command	gpt-5.6-terra	none	true	false	false
+1	preserve-published-command	gpt-5.6-terra	simple	true	true	true
+1	preserve-published-command	gpt-5.6-terra	candidate	true	true	true
+1	replace-internal-helper	gpt-5.6-luna	none	true	true	true
+1	replace-internal-helper	gpt-5.6-luna	simple	true	true	true
+1	replace-internal-helper	gpt-5.6-luna	candidate	true	true	true
+1	replace-internal-helper	gpt-5.6-terra	none	false	false	false
+1	replace-internal-helper	gpt-5.6-terra	simple	true	true	true
+1	replace-internal-helper	gpt-5.6-terra	candidate	true	true	true

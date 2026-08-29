@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
 export const MAX_PROFILE_CHARS = 6000;
@@ -17,17 +17,19 @@ const REQUIRED_HEADINGS = [...PROFILE.matchAll(/^## .+$/gm)].map(([heading]) => 
 
 export function check(root = process.cwd()) {
   const failures = [];
-  const agentsPath = resolve(root, "AGENTS.md");
-  const claudePath = resolve(root, "CLAUDE.md");
-  const profilePath = resolve(root, "SIMPLE.md");
+  const target = resolve(root);
+  const repository = repositoryRoot(target);
+  const agentsPath = resolve(repository, "AGENTS.md");
+  const claudePath = resolve(repository, "CLAUDE.md");
+  const profilePath = nearestProfile(target, repository);
   const agents = read(agentsPath, failures);
   const claude = read(claudePath, failures);
   const profile = read(profilePath, failures);
 
-  if (agents && (!agents.includes("$simple") || !agents.includes("SIMPLE.md"))) {
+  if (agents && !agents.includes(ROUTE)) {
     failures.push("AGENTS.md must route repository-dependent decisions to $simple and SIMPLE.md");
   }
-  if (claude && !claude.includes("AGENTS.md") && (!claude.includes("$simple") || !claude.includes("SIMPLE.md"))) {
+  if (claude && !/^@AGENTS\.md\s*$/m.test(claude) && !claude.includes(ROUTE)) {
     failures.push("CLAUDE.md must import or route through AGENTS.md and SIMPLE.md");
   }
 
@@ -55,12 +57,12 @@ export function init(root = process.cwd()) {
   if (legacyRoute) {
     agents = agents.replace(legacyRoute, ROUTE);
     writeFileSync(agentsPath, agents);
-  } else if (!agents.includes("$simple") || !agents.includes("SIMPLE.md")) {
+  } else if (!agents.includes(ROUTE)) {
     writeFileSync(agentsPath, `${agents.trimEnd()}${agents.trim() ? "\n\n" : ""}## Simple\n\n${ROUTE}\n`);
   }
 
   const claude = existsSync(claudePath) ? readFileSync(claudePath, "utf8") : "";
-  if (!claude.includes("AGENTS.md") && (!claude.includes("$simple") || !claude.includes("SIMPLE.md"))) {
+  if (!/^@AGENTS\.md\s*$/m.test(claude) && !claude.includes(ROUTE)) {
     writeFileSync(claudePath, `${claude.trimEnd()}${claude.trim() ? "\n\n" : ""}@AGENTS.md\n`);
   }
 
@@ -75,6 +77,28 @@ function read(path, failures) {
   } catch {
     failures.push(`missing ${path}`);
     return "";
+  }
+}
+
+function repositoryRoot(start) {
+  let directory = start;
+  while (true) {
+    if (existsSync(resolve(directory, ".git"))) return directory;
+    const parent = dirname(directory);
+    if (parent === directory) return start;
+    directory = parent;
+  }
+}
+
+function nearestProfile(start, repository) {
+  let directory = start;
+  while (true) {
+    const candidate = resolve(directory, "SIMPLE.md");
+    if (existsSync(candidate)) return candidate;
+    if (directory === repository) return candidate;
+    const parent = dirname(directory);
+    if (parent === directory) return resolve(repository, "SIMPLE.md");
+    directory = parent;
   }
 }
 

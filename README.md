@@ -92,6 +92,8 @@ The [profile guide](skills/simple/references/profile-template.md) explains how t
 complete it. The nearest profile applies when a repository has nested profiles.
 Hook injection does not merge root and nested profiles. Each nested profile must
 contain every root fact that still applies.
+Pass a nested directory to `simple check` to validate its nearest profile through the
+repository's root routing files. A root check does not crawl every nested directory.
 
 ## Commands
 
@@ -136,6 +138,9 @@ Simple does not turn each writing task into an architecture audit.
 
 ## Install
 
+Choose one route for normal use. Agent Skills installs the skill. A host plugin also
+installs commands and hooks.
+
 The Agent Skills command installs Simple for supported coding agents:
 
 ```sh
@@ -164,14 +169,24 @@ claude plugin marketplace add timc0y/simple
 claude plugin install simple@timc0y-simple
 ```
 
+Update the plugin snapshots after a release:
+
+```sh
+codex plugin marketplace upgrade timc0y-simple
+claude plugin update simple@timc0y-simple -y
+```
+
+Restart Claude Code after its plugin update.
+
 Use this command for local development:
 
 ```sh
 npm run install:local
 ```
 
-The local command links one skill source into Codex, Claude Code, OpenCode, and
-Gemini. It does not make host-specific copies.
+The local command links one skill source into the shared agent skill directory,
+Codex, Claude Code, OpenCode, and Gemini. It does not make host-specific copies.
+It does not update cached plugin commands or hooks.
 
 ## Activation and hooks
 

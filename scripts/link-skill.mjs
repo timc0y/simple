@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { existsSync, lstatSync, mkdirSync, readlinkSync, rmSync, symlinkSync } from "node:fs";
+import { lstatSync, mkdirSync, readlinkSync, rmSync, symlinkSync } from "node:fs";
 import { homedir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -10,6 +10,7 @@ const target = join(root, "skills/simple");
 
 export function skillLinks(home = homedir()) {
   return [
+    join(home, ".agents/skills/simple"),
     join(home, ".claude/skills/simple"),
     join(home, ".codex/skills/simple"),
     join(home, ".config/opencode/skills/simple"),
@@ -20,14 +21,15 @@ export function skillLinks(home = homedir()) {
 export function install(home = homedir()) {
   for (const link of skillLinks(home)) {
     mkdirSync(dirname(link), { recursive: true });
-    let current;
+    let entry;
     try {
-      current = lstatSync(link).isSymbolicLink() ? resolve(dirname(link), readlinkSync(link)) : null;
+      entry = lstatSync(link);
     } catch {
-      current = undefined;
+      entry = null;
     }
-    if (current === target) continue;
-    if (current === null || existsSync(link) || current !== undefined) rmSync(link, { recursive: true, force: true });
+    if (entry?.isSymbolicLink() && resolve(dirname(link), readlinkSync(link)) === target) continue;
+    if (entry && !entry.isSymbolicLink()) throw new Error(`refusing to replace non-symlink ${link}`);
+    if (entry) rmSync(link);
     symlinkSync(target, link);
     process.stdout.write(`linked ${link} -> ${target}\n`);
   }

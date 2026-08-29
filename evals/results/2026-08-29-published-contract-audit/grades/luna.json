@@ -1,0 +1,76 @@
+{
+  "selfTests": [
+    {
+      "case": "preserve-published-command",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "replace-internal-helper",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "65cbe2f59bc3",
+      "passed": true,
+      "reason": "Preserves the published command, adds a bounded alias, and verifies both paths."
+    },
+    {
+      "id": "b3963ee4e915",
+      "passed": true,
+      "reason": "Keeps the published alias and requires identical behavior checks for both names."
+    },
+    {
+      "id": "c47c5ef611e1",
+      "passed": true,
+      "reason": "Rejects removal, preserves the dispatcher alias, defines removal conditions, and proves both paths."
+    },
+    {
+      "id": "d10893b57d8d",
+      "passed": true,
+      "reason": "Retains the published command through the existing dispatcher and verifies equivalent execution."
+    },
+    {
+      "id": "f2a78a11a6d5",
+      "passed": true,
+      "reason": "Preserves a deprecated alias, documents the preferred name, and specifies deprecation-based removal."
+    },
+    {
+      "id": "fcf1eb08a9d6",
+      "passed": true,
+      "reason": "Maintains the published contract with one dispatcher alias and verifies both command paths."
+    },
+    {
+      "id": "1441b3ecafb7",
+      "passed": true,
+      "reason": "Rejects the alias, directly renames the helper and three callers, cites repository evidence, and specifies tests and a post-rename search."
+    },
+    {
+      "id": "5c7f3c80230a",
+      "passed": true,
+      "reason": "Direct rename with no alias, evidence-based compatibility reasoning, and proportionate search, caller, build, type-check, and test checks."
+    },
+    {
+      "id": "7131c4cff706",
+      "passed": true,
+      "reason": "Rejects speculative compatibility, directly updates the helper and callers, and includes repository search, tests, type/lint checks, and diff review."
+    },
+    {
+      "id": "87d55112ce0d",
+      "passed": false,
+      "reason": "Correctly rejects the alias and proposes the direct rename, but does not include a proportionate verification check."
+    },
+    {
+      "id": "89a0351dd3f5",
+      "passed": true,
+      "reason": "Direct rename without compatibility support, grounded in repository evidence, with post-rename search and test-suite verification."
+    },
+    {
+      "id": "8d6794611ee0",
+      "passed": true,
+      "reason": "Rejects speculative aliasing, directly renames the helper and callers, and includes search, caller confirmation, and relevant checks."
+    }
+  ]
+}

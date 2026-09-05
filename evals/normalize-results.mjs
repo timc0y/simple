@@ -57,6 +57,9 @@ export function validateResults(records, root = null) {
 export function normalizeResults(recordDirectory, { skillCommit, harness, reasoning = "default", recordedAt = new Date().toISOString() }) {
   const mapping = readTsv(join(recordDirectory, "mapping.tsv"), ["id", "run", "case", "model", "condition"]);
   const results = readTsv(join(recordDirectory, "results.tsv"));
+  const modelMetadata = existsSync(join(recordDirectory, "models.tsv"))
+    ? new Map(readTsv(join(recordDirectory, "models.tsv")).map((model) => [model.key, model]))
+    : new Map();
   const ids = new Map(mapping.map((row) => [key(row), row.id]));
   const groups = new Map();
 
@@ -76,13 +79,18 @@ export function normalizeResults(recordDirectory, { skillCommit, harness, reason
 
   return [...groups.entries()].map(([groupKey, tasks]) => {
     const [model, condition] = groupKey.split("\t");
+    const metadata = modelMetadata.get(model);
     const usesSimple = /simple|candidate|canonical|current/.test(condition);
     return {
       schemaVersion: 1,
       recordedAt,
       skillCommit: usesSimple ? skillCommit : "none",
-      model: { name: model, revision: model, reasoning },
-      harness,
+      model: {
+        name: metadata?.name || model,
+        revision: metadata?.revision || model,
+        reasoning: metadata?.reasoning || reasoning
+      },
+      harness: metadata?.harness || harness,
       condition,
       adapter: condition.includes("candidate") ? condition : null,
       tasks

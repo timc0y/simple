@@ -1,0 +1,121 @@
+Implemented ticket labels through `src/label.mjs`:
+
+- `labelTicket(17)` now returns `ER-17`.
+- Updated current state and cleared completed work.
+- `npm test` passes: 1/1 tests.
+
+
+=== FINAL WORKTREE STATUS ===
+ M CURRENT_STATE.md
+ M docs/plans/README.md
+ M src/label.mjs
+
+=== COMMITS AFTER BASELINE ===
+
+=== FINAL DIFF FROM BASELINE ===
+diff --git a/CURRENT_STATE.md b/CURRENT_STATE.md
+index b427933..134bf7e 100644
+--- a/CURRENT_STATE.md
++++ b/CURRENT_STATE.md
+@@ -1,3 +1,3 @@
+ # Current state
+ 
+-Ticket labels currently omit the `ER-` product prefix.
++Ticket labels include the `ER-` product prefix.
+diff --git a/docs/plans/README.md b/docs/plans/README.md
+index 1559fbf..f1ddafe 100644
+--- a/docs/plans/README.md
++++ b/docs/plans/README.md
+@@ -1,3 +1,3 @@
+ # Work
+ 
+-1. Make ticket labels include the `ER-` product prefix.
++No unfinished work.
+diff --git a/src/label.mjs b/src/label.mjs
+index b5c6159..88bbd9d 100644
+--- a/src/label.mjs
++++ b/src/label.mjs
+@@ -1,3 +1,3 @@
+ export function labelTicket(id) {
+-  return String(id);
++  return `ER-${id}`;
+ }
+
+=== UNTRACKED FILES ===
+
+=== FIRST REPOSITORY FILE REFERENCES IN EVENT TRACE ===
+CURRENT_STATE.md
+docs/plans/README.md
+SIMPLE.md
+CURRENT_STATE.md
+docs/plans/README.md
+SIMPLE.md
+src/label.mjs
+test/label.test.mjs
+CURRENT_STATE.md
+docs/plans/README.md
+SIMPLE.md
+SIMPLE.md
+SIMPLE.md
+SIMPLE.md
+scripts/simple.mjs
+scripts/simple.mjs
+src/label.mjs
+test/label.test.mjs
+src/label.mjs
+test/label.test.mjs
+scripts/simple.mjs
+AGENTS.md
+SIMPLE.md
+scripts/simple.mjs
+AGENTS.md
+AGENTS.md
+SIMPLE.md
+AGENTS.md
+AGENTS.md
+SIMPLE.md
+AGENTS.md
+CURRENT_STATE.md
+SIMPLE.md
+docs/plans/README.md
+src/label.mjs
+test/label.test.mjs
+src/label.mjs
+AGENTS.md
+docs/plans/README.md
+AGENTS.md
+docs/plans/README.md
+test/label.test.mjs
+test/label.test.mjs
+docs/plans/README.md
+CURRENT_STATE.md
+docs/plans/README.md
+CURRENT_STATE.md
+CURRENT_STATE.md
+docs/plans/README.md
+src/label.mjs
+CURRENT_STATE.md
+docs/plans/README.md
+src/label.mjs
+src/label.mjs
+CURRENT_STATE.md
+docs/plans/README.md
+src/label.mjs
+CURRENT_STATE.md
+docs/plans/README.md
+CURRENT_STATE.md
+CURRENT_STATE.md
+CURRENT_STATE.md
+CURRENT_STATE.md
+docs/plans/README.md
+docs/plans/README.md
+docs/plans/README.md
+docs/plans/README.md
+src/label.mjs
+src/label.mjs
+src/label.mjs
+src/label.mjs
+CURRENT_STATE.md
+docs/plans/README.md
+src/label.mjs
+src/label.mjs

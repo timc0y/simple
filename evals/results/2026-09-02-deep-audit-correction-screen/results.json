@@ -1,0 +1,146 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-02T22:40:45.122Z",
+    "skillCommit": "ec76760ef86f9ba2ceb3ddb9d8d8d8ee5563fefd",
+    "model": {
+      "name": "Claude Opus 5",
+      "revision": "claude-opus-5",
+      "reasoning": "medium"
+    },
+    "harness": "Claude Code 2.1.258 safe-mode restricted workspace",
+    "condition": "simple",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "deep-audit-guide-first__r1",
+        "passed": false,
+        "evidence": "raw/140fad020418.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-02T22:40:45.122Z",
+    "skillCommit": "ec76760ef86f9ba2ceb3ddb9d8d8d8ee5563fefd",
+    "model": {
+      "name": "Claude Opus 5",
+      "revision": "claude-opus-5",
+      "reasoning": "medium"
+    },
+    "harness": "Claude Code 2.1.258 safe-mode restricted workspace",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "deep-audit-guide-first__r1",
+        "passed": true,
+        "evidence": "raw/6511a465f0f7.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-02T22:40:45.122Z",
+    "skillCommit": "ec76760ef86f9ba2ceb3ddb9d8d8d8ee5563fefd",
+    "model": {
+      "name": "Claude Sonnet 5",
+      "revision": "claude-sonnet-5",
+      "reasoning": "medium"
+    },
+    "harness": "Claude Code 2.1.258 safe-mode restricted workspace",
+    "condition": "simple",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "deep-audit-guide-first__r1",
+        "passed": false,
+        "evidence": "raw/43350a0bbcac.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-02T22:40:45.122Z",
+    "skillCommit": "ec76760ef86f9ba2ceb3ddb9d8d8d8ee5563fefd",
+    "model": {
+      "name": "Claude Sonnet 5",
+      "revision": "claude-sonnet-5",
+      "reasoning": "medium"
+    },
+    "harness": "Claude Code 2.1.258 safe-mode restricted workspace",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "deep-audit-guide-first__r1",
+        "passed": false,
+        "evidence": "raw/b9683cb112c8.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-02T22:40:45.122Z",
+    "skillCommit": "ec76760ef86f9ba2ceb3ddb9d8d8d8ee5563fefd",
+    "model": {
+      "name": "Codex Luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "Codex 0.152.1 isolated sandbox workspace",
+    "condition": "simple",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "deep-audit-guide-first__r1",
+        "passed": false,
+        "evidence": "raw/013830a5dafe.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": false
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-02T22:40:45.122Z",
+    "skillCommit": "ec76760ef86f9ba2ceb3ddb9d8d8d8ee5563fefd",
+    "model": {
+      "name": "Codex Luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "Codex 0.152.1 isolated sandbox workspace",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "deep-audit-guide-first__r1",
+        "passed": false,
+        "evidence": "raw/b3cf50923d18.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      }
+    ]
+  }
+]

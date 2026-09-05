@@ -1,0 +1,16 @@
+816fecd8c52b	1	settled-plan	gpt-5.6-luna	simple
+cd14b3e39c93	1	settled-plan	gpt-5.6-luna	candidate
+cf1f6ea80cfc	1	settled-plan	gpt-5.6-terra	simple
+9a81e0c44657	1	settled-plan	gpt-5.6-terra	candidate
+9f2df2e77d24	1	instruction-review	gpt-5.6-luna	simple
+8b1deb4ea4cf	1	instruction-review	gpt-5.6-luna	candidate
+ff864eb75ca4	1	instruction-review	gpt-5.6-terra	simple
+027b956e5a6c	1	instruction-review	gpt-5.6-terra	candidate
+ca4a8827288c	1	proof-state	gpt-5.6-luna	simple
+23413b1ca2b5	1	proof-state	gpt-5.6-luna	candidate
+87fb6f66f2e6	1	proof-state	gpt-5.6-terra	simple
+f1d7cb3c3a2f	1	proof-state	gpt-5.6-terra	candidate
+fa78bd87ec1c	1	handoff-authority	gpt-5.6-luna	simple
+a084efd84ae0	1	handoff-authority	gpt-5.6-luna	candidate
+4f8c8921b988	1	handoff-authority	gpt-5.6-terra	simple
+aaccaa0b49b8	1	handoff-authority	gpt-5.6-terra	candidate

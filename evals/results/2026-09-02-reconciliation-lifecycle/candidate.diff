@@ -1,0 +1,16 @@
+diff --git a/SKILL.md b/SKILL.md
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -120,5 +120,12 @@
+ - Any task that creates, reviews, or changes `SIMPLE.md`: always read
+   `references/profile-template.md` before you write. Run `scripts/simple.mjs init` or
+   `scripts/simple.mjs check` when the task needs it.
+ 
++Before handing off a task that changed repository files, update each existing truth
++owner made false by the change. An ordered queue contains only unfinished work, so
++remove completed instructions instead of marking them done. Delete a temporary plan,
++review, audit, status note, or handoff after its work or evidence has moved to the
++durable owner; Git preserves its history. Leave unrelated documents alone. Never delete
++a decision, contract, retained evidence, recovery path, or unknown obligation.
++
+ Keep the implementation, tests, comments, documentation, and handoff consistent.

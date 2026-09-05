@@ -1,0 +1,56 @@
+{
+  "selfTests": [
+    {
+      "case": "instruction-review",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "proof-state",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "027b956e5a6c",
+      "passed": true,
+      "reason": "Verifies the existing warning-plus-explicit-confirmation condition decides all five cases, rejects the added paragraphs, and separates the finding from the correction without identifying a gap."
+    },
+    {
+      "id": "8b1deb4ea4cf",
+      "passed": true,
+      "reason": "Explains why each listed case fails the existing authorization condition, rejects the five paragraphs as unnecessary, and preserves the governing rule."
+    },
+    {
+      "id": "9f2df2e77d24",
+      "passed": true,
+      "reason": "States that the existing authority boundary governs every case, rejects the exception paths, distinguishes finding from correction, and identifies no ownership or governing-condition gap."
+    },
+    {
+      "id": "ff864eb75ca4",
+      "passed": true,
+      "reason": "Applies the two existing publication conditions to all five cases, rejects the proposed additions, and keeps the current rule without claiming a gap."
+    },
+    {
+      "id": "23413b1ca2b5",
+      "passed": true,
+      "reason": "Uses stable idempotency keys, confirms or recovers effects, durably records before cursor advance, and proves crash recovery through a stateful fake and real worker boundaries."
+    },
+    {
+      "id": "87fb6f66f2e6",
+      "passed": true,
+      "reason": "Durably records and atomically advances only after confirmed provider effect, with stateful-fake restart/crash tests and explicit rejection of static 200 proof."
+    },
+    {
+      "id": "ca4a8827288c",
+      "passed": false,
+      "reason": "The design is safe, but the proposed proof does not require exercising crashes through the real worker boundary or a stateful API fake; failure injection alone does not establish recovery behavior."
+    },
+    {
+      "id": "f1d7cb3c3a2f",
+      "passed": true,
+      "reason": "Uses stable idempotency and lookup recovery, atomically durably records receipt evidence before cursor advance, and specifies stateful-fake or test-environment crash/restart proof."
+    }
+  ]
+}

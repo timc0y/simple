@@ -52,18 +52,25 @@ the Raptor model and other engineering precedents.
 
 ## Add repository context
 
-Run `init` from this repository:
+The deterministic script only scaffolds missing files and upgrades recognized routes:
 
 ```sh
 node skills/simple/scripts/simple.mjs init /path/to/repository
 ```
 
-The command creates `AGENTS.md`, `CLAUDE.md`, and `SIMPLE.md`. The new profile stays
-incomplete because a script cannot infer users, production data, or promises.
+It creates `AGENTS.md`, `CLAUDE.md`, and `SIMPLE.md` when needed. It refuses to append
+beside an unrecognized existing `## Simple` section. The new profile stays incomplete
+because a script cannot infer users, production data, or promises.
+
+For the complete agent-led setup, say `Use simple init. Set this repository up from
+observed truth.` The agent inventories the repository and records its read order,
+truth owners, work route, verification, authority, and swarm boundaries.
 
 Start with repository evidence. Ask the owner only for facts that the repository
-cannot establish. Keep each unknown explicit until the owner confirms or corrects it.
-Then remove the incomplete marker and do a check of the profile:
+cannot establish and that change the present setup. An explicit unknown is a complete
+current fact when the repository has no answer; route it to its existing owner or work
+queue. Remove the incomplete marker once every prompt is replaced, then check the
+profile:
 
 ```sh
 node skills/simple/scripts/simple.mjs check /path/to/repository
@@ -101,9 +108,11 @@ Commands are entry points into one method. They are not a mandatory sequence.
 
 | Command | Purpose | Default authority |
 | --- | --- | --- |
-| `simple init` | Create the route and repository profile | Profile and route files |
+| `simple init` | Scaffold the route and profile, then establish the repository contract | Profile and route files |
 | `simple audit` | Find ownership seams and unpaid complexity | Read only |
 | `simple board` | Challenge a decision with evidence-backed views | Read only |
+| `simple work` | Implement one named outcome and reconcile its owners | Local repository edits |
+| `simple reconcile` | Reset repository truth, routing, and temporary documentation | Local guidance and documentation |
 | `simple plan` | Plan the smallest truthful change | Read only |
 | `simple review` | Review a design, document, plan, or diff | Read only |
 | `simple write` | Write or revise plain developer prose | Requested text |
@@ -117,6 +126,33 @@ through the shared skill. Their full contracts are in the
 `simple board` suggests subagents when the host supports them and another view could
 change a consequential decision. It does not require delegation. Reviewers stay
 read-only, and the lead resolves disagreement through evidence rather than vote.
+
+`simple audit` is scoped by default. Ask for `simple audit deep` or a multi-lens audit
+when the cost is justified. The deep workflow freezes an initial product model,
+separates local and live truth, traces product and release systems, admits only novel
+findings, and reconciles independent decision lenses. It does not mutate the
+repository or require a quota of findings or deletions.
+
+Use these short workflow messages instead of restating the method:
+
+```text
+Use simple init. Set this repository up from observed truth.
+Use simple work. Finish this gate: <outcome>.
+Use simple reconcile. Reset this repository's truth and documentation.
+Use simple audit with a swarm. Investigation only.
+Ship this: <name the commit, push, deploy, or release actions authorised>.
+```
+
+`work` continues through local implementation, independent proof, and final-diff
+reconciliation. `reconcile` inventories owners before moving obligations and deleting
+fulfilled temporary context. Audit and board already own bounded independent review.
+A release request must still name the intended external transition; `work`, `finish`,
+`reset`, and `reconcile` never imply commit, push, deploy, or account authority.
+
+The [repository-work reference](skills/simple/references/repository-work.md) defines
+the shared repository contract, swarm ownership, and rollout method. Each repository's
+`AGENTS.md` names its actual truth owners, work route, checks, local-only state, and
+release boundaries. Do not copy the shared Simple method into every repository.
 
 Operator emulation applies a documented decision method. It does not imitate a person
 or invent user evidence. See the
@@ -191,7 +227,11 @@ It does not update cached plugin commands or hooks.
 ## Activation and hooks
 
 The Codex and Claude Code plugin packages use the same lifecycle hooks. The nearest
-profile enters context at the start of a session and a subagent.
+profile enters context at the start of a session and a subagent. After a supported
+edit-tool event, a stop hook gives the lead agent one final pass to update existing
+truth owners, remove completed instructions and fulfilled temporary context, and
+preserve durable obligations. Read-only turns do not trigger it, the marker is scoped
+to that repository profile, and the continuation runs at most once.
 
 A write hook can add a short review note after a Markdown or comment edit. The note
 arrives after the tool result. It can guide the next correction, but it cannot change

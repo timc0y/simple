@@ -28,6 +28,12 @@ grader contract can support the stated decision. It does not mean statistical pr
 | [Google writing ideas](2026-08-29-google-writing-ideas/README.md) | Inconclusive negative | Contrastive examples did not improve the screen; the actionable-review candidate's apparent gain was a grader false negative. |
 | [Code and text candidates](2026-08-29-code-text-candidates/README.md) | Inconclusive negative | Current beat the pure-decision candidate; the review-resolution rubric rejected valid answers. |
 | [Published contract audit](2026-08-29-published-contract-audit/README.md) | Valid negative | Current and candidate Simple passed 4 of 4; the added compatibility text tied and did not ship. |
+| [Every skills screen](2026-08-31-every-skills-screen/README.md) | Invalid | Stale sandbox paths did not establish isolation; do not use the apparent 6-of-8 to 8-of-8 gain. |
+| [Every skills confirmation](2026-08-31-every-skills-confirmation/README.md) | Valid negative | With corrected isolation, current and candidate Simple both passed 4 of 4, so no runtime wording shipped. |
+| [Reconciliation lifecycle](2026-09-02-reconciliation-lifecycle/README.md) | Valid positive | The concrete completion rule improved strict passes from 2 of 4 to 3 of 4 and did not trigger unrelated cleanup; the generic candidate regressed to 1 of 4. |
+| [Repository workflows screen](2026-09-02-repository-workflows-screen/README.md) | Valid screen | The candidate passed 5 of 12, current Simple 2 of 12, and no skill 3 of 12; deep audit remained 0 of 3. |
+| [Repository workflows confirmation](2026-09-02-repository-workflows-confirmation/README.md) | Valid mixed | The candidate confirmed a 5-of-12 to 3-of-12 gain with no paired regression, but failed the release gate because no deep audit passed strictly. |
+| [Deep-audit correction screen](2026-09-02-deep-audit-correction-screen/README.md) | Valid negative | The correction improved deep audit from 0 of 3 to 1 of 3 and missed its gate; Tim retained the exact candidate provisionally on 3 September. |
 
 Runs from 27 August with a condition map and TSV result now also contain normalized
 `results.json` records. Earlier files keep their original format unless the source data

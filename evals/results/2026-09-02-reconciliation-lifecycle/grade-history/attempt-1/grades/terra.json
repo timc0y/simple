@@ -1,0 +1,56 @@
+{
+  "selfTests": [
+    {
+      "case": "completed-work",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "unrelated-context",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "1dd79cf22037",
+      "passed": false,
+      "reason": "Leaves the resolved dated review unchanged and only marks the completed queue item complete instead of removing it."
+    },
+    {
+      "id": "5deb363e25bd",
+      "passed": false,
+      "reason": "Leaves the resolved route review in place, despite it being stale context that must be deleted."
+    },
+    {
+      "id": "5e06f187f153",
+      "passed": false,
+      "reason": "Leaves the resolved dated route review unchanged; the criteria require deleting it."
+    },
+    {
+      "id": "d1f675a8a31d",
+      "passed": true,
+      "reason": "Updates current state to /publish, removes the completed queue item, deletes the fulfilled review, preserves the accepted decision, adds no document, and reports the final passing test."
+    },
+    {
+      "id": "8922381405a8",
+      "passed": false,
+      "reason": "It proposes a separate documentation audit, adding a follow-up task beyond the typo correction and focused test."
+    },
+    {
+      "id": "b5566809af4b",
+      "passed": true,
+      "reason": "It limits the handoff to the typo correction and passing focused test, leaving old documents alone without added cleanup work."
+    },
+    {
+      "id": "d800211f8c1b",
+      "passed": true,
+      "reason": "It reports only the typo correction and focused test and leaves dated reviews and plans untouched without proposing further cleanup."
+    },
+    {
+      "id": "de2534872027",
+      "passed": false,
+      "reason": "It says documentation cleanup should be handled separately after review, adding cleanup ceremony and a follow-up."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+run	case	model	condition	luna	terra	strict
+1	deep-audit-guide-first	claude-opus-5	simple	false	false	false
+1	deep-audit-guide-first	claude-opus-5	candidate	true	true	true
+1	deep-audit-guide-first	claude-sonnet-5	simple	false	false	false
+1	deep-audit-guide-first	claude-sonnet-5	candidate	false	false	false
+1	deep-audit-guide-first	gpt-5.6-luna	simple	true	false	false
+1	deep-audit-guide-first	gpt-5.6-luna	candidate	false	false	false

@@ -1,0 +1,17 @@
+run	case	model	condition	luna	terra	strict
+1	settled-plan	gpt-5.6-luna	simple	true	true	true
+1	settled-plan	gpt-5.6-luna	candidate	true	true	true
+1	settled-plan	gpt-5.6-terra	simple	true	true	true
+1	settled-plan	gpt-5.6-terra	candidate	true	true	true
+1	instruction-review	gpt-5.6-luna	simple	true	false	false
+1	instruction-review	gpt-5.6-luna	candidate	true	true	true
+1	instruction-review	gpt-5.6-terra	simple	true	true	true
+1	instruction-review	gpt-5.6-terra	candidate	true	true	true
+1	proof-state	gpt-5.6-luna	simple	false	false	false
+1	proof-state	gpt-5.6-luna	candidate	true	true	true
+1	proof-state	gpt-5.6-terra	simple	true	true	true
+1	proof-state	gpt-5.6-terra	candidate	true	true	true
+1	handoff-authority	gpt-5.6-luna	simple	true	true	true
+1	handoff-authority	gpt-5.6-luna	candidate	true	true	true
+1	handoff-authority	gpt-5.6-terra	simple	true	true	true
+1	handoff-authority	gpt-5.6-terra	candidate	true	true	true

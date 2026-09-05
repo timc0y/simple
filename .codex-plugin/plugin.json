@@ -37,7 +37,10 @@
       "Use Simple to write or revise this technical plan or documentation in plain Markdown",
       "Use Simple to challenge this decision with a documented operator doctrine (SpaceX five-step, Theo/T3, or minimal implementation)",
       "Run a read-only Simple audit of this repository, including whether its lint, tests, and code-health checks match observed risks",
+      "Run a deep multi-lens Simple audit across repository, product, release, deployed, account, device, and distribution truth",
       "Use a Simple board for an evidence-backed second opinion on this consequential decision",
+      "Use $simple work to finish this named repository gate end to end within local authority",
+      "Use $simple reconcile to reset this repository's truth owners and fulfilled temporary documentation",
       "Use Simple to plan this change without implementing it",
       "Review this design, document, or diff with Simple"
     ]

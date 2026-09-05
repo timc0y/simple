@@ -1,0 +1,56 @@
+{
+  "selfTests": [
+    {
+      "case": "instruction-review",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "proof-state",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "027b956e5a6c",
+      "passed": true,
+      "reason": "Verifies the existing post-warning explicit-confirmation condition is sufficient, rejects all five edge cases, and distinguishes the alleged problem from the unnecessary remedy without identifying a gap."
+    },
+    {
+      "id": "8b1deb4ea4cf",
+      "passed": true,
+      "reason": "Confirms the existing authorization sequence decides all five cases, rejects the proposed extra paragraphs, and presents clarification only as optional rather than necessary."
+    },
+    {
+      "id": "9f2df2e77d24",
+      "passed": true,
+      "reason": "States that the existing authority boundary covers all five cases, requires fail-closed handling, and rejects adding redundant exception paragraphs."
+    },
+    {
+      "id": "ff864eb75ca4",
+      "passed": false,
+      "reason": "Although it rejects the paragraphs, it rewrites the governing condition by suggesting a prior user instruction may suffice if explicit, contrary to the required post-warning explicit confirmation."
+    },
+    {
+      "id": "23413b1ca2b5",
+      "passed": true,
+      "reason": "Uses stable idempotency keys, confirms or recovers effects, durably records receipts before cursor advancement, and specifies stateful crash/restart testing through the worker boundary."
+    },
+    {
+      "id": "87fb6f66f2e6",
+      "passed": true,
+      "reason": "Defines durable receipt state, idempotent retry and lookup, atomic receipt recording with cursor advancement, and stateful provider-fake restart tests."
+    },
+    {
+      "id": "ca4a8827288c",
+      "passed": true,
+      "reason": "Requires stable keys, effect recovery, durable recording before advancement, and failure-injection testing rather than a static 200 mock."
+    },
+    {
+      "id": "f1d7cb3c3a2f",
+      "passed": true,
+      "reason": "Uses stable keys, lookup-based recovery, durable atomic receipt/cursor state, and stateful fake crash testing across worker transitions."
+    }
+  ]
+}

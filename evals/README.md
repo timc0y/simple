@@ -34,6 +34,9 @@ preferred implementation when more than one design satisfies the task.
 
 Store each reviewed run in `evals/results/<date>-<name>/`. Keep the exact runner, raw
 answers, grader records, condition map, and a short `README.md` with the decision.
+Keep private tool output and machine traces in ignored `.local/` files. For a public
+record, replace this content with an explicit redaction marker. Keep the original only
+in `.local/`.
 
 Active TSV runners must also call `evals/normalize-results.mjs`. This command writes a
 `results.json` file that matches `evals/results.schema.json`. The normalized record
@@ -57,6 +60,17 @@ Keep each earlier grade before you grade an answer again. If the same rubric giv
 different verdict, mark the grader as unstable. Do not use that verdict change as
 evidence of a skill gain. Use a corrected contract, an independent manual review, or an
 inconclusive result. Keep the contradictory evidence.
+
+## Retune only above the noise floor
+
+When claiming that a corpus or model adapter improves behaviour, first run two
+byte-identical copies through the same harness to expose runner and grader variance.
+Register the metric, worthwhile effect, run count, stopping rule, and required workflow
+path before changing the corpus. A candidate must clear that observed noise; a tie or
+underpowered point estimate is inconclusive, not improvement.
+
+Keep workflow adherence separate from task outcome, and record which phases the probe
+actually entered. A clean result cannot support a claim about an unexercised phase.
 
 Run local Codex processes sequentially. Record host setup warnings. Reject a run only
 when a warning changes condition access, inputs, outputs, or another equal condition.

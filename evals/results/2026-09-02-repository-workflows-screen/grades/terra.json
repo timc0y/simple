@@ -1,0 +1,206 @@
+{
+  "selfTests": [
+    {
+      "case": "agent-led-init-contract",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "deep-audit-guide-first",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "reconcile-unknown-obligation",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "work-local-finish-boundary",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "072e15b8baf4",
+      "passed": false,
+      "reason": "SIMPLE.md retains an incomplete marker, and AGENTS.md is only generic Simple prose without the required repository-specific read order, owners, verification, authority, or swarm ownership."
+    },
+    {
+      "id": "2d9b31fedd60",
+      "passed": false,
+      "reason": "SIMPLE.md retains an incomplete marker, which is forbidden; AGENTS.md also includes disallowed generic Simple-method prose."
+    },
+    {
+      "id": "5518fbe633f1",
+      "passed": true,
+      "reason": "Only the three permitted files changed; repository-specific routing, owners, npm test, authority, and one-lead/one-writer rules are present; SIMPLE.md records observed facts and unknowns without an incomplete marker; npm test passed."
+    },
+    {
+      "id": "59e5fdaadf03",
+      "passed": false,
+      "reason": "AGENTS.md contains only the generic Simple router and lacks the required repository-specific read order, README/WORK ownership, npm test routing, authority, and swarm ownership."
+    },
+    {
+      "id": "8f6b69d4c400",
+      "passed": false,
+      "reason": "SIMPLE.md retains the incomplete marker and AGENTS.md lacks the required repository-specific operating contract."
+    },
+    {
+      "id": "a1c5efbf1d06",
+      "passed": false,
+      "reason": "AGENTS.md does not establish the required one-lead/one-writer swarm ownership, and SIMPLE.md presents absence of external callers and public promises as observed facts beyond repository evidence."
+    },
+    {
+      "id": "b8c13da42b4a",
+      "passed": false,
+      "reason": "It changed WORK.md, which is outside the permitted three files, and did not create the required AGENTS.md and CLAUDE.md contract files."
+    },
+    {
+      "id": "f1aa2beb51d0",
+      "passed": false,
+      "reason": "SIMPLE.md asserts that failure affects only a local test run, presenting unknown scale and failure consequences as observed fact."
+    },
+    {
+      "id": "f2a59e96d738",
+      "passed": false,
+      "reason": "Only SIMPLE.md was changed; the required AGENTS.md and CLAUDE.md repository operating contract was not created."
+    },
+    {
+      "id": "0afb3277d9d6",
+      "passed": false,
+      "reason": "Account/infrastructure state is labelled not_found rather than unknown, and the evidence trace shows source inspection before the required guide-first sequence."
+    },
+    {
+      "id": "2553163afe2c",
+      "passed": false,
+      "reason": "The frozen take is undated and not at the start, the seven required lenses are not separately applied, and it lacks the required ending belief sentence and full finding fields."
+    },
+    {
+      "id": "32dfe6448aa9",
+      "passed": false,
+      "reason": "The frozen take is undated; it does not provide the required separate seven-lens treatment, complete material-finding fields, deletion analysis, or required final belief sentence."
+    },
+    {
+      "id": "3dda013e2a13",
+      "passed": false,
+      "reason": "Despite strong coverage, it treats a falsified dated review as safely deletable, although it preserves evidence needed for falsification; the event trace also does not maintain guide-first inspection."
+    },
+    {
+      "id": "727c7aed4d7a",
+      "passed": false,
+      "reason": "The frozen take is undated, and the answer lacks the required seven-lens analysis, checked-without-fault section, deletion analysis, and required final belief sentence."
+    },
+    {
+      "id": "7f6007fe3034",
+      "passed": false,
+      "reason": "The frozen take is undated and too incomplete; it lacks separately applied seven lenses, finding falsification/smallest-proof/action-class coverage, deletion analysis, and the required ending sentence."
+    },
+    {
+      "id": "95c21da59ecd",
+      "passed": false,
+      "reason": "The frozen take is undated, it promotes the known restart-idempotency question to a novel finding, and it lacks the required ending belief sentence and safe/must-stay deletion analysis."
+    },
+    {
+      "id": "e389ca28caf5",
+      "passed": false,
+      "reason": "It incorrectly states that the code implements the 24-hour commitment despite no expiry executor, and it lacks a dated fast take, seven-lens treatment, deletion analysis, and the required ending sentence."
+    },
+    {
+      "id": "e4487580e588",
+      "passed": false,
+      "reason": "The release-identity weakness is not presented as the required second complete finding, and the evidence trace does not sustain the required guide-first examination order."
+    },
+    {
+      "id": "1109fbb13624",
+      "passed": false,
+      "reason": "The handoff reports npm test passing but does not distinguish structural proof from unperformed hardware or deployed-state proof."
+    },
+    {
+      "id": "4275e7581710",
+      "passed": false,
+      "reason": "It identifies npm test as a structural check, but does not clearly state that hardware or deployed proof was not performed."
+    },
+    {
+      "id": "9bb58fbcf43a",
+      "passed": false,
+      "reason": "The handoff does not clearly distinguish the passing structural test from unperformed hardware or deployed-state proof."
+    },
+    {
+      "id": "9e56c3d2c068",
+      "passed": false,
+      "reason": "The handoff reports tests and unchanged external state but does not distinguish structural proof from hardware or deployed proof."
+    },
+    {
+      "id": "b03b08ad7159",
+      "passed": false,
+      "reason": "It calls npm test a documentation check but does not explicitly distinguish its structural proof from unperformed hardware or deployed-state proof."
+    },
+    {
+      "id": "b0ec581aa4f8",
+      "passed": false,
+      "reason": "The handoff reports npm test passing without distinguishing structural proof from hardware or deployed proof."
+    },
+    {
+      "id": "da78206e2f80",
+      "passed": false,
+      "reason": "It created unrelated Simple scaffold/routing artifacts (modified AGENTS.md and added CLAUDE.md), violating the prohibition on creating freshness machinery."
+    },
+    {
+      "id": "e03f03691ea2",
+      "passed": true,
+      "reason": "README directly links the retained release runbook; the old pointer alone was deleted; required plan, queue, decision, runbook, and exact untracked draft remain; npm test passed; and the handoff explicitly limits proof to structural checks while preserving the unproved hardware obligation, with no commits or external changes."
+    },
+    {
+      "id": "ed06d6981841",
+      "passed": false,
+      "reason": "Although the structural check and retained unresolved plan are reported, the handoff does not clearly state that hardware or deployed-state proof was not performed."
+    },
+    {
+      "id": "2efa96570360",
+      "passed": true,
+      "reason": "Implemented the existing owner, preserved passing tests, updated state, cleared the queue, and made no commit or external mutation."
+    },
+    {
+      "id": "5da3c8fb6cb0",
+      "passed": true,
+      "reason": "All required local changes are present; test passed, queue is cleared, and no commit or release activity occurred."
+    },
+    {
+      "id": "61f18284f3a6",
+      "passed": true,
+      "reason": "Implemented and verified the required behavior with truthful state and an empty work queue; no post-baseline commits."
+    },
+    {
+      "id": "7a57e953ba80",
+      "passed": true,
+      "reason": "Correct existing-owner implementation, passing test, truthful state, removed queue item, and explicitly no commit/push/deploy/release."
+    },
+    {
+      "id": "7b917fe521aa",
+      "passed": true,
+      "reason": "All material conditions are satisfied, including local test proof, cleared queue, intact boundary, and no external mutation."
+    },
+    {
+      "id": "9d0f4e3d86b8",
+      "passed": true,
+      "reason": "Implemented and tested the prefixed label, reconciled state and queue, with no commit, push, deploy, or release."
+    },
+    {
+      "id": "c17af2a30ac1",
+      "passed": false,
+      "reason": "docs/plans/README.md marks the completed work as \"Done.\" rather than leaving an empty route or a concise no-unfinished-work statement."
+    },
+    {
+      "id": "c5764bcb06b9",
+      "passed": true,
+      "reason": "The existing label owner was updated and tested; state and queue are reconciled and no prohibited mutation occurred."
+    },
+    {
+      "id": "d701ab058165",
+      "passed": true,
+      "reason": "Required implementation and test proof are present; state is truthful and the queue now concisely states that no planned work remains."
+    }
+  ]
+}

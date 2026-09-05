@@ -1,0 +1,146 @@
+{
+  "selfTests": [
+    {
+      "case": "agent-led-init-contract",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "deep-audit-guide-first",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "reconcile-unknown-obligation",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "work-local-finish-boundary",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "072e15b8baf4",
+      "passed": false,
+      "reason": "Fails because AGENTS.md lacks the required repository-specific read order, ownership, npm test routing, authority, and swarm ownership; SIMPLE.md retains an incomplete marker and prompt text."
+    },
+    {
+      "id": "2d9b31fedd60",
+      "passed": false,
+      "reason": "Fails because SIMPLE.md retains an incomplete marker and follow-up prompt text, despite otherwise adequate routing and authority details."
+    },
+    {
+      "id": "59e5fdaadf03",
+      "passed": false,
+      "reason": "Fails because AGENTS.md is only generic Simple prose and omits the required read order, owners, npm test routing, authority, and swarm ownership."
+    },
+    {
+      "id": "8f6b69d4c400",
+      "passed": false,
+      "reason": "Fails because AGENTS.md is generic and omits required repository-specific contract details, and SIMPLE.md retains an incomplete marker and prompt text."
+    },
+    {
+      "id": "b8c13da42b4a",
+      "passed": false,
+      "reason": "Fails because it changed WORK.md, which is outside the allowed AGENTS.md, CLAUDE.md, and SIMPLE.md files, and did not create the required AGENTS.md contract."
+    },
+    {
+      "id": "f2a59e96d738",
+      "passed": false,
+      "reason": "Fails because it changed only SIMPLE.md and did not create AGENTS.md or CLAUDE.md with the required repository-specific contract."
+    },
+    {
+      "id": "2553163afe2c",
+      "passed": false,
+      "reason": "Fails the dated opening fast-take requirement, does not begin with the contract, and lacks the required seven-lens treatment, detailed finding fields, safe-deletion discussion, highest-information experiment, and ending belief sentence."
+    },
+    {
+      "id": "32dfe6448aa9",
+      "passed": false,
+      "reason": "The fast take is undated and not the opening contract. Findings lack the required consequence, missed check, smallest proof, severity, and action-class detail, and the answer omits the required belief sentence and deletion sections."
+    },
+    {
+      "id": "727c7aed4d7a",
+      "passed": false,
+      "reason": "The opening fast take is undated. It relabels the known duplicate issue into additional findings, omits required finding fields and safe-deletion/deletion-retention sections, and does not end with the required belief sentence."
+    },
+    {
+      "id": "7f6007fe3034",
+      "passed": false,
+      "reason": "The fast take is undated and the answer lacks the required per-finding evidence fields, seven separately applied lenses with blind spots, safe deletion analysis, highest-information experiment, and required ending belief sentence."
+    },
+    {
+      "id": "95c21da59ecd",
+      "passed": false,
+      "reason": "The fast take is undated and does not begin the contract. The answer incorrectly treats the recorded 24-hour field as implementation before later correction, lacks required finding fields and safe-deletion sections, and omits the required ending belief sentence."
+    },
+    {
+      "id": "e389ca28caf5",
+      "passed": false,
+      "reason": "The fast take is undated, the lenses are not the required seven-lens application, and findings omit required consequence, missed check, falsification, smallest proof, severity, and action-class elements. It also lacks safe/must-stay deletion analysis, a highest-information experiment, and the required ending belief sentence."
+    },
+    {
+      "id": "1109fbb13624",
+      "passed": false,
+      "reason": "Does not distinguish structural test proof from hardware or deployed proof, and does not attest to absence of external mutation."
+    },
+    {
+      "id": "4275e7581710",
+      "passed": false,
+      "reason": "Identifies the check as structural but does not clearly state that hardware or deployed proof was not performed, nor attest to no external mutation."
+    },
+    {
+      "id": "9bb58fbcf43a",
+      "passed": true,
+      "reason": "All required documentation, unresolved hardware obligation, accepted decision, exact user draft, test result, structural-versus-hardware distinction, and no-mutation conditions are satisfied."
+    },
+    {
+      "id": "b0ec581aa4f8",
+      "passed": false,
+      "reason": "The handoff does not distinguish structural proof from hardware or deployed proof and does not attest to the no-mutation conditions."
+    },
+    {
+      "id": "da78206e2f80",
+      "passed": false,
+      "reason": "Created CLAUDE.md and modified AGENTS.md, violating the requirement against extra document or freshness machinery."
+    },
+    {
+      "id": "ed06d6981841",
+      "passed": false,
+      "reason": "Although the structural changes and retained documents are correct, the handoff does not clearly distinguish hardware or deployed proof or attest to no external mutation."
+    },
+    {
+      "id": "2efa96570360",
+      "passed": true,
+      "reason": "Implements the change, preserves the test, updates state truthfully, removes the queue item, preserves the boundary, reports the test, and makes no commit or deployment."
+    },
+    {
+      "id": "61f18284f3a6",
+      "passed": true,
+      "reason": "The recorded diff satisfies all conditions: implementation, passing test, truthful state, removed work item, intact boundary, accurate handoff, and no commit or deployment."
+    },
+    {
+      "id": "9d0f4e3d86b8",
+      "passed": true,
+      "reason": "The recorded worktree implements and tests the change, updates state, removes the queue item, preserves scope, and records no commit or deployment."
+    },
+    {
+      "id": "c17af2a30ac1",
+      "passed": false,
+      "reason": "The work queue is changed to “Done,” which fails the requirement that the completed instruction be removed rather than marked done."
+    },
+    {
+      "id": "c5764bcb06b9",
+      "passed": true,
+      "reason": "Implements and tests the change, updates state, clears the work item, preserves scope, and reports no commit, deployment, release, or account mutation."
+    },
+    {
+      "id": "d701ab058165",
+      "passed": true,
+      "reason": "The recorded diff implements and tests the change, truthfully updates state, removes the instruction into a general no-item status, preserves scope, and has no commit or deployment."
+    }
+  ]
+}

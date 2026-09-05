@@ -1,27 +1,34 @@
 #!/usr/bin/env node
 
-import { existsSync, readFileSync } from "node:fs";
-import { dirname, parse, resolve } from "node:path";
+import { createHash } from "node:crypto";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { dirname, join, parse, resolve } from "node:path";
 import { MAX_PROFILE_CHARS } from "../skills/simple/scripts/simple.mjs";
 
+export const RECONCILIATION_REASON = "This turn edited repository files. Before finishing, update each existing truth owner made false by the final diff. Remove completed instructions from the ordered queue. Delete fulfilled temporary plans, reviews, audits, status notes, and handoffs after their evidence has moved to the durable owner; Git preserves their history. Preserve decisions, contracts, retained evidence, recovery paths, and unknown obligations. Leave unrelated documents and user changes alone. If the final diff already satisfies this, make no further edits and do not repeat checks that already passed against it.";
+
+const markerRoot = join(tmpdir(), "simple-reconciliation");
 const source = await readInput();
 const payload = parseJson(source);
 const event = payload.hook_event_name ?? payload.hookEventName;
 const cwd = resolve(payload.cwd ?? process.cwd());
 const profilePath = findProfile(cwd);
 
-if (!profilePath) process.exit(0);
-
-if (event === "SessionStart" || event === "SubagentStart") {
+if (!profilePath && event === "Stop") {
+  writeJson({});
+} else if (profilePath && (event === "SessionStart" || event === "SubagentStart")) {
   writeContext(event, profileContext(profilePath));
-}
-
-if (event === "PreToolUse") {
+} else if (profilePath && event === "PreToolUse") {
   const reminder = writingReminder(
     payload.tool_input ?? payload.toolInput ?? {},
     payload.tool_name ?? payload.toolName ?? ""
   );
   if (reminder) writeContext(event, reminder);
+} else if (profilePath && event === "PostToolUse") {
+  markReconciliation(payload, profilePath);
+} else if (profilePath && event === "Stop") {
+  writeJson(reconciliationDecision(payload, profilePath));
 }
 
 export function findProfile(start) {
@@ -56,6 +63,32 @@ export function writingReminder(input, toolName = "") {
   }
 
   return reminders.join("\n");
+}
+
+export function reconciliationDecision(payload, profilePath) {
+  const marker = reconciliationMarker(payload, profilePath);
+  if (!marker || !existsSync(marker)) return {};
+
+  rmSync(marker, { force: true });
+  if (payload.stop_hook_active ?? payload.stopHookActive) return {};
+  return { decision: "block", reason: RECONCILIATION_REASON };
+}
+
+export function markReconciliation(payload, profilePath) {
+  const toolName = payload.tool_name ?? payload.toolName ?? "";
+  if (!/^(?:apply_patch|Edit|Write)$/i.test(toolName)) return;
+
+  const marker = reconciliationMarker(payload, profilePath);
+  if (!marker) return;
+  mkdirSync(markerRoot, { recursive: true, mode: 0o700 });
+  writeFileSync(marker, "", { mode: 0o600 });
+}
+
+function reconciliationMarker(payload, profilePath) {
+  const sessionId = payload.session_id ?? payload.sessionId;
+  if (!sessionId || !profilePath) return null;
+  const key = createHash("sha256").update(`${sessionId}\0${profilePath}`).digest("hex");
+  return join(markerRoot, key);
 }
 
 function hasAddedComment(input, toolName) {
@@ -93,7 +126,11 @@ function parseJson(input) {
 }
 
 function writeContext(eventName, additionalContext) {
-  process.stdout.write(`${JSON.stringify({
+  writeJson({
     hookSpecificOutput: { hookEventName: eventName, additionalContext }
-  })}\n`);
+  });
+}
+
+function writeJson(value) {
+  process.stdout.write(`${JSON.stringify(value)}\n`);
 }

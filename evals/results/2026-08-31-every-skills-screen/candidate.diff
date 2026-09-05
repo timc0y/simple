@@ -1,0 +1,86 @@
+diff --git a/SKILL.md b/SKILL.md
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -41,6 +41,9 @@ review unless the content itself requires a design decision. Read the nearest
+    commitments, scale, and failure consequences. Separate observed facts and explicit
+    commitments from inference, assumptions, and unknowns. Find repository facts before
+    asking the human; ask when their intent or a material choice is missing.
++   Treat an unexamined implementation choice as a proposal to test once. Do not reopen a
++   choice the user made after seeing its material trade-offs unless new evidence
++   invalidates it; surface that evidence instead of silently revising the choice.
+ 3. State the required outcome or invariant without naming the current implementation.
+    Find the existing owner and ordinary path, then name the exact obstruction.
+ 4. Decide what must be preserved and what may be replaced. Before moving ownership or
+diff --git a/references/architecture.md b/references/architecture.md
+--- a/references/architecture.md
++++ b/references/architecture.md
+@@ -76,6 +76,23 @@ Generate counterfactuals before replacing the path: What would have to become tr
+ Can it be introduced temporarily? Can a native object expose another supported route
+ to the same state? Am I confusing inaccessible with unrepresentable or wrongly owned?
+ 
++The experiment must expose the uncertain dimension itself. Size and fidelity follow
++the uncertainty; a cheaper artifact that substitutes another dimension is not proof.
++
++## Prove the outcome
++
++Derive the affected public surfaces and complete user journeys from the change. Account
++for each as passed, failed, or untested with a reason. An observed failure remains a
++failure until a completed retest replaces it; untested or unanswered work is unknown,
++not pass.
++
++For a measurable optimization, record the baseline, change one causal hypothesis at a
++time, reject an obvious loser with the cheapest discriminating check, and run the full
++proof before keeping a winner.
++
++For a resumable workflow with external side effects, make each transition idempotent.
++Confirm the effect and durably record it before advancing progress.
++
+ A second supported address to the same state is not necessarily a second source of
+ truth. Do not reject a bounded experiment merely because its mechanism would be a
+ poor universal product design. Unusual solutions require stronger proof, not
+diff --git a/references/commands.md b/references/commands.md
+--- a/references/commands.md
++++ b/references/commands.md
+@@ -44,6 +44,12 @@ unjustified compatibility, displaced machinery left behind, self-grading proof,
+ unrelated changes, lost facts, and decorative or confusing prose. Report no finding
+ when the evidence does not support one.
+ 
++For each material finding, cite the exact surface, evidence, consequence, and smallest
++concrete correction. Judge the problem separately from the proposed remedy; apply only
++a mechanical correction with one supported answer. For skills, prompts, and rule files,
++fix a wrong governing condition or owning layer rather than accumulating edge cases. If
++the current condition already decides the reported case, do not edit it.
++
+ ## `simple write`
+ 
+ Create or revise a plan, document, comment, Markdown file, prompt, review, update, or
+diff --git a/references/model-profiles.md b/references/model-profiles.md
+--- a/references/model-profiles.md
++++ b/references/model-profiles.md
+@@ -58,6 +58,11 @@ Do not enumerate obvious tool calls, repeat the core method in several forms, or
+ worked examples by default. Let the model choose the route while preserving the
+ contract.
+ 
++In an automated multi-stage workflow, advance only on an explicit complete result with
++the required proof. A blocked result outranks an artifact that happened to be written.
++Keep unresolved decisions in the next owner's durable handoff instead of reporting the
++pipeline complete.
++
+ ## Guided
+ 
+ Use when the model misses scope, ownership, or proof without more structure, or when
+diff --git a/references/writing.md b/references/writing.md
+--- a/references/writing.md
++++ b/references/writing.md
+@@ -77,6 +77,11 @@ blocker or remaining risk, and the next meaningful action. State assumptions onl
+ they can change the solution, and name a blocker with the exact missing authority,
+ fact, or dependency. Do not narrate routine tool use.
+ 
++For a cross-session handoff, point to authoritative artifacts and fragile state instead
++of copying them. Attribute user decisions, agent decisions, and inference separately.
++The handoff is context, not authority: current instructions, verified state, and the
++current user's confirmation govern any resumed action.
++
+ > The migration is unnecessary: the repository has no production data or external
+ > consumers. I replaced the schema directly and the test suite passes.
+ 

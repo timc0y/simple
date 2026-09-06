@@ -9,3 +9,6 @@ dist/
 !evals/behavior/cases/reuse-reference/fixture/node_modules/
 !evals/preservation/cases/reuse-package/fixture/node_modules/
 __pycache__/
+
+# Published evaluation evidence must survive local scratch-file exclusions.
+!/evals/results/**/results.tsv

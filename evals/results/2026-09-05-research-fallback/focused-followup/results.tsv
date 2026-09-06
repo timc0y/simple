@@ -1,0 +1,2 @@
+run	case	model	condition	luna	strict
+1	unknown-mutation	gpt-5.6-luna	candidate-followup	true	true

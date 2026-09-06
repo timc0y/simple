@@ -1,0 +1,8 @@
+experiment	commit	metric	status	description
+0	acc1f24	9	baseline	canonical first-principles wording
+1	dc23946	10	rejected	name the Minto Pyramid; fails the required STE100 check
+2	91150a9	9	discard	remove the Minto label; keep the existing outcome-first rule
+3	9bc4f3b	9	discard	bind cyclomatic complexity to repository evidence
+4	fbf3c8f	8	discard	describe conclusion-reasons-evidence without the Minto label
+5	44896c7	10	discard	treat a complexity score as evidence, not a target
+6	c94bcaa	8	discard	shorten the Minto cue

@@ -1,0 +1,13 @@
+run	case	model	condition	luna	terra	strict
+1	production-data	gpt-5.6-luna	none	true	true	true
+1	production-data	gpt-5.6-luna	ponytail	true	true	true
+1	production-data	gpt-5.6-luna	simple	true	false	false
+1	production-data	gpt-5.6-luna	simple-ponytail	true	false	false
+1	production-data	gpt-5.6-luna	candidate	false	false	false
+1	production-data	gpt-5.6-luna	candidate-ponytail	true	true	true
+1	production-data	gpt-5.6-terra	none	true	false	false
+1	production-data	gpt-5.6-terra	ponytail	true	true	true
+1	production-data	gpt-5.6-terra	simple	true	true	true
+1	production-data	gpt-5.6-terra	simple-ponytail	false	false	false
+1	production-data	gpt-5.6-terra	candidate	true	true	true
+1	production-data	gpt-5.6-terra	candidate-ponytail	false	false	false

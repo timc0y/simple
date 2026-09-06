@@ -1,5 +1,12 @@
 # Preservation evaluation
 
+The verifier self-tests run from a clean checkout without private model-run records.
+Preregistration needs the previous skill snapshot at
+`.local/behavior-eval-2026-09-05/frozen/candidate-skill`. The published
+[frozen input archive](../results/2026-09-06-preservation/frozen-inputs.zip) contains
+that skill as `previous-skill`, together with the original runner. Use the
+archived runner for the recorded run; later maintenance does not change frozen inputs.
+
 `run.py` adapts the frozen `evals/behavior/run.py` protocol for six cases, three conditions, and two sequential repeats (36 cells). Conditions are the previous full skill, the candidate skill frozen at `FINAL_FREEZE`, and the short control instruction in the same forced-read location. Condition order is counterbalanced by case and repeat.
 
 Run `python3 evals/preservation/run.py selftest` and `preflight` while preparing cases. After the root confirms `FINAL FREEZE`, run `FINAL_FREEZE=1 python3 evals/preservation/run.py preregister`, inspect the manifest, then `READY=1 python3 evals/preservation/run.py measure`.

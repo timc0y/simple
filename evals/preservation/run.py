@@ -66,9 +66,6 @@ def selftest() -> None:
     base.verify_freeze = verify_freeze
     if not OLD_RUNNER.is_file():
         raise RuntimeError(f"missing imported runner: {OLD_RUNNER}")
-    previous = OLD_RECORD / "frozen" / "candidate-skill"
-    if not (previous / "SKILL.md").is_file():
-        raise RuntimeError(f"missing previous skill snapshot: {previous}")
     for case in CASES:
         directory = SUITE / "cases" / case
         for required in ("fixture", "prompt.md", "verifier.mjs", "graders/criteria.md", "graders/references/pass.md", "graders/references/fail.md"):
@@ -96,6 +93,9 @@ def preregister() -> None:
         raise RuntimeError("set FINAL_FREEZE=1 only after root confirms FINAL FREEZE")
     if (RECORD / "manifest.json").exists():
         raise RuntimeError("manifest already frozen; preserve this run")
+    previous = OLD_RECORD / "frozen" / "candidate-skill"
+    if not (previous / "SKILL.md").is_file():
+        raise RuntimeError(f"missing previous skill snapshot: {previous}")
     frozen = RECORD / "frozen"
     frozen.mkdir(parents=True, exist_ok=True)
     copytree(OLD_RECORD / "frozen" / "candidate-skill", frozen / "previous-skill")

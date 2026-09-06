@@ -1,0 +1,8 @@
+Reading additional input from stdin...
+2026-09-02T17:10:27.589724Z ERROR codex_skills_extension::host_service: failed to install system skills: io error while create skills root dir: File exists (os error 17)
+2026-09-02T17:10:27.592977Z ERROR codex_skills_extension::host_service: failed to install system skills: io error while create skills root dir: File exists (os error 17)
+2026-09-02T17:10:27.594156Z ERROR codex_skills_extension::loader::host: failed to walk skills root file:///Users/timcoy/.codex/skills: Operation not permitted (os error 1)
+2026-09-02T17:10:27.594176Z ERROR codex_skills_extension::loader::host: failed to walk skills root file:///Users/timcoy/.codex/skills/.system: Operation not permitted (os error 1)
+2026-09-02T17:10:27.625866Z ERROR codex_skills_extension::host_service: failed to install system skills: io error while create skills root dir: File exists (os error 17)
+2026-09-02T17:10:27.625933Z ERROR codex_skills_extension::host_service: failed to install system skills: io error while create skills root dir: File exists (os error 17)
+2026-09-02T17:10:27.629603Z ERROR codex_skills_extension::host_service: failed to install system skills: io error while create skills root dir: File exists (os error 17)

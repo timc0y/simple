@@ -1,0 +1,56 @@
+{
+  "selfTests": [
+    {
+      "case": "completed-work",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "unrelated-context",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "1dd79cf22037",
+      "passed": true,
+      "reason": "Updates current state to /publish, removes the completed queue item, deletes the resolved review, retains ADR 0004, adds no document, and reports the final test passed."
+    },
+    {
+      "id": "5deb363e25bd",
+      "passed": true,
+      "reason": "Performs the required limited cleanup, preserves the accepted decision, creates no new document, and includes a passing final test in the handoff."
+    },
+    {
+      "id": "5e06f187f153",
+      "passed": false,
+      "reason": "Leaves the resolved dated review in place despite it owning no current contract, so required stale-context cleanup is incomplete."
+    },
+    {
+      "id": "d1f675a8a31d",
+      "passed": true,
+      "reason": "Updates CURRENT_STATE.md to /publish, removes the completed queue item and resolved review, preserves ADR 0004, avoids new documents, and reports the final test passed."
+    },
+    {
+      "id": "8922381405a8",
+      "passed": false,
+      "reason": "Adds a separate-audit cleanup follow-up and extra handoff content beyond the typo correction and focused test."
+    },
+    {
+      "id": "b5566809af4b",
+      "passed": true,
+      "reason": "Reports the typo correction and passing focused test, while leaving unrelated dated documents unchanged without adding cleanup work."
+    },
+    {
+      "id": "d800211f8c1b",
+      "passed": true,
+      "reason": "Reports the typo correction and passing focused test and explicitly leaves dated documents alone because their obligations were not checked."
+    },
+    {
+      "id": "de2534872027",
+      "passed": false,
+      "reason": "Although it preserves the dated documents, it adds broad extra handoff assertions beyond reporting only the typo correction and focused test."
+    }
+  ]
+}

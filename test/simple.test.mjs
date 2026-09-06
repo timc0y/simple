@@ -5,7 +5,7 @@ import { spawnSync } from "node:child_process";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
-import { validateResults } from "../evals/normalize-results.mjs";
+import { normalizeResults, validateResults } from "../evals/normalize-results.mjs";
 import { check, init, MAX_PROFILE_CHARS, setup } from "../skills/simple/scripts/simple.mjs";
 import { install, skillLinks } from "../scripts/link-skill.mjs";
 
@@ -32,6 +32,7 @@ test("init is the public setup command", () => {
   assert.equal(result.status, 0);
   assert.equal(JSON.parse(result.stdout).ready, false);
   const route = readFileSync(join(root, "AGENTS.md"), "utf8");
+  assert.doesNotMatch(route, /Repository facts override speculative compatibility/);
   assert.ok(route.includes("simple init"));
   for (const command of publicCommands().filter((command) => command !== "init")) {
     assert.ok(route.includes(`\`${command}\``), command);
@@ -60,6 +61,14 @@ test("init adds board to the previous public route", () => {
   init(root);
 
   assert.match(readFileSync(join(root, "AGENTS.md"), "utf8"), /`board`/);
+});
+
+test("init refuses to duplicate an unrecognized Simple section", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-"));
+  writeFileSync(join(root, "AGENTS.md"), "## Simple\n\nKeep this customized route.\n");
+
+  assert.throws(() => init(root), /unrecognized ## Simple section/);
+  assert.equal(readFileSync(join(root, "AGENTS.md"), "utf8"), "## Simple\n\nKeep this customized route.\n");
 });
 
 test("check accepts a completed repository profile", () => {
@@ -189,6 +198,78 @@ test("edit hook routes only relevant review reminders", () => {
   assert.equal(architectureWords.stdout, "");
 });
 
+test("an edited turn gets one reconciliation pass before stopping", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-"));
+  mkdirSync(join(root, ".git"));
+  setup(root);
+  completeProfile(root, "reconciliation fixture");
+  const sessionId = `reconcile-${basename(root)}`;
+
+  const readOnlyStop = runHook({
+    hook_event_name: "Stop",
+    session_id: sessionId,
+    cwd: root,
+    stop_hook_active: false
+  });
+  assert.deepEqual(JSON.parse(readOnlyStop.stdout), {});
+
+  const edit = runHook({
+    hook_event_name: "PostToolUse",
+    session_id: sessionId,
+    cwd: root,
+    tool_name: "apply_patch"
+  });
+  assert.equal(edit.stdout, "");
+
+  const firstStop = runHook({
+    hook_event_name: "Stop",
+    session_id: sessionId,
+    cwd: root,
+    stop_hook_active: false
+  });
+  const decision = JSON.parse(firstStop.stdout);
+  assert.equal(decision.decision, "block");
+  assert.match(decision.reason, /Remove completed instructions/);
+  assert.match(decision.reason, /Leave unrelated documents and user changes alone/);
+
+  const secondStop = runHook({
+    hook_event_name: "Stop",
+    session_id: sessionId,
+    cwd: root,
+    stop_hook_active: true
+  });
+  assert.deepEqual(JSON.parse(secondStop.stdout), {});
+});
+
+test("the stop hook is a no-op outside a profiled repository", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-"));
+  const result = runHook({
+    hook_event_name: "Stop",
+    session_id: `unprofiled-${basename(root)}`,
+    cwd: root,
+    stop_hook_active: false
+  });
+  assert.deepEqual(JSON.parse(result.stdout), {});
+});
+
+test("reconciliation markers do not cross repository profiles", () => {
+  const first = mkdtempSync(join(tmpdir(), "simple-first-"));
+  const second = mkdtempSync(join(tmpdir(), "simple-second-"));
+  for (const root of [first, second]) {
+    mkdirSync(join(root, ".git"));
+    setup(root);
+    completeProfile(root, basename(root));
+  }
+  const sessionId = `multi-repo-${basename(first)}`;
+
+  runHook({ hook_event_name: "PostToolUse", session_id: sessionId, cwd: first, tool_name: "Edit" });
+  const wrongRepository = runHook({ hook_event_name: "Stop", session_id: sessionId, cwd: second, stop_hook_active: false });
+  assert.deepEqual(JSON.parse(wrongRepository.stdout), {});
+
+  const owningRepository = runHook({ hook_event_name: "Stop", session_id: sessionId, cwd: first, stop_hook_active: false });
+  assert.equal(JSON.parse(owningRepository.stdout).decision, "block");
+});
+
 test("local install exposes one skill through each supported host", () => {
   assert.deepEqual(skillLinks("/tmp/simple-home"), [
     "/tmp/simple-home/.agents/skills/simple",
@@ -262,8 +343,13 @@ test("published surfaces reference files that exist", () => {
   assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("nail down the problem")));
   assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("flow easy to picture")));
   assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("lint, tests, and code-health checks")));
+  assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("deep multi-lens Simple audit")));
   assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("evidence-backed second opinion")));
+  assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("finish this named repository gate")));
+  assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("truth owners and fulfilled temporary documentation")));
   const hooks = JSON.parse(readFileSync(join(root, "hooks", "hooks.json"), "utf8"));
+  assert.ok(hooks.hooks.PostToolUse);
+  assert.ok(hooks.hooks.Stop);
   for (const event of Object.values(hooks.hooks)) {
     for (const block of event) {
       for (const h of block.hooks) assert.match(h.command, /\$\{CLAUDE_PLUGIN_ROOT\}/);
@@ -353,6 +439,23 @@ test("normalized eval results match their evidence", () => {
       assert.ok(existsSync(join(run, "results.json")), `${run}/results.json`);
     }
   }
+});
+
+test("normalized mixed-provider results keep per-model metadata", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-results-"));
+  mkdirSync(join(root, "raw"));
+  writeFileSync(join(root, "mapping.tsv"), "a\t1\tcase\tclaude-sonnet\tcandidate\nb\t1\tcase\tcodex-luna\tcandidate\n");
+  writeFileSync(join(root, "results.tsv"), "run\tcase\tmodel\tcondition\tluna\tterra\tstrict\n1\tcase\tclaude-sonnet\tcandidate\ttrue\ttrue\ttrue\n1\tcase\tcodex-luna\tcandidate\ttrue\ttrue\ttrue\n");
+  writeFileSync(join(root, "models.tsv"), "key\tname\trevision\treasoning\tharness\nclaude-sonnet\tClaude Sonnet\tclaude-sonnet-5\tmedium\tClaude safe-mode\ncodex-luna\tCodex Luna\tgpt-5.6-luna\tdefault\tCodex isolated\n");
+  writeFileSync(join(root, "raw", "a.md"), "answer\n");
+  writeFileSync(join(root, "raw", "b.md"), "answer\n");
+
+  const records = normalizeResults(root, { skillCommit: "candidate", harness: "fallback" });
+  assert.deepEqual(records.map(({ model, harness }) => ({ model, harness })), [
+    { model: { name: "Claude Sonnet", revision: "claude-sonnet-5", reasoning: "medium" }, harness: "Claude safe-mode" },
+    { model: { name: "Codex Luna", revision: "gpt-5.6-luna", reasoning: "default" }, harness: "Codex isolated" }
+  ]);
+  assert.deepEqual(validateResults(records, root), []);
 });
 
 function completedProfile(root, label) {

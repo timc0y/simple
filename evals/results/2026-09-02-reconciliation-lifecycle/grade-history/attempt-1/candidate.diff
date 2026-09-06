@@ -1,0 +1,15 @@
+diff --git a/SKILL.md b/SKILL.md
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -120,5 +120,11 @@
+ - Any task that creates, reviews, or changes `SIMPLE.md`: always read
+   `references/profile-template.md` before you write. Run `scripts/simple.mjs init` or
+   `scripts/simple.mjs check` when the task needs it.
+ 
++Before handing off a task that changed repository files, reconcile only the knowledge
++made stale by that change. Update its existing truth owners and remove completed
++instructions plus displaced or duplicate context. Before deletion, check callers,
++retained state, commitments, and recovery. Do not create a status, handoff, cleanup, or
++archive document when an owner already exists. Leave unrelated documentation alone.
++
+ Keep the implementation, tests, comments, documentation, and handoff consistent.

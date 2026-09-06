@@ -1,0 +1,535 @@
+diff --git a/skills/simple/SKILL.md b/skills/simple/SKILL.md
+index ea54d98..673d328 100644
+--- a/skills/simple/SKILL.md
++++ b/skills/simple/SKILL.md
+@@ -4,11 +4,11 @@ description: >-
+   Apply first-principles reasoning grounded in repository evidence to find the
+   smallest truthful software design and write concise, plain developer prose. Use
+   for architecture, ownership, refactoring, deletion, compatibility, migration,
+-  repository audits, decision reviews, implementation plans, or work that is becoming more complex
+-  than its demonstrated requirements; for technical plans, documentation, comments,
+-  Markdown, prompts, reviews, updates, and handoffs; and when asked what a documented
+-  engineer, company, or operator would do. Read the nearest SIMPLE.md when repository
+-  facts change the answer.
++  repository setup or reconciliation, audits, decision reviews, implementation plans,
++  or work that is becoming more complex than its demonstrated requirements; for
++  technical plans, documentation, comments, Markdown, prompts, reviews, updates, and
++  handoffs; and when asked what a documented engineer, company, or operator would do.
++  Read the nearest SIMPLE.md when repository facts change the answer.
+ ---
+ 
+ # Simple
+@@ -106,8 +106,9 @@ blockers, risk, and the next relevant action. Do not narrate routine tool use.
+   available; keep architectural judgement with the lead agent.
+ - `simple board`: read `references/board.md` and `references/model-profiles.md`. Use
+   optional independent views for consequential decisions; synthesise in the lead.
+-- `simple init`, `plan`, `review`, `write`, `emulate`, or `check`: read
+-  `references/commands.md`.
++- `simple init`, `work`, `reconcile`, `plan`, `review`, `write`, `emulate`, or `check`:
++  read `references/commands.md`. For repository setup, end-to-end work, reconciliation,
++  swarm coordination, or release handoff, also read `references/repository-work.md`.
+ - Plans, documentation, comments, Markdown, prompts, reviews, updates, or handoffs:
+   read `references/writing.md`. Use writing mode without expanding into design
+   analysis unless the content requires it.
+@@ -121,4 +122,11 @@ blockers, risk, and the next relevant action. Do not narrate routine tool use.
+   `references/profile-template.md` before you write. Run `scripts/simple.mjs init` or
+   `scripts/simple.mjs check` when the task needs it.
+ 
++Before handing off a task that changed repository files, update each existing truth
++owner made false by the change. An ordered queue contains only unfinished work, so
++remove completed instructions instead of marking them done. Delete a temporary plan,
++review, audit, status note, or handoff after its work or evidence has moved to the
++durable owner; Git preserves its history. Leave unrelated documents alone. Never delete
++a decision, contract, retained evidence, recovery path, or unknown obligation.
++
+ Keep the implementation, tests, comments, documentation, and handoff consistent.
+diff --git a/skills/simple/agents/openai.yaml b/skills/simple/agents/openai.yaml
+index e31e2d1..5935de9 100644
+--- a/skills/simple/agents/openai.yaml
++++ b/skills/simple/agents/openai.yaml
+@@ -1,4 +1,4 @@
+ interface:
+   display_name: "Simple"
+   short_description: "Smallest truthful design and plain developer writing"
+-  default_prompt: "Use Simple in design or writing mode. Read the nearest SIMPLE.md when repository facts matter. Preserve present obligations, write concise plain Markdown, and prove consequential claims. When asked what a documented engineer or company would do, apply source-backed operator emulation, never the persona."
++  default_prompt: "Use $simple to find the smallest truthful design or write concise developer prose. Read the nearest SIMPLE.md when repository facts matter and prove consequential claims independently."
+diff --git a/skills/simple/references/audit.md b/skills/simple/references/audit.md
+index 9a1dee8..b2dc5d7 100644
+--- a/skills/simple/references/audit.md
++++ b/skills/simple/references/audit.md
+@@ -6,6 +6,18 @@ the nearest `SIMPLE.md`, assigns non-overlapping questions, reconciles the resul
+ and owns every architectural judgement. Read `model-profiles.md` when the host offers
+ model selection.
+ 
++Before source, read the repository guides that exist: `README`, `AGENTS.md`,
++`CLAUDE.md`, `CONTRIBUTING`, the current-state and work-route documents, and the
++decision records relevant to the scope. Treat present-state prose and earlier reviews
++as dated claims to verify. Treat decisions and contracts as commitments whose current
++applicability must be traced, not as proof of live state.
++
++Use this file for a quick or scoped audit. When the user asks for a deep,
++whole-repository, or multi-lens review, also read
++[`multi-lens-audit.md`](multi-lens-audit.md). That workflow freezes the initial model,
++separates local, live, account, device, and distribution truth, traces the product and
++release systems, applies a novelty threshold, and uses independent decision lenses.
++
+ ## Evidence lanes
+ 
+ 1. **Reality:** entry points, packages, deployment targets, stores, public surfaces,
+@@ -57,6 +69,5 @@ as evidence. Before recommending removal, define the independent proof and recov
+ appropriate to its consequence.
+ 
+ For a quick audit, inspect the profile, repository shape, obvious ownership seams,
+-and compatibility inventory. For a deep audit, also trace representative paths,
+-history, dynamic entry points, generated code, and deployment configuration. Scope
+-the crawl to the user's target when one is given.
++and compatibility inventory. Scope the crawl to the user's target when one is given.
++Do not silently escalate a quick audit into the deep workflow.
+diff --git a/skills/simple/references/commands.md b/skills/simple/references/commands.md
+index 583bece..3586c34 100644
+--- a/skills/simple/references/commands.md
++++ b/skills/simple/references/commands.md
+@@ -5,17 +5,29 @@ lifecycle and must not duplicate the core skill.
+ 
+ ## `simple init`
+ 
+-Inspect the repository, run `scripts/simple.mjs init`, record facts the repository can
+-establish, and ask the owner only for material facts code cannot prove. Leave unknowns
+-explicit. Init may change only the profile and agent-routing files unless the user
+-authorizes more.
++Read `repository-work.md`. Inspect the repository, run `scripts/simple.mjs init`, record
++facts the repository can establish, and ask the owner only for material facts code
++cannot prove. Leave unknowns explicit. Add the repository-specific read order, truth
++owners, work route, verification, authority, and swarm boundaries to `AGENTS.md`
++without copying volatile facts or generic Simple rules. Init may change only the
++profile and agent-routing files unless the user authorizes more.
++
++## `simple work`
++
++Read and follow `simple work` in `repository-work.md`.
++
++## `simple reconcile`
++
++Read and follow `simple reconcile` in `repository-work.md`; also read `refactoring.md`.
+ 
+ ## `simple audit`
+ 
+-Read `audit.md`. Audit is read-only unless the user separately requests fixes. Return a
+-verdict, evidence, present obligations, ownership and ordinary-path findings, unpaid
+-complexity, profile contradictions, proof gaps, highest-value actions, and material
+-unknowns.
++Read `audit.md`. Audit is read-only unless the user separately requests fixes. For a
++quick audit, return a verdict, evidence, present obligations, ownership and
++ordinary-path findings, unpaid complexity, profile contradictions, proof gaps,
++highest-value actions, and material unknowns. For `simple audit deep` or a requested
++multi-lens review, follow `multi-lens-audit.md` instead; do not impose that cost on a
++scoped audit.
+ 
+ ## `simple board`
+ 
+diff --git a/skills/simple/references/profile-template.md b/skills/simple/references/profile-template.md
+index feb4e1c..2e3a463 100644
+--- a/skills/simple/references/profile-template.md
++++ b/skills/simple/references/profile-template.md
+@@ -5,8 +5,9 @@ short enough to inject at session and subagent start.
+ 
+ Init copies the canonical template from `assets/SIMPLE.template.md`. It deliberately
+ marks the new profile incomplete because a script cannot infer users, production
+-data, or promises reliably. Establish those facts from repository evidence or its
+-owner, then remove the incomplete marker and run `scripts/simple.mjs check`.
++data, or promises reliably. Replace every prompt with an observed fact, owner
++commitment, explicit inference, or explicit unknown, then remove the incomplete marker
++and run `scripts/simple.mjs check`. Unknown is a valid current fact, not a placeholder.
+ 
+ Before you write, classify each material claim. Use four classes: observed fact, owner
+ commitment, explicit inference, or unknown. Cite observed facts. Do not ask the owner
+@@ -25,8 +26,10 @@ remain unknown:
+ - Compatibility commitments.
+ - Current scale and failure consequences.
+ 
+-Ask about current or recent reality. Do not ask about possible future use. Keep the
+-profile incomplete until the owner corrects or confirms every owner-only fact.
++Ask about current or recent reality, not possible future use. Ask only when an
++owner-only answer changes the present boundary or the requested work. Otherwise record
++the unknown, its existing owner or work route, and the event that would make it matter;
++do not keep setup incomplete merely because eventual users or operators are unknown.
+ 
+ Keep these headings exactly: `Reality`, `Preserve`, `Current boundary`, `Ordinary
+ paths`, `Proof`, and `Reconsider when`. Give each fact one home:
+diff --git a/skills/simple/scripts/simple.mjs b/skills/simple/scripts/simple.mjs
+index 4bc4e07..63f3da2 100644
+--- a/skills/simple/scripts/simple.mjs
++++ b/skills/simple/scripts/simple.mjs
+@@ -8,9 +8,11 @@ export const MAX_PROFILE_CHARS = 6000;
+ 
+ const LEGACY_ROUTES = [
+   "Before a change where repository facts could change the implementation, invoke `$simple` and read the nearest `SIMPLE.md`. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `plan`, `review`, or `check` for an explicit Simple workflow.",
+-  "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow."
++  "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow.",
++  "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `board`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow.",
++  "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `board`, `work`, `reconcile`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow."
+ ];
+-const ROUTE = "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `board`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow.";
++const ROUTE = "Use `$simple` and read the nearest `SIMPLE.md` for repository-dependent decisions and work. Explicit workflows: `simple init`, `audit`, `board`, `work`, `reconcile`, `plan`, `review`, `write`, `emulate`, or `check`.";
+ const PROFILE_TEMPLATE_PATH = new URL("../assets/SIMPLE.template.md", import.meta.url);
+ const PROFILE = readFileSync(PROFILE_TEMPLATE_PATH, "utf8");
+ const REQUIRED_HEADINGS = [...PROFILE.matchAll(/^## .+$/gm)].map(([heading]) => heading);
+@@ -29,6 +31,9 @@ export function check(root = process.cwd()) {
+   if (agents && !agents.includes(ROUTE)) {
+     failures.push("AGENTS.md must route repository-dependent decisions to $simple and SIMPLE.md");
+   }
++  if ((agents.match(/^## Simple\s*$/gm) ?? []).length > 1) {
++    failures.push("AGENTS.md contains duplicate ## Simple sections; reconcile them before continuing");
++  }
+   if (claude && !/^@AGENTS\.md\s*$/m.test(claude) && !claude.includes(ROUTE)) {
+     failures.push("CLAUDE.md must import or route through AGENTS.md and SIMPLE.md");
+   }
+@@ -58,6 +63,9 @@ export function init(root = process.cwd()) {
+     agents = agents.replace(legacyRoute, ROUTE);
+     writeFileSync(agentsPath, agents);
+   } else if (!agents.includes(ROUTE)) {
++    if (/^## Simple\s*$/m.test(agents)) {
++      throw new Error("AGENTS.md has an unrecognized ## Simple section; reconcile it manually instead of adding a duplicate");
++    }
+     writeFileSync(agentsPath, `${agents.trimEnd()}${agents.trim() ? "\n\n" : ""}## Simple\n\n${ROUTE}\n`);
+   }
+ 
+@@ -110,8 +118,13 @@ function print(failures, failProcess = true) {
+ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+   const [command = "check", directory = process.cwd()] = process.argv.slice(2);
+   if (command === "init" || command === "setup") {
+-    init(resolve(directory));
+-    print(check(resolve(directory)), false);
++    try {
++      init(resolve(directory));
++      print(check(resolve(directory)), false);
++    } catch (error) {
++      process.stderr.write(`simple init: ${error.message}\n`);
++      process.exitCode = 1;
++    }
+   } else if (command === "check") {
+     print(check(resolve(directory)));
+   } else {
+diff --git a/skills/simple/references/repository-work.md b/skills/simple/references/repository-work.md
+new file mode 100644
+index 0000000..5799c49
+--- /dev/null
++++ b/skills/simple/references/repository-work.md
+@@ -0,0 +1,162 @@
++# Repository work
++
++Use this for repository setup, end-to-end implementation, repository reconciliation,
++swarm coordination, or a release handoff. These workflows add terminal intent to the
++core Simple method. They do not replace repository evidence or expand authority.
++
++Only `simple init` may scaffold or upgrade Simple profile and routing files. Other
++workflows must not run init or change Simple routing merely to make `simple check`
++pass. Report an out-of-scope setup defect without folding it into unrelated work.
++
++## Keep one repository contract
++
++A repository is easy to resume when:
++
++- each consequential fact has one current owner;
++- one entry point routes all unfinished work;
++- durable decisions, contracts, operating procedures, recovery knowledge, and
++  retained evidence remain in their owning files;
++- temporary plans, reviews, audits, status notes, and handoffs disappear after their
++  remaining obligations or evidence move to a durable owner;
++- Git preserves superseded prose unless an external compatibility promise requires a
++  live pointer.
++
++Do not impose a fixed documentation tree. Reuse the repository's current owners when
++they are sound. A small repository may keep source truth in its README and deployed
++truth in one operations guide. A larger repository may route distinct defect,
++provider, product, and implementation queues through one work index when those states
++have genuinely different lifecycles.
++
++`AGENTS.md` owns the repository-specific operating contract:
++
++- the read order and exact truth owners;
++- the route to unfinished work;
++- verification and release entry points;
++- local-only data, shared infrastructure, and external-action boundaries;
++- lead, subagent, and writer authority.
++
++Keep volatile facts in the source that can verify or update them. Do not copy deployed
++identities, counts, dates, or queue state into `AGENTS.md`. `SIMPLE.md` keeps only facts
++that can change a design decision. It points to detailed owners instead of restating
++their contracts.
++
++## Make the system easy to drive
++
++Design the repository as one connected control system, not a catalogue of components.
++Make the path from intent to state change to observable proof easy for the next agent
++to follow:
++
++- one obvious entry point supplies the minimum current context;
++- each consequential state, policy, and transition has one owner;
++- inputs, effects, interruption, cleanup, failure, recovery, and exit conditions are
++  inspectable at the owning boundary;
++- commands expose enough identity and result state to distinguish the target from a
++  nearby local, stale, or partial success;
++- feedback arrives at the earliest truthful surface, then progresses from local to
++  live, device, account, distribution, or user proof only when applicable;
++- each completed change leaves less discovery and coordination for the next agent.
++
++Before adding a guide, index, wrapper, workflow, or automation, name the repeated
++search, handoff, tool sequence, or failure it removes. If it removes none, do not add
++it. Put new durable knowledge in the existing owner and delete the temporary container
++that discovered it.
++
++## Coordinate one swarm
++
++One lead owns scope, synthesis, shared truth, authority decisions, and final proof.
++Subagents collect bounded evidence read-only unless the lead assigns an exclusive
++write scope. Use one writer per file or shared state. Subagents do not create plans,
++reviews, audits, status documents, or queue entries unless the requested outcome needs
++that artifact and the lead names its owner.
++
++Model families and cost tiers are host concerns. Use `model-profiles.md` when model
++selection is available. Agreement is not proof; the lead resolves conflicts with
++repository evidence and a discriminating check.
++
++## `simple work`
++
++Use this when the user wants the named repository outcome implemented, not merely
++reviewed or planned. The default authority covers local repository edits needed for
++that outcome. It does not include commit, push, deploy, release, account mutation, or
++deletion of external state unless the user explicitly authorizes those actions.
++
++1. Read the repository contract and inspect the current working tree. Establish the
++   relevant truth owners, ordinary product path, release path, and history.
++2. Give subagents only bounded questions that can change the answer. Keep synthesis
++   and shared files with the lead.
++3. Make the smallest truthful change through the existing owner and ordinary path.
++4. Prove the outcome through an independent applicable surface. A local check is not
++   live, device, account, distribution, or user proof.
++5. Inspect the final diff and reconcile only owners it made false. Remove completed
++   queue instructions and fulfilled temporary context after moving durable evidence.
++
++In the handoff, name the check that ran and its proof class. When external proof is
++relevant, use explicit `Local or structural proof:` and `Not proved:` lines for live,
++device, hardware, account, distribution, or user surfaces; never let a local pass imply
++them.
++
++Continue until the requested outcome is independently proved or an exact authority,
++hardware, account, or external dependency blocks it. Name that blocker and the
++smallest action that would clear it. Do not turn an intermediate result into another
++plan for the user to reissue.
++
++## `simple reconcile`
++
++Use this when the user says to reset, clean, consolidate, or reconcile a repository's
++direction and documentation. The default authority covers local repository guides,
++profiles, plans, and documentation. Change source or external state only when the user
++also requests it.
++
++Start with a read-only inventory. For every proposed deletion or consolidation, check
++the current owner, callers and links, retained data or evidence, compatibility and
++recovery obligations, and an independent proof. Then:
++
++1. Repair contradictions in the durable owner.
++2. Move each surviving obligation or piece of evidence once.
++3. Retarget real callers.
++4. Delete the fulfilled container and completed queue instruction.
++5. Run the repository's structural and behavioural checks against the final tree.
++
++Age, line count, a missing caller, or a newer review is not deletion proof. Preserve
++unknown obligations and unrelated user changes. Do not create an archive tree, a
++document registry, freshness timestamps, or empty documentation categories to manage
++the cleanup.
++
++## Review and release phrases
++
++“Swarm review this” routes to `simple audit` for a repository investigation or
++`simple board` for one consequential decision. Keep reviewers read-only and require
++novel, sourced evidence.
++
++A release request must name the intended external transition or be unambiguous in the
++repository's release contract. Follow the guarded release path and verify source,
++artifact, deployed identity, compatibility, and rollback as applicable. Stop at a
++missing human, account, hardware, or recovery gate. Never infer production deployment
++from `work`, `finish`, `reset`, or `reconcile`.
++
++## Set up or roll out
++
++For a new repository, run `simple init`, establish observable profile facts, and add
++only the repository-specific operating facts above to `AGENTS.md`. Create a current
++truth owner, work route, decision log, contract, runbook, or evidence file only when
++the repository already has information that needs that lifecycle.
++
++The scaffold's incomplete marker means prompts remain, not that every owner-only fact
++has an answer. Remove it after every prompt is replaced by evidence, a commitment, an
++explicit inference, or an explicit unknown. Route a material unknown to its existing
++owner or work queue instead of inventing an answer or blocking setup indefinitely.
++
++Before handing off init, check that:
++
++- `AGENTS.md` contains the repository-specific read order, truth owners, work route,
++  verification, local versus external authority, and one-lead/one-writer boundary;
++- the `## Simple` section is only the compact invocation router created by init, not a
++  copy of the Simple method;
++- `SIMPLE.md` says `unknown` or `not observed` for users, operators, data, consumers,
++  scale, or consequences that repository evidence cannot establish;
++- only profile and routing files changed, the incomplete marker is gone, and the
++  applicable local check passed.
++
++For an existing repository, map current owners before choosing new ones. Repair the
++highest-consequence contradiction first, migrate callers, remove duplicate spoken
++rules, and leave the smallest owner set that the actual product and operations need.
+diff --git a/skills/simple/references/multi-lens-audit.md b/skills/simple/references/multi-lens-audit.md
+new file mode 100644
+index 0000000..9008ea2
+--- /dev/null
++++ b/skills/simple/references/multi-lens-audit.md
+@@ -0,0 +1,149 @@
++# Deep multi-lens audit
++
++Use this only for a requested deep, whole-repository, or multi-lens audit. It is an
++investigation workflow, not the default cost of `simple audit`. Do not edit, commit,
++push, deploy, delete, or change account or external state. Never print credentials,
++secret values, or local-only contents.
++
++## Freeze the first model
++
++Before opening source, write and date at most 150 words covering:
++
++- what the product appears to be for;
++- whether the idea and current boundary appear worthwhile;
++- the one failure most likely to kill it;
++- what appears deletable now.
++
++Do not edit this paragraph. Treat it as a falsifiable prior, not a verdict. End the
++slow audit by stating where it was right and wrong. Put the date in the paragraph's
++heading or first line; use the local `date` command when the host did not supply it.
++Make it the first section of the final answer, before truth surfaces or a verdict.
++
++## Establish separate truth surfaces
++
++Use only `observed`, `not_found`, `contradicted`, `unknown`, or `inferred`. Record the
++evidence and observation time for each applicable surface:
++
++- working tree, branch, dirty files, and unpushed commits;
++- the remote default branch;
++- deployed source and artifact identity;
++- account and infrastructure objects, services, stores, queues, domains, logging,
++  retention, and secret configuration without exposing values;
++- local checks actually run and their results;
++- device, hardware, browser, operating environment, or physical state;
++- distribution or release state that has actually reached users.
++
++A tracked status file is a dated claim, not live truth. A local pass is not deployed,
++device, account, distribution, or user proof. `not_found` is not proof of absence.
++
++## Trace the connected systems
++
++Trace the product path from real input through client state, encoding, validation,
++core decisions, response, persistence, resume, interruption, and deletion. Then trace
++the release path from source and build inputs through artifact identity, storage,
++deployment, verification, client compatibility, rollback, and recovery.
++
++Attack the handoffs. Check especially:
++
++- cold starts, deadlines, clocks, expiry, and readiness;
++- identity used for rate limits, authorization, artifacts, and rollback;
++- retries, duplicate requests, partial effects, network loss, and termination;
++- corrupted, old, or mutually incompatible persisted state;
++- data that is computed or retained without a current consumer or obligation;
++- client assumptions production does not promise;
++- privacy, safety, reliability, and marketing claims stronger than observable evidence.
++
++Prefer one discriminating experiment to another plan. Name the exact obstruction
++before proposing a replacement and the machinery removed before proposing an
++abstraction.
++
++## Admit only novel findings
++
++A material finding must do at least one of these:
++
++- identify an unrecorded failure mechanism;
++- falsify or materially weaken a documented belief;
++- find an unowned state transition, dependency, or operational obligation;
++- show correct components composing into incorrect behaviour;
++- expose a user, legal, financial, privacy, safety, or operational consequence that
++  current checks cannot detect;
++- identify code or infrastructure with no demonstrated consumer, contract, retained
++  state, recovery, or audit purpose.
++
++Before tracing source, list recorded issues and earlier findings as an exclusion set.
++Do not relabel one as a new finding. If its status, consequence, owner, or proof has
++materially changed, report that update under earlier claims or known-issue status, not
++in the novel findings list. Admit it as novel only when the audit proves a distinct,
++previously unrecorded failure mechanism.
++
++## Apply independent lenses
++
++Use `board.md`, `model-profiles.md`, and `operator-emulation.md`. Give reviewers the
++same checked evidence, keep them read-only, and keep architectural judgement with the
++lead. For each applicable lens, report the requirement challenged, what it would
++delete or reuse, its proposal, accepted trade-off, and blind spot. A lens is a
++hypothesis generator, never evidence.
++
++Independent means each doctrine gets its own reasoning and blind spot. Separate agents
++are optional; when unavailable, apply every requested doctrine sequentially without
++merging them or claiming independent reviewers.
++
++When the user requests the full standard board, apply these documented or supplied
++doctrines independently:
++
++The SpaceX and Theo formulations are owned by the existing sourced operator guidance.
++The Basecamp and DHH book titles, Paul Graham essays, Apple public material, and loose
++distribution-first doctrine are user-supplied audit heuristics. Verify their sources
++before revising or publishing those doctrines; do not turn the labels into evidence.
++
++1. SpaceX five-step: challenge each requirement and its owner, delete, simplify what
++   survives, accelerate only after direction is right, and automate last. Preserve
++   regulation, retained data, public contracts, security, accessibility, and recovery.
++2. Basecamp and DHH: calm cadence, few moving parts, one deployable where the product
++   permits it, finish less work, and reject imagined scale. Its blind spot is a real
++   physical or external loop that calm software practice cannot close.
++3. Theo and T3: solve an actual product problem, keep the stack modular, move feedback
++   earlier, use types as safety nets rather than ceremony, and bound experimental risk.
++   Its blind spot is non-web, hardware, and operational work.
++4. Paul Graham: identify who wants the product and what unscalable founder action can
++   test that demand now. Its blind spot is safety engineering.
++5. Apple operations: decide what to decline, find the dependency that can stop
++   shipping, and compare privacy claims with actual collection and logs. Its blind
++   spot is assuming company-scale functional ownership.
++6. Distribution first: find the demand signal, first users, and price before expanding
++   the product. Treat this as the loosest doctrine; speed loses when error harms a
++   user.
++7. The concrete end user at the highest-consequence moment: state what they see,
++   trust, and do when an ordinary failure occurs. This is a consequence review, not
++   simulated user research.
++
++Skip a doctrine when it cannot change this repository's decision, and say why. Do not
++imitate a person or invent an opinion.
++
++## Synthesize and report
++
++Repository truth, user consequence, safety, explicit commitments, authority, and
++proof override reputation. Resolve disagreements through evidence, not votes.
++
++Return, in this order:
++
++1. the frozen fast take, then where it was right and wrong;
++2. novel findings ordered by user or business consequence, each with status, affected
++   actor, exact evidence, missed check, falsification attempted, severity, smallest
++   independent proof, and whether it needs source change, product decision, human
++   gate, or operator action;
++3. a lens matrix for at most the five most consequential findings using act, ignore,
++   or oppose;
++4. earlier review claims disproved or weakened;
++5. areas checked where no material fault was found;
++6. unknowns requiring hardware, owner choice, credentials, or new authority;
++7. up to five deletions safe now, with callers, retained state, recovery, and proof;
++8. up to five apparent deletions that must stay, with the obligation served;
++9. the one experiment with the highest information gain per person-hour this week;
++10. `The belief most likely to be wrong is ___, and the cheapest way to find out is
++    ___.`
++
++Do not manufacture a finding or deletion to fill a quota. Write plainly and let the
++most consequential new discovery lead the findings. Before handing off, verify the
++date, separate truth surfaces, recorded-issue exclusions, applicable seven-lens rows,
++deletion obligations, single experiment, and exact final belief sentence.

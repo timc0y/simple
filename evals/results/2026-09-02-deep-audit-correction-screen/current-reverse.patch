@@ -1,0 +1,64 @@
+--- a/references/multi-lens-audit.md
++++ b/references/multi-lens-audit.md
+@@ -70,22 +70,19 @@
+ - identify code or infrastructure with no demonstrated consumer, contract, retained
+   state, recovery, or audit purpose.
+ 
+-Before tracing source, list recorded problems, open questions, and earlier findings as
+-an exclusion set. Do not relabel one as a new finding. A newly discovered mechanism
+-that falsifies an earlier positive belief is novel even though the belief was recorded;
+-report it both as a finding and as a weakened earlier claim. A recorded problem whose
+-status, consequence, owner, or proof changed stays under earlier claims or known-issue
+-status unless the audit proves a distinct, previously unrecorded failure mechanism.
++Before tracing source, list recorded issues and earlier findings as an exclusion set.
++Do not relabel one as a new finding. If its status, consequence, owner, or proof has
++materially changed, report that update under earlier claims or known-issue status, not
++in the novel findings list. Admit it as novel only when the audit proves a distinct,
++previously unrecorded failure mechanism.
+ 
+ ## Apply independent lenses
+ 
+-This section owns the lens board and its report contract. Do not substitute the
+-separate `simple board` reviewer roles or output schema. Use `model-profiles.md` only
+-when selecting subagent models, and `operator-emulation.md` only for sourced doctrine
+-detail. Give reviewers the same checked evidence, keep them read-only, and keep
+-architectural judgement with the lead. For each lens, report the requirement
+-challenged, what it would delete or reuse, its proposal, accepted trade-off, and blind
+-spot. A lens is a hypothesis generator, never evidence.
++Use `board.md`, `model-profiles.md`, and `operator-emulation.md`. Give reviewers the
++same checked evidence, keep them read-only, and keep architectural judgement with the
++lead. For each applicable lens, report the requirement challenged, what it would
++delete or reuse, its proposal, accepted trade-off, and blind spot. A lens is a
++hypothesis generator, never evidence.
+ 
+ Independent means each doctrine gets its own reasoning and blind spot. Separate agents
+ are optional; when unavailable, apply every requested doctrine sequentially without
+@@ -128,21 +125,15 @@
+ Repository truth, user consequence, safety, explicit commitments, authority, and
+ proof override reputation. Resolve disagreements through evidence, not votes.
+ 
+-Before opening source, reserve this ten-part completion ledger and write the frozen
+-fast take into its first section. The final answer must begin with that dated section,
+-with no preface. Return, in this order:
++Return, in this order:
+ 
+ 1. the frozen fast take, then where it was right and wrong;
+-2. novel findings ordered by user or business consequence. Do not admit a finding
+-   until one record names its status, affected actor and consequence, exact evidence,
+-   missed check, falsification attempted, severity, smallest independent proof, and
+-   action class: source change, product decision, human gate, or operator action. Move
+-   an incomplete or excluded item to known-issue status, earlier claims, unknowns, or
+-   checked-without-fault instead of presenting it as a finding;
+-3. one explicit pass for every requested lens, including a reason for a skipped lens,
+-   with requirement challenged, deletion or reuse, proposal, accepted trade-off, and
+-   blind spot; then an act, ignore, or oppose matrix for at most the five most
+-   consequential findings;
++2. novel findings ordered by user or business consequence, each with status, affected
++   actor, exact evidence, missed check, falsification attempted, severity, smallest
++   independent proof, and whether it needs source change, product decision, human
++   gate, or operator action;
++3. a lens matrix for at most the five most consequential findings using act, ignore,
++   or oppose;
+ 4. earlier review claims disproved or weakened;
+ 5. areas checked where no material fault was found;
+ 6. unknowns requiring hardware, owner choice, credentials, or new authority;

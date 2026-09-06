@@ -22,6 +22,9 @@
   one source through the shared agent directory and four host routes.
 - The Codex package points to the shared lifecycle and writing-reminder hooks; the Claude package uses the same hook bundle. Codex needs one `/hooks` trust approval on each machine.
 - Pre-write hook context reaches the model after the triggering tool result. It can guide the next step, but it cannot shape edit arguments that the model already chose.
+- A file edit records one session-local temporary marker. The next stop forces one
+  reconciliation pass, clears the marker, and allows the continued turn to stop.
+  Read-only turns do not trigger reconciliation.
 - Codex also receives repository context through `AGENTS.md` and the skill, so the route survives hosts without hook support.
 - Setup records no inferred users or production promises.
 
@@ -32,12 +35,17 @@
 - `scripts/link-skill.mjs` owns the shared agent route and four local host routes. It
   replaces stale symlinks but refuses to replace a real file or directory.
 - `simple.mjs init` creates the route and profile; `setup` remains an alias for existing users; `check` validates their shape.
-- `audit`, `board`, `plan`, `review`, `write`, and `emulate` are thin judgement modes over the shared skill; operator lenses stay sourced specialist references.
+- `audit`, `board`, `work`, `reconcile`, `plan`, `review`, `write`, and `emulate` are thin judgement modes over the shared skill; operator lenses stay sourced specialist references.
+- `references/repository-work.md` owns the repository contract, swarm boundaries,
+  end-to-end work, reconciliation, and release handoff guidance. Repository
+  `AGENTS.md` files own only their local read order, owners, checks, and authority.
 - Audit crawlers collect bounded evidence; the lead agent owns synthesis and recommendations.
+- Deep audits use the separate multi-lens reference; ordinary audits stay scoped and
+  do not pay its whole-repository cost.
 - Board reviewers provide optional read-only views; the lead resolves them through evidence, not vote.
 - `evals/README.md` owns the eval protocol; `evals/results/README.md` owns the current decision index; each run owns its raw evidence.
 - `evals/normalize-results.mjs` converts active TSV runner output into the shared result record.
-- One hook script handles session, subagent, and relevant pre-write events for both hook-capable hosts.
+- One hook script handles session, subagent, relevant write, and stop events for both hook-capable hosts.
 
 ## Proof
 
@@ -54,3 +62,7 @@
 - Add an audit crawler lane only when it finds decision-changing evidence in representative repositories.
 - Remove the `AGENTS.md` route only if hook injection is observed reliable across every supported host.
 - Add profile layering only when nested profiles need shared root facts and an isolated evaluation proves the merge rule.
+- Narrow or remove stop reconciliation if measured runs add completion cost without
+  reducing stale repository context.
+- Narrow or remove a repository workflow when representative rollouts show that it
+  duplicates the core method without reducing repeated user correction.

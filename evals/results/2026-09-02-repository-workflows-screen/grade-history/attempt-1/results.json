@@ -1,0 +1,308 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-02T21:33:44.848Z",
+    "skillCommit": "none",
+    "model": {
+      "name": "Claude Opus 5",
+      "revision": "claude-opus-5",
+      "reasoning": "medium"
+    },
+    "harness": "Claude Code 2.1.258 safe-mode restricted workspace",
+    "condition": "none",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "agent-led-init-contract__r1",
+        "passed": false,
+        "evidence": "raw/2d9b31fedd60.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "work-local-finish-boundary__r1",
+        "passed": true,
+        "evidence": "raw/9d0f4e3d86b8.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "reconcile-unknown-obligation__r1",
+        "passed": true,
+        "evidence": "raw/9bb58fbcf43a.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "deep-audit-guide-first__r1",
+        "passed": false,
+        "evidence": "raw/95c21da59ecd.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-02T21:33:44.848Z",
+    "skillCommit": "ec76760ef86f9ba2ceb3ddb9d8d8d8ee5563fefd",
+    "model": {
+      "name": "Claude Opus 5",
+      "revision": "claude-opus-5",
+      "reasoning": "medium"
+    },
+    "harness": "Claude Code 2.1.258 safe-mode restricted workspace",
+    "condition": "simple",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "agent-led-init-contract__r1",
+        "passed": false,
+        "evidence": "raw/072e15b8baf4.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "work-local-finish-boundary__r1",
+        "passed": true,
+        "evidence": "raw/2efa96570360.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "reconcile-unknown-obligation__r1",
+        "passed": false,
+        "evidence": "raw/da78206e2f80.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "deep-audit-guide-first__r1",
+        "passed": false,
+        "evidence": "raw/727c7aed4d7a.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-02T21:33:44.848Z",
+    "skillCommit": "none",
+    "model": {
+      "name": "Claude Sonnet 5",
+      "revision": "claude-sonnet-5",
+      "reasoning": "medium"
+    },
+    "harness": "Claude Code 2.1.258 safe-mode restricted workspace",
+    "condition": "none",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "agent-led-init-contract__r1",
+        "passed": false,
+        "evidence": "raw/f2a59e96d738.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "work-local-finish-boundary__r1",
+        "passed": true,
+        "evidence": "raw/c5764bcb06b9.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "reconcile-unknown-obligation__r1",
+        "passed": false,
+        "evidence": "raw/ed06d6981841.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": true
+        }
+      },
+      {
+        "id": "deep-audit-guide-first__r1",
+        "passed": false,
+        "evidence": "raw/32dfe6448aa9.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-02T21:33:44.848Z",
+    "skillCommit": "ec76760ef86f9ba2ceb3ddb9d8d8d8ee5563fefd",
+    "model": {
+      "name": "Claude Sonnet 5",
+      "revision": "claude-sonnet-5",
+      "reasoning": "medium"
+    },
+    "harness": "Claude Code 2.1.258 safe-mode restricted workspace",
+    "condition": "simple",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "agent-led-init-contract__r1",
+        "passed": false,
+        "evidence": "raw/8f6b69d4c400.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "work-local-finish-boundary__r1",
+        "passed": false,
+        "evidence": "raw/c17af2a30ac1.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "reconcile-unknown-obligation__r1",
+        "passed": false,
+        "evidence": "raw/4275e7581710.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": true
+        }
+      },
+      {
+        "id": "deep-audit-guide-first__r1",
+        "passed": false,
+        "evidence": "raw/e389ca28caf5.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-02T21:33:44.848Z",
+    "skillCommit": "none",
+    "model": {
+      "name": "Codex Luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "Codex 0.152.1 isolated sandbox workspace",
+    "condition": "none",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "agent-led-init-contract__r1",
+        "passed": false,
+        "evidence": "raw/b8c13da42b4a.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "work-local-finish-boundary__r1",
+        "passed": true,
+        "evidence": "raw/d701ab058165.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "reconcile-unknown-obligation__r1",
+        "passed": false,
+        "evidence": "raw/b0ec581aa4f8.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "deep-audit-guide-first__r1",
+        "passed": false,
+        "evidence": "raw/2553163afe2c.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-02T21:33:44.848Z",
+    "skillCommit": "ec76760ef86f9ba2ceb3ddb9d8d8d8ee5563fefd",
+    "model": {
+      "name": "Codex Luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "Codex 0.152.1 isolated sandbox workspace",
+    "condition": "simple",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "agent-led-init-contract__r1",
+        "passed": false,
+        "evidence": "raw/59e5fdaadf03.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "work-local-finish-boundary__r1",
+        "passed": true,
+        "evidence": "raw/61f18284f3a6.md",
+        "graderVerdicts": {
+          "luna": true,
+          "terra": true
+        }
+      },
+      {
+        "id": "reconcile-unknown-obligation__r1",
+        "passed": false,
+        "evidence": "raw/1109fbb13624.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      },
+      {
+        "id": "deep-audit-guide-first__r1",
+        "passed": false,
+        "evidence": "raw/7f6007fe3034.md",
+        "graderVerdicts": {
+          "luna": false,
+          "terra": false
+        }
+      }
+    ]
+  }
+]

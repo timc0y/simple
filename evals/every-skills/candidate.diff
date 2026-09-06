@@ -1,0 +1,36 @@
+diff --git a/references/architecture.md b/references/architecture.md
+--- a/references/architecture.md
++++ b/references/architecture.md
+@@ -83,5 +83,16 @@ automatic rejection: test native acceptance, observation by the original consumer,
+ survival across removal or reload, repeated use, and contained failure.
+ 
++## Prove workflows
++
++Derive the affected public surfaces and complete journeys from the change. Account for
++each as passed, failed, or untested with a reason. An observed failure remains a failure
++until a completed retest replaces it; untested or unanswered work is unknown, not pass.
++
++For a resumable workflow with external side effects, make each transition idempotent.
++Confirm or recover the effect, durably record it, and only then advance progress. Test
++interruption after each transition through the owner's public surface; a static result
++from one dependency does not prove the sequence or recovery.
++
+ ## Make complexity pay rent
+ 
+ Before adding architecture, answer:
+diff --git a/references/commands.md b/references/commands.md
+--- a/references/commands.md
++++ b/references/commands.md
+@@ -44,6 +44,12 @@ unjustified compatibility, displaced machinery left behind, self-grading proof,
+ unrelated changes, lost facts, and decorative or confusing prose. Report no finding
+ when the evidence does not support one.
+ 
++For each material finding, cite the exact surface, evidence, consequence, and smallest
++concrete correction. Judge the problem separately from the proposed remedy; apply only
++a mechanical correction with one supported answer. For skills, prompts, and rule files,
++fix a wrong governing condition or owning layer rather than accumulating edge cases. If
++the current condition already decides the reported case, do not edit it.
++
+ ## `simple write`
+ 
+ Create or revise a plan, document, comment, Markdown file, prompt, review, update, or

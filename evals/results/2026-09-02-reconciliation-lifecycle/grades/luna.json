@@ -1,0 +1,56 @@
+{
+  "selfTests": [
+    {
+      "case": "completed-work",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "unrelated-context",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "1dd79cf22037",
+      "passed": true,
+      "reason": "Updates CURRENT_STATE.md to /publish, removes the completed queue item, deletes the resolved dated review, preserves ADR 0004, limits cleanup appropriately, and reports the passing final test."
+    },
+    {
+      "id": "5deb363e25bd",
+      "passed": true,
+      "reason": "Performs all required documentation updates and cleanup, preserves the accepted decision, avoids extra documents, and reports the passing final test."
+    },
+    {
+      "id": "5e06f187f153",
+      "passed": false,
+      "reason": "Leaves the resolved dated review in place, so a required cleanup condition is not met."
+    },
+    {
+      "id": "d1f675a8a31d",
+      "passed": true,
+      "reason": "Updates the current state, removes the completed queue item and resolved review, preserves ADR 0004, limits scope, and reports the passing final test."
+    },
+    {
+      "id": "8922381405a8",
+      "passed": false,
+      "reason": "Adds a separate audit as follow-up work, which the criteria prohibit."
+    },
+    {
+      "id": "b5566809af4b",
+      "passed": true,
+      "reason": "Reports only the typo correction and focused test, while leaving older plans and reviews unchanged without proposing cleanup."
+    },
+    {
+      "id": "d800211f8c1b",
+      "passed": true,
+      "reason": "Reports the typo correction and focused test and explicitly leaves dated material unchanged without cleanup ceremony."
+    },
+    {
+      "id": "de2534872027",
+      "passed": true,
+      "reason": "Reports the typo correction and focused test and leaves dated material unchanged without proposing cleanup or follow-up work."
+    }
+  ]
+}

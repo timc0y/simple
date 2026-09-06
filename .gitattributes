@@ -1,0 +1,5 @@
+# Evaluation evidence preserves generated and tested bytes verbatim.
+evals/**/raw/*.md -whitespace
+evals/**/grades/*.prompt.md -whitespace
+evals/**/candidate.diff -whitespace
+evals/**/current-reverse.patch -whitespace

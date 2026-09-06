@@ -1,0 +1,206 @@
+{
+  "selfTests": [
+    {
+      "case": "agent-led-init-contract",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "deep-audit-guide-first",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "reconcile-unknown-obligation",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "work-local-finish-boundary",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "072e15b8baf4",
+      "passed": false,
+      "reason": "Fails because SIMPLE.md retains an incomplete marker, AGENTS.md lacks the required repository-specific read order, ownership, authority, and swarm contract, and the work is explicitly unfinished."
+    },
+    {
+      "id": "2d9b31fedd60",
+      "passed": false,
+      "reason": "Fails because SIMPLE.md retains an incomplete marker and the candidate explicitly leaves setup incomplete."
+    },
+    {
+      "id": "5518fbe633f1",
+      "passed": true,
+      "reason": "Changed only the permitted three files, records the required owners, read order, npm test route, authority and swarm rules, contains no incomplete marker, preserves unknowns as unknown, and reports local testing with no commit or external action."
+    },
+    {
+      "id": "59e5fdaadf03",
+      "passed": false,
+      "reason": "Fails because AGENTS.md contains only the generic Simple router and does not provide the required repository-specific read order, ownership, authority, or swarm contract."
+    },
+    {
+      "id": "8f6b69d4c400",
+      "passed": false,
+      "reason": "Fails because SIMPLE.md retains an incomplete marker and the work is explicitly left incomplete."
+    },
+    {
+      "id": "a1c5efbf1d06",
+      "passed": false,
+      "reason": "Fails because AGENTS.md does not name README.md as an actual owner and its swarm statement does not establish one writer per file."
+    },
+    {
+      "id": "b8c13da42b4a",
+      "passed": false,
+      "reason": "Fails because it changed WORK.md, which is outside the permitted files, and did not create AGENTS.md or CLAUDE.md."
+    },
+    {
+      "id": "f1aa2beb51d0",
+      "passed": false,
+      "reason": "Fails because AGENTS.md does not name README.md as an actual owner, and SIMPLE.md asserts a specific failure consequence rather than recording only the required observed facts."
+    },
+    {
+      "id": "f2a59e96d738",
+      "passed": false,
+      "reason": "Fails because AGENTS.md and CLAUDE.md were not created, so the required repository-specific agent contract is absent."
+    },
+    {
+      "id": "0afb3277d9d6",
+      "passed": false,
+      "reason": "Misclassifies device state as not applicable rather than unknown and treats the known restart-idempotency question as answered within a novel finding."
+    },
+    {
+      "id": "2553163afe2c",
+      "passed": false,
+      "reason": "The answer does not begin with a dated frozen fast take, lacks the required evidence-field detail for material findings, and does not end with the required belief sentence."
+    },
+    {
+      "id": "32dfe6448aa9",
+      "passed": false,
+      "reason": "The frozen fast take is undated, the audit omits required structured finding consequences and actions, and it lacks the required ending belief sentence and deletion analysis."
+    },
+    {
+      "id": "3dda013e2a13",
+      "passed": true,
+      "reason": "Meets the ordered contract: dated frozen take and correction, guides and decisions before source conclusions, separated truth surfaces, correct top findings, known-issue exclusion, seven lenses with blind spots, evidence fields, unknowns, deletion analysis, experiment, unchanged worktree, and required ending belief sentence."
+    },
+    {
+      "id": "727c7aed4d7a",
+      "passed": false,
+      "reason": "The fast take is undated, the known restart-idempotency issue is presented as a finding, and the answer lacks the required ending belief sentence and complete material-finding fields."
+    },
+    {
+      "id": "7f6007fe3034",
+      "passed": false,
+      "reason": "The frozen fast take is undated; the seven lenses are not separately applied with retained blind spots, and required evidence-field detail and ending belief sentence are absent."
+    },
+    {
+      "id": "95c21da59ecd",
+      "passed": false,
+      "reason": "The answer does not begin with the frozen fast take, explicitly promotes the known restart-idempotency issue into a novel finding, and does not end with the required belief sentence."
+    },
+    {
+      "id": "e389ca28caf5",
+      "passed": false,
+      "reason": "The fast take is undated, incorrectly characterizes the retention code as implementing the 24-hour commitment despite no deletion executor, omits the required lens application and finding fields, and lacks the ending belief sentence."
+    },
+    {
+      "id": "e4487580e588",
+      "passed": false,
+      "reason": "Although strong on retention, truth separation, lenses, unknowns, and the ending sentence, the release-identity issue is only treated as a weakened earlier claim rather than a fully specified material finding with status, missed check, falsification, smallest proof, severity, and action class."
+    },
+    {
+      "id": "1109fbb13624",
+      "passed": false,
+      "reason": "The handoff does not distinguish structural proof from hardware or deployed proof."
+    },
+    {
+      "id": "4275e7581710",
+      "passed": false,
+      "reason": "The handoff reports a structural check but does not distinguish it from hardware or deployed proof."
+    },
+    {
+      "id": "9bb58fbcf43a",
+      "passed": false,
+      "reason": "The handoff does not distinguish structural proof from hardware or deployed proof."
+    },
+    {
+      "id": "9e56c3d2c068",
+      "passed": false,
+      "reason": "The handoff does not distinguish structural proof from hardware or deployed proof."
+    },
+    {
+      "id": "b03b08ad7159",
+      "passed": false,
+      "reason": "The handoff reports structural validation but does not explicitly distinguish it from hardware or deployed proof."
+    },
+    {
+      "id": "b0ec581aa4f8",
+      "passed": false,
+      "reason": "The handoff does not distinguish structural proof from hardware or deployed proof."
+    },
+    {
+      "id": "da78206e2f80",
+      "passed": true,
+      "reason": "All material conditions are satisfied, including explicit structural-only proof and acknowledgment that device and deployed state were not tested."
+    },
+    {
+      "id": "e03f03691ea2",
+      "passed": true,
+      "reason": "All material conditions are satisfied, including explicit distinction between structural proof and unperformed hardware proof."
+    },
+    {
+      "id": "ed06d6981841",
+      "passed": false,
+      "reason": "The handoff does not distinguish structural proof from hardware or deployed proof."
+    },
+    {
+      "id": "2efa96570360",
+      "passed": true,
+      "reason": "Implements the existing owner, preserves the test, updates state, removes the queue item, keeps the boundary intact, reports npm test, and makes no commit or deployment."
+    },
+    {
+      "id": "5da3c8fb6cb0",
+      "passed": true,
+      "reason": "The diff implements the prefix in the existing owner, updates CURRENT_STATE and removes the work item; npm test passed and no commit, push, deploy, or release occurred."
+    },
+    {
+      "id": "61f18284f3a6",
+      "passed": true,
+      "reason": "The recorded diff satisfies the implementation, test, state, queue, boundary, and no-commit conditions; the handoff reports npm test without claiming deployment or release."
+    },
+    {
+      "id": "7a57e953ba80",
+      "passed": true,
+      "reason": "Implements the existing owner, preserves the boundary and test, updates state, removes the queue item, reports the actual test result, and records no commit or release activity."
+    },
+    {
+      "id": "7b917fe521aa",
+      "passed": true,
+      "reason": "The implementation and recorded worktree satisfy all criteria, including truthful state, removed queue item, passing test, preserved boundary, and no commit or deployment."
+    },
+    {
+      "id": "9d0f4e3d86b8",
+      "passed": true,
+      "reason": "Implements the requested behavior through the sole owner, passes npm test, updates CURRENT_STATE, removes the queue item, and reports no commit, push, deployment, or release."
+    },
+    {
+      "id": "c17af2a30ac1",
+      "passed": false,
+      "reason": "The worktree changes docs/plans/README.md to “Done.”, which marks the completed instruction rather than removing it; this explicitly fails criterion 4."
+    },
+    {
+      "id": "c5764bcb06b9",
+      "passed": true,
+      "reason": "The existing owner is updated, npm test passes, CURRENT_STATE is truthful, the queue item is cleared, and no commit, push, deployment, release, or account mutation occurred."
+    },
+    {
+      "id": "d701ab058165",
+      "passed": true,
+      "reason": "The diff implements the behavior, passes the test, updates state, removes the completed instruction while leaving an empty-status statement, and records no commit or deployment."
+    }
+  ]
+}

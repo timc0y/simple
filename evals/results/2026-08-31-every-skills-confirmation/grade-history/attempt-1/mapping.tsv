@@ -1,0 +1,8 @@
+9f2df2e77d24	1	instruction-review	gpt-5.6-luna	simple
+8b1deb4ea4cf	1	instruction-review	gpt-5.6-luna	candidate
+ff864eb75ca4	1	instruction-review	gpt-5.6-terra	simple
+027b956e5a6c	1	instruction-review	gpt-5.6-terra	candidate
+ca4a8827288c	1	proof-state	gpt-5.6-luna	simple
+23413b1ca2b5	1	proof-state	gpt-5.6-luna	candidate
+87fb6f66f2e6	1	proof-state	gpt-5.6-terra	simple
+f1d7cb3c3a2f	1	proof-state	gpt-5.6-terra	candidate

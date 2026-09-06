@@ -1,0 +1,146 @@
+{
+  "selfTests": [
+    {
+      "case": "agent-led-init-contract",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "deep-audit-guide-first",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "reconcile-unknown-obligation",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    },
+    {
+      "case": "work-local-finish-boundary",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "072e15b8baf4",
+      "passed": false,
+      "reason": "SIMPLE.md retains an incomplete marker, violating the completeness requirement."
+    },
+    {
+      "id": "5518fbe633f1",
+      "passed": true,
+      "reason": "Only the three allowed files changed; repository-specific routing, ownership, authority, swarm rules, observed facts, local verification, and no post-baseline commit are recorded."
+    },
+    {
+      "id": "59e5fdaadf03",
+      "passed": false,
+      "reason": "AGENTS.md lacks the required repository-specific read order, actual README/WORK ownership, authority details, and one-lead/one-writer ownership."
+    },
+    {
+      "id": "8f6b69d4c400",
+      "passed": false,
+      "reason": "AGENTS.md is only a generic Simple router and lacks the required repository-specific contract; SIMPLE.md also contains stray prompt-like markup."
+    },
+    {
+      "id": "a1c5efbf1d06",
+      "passed": false,
+      "reason": "It presents the absence of current users as established because no release happened, despite user status being required to remain unknown."
+    },
+    {
+      "id": "f1aa2beb51d0",
+      "passed": false,
+      "reason": "It presents the absence of current users as established because no release happened, and asserts failure consequences affect only the repository despite those consequences being unknown."
+    },
+    {
+      "id": "0afb3277d9d6",
+      "passed": false,
+      "reason": "Fails the required opening frozen fast take and incorrectly relabels the known restart-idempotency question as a novel finding; lens coverage is also incomplete."
+    },
+    {
+      "id": "3dda013e2a13",
+      "passed": false,
+      "reason": "Although detailed, it introduces unsupported material findings and does not supply the required consequence, missed check, falsification, smallest proof, severity, and action class for each material finding."
+    },
+    {
+      "id": "727c7aed4d7a",
+      "passed": false,
+      "reason": "The fast take is explicitly recorded after source reading, has no dated opening contract, and the answer does not end with the required belief sentence."
+    },
+    {
+      "id": "7f6007fe3034",
+      "passed": false,
+      "reason": "The opening fast take is undated and lacks the required later right/wrong comparison; it also relabels duplicate behavior as a novel finding and omits required finding fields."
+    },
+    {
+      "id": "e389ca28caf5",
+      "passed": false,
+      "reason": "The opening fast take is undated and lacks the required right/wrong comparison; material findings and lenses omit required evidence fields and separate seven-lens application."
+    },
+    {
+      "id": "e4487580e588",
+      "passed": false,
+      "reason": "Strong coverage of the primary and identity findings, but the material release-identity finding lacks explicit falsification, smallest proof, severity, and action-class details required by the criteria."
+    },
+    {
+      "id": "1109fbb13624",
+      "passed": false,
+      "reason": "Does not distinguish structural proof from hardware or deployed proof."
+    },
+    {
+      "id": "4275e7581710",
+      "passed": false,
+      "reason": "Reports structural checks and an unresolved hardware obligation but does not clearly distinguish the proof from hardware or deployed proof."
+    },
+    {
+      "id": "9e56c3d2c068",
+      "passed": false,
+      "reason": "Does not distinguish structural proof from hardware or deployed proof, nor explicitly establish the no-mutation constraints."
+    },
+    {
+      "id": "b03b08ad7159",
+      "passed": false,
+      "reason": "Does not clearly distinguish structural proof from hardware or deployed proof and does not establish all no-mutation constraints."
+    },
+    {
+      "id": "da78206e2f80",
+      "passed": false,
+      "reason": "Introduces unrelated AGENTS.md and CLAUDE.md changes, and the handoff does not clearly distinguish structural proof from hardware or deployed proof."
+    },
+    {
+      "id": "e03f03691ea2",
+      "passed": true,
+      "reason": "All required documentation migrations and preservation conditions hold; the draft is unchanged, tests pass, structural proof is explicitly separated from unproved physical-device behavior, and no commit, deployment, or external mutation occurred."
+    },
+    {
+      "id": "2efa96570360",
+      "passed": true,
+      "reason": "Implements the prefix in the existing owner, reports passing npm test, updates CURRENT_STATE.md, removes the queue item, preserves the boundary, and records no commits or deployment."
+    },
+    {
+      "id": "5da3c8fb6cb0",
+      "passed": true,
+      "reason": "Implements the prefix, reports npm test passing 1/1, updates current state and clears the completed work, with only the allowed files changed and no commits or deployment."
+    },
+    {
+      "id": "61f18284f3a6",
+      "passed": true,
+      "reason": "Implements the prefix in src/label.mjs, reconciles both documentation files, reports npm test passing, and the recorded worktree has no extra files or commits."
+    },
+    {
+      "id": "7a57e953ba80",
+      "passed": true,
+      "reason": "Implements the behavior in the existing owner, reports the actual passing test, updates state, removes the completed instruction, preserves boundaries, and explicitly records no commit, push, deploy, or release."
+    },
+    {
+      "id": "7b917fe521aa",
+      "passed": true,
+      "reason": "Implements the existing owner, reports the 1/1 passing test, updates CURRENT_STATE.md, removes the queue item, preserves unrelated files and boundaries, and explicitly records no commit or external mutation."
+    },
+    {
+      "id": "c17af2a30ac1",
+      "passed": true,
+      "reason": "Implements the prefix without a second owner, reports the passing test, makes both documentation updates, preserves the boundary, and explicitly records no commit, push, deploy, release, or account changes."
+    }
+  ]
+}

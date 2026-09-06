@@ -1,0 +1,1 @@
+The verifier must return exactly `capability-false-uses-supported`, `legacy-path-removed`, `transient-fallback-executes`, `permanent-error-preserved`, and `healthy-capability-still-supported`, each with Boolean verdicts. Accept only when all pass.

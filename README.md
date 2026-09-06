@@ -25,6 +25,10 @@ Common errors include these examples:
 - The agent adds a migration when no production data exists.
 - The agent adds a service for growth that nobody measured.
 - The agent creates a second owner instead of using the current path.
+- The agent rebuilds behaviour that a maintained package already supplies.
+- The agent keeps attempting a broken primary path before the only working route.
+- A correction makes the agent forget the requirements that still apply.
+- The agent reports a valid result that the intended caller cannot use.
 
 Simple separates current facts from assumptions. It then finds the owner, ordinary
 path, exact obstruction, smallest correction, and independent proof.
@@ -39,6 +43,13 @@ problem
 
 Simple minimizes concepts, states, workflows, and decisions. It does not reduce line
 count at the cost of behavior, safety, recovery, or proof.
+
+Simple can coexist with implementation-minimalism skills such as Ponytail on routine
+work. For lock, protected-interval, or uncertainty-protocol design, use one method at
+a time: isolated Claude Sonnet and forced-read Codex evaluations found that forcing
+both skills could preserve an unsafe operation order. Other combined cases passed, so
+this is a measured narrow limit rather than a general incompatibility. See the latest
+[interaction screen](evals/results/2026-08-30-obligation-handoff-screen/README.md).
 
 | Current fact | Smallest truthful path |
 | --- | --- |
@@ -113,6 +124,7 @@ Commands are entry points into one method. They are not a mandatory sequence.
 | `simple board` | Challenge a decision with evidence-backed views | Read only |
 | `simple work` | Implement one named outcome and reconcile its owners | Local repository edits |
 | `simple reconcile` | Reset repository truth, routing, and temporary documentation | Local guidance and documentation |
+| `simple research` | Resolve a decision using sources and working implementations | Read only; bounded local probes |
 | `simple plan` | Plan the smallest truthful change | Read only |
 | `simple review` | Review a design, document, plan, or diff | Read only |
 | `simple write` | Write or revise plain developer prose | Requested text |
@@ -250,6 +262,33 @@ that profile claims are true. Use `simple review` to compare them with the repos
 
 ## Evidence
 
+The latest [executable behavior screen](evals/results/2026-09-06-behavior/README.md)
+used Luna on actual edits, a follow-up correction, fallback cleanup, uncertain writes,
+and package reuse. No skill passed 4/5; two identical old-skill copies and the overhaul
+each passed 5/5. This found no overhaul gain or observed task regression. The small
+synthetic suite cannot establish equivalence; one timeout was retried.
+
+The subsequent [repeated preservation evaluation](evals/results/2026-09-06-preservation/README.md)
+ran 36 Luna cells. Including source-faithfulness review, the previous version passed
+12/12, the consolidated candidate 10/12 and a short instruction 11/12. Both candidate
+writing notes added unsupported release status even though executable checks passed.
+We restored the longer overhaul text, which preserves the reuse, research, fallback
+and correction guidance. The failures did not establish that the shorter text caused
+them. The new examples and evaluation tools remain.
+
+The latest guidance makes intended capabilities the basis for adoption. It also
+distinguishes instructions from evidence of completed actions. The
+[evaluation protocol](evals/README.md#start-from-intended-capabilities) records coverage
+gaps and calls for review of specific failures. We have no separate full model run
+for the current version.
+
+A [rollback audit](research/simple-skill-ideas.md#rollback-audit--6-september-2026)
+recovered scoped proof, review and compatibility guidance withheld after earlier
+evaluations. It also restored public engineering precedents removed during an editorial
+rewrite. The audit records sources, surviving meanings and deliberate exclusions.
+These restorations preserve intended capabilities; they have no new model-performance
+claim.
+
 The strongest recent result concerns repository facts. A profile that named the
 serialization owner and its supported alias mechanism improved strict passes from
 4 of 12 to 12 of 12.
@@ -282,8 +321,15 @@ git diff --check
 The tests cover profile setup, nested profile selection, hook routing, host links,
 public references, release versions, eval case structure, and normalized eval records.
 
-Change runtime text only after an equal A/B test moves the result. Keep negative
-results. A tie loses because more instruction adds context cost.
+For behavior claims, compare equal conditions using the
+[Ponytail-informed protocol](evals/README.md). Keep negative results. Additional
+instruction must justify its context cost. Record an owner-requested adoption without
+a measured gain as provisional; it does not turn a tie into positive evidence.
+Before model runs on the executable fixtures, run `npm run test:behavior` and
+`npm run test:preservation`. The latter checks the repeated preservation suite.
+The [research synthesis](research/simple-skill-ideas.md#preservation-and-reference-led-development--6-september-2026)
+retains the shortening audit, hypotheses and boundary examples; inclusion there does
+not automatically turn an idea into active skill guidance.
 
 The public website is in Tim's personal-site repository. This repository owns the
 skill, plugins, profiles, tests, and evidence.

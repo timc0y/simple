@@ -1,0 +1,71 @@
+{
+  "selfTests": [
+    {
+      "case": "production-data",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "3455609eb898",
+      "passed": true,
+      "reason": "Preserves and verifies data, supports both API names for 90 days with conflict handling, provides rollback safety, and has a telemetry-based removal condition."
+    },
+    {
+      "id": "4776a28e1cf6",
+      "passed": false,
+      "reason": "Relies on unspecified API versioning/content negotiation to preserve old response representations, rather than defining the required compatibility adapter behavior."
+    },
+    {
+      "id": "630f91fa33dd",
+      "passed": true,
+      "reason": "Uses a reversible data migration and a bounded API adapter with both-name fallback, verification, rollback, and the required 90-day plus zero-traffic removal gate."
+    },
+    {
+      "id": "753b54cc028a",
+      "passed": false,
+      "reason": "Does not define how current old and new clients receive compatible response representations; it defers this material requirement to an unspecified compatibility mechanism."
+    },
+    {
+      "id": "77dc83652af9",
+      "passed": true,
+      "reason": "Provides a bounded expand/backfill/dual-write migration, both API fields during deprecation, verification and rollback, and a safe removal condition."
+    },
+    {
+      "id": "7f2b20ec3fb0",
+      "passed": true,
+      "reason": "Preserves data through backfill and synchronized writes, maintains both API names for 90 days, includes verification and rollback, and removes only after zero old-field traffic."
+    },
+    {
+      "id": "9b7cdbc973c0",
+      "passed": true,
+      "reason": "Uses the existing migration path with backfill and dual writes, preserves both API representations, verifies data and rollback, and has an explicit bounded removal condition."
+    },
+    {
+      "id": "abf722c0fef6",
+      "passed": false,
+      "reason": "Leaves the material method for distinguishing and serving old versus new API clients unresolved, so the promised compatibility behavior is not fully specified."
+    },
+    {
+      "id": "b1ac9eac3901",
+      "passed": false,
+      "reason": "Acknowledges that reliable client distinction is a missing material fact but provides no fallback such as emitting both names, leaving coexistence of the promised API representations unresolved."
+    },
+    {
+      "id": "b555f27c7502",
+      "passed": false,
+      "reason": "Says old and new clients receive different response names but does not specify a compatibility adapter or safe mechanism for determining which representation each current client receives."
+    },
+    {
+      "id": "eb2874fa3b2b",
+      "passed": false,
+      "reason": "Defers required legacy-client identification and exact API compatibility behavior to missing information, instead of providing the required bounded adapter that works during the promised window."
+    },
+    {
+      "id": "f6a2608c17f2",
+      "passed": true,
+      "reason": "Preserves data with reversible migration, defines a single adapter including a safe both-fields fallback, verifies old and new clients and rollback, and removes only after 90 days and zero traffic."
+    }
+  ]
+}

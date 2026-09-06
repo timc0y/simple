@@ -1,0 +1,1 @@
+{"name":"uncertain-write-fixture","type":"module","scripts":{"test":"node caller-a.mjs"}}

@@ -4,6 +4,10 @@ Use this only when the user asks what a named engineer, company, or experienced
 operator would do. Emulate the documented decision process, never the person: no
 voice, mannerisms, private thoughts, invented biography, or presumed current opinion.
 
+Keep a requested lens scoped to its task. Continue it in later tasks only when the
+user or repository contract keeps it active. Record sources and relevant dates;
+distinguish documented doctrine from inference or stale evidence.
+
 This is distinct from Parallax audiences and personas, which represent the person
 experiencing a product. A simulated operator or user reaction is a hypothesis until
 real evidence supports it; simulation is never user research or runtime proof.

@@ -1,0 +1,71 @@
+{
+  "selfTests": [
+    {
+      "case": "production-data",
+      "passReferencePassed": true,
+      "failReferenceRejected": true
+    }
+  ],
+  "grades": [
+    {
+      "id": "3455609eb898",
+      "passed": true,
+      "reason": "Preserves data with an existing migration, bounded API compatibility, verification, rollback support, and explicit 90-day/zero-traffic removal criteria."
+    },
+    {
+      "id": "4776a28e1cf6",
+      "passed": true,
+      "reason": "Provides migration, backfill verification, compatible reads and writes, rollback, and a bounded adapter with explicit removal conditions."
+    },
+    {
+      "id": "630f91fa33dd",
+      "passed": true,
+      "reason": "Uses a reversible persisted rename and bounded API adapter, verifies compatibility and data preservation, and defines removal after 90 days and zero legacy traffic."
+    },
+    {
+      "id": "753b54cc028a",
+      "passed": true,
+      "reason": "Preserves data, uses the existing migration path and a bounded API compatibility mechanism, includes verification and rollback, and defines removal criteria."
+    },
+    {
+      "id": "77dc83652af9",
+      "passed": true,
+      "reason": "Uses expand-migrate-contract, preserves and synchronizes data, verifies clients and rollback, and removes compatibility only after the required conditions."
+    },
+    {
+      "id": "7f2b20ec3fb0",
+      "passed": true,
+      "reason": "Provides a safe migration, compatibility during the deprecation window, verification, rollback, and explicit removal conditions."
+    },
+    {
+      "id": "9b7cdbc973c0",
+      "passed": true,
+      "reason": "Preserves customer data and both client versions through migration and dual-write compatibility, with verification, rollback, and bounded removal."
+    },
+    {
+      "id": "abf722c0fef6",
+      "passed": false,
+      "reason": "Relies on an unspecified client/version selection mechanism and leaves coexistence unresolved, so it does not ensure both published representations work."
+    },
+    {
+      "id": "b1ac9eac3901",
+      "passed": false,
+      "reason": "Explicitly identifies a missing representation-selection mechanism without providing a fallback, leaving compatibility with both published client forms unresolved."
+    },
+    {
+      "id": "b555f27c7502",
+      "passed": true,
+      "reason": "Preserves stored data and clients through staged migration, dual writes, verification, rollback, telemetry, and explicit 90-day/zero-traffic removal."
+    },
+    {
+      "id": "eb2874fa3b2b",
+      "passed": false,
+      "reason": "Conditions implementation on an unspecified client-negotiation mechanism and requires additional facts before coding, without guaranteeing simultaneous old and new API compatibility."
+    },
+    {
+      "id": "f6a2608c17f2",
+      "passed": true,
+      "reason": "Provides either existing negotiation or a both-fields fallback, preserves data, supports rollback and verification, and defines bounded removal criteria."
+    }
+  ]
+}

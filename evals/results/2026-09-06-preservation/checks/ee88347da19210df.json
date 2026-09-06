@@ -1,0 +1,27 @@
+{
+  "stdout": {
+    "passed": true,
+    "checks": [
+      {
+        "id": "helper-preserved",
+        "passed": true
+      },
+      {
+        "id": "duplicate-removed",
+        "passed": true
+      },
+      {
+        "id": "behavior",
+        "passed": true
+      },
+      {
+        "id": "varied-input",
+        "passed": true
+      },
+      {
+        "id": "delegates-to-helper",
+        "passed": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+# Decision research
+
+Use research to resolve a question that can change what to build, reuse, keep or remove.
+A narrow lookup can be enough. Do not turn a known local edit into a research project.
+
+## Establish the question
+
+1. Name the uncertainty and the decision it could change.
+2. Read the repository facts that affect the answer.
+3. Check existing code, installed tools, tests and recorded evidence.
+4. Choose the next investigation by what could make the remaining work unnecessary.
+
+## Learn from working systems
+
+Use evidence suited to the question:
+
+- Official documentation and clients.
+- Software development kit (SDK) source and package implementations.
+- Reference apps and tests.
+- Issues and merged fixes.
+
+Use available search or source tools. Do not depend on a particular search provider.
+Check external claims that can change against current sources.
+Keep private repository data out of public searches.
+
+Trace the relevant inputs, operation order, state, output and failure behaviour.
+Separate documented contracts, observed implementation details and inference.
+An official client shows how its authors use the system.
+Check whether each relevant behaviour suits this project and its supported access.
+Reuse proven knowledge without extra architecture or access rights.
+
+For pages and components, identify the reference app and the decisions it informs.
+Record the source file or commit URL in the existing documentation or beside the code.
+Explain what you reused and changed. Distinguish inspiration from copied code.
+Obey licences and keep necessary attribution. Do not invent provenance.
+
+## Resolve the uncertainty
+
+If the source cannot settle a consequential question, use the smallest reversible experiment through the real operation.
+Prefer a result you can check over more explanation.
+A reference implementation can supply comparison evidence.
+Check intentional differences against this project's contract.
+Do not copy bugs to match the reference.
+Keep structured identity and relevant failure information in the experiment.
+
+Keep product and external systems read-only unless the task authorises more.
+Use a disposable local probe when safe and within scope.
+Research does not itself authorise live mutations, spend, publication or a migration.
+
+If evidence supports the next action and more research is unlikely to change it, stop.
+If the necessary source or experiment is unavailable, state the unknown.
+Do not replace absent evidence with confidence.
+Do not search for packages to replace trivial code without a concrete reason.
+
+## Recommend and keep useful evidence
+
+State the question, evidence, sources, recommendation and material unknowns.
+Explain what work remains to own, including integration, operation and updates.
+An existing package, application or command that completes the job is a valid outcome.
+
+No new report is necessary.
+Return the evidence in the conversation unless the user requests a durable record or the change needs one.
+For a durable record, update the existing knowledge owner with the proven approach and recheck condition.
+Keep temporary investigation output disposable.

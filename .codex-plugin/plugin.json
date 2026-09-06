@@ -1,6 +1,6 @@
 {
   "name": "simple",
-  "version": "0.5.5+codex.20260829",
+  "version": "0.6.0+codex.20260906",
   "description": "Solve software problems with the smallest truthful design and plain developer writing.",
   "author": {
     "name": "Tim Coy",
@@ -34,6 +34,7 @@
       "Use Simple to nail down the problem with me before choosing a solution",
       "Use Simple to explain this code, workflow, or decision in plain language and make the flow easy to picture",
       "Use Simple for this architecture or change-design decision",
+      "Use Simple to research this decision from existing code, reference implementations and current sources",
       "Use Simple to write or revise this technical plan or documentation in plain Markdown",
       "Use Simple to challenge this decision with a documented operator doctrine (SpaceX five-step, Theo/T3, or minimal implementation)",
       "Run a read-only Simple audit of this repository, including whether its lint, tests, and code-health checks match observed risks",

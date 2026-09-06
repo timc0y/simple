@@ -1,0 +1,13 @@
+diff -ruN --exclude=.DS_Store /tmp/simple-candidate-before-shared-owner/references/architecture.md skills/simple/references/architecture.md
+--- /tmp/simple-candidate-before-shared-owner/references/architecture.md	2026-09-05 18:47:26
++++ skills/simple/references/architecture.md	2026-09-05 19:02:43
+@@ -95,6 +95,9 @@
+ Record what would retire a temporary fallback, and remove its callers and support
+ code when that condition is established.
+ 
++Put fallback, retry and uncertainty checks in the existing shared operation owner.
++Make every caller use that owner so no entry point bypasses the checks.
++
+ ## Preserve the owner; supply the missing precondition
+ 
+ When the desired state already has the right owner but the ordinary path cannot

@@ -15,8 +15,12 @@ not require an architecture review unless the content itself depends on one.
 - Prefer direct constructions and short sentences.
 - Prefer a concrete example or before-and-after account when abstract prose is hard to
   picture.
+- When readers could confuse two cases, show a nearby case where the answer changes
+  and explain the decisive fact.
 - State concrete conditions, limits, units, ownership, and failure behaviour.
 - Separate observed fact, inference, assumption, and unknown.
+- Instructions describe what to do, not what has happened. A check, deployment or
+  recovery command does not establish whether it has run or what state exists now.
 - Use sentence-case headings and only as many as the document needs.
 - Use plain Markdown. Avoid decorative formatting, emojis, icons, callout styling,
   ornamental separators, fake quotations, and visual ceremony unless the destination
@@ -35,6 +39,7 @@ not require an architecture review unless the content itself depends on one.
 ### Comments
 
 Explain a non-obvious reason, contract, invariant, trap, or invalidation condition.
+Ask which plausible wrong edit the comment prevents.
 Let the code show the visible operation. Keep the comment beside the rule it protects.
 
 ```js
@@ -84,9 +89,41 @@ For a handoff, report the outcome, why it is sufficient, proof, and any remainin
 or reconsideration condition. Repeat earlier commentary only when the final state
 needs it.
 
+When you reject or defer a material review finding, explain the decision and its
+decisive fact or trade-off. Keep a non-obvious reason in the existing owner when later
+work needs it; the reply alone may suffice for a routine resolution.
+
 ## Editing
 
 Preserve the original meaning before shortening. Remove introductions, repetition,
 filler, duplicated headings, decorative formatting, and optional background first.
 Compression is successful only when the reader can still decide, operate, recover, or
 verify correctly.
+
+## Adapt to the audience
+
+Keep the facts, commitments, and boundaries fixed while changing the detail and action
+for the reader.
+
+Use the destination's conventions. Controlled technical English can help operational
+instructions; do not impose it on narrative or persuasive prose at the cost of purpose.
+
+Before: “The destination schema is stale. The operator can refresh it and rerun the
+import.”
+
+After for an operator: “The destination schema is stale. Refresh it, then rerun the
+import.”
+
+After for a reviewer: “The destination schema is stale. The operator can refresh it
+before rerunning the import.”
+
+Before: “The current endpoint remains available during the documented migration window.”
+
+After for a user: “You can keep using the current endpoint during the documented
+migration window while you update.”
+
+After for a reviewer: “The current endpoint remains available during the documented
+migration window.”
+
+Do not turn an audience adaptation into a new promise. If the source does not state a
+window, guarantee, or supported caller, preserve that uncertainty.

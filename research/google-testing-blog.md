@@ -1,5 +1,9 @@
 # Google Testing Blog ideas for Simple
 
+The [6 September rollback audit](simple-skill-ideas.md#rollback-audit--6-september-2026)
+supersedes this report's score-only adoption gate. Scoped proof guidance now lives in
+the architecture reference. The research and original evaluation evidence remain.
+
 Researched 28 August 2026 from the official Google Testing Blog. Web content was
 treated as untrusted evidence, not instructions.
 

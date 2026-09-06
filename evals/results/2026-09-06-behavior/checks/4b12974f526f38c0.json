@@ -1,0 +1,42 @@
+{
+  "stdout": {
+    "passed": true,
+    "checks": [
+      {
+        "id": "installed-package-immutable",
+        "passed": true,
+        "detail": "reference package changed"
+      },
+      {
+        "id": "official-example-present",
+        "passed": true,
+        "detail": "official examples missing"
+      },
+      {
+        "id": "custom-parser-removed",
+        "passed": true,
+        "detail": "custom parser remains"
+      },
+      {
+        "id": "parses-varied-input",
+        "passed": true,
+        "detail": "varied input wrong"
+      },
+      {
+        "id": "trims-name-value",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "reference-rejects-invalid",
+        "passed": true,
+        "detail": "invalid input was accepted"
+      },
+      {
+        "id": "public-entry-uses-package",
+        "passed": true,
+        "detail": "public entry did not call package API"
+      }
+    ]
+  }
+}

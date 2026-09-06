@@ -90,6 +90,16 @@ deletion of external state unless the user explicitly authorizes those actions.
 5. Inspect the final diff and reconcile only owners it made false. Remove completed
    queue instructions and fulfilled temporary context after moving durable evidence.
 
+Account for affected public surfaces and complete user journeys as passed, failed or
+untested, with reasons for gaps. A component check does not prove the full journey.
+An observed failure remains unresolved until a completed retest establishes recovery.
+An unanswered check is unknown, not a pass.
+
+For resumable workflows with external effects, confirm or recover each effect before
+you durably advance progress. Use idempotency where the operation supports it. Check
+relevant interruption points through the owner. An output file alone does not prove
+that a stage completed; a blocked stage remains blocked until its obligation is met.
+
 In the handoff, name the check that ran and its proof class. When external proof is
 relevant, use explicit `Local or structural proof:` and `Not proved:` lines for live,
 device, hardware, account, distribution, or user surfaces; never let a local pass imply
@@ -99,6 +109,19 @@ Continue until the requested outcome is independently proved or an exact authori
 hardware, account, or external dependency blocks it. Name that blocker and the
 smallest action that would clear it. Do not turn an intermediate result into another
 plan for the user to reissue.
+
+## Continue after a correction or interruption
+
+Recover the active outcome, latest correction, completed work, remaining obligation,
+and relevant authorization from the conversation and current repository state. Check
+the working tree and existing evidence before repeating an edit or experiment. Keep
+unaffected requirements; replace an earlier decision only where new evidence or the
+user's correction changes it.
+
+After an interrupted mutation, establish what took effect before retrying. Resume at
+the first unproved step. Put a costly discovery in its existing owner when another
+session needs it; a short task does not need a new checkpoint document. Keep private
+session evidence in a locally ignored location, with self-contained public guidance.
 
 ## `simple reconcile`
 

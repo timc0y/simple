@@ -1,4 +1,4 @@
 interface:
   display_name: "Simple"
   short_description: "Smallest truthful design and plain developer writing"
-  default_prompt: "Use $simple to find the smallest truthful design or write concise developer prose. Read the nearest SIMPLE.md when repository facts matter and prove consequential claims independently."
+  default_prompt: "Use $simple to find the smallest truthful design research a decision, or write concise developer prose. Read the nearest SIMPLE.md when repository facts matter and prove consequential claims independently."

@@ -1,0 +1,1 @@
+{"name":"fallback-selection-fixture","type":"module","scripts":{"test":"node main.mjs"}}

@@ -1,11 +1,13 @@
 {
   "name": "@timc0y/simple-skill",
-  "version": "0.5.5",
+  "version": "0.6.0",
   "private": true,
   "type": "module",
   "scripts": {
     "install:local": "node scripts/link-skill.mjs",
-    "test": "node --test test/*.test.mjs"
+    "test": "node --test test/*.test.mjs",
+    "test:behavior": "python3 evals/behavior/selftest.py && node evals/behavior/cases/fallback-selection/selftest.mjs && node evals/behavior/cases/uncertain-write/selftest.mjs && node evals/behavior/cases/reuse-reference/selftest.mjs",
+    "test:preservation": "python3 evals/preservation/run.py selftest"
   },
   "devDependencies": {}
 }

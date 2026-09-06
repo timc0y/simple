@@ -1,0 +1,1 @@
+Known-good behavior: `main.mjs` calls `runSupported()` for both capability states, has no legacy module/import, and retains a separate transient fallback module and branch for supported transient failures.

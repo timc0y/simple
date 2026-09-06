@@ -78,6 +78,23 @@ test("check accepts a completed repository profile", () => {
   assert.deepEqual(check(root), []);
 });
 
+test("init upgrades short routes once and preserves custom rules, profiles and Claude imports", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-"));
+  const previous = "For non-trivial design or implementation, invoke `$simple` and read the nearest `SIMPLE.md`. Design for observed reality, not imagined obligations.";
+  writeFileSync(join(root, "AGENTS.md"), `# Rules\n\nKeep local data private.\n\n## Simple\n\n${previous}\n`);
+  writeFileSync(join(root, "SIMPLE.md"), "Existing project facts.\n");
+  writeFileSync(join(root, "CLAUDE.md"), "Keep the release gate.\n\n@AGENTS.md\n");
+  init(root);
+  const first = readFileSync(join(root, "AGENTS.md"), "utf8");
+  init(root);
+  assert.equal(readFileSync(join(root, "AGENTS.md"), "utf8"), first);
+  assert.equal(first.match(/^## Simple$/gm).length, 1);
+  assert.match(first, /Keep local data private/);
+  assert.match(first, /`research`/);
+  assert.equal(readFileSync(join(root, "SIMPLE.md"), "utf8"), "Existing project facts.\n");
+  assert.equal(readFileSync(join(root, "CLAUDE.md"), "utf8"), "Keep the release gate.\n\n@AGENTS.md\n");
+});
+
 test("check rejects contradictory routing text", () => {
   const root = mkdtempSync(join(tmpdir(), "simple-"));
   setup(root);
@@ -456,6 +473,19 @@ test("normalized mixed-provider results keep per-model metadata", () => {
     { model: { name: "Codex Luna", revision: "gpt-5.6-luna", reasoning: "default" }, harness: "Codex isolated" }
   ]);
   assert.deepEqual(validateResults(records, root), []);
+});
+
+test("normalization records only graders that ran", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-grading-"));
+  writeFileSync(join(root, "mapping.tsv"), "abc\t1\trecovery\tgpt-5.6-luna\tcandidate\n");
+  writeFileSync(join(root, "results.tsv"), "run\tcase\tmodel\tcondition\tluna\tstrict\n1\trecovery\tgpt-5.6-luna\tcandidate\ttrue\ttrue\n");
+  const [record] = normalizeResults(root, { skillCommit: "fixture", harness: "Luna only" });
+  assert.deepEqual(record.tasks[0].graderVerdicts, { luna: true });
+  assert.equal(record.tasks[0].passed, true);
+  writeFileSync(join(root, "results.tsv"), "run\tcase\tmodel\tcondition\tluna\tterra\tstrict\n1\trecovery\tgpt-5.6-luna\tcandidate\ttrue\tfalse\tfalse\n");
+  const [dual] = normalizeResults(root, { skillCommit: "fixture", harness: "Two graders" });
+  assert.deepEqual(dual.tasks[0].graderVerdicts, { luna: true, terra: false });
+  assert.equal(dual.tasks[0].passed, false);
 });
 
 function completedProfile(root, label) {

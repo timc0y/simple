@@ -1,0 +1,15 @@
+diff --git a/SKILL.md b/SKILL.md
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -56,6 +56,11 @@ clear. Restate who or what is affected, what happens now, what should happen, and
+    falsify the result through a surface independent enough to distinguish the requested
+    behaviour from the implementation itself.
+ 
++Use one implementation ladder. When another active method owns implementation
++minimisation, do not repeat that ladder. Give it Simple's established users, contracts,
++retained data, invariant, owner, preservation, failure and recovery boundaries, and
++independent proof as fixed acceptance criteria; then recheck the result against them.
++
+ ## Write in order
+ 
+ 1. Identify the reader, purpose, destination, and source of truth.

@@ -1,0 +1,1 @@
+The verifier must return exactly `both-callers-exactly-once` and `both-unknown-outcomes-preserved`, each with a Boolean verdict. Accept only when all pass. Both public callers must share the owner helper, produce one mutation each after a timeout, and preserve unknown failures without mutation.

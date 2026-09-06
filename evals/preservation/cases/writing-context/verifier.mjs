@@ -1,0 +1,4 @@
+import { readFile } from 'node:fs/promises'; import { resolve } from 'node:path';
+const target=resolve(process.argv[2]??'.'), checks=[]; const check=(id,passed)=>checks.push({id,passed:!!passed});
+let handoff; try { handoff=JSON.parse(await readFile(resolve(target,'handoff.json'),'utf8')); } catch { handoff=null; }
+check('handoff-json',handoff&&handoff.version==='v2.4.0'&&handoff.check_command==='npm test'&&handoff.deploy_command==='npm run deploy -- v2.4.0'&&handoff.rollback_boundary==='before database migration starts'&&handoff.migration_duration==='unknown'); check('no-completion-claim',!handoff?.completed); check('note-present',(await readFile(resolve(target,'release-note.md'),'utf8').catch(()=>'' )).length>0); const report={passed:checks.every(c=>c.passed),checks,manual:['release-note.md prose quality']}; console.log(JSON.stringify(report)); if(!report.passed)process.exit(1);

@@ -1,5 +1,6 @@
-# Evaluation evidence preserves generated and tested bytes verbatim.
-evals/**/raw/*.md -whitespace
-evals/**/grades/*.prompt.md -whitespace
-evals/**/candidate.diff -whitespace
-evals/**/current-reverse.patch -whitespace
+# Unified patches contain significant single-space context lines.
+*.patch whitespace=-blank-at-eol
+*.diff whitespace=-blank-at-eol
+
+# Preserve exact prompt and reference bytes used in recorded evaluations.
+evals/**/cases/**/*.md whitespace=-blank-at-eof

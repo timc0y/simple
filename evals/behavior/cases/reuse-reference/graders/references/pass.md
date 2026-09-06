@@ -1,0 +1,1 @@
+Known-good behavior: main imports `parseRecord` from `reference-parser`, custom-parser.mjs is absent, examples/basic.mjs remains, package bytes match the immutable hash, and the sample parses correctly.

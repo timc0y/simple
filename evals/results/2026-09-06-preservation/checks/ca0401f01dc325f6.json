@@ -1,0 +1,23 @@
+{
+  "stdout": {
+    "passed": true,
+    "checks": [
+      {
+        "id": "dependency-free",
+        "passed": true
+      },
+      {
+        "id": "no-installed-packages",
+        "passed": true
+      },
+      {
+        "id": "behavior",
+        "passed": true
+      },
+      {
+        "id": "varied-input",
+        "passed": true
+      }
+    ]
+  }
+}

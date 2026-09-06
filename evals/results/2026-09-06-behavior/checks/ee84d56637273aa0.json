@@ -1,0 +1,21 @@
+{
+  "stdout": {
+    "passed": true,
+    "checks": [
+      "structured_fields",
+      "queries",
+      "retention",
+      "summary_rendering",
+      "corrected_actor_name"
+    ]
+  },
+  "initial.stdout": {
+    "passed": true,
+    "checks": [
+      "structured_fields",
+      "queries",
+      "retention",
+      "summary_rendering"
+    ]
+  }
+}

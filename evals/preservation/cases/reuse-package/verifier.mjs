@@ -1,0 +1,13 @@
+import { cp, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import { tmpdir } from 'node:os';
+import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+const target=resolve(process.argv[2]??'.'), here=dirname(fileURLToPath(import.meta.url)), checks=[];
+const check=(id,passed,detail='')=>checks.push({id,passed:!!passed,detail});
+const pkg=join(target,'node_modules/label-normalizer'), files=['package.json','README.md','index.mjs'];
+const packageBytes=await Promise.all(files.map(f=>readFile(join(pkg,f)))); const fixtureBytes=await Promise.all(files.map(f=>readFile(join(here,'fixture/node_modules/label-normalizer',f)))); check('package-immutable',packageBytes.every((b,i)=>b.equals(fixtureBytes[i]))); check('example-preserved',existsSync(join(target,'examples/basic.mjs'))); check('custom-removed',!existsSync(join(target,'custom-normalizer.mjs')));
+const run=spawnSync(process.execPath,['main.mjs'],{cwd:target,encoding:'utf8'}); check('behavior',run.status===0&&run.stdout.trim()==='["hello-world","api-v2","beta-id"]'); const varied=await mkdtemp(join(tmpdir(),'package-input-')); await cp(target,varied,{recursive:true}); await writeFile(join(varied,'labels.json'),'[" New Label ","--- Q/3 ---"]'); const vr=spawnSync(process.execPath,['main.mjs'],{cwd:varied,encoding:'utf8'}); check('varied-input',vr.status===0&&vr.stdout.trim()==='["new-label","q-3"]'); await rm(varied,{recursive:true,force:true});
+const probe=await mkdtemp(join(tmpdir(),'package-probe-')); await cp(target,probe,{recursive:true}); await writeFile(join(probe,'node_modules/label-normalizer/index.mjs'),"export function normalizeLabels() { return ['PACKAGE_SENTINEL']; }\n"); const p=spawnSync(process.execPath,['main.mjs'],{cwd:probe,encoding:'utf8'}); check('delegates-to-package',p.status===0&&p.stdout.trim()==='["PACKAGE_SENTINEL"]'); await rm(probe,{recursive:true,force:true});
+const report={passed:checks.every(c=>c.passed),checks}; console.log(JSON.stringify(report)); if(!report.passed)process.exit(1);

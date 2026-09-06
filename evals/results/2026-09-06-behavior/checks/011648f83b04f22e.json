@@ -1,0 +1,32 @@
+{
+  "stdout": {
+    "passed": false,
+    "checks": [
+      {
+        "id": "capability-false-uses-supported",
+        "passed": true,
+        "detail": "capability=false must still select supported implementation"
+      },
+      {
+        "id": "legacy-path-removed",
+        "passed": false,
+        "detail": "obsolete legacy module/import remains"
+      },
+      {
+        "id": "transient-fallback-executes",
+        "passed": true,
+        "detail": "transient failure did not use fallback"
+      },
+      {
+        "id": "permanent-error-preserved",
+        "passed": true,
+        "detail": "permanent failure was silently recovered"
+      },
+      {
+        "id": "healthy-capability-still-supported",
+        "passed": true,
+        "detail": "healthy environment must use supported implementation"
+      }
+    ]
+  }
+}

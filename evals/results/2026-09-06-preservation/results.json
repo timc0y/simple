@@ -1,0 +1,311 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-06T10:42:31.802649+00:00",
+    "skillCommit": "uncommitted-snapshot-cd6e2eda1492c0bcfbbb668ff5d3cc7277683841db09657a8adc84967eebaa95",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated sequential Codex Luna preservation evaluation",
+    "condition": "previous",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "correction-preserves__r1",
+        "passed": true,
+        "evidence": "checks/6237592f17cdd2a1.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/6237592f17cdd2a1.md; submitted files: artifacts.zip under 6237592f17cdd2a1/."
+      },
+      {
+        "id": "fallback-selection__r1",
+        "passed": true,
+        "evidence": "checks/bb4a1b552b0fdd71.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/bb4a1b552b0fdd71.md; submitted files: artifacts.zip under bb4a1b552b0fdd71/."
+      },
+      {
+        "id": "reuse-package__r1",
+        "passed": true,
+        "evidence": "checks/6d94adc49f23f2be.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/6d94adc49f23f2be.md; submitted files: artifacts.zip under 6d94adc49f23f2be/."
+      },
+      {
+        "id": "reuse-local__r1",
+        "passed": true,
+        "evidence": "checks/ee88347da19210df.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/ee88347da19210df.md; submitted files: artifacts.zip under ee88347da19210df/."
+      },
+      {
+        "id": "reuse-direct__r1",
+        "passed": true,
+        "evidence": "checks/1986dc0f007d2203.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/1986dc0f007d2203.md; submitted files: artifacts.zip under 1986dc0f007d2203/."
+      },
+      {
+        "id": "writing-context__r1",
+        "passed": true,
+        "evidence": "checks/f7130f346e55ea04.json",
+        "graderVerdicts": {
+          "luna": true
+        },
+        "notes": "Submitted answer: raw/f7130f346e55ea04.md; submitted files: artifacts.zip under f7130f346e55ea04/. Prose source-fidelity review included; see writing-review.json. Executable-only grades retained separately."
+      },
+      {
+        "id": "correction-preserves__r2",
+        "passed": true,
+        "evidence": "checks/9fb92f21960ee6dc.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/9fb92f21960ee6dc.md; submitted files: artifacts.zip under 9fb92f21960ee6dc/."
+      },
+      {
+        "id": "fallback-selection__r2",
+        "passed": true,
+        "evidence": "checks/82a8adf517ef830c.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/82a8adf517ef830c.md; submitted files: artifacts.zip under 82a8adf517ef830c/."
+      },
+      {
+        "id": "reuse-package__r2",
+        "passed": true,
+        "evidence": "checks/a379396b5251330c.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/a379396b5251330c.md; submitted files: artifacts.zip under a379396b5251330c/."
+      },
+      {
+        "id": "reuse-local__r2",
+        "passed": true,
+        "evidence": "checks/48e9ad408b9f5ad5.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/48e9ad408b9f5ad5.md; submitted files: artifacts.zip under 48e9ad408b9f5ad5/."
+      },
+      {
+        "id": "reuse-direct__r2",
+        "passed": true,
+        "evidence": "checks/98d395c5c992960b.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/98d395c5c992960b.md; submitted files: artifacts.zip under 98d395c5c992960b/."
+      },
+      {
+        "id": "writing-context__r2",
+        "passed": true,
+        "evidence": "checks/503dd78e7583bca7.json",
+        "graderVerdicts": {
+          "luna": true
+        },
+        "notes": "Submitted answer: raw/503dd78e7583bca7.md; submitted files: artifacts.zip under 503dd78e7583bca7/. Prose source-fidelity review included; see writing-review.json. Executable-only grades retained separately."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-06T10:42:31.802649+00:00",
+    "skillCommit": "uncommitted-snapshot-99e096ca15d38c1338844c4018828998cd8ca082437eb73ef5e4eeabefa82610",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated sequential Codex Luna preservation evaluation",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "correction-preserves__r1",
+        "passed": true,
+        "evidence": "checks/2aed7d0720959f96.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/2aed7d0720959f96.md; submitted files: artifacts.zip under 2aed7d0720959f96/."
+      },
+      {
+        "id": "fallback-selection__r1",
+        "passed": true,
+        "evidence": "checks/1d82cf7bd8a520df.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/1d82cf7bd8a520df.md; submitted files: artifacts.zip under 1d82cf7bd8a520df/."
+      },
+      {
+        "id": "reuse-package__r1",
+        "passed": true,
+        "evidence": "checks/65bca1c9933ce38f.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/65bca1c9933ce38f.md; submitted files: artifacts.zip under 65bca1c9933ce38f/."
+      },
+      {
+        "id": "reuse-local__r1",
+        "passed": true,
+        "evidence": "checks/d143574a5fc5bf13.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/d143574a5fc5bf13.md; submitted files: artifacts.zip under d143574a5fc5bf13/."
+      },
+      {
+        "id": "reuse-direct__r1",
+        "passed": true,
+        "evidence": "checks/f284921b6a982c1e.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/f284921b6a982c1e.md; submitted files: artifacts.zip under f284921b6a982c1e/."
+      },
+      {
+        "id": "writing-context__r1",
+        "passed": false,
+        "evidence": "checks/49482521d5dcc65d.json",
+        "graderVerdicts": {
+          "luna": false
+        },
+        "notes": "Submitted answer: raw/49482521d5dcc65d.md; submitted files: artifacts.zip under 49482521d5dcc65d/. Prose source-fidelity review included; see writing-review.json. Executable-only grades retained separately."
+      },
+      {
+        "id": "correction-preserves__r2",
+        "passed": true,
+        "evidence": "checks/02a49508be376e09.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/02a49508be376e09.md; submitted files: artifacts.zip under 02a49508be376e09/."
+      },
+      {
+        "id": "fallback-selection__r2",
+        "passed": true,
+        "evidence": "checks/73b629e080106e39.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/73b629e080106e39.md; submitted files: artifacts.zip under 73b629e080106e39/."
+      },
+      {
+        "id": "reuse-package__r2",
+        "passed": true,
+        "evidence": "checks/8c3e694d0a563fa0.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/8c3e694d0a563fa0.md; submitted files: artifacts.zip under 8c3e694d0a563fa0/."
+      },
+      {
+        "id": "reuse-local__r2",
+        "passed": true,
+        "evidence": "checks/07b0ee760c242933.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/07b0ee760c242933.md; submitted files: artifacts.zip under 07b0ee760c242933/."
+      },
+      {
+        "id": "reuse-direct__r2",
+        "passed": true,
+        "evidence": "checks/ca0401f01dc325f6.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/ca0401f01dc325f6.md; submitted files: artifacts.zip under ca0401f01dc325f6/."
+      },
+      {
+        "id": "writing-context__r2",
+        "passed": false,
+        "evidence": "checks/c1bc868998c0dca4.json",
+        "graderVerdicts": {
+          "luna": false
+        },
+        "notes": "Submitted answer: raw/c1bc868998c0dca4.md; submitted files: artifacts.zip under c1bc868998c0dca4/. Prose source-fidelity review included; see writing-review.json. Executable-only grades retained separately."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-06T10:42:31.802649+00:00",
+    "skillCommit": "uncommitted-snapshot-874251cb5f52071f49fc9a2e2e4a23a9512ff81eaf79955149f50db8e4c5acfa",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated sequential Codex Luna preservation evaluation",
+    "condition": "short",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "correction-preserves__r1",
+        "passed": true,
+        "evidence": "checks/7812b46dac636af7.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/7812b46dac636af7.md; submitted files: artifacts.zip under 7812b46dac636af7/."
+      },
+      {
+        "id": "fallback-selection__r1",
+        "passed": false,
+        "evidence": "checks/b1ff34a3e320d60e.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/b1ff34a3e320d60e.md; submitted files: artifacts.zip under b1ff34a3e320d60e/."
+      },
+      {
+        "id": "reuse-package__r1",
+        "passed": true,
+        "evidence": "checks/0344455b3f81e7ba.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/0344455b3f81e7ba.md; submitted files: artifacts.zip under 0344455b3f81e7ba/."
+      },
+      {
+        "id": "reuse-local__r1",
+        "passed": true,
+        "evidence": "checks/45f765498e912a3a.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/45f765498e912a3a.md; submitted files: artifacts.zip under 45f765498e912a3a/."
+      },
+      {
+        "id": "reuse-direct__r1",
+        "passed": true,
+        "evidence": "checks/6103bfd42f7aa86b.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/6103bfd42f7aa86b.md; submitted files: artifacts.zip under 6103bfd42f7aa86b/."
+      },
+      {
+        "id": "writing-context__r1",
+        "passed": true,
+        "evidence": "checks/211c443273f827df.json",
+        "graderVerdicts": {
+          "luna": true
+        },
+        "notes": "Submitted answer: raw/211c443273f827df.md; submitted files: artifacts.zip under 211c443273f827df/. Prose source-fidelity review included; see writing-review.json. Executable-only grades retained separately."
+      },
+      {
+        "id": "correction-preserves__r2",
+        "passed": true,
+        "evidence": "checks/dc4f74189a57519c.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/dc4f74189a57519c.md; submitted files: artifacts.zip under dc4f74189a57519c/."
+      },
+      {
+        "id": "fallback-selection__r2",
+        "passed": true,
+        "evidence": "checks/c060536e18cbb096.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/c060536e18cbb096.md; submitted files: artifacts.zip under c060536e18cbb096/."
+      },
+      {
+        "id": "reuse-package__r2",
+        "passed": true,
+        "evidence": "checks/609f9cd350cab4fc.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/609f9cd350cab4fc.md; submitted files: artifacts.zip under 609f9cd350cab4fc/."
+      },
+      {
+        "id": "reuse-local__r2",
+        "passed": true,
+        "evidence": "checks/3cd9f1ea3d5d1c91.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/3cd9f1ea3d5d1c91.md; submitted files: artifacts.zip under 3cd9f1ea3d5d1c91/."
+      },
+      {
+        "id": "reuse-direct__r2",
+        "passed": true,
+        "evidence": "checks/306d53ec1c09a2e5.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/306d53ec1c09a2e5.md; submitted files: artifacts.zip under 306d53ec1c09a2e5/."
+      },
+      {
+        "id": "writing-context__r2",
+        "passed": true,
+        "evidence": "checks/7e874de2d3e6adf3.json",
+        "graderVerdicts": {
+          "luna": true
+        },
+        "notes": "Submitted answer: raw/7e874de2d3e6adf3.md; submitted files: artifacts.zip under 7e874de2d3e6adf3/. Prose source-fidelity review included; see writing-review.json. Executable-only grades retained separately."
+      }
+    ]
+  }
+]

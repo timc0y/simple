@@ -1,0 +1,37 @@
+{
+  "stdout": {
+    "passed": true,
+    "checks": [
+      {
+        "id": "package-immutable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "example-preserved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "custom-removed",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "behavior",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "varied-input",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "delegates-to-package",
+        "passed": true,
+        "detail": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "method": "Root source comparison plus independent Luna review of anonymous outputs",
+  "invalid_review": "Initial Luna review read the root SIMPLE.md by mistake. Rejected; corrected review used the exact fixture profile. No solver outputs or executable scores were changed.",
+  "records": [
+    {
+      "id": "211c443273f827df",
+      "repeat": 1,
+      "passed": true,
+      "review": "All five source facts preserved; JSON and prose agree; no release-state claim."
+    },
+    {
+      "id": "f7130f346e55ea04",
+      "repeat": 1,
+      "passed": true,
+      "review": "All five source facts preserved; JSON and prose agree; no release-state claim."
+    },
+    {
+      "id": "49482521d5dcc65d",
+      "repeat": 1,
+      "passed": false,
+      "review": "Prose asserts that release v2.4.0 has not been completed. Source does not establish current release state. JSON checks passed; added status is unsupported.",
+      "quote": "Release `v2.4.0` has not been completed."
+    },
+    {
+      "id": "503dd78e7583bca7",
+      "repeat": 2,
+      "passed": true,
+      "review": "All five facts preserved; JSON and prose agree; no unsupported release-state claim."
+    },
+    {
+      "id": "c1bc868998c0dca4",
+      "repeat": 2,
+      "passed": false,
+      "review": "Prose asserts the release has not been deployed, but source does not establish release state. Structured facts agree with JSON.",
+      "quote": "Release `v2.4.0` has not been deployed."
+    },
+    {
+      "id": "7e874de2d3e6adf3",
+      "repeat": 2,
+      "passed": true,
+      "review": "All five facts preserved; JSON and prose agree; no unsupported release-state claim."
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Simple"
+  short_description: "Smallest truthful design and plain developer writing"
+  default_prompt: "Use $simple to choose the smallest design from repository evidence, research a decision, or write plain technical prose."

@@ -6,7 +6,8 @@ Read `SIMPLE.md`, then `skills/simple/SKILL.md` and only the specialist referenc
 task routes to. Read `README.md` when changing public setup, commands, hooks, or
 packaging. Read `evals/README.md` before creating or interpreting model evidence.
 If `.local/context/` exists, use it as optional local evidence. Do not commit its
-files.
+files. Keep private transcripts, audit evidence, and machine-specific context there.
+Public guidance and examples must stand on their own without that context.
 
 This repository has no persistent work queue. The user's request owns current work.
 Do not create a plan or backlog for one task. `evals/results/README.md` records
@@ -27,7 +28,7 @@ evaluation decisions, not future priority.
   and method but are not runtime instructions.
 - Plugin manifests package the shared source. They do not own a second skill copy.
 
-Use `$simple` and read the nearest `SIMPLE.md` for repository-dependent decisions and work. Explicit workflows: `simple init`, `audit`, `board`, `work`, `reconcile`, `plan`, `review`, `write`, `emulate`, or `check`.
+Use `$simple` and read the nearest `SIMPLE.md` for repository-dependent decisions and work. Explicit workflows: `simple init`, `audit`, `board`, `research`, `work`, `reconcile`, `plan`, `review`, `write`, `emulate`, or `check`.
 
 ## Swarm and authority
 

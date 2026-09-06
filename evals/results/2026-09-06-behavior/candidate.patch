@@ -1,0 +1,499 @@
+diff --git a/baseline-skill/SKILL.md b/candidate-skill/SKILL.md
+index 673d328..b045e30 100644
+--- a/baseline-skill/SKILL.md
++++ b/candidate-skill/SKILL.md
+@@ -4,7 +4,7 @@ description: >-
+   Apply first-principles reasoning grounded in repository evidence to find the
+   smallest truthful software design and write concise, plain developer prose. Use
+   for architecture, ownership, refactoring, deletion, compatibility, migration,
+-  repository setup or reconciliation, audits, decision reviews, implementation plans,
++  repository setup or reconciliation, audits, decision research, reference implementations, fallbacks, implementation plans,
+   or work that is becoming more complex than its demonstrated requirements; for
+   technical plans, documentation, comments, Markdown, prompts, reviews, updates, and
+   handoffs; and when asked what a documented engineer, company, or operator would do.
+@@ -27,6 +27,11 @@ uncertainty. Absence of evidence grants neither an obligation nor deletion permi
+   compatibility, migration, deletion, refactoring, or system-shape decisions.
+ - `writing`: create or revise plans, documentation, comments, Markdown, prompts,
+   reviews, updates, and handoffs as concise, plain, load-bearing prose.
++- `research`: resolve a decision-changing uncertainty using existing implementations,
++  sources and bounded experiments. Read `references/research.md`.
++
++Choose from the requested outcome, not a keyword: a review may ask for an explanation,
++a comparison, or defects. Do not silently substitute one for another.
+ 
+ Writing is a first-class Simple mode. Do not turn a writing task into an architecture
+ review unless the content itself requires a design decision. Read the nearest
+@@ -34,21 +39,24 @@ review unless the content itself requires a design decision. Read the nearest
+ 
+ ## Solve with the human
+ 
+-1. Treat a requested implementation as a proposal until the underlying problem is
+-   clear. Restate who or what is affected, what happens now, what should happen, and why
+-   the difference matters.
++1. Establish who or what is affected, what happens now, what should happen, and why
++   the difference matters. Use the existing conversation when it already answers this.
++   Clarify a material ambiguity; do not make the human reconfirm a clear request.
+ 2. Establish the actual users, operators, consumers, contracts, retained data,
+    commitments, scale, and failure consequences. Separate observed facts and explicit
+    commitments from inference, assumptions, and unknowns. Find repository facts before
+    asking the human; ask when their intent or a material choice is missing.
+ 3. State the required outcome or invariant without naming the current implementation.
+    Find the existing owner and ordinary path, then name the exact obstruction.
++   Before substantial invention, look for knowledge in working implementations,
++   official clients, tests and previous fixes. Research only what can change the decision.
+ 4. Decide what must be preserved and what may be replaced. Before moving ownership or
+    adding a workflow, try to supply only the missing precondition through the ordinary
+    path.
+ 5. Choose the smallest design that satisfies those present obligations. Before adding
+    code, a dependency, an abstraction, a workflow, or another owner, walk the ladder in
+-   `references/architecture.md`.
++   `references/architecture.md`. Compare the work left to implement, understand,
++   verify and maintain. An existing tool that completes the job is a completed solution.
+ 6. Make the reasoning easy to inspect: current reality -> obstruction -> change ->
+    outcome. Recheck the proposed change against the original problem and revise any
+    part that does not help.
+@@ -56,6 +64,11 @@ review unless the content itself requires a design decision. Read the nearest
+    falsify the result through a surface independent enough to distinguish the requested
+    behaviour from the implementation itself.
+ 
++A correction changes the affected premise, not the entire brief. Preserve the active
++outcome, unaffected requirements, accepted decisions, and existing authorization.
++A status question does not cancel ongoing work. Informal wording or a transcription
++error does not establish a new API, identifier, or compatibility promise.
++
+ ## Write in order
+ 
+ 1. Identify the reader, purpose, destination, and source of truth.
+@@ -84,6 +97,7 @@ through a present requirement. Repository evidence decides what these principles
+ - A second path is being added beside the ordinary path.
+ - Inaccessible state is being moved before ownership and access are distinguished.
+ - A replacement design does not name the ordinary path's exact obstruction.
++- A supposedly primary path routinely fails while only its fallback works.
+ - An adapter has no named consumer or retained-state obligation.
+ - A named standard or engineering story is creating its own prerequisites.
+ - You cannot state how the result will be proved independently.
+@@ -94,12 +108,19 @@ Write only what helps the next reader decide, operate, recover, or verify. Let c
+ explain what happens. Use comments for reasons, contracts, invariants, traps, and
+ invalidation conditions. Update the source of truth directly.
+ 
++Preserve expensive discoveries where the next change needs them: the evidence,
++working approach and observable reason to recheck. Prefer an existing test, nearby
++comment or knowledge owner over another report. Keep project-specific findings out
++of shared guidance.
++
+ Lead communication with the outcome. Report meaningful evidence, decisions,
+ blockers, risk, and the next relevant action. Do not narrate routine tool use.
+ 
+ ## Load specialist guidance only when needed
+ 
+ - Architecture or new abstractions: read `references/architecture.md`.
++- Decision research, package selection or learning from a reference implementation:
++  read `references/research.md`. Use a brief lookup for a narrow question.
+ - Compatibility, versioning, or migrations: read `references/compatibility.md`.
+ - Engineering precedents and examples: read `references/examples.md`.
+ - `simple audit`: read `references/audit.md` and use objective crawling agents when
+diff --git a/baseline-skill/agents/openai.yaml b/candidate-skill/agents/openai.yaml
+index 5935de9..7a6cda2 100644
+--- a/baseline-skill/agents/openai.yaml
++++ b/candidate-skill/agents/openai.yaml
+@@ -1,4 +1,4 @@
+ interface:
+   display_name: "Simple"
+   short_description: "Smallest truthful design and plain developer writing"
+-  default_prompt: "Use $simple to find the smallest truthful design or write concise developer prose. Read the nearest SIMPLE.md when repository facts matter and prove consequential claims independently."
++  default_prompt: "Use $simple to find the smallest truthful design research a decision, or write concise developer prose. Read the nearest SIMPLE.md when repository facts matter and prove consequential claims independently."
+diff --git a/baseline-skill/references/architecture.md b/candidate-skill/references/architecture.md
+index 15f30d1..b88240c 100644
+--- a/baseline-skill/references/architecture.md
++++ b/candidate-skill/references/architecture.md
+@@ -35,6 +35,20 @@ Prefer deep modules over pass-through layers. Keep related knowledge local. Extr
+ shared knowledge, not incidental syntax. Use linear control flow and explicit state
+ transitions.
+ 
++Preserve useful structure and identity through the path. Do not flatten an object,
++record or error into a weaker representation only to reconstruct it later. Inspect
++the real input, state and output before adding workarounds for an assumed cause.
++
++A valid representation is not yet a usable result. Establish eligibility, access,
++and required capability before ranking candidates or reporting success. Verify the
++path through the intended caller: an operation that works in a shell may still be
++unusable through the client's tool or permission boundary.
++
++Share mechanisms without erasing domain policy. Two values stored identically can
++have different lifetimes, absence meanings, or recovery rules. Keep those distinctions
++with their policy owner. When a repeated mechanical mistake can be prevented by an
++existing schema, constraint, or tool, encode it there instead of repeating prose.
++
+ ## Implementation ladder
+ 
+ Before adding code, a dependency, an abstraction, a workflow, state, or another owner,
+@@ -47,8 +61,16 @@ stop at the first rung that fully satisfies present obligations:
+ 4. Use the language or standard library.
+ 5. Use a native platform capability.
+ 6. Use an already-installed dependency without dividing ownership.
+-7. Write one direct local implementation.
+-8. Only then introduce new machinery.
++7. Compare a maintained package or existing tool with a direct local implementation.
++   Choose the one that leaves less work to own, including integration and operation.
++8. Write the remaining product-specific code; add machinery only for a present need.
++
++A package or several can replace thousands of custom lines and remove responsibility
++for their implementation. Dependency count alone does not establish complexity.
++Check fit, licence, maintenance and runtime support. Upstream maintains its code;
++the project still owns integration and updates. Copies and forks become local work.
++Prefer supported APIs, configuration and extension points over rebuilding internals.
++Use `research.md` when source inspection or a bounded experiment can settle the choice.
+ 
+ Minimise concepts and system burden, not line count. Never simplify away trust-boundary
+ validation, data-loss prevention, security, accessibility, recovery, real compatibility,
+@@ -58,6 +80,34 @@ When a deliberate shortcut has a material limit, record the current choice, why
+ sufficient, its known ceiling, the observable upgrade trigger, owner, and proof. Do not
+ create a debt ledger for trivial details.
+ 
++Include the next maintainer, content editor and operator in that comparison. Prefer
++defaults when extra choices have no demonstrated value. Remove duplicate facts and
++synchronisation duties where one existing owner can serve the consumers. Share code
++when consumers need the same maintained knowledge, not just similar syntax.
++
++## Make the working path ordinary
++
++Primary and fallback are claims about supported behaviour, not implementation order.
++Trace their callers and evidence before changing either. If the primary never works
++in the supported environment and the fallback satisfies the full contract, promote
++the working path and remove the failed attempt. One failure is not enough evidence.
++Fix the primary when its required behaviour is missing from the fallback.
++
++Keep a fallback for a named condition where a normally usable primary cannot finish.
++For different environments, prefer explicit capability selection before the operation
++when the capability can be established. Do not repeatedly fail to discover a known fact.
++Prove each retained path, its trigger and the promised result. Report degraded results
++as degraded; empty data, placeholders and swallowed errors are not successful recovery.
++
++After a mutation may have started, establish its effect before another attempt. A
++timeout does not prove nothing happened. Reuse an established idempotency mechanism
++or reconcile state; otherwise preserve uncertainty rather than duplicate the action.
++Record what would retire a temporary fallback, and remove its callers and support
++code when that condition is established.
++
++Put fallback, retry and uncertainty checks in the existing shared operation owner.
++Make every caller use that owner so no entry point bypasses the checks.
++
+ ## Preserve the owner; supply the missing precondition
+ 
+ When the desired state already has the right owner but the ordinary path cannot
+diff --git a/baseline-skill/references/commands.md b/candidate-skill/references/commands.md
+index 3586c34..f6d4650 100644
+--- a/baseline-skill/references/commands.md
++++ b/candidate-skill/references/commands.md
+@@ -38,6 +38,13 @@ apply the views sequentially and disclose that they were not independent. Return
+ recommendation, strongest material dissent, unknowns, and discriminating proof. Do
+ not decide by vote.
+ 
++## `simple research`
++
++Read `research.md`. Resolve a decision-changing question from repository evidence,
++relevant sources and bounded experiments. Return findings, sources, a recommendation
++and material unknowns. Product and external systems remain read-only unless separately
++authorised. Do not require a report or expand a narrow lookup into an investigation.
++
+ ## `simple plan`
+ 
+ Plan the requested outcome from repository evidence. Read `writing.md`; return plain
+@@ -50,7 +57,8 @@ prerequisites exist. Planning is read-only. Do not implement without authority.
+ 
+ ## `simple review`
+ 
+-Review a design, plan, document, or diff. Lead with material findings ordered by
++Review a design, plan, document, or diff for the requested purpose. For explanation
++or comparison, answer that question. For a defect review, lead with material findings ordered by
+ consequence. Check for invented obligations, divided ownership, second paths,
+ unjustified compatibility, displaced machinery left behind, self-grading proof,
+ unrelated changes, lost facts, and decorative or confusing prose. Report no finding
+diff --git a/baseline-skill/references/examples.md b/candidate-skill/references/examples.md
+index 1218498..66a3f0e 100644
+--- a/baseline-skill/references/examples.md
++++ b/candidate-skill/references/examples.md
+@@ -1,69 +1,80 @@
+-# Engineering precedents
++# Worked examples
+ 
+-Use precedents and analogies to generate hypotheses, then test them against repository
+-evidence. Keep one only when it makes the present decision clearer. Do not turn stories
+-into slogans, imitate incidental details, or let a precedent create requirements absent
+-from the repository.
++Use a worked example to make a decision rule concrete. Change one material fact and
++show when the recommendation changes. Keep examples synthetic; repository evidence
++still decides the real case.
+ 
+-## Raptor: move complexity inward
++## Filter before ranking
+ 
+-SpaceX's Raptor evolution internalised plumbing, cooling, and protection so the
+-engine imposed less supporting complexity on the vehicle. In software, strengthen
+-one owning boundary and remove the adapters, parallel paths, and coordination it
+-makes unnecessary. The component may remain sophisticated while the system becomes
+-simpler.
++An importer may choose one of several destinations. If a destination is usable only
++after its credentials and schema pass validation, filter first, then rank the usable
++destinations. Ranking all destinations can select one that cannot accept the data.
+ 
+-## Original iPhone: reject inherited features
++If the ranking service itself checks credentials and schema and returns only usable
++destinations, ranking first is sufficient. The changed fact removes the missing
++precondition, so the recommendation reverses.
+ 
+-The first iPhone omitted many features treated as mandatory by the phone category.
+-Ask whether a requirement belongs to this user and product now, or merely to the
+-category's conventional checklist. Omission is valid only when present users,
+-contracts, and consequences permit it.
++## Preserve domain meaning in shared storage
+ 
+-## MacBook unibody: remove false separations
++Two records use the same table. A missing durable mutation record means the outcome
++is unknown and must be resolved before another mutation. An expired offer means the
++offer is no longer valid and may be replaced under the product's normal rules. Shared
++storage does not make those states interchangeable.
+ 
+-Unibody construction replaced assemblies of separate structural parts with a more
+-coherent owner. In software, apparent modules may be fragments of one responsibility.
+-Combine them when doing so removes seams, duplicated state, and coordination rather
+-than creating a god object.
++If both records are governed by the same lifecycle and recovery rule, one record type
++may be enough. The changed domain fact justifies consolidation; the storage mechanism
++alone does not.
+ 
+-## Apple silicon and functional ownership
++## Informal wording is not an API contract
+ 
+-Co-design across hardware, operating system, and product can remove negotiation at
+-internal boundaries. Prefer one accountable owner for one body of knowledge. Keep a
+-boundary when it represents a real independent lifecycle, consumer, or failure domain.
++A guide says, “run a check before release,” and the command is renamed from `check` to
++`verify`. Keep the prose natural; it does not require an alias. If users or scripts
++invoke the published command `check`, retain a bounded compatibility alias or migrate
++those callers first.
+ 
+-## Walkman: solve the use, not the category
++If the old command was never published and has no consumer or retained-state
++obligation, delete it. The changed
++contract fact reverses the compatibility recommendation.
+ 
+-Sony's Walkman focused on private portable listening instead of reproducing every
+-feature of a home stereo. Start with the user's actual job. Do not add dashboards,
+-configuration, collaboration, extension systems, or administrative workflows merely
+-because comparable products contain them.
++## Correct one premise, preserve the rest
+ 
+-## Dynamo: complexity can be earned
++A plan assumes the input is local and recommends a direct file edit. If the input is
++actually remote, replace that step with the supported fetch path. Keep the existing
++format, validation, and proof requirements unless the correction also changes them.
+ 
+-Amazon's Dynamo accepted mechanisms such as partitioning, replication, and eventual
+-consistency to meet concrete availability and scale requirements. Simple is not a
+-ban on sophistication. When measured constraints require complexity, put it behind
+-a clear owner and record the obligation, failure model, proof, and reconsideration
+-condition.
++If the corrected source has a different format or trust boundary, those requirements
++must change too. The scope of the correction determines the scope of the rewrite.
+ 
+-## Native address: preserve the owner
++## Reviews can explain a choice
+ 
+-A structured document was correctly stored as a per-instance property and rendered
+-through a nested component. The supported API could edit documents but could not
+-address that property through the nested instance path. Moving the document, cloning
+-component definitions, keeping an external mapping, and automating the editor all
+-added ownership or workflow.
++A review request asks why a small adapter is sufficient. Explain the owner, ordinary
++path, and missing precondition; do not manufacture defects to fill a defect-hunting
++template.
+ 
+-Instead, one hidden native document element was bound directly to the same outer
+-property. It gave the supported API an ordinary address to existing state while the
+-visible nested component remained its consumer and the platform remained its sole
+-owner. The first operation created the address; later operations reused it.
++If the request asks whether the adapter has a race, test and report that race. The
++changed review purpose adds a proof obligation.
+ 
+-The precedent is not "add hidden elements." Separate ownership from addressability.
+-When state has the right owner, try supplying the smallest missing precondition before
+-redesigning where the state lives.
++## Supply an address, preserve the owner
+ 
+-Use the smallest relevant analogy. State it in the output only when it helps the
+-reader understand or challenge the decision.
++A visible nested component reads a document owned by its containing record, but the
++supported editor can address only top-level document elements. Bind one hidden native
++element to the existing property and use the editor's ordinary path. The component
++and record keep ownership.
++
++If the platform cannot bind that element to the property, move the document only when
++the new owner and migration proof are explicit. An addressability failure alone does
++not justify moving state.
++
++## Add complexity when the constraint is real
++
++A local command processes a few dozen items. A direct loop is enough; a queue and
++worker pool add recovery and ownership work without a demonstrated need. If measured
++input grows to millions of items and the command must survive process restarts, a
++durable queue may earn its cost.
++
++The changed scale and failure consequence create the obligation. A category's usual
++architecture does not.
++
++For the underlying engineering precedent about moving complexity behind one owner,
++see the [Raptor comparison](https://x.com/SpaceX/status/1819795288116330594) and the
++[SpaceX technical disclosure](https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf).
+diff --git a/baseline-skill/references/repository-work.md b/candidate-skill/references/repository-work.md
+index 5799c49..b9dab88 100644
+--- a/baseline-skill/references/repository-work.md
++++ b/candidate-skill/references/repository-work.md
+@@ -100,6 +100,19 @@ hardware, account, or external dependency blocks it. Name that blocker and the
+ smallest action that would clear it. Do not turn an intermediate result into another
+ plan for the user to reissue.
+ 
++## Continue after a correction or interruption
++
++Recover the active outcome, latest correction, completed work, remaining obligation,
++and relevant authorization from the conversation and current repository state. Check
++the working tree and existing evidence before repeating an edit or experiment. Keep
++unaffected requirements; replace an earlier decision only where new evidence or the
++user's correction changes it.
++
++After an interrupted mutation, establish what took effect before retrying. Resume at
++the first unproved step. Put a costly discovery in its existing owner when another
++session needs it; a short task does not need a new checkpoint document. Keep private
++session evidence in a locally ignored location, with self-contained public guidance.
++
+ ## `simple reconcile`
+ 
+ Use this when the user says to reset, clean, consolidate, or reconcile a repository's
+diff --git a/candidate-skill/references/research.md b/candidate-skill/references/research.md
+new file mode 100644
+index 0000000..4302364
+--- /dev/null
++++ b/candidate-skill/references/research.md
+@@ -0,0 +1,70 @@
++# Decision research
++
++Use research to resolve a question that can change what to build, reuse, keep or remove.
++A narrow lookup can be enough. Do not turn a known local edit into a research project.
++
++## Establish the question
++
++1. Name the uncertainty and the decision it could change.
++2. Read the repository facts that affect the answer.
++3. Check existing code, installed tools, tests and recorded evidence.
++4. Choose the next investigation by what could make the remaining work unnecessary.
++
++## Learn from working systems
++
++Use evidence suited to the question:
++
++- Official documentation and clients.
++- Software development kit (SDK) source and package implementations.
++- Reference apps and tests.
++- Issues and merged fixes.
++
++Use available search or source tools. Do not depend on a particular search provider.
++Check external claims that can change against current sources.
++Keep private repository data out of public searches.
++
++Trace the relevant inputs, operation order, state, output and failure behaviour.
++Separate documented contracts, observed implementation details and inference.
++An official client shows how its authors use the system.
++Check whether each relevant behaviour suits this project and its supported access.
++Reuse proven knowledge without extra architecture or access rights.
++
++For pages and components, identify the reference app and the decisions it informs.
++Record the source file or commit URL in the existing documentation or beside the code.
++Explain what you reused and changed. Distinguish inspiration from copied code.
++Obey licences and keep necessary attribution. Do not invent provenance.
++
++## Resolve the uncertainty
++
++For a failure, compare one working and one failing case at the same boundary.
++List plausible explanations only as far as needed to choose the cheapest observation
++that separates them. Change one relevant factor at a time; another search is useful
++only if its answer can alter the next action.
++
++If the source cannot settle a consequential question, use the smallest reversible experiment through the real operation.
++Prefer a result you can check over more explanation.
++A reference implementation can supply comparison evidence.
++Check intentional differences against this project's contract.
++Do not copy bugs to match the reference.
++Keep structured identity and relevant failure information in the experiment.
++
++Keep product and external systems read-only unless the task authorises more.
++Use a disposable local probe when safe and within scope.
++Research does not itself authorise live mutations, spend, publication or a migration.
++
++If evidence supports the next action and more research is unlikely to change it, stop.
++If the necessary source or experiment is unavailable, state the unknown.
++Do not replace absent evidence with confidence. Report the scope actually inspected;
++a file inventory or sampled session review is not an exhaustive semantic audit.
++Do not search for packages to replace trivial code without a concrete reason.
++
++## Recommend and keep useful evidence
++
++State the question, evidence, sources, recommendation and material unknowns.
++Explain what work remains to own, including integration, operation and updates.
++An existing package, application or command that completes the job is a valid outcome.
++
++No new report is necessary.
++Return the evidence in the conversation unless the user requests a durable record or the change needs one.
++For a durable record, update the existing knowledge owner with the proven approach and recheck condition.
++Keep temporary investigation output disposable.
+diff --git a/baseline-skill/references/writing.md b/candidate-skill/references/writing.md
+index a558899..2fc5a22 100644
+--- a/baseline-skill/references/writing.md
++++ b/candidate-skill/references/writing.md
+@@ -90,3 +90,28 @@ Preserve the original meaning before shortening. Remove introductions, repetitio
+ filler, duplicated headings, decorative formatting, and optional background first.
+ Compression is successful only when the reader can still decide, operate, recover, or
+ verify correctly.
++
++## Adapt to the audience
++
++Keep the facts, commitments, and boundaries fixed while changing the detail and action
++for the reader.
++
++Before: “The destination schema is stale. The operator can refresh it and rerun the
++import.”
++
++After for an operator: “The destination schema is stale. Refresh it, then rerun the
++import.”
++
++After for a reviewer: “The destination schema is stale. The operator can refresh it
++before rerunning the import.”
++
++Before: “The current endpoint remains available during the documented migration window.”
++
++After for a user: “You can keep using the current endpoint during the documented
++migration window while you update.”
++
++After for a reviewer: “The current endpoint remains available during the documented
++migration window.”
++
++Do not turn an audience adaptation into a new promise. If the source does not state a
++window, guarantee, or supported caller, preserve that uncertainty.
+diff --git a/baseline-skill/scripts/simple.mjs b/candidate-skill/scripts/simple.mjs
+index 63f3da2..45afb2e 100644
+--- a/baseline-skill/scripts/simple.mjs
++++ b/candidate-skill/scripts/simple.mjs
+@@ -10,9 +10,12 @@ const LEGACY_ROUTES = [
+   "Before a change where repository facts could change the implementation, invoke `$simple` and read the nearest `SIMPLE.md`. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `plan`, `review`, or `check` for an explicit Simple workflow.",
+   "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow.",
+   "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `board`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow.",
+-  "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `board`, `work`, `reconcile`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow."
++  "For non-trivial design or implementation, invoke `$simple` and read the nearest `SIMPLE.md`. Design for observed reality, not imagined obligations.",
++  "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `board`, `work`, `reconcile`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow.",
++  "Use `$simple` and read the nearest `SIMPLE.md` for repository-dependent decisions and work. Explicit workflows: `simple init`, `audit`, `board`, `work`, `reconcile`, `plan`, `review`, `write`, `emulate`, or `check`.",
++  "Invoke `$simple` and read the nearest `SIMPLE.md` before decisions repository facts could change: architecture, ownership, compatibility, migration, deletion, or broad refactoring. Use Simple writing mode for plans, documentation, comments, and handoffs that should be concise, plain, and load-bearing. Repository facts override speculative compatibility, migration, and scale concerns. Use `simple init`, `audit`, `board`, `research`, `plan`, `review`, `write`, `emulate`, or `check` for an explicit Simple workflow."
+ ];
+-const ROUTE = "Use `$simple` and read the nearest `SIMPLE.md` for repository-dependent decisions and work. Explicit workflows: `simple init`, `audit`, `board`, `work`, `reconcile`, `plan`, `review`, `write`, `emulate`, or `check`.";
++const ROUTE = "Use `$simple` and read the nearest `SIMPLE.md` for repository-dependent decisions and work. Explicit workflows: `simple init`, `audit`, `board`, `research`, `work`, `reconcile`, `plan`, `review`, `write`, `emulate`, or `check`.";
+ const PROFILE_TEMPLATE_PATH = new URL("../assets/SIMPLE.template.md", import.meta.url);
+ const PROFILE = readFileSync(PROFILE_TEMPLATE_PATH, "utf8");
+ const REQUIRED_HEADINGS = [...PROFILE.matchAll(/^## .+$/gm)].map(([heading]) => heading);

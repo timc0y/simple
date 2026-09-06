@@ -4,3 +4,8 @@ dist/
 .firecrawl/
 /.local/
 .DS_Store
+
+# Tiny installed-package fixture retained for reproducible offline evaluation.
+!evals/behavior/cases/reuse-reference/fixture/node_modules/
+!evals/preservation/cases/reuse-package/fixture/node_modules/
+__pycache__/

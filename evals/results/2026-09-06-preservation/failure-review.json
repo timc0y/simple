@@ -1,0 +1,36 @@
+[
+  {
+    "id": "b1ff34a3e320d60e",
+    "case": "fallback-selection",
+    "condition": "short",
+    "repeat": 1,
+    "classification": "completed task missing requested cleanup",
+    "failed_obligation": "Delete obsolete legacy.mjs after replacing its route",
+    "runtime_checks": "Supported route, transient fallback and permanent errors all passed",
+    "adjudication": "Original verifier failure stands; no rerun",
+    "candidate_regression": false
+  },
+  {
+    "id": "49482521d5dcc65d",
+    "case": "writing-context",
+    "condition": "candidate",
+    "repeat": 1,
+    "classification": "unsupported factual addition in prose",
+    "failed_obligation": "Summarize the provided source facts faithfully without inventing release state",
+    "runtime_checks": "All structured artifact checks passed; prose required supplementary review",
+    "adjudication": "Root and corrected blind Luna review agree; previous and short source-faithful on repeat 1. Preserve candidate output; no rerun.",
+    "candidate_regression": true,
+    "causal_limit": "One paired failure does not establish that consolidation caused it. Conservative preservation requires restoring the affected earlier guidance after the frozen run finishes."
+  },
+  {
+    "id": "c1bc868998c0dca4",
+    "case": "writing-context",
+    "condition": "candidate",
+    "repeat": 2,
+    "classification": "unsupported factual addition in prose",
+    "failed_obligation": "Source does not establish whether deployment has occurred",
+    "runtime_checks": "Structured artifact checks passed",
+    "adjudication": "Root and blind Luna review agree. Previous and short outputs preserve uncertainty. Original output retained; no rerun.",
+    "candidate_regression": true
+  }
+]

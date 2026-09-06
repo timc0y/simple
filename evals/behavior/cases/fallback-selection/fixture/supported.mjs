@@ -1,0 +1,1 @@
+export function runSupported() { if (process.env.SUPPORTED_FAILURE === 'transient') throw Object.assign(new Error('temporary'), { code: 'TRANSIENT' }); if (process.env.SUPPORTED_FAILURE === 'permanent') throw Object.assign(new Error('broken'), { code: 'PERMANENT' }); return 'supported-ok'; }

@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-09-05T19:00:12+01:00",
+  "model": "gpt-5.6-luna",
+  "reasoning": "default",
+  "harness": "isolated Codex Luna research-fallback evaluation",
+  "runs": 1,
+  "conditions": ["none", "current", "candidate"],
+  "cases": [
+    "primary-permanent-failure",
+    "transient-fallback",
+    "unknown-mutation",
+    "evidence-led-research",
+    "package-vs-trivial-edit",
+    "structured-identity"
+  ],
+  "baseline": {
+    "source": "evals/research-fallback/baseline/skills/simple",
+    "gitHead": "ec76760ef86f9ba2ceb3ddb9d8d8d8ee5563fefd",
+    "treeHash": "17959fdc65927d1a4511d303185e6fd789ea4af1da53b1b967810f41a1a11c9e"
+  },
+  "candidate": {
+    "source": "skills/simple",
+    "treeHash": "d52dc9843c53141bee43314cf9e9f83e3d599dd1bd3aed80a321cee49fb26080",
+    "uiMetadataNote": "agents/openai.yaml changed separately during parent rollout; archived per-workspace copies are authoritative"
+  },
+  "resume": {
+    "initialAnswers": 11,
+    "resumedAnswers": 7,
+    "rerunCompletedAnswers": 0
+  },
+  "grader": {
+    "model": "gpt-5.6-luna",
+    "selfTests": "6/6 passed",
+    "verdictFields": ["luna"]
+  },
+  "hostWarnings": {
+    "observed": [
+      "codex_skills_extension system-skill install reported File exists",
+      "disabled system-skill roots reported Operation not permitted",
+      "codex rollout state-db discrepancy reported falling_back"
+    ],
+    "conditionAccessImpact": "No evidence of changed condition access; the runner disabled implicit skill discovery and copied only the selected skill into each workspace."
+  }
+}

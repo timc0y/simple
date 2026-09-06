@@ -72,7 +72,10 @@ export function normalizeResults(recordDirectory, { skillCommit, harness, reason
       id: `${row.case}__r${row.run}`,
       passed: row.strict === "true",
       evidence: `raw/${id}.md`,
-      graderVerdicts: { luna: row.luna === "true", terra: row.terra === "true" },
+      graderVerdicts: {
+        ...(row.luna === undefined ? {} : { luna: row.luna === "true" }),
+        ...(row.terra === undefined ? {} : { terra: row.terra === "true" })
+      },
       ...(row.opened === undefined ? {} : { invoked: row.opened === "true" })
     });
   }

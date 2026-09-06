@@ -2,6 +2,11 @@
 
 Research date: 26 August 2026.
 
+The [6 September rollback audit](simple-skill-ideas.md#rollback-audit--6-september-2026)
+supersedes this report's requirement for an A/B win before adoption. Comparative
+evidence is still needed to claim a performance gain. The research below remains as
+the original basis for the cue experiments.
+
 ## Decision
 
 Use three different mechanisms for three different kinds of knowledge:

@@ -1,0 +1,18 @@
+import { cp, mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
+const here = dirname(fileURLToPath(import.meta.url));
+const base = join(here, 'fixture');
+const verify = (dir) => spawnSync(process.execPath, [join(here, 'verifier.mjs'), dir], { encoding: 'utf8' });
+const bad = await mkdtemp(join(tmpdir(), 'fallback-bad-')); await cp(base, bad, { recursive: true });
+if (verify(bad).status === 0) throw new Error('verifier accepted original bad fixture'); await rm(bad, { recursive: true, force: true });
+const good = await mkdtemp(join(tmpdir(), 'fallback-good-')); await cp(base, good, { recursive: true });
+await rm(join(good, 'legacy.mjs')); await writeFile(join(good, 'main.mjs'), "import { runSupported } from './supported.mjs'; import { runTransientFallback } from './transient-fallback.mjs';\ntry { console.log(runSupported()); } catch (e) { if (e.code === 'TRANSIENT') console.log(runTransientFallback()); else process.exit(1); }\n");
+if (verify(good).status !== 0) throw new Error('verifier rejected known-good fixture'); const valid = await (await import('node:fs/promises')).readFile(join(good,'main.mjs'),'utf8');
+await writeFile(join(good,'main.mjs'),valid.replace("e.code === 'TRANSIENT'",'true'));
+if(verify(good).status===0) throw Error('verifier accepted swallowing a permanent failure');
+await writeFile(join(good,'main.mjs'),"console.log('supported-ok');\n");
+if(verify(good).status===0) throw Error('verifier accepted a missing failure path');
+await rm(good, { recursive: true, force: true }); console.log('selftest passed');

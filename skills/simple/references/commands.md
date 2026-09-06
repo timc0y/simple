@@ -38,6 +38,13 @@ apply the views sequentially and disclose that they were not independent. Return
 recommendation, strongest material dissent, unknowns, and discriminating proof. Do
 not decide by vote.
 
+## `simple research`
+
+Read `research.md`. Resolve a decision-changing question from repository evidence,
+relevant sources and bounded experiments. Return findings, sources, a recommendation
+and material unknowns. Product and external systems remain read-only unless separately
+authorised. Do not require a report or expand a narrow lookup into an investigation.
+
 ## `simple plan`
 
 Plan the requested outcome from repository evidence. Read `writing.md`; return plain
@@ -50,11 +57,17 @@ prerequisites exist. Planning is read-only. Do not implement without authority.
 
 ## `simple review`
 
-Review a design, plan, document, or diff. Lead with material findings ordered by
+Review a design, plan, document, or diff for the requested purpose. For explanation
+or comparison, answer that question. For a defect review, lead with material findings ordered by
 consequence. Check for invented obligations, divided ownership, second paths,
 unjustified compatibility, displaced machinery left behind, self-grading proof,
 unrelated changes, lost facts, and decorative or confusing prose. Report no finding
 when the evidence does not support one.
+
+For each material finding, state the affected obligation, evidence, consequence and
+smallest supported correction. Mark optional improvements as optional. Judge the
+problem separately from the proposed remedy. If a governing rule is wrong, repair
+that rule rather than adding exceptions for each symptom.
 
 ## `simple write`
 

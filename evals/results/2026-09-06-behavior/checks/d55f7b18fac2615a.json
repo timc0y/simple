@@ -1,0 +1,27 @@
+{
+  "stdout": {
+    "passed": true,
+    "checks": [
+      {
+        "id": "both-callers-exactly-once",
+        "passed": true,
+        "detail": "count=2"
+      },
+      {
+        "id": "cross-caller-idempotency",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "normal-distinct-operations",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "both-unknown-outcomes-preserved",
+        "passed": true,
+        "detail": "unknown failure must remain unknown"
+      }
+    ]
+  }
+}

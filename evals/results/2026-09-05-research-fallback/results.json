@@ -1,0 +1,191 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-05T18:00:12.940Z",
+    "skillCommit": "none",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna research-fallback evaluation",
+    "condition": "none",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "primary-permanent-failure__r1",
+        "passed": true,
+        "evidence": "raw/d7adf4cc72ae.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "transient-fallback__r1",
+        "passed": true,
+        "evidence": "raw/f7ff2bb98c49.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "unknown-mutation__r1",
+        "passed": false,
+        "evidence": "raw/29b673b03240.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "evidence-led-research__r1",
+        "passed": true,
+        "evidence": "raw/9336cde839db.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "package-vs-trivial-edit__r1",
+        "passed": true,
+        "evidence": "raw/dbd731e124b0.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "structured-identity__r1",
+        "passed": true,
+        "evidence": "raw/bd3d747cadcf.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-05T18:00:12.940Z",
+    "skillCommit": "ec76760ef86f9ba2ceb3ddb9d8d8d8ee5563fefd",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna research-fallback evaluation",
+    "condition": "current",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "primary-permanent-failure__r1",
+        "passed": true,
+        "evidence": "raw/d2fd1d31843c.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "transient-fallback__r1",
+        "passed": true,
+        "evidence": "raw/f5d9cde1d1fe.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "unknown-mutation__r1",
+        "passed": true,
+        "evidence": "raw/6cbded32a061.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "evidence-led-research__r1",
+        "passed": true,
+        "evidence": "raw/b3ad38030d64.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "package-vs-trivial-edit__r1",
+        "passed": true,
+        "evidence": "raw/c6152a2a0467.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "structured-identity__r1",
+        "passed": true,
+        "evidence": "raw/5801af446a9b.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-05T18:00:12.940Z",
+    "skillCommit": "working-tree:d52dc9843c53141bee43314cf9e9f83e3d599dd1bd3aed80a321cee49fb26080",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna research-fallback evaluation",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "primary-permanent-failure__r1",
+        "passed": true,
+        "evidence": "raw/6615a21f3c33.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "transient-fallback__r1",
+        "passed": true,
+        "evidence": "raw/d517c853a740.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "unknown-mutation__r1",
+        "passed": false,
+        "evidence": "raw/39499f8826cc.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "evidence-led-research__r1",
+        "passed": true,
+        "evidence": "raw/70bd5dd8d080.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "package-vs-trivial-edit__r1",
+        "passed": true,
+        "evidence": "raw/4cd22e0ff63b.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "structured-identity__r1",
+        "passed": true,
+        "evidence": "raw/0391656314b9.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      }
+    ]
+  }
+]

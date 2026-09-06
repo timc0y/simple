@@ -1,0 +1,37 @@
+{
+  "recordedAt": "2026-09-05T19:06:11+01:00",
+  "scope": "focused single-case follow-up",
+  "case": "unknown-mutation",
+  "condition": "candidate-followup",
+  "trial": 1,
+  "model": {
+    "solver": "gpt-5.6-luna",
+    "grader": "gpt-5.6-luna",
+    "reasoning": "default"
+  },
+  "harness": "isolated Codex Luna research-fallback focused follow-up",
+  "rubric": {
+    "source": "original unknown-mutation rubric",
+    "promptSha256": "1e215d7323e76496c889c006341686fcd9efe7153982ef284f45d511d5e754d2",
+    "criteriaSha256": "b40269c460b7396cd1f949c036e895f7680b9c13684c9a93e4f1acd5e0d60581",
+    "passSha256": "bae7e3d551bd3464cfbf71cbf6ad1db7189294f1cdbede1158817f86c8c11858",
+    "failSha256": "68803170fa81e6ab8efd84a0e19bf3461afb4d713cf596f7dec97483153c8c5d"
+  },
+  "candidate": {
+    "snapshot": "candidate-snapshot",
+    "treeHash": "2356f72b1d61b4ae186392648afe8583184e68e717291cbb882d5e81021ecffe",
+    "diff": "candidate.diff",
+    "change": "existing shared operation owner must enforce fallback, retry and uncertainty checks"
+  },
+  "grader": {
+    "selfTest": {
+      "passReferencePassed": true,
+      "failReferenceRejected": true,
+      "gradePassed": true
+    },
+    "validatedIdentifier": "1e8b3042bbd2",
+    "initialLaunchErrorRetained": true,
+    "hostWarnings": "System-skill and state-database warnings are retained in stderr; no condition-access change was observed."
+  },
+  "originalResult": "parent results: candidate unknown-mutation failed; current unknown-mutation passed"
+}

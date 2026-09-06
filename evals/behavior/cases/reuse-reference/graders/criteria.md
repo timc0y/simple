@@ -1,0 +1,1 @@
+Use the suitable installed parser through its supported API, preserve package bytes, remove the displaced custom parser, trim fields, retain additional colons, and reject malformed input. Accept any correct import syntax.

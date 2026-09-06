@@ -1,0 +1,429 @@
+{
+  "created_at": "2026-09-06T10:12:12.644584+00:00",
+  "model": "gpt-5.6-luna",
+  "reasoning": "medium",
+  "conditions": [
+    "previous",
+    "candidate",
+    "short"
+  ],
+  "cases": [
+    "correction-preserves",
+    "fallback-selection",
+    "reuse-package",
+    "reuse-local",
+    "reuse-direct",
+    "writing-context"
+  ],
+  "repeats": 2,
+  "short_control": "Use repository facts to choose the smallest change that fully satisfies the request. Reuse existing implementations where they fit, preserve unaffected requirements, remove displaced code, and verify the result.",
+  "case_hashes": {
+    "README.md": "db3cd43f4f63a376bba94267f7b3ca30ac41e647acf82d432ea8a49c5bb52c89",
+    "cases/correction-preserves/correction.md": "140ee27a898d64c5e1aae6ef7dc0c4306df92e40723cf0249189a76ba2cbfd9b",
+    "cases/correction-preserves/fixture/audit.mjs": "f4de10444aebbef4d8c59a7f2bd5a2f0f13bf458c797b22d1387d2b6b9bbd29c",
+    "cases/correction-preserves/fixture/audit.test.mjs": "86aa47a8a9b00b8e5581b8e4ab356682593d6611174b6ebf3ea33088d13e1137",
+    "cases/correction-preserves/fixture/package.json": "5811600445039d9adf05a5f0b8073a69b7539a44a1aafd167bdec35b261d2273",
+    "cases/correction-preserves/graders/criteria.md": "de79fef8c6eb758ffa041026fc83bd2b23d79223af780590c18e3f57231a144e",
+    "cases/correction-preserves/graders/references/fail.md": "c698feb6fc9c364c3499a40686a6a6eb8a2656fa79da51619d87c5f39e6e9eb1",
+    "cases/correction-preserves/graders/references/pass.md": "646dfedca307ff59515c32c27035a1199586da200cb3c8549f8da33a64c34e15",
+    "cases/correction-preserves/initial-verifier.mjs": "4365fbbba064235cec9a6deccdc25b0c19e6109fd3634bcc1b08918cd2613f46",
+    "cases/correction-preserves/prompt.md": "c38a608c87fc4c1dc6bebecfb3965137246bf0eb9d392f046197bd23a0227329",
+    "cases/correction-preserves/verifier.mjs": "bc61890abf31fbc84293a6db0a2ec67746cb30e6d326e408455649d72a2fbeb1",
+    "cases/fallback-selection/SIMPLE.md": "62ef8a9c7fc768d35770919823dbbbd978ebf6e91ecc62d41b75df7000e6f521",
+    "cases/fallback-selection/fixture/capability.mjs": "72fb55a312ee117b7943df842d1384ba7bd1e8bf8571a291d8c76e142bb22ecd",
+    "cases/fallback-selection/fixture/legacy.mjs": "7fe6c0640ee3907b4cb7a610f5e7804dbff8cd3a48725490776239fb2448a933",
+    "cases/fallback-selection/fixture/main.mjs": "22bee91d7d9a768f0ef1278cba992daa08b299b28b44378ae3372a6bca92e2ea",
+    "cases/fallback-selection/fixture/package.json": "2830f109879c3a2fcf99ad15d9288a2a08e0bde8f8677f8a89dea255ff5a4be8",
+    "cases/fallback-selection/fixture/supported.mjs": "3231278845078b6beeb72ac1d001bba40aca45a542ad4e1245a585a41e5e7769",
+    "cases/fallback-selection/fixture/transient-fallback.mjs": "89750f3098049334217e5132e5e69d2dace97701b13b7a28554adaf4757385f8",
+    "cases/fallback-selection/graders/criteria.md": "a18833d5012fa814447998de86502e2328fa6f8eb86ec21c71ad36c1f579f5b9",
+    "cases/fallback-selection/graders/references/fail.md": "44774c6752c7871588532dd397315444bc02a7d25bc93668479e0f7a0ef53e0b",
+    "cases/fallback-selection/graders/references/pass.md": "4fc6112ac7689d9cfa154e5ef17ea5d8f173d88f375908d48ea68b8ad55557ef",
+    "cases/fallback-selection/prompt.md": "8738f48c07142f9b0126f66a73a8c869371dff256fa941bebbf141c041bafebd",
+    "cases/fallback-selection/selftest.mjs": "8c20f2d46772d4fffcd1426d5155347ff8acb93b8d100981c82403421d5e74dd",
+    "cases/fallback-selection/verifier.mjs": "ea2ac054e007967049ef6462f01eb4c80cc9ee00c4909af9e7a1be15d1d729f8",
+    "cases/reuse-direct/SIMPLE.md": "3120e0b91f07cd9e019b3ce6bf9ed974b5fe483787b10a99bb5d119606be08d0",
+    "cases/reuse-direct/fixture/labels.json": "60f87c17f7f96915f9f3fb78271ad09b6bee09efc3fdf0f30a39c3afa7c681ff",
+    "cases/reuse-direct/fixture/main.mjs": "34876d1604ed25351ddcea8cc7c07b1cbcbf756260de23d8bc63f4e30a750818",
+    "cases/reuse-direct/fixture/package.json": "a90fc33418afa2b9cbf4768524b021135b965ecdf993457505bfae3ac44a8428",
+    "cases/reuse-direct/graders/criteria.md": "ba410480064d25eecd30708013c788af46d5e5f79a673c3fe6cea3eb659726fe",
+    "cases/reuse-direct/graders/references/fail.md": "7037ff3ad63794575748f56e93231d9d1a87a881a1438c148802166108d688e7",
+    "cases/reuse-direct/graders/references/pass.md": "33c2524594e00910522eed8c622b62ac2ff0434d31e68ceb07e09f156f975c6f",
+    "cases/reuse-direct/prompt.md": "6634b30530bd83b51dc8a1f23947e72fb4224eb89b4b4a44e67f58a24a0ca0c2",
+    "cases/reuse-direct/selftest.mjs": "ca54a6c71f3ac6366f901938f524bd02195e87aa58a9b92058fe14926ee326d7",
+    "cases/reuse-direct/verifier.mjs": "4b119e56b9926dea670b7e8a6828527b454de70aa9853976376ad229a358c12a",
+    "cases/reuse-local/SIMPLE.md": "423d3e15d4c3ac26f5c200bdcf04da0f5200585a5c0750c99b51676555049dac",
+    "cases/reuse-local/fixture/custom-normalizer.mjs": "766fe22f65c3c09abf9113ecb1c7b3a9e7c91b7cd019ba0c9db517442624e7b8",
+    "cases/reuse-local/fixture/labels.json": "cab854d53df49f2f09ebc6d0ce3a071c3cdc6131f78dbf6591d9e71899b1e24a",
+    "cases/reuse-local/fixture/main.mjs": "19c3767a1b8d7d9eeb8f85bf72ab4c1b948f7bb3db89f71934a682c59769ada0",
+    "cases/reuse-local/fixture/package.json": "a90fc33418afa2b9cbf4768524b021135b965ecdf993457505bfae3ac44a8428",
+    "cases/reuse-local/fixture/src/label-helper.mjs": "9547ea26da6057fe5139602825f87e646a699d85525a56bb42fbef902b05bbcd",
+    "cases/reuse-local/graders/criteria.md": "ad8bc5b47383d8141dd4215725637b789d4be28fd5d5f2c6a4bb0ab32337ab1b",
+    "cases/reuse-local/graders/references/fail.md": "649825c50d0779cd9347d54bd8f15ba2735d80188a21b8c6efd059e41e5b8f5e",
+    "cases/reuse-local/graders/references/pass.md": "d5721e69b6f3909b3fcf1a1bc06d91fb6b6d0f6e6951b39cab4553eb1a91f1ae",
+    "cases/reuse-local/prompt.md": "769281451e6fe0fe07d589b52200e37f043dff42d476557e96dfff46793164b3",
+    "cases/reuse-local/selftest.mjs": "01268efd6674f30b98e00f2958a00f825508abd77070051d4efdd2cb6ecd7472",
+    "cases/reuse-local/verifier.mjs": "5ae50d812c4bce1f8ca9519203b238938115f359adb1fe1c98fcbbeec26813b4",
+    "cases/reuse-package/SIMPLE.md": "383a5ff3a34f2fc7aaeb248bd9dc921818e645681527e14e1485a87abdb4e1db",
+    "cases/reuse-package/fixture/custom-normalizer.mjs": "766fe22f65c3c09abf9113ecb1c7b3a9e7c91b7cd019ba0c9db517442624e7b8",
+    "cases/reuse-package/fixture/examples/basic.mjs": "5e6cb7453cae6aba4e87819be2936345a7a754169508ff827dc71f0dbb46695c",
+    "cases/reuse-package/fixture/labels.json": "cab854d53df49f2f09ebc6d0ce3a071c3cdc6131f78dbf6591d9e71899b1e24a",
+    "cases/reuse-package/fixture/main.mjs": "1e740d1d7af08eeb0a02e6729ae25d9b944a471d699740cd871186e256e8a436",
+    "cases/reuse-package/fixture/node_modules/label-normalizer/README.md": "f4fd2c2b71df527bc8e734d4c4784e9d6aa0745be42767d882029f0e5b37cf6e",
+    "cases/reuse-package/fixture/node_modules/label-normalizer/index.mjs": "9547ea26da6057fe5139602825f87e646a699d85525a56bb42fbef902b05bbcd",
+    "cases/reuse-package/fixture/node_modules/label-normalizer/package.json": "2b83f5c2b534ae2fa6a7b4e41bae33c90168284d6f592463e9fee2b3a74b9dff",
+    "cases/reuse-package/fixture/package.json": "2dc64de2c338d1c2b57e71b4f8129b5d2b40e42f6a5c77a369c83bbf2ca2c404",
+    "cases/reuse-package/graders/criteria.md": "480a2344b7f380f6aa4005e74584f88fc3c2917c34bdea0aa5219d9c00b5e646",
+    "cases/reuse-package/graders/references/fail.md": "7f4cbfd3a8f92ad830cb14a36957b8505830e41b3b4fdeb26fe32e41c81eced3",
+    "cases/reuse-package/graders/references/pass.md": "3c544d3cac939773bd66865138eae51425e6ace9d668d7fd880537c41019a9cf",
+    "cases/reuse-package/prompt.md": "9a951c4490a41684997ccdda0b3dd1be5585a77f30ac3c9c1139e39862eb626e",
+    "cases/reuse-package/selftest.mjs": "57b76bd2f6d962d69c307257e77c66942c5d93d744b9c6d0cecd74c0afbaa939",
+    "cases/reuse-package/verifier.mjs": "a0da546f465ac69067cd8519b1329e4c5c95a3a8430b833923eefa57bb66baa6",
+    "cases/writing-context/SIMPLE.md": "6a52f52689dcd2b668078a407cdab4c22d378e1c8b6abae1ee8d86b58a45f670",
+    "cases/writing-context/fixture/package.json": "a90fc33418afa2b9cbf4768524b021135b965ecdf993457505bfae3ac44a8428",
+    "cases/writing-context/graders/criteria.md": "02fb534b53b34e028ebe8cce0da27768aa78b6a6fa44b5144305df5b9588b989",
+    "cases/writing-context/graders/references/fail.md": "97ca46206d9102824ec9eacb1711aeb480d9ea8c9552d059b185b79ce07f3bea",
+    "cases/writing-context/graders/references/pass.md": "98eb90f1495439b69ff2c5db6532fcc465560ed073f407db668128d8339f5268",
+    "cases/writing-context/prompt.md": "133543e657c4740509f2dbf9cfb90497f90da8915cba52ba3d7623a77b1e40f8",
+    "cases/writing-context/selftest.mjs": "a7ad8b2c031316bfdf4717a8fa9484966dd58a54b22a4895045484b2444f57d9",
+    "cases/writing-context/verifier.mjs": "58c73aaac55c7024cf73d6bbe745a84d326d0e4969649e65c28e68ccda781b6a",
+    "run.py": "b91592bad89bcc3ea8ff082b1b055d8b83146ff530cfcc9f758140e60924ae0e"
+  },
+  "skill_hashes": {
+    "behavior-run.py": "2d781e28dc8dc5b2350caf3ee2853c3ef26546bae49c2f18b77c2103209357e8",
+    "candidate-skill/SKILL.md": "99e096ca15d38c1338844c4018828998cd8ca082437eb73ef5e4eeabefa82610",
+    "candidate-skill/agents/openai.yaml": "b874bbed9e8e3b98429999c131112230da297684787a51e0573c56a98b8e38c0",
+    "candidate-skill/assets/SIMPLE.template.md": "0f052ae7a2f858e6b0ef02ffcd39586e0f03934d26e3c2b28d552f26808b4424",
+    "candidate-skill/references/architecture.md": "2d8243240c13a5f895d275459f0b50b084f5f99eff6d6851bc8a7a76b1a13fe4",
+    "candidate-skill/references/audit.md": "3b6fd8d6c53ed3ed38ccb5d23a40f581761cf8af5b6d6dcc0b1cf5214ac183ab",
+    "candidate-skill/references/board.md": "d3b38889430e46f01539ac6584cabe1a0093a9bb3ad8b616de29671e309b9105",
+    "candidate-skill/references/commands.md": "4c5a7f70e35f905ba13d1d4053793ea958033aa06bb80ac4d3209b07ef6b2ed4",
+    "candidate-skill/references/compatibility.md": "6d8794d616c808da95639b91aa53552108842accc977a8f5327cc1c7eef08678",
+    "candidate-skill/references/deletion-tools.md": "164f47cf0104c40ea75e3a2a7b08fe8ff20f42ec8b885506b6d93d381abb3dfa",
+    "candidate-skill/references/examples.md": "31fe06357b9afe8bedd6ac74698bb57ad1fbbec4fda2bcde8b523176ed6ac841",
+    "candidate-skill/references/model-profiles.md": "b23e861ecec40f671a7700ed7999906f5b44ef9209d6f6e98aceb05a63e7a881",
+    "candidate-skill/references/multi-lens-audit.md": "5b3d883d32bbf0675e2833de520d6d17b89b26311f96ad2b275e0c8640911734",
+    "candidate-skill/references/operator-emulation.md": "dba66187cf7847c2673419ba65e09b0c39805c9b168588fc93578531048beb76",
+    "candidate-skill/references/operator-lenses/minimal-implementation.md": "a6c18a2c3ad7cf5d0c1ff94e4a804709b3252da9998cfdb0999c90d262c2285f",
+    "candidate-skill/references/operator-lenses/theo-product-engineer.md": "0e2e9109ee8bb9ae29467ca7d46277f29f2ef4773a2246ed9a7fc8b9c611ef1b",
+    "candidate-skill/references/profile-template.md": "f9a9e2e6927d10af6fdc0439aab39159bc8b13ee8e1afb4879e7eb624fd4bc3c",
+    "candidate-skill/references/refactoring.md": "b00058c899431548d99dd7786596406f38b8452bcda7f321c3db519fe554fb1f",
+    "candidate-skill/references/repository-work.md": "bd6157da5b507a4ce603ddf28f4933bb4db6e52f8aca8b310a264ac3df304d1a",
+    "candidate-skill/references/research.md": "a85859668d70b1a62e88f414f9878020bb3ec3a0aaf03bbc2c0261202e522c94",
+    "candidate-skill/references/writing.md": "e4fd1ac256e3952fcb1158b73faa247c7287696b48c005c790aedc94430f966d",
+    "candidate-skill/scripts/simple.mjs": "0f29f42ff75e67aab9572462556ea225d656e2d6401764a7bb8e11b191bd7214",
+    "cases/README.md": "db3cd43f4f63a376bba94267f7b3ca30ac41e647acf82d432ea8a49c5bb52c89",
+    "cases/cases/correction-preserves/correction.md": "140ee27a898d64c5e1aae6ef7dc0c4306df92e40723cf0249189a76ba2cbfd9b",
+    "cases/cases/correction-preserves/fixture/audit.mjs": "f4de10444aebbef4d8c59a7f2bd5a2f0f13bf458c797b22d1387d2b6b9bbd29c",
+    "cases/cases/correction-preserves/fixture/audit.test.mjs": "86aa47a8a9b00b8e5581b8e4ab356682593d6611174b6ebf3ea33088d13e1137",
+    "cases/cases/correction-preserves/fixture/package.json": "5811600445039d9adf05a5f0b8073a69b7539a44a1aafd167bdec35b261d2273",
+    "cases/cases/correction-preserves/graders/criteria.md": "de79fef8c6eb758ffa041026fc83bd2b23d79223af780590c18e3f57231a144e",
+    "cases/cases/correction-preserves/graders/references/fail.md": "c698feb6fc9c364c3499a40686a6a6eb8a2656fa79da51619d87c5f39e6e9eb1",
+    "cases/cases/correction-preserves/graders/references/pass.md": "646dfedca307ff59515c32c27035a1199586da200cb3c8549f8da33a64c34e15",
+    "cases/cases/correction-preserves/initial-verifier.mjs": "4365fbbba064235cec9a6deccdc25b0c19e6109fd3634bcc1b08918cd2613f46",
+    "cases/cases/correction-preserves/prompt.md": "c38a608c87fc4c1dc6bebecfb3965137246bf0eb9d392f046197bd23a0227329",
+    "cases/cases/correction-preserves/verifier.mjs": "bc61890abf31fbc84293a6db0a2ec67746cb30e6d326e408455649d72a2fbeb1",
+    "cases/cases/fallback-selection/SIMPLE.md": "62ef8a9c7fc768d35770919823dbbbd978ebf6e91ecc62d41b75df7000e6f521",
+    "cases/cases/fallback-selection/fixture/capability.mjs": "72fb55a312ee117b7943df842d1384ba7bd1e8bf8571a291d8c76e142bb22ecd",
+    "cases/cases/fallback-selection/fixture/legacy.mjs": "7fe6c0640ee3907b4cb7a610f5e7804dbff8cd3a48725490776239fb2448a933",
+    "cases/cases/fallback-selection/fixture/main.mjs": "22bee91d7d9a768f0ef1278cba992daa08b299b28b44378ae3372a6bca92e2ea",
+    "cases/cases/fallback-selection/fixture/package.json": "2830f109879c3a2fcf99ad15d9288a2a08e0bde8f8677f8a89dea255ff5a4be8",
+    "cases/cases/fallback-selection/fixture/supported.mjs": "3231278845078b6beeb72ac1d001bba40aca45a542ad4e1245a585a41e5e7769",
+    "cases/cases/fallback-selection/fixture/transient-fallback.mjs": "89750f3098049334217e5132e5e69d2dace97701b13b7a28554adaf4757385f8",
+    "cases/cases/fallback-selection/graders/criteria.md": "a18833d5012fa814447998de86502e2328fa6f8eb86ec21c71ad36c1f579f5b9",
+    "cases/cases/fallback-selection/graders/references/fail.md": "44774c6752c7871588532dd397315444bc02a7d25bc93668479e0f7a0ef53e0b",
+    "cases/cases/fallback-selection/graders/references/pass.md": "4fc6112ac7689d9cfa154e5ef17ea5d8f173d88f375908d48ea68b8ad55557ef",
+    "cases/cases/fallback-selection/prompt.md": "8738f48c07142f9b0126f66a73a8c869371dff256fa941bebbf141c041bafebd",
+    "cases/cases/fallback-selection/selftest.mjs": "8c20f2d46772d4fffcd1426d5155347ff8acb93b8d100981c82403421d5e74dd",
+    "cases/cases/fallback-selection/verifier.mjs": "ea2ac054e007967049ef6462f01eb4c80cc9ee00c4909af9e7a1be15d1d729f8",
+    "cases/cases/reuse-direct/SIMPLE.md": "3120e0b91f07cd9e019b3ce6bf9ed974b5fe483787b10a99bb5d119606be08d0",
+    "cases/cases/reuse-direct/fixture/labels.json": "60f87c17f7f96915f9f3fb78271ad09b6bee09efc3fdf0f30a39c3afa7c681ff",
+    "cases/cases/reuse-direct/fixture/main.mjs": "34876d1604ed25351ddcea8cc7c07b1cbcbf756260de23d8bc63f4e30a750818",
+    "cases/cases/reuse-direct/fixture/package.json": "a90fc33418afa2b9cbf4768524b021135b965ecdf993457505bfae3ac44a8428",
+    "cases/cases/reuse-direct/graders/criteria.md": "ba410480064d25eecd30708013c788af46d5e5f79a673c3fe6cea3eb659726fe",
+    "cases/cases/reuse-direct/graders/references/fail.md": "7037ff3ad63794575748f56e93231d9d1a87a881a1438c148802166108d688e7",
+    "cases/cases/reuse-direct/graders/references/pass.md": "33c2524594e00910522eed8c622b62ac2ff0434d31e68ceb07e09f156f975c6f",
+    "cases/cases/reuse-direct/prompt.md": "6634b30530bd83b51dc8a1f23947e72fb4224eb89b4b4a44e67f58a24a0ca0c2",
+    "cases/cases/reuse-direct/selftest.mjs": "ca54a6c71f3ac6366f901938f524bd02195e87aa58a9b92058fe14926ee326d7",
+    "cases/cases/reuse-direct/verifier.mjs": "4b119e56b9926dea670b7e8a6828527b454de70aa9853976376ad229a358c12a",
+    "cases/cases/reuse-local/SIMPLE.md": "423d3e15d4c3ac26f5c200bdcf04da0f5200585a5c0750c99b51676555049dac",
+    "cases/cases/reuse-local/fixture/custom-normalizer.mjs": "766fe22f65c3c09abf9113ecb1c7b3a9e7c91b7cd019ba0c9db517442624e7b8",
+    "cases/cases/reuse-local/fixture/labels.json": "cab854d53df49f2f09ebc6d0ce3a071c3cdc6131f78dbf6591d9e71899b1e24a",
+    "cases/cases/reuse-local/fixture/main.mjs": "19c3767a1b8d7d9eeb8f85bf72ab4c1b948f7bb3db89f71934a682c59769ada0",
+    "cases/cases/reuse-local/fixture/package.json": "a90fc33418afa2b9cbf4768524b021135b965ecdf993457505bfae3ac44a8428",
+    "cases/cases/reuse-local/fixture/src/label-helper.mjs": "9547ea26da6057fe5139602825f87e646a699d85525a56bb42fbef902b05bbcd",
+    "cases/cases/reuse-local/graders/criteria.md": "ad8bc5b47383d8141dd4215725637b789d4be28fd5d5f2c6a4bb0ab32337ab1b",
+    "cases/cases/reuse-local/graders/references/fail.md": "649825c50d0779cd9347d54bd8f15ba2735d80188a21b8c6efd059e41e5b8f5e",
+    "cases/cases/reuse-local/graders/references/pass.md": "d5721e69b6f3909b3fcf1a1bc06d91fb6b6d0f6e6951b39cab4553eb1a91f1ae",
+    "cases/cases/reuse-local/prompt.md": "769281451e6fe0fe07d589b52200e37f043dff42d476557e96dfff46793164b3",
+    "cases/cases/reuse-local/selftest.mjs": "01268efd6674f30b98e00f2958a00f825508abd77070051d4efdd2cb6ecd7472",
+    "cases/cases/reuse-local/verifier.mjs": "5ae50d812c4bce1f8ca9519203b238938115f359adb1fe1c98fcbbeec26813b4",
+    "cases/cases/reuse-package/SIMPLE.md": "383a5ff3a34f2fc7aaeb248bd9dc921818e645681527e14e1485a87abdb4e1db",
+    "cases/cases/reuse-package/fixture/custom-normalizer.mjs": "766fe22f65c3c09abf9113ecb1c7b3a9e7c91b7cd019ba0c9db517442624e7b8",
+    "cases/cases/reuse-package/fixture/examples/basic.mjs": "5e6cb7453cae6aba4e87819be2936345a7a754169508ff827dc71f0dbb46695c",
+    "cases/cases/reuse-package/fixture/labels.json": "cab854d53df49f2f09ebc6d0ce3a071c3cdc6131f78dbf6591d9e71899b1e24a",
+    "cases/cases/reuse-package/fixture/main.mjs": "1e740d1d7af08eeb0a02e6729ae25d9b944a471d699740cd871186e256e8a436",
+    "cases/cases/reuse-package/fixture/node_modules/label-normalizer/README.md": "f4fd2c2b71df527bc8e734d4c4784e9d6aa0745be42767d882029f0e5b37cf6e",
+    "cases/cases/reuse-package/fixture/node_modules/label-normalizer/index.mjs": "9547ea26da6057fe5139602825f87e646a699d85525a56bb42fbef902b05bbcd",
+    "cases/cases/reuse-package/fixture/node_modules/label-normalizer/package.json": "2b83f5c2b534ae2fa6a7b4e41bae33c90168284d6f592463e9fee2b3a74b9dff",
+    "cases/cases/reuse-package/fixture/package.json": "2dc64de2c338d1c2b57e71b4f8129b5d2b40e42f6a5c77a369c83bbf2ca2c404",
+    "cases/cases/reuse-package/graders/criteria.md": "480a2344b7f380f6aa4005e74584f88fc3c2917c34bdea0aa5219d9c00b5e646",
+    "cases/cases/reuse-package/graders/references/fail.md": "7f4cbfd3a8f92ad830cb14a36957b8505830e41b3b4fdeb26fe32e41c81eced3",
+    "cases/cases/reuse-package/graders/references/pass.md": "3c544d3cac939773bd66865138eae51425e6ace9d668d7fd880537c41019a9cf",
+    "cases/cases/reuse-package/prompt.md": "9a951c4490a41684997ccdda0b3dd1be5585a77f30ac3c9c1139e39862eb626e",
+    "cases/cases/reuse-package/selftest.mjs": "57b76bd2f6d962d69c307257e77c66942c5d93d744b9c6d0cecd74c0afbaa939",
+    "cases/cases/reuse-package/verifier.mjs": "a0da546f465ac69067cd8519b1329e4c5c95a3a8430b833923eefa57bb66baa6",
+    "cases/cases/writing-context/SIMPLE.md": "6a52f52689dcd2b668078a407cdab4c22d378e1c8b6abae1ee8d86b58a45f670",
+    "cases/cases/writing-context/fixture/package.json": "a90fc33418afa2b9cbf4768524b021135b965ecdf993457505bfae3ac44a8428",
+    "cases/cases/writing-context/graders/criteria.md": "02fb534b53b34e028ebe8cce0da27768aa78b6a6fa44b5144305df5b9588b989",
+    "cases/cases/writing-context/graders/references/fail.md": "97ca46206d9102824ec9eacb1711aeb480d9ea8c9552d059b185b79ce07f3bea",
+    "cases/cases/writing-context/graders/references/pass.md": "98eb90f1495439b69ff2c5db6532fcc465560ed073f407db668128d8339f5268",
+    "cases/cases/writing-context/prompt.md": "133543e657c4740509f2dbf9cfb90497f90da8915cba52ba3d7623a77b1e40f8",
+    "cases/cases/writing-context/selftest.mjs": "a7ad8b2c031316bfdf4717a8fa9484966dd58a54b22a4895045484b2444f57d9",
+    "cases/cases/writing-context/verifier.mjs": "58c73aaac55c7024cf73d6bbe745a84d326d0e4969649e65c28e68ccda781b6a",
+    "cases/run.py": "b91592bad89bcc3ea8ff082b1b055d8b83146ff530cfcc9f758140e60924ae0e",
+    "previous-manifest.json": "654cab4abc82e0849583ee96d45415936f4057257bc814234c8c03329780ae5e",
+    "previous-skill/SKILL.md": "cd6e2eda1492c0bcfbbb668ff5d3cc7277683841db09657a8adc84967eebaa95",
+    "previous-skill/agents/openai.yaml": "b874bbed9e8e3b98429999c131112230da297684787a51e0573c56a98b8e38c0",
+    "previous-skill/assets/SIMPLE.template.md": "0f052ae7a2f858e6b0ef02ffcd39586e0f03934d26e3c2b28d552f26808b4424",
+    "previous-skill/references/architecture.md": "2d8243240c13a5f895d275459f0b50b084f5f99eff6d6851bc8a7a76b1a13fe4",
+    "previous-skill/references/audit.md": "3b6fd8d6c53ed3ed38ccb5d23a40f581761cf8af5b6d6dcc0b1cf5214ac183ab",
+    "previous-skill/references/board.md": "d3b38889430e46f01539ac6584cabe1a0093a9bb3ad8b616de29671e309b9105",
+    "previous-skill/references/commands.md": "4c5a7f70e35f905ba13d1d4053793ea958033aa06bb80ac4d3209b07ef6b2ed4",
+    "previous-skill/references/compatibility.md": "6d8794d616c808da95639b91aa53552108842accc977a8f5327cc1c7eef08678",
+    "previous-skill/references/deletion-tools.md": "164f47cf0104c40ea75e3a2a7b08fe8ff20f42ec8b885506b6d93d381abb3dfa",
+    "previous-skill/references/examples.md": "c943bb6d22b7d6524cef40280303a3350fab11906403db1d51e8208c701a25db",
+    "previous-skill/references/model-profiles.md": "b23e861ecec40f671a7700ed7999906f5b44ef9209d6f6e98aceb05a63e7a881",
+    "previous-skill/references/multi-lens-audit.md": "5b3d883d32bbf0675e2833de520d6d17b89b26311f96ad2b275e0c8640911734",
+    "previous-skill/references/operator-emulation.md": "dba66187cf7847c2673419ba65e09b0c39805c9b168588fc93578531048beb76",
+    "previous-skill/references/operator-lenses/minimal-implementation.md": "a6c18a2c3ad7cf5d0c1ff94e4a804709b3252da9998cfdb0999c90d262c2285f",
+    "previous-skill/references/operator-lenses/theo-product-engineer.md": "0e2e9109ee8bb9ae29467ca7d46277f29f2ef4773a2246ed9a7fc8b9c611ef1b",
+    "previous-skill/references/profile-template.md": "f9a9e2e6927d10af6fdc0439aab39159bc8b13ee8e1afb4879e7eb624fd4bc3c",
+    "previous-skill/references/refactoring.md": "b00058c899431548d99dd7786596406f38b8452bcda7f321c3db519fe554fb1f",
+    "previous-skill/references/repository-work.md": "bd6157da5b507a4ce603ddf28f4933bb4db6e52f8aca8b310a264ac3df304d1a",
+    "previous-skill/references/research.md": "a85859668d70b1a62e88f414f9878020bb3ec3a0aaf03bbc2c0261202e522c94",
+    "previous-skill/references/writing.md": "c5898e64b52798fd7bec31cbe33acad3b860a2f8ca6cac736261230c7ac0b2dd",
+    "previous-skill/scripts/simple.mjs": "0f29f42ff75e67aab9572462556ea225d656e2d6401764a7bb8e11b191bd7214"
+  },
+  "candidate_skill_sha256": "99e096ca15d38c1338844c4018828998cd8ca082437eb73ef5e4eeabefa82610",
+  "previous_skill_sha256": "cd6e2eda1492c0bcfbbb668ff5d3cc7277683841db09657a8adc84967eebaa95",
+  "runner_sha256": "2d781e28dc8dc5b2350caf3ee2853c3ef26546bae49c2f18b77c2103209357e8",
+  "cells": [
+    {
+      "id": "6237592f17cdd2a1",
+      "case": "correction-preserves",
+      "condition": "previous",
+      "repeat": 1
+    },
+    {
+      "id": "2aed7d0720959f96",
+      "case": "correction-preserves",
+      "condition": "candidate",
+      "repeat": 1
+    },
+    {
+      "id": "7812b46dac636af7",
+      "case": "correction-preserves",
+      "condition": "short",
+      "repeat": 1
+    },
+    {
+      "id": "1d82cf7bd8a520df",
+      "case": "fallback-selection",
+      "condition": "candidate",
+      "repeat": 1
+    },
+    {
+      "id": "b1ff34a3e320d60e",
+      "case": "fallback-selection",
+      "condition": "short",
+      "repeat": 1
+    },
+    {
+      "id": "bb4a1b552b0fdd71",
+      "case": "fallback-selection",
+      "condition": "previous",
+      "repeat": 1
+    },
+    {
+      "id": "0344455b3f81e7ba",
+      "case": "reuse-package",
+      "condition": "short",
+      "repeat": 1
+    },
+    {
+      "id": "6d94adc49f23f2be",
+      "case": "reuse-package",
+      "condition": "previous",
+      "repeat": 1
+    },
+    {
+      "id": "65bca1c9933ce38f",
+      "case": "reuse-package",
+      "condition": "candidate",
+      "repeat": 1
+    },
+    {
+      "id": "ee88347da19210df",
+      "case": "reuse-local",
+      "condition": "previous",
+      "repeat": 1
+    },
+    {
+      "id": "d143574a5fc5bf13",
+      "case": "reuse-local",
+      "condition": "candidate",
+      "repeat": 1
+    },
+    {
+      "id": "45f765498e912a3a",
+      "case": "reuse-local",
+      "condition": "short",
+      "repeat": 1
+    },
+    {
+      "id": "f284921b6a982c1e",
+      "case": "reuse-direct",
+      "condition": "candidate",
+      "repeat": 1
+    },
+    {
+      "id": "6103bfd42f7aa86b",
+      "case": "reuse-direct",
+      "condition": "short",
+      "repeat": 1
+    },
+    {
+      "id": "1986dc0f007d2203",
+      "case": "reuse-direct",
+      "condition": "previous",
+      "repeat": 1
+    },
+    {
+      "id": "211c443273f827df",
+      "case": "writing-context",
+      "condition": "short",
+      "repeat": 1
+    },
+    {
+      "id": "f7130f346e55ea04",
+      "case": "writing-context",
+      "condition": "previous",
+      "repeat": 1
+    },
+    {
+      "id": "49482521d5dcc65d",
+      "case": "writing-context",
+      "condition": "candidate",
+      "repeat": 1
+    },
+    {
+      "id": "02a49508be376e09",
+      "case": "correction-preserves",
+      "condition": "candidate",
+      "repeat": 2
+    },
+    {
+      "id": "dc4f74189a57519c",
+      "case": "correction-preserves",
+      "condition": "short",
+      "repeat": 2
+    },
+    {
+      "id": "9fb92f21960ee6dc",
+      "case": "correction-preserves",
+      "condition": "previous",
+      "repeat": 2
+    },
+    {
+      "id": "c060536e18cbb096",
+      "case": "fallback-selection",
+      "condition": "short",
+      "repeat": 2
+    },
+    {
+      "id": "82a8adf517ef830c",
+      "case": "fallback-selection",
+      "condition": "previous",
+      "repeat": 2
+    },
+    {
+      "id": "73b629e080106e39",
+      "case": "fallback-selection",
+      "condition": "candidate",
+      "repeat": 2
+    },
+    {
+      "id": "a379396b5251330c",
+      "case": "reuse-package",
+      "condition": "previous",
+      "repeat": 2
+    },
+    {
+      "id": "8c3e694d0a563fa0",
+      "case": "reuse-package",
+      "condition": "candidate",
+      "repeat": 2
+    },
+    {
+      "id": "609f9cd350cab4fc",
+      "case": "reuse-package",
+      "condition": "short",
+      "repeat": 2
+    },
+    {
+      "id": "07b0ee760c242933",
+      "case": "reuse-local",
+      "condition": "candidate",
+      "repeat": 2
+    },
+    {
+      "id": "3cd9f1ea3d5d1c91",
+      "case": "reuse-local",
+      "condition": "short",
+      "repeat": 2
+    },
+    {
+      "id": "48e9ad408b9f5ad5",
+      "case": "reuse-local",
+      "condition": "previous",
+      "repeat": 2
+    },
+    {
+      "id": "306d53ec1c09a2e5",
+      "case": "reuse-direct",
+      "condition": "short",
+      "repeat": 2
+    },
+    {
+      "id": "98d395c5c992960b",
+      "case": "reuse-direct",
+      "condition": "previous",
+      "repeat": 2
+    },
+    {
+      "id": "ca0401f01dc325f6",
+      "case": "reuse-direct",
+      "condition": "candidate",
+      "repeat": 2
+    },
+    {
+      "id": "503dd78e7583bca7",
+      "case": "writing-context",
+      "condition": "previous",
+      "repeat": 2
+    },
+    {
+      "id": "c1bc868998c0dca4",
+      "case": "writing-context",
+      "condition": "candidate",
+      "repeat": 2
+    },
+    {
+      "id": "7e874de2d3e6adf3",
+      "case": "writing-context",
+      "condition": "short",
+      "repeat": 2
+    }
+  ]
+}

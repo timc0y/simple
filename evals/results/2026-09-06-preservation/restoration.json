@@ -1,0 +1,15 @@
+{
+  "reason": "Candidate prose adds unsupported release state in both repeats; preserve earlier writing guidance. This does not establish causation or global equivalence.",
+  "restored": [
+    {
+      "file": "skills/simple/SKILL.md",
+      "sha256": "cd6e2eda1492c0bcfbbb668ff5d3cc7277683841db09657a8adc84967eebaa95"
+    },
+    {
+      "file": "skills/simple/references/writing.md",
+      "sha256": "c5898e64b52798fd7bec31cbe33acad3b860a2f8ca6cac736261230c7ac0b2dd"
+    }
+  ],
+  "retained": "New worked examples, research hypotheses/preservation audit, evaluation protocol and harness",
+  "validation_limit": "Final composition restores exact previous core and writing reference; no new full evaluation of the final combined tree is claimed."
+}

@@ -1,0 +1,9 @@
+import { copyFile, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os'; import { join, resolve } from 'node:path'; import { spawnSync } from 'node:child_process';
+const target = resolve(process.argv[2] ?? '.'); const checks = []; const check = (id, passed, detail='') => checks.push({ id, passed: !!passed, detail });
+async function scenario(callers, mode='timeout-after-write', key) { const d=await mkdtemp(join(tmpdir(),'uncertain-')); const state=join(d,'state.json'); await writeFile(state,'{"count":0,"keys":[]}'); const results=callers.map(caller=>spawnSync(process.execPath,[caller],{cwd:target,encoding:'utf8',env:{...process.env,STATE_FILE:state,MODE:mode,...(key?{OPERATION_KEY:key}:{})}})); const s=JSON.parse(await readFile(state,'utf8')); await rm(d,{recursive:true,force:true}); return {results,s}; }
+const normal = await scenario(['caller-a.mjs','caller-b.mjs']); check('both-callers-exactly-once', normal.results.every(r=>r.status===0) && normal.s.count===2 && normal.s.keys.length===2, `count=${normal.s.count}`);
+const repeated = await scenario(['caller-a.mjs','caller-b.mjs','caller-a.mjs'],'timeout-after-write','shared-operation'); check('cross-caller-idempotency',repeated.results.every(r=>r.status===0)&&repeated.s.count===1&&repeated.s.keys.length===1);
+const healthy = await scenario(['caller-a.mjs','caller-b.mjs'],'normal'); check('normal-distinct-operations',healthy.results.every(r=>r.status===0)&&healthy.s.count===2&&healthy.s.keys.length===2);
+const unknown = await scenario(['caller-a.mjs','caller-b.mjs'],'unknown'); check('both-unknown-outcomes-preserved', unknown.results.every(r=>r.status===0 && JSON.parse(r.stdout).status==='unknown') && unknown.s.count===0, 'unknown failure must remain unknown');
+const report={passed:checks.every(c=>c.passed),checks}; console.log(JSON.stringify(report)); if(!report.passed) process.exit(1);

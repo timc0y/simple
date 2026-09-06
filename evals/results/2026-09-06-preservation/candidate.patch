@@ -1,0 +1,109 @@
+diff --git a/previous-skill/SKILL.md b/candidate-skill/SKILL.md
+index b045e30..6d9e3c2 100644
+--- a/previous-skill/SKILL.md
++++ b/candidate-skill/SKILL.md
+@@ -33,9 +33,9 @@ uncertainty. Absence of evidence grants neither an obligation nor deletion permi
+ Choose from the requested outcome, not a keyword: a review may ask for an explanation,
+ a comparison, or defects. Do not silently substitute one for another.
+ 
+-Writing is a first-class Simple mode. Do not turn a writing task into an architecture
+-review unless the content itself requires a design decision. Read the nearest
+-`SIMPLE.md` only when repository facts materially change what the writing must say.
++Writing needs an architecture review only when its content requires a design decision.
++Read the nearest `SIMPLE.md` when repository facts materially change what the writing
++must say.
+ 
+ ## Solve with the human
+ 
+@@ -69,21 +69,11 @@ outcome, unaffected requirements, accepted decisions, and existing authorization
+ A status question does not cancel ongoing work. Informal wording or a transcription
+ error does not establish a new API, identifier, or compatibility promise.
+ 
+-## Write in order
+-
+-1. Identify the reader, purpose, destination, and source of truth.
+-2. Preserve every material fact, decision, constraint, caveat, and next action.
+-3. Answer the reader's main question first. Group the reasons and evidence beneath the
+-   answer, and put each detail beside the point it supports.
+-4. Choose the smallest structure that makes the content easy to understand and use.
+-   When a flow, relationship, comparison, or change is hard to picture in prose, use a
+-   short example or the smallest useful visual.
+-5. Write direct sentences with one term per concept and explicit actors where needed.
+-6. Use plain Markdown: few headings, shallow lists, restrained emphasis, and no
+-   decorative formatting unless the destination requires it.
+-7. Remove generic introductions, repetition, filler, and formatting that carries no
+-   meaning.
+-8. Check that compression did not remove a reason, boundary, risk, proof, or unknown.
++## Write for the reader
++
++Identify the reader, purpose, destination, and source of truth. Lead with the answer;
++keep the facts, reasons, boundaries, proof, and next action the reader needs.
++For writing tasks, read `references/writing.md` for the method, examples, and formatting.
+ 
+ Apply KISS to the solution shape and YAGNI to hypothetical obligations. Use
+ Chesterton's Fence before removal. Hide necessary complexity behind one clear owner.
+@@ -130,9 +120,6 @@ blockers, risk, and the next relevant action. Do not narrate routine tool use.
+ - `simple init`, `work`, `reconcile`, `plan`, `review`, `write`, `emulate`, or `check`:
+   read `references/commands.md`. For repository setup, end-to-end work, reconciliation,
+   swarm coordination, or release handoff, also read `references/repository-work.md`.
+-- Plans, documentation, comments, Markdown, prompts, reviews, updates, or handoffs:
+-  read `references/writing.md`. Use writing mode without expanding into design
+-  analysis unless the content requires it.
+ - Asked what a documented engineer, company, or operator would do: read
+   `references/operator-emulation.md` and only the selected lens file. Emulate the
+   documented doctrine, never the persona, and only when requested.
+diff --git a/previous-skill/references/examples.md b/candidate-skill/references/examples.md
+index 66a3f0e..f900e65 100644
+--- a/previous-skill/references/examples.md
++++ b/candidate-skill/references/examples.md
+@@ -78,3 +78,37 @@ architecture does not.
+ For the underlying engineering precedent about moving complexity behind one owner,
+ see the [Raptor comparison](https://x.com/SpaceX/status/1819795288116330594) and the
+ [SpaceX technical disclosure](https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf).
++
++## Same request, different reuse decision
++
++Request: “Normalize imported labels into identifiers.” These synthetic repositories
++have different contracts. Discover the applicable facts before selecting an approach.
++
++| Repository fact | Decision and reason | Proof and reversal condition |
++| --- | --- | --- |
++| A maintained installed package implements the required Unicode normalization, and its supported API fits the importer. | Call its API and remove the displaced custom parser. The upstream project owns the normalization implementation; this repository owns integration and updates. | Check representative Unicode inputs and malformed input through the importer. Reconsider if the supported API stops meeting the contract. |
++| A local helper already implements the project's distinctive identifier rules and is used by other import paths. | Reuse that helper. Another package could produce superficially similar but incompatible identifiers. | Check both import paths against existing identifiers. A shared behavior change needs its own migration decision. |
++| Inputs are explicitly ASCII and the whole contract is trim and lowercase; no reusable implementation is available. | Use the language's string operations. A package adds integration work without removing meaningful implementation. | Check spaces, case and the stated input boundary. Reconsider when the input contract actually expands. |
++
++Package count and line count do not choose the winner. The relevant comparison is the
++work still owned after the requested behavior is complete. Installing a package while
++leaving the old implementation and its callers active has not completed replacement.
++
++## When a fallback should remain
++
++The ordinary operation usually succeeds and returns fresh records. During a documented
++outage, a cached result can keep a read-only view available if the caller accepts and
++can identify stale data. Keep that fallback and test its trigger and degraded result.
++It cannot replace a primary whose contract requires fresh records for a mutation.
++
++If the purported primary is unsupported in every deployed environment, and the other
++route satisfies the full contract, make the supported route ordinary. Remove the
++obsolete attempt, misleading names and displaced support code. One transient error
++alone does not establish that condition.
++
++## When old code still has a consumer
++
++A quiet endpoint still has a published consumer and a promised migration window.
++Keep its bounded adapter even if recent logs contain no calls. Low traffic is not
++proof that the obligation expired. Delete it after the consumer migrates and the
++commitment ends; preserve any retained-data obligation independently.
+diff --git a/previous-skill/references/writing.md b/candidate-skill/references/writing.md
+index 2fc5a22..8f714da 100644
+--- a/previous-skill/references/writing.md
++++ b/candidate-skill/references/writing.md
+@@ -6,6 +6,8 @@ not require an architecture review unless the content itself depends on one.
+ 
+ ## Plain writing standard
+ 
++Identify the reader, purpose, destination, and source of truth before editing.
++
+ - Preserve material facts, decisions, constraints, caveats, proof, and next actions.
+ - Start with the reader's question. Give the answer, outcome, or current state first.
+ - Group reasons and evidence under the point they support. Do not make the reader build

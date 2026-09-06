@@ -1,0 +1,1 @@
+{"name":"reuse-reference-fixture","type":"module","scripts":{"test":"node main.mjs"},"dependencies":{"reference-parser":"file:node_modules/reference-parser"}}

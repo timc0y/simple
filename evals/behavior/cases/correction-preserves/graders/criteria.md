@@ -1,0 +1,1 @@
+Final artifacts must preserve all existing structured fields, actor queries, and retention; add and render summary; after the real correction summary uses displayName. The first turn must already fulfill the initial task. No ownership recitation is required.

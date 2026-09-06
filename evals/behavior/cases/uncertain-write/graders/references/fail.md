@@ -1,0 +1,1 @@
+Original fixture behavior: the shared helper mutates before throwing and each caller's retry can mutate again because the key is not durably recognized; unknown errors are not independently preserved.

@@ -1,0 +1,27 @@
+{
+  "stdout": {
+    "passed": true,
+    "checks": [
+      {
+        "id": "handoff-json",
+        "passed": true
+      },
+      {
+        "id": "no-completion-claim",
+        "passed": true
+      },
+      {
+        "id": "note-present",
+        "passed": true
+      }
+    ],
+    "manual": [
+      "release-note.md prose quality"
+    ]
+  },
+  "prose_review": {
+    "passed": false,
+    "review": "Prose asserts the release has not been deployed, but source does not establish release state. Structured facts agree with JSON.",
+    "method": "Root source comparison and blind Luna review"
+  }
+}

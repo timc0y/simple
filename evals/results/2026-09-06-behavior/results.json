@@ -1,0 +1,202 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-06T07:21:03.759663+00:00",
+    "skillCommit": "none",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "none",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "correction-preserves__r1",
+        "passed": true,
+        "evidence": "checks/ee84d56637273aa0.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/ee84d56637273aa0.md; submitted files: artifacts.zip under ee84d56637273aa0/."
+      },
+      {
+        "id": "fallback-selection__r1",
+        "passed": false,
+        "evidence": "checks/011648f83b04f22e.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/011648f83b04f22e.md; submitted files: artifacts.zip under 011648f83b04f22e/."
+      },
+      {
+        "id": "uncertain-write__r1",
+        "passed": true,
+        "evidence": "checks/506dad826fd61052.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/506dad826fd61052.md; submitted files: artifacts.zip under 506dad826fd61052/."
+      },
+      {
+        "id": "reuse-reference__r1",
+        "passed": true,
+        "evidence": "checks/4b12974f526f38c0.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/4b12974f526f38c0.md; submitted files: artifacts.zip under 4b12974f526f38c0/."
+      },
+      {
+        "id": "easy-edit__r1",
+        "passed": true,
+        "evidence": "checks/66603cb4139ff4c2.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/66603cb4139ff4c2.md; submitted files: artifacts.zip under 66603cb4139ff4c2/."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-06T07:21:03.759663+00:00",
+    "skillCommit": "eb9a82f",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "current-a",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "correction-preserves__r1",
+        "passed": true,
+        "evidence": "checks/3fcfaae46805addd.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/3fcfaae46805addd.md; submitted files: artifacts.zip under 3fcfaae46805addd/."
+      },
+      {
+        "id": "fallback-selection__r1",
+        "passed": true,
+        "evidence": "checks/ffab033e58f98529.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/ffab033e58f98529.md; submitted files: artifacts.zip under ffab033e58f98529/."
+      },
+      {
+        "id": "uncertain-write__r1",
+        "passed": true,
+        "evidence": "checks/75e87c38b7770b76.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/75e87c38b7770b76.md; submitted files: artifacts.zip under 75e87c38b7770b76/."
+      },
+      {
+        "id": "reuse-reference__r1",
+        "passed": true,
+        "evidence": "checks/86821bc08570ba5c.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/86821bc08570ba5c.md; submitted files: artifacts.zip under 86821bc08570ba5c/."
+      },
+      {
+        "id": "easy-edit__r1",
+        "passed": true,
+        "evidence": "checks/70190f7e3e3e3e5d.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/70190f7e3e3e3e5d.md; submitted files: artifacts.zip under 70190f7e3e3e3e5d/."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-06T07:21:03.759663+00:00",
+    "skillCommit": "eb9a82f",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "current-b",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "correction-preserves__r1",
+        "passed": true,
+        "evidence": "checks/3192be902527f4e3.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/3192be902527f4e3.md; submitted files: artifacts.zip under 3192be902527f4e3/."
+      },
+      {
+        "id": "fallback-selection__r1",
+        "passed": true,
+        "evidence": "checks/89dc1ebde3bf10cd.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/89dc1ebde3bf10cd.md; submitted files: artifacts.zip under 89dc1ebde3bf10cd/."
+      },
+      {
+        "id": "uncertain-write__r1",
+        "passed": true,
+        "evidence": "checks/a2ce3d4bb30772a4.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/a2ce3d4bb30772a4.md; submitted files: artifacts.zip under a2ce3d4bb30772a4/."
+      },
+      {
+        "id": "reuse-reference__r1",
+        "passed": true,
+        "evidence": "checks/0ffe9b98cd39213f.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/0ffe9b98cd39213f.md; submitted files: artifacts.zip under 0ffe9b98cd39213f/."
+      },
+      {
+        "id": "easy-edit__r1",
+        "passed": true,
+        "evidence": "checks/f33d8bb7374a003b.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/f33d8bb7374a003b.md; submitted files: artifacts.zip under f33d8bb7374a003b/."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-06T07:21:03.759663+00:00",
+    "skillCommit": "eb9a82f",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "correction-preserves__r1",
+        "passed": true,
+        "evidence": "checks/b6b6174710928a86.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/b6b6174710928a86.md; submitted files: artifacts.zip under b6b6174710928a86/."
+      },
+      {
+        "id": "fallback-selection__r1",
+        "passed": true,
+        "evidence": "checks/b1f903e8d576b7ab.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/b1f903e8d576b7ab.md; submitted files: artifacts.zip under b1f903e8d576b7ab/."
+      },
+      {
+        "id": "uncertain-write__r1",
+        "passed": true,
+        "evidence": "checks/d55f7b18fac2615a.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/d55f7b18fac2615a.md; submitted files: artifacts.zip under d55f7b18fac2615a/."
+      },
+      {
+        "id": "reuse-reference__r1",
+        "passed": true,
+        "evidence": "checks/b49fcc6306ad495c.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/b49fcc6306ad495c.md; submitted files: artifacts.zip under b49fcc6306ad495c/."
+      },
+      {
+        "id": "easy-edit__r1",
+        "passed": true,
+        "evidence": "checks/2c4b41881d21da4e.json",
+        "graderVerdicts": {},
+        "notes": "Submitted answer: raw/2c4b41881d21da4e.md; submitted files: artifacts.zip under 2c4b41881d21da4e/."
+      }
+    ]
+  }
+]

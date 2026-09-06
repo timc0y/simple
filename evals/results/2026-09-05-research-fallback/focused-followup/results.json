@@ -1,0 +1,25 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-05T18:06:11.964Z",
+    "skillCommit": "working-tree:d52dc9843c53141bee43314cf9e9f83e3d599dd1bd3aed80a321cee49fb26080",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna research-fallback focused follow-up",
+    "condition": "candidate-followup",
+    "adapter": "candidate-followup",
+    "tasks": [
+      {
+        "id": "unknown-mutation__r1",
+        "passed": true,
+        "evidence": "raw/1e8b3042bbd2.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      }
+    ]
+  }
+]

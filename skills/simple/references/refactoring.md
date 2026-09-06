@@ -19,3 +19,7 @@ Use `deletion-tools.md` when tooling is needed to find or prove candidates.
 
 Inspect the final diff. Every changed line must serve the requested outcome or remove
 complexity displaced by it.
+
+If input and output operations obscure a decision, consider a small pure function
+for that decision. Keep effects with the current owner. Extract only when this makes
+proof simpler or removes duplicate policy; a short linear operation needs no split.

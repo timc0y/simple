@@ -18,7 +18,7 @@ Find evidence or mark the decision unresolved.
 
 ## Choose the smallest honest path
 
-- No consumers and no retained state: replace directly.
+- No consumers, retained state, published contract, or support promise: replace directly.
 - Retained data but no old callers: migrate the data, not the interface.
 - Real old and new callers: use one bounded adapter with an exit condition.
 - Irreversible or high-risk data change: add backup, verification, and recovery.

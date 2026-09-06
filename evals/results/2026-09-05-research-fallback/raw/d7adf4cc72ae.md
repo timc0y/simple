@@ -1,0 +1,7 @@
+- Change billing router configuration to make the healthy secondary provider the primary route. Do not add another provider.
+- Classify HTTP 410 with reason `provider-retired` as permanently non-retryable. Stop retries to the retired provider and route the request to the secondary according to the existing router’s fallback rules.
+- Preserve the application’s existing provider-neutral customer ID when creating or retrieving the customer with the secondary; do not substitute a provider-specific ID or alter billing records.
+- Prove the change with:
+  - router tests confirming `provider-retired` bypasses retries and selects the secondary;
+  - existing compatibility and billing verification checks using retained customer records;
+  - a production canary/controlled rollout confirming successful billing, stable identity mapping, and no calls or retry delays against the retired provider.

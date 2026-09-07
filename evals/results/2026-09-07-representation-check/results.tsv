@@ -1,0 +1,13 @@
+run	case	model	condition	strict
+1	case-dual-persisted-names-r1	gpt-5.6-luna	current	true
+1	case-dual-persisted-names-r1	gpt-5.6-luna	candidate	true
+1	case-dual-persisted-names-r2	gpt-5.6-luna	candidate	true
+1	case-dual-persisted-names-r2	gpt-5.6-luna	current	true
+1	case-internal-rename-r1	gpt-5.6-luna	current	true
+1	case-internal-rename-r1	gpt-5.6-luna	candidate	true
+1	case-internal-rename-r2	gpt-5.6-luna	candidate	true
+1	case-internal-rename-r2	gpt-5.6-luna	current	true
+1	known-migration-r1	gpt-5.6-luna	current	true
+1	known-migration-r1	gpt-5.6-luna	candidate	true
+1	known-migration-r2	gpt-5.6-luna	candidate	true
+1	known-migration-r2	gpt-5.6-luna	current	true

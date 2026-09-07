@@ -1,0 +1,8 @@
+d2ef282c2a6c40b1	1	migration-r1	gpt-5.6-luna	without-example
+045c6b7b19d9ee86	1	migration-r1	gpt-5.6-luna	with-example
+df09424c965ebac3	1	migration-r1	gpt-5.6-luna	without-example-architecture
+f833b3a8590b26eb	1	migration-r1	gpt-5.6-luna	with-example-architecture
+1e918758e1e7f85f	1	migration-r2	gpt-5.6-luna	with-example
+c0ba520e46a1173f	1	migration-r2	gpt-5.6-luna	without-example-architecture
+a6f7f17c31e6f48a	1	migration-r2	gpt-5.6-luna	with-example-architecture
+6d084186d8a0754b	1	migration-r2	gpt-5.6-luna	without-example

@@ -1,0 +1,10 @@
+run	case	model	condition	strict
+1	easy-edit	gpt-5.6-luna	none	true
+1	easy-edit	gpt-5.6-luna	previous	true
+1	easy-edit	gpt-5.6-luna	candidate	true
+1	shared-failure	gpt-5.6-luna	previous	false
+1	shared-failure	gpt-5.6-luna	candidate	true
+1	shared-failure	gpt-5.6-luna	none	true
+1	migration-decision	gpt-5.6-luna	candidate	true
+1	migration-decision	gpt-5.6-luna	none	true
+1	migration-decision	gpt-5.6-luna	previous	true

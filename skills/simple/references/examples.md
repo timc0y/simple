@@ -5,6 +5,23 @@ show when the recommendation changes. The worked cases below are synthetic.
 The final section gives public engineering precedents and their sources.
 Repository evidence still decides the real case.
 
+## A deleted caller can leave a live contract
+
+A job handler has no source callers, but queued jobs still contain its old type name.
+Keep a supported handler until those jobs finish or migrate them through the queue's
+supported operation. If no jobs, external callers or compatibility promises remain,
+delete the handler. The queue state changes the answer, not the source reference count.
+This illustrates [PStack's blast-radius check](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/blast-radius/SKILL.md).
+
+## A shorter path can still need a guard
+
+An in-memory filter repeats the same validation with no effects between checks.
+Remove the duplicate check at its shared owner. If a payment request can time out
+after the provider accepts it, keep the reconciliation or idempotency mechanism.
+Those extra steps prevent a duplicate payment. This applies
+[Ponytail's implementation ladder](https://github.com/DietrichGebert/ponytail/blob/0a4dd63ad4541f4f655c4108a295916f3c1d8fda/skills/ponytail/SKILL.md)
+under Simple's existing recovery obligation.
+
 ## Filter before ranking
 
 An importer may choose one of several destinations. If a destination is usable only

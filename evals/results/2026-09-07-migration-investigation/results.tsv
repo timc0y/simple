@@ -1,0 +1,9 @@
+run	case	model	condition	strict
+1	migration-r1	gpt-5.6-luna	without-example	true
+1	migration-r1	gpt-5.6-luna	with-example	true
+1	migration-r1	gpt-5.6-luna	without-example-architecture	true
+1	migration-r1	gpt-5.6-luna	with-example-architecture	true
+1	migration-r2	gpt-5.6-luna	with-example	true
+1	migration-r2	gpt-5.6-luna	without-example-architecture	true
+1	migration-r2	gpt-5.6-luna	with-example-architecture	true
+1	migration-r2	gpt-5.6-luna	without-example	true

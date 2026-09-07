@@ -5,6 +5,10 @@ grader contract can support the stated decision. It does not mean statistical pr
 
 | Run | Status | Decision |
 | --- | --- | --- |
+| [Representation clarification](2026-09-07-representation-check/README.md) | Narrow positive decision screen | Luna: candidate 6/6, current 4/6; both pass all four fresh controls. Known-case dual storage removed in candidate repeats. Adopted exact compatibility clarification; no broader gain or production execution claim. |
+| [Migration investigation](2026-09-07-migration-investigation/README.md) | Mixed diagnostic; rollback unsupported | Eight Luna runs: smaller design 3/4 with the example, 0/4 without. Explicit architecture reading did not reliably fix misses. All plans retained stated obligations; small known-case sample, no runtime edit. |
+| [Personal workflow fit](2026-09-07-personal-fit/README.md) | Mixed screen; checker correction | Luna: all conditions pass two executable tasks. Previous chooses one stored value for the migration overlap; current and no skill add avoidable dual storage. Paired simplicity regression, one repeat; preserved outcomes pass. No skill rollback. |
+| [Workflow expansion](2026-09-07-workflow-screen/README.md) | Corrected rubric; all-pass screen | Luna: no skill, previous and candidate each passed 2/2 after regrading the same artifacts. Original grades retained. Final routing and intake additions were not model-rerun; no broad gain established. |
 | [21 August local Sonnet](2026-08-21-local-sonnet/README.md) | Superseded | The baseline received Simple context. Use the isolated rerun. |
 | [22 August isolated Sonnet](2026-08-22-isolated-sonnet/README.md) | Valid | Simple passed 6 of 9 cells. The clean baseline passed 3 of 9. |
 | [Precedence edit](2026-08-22-precedence-edit-ab/README.md) | Valid negative | The extra sentence did not correct the interaction fault. |

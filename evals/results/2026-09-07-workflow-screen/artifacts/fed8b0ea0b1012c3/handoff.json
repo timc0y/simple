@@ -1,0 +1,7 @@
+{
+  "version": "v2.4.0",
+  "check_command": "npm test",
+  "deploy_command": "npm run deploy -- v2.4.0",
+  "rollback_boundary": "before database migration starts",
+  "migration_duration": "unknown"
+}

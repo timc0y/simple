@@ -36,6 +36,16 @@ Obey licences and keep necessary attribution. Do not invent provenance.
 
 ## Resolve the uncertainty
 
+For a question on why a design exists, distinguish current behaviour from past intent.
+Trace the relevant code and the smallest useful commit, issue or decision trail.
+State what the record establishes, what you infer and what remains unknown.
+Code alone does not prove its author's reason.
+Check whether an upstream fix resolves the problem before you write another implementation.
+
+This distinction draws on [PStack's why workflow](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/why/SKILL.md).
+Use its investigative questions when they change the decision, without requiring a
+multi-source investigation for an ordinary lookup.
+
 For a failure, compare one working and one failing case at the same boundary.
 List plausible explanations only as far as needed to choose the cheapest observation
 that separates them. Change one relevant factor at a time; another search is useful
@@ -68,3 +78,9 @@ No new report is necessary.
 Return the evidence in the conversation unless the user requests a durable record or the change needs one.
 For a durable record, update the existing knowledge owner with the proven approach and recheck condition.
 Keep temporary investigation output disposable.
+
+For a broad historical investigation, record which relevant sources were inspected and which were unavailable.
+A search with no result does not prove the event never happened.
+Resolve conflicts by source proximity, direct evidence and applicability, not the number of matching accounts.
+Keep consequential competing explanations until an observation distinguishes them.
+Use `learning.md` for session-history recovery or adoption of working conventions.

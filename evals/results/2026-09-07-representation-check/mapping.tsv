@@ -1,0 +1,12 @@
+de06635796cc6918	1	case-dual-persisted-names-r1	gpt-5.6-luna	current
+c4b9ea681ce5bab9	1	case-dual-persisted-names-r1	gpt-5.6-luna	candidate
+267a48c90ab05e41	1	case-dual-persisted-names-r2	gpt-5.6-luna	candidate
+cd18e9622ba612e7	1	case-dual-persisted-names-r2	gpt-5.6-luna	current
+d1992bd74986e30d	1	case-internal-rename-r1	gpt-5.6-luna	current
+7b5a43776f3d67fc	1	case-internal-rename-r1	gpt-5.6-luna	candidate
+9f3a7f1c2cdea479	1	case-internal-rename-r2	gpt-5.6-luna	candidate
+a071dbdd50be382f	1	case-internal-rename-r2	gpt-5.6-luna	current
+34388b6531a435b5	1	known-migration-r1	gpt-5.6-luna	current
+e3195f039387e199	1	known-migration-r1	gpt-5.6-luna	candidate
+11636a6ab1a6d21b	1	known-migration-r2	gpt-5.6-luna	candidate
+2d617db4d882c63c	1	known-migration-r2	gpt-5.6-luna	current

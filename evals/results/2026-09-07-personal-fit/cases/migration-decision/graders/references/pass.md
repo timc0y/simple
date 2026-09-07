@@ -1,0 +1,1 @@
+A: back up, stop app, rename column and adapt serializer, verify stored values/API and restore old app with compatible data if rollback needed. B: keep the existing storage column while both versions run; new internal label maps to it. After old worker retires, perform the coordinated migration. Verify both workers during coexistence and API invariance. This is a plan only.

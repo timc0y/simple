@@ -13,6 +13,51 @@ runtime wrapper, or development framework.
 npx skills add timc0y/simple
 ```
 
+## Learning from PStack and Ponytail
+
+Use Simple as one complete method. Its existing references incorporate selected
+lessons from PStack and Ponytail, with links to the exact source revisions.
+PStack informs investigation, dependency analysis, verification and recovery of context.
+Ponytail informs implementation choices and complexity reviews.
+Simple keeps the complete brief, repository facts, recovery obligations and proof.
+
+Neither plugin is needed to use these lessons. The [upstream source archives](upstream/README.md)
+keep both originals, licences, revision records and an update procedure in this
+repository. They do not register skills, commands or hooks. Simple's shared hooks
+continue to serve Simple; no upstream hook code is active through this package.
+
+These additions express intended behaviour. They do not establish a comparative
+model performance gain. Earlier evaluation results remain available below.
+
+The [Luna workflow screen](evals/results/2026-09-07-workflow-screen/README.md) passed
+both tasks in all three conditions after a documented verifier correction.
+The later [personal-workflow screen](evals/results/2026-09-07-personal-fit/README.md)
+passed the executable tasks but found a simplicity regression in the migration plan:
+current Simple proposed dual storage where previous Simple used a boundary mapping.
+The [follow-up investigation](evals/results/2026-09-07-migration-investigation/README.md)
+did not support rolling back the example: smaller designs appeared in 3/4 runs with
+it and 0/4 without. Both records remain; neither proves a broad performance change.
+A [targeted clarification](evals/results/2026-09-07-representation-check/README.md)
+then passed 6/6 decision cells versus 4/6 for the preceding text. Both passed the
+fresh controls, including one requiring real dual-column compatibility. The exact
+evaluated clarification is now in the compatibility reference; the gain is limited
+to the known migration case.
+
+Use ordinary requests with Simple; each loads only the relevant procedure:
+
+| Request | Procedure |
+| --- | --- |
+| “Fix this bug” or “why is this slow?” | [Diagnosis](skills/simple/references/diagnosis.md) |
+| “Prove this works” or “match this UI” | [Verification](skills/simple/references/verification.md) |
+| “Try alternatives” or “improve this metric” | [Experiments](skills/simple/references/experiments.md) |
+| “Finish the feature and follow its review” | [Delivery](skills/simple/references/delivery.md) |
+| “Learn from our sessions” or “improve this skill” | [Learning](skills/simple/references/learning.md) |
+| “Review shortcut debt” or “show the measured gain” | [Audit](skills/simple/references/audit.md) |
+
+The [complete source coverage map](upstream/coverage.md) accounts for every pinned
+PStack skill and playbook, all Ponytail skills, and their runtime differences.
+Coverage means an explicit Simple procedure or documented host responsibility; it is not a benchmark victory.
+
 ## Why Simple exists
 
 An agent can know general software patterns but cannot know a repository's current

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "pstack",
+    "repository": "https://github.com/cursor/plugins.git",
+    "commit": "93b00b89ef425a9c1bac0d0b317dfc49c930ac99",
+    "subtree": "pstack",
+    "archive": "pstack.tar.gz"
+  },
+  {
+    "name": "ponytail",
+    "repository": "https://github.com/DietrichGebert/ponytail.git",
+    "commit": "0a4dd63ad4541f4f655c4108a295916f3c1d8fda",
+    "subtree": ".",
+    "archive": "ponytail.tar.gz"
+  }
+]

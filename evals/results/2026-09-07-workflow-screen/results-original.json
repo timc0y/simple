@@ -1,0 +1,83 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T08:48:43.251190+00:00",
+    "skillCommit": "none",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "none",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "shared-failure__r1",
+        "passed": false,
+        "evidence": "raw/231b7d937cb3b49e.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "writing-context__r1",
+        "passed": true,
+        "evidence": "raw/aa37caf49bcf3181.md",
+        "graderVerdicts": {}
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T08:48:43.251190+00:00",
+    "skillCommit": "snapshot-ff4bddaec10c6f251fddb8c10d6974d35ffa5733034f952d1082d977548cbd93",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "previous",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "shared-failure__r1",
+        "passed": false,
+        "evidence": "raw/660b326e2864fd00.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "writing-context__r1",
+        "passed": true,
+        "evidence": "raw/5cefc40355f9005d.md",
+        "graderVerdicts": {}
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T08:48:43.251190+00:00",
+    "skillCommit": "snapshot-4f5e6787bad08204193d8a0c7ee2a882fb1d107a4b9815851b7442f5bb61a44c",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "shared-failure__r1",
+        "passed": false,
+        "evidence": "raw/a178d6c229e77053.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "writing-context__r1",
+        "passed": true,
+        "evidence": "raw/fed8b0ea0b1012c3.md",
+        "graderVerdicts": {}
+      }
+    ]
+  }
+]

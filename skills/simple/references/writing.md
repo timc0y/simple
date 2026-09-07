@@ -69,6 +69,23 @@ them. If the reader must understand a sequence or branch, show that shape before
 detail. Update the source of truth directly rather than adding another explanatory
 layer.
 
+For an explanation, show one concrete input through its decisions, state changes and
+result. Explain the reason for a surprising boundary when evidence establishes it.
+Link the source that proves the behaviour. A file inventory alone does not explain
+the mechanism. This adapts [PStack's how workflow](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/how/SKILL.md).
+
+For a tutorial, teach through a complete example. For a how-to, give the steps for the reader's task.
+For reference material, make facts easy to retrieve. For an explanation, develop the mechanism and its reasons.
+Use the reader's purpose to choose the dominant form; separate forms when mixing them obscures the task.
+This adapts PStack's [technical-writing guidance](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/technical-writing/SKILL.md).
+
+For “explain that more simply,” restate the same claim and limits in familiar language.
+For “teach me,” start with a concrete mental model and expand to the requested depth.
+Connect how the system behaves with why it exists only where historical evidence supports the reason.
+Use a diagram when it reduces explanation work; do not replace a requested walkthrough with a brief verdict.
+These forms adapt PStack's [bro](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/bro/SKILL.md)
+and [teach](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/teach/SKILL.md) workflows.
+
 ### Prompts
 
 State the outcome, relevant context, hard constraints, authority boundary, required

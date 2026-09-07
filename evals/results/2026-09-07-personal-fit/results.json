@@ -1,0 +1,107 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T09:45:38.550863+00:00",
+    "skillCommit": "none",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated sequential Luna execution; executable checks and explicit manual decision review",
+    "condition": "none",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "easy-edit__r1",
+        "passed": true,
+        "evidence": "raw/112965a6a11370fd.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "shared-failure__r1",
+        "passed": true,
+        "evidence": "corrected-verifiers/a0180e4c89c6f861.json",
+        "graderVerdicts": {},
+        "notes": "Outcome projection correction; original grade retained. Raw answer: raw/a0180e4c89c6f861.md."
+      },
+      {
+        "id": "migration-decision__r1",
+        "passed": false,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation requirements pass in all conditions. The prompt also requests the smallest workable migration: previous uses one stored value; candidate and none add avoidable dual storage/synchronization. Manual decision grade; initial verifier checked only artifact presence. See manual-review.json."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T09:45:38.550863+00:00",
+    "skillCommit": "snapshot-1200b1d4fb18913f83aea92f0d72e1dee975f9e7198b1668e1c2a752cac1ebd7",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated sequential Luna execution; executable checks and explicit manual decision review",
+    "condition": "previous",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "easy-edit__r1",
+        "passed": true,
+        "evidence": "raw/e846d3ccd06ed8e6.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "shared-failure__r1",
+        "passed": true,
+        "evidence": "corrected-verifiers/c1e2b9051369d3bc.json",
+        "graderVerdicts": {},
+        "notes": "Outcome projection correction; original grade retained. Raw answer: raw/c1e2b9051369d3bc.md."
+      },
+      {
+        "id": "migration-decision__r1",
+        "passed": true,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation requirements pass in all conditions. The prompt also requests the smallest workable migration: previous uses one stored value; candidate and none add avoidable dual storage/synchronization. Manual decision grade; initial verifier checked only artifact presence. See manual-review.json."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T09:45:38.550863+00:00",
+    "skillCommit": "snapshot-54653dc20166d94c6cbfe9718a0932f151a037b2deb2ba2c3f29869f78aa6f4b",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated sequential Luna execution; executable checks and explicit manual decision review",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "easy-edit__r1",
+        "passed": true,
+        "evidence": "raw/718a8011d7d3cd03.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "shared-failure__r1",
+        "passed": true,
+        "evidence": "corrected-verifiers/621e1472748e9ccc.json",
+        "graderVerdicts": {},
+        "notes": "Outcome projection correction; original grade retained. Raw answer: raw/621e1472748e9ccc.md."
+      },
+      {
+        "id": "migration-decision__r1",
+        "passed": false,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation requirements pass in all conditions. The prompt also requests the smallest workable migration: previous uses one stored value; candidate and none add avoidable dual storage/synchronization. Manual decision grade; initial verifier checked only artifact presence. See manual-review.json."
+      }
+    ]
+  }
+]

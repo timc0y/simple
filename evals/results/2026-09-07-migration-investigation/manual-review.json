@@ -1,0 +1,98 @@
+[
+  {
+    "id": "d2ef282c2a6c40b1",
+    "case": "migration-r1",
+    "condition": "without-example",
+    "reviewer": "lead manual review against frozen criteria",
+    "preservation_plan_passed": true,
+    "simplicity_passed": false,
+    "passed": false,
+    "evidence": "artifacts/d2ef282c2a6c40b1/decision.md",
+    "reason": "Adds label beside item_title plus synchronization. No fixture requirement prevents one-column boundary mapping. Plan retains old-worker/API/data obligations, but its extra stored state is unnecessary.",
+    "limit": "Decision-plan review, not production migration execution. SQL identifiers and deployment procedures still require repository verification."
+  },
+  {
+    "id": "045c6b7b19d9ee86",
+    "case": "migration-r1",
+    "condition": "with-example",
+    "reviewer": "lead manual review against frozen criteria",
+    "preservation_plan_passed": true,
+    "simplicity_passed": true,
+    "passed": true,
+    "evidence": "artifacts/045c6b7b19d9ee86/decision.md",
+    "reason": "Keeps one physical title column during coexistence and translates at the new-build database boundary; preserves old query/API and names retirement, checks and recovery.",
+    "limit": "Decision-plan review, not production migration execution. SQL identifiers and deployment procedures still require repository verification."
+  },
+  {
+    "id": "df09424c965ebac3",
+    "case": "migration-r1",
+    "condition": "without-example-architecture",
+    "reviewer": "lead manual review against frozen criteria",
+    "preservation_plan_passed": true,
+    "simplicity_passed": false,
+    "passed": false,
+    "evidence": "artifacts/df09424c965ebac3/decision.md",
+    "reason": "Adds label beside item_title plus synchronization. No fixture requirement prevents one-column boundary mapping. Plan retains old-worker/API/data obligations, but its extra stored state is unnecessary.",
+    "limit": "Decision-plan review, not production migration execution. SQL identifiers and deployment procedures still require repository verification."
+  },
+  {
+    "id": "f833b3a8590b26eb",
+    "case": "migration-r1",
+    "condition": "with-example-architecture",
+    "reviewer": "lead manual review against frozen criteria",
+    "preservation_plan_passed": true,
+    "simplicity_passed": true,
+    "passed": true,
+    "evidence": "artifacts/f833b3a8590b26eb/decision.md",
+    "reason": "Keeps one physical title column during coexistence and translates at the new-build database boundary; preserves old query/API and names retirement, checks and recovery.",
+    "limit": "Decision-plan review, not production migration execution. SQL identifiers and deployment procedures still require repository verification."
+  },
+  {
+    "id": "1e918758e1e7f85f",
+    "case": "migration-r2",
+    "condition": "with-example",
+    "reviewer": "lead manual review against frozen criteria",
+    "preservation_plan_passed": true,
+    "simplicity_passed": true,
+    "passed": true,
+    "evidence": "artifacts/1e918758e1e7f85f/decision.md",
+    "reason": "Keeps one physical title column during coexistence and translates at the new-build database boundary; preserves old query/API and names retirement, checks and recovery.",
+    "limit": "Decision-plan review, not production migration execution. SQL identifiers and deployment procedures still require repository verification."
+  },
+  {
+    "id": "c0ba520e46a1173f",
+    "case": "migration-r2",
+    "condition": "without-example-architecture",
+    "reviewer": "lead manual review against frozen criteria",
+    "preservation_plan_passed": true,
+    "simplicity_passed": false,
+    "passed": false,
+    "evidence": "artifacts/c0ba520e46a1173f/decision.md",
+    "reason": "Adds label beside item_title plus synchronization. No fixture requirement prevents one-column boundary mapping. Plan retains old-worker/API/data obligations, but its extra stored state is unnecessary.",
+    "limit": "Decision-plan review, not production migration execution. SQL identifiers and deployment procedures still require repository verification."
+  },
+  {
+    "id": "a6f7f17c31e6f48a",
+    "case": "migration-r2",
+    "condition": "with-example-architecture",
+    "reviewer": "lead manual review against frozen criteria",
+    "preservation_plan_passed": true,
+    "simplicity_passed": false,
+    "passed": false,
+    "evidence": "artifacts/a6f7f17c31e6f48a/decision.md",
+    "reason": "Adds label beside item_title plus synchronization. No fixture requirement prevents one-column boundary mapping. Plan retains old-worker/API/data obligations, but its extra stored state is unnecessary.",
+    "limit": "Decision-plan review, not production migration execution. SQL identifiers and deployment procedures still require repository verification."
+  },
+  {
+    "id": "6d084186d8a0754b",
+    "case": "migration-r2",
+    "condition": "without-example",
+    "reviewer": "lead manual review against frozen criteria",
+    "preservation_plan_passed": true,
+    "simplicity_passed": false,
+    "passed": false,
+    "evidence": "artifacts/6d084186d8a0754b/decision.md",
+    "reason": "Adds label beside item_title plus synchronization. No fixture requirement prevents one-column boundary mapping. Plan retains old-worker/API/data obligations, but its extra stored state is unnecessary.",
+    "limit": "Decision-plan review, not production migration execution. SQL identifiers and deployment procedures still require repository verification."
+  }
+]

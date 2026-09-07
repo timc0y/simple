@@ -1,0 +1,1 @@
+Read context.md. Write decision.md with the smallest workable migration for each deployment, why they differ, what must survive, and how you would verify and recover. This is a decision request; do not implement or publish anything.

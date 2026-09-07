@@ -1,0 +1,89 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T08:48:43.251190+00:00",
+    "skillCommit": "none",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "none",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "shared-failure__r1",
+        "passed": true,
+        "evidence": "verifiers/231b7d937cb3b49e.json",
+        "graderVerdicts": {},
+        "notes": "Corrected rubric; original grade retained in results-original.json. Raw answer: raw/231b7d937cb3b49e.md. The original verifier overconstrained exit status and unknown-mode effects."
+      },
+      {
+        "id": "writing-context__r1",
+        "passed": true,
+        "evidence": "verifiers/aa37caf49bcf3181.json",
+        "graderVerdicts": {},
+        "notes": "Corrected rubric; original grade retained in results-original.json. Raw answer: raw/aa37caf49bcf3181.md. Root manually reviewed release-note.md against the fixture source; facts and uncertainty preserved."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T08:48:43.251190+00:00",
+    "skillCommit": "snapshot-ff4bddaec10c6f251fddb8c10d6974d35ffa5733034f952d1082d977548cbd93",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "previous",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "shared-failure__r1",
+        "passed": true,
+        "evidence": "verifiers/660b326e2864fd00.json",
+        "graderVerdicts": {},
+        "notes": "Corrected rubric; original grade retained in results-original.json. Raw answer: raw/660b326e2864fd00.md. The original verifier overconstrained exit status and unknown-mode effects."
+      },
+      {
+        "id": "writing-context__r1",
+        "passed": true,
+        "evidence": "verifiers/5cefc40355f9005d.json",
+        "graderVerdicts": {},
+        "notes": "Corrected rubric; original grade retained in results-original.json. Raw answer: raw/5cefc40355f9005d.md. Root manually reviewed release-note.md against the fixture source; facts and uncertainty preserved."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T08:48:43.251190+00:00",
+    "skillCommit": "snapshot-4f5e6787bad08204193d8a0c7ee2a882fb1d107a4b9815851b7442f5bb61a44c",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "shared-failure__r1",
+        "passed": true,
+        "evidence": "verifiers/a178d6c229e77053.json",
+        "graderVerdicts": {},
+        "notes": "Corrected rubric; original grade retained in results-original.json. Raw answer: raw/a178d6c229e77053.md. The original verifier overconstrained exit status and unknown-mode effects."
+      },
+      {
+        "id": "writing-context__r1",
+        "passed": true,
+        "evidence": "verifiers/fed8b0ea0b1012c3.json",
+        "graderVerdicts": {},
+        "notes": "Corrected rubric; original grade retained in results-original.json. Raw answer: raw/fed8b0ea0b1012c3.md. Root manually reviewed release-note.md against the fixture source; facts and uncertainty preserved."
+      }
+    ]
+  }
+]

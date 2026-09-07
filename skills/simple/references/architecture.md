@@ -49,6 +49,29 @@ have different lifetimes, absence meanings, or recovery rules. Keep those distin
 with their policy owner. When a repeated mechanical mistake can be prevented by an
 existing schema, constraint, or tool, encode it there instead of repeating prose.
 
+## Shape the domain before the layers
+
+For a new stateful design, sketch the valid states, transitions and one caller before splitting files.
+Use a domain model that makes the important distinctions explicit.
+A state machine can replace contradictory booleans; a table can replace repeated selection policy.
+Neither is necessary for a short operation with one stable path.
+Use `types.md` when the type system can remove a real invalid state or caller error.
+
+For a novel, consequential decision with no established answer, compare structurally distinct options.
+Include the existing owner or platform solution when viable.
+Name what each option removes, what it makes harder and what evidence could reject it.
+Use `experiments.md` when a small prototype can settle the choice.
+For product work, compare the user's complete experience, including waiting, recovery and accessibility.
+Implementation convenience alone does not justify a worse user outcome.
+
+When successive additions cause repeated friction, ask how the design would look with the new requirement present from the start.
+Use that answer to find a simpler boundary, not to justify an automatic rewrite.
+Preserve existing contracts and move only the part that evidence supports.
+
+These checks adapt PStack's [domain modeling](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/principle-model-the-domain/SKILL.md),
+[design-space exploration](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/principle-exhaust-the-design-space/SKILL.md)
+and [experience-first principle](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/principle-experience-first/SKILL.md).
+
 ## Implementation ladder
 
 Before adding code, a dependency, an abstraction, a workflow, state, or another owner,
@@ -87,6 +110,20 @@ Include the next maintainer, content editor and operator in that comparison. Pre
 defaults when extra choices have no demonstrated value. Remove duplicate facts and
 synchronisation duties where one existing owner can serve the consumers. Share code
 when consumers need the same maintained knowledge, not just similar syntax.
+
+The ladder draws on [Ponytail](https://github.com/DietrichGebert/ponytail/blob/0a4dd63ad4541f4f655c4108a295916f3c1d8fda/skills/ponytail/SKILL.md).
+Simple compares new packages with local code by the maintenance they remove.
+Dependency count and diff size do not decide alone. Keep the complete requested behaviour.
+A smaller implementation is useful only when it still meets the contract.
+
+Before you choose an interface, sketch one real caller that uses it. Count the concepts,
+hidden state and cross-file jumps that caller must understand. A short function can
+still impose a difficult protocol; a larger module can remove one. For concurrent
+work, separate independently owned state before you add coordination.
+Keep a lock or transaction when a real shared invariant needs it.
+
+These checks adapt PStack's [reader-load principle](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/principle-minimize-reader-load/SKILL.md)
+and [shared-state principle](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md).
 
 ## Make the working path ordinary
 

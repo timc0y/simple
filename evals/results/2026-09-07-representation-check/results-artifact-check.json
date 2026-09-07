@@ -1,0 +1,104 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T10:26:55.954271+00:00",
+    "skillCommit": "snapshot-5bc8f180a696005a1ee2e3c4554e7810a4a2b43c72fcb2f96af5518eedc88b74",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "current",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "case-dual-persisted-names-r1__r1",
+        "passed": true,
+        "evidence": "raw/de06635796cc6918.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "case-dual-persisted-names-r2__r1",
+        "passed": true,
+        "evidence": "raw/cd18e9622ba612e7.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "case-internal-rename-r1__r1",
+        "passed": true,
+        "evidence": "raw/d1992bd74986e30d.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "case-internal-rename-r2__r1",
+        "passed": true,
+        "evidence": "raw/a071dbdd50be382f.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "known-migration-r1__r1",
+        "passed": true,
+        "evidence": "raw/34388b6531a435b5.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "known-migration-r2__r1",
+        "passed": true,
+        "evidence": "raw/2d617db4d882c63c.md",
+        "graderVerdicts": {}
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T10:26:55.954271+00:00",
+    "skillCommit": "snapshot-eee133f5ba0f2b9c0c2ec0f2619b6406d71963ce0d1f51b2bda513e2b3ef1ad0",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "case-dual-persisted-names-r1__r1",
+        "passed": true,
+        "evidence": "raw/c4b9ea681ce5bab9.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "case-dual-persisted-names-r2__r1",
+        "passed": true,
+        "evidence": "raw/267a48c90ab05e41.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "case-internal-rename-r1__r1",
+        "passed": true,
+        "evidence": "raw/7b5a43776f3d67fc.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "case-internal-rename-r2__r1",
+        "passed": true,
+        "evidence": "raw/9f3a7f1c2cdea479.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "known-migration-r1__r1",
+        "passed": true,
+        "evidence": "raw/e3195f039387e199.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "known-migration-r2__r1",
+        "passed": true,
+        "evidence": "raw/11636a6ab1a6d21b.md",
+        "graderVerdicts": {}
+      }
+    ]
+  }
+]

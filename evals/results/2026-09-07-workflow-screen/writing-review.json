@@ -1,0 +1,23 @@
+{
+  "reviewer": "root source review",
+  "model_grader": false,
+  "source": "frozen-inputs.zip:cases/cases/writing-context/SIMPLE.md",
+  "criteria": "Preserve version, commands, rollback boundary and unknown migration duration; no claim of actual release state.",
+  "verdicts": [
+    {
+      "id": "5cefc40355f9005d",
+      "passed": true,
+      "evidence": "artifacts/5cefc40355f9005d/release-note.md"
+    },
+    {
+      "id": "fed8b0ea0b1012c3",
+      "passed": true,
+      "evidence": "artifacts/fed8b0ea0b1012c3/release-note.md"
+    },
+    {
+      "id": "aa37caf49bcf3181",
+      "passed": true,
+      "evidence": "artifacts/aa37caf49bcf3181/release-note.md"
+    }
+  ]
+}

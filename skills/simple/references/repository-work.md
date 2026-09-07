@@ -61,6 +61,28 @@ search, handoff, tool sequence, or failure it removes. If it removes none, do no
 it. Put new durable knowledge in the existing owner and delete the temporary container
 that discovered it.
 
+For a recurring verification sequence, keep the procedure in the existing test or operations owner:
+
+1. Start the system.
+2. Confirm the intended build, process, account and target.
+3. Drive the real entry point.
+4. Check the result and effects.
+5. Keep useful failure evidence.
+6. Clean up resources the check created.
+
+Do not stop unrelated processes. A nearby build does not prove the edited source.
+This adapts [PStack's verification workflow](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/create-verification-skill/SKILL.md);
+the recipe need not become another skill.
+
+For a requested agent-operated control surface, reuse the application's existing CLI, API or server before adding a dashboard.
+Map each control to an authorized operation with an observable result.
+Validate external input and keep credentials at the server or existing secret owner.
+Use the shared operation's retry and uncertainty rules.
+Prove the real effect, failure response and teardown through the intended caller.
+Hosting or exposing a service is a separate authorized transition.
+This adapts the portable purpose of PStack's [make-bot-ui](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/make-bot-ui/SKILL.md)
+without requiring its provider-specific runtime.
+
 ## Coordinate one swarm
 
 One lead owns scope, synthesis, shared truth, authority decisions, and final proof.
@@ -122,6 +144,18 @@ After an interrupted mutation, establish what took effect before retrying. Resum
 the first unproved step. Put a costly discovery in its existing owner when another
 session needs it; a short task does not need a new checkpoint document. Keep private
 session evidence in a locally ignored location, with self-contained public guidance.
+
+Bind recovered proof to the source, configuration and target it actually checked.
+Recheck what changed or remains uncertain. Keep applicable evidence and rejected
+alternatives. This draws on [PStack's recall workflow](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/recall/SKILL.md).
+
+When a correction recurs, identify the failure before you add another rule.
+Was the guidance missing, unread, misunderstood, contradicted, or impossible to obey with the available tool?
+Repair that cause in the existing owner. Prefer a constraint,
+tool affordance or meaningful check when it can prevent the mistake. Preserve the
+reason and counterexample that made the lesson useful. This adapts [PStack's reflect
+workflow](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/reflect/SKILL.md),
+without turning every correction into a new document or mandatory ceremony.
 
 ## `simple reconcile`
 

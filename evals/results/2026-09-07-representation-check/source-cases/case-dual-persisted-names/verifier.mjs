@@ -1,0 +1,1 @@
+import {readFileSync} from 'node:fs'; import {join} from 'node:path'; const text=readFileSync(join(process.argv[2],'decision.md'),'utf8'); if(!text.trim()) throw Error('empty decision'); console.log(JSON.stringify({passed:true,checks:['artifact present only; manual semantic review required']}));

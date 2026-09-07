@@ -1,0 +1,56 @@
+[
+  {
+    "id": "660b326e2864fd00",
+    "command": "/bin/zsh -lc \"pwd && sed -n '1,240p' prompt.md && printf '\\\\n--- SKILL ---\\\\n' && sed -n '1,260p' .agents/skills/simple/SKILL.md && printf '\\\\n--- FILES ---\\\\n' && rg --files -g '\"'!node_modules'\"' | sed -n '1,240p'\"",
+    "exit_code": 0,
+    "note": "Command evidence of requested reads; output may be truncated. Not natural activation proof."
+  },
+  {
+    "id": "660b326e2864fd00",
+    "command": "/bin/zsh -lc \"find .. -name SIMPLE.md -print && printf '\\\\n--- COMMANDS ---\\\\n' && sed -n '1,280p' .agents/skills/simple/references/commands.md && printf '\\\\n--- REPOSITORY WORK ---\\\\n' && sed -n '1,320p' .agents/skills/simple/references/repository-work.md && printf '\\\\n--- ARCHITECTURE ---\\\\n' && sed -n '1,320p' .agents/skills/simple/references/architecture.md\"",
+    "exit_code": 1,
+    "note": "Command evidence of requested reads; output may be truncated. Not natural activation proof."
+  },
+  {
+    "id": "660b326e2864fd00",
+    "command": "/bin/zsh -lc 'for f in .agents/skills/simple/references/commands.md .agents/skills/simple/references/repository-work.md .agents/skills/simple/references/architecture.md; do echo \"--- $f ---\"; sed -n '\"'1,360p' \\\"\"'$f\"; done; echo '\"'--- SIMPLE FILES ---'; rg --files -g 'SIMPLE.md' -g '\"'!node_modules'\"' . .. 2>/dev/null || true\"",
+    "exit_code": 0,
+    "note": "Command evidence of requested reads; output may be truncated. Not natural activation proof."
+  },
+  {
+    "id": "a178d6c229e77053",
+    "command": "/bin/zsh -lc \"sed -n '1,240p' .agents/skills/simple/SKILL.md && printf '\\\\n--- prompt.md ---\\\\n' && sed -n '1,260p' prompt.md && printf '\\\\n--- files ---\\\\n' && rg --files -g '\"'!node_modules'\"' -g '\"'!vendor'\"' | sed -n '1,240p'\"",
+    "exit_code": 0,
+    "note": "Command evidence of requested reads; output may be truncated. Not natural activation proof."
+  },
+  {
+    "id": "a178d6c229e77053",
+    "command": "/bin/zsh -lc \"find .. -name SIMPLE.md -print; printf '\\\\n--- diagnosis ---\\\\n'; sed -n '1,260p' .agents/skills/simple/references/diagnosis.md; printf '\\\\n--- verification ---\\\\n'; sed -n '1,280p' .agents/skills/simple/references/verification.md; printf '\\\\n--- commands ---\\\\n'; sed -n '1,260p' .agents/skills/simple/references/commands.md; printf '\\\\n--- repository-work ---\\\\n'; sed -n '1,300p' .agents/skills/simple/references/repository-work.md\"",
+    "exit_code": 0,
+    "note": "Command evidence of requested reads; output may be truncated. Not natural activation proof."
+  },
+  {
+    "id": "5cefc40355f9005d",
+    "command": "/bin/zsh -lc \"sed -n '1,240p' .agents/skills/simple/SKILL.md && printf '\\\\n--- prompt.md ---\\\\n' && sed -n '1,260p' prompt.md && printf '\\\\n--- files ---\\\\n' && rg --files -g '\"'!*node_modules*'\"' | sed -n '1,240p'\"",
+    "exit_code": 0,
+    "note": "Command evidence of requested reads; output may be truncated. Not natural activation proof."
+  },
+  {
+    "id": "5cefc40355f9005d",
+    "command": "/bin/zsh -lc \"sed -n '1,280p' .agents/skills/simple/references/writing.md && printf '\\\\n--- SIMPLE.md ---\\\\n' && sed -n '1,260p' SIMPLE.md && printf '\\\\n--- package.json ---\\\\n' && sed -n '1,200p' package.json\"",
+    "exit_code": 0,
+    "note": "Command evidence of requested reads; output may be truncated. Not natural activation proof."
+  },
+  {
+    "id": "fed8b0ea0b1012c3",
+    "command": "/bin/zsh -lc \"sed -n '1,240p' .agents/skills/simple/SKILL.md && printf '\\\\n--- prompt.md ---\\\\n' && sed -n '1,260p' prompt.md && printf '\\\\n--- files ---\\\\n' && rg --files -g 'SIMPLE.md' -g '*.md' -g '*fixture*' -g '*test*' | sed -n '1,240p'\"",
+    "exit_code": 0,
+    "note": "Command evidence of requested reads; output may be truncated. Not natural activation proof."
+  },
+  {
+    "id": "fed8b0ea0b1012c3",
+    "command": "/bin/zsh -lc \"sed -n '1,280p' .agents/skills/simple/references/writing.md && printf '\\\\n--- SIMPLE.md ---\\\\n' && sed -n '1,260p' SIMPLE.md && printf '\\\\n--- repository status ---\\\\n' && git status --short\"",
+    "exit_code": 0,
+    "note": "Command evidence of requested reads; output may be truncated. Not natural activation proof."
+  }
+]

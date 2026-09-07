@@ -1,0 +1,104 @@
+[
+  {
+    "id": "d2ef282c2a6c40b1",
+    "case": "migration-r1",
+    "condition": "without-example",
+    "tokens": 131554,
+    "latency_ms": 91919,
+    "toolcalls": 5,
+    "reference_read_commands": [
+      "architecture.md",
+      "compatibility.md",
+      "writing.md"
+    ]
+  },
+  {
+    "id": "045c6b7b19d9ee86",
+    "case": "migration-r1",
+    "condition": "with-example",
+    "tokens": 69523,
+    "latency_ms": 50839,
+    "toolcalls": 3,
+    "reference_read_commands": [
+      "compatibility.md",
+      "writing.md"
+    ]
+  },
+  {
+    "id": "df09424c965ebac3",
+    "case": "migration-r1",
+    "condition": "without-example-architecture",
+    "tokens": 98420,
+    "latency_ms": 64629,
+    "toolcalls": 4,
+    "reference_read_commands": [
+      "architecture.md",
+      "compatibility.md",
+      "writing.md"
+    ]
+  },
+  {
+    "id": "f833b3a8590b26eb",
+    "case": "migration-r1",
+    "condition": "with-example-architecture",
+    "tokens": 112360,
+    "latency_ms": 75551,
+    "toolcalls": 5,
+    "reference_read_commands": [
+      "architecture.md",
+      "compatibility.md",
+      "writing.md"
+    ]
+  },
+  {
+    "id": "1e918758e1e7f85f",
+    "case": "migration-r2",
+    "condition": "with-example",
+    "tokens": 78259,
+    "latency_ms": 60356,
+    "toolcalls": 3,
+    "reference_read_commands": [
+      "architecture.md",
+      "compatibility.md",
+      "writing.md"
+    ]
+  },
+  {
+    "id": "c0ba520e46a1173f",
+    "case": "migration-r2",
+    "condition": "without-example-architecture",
+    "tokens": 115098,
+    "latency_ms": 70856,
+    "toolcalls": 5,
+    "reference_read_commands": [
+      "architecture.md",
+      "compatibility.md",
+      "writing.md"
+    ]
+  },
+  {
+    "id": "a6f7f17c31e6f48a",
+    "case": "migration-r2",
+    "condition": "with-example-architecture",
+    "tokens": 117218,
+    "latency_ms": 71195,
+    "toolcalls": 5,
+    "reference_read_commands": [
+      "architecture.md",
+      "compatibility.md",
+      "writing.md"
+    ]
+  },
+  {
+    "id": "6d084186d8a0754b",
+    "case": "migration-r2",
+    "condition": "without-example",
+    "tokens": 101230,
+    "latency_ms": 71752,
+    "toolcalls": 5,
+    "reference_read_commands": [
+      "compatibility.md",
+      "writing.md"
+    ]
+  }
+]

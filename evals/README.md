@@ -33,6 +33,10 @@ sources local. Continue using Luna only for this repository's model evaluations.
 
 ## Compare equal conditions
 
+The [workflow screen](workflow/README.md) checks shared-operation recovery and written
+handoff fidelity after workflow expansion. It uses matched no-skill, previous and
+candidate conditions. Treat its one-repeat result as a narrow screen, not broad improvement evidence.
+
 Use the same model, harness, tools, repository state, and reasoning setting for each
 condition. Compare no skill, the current skill, and one candidate on the same task.
 When evaluating the value of the full skill, add a short-instruction control that

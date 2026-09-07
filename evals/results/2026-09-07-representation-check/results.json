@@ -1,0 +1,116 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T10:26:55.954271+00:00",
+    "skillCommit": "snapshot-5bc8f180a696005a1ee2e3c4554e7810a4a2b43c72fcb2f96af5518eedc88b74",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated sequential Luna decision evaluation; manual preservation and maintenance checks",
+    "condition": "current",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "case-dual-persisted-names-r1__r1",
+        "passed": true,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation: True; maintenance: True. Retains both fixed writable columns, OLD/NEW-sensitive transactional synchronization, conflict rejection, uniqueness, verification and retirement. Exact consumer conflict targets remain an implementation verification detail. Artifact: artifacts/de06635796cc6918/decision.md. Presence-only original check retained."
+      },
+      {
+        "id": "case-dual-persisted-names-r2__r1",
+        "passed": true,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation: True; maintenance: True. One DB synchronization owner retains both required physical interfaces, changed-column conflict handling, equivalent uniqueness, rollout verification and retirement. Artifact: artifacts/cd18e9622ba612e7/decision.md. Presence-only original check retained."
+      },
+      {
+        "id": "case-internal-rename-r1__r1",
+        "passed": true,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation: True; maintenance: True. Renames domain property only; existing HTTP/repository boundaries preserve API, stored values/nullability, reporting reads and rolling compatibility, with focused checks and no duplicate state. Artifact: artifacts/d1992bd74986e30d/decision.md. Presence-only original check retained."
+      },
+      {
+        "id": "case-internal-rename-r2__r1",
+        "passed": true,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation: True; maintenance: True. Single internal-property rename with unchanged HTTP/database names, nullability/reporting/rolling checks; no needless migration or compatibility subsystem. Artifact: artifacts/a071dbdd50be382f/decision.md. Presence-only original check retained."
+      },
+      {
+        "id": "known-migration-r1__r1",
+        "passed": false,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation: True; maintenance: False. Preserves data/API/old-reader overlap but adds label storage and dual writes without a constraint preventing boundary mapping to the existing column. Artifact: artifacts/34388b6531a435b5/decision.md. Presence-only original check retained."
+      },
+      {
+        "id": "known-migration-r2__r1",
+        "passed": false,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation: True; maintenance: False. Preserves the stated contracts but adds a second column and synchronization despite no incompatible physical-name requirement for the new build. Artifact: artifacts/2d617db4d882c63c/decision.md. Presence-only original check retained."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T10:26:55.954271+00:00",
+    "skillCommit": "snapshot-eee133f5ba0f2b9c0c2ec0f2619b6406d71963ce0d1f51b2bda513e2b3ef1ad0",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated sequential Luna decision evaluation; manual preservation and maintenance checks",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "case-dual-persisted-names-r1__r1",
+        "passed": true,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation: True; maintenance: True. Retains required dual names with one DB trigger, changed-column handling, unique arbiters and explicit retirement; no unnecessary coordination owner. Artifact: artifacts/c4b9ea681ce5bab9/decision.md. Presence-only original check retained."
+      },
+      {
+        "id": "case-dual-persisted-names-r2__r1",
+        "passed": true,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation: True; maintenance: True. Keeps necessary dual writable names, OLD/NEW-aware trigger, matching unique arbiters, real SQL verification and bounded retirement; rejects conflicting paired updates. Artifact: artifacts/267a48c90ab05e41/decision.md. Presence-only original check retained."
+      },
+      {
+        "id": "case-internal-rename-r1__r1",
+        "passed": true,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation: True; maintenance: True. Renames domain property only; existing HTTP/repository boundaries preserve API, stored values/nullability, reporting reads and rolling compatibility, with focused checks and no duplicate state. Artifact: artifacts/7b5a43776f3d67fc/decision.md. Presence-only original check retained."
+      },
+      {
+        "id": "case-internal-rename-r2__r1",
+        "passed": true,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation: True; maintenance: True. Renames domain property only; existing HTTP/repository boundaries preserve API, stored values/nullability, reporting reads and rolling compatibility, with focused checks and no duplicate state. Artifact: artifacts/9f3a7f1c2cdea479/decision.md. Presence-only original check retained."
+      },
+      {
+        "id": "known-migration-r1__r1",
+        "passed": true,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation: True; maintenance: True. Keeps one stored column during overlap, maps new internal name at data-access boundary, retains API and old-worker use, and states bounded migration/verification/recovery. Artifact: artifacts/e3195f039387e199/decision.md. Presence-only original check retained."
+      },
+      {
+        "id": "known-migration-r2__r1",
+        "passed": true,
+        "evidence": "manual-review.json",
+        "graderVerdicts": {},
+        "notes": "Preservation: True; maintenance: True. Preserves one physical column during overlap with internal boundary mapping, API/worker contracts and coordinated post-retirement migration and recovery. Artifact: artifacts/11636a6ab1a6d21b/decision.md. Presence-only original check retained."
+      }
+    ]
+  }
+]

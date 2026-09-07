@@ -1,4 +1,4 @@
-import { existsSync, mkdtempSync, mkdirSync, readFileSync, readlinkSync, readdirSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, mkdirSync, readFileSync, readlinkSync, readdirSync, realpathSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { basename, dirname, join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
@@ -319,6 +319,27 @@ test("local install links every route and replaces only symlinks", () => {
   assert.equal(readFileSync(join(occupied, "keep.txt"), "utf8"), "keep\n");
 });
 
+test("plugin discovery resolves to the shared skill and hooks", () => {
+  const root = process.cwd();
+  const codex = JSON.parse(readFileSync(join(root, ".codex-plugin/plugin.json"), "utf8"));
+  const claude = JSON.parse(readFileSync(join(root, ".claude-plugin/plugin.json"), "utf8"));
+  const marketplace = JSON.parse(readFileSync(join(root, ".claude-plugin/marketplace.json"), "utf8"));
+  const entry = marketplace.plugins.find(({ name }) => name === claude.name);
+  assert.ok(entry, "Claude marketplace entry");
+  assert.equal(realpathSync(resolve(root, entry.source)), realpathSync(root));
+
+  // Claude uses conventional paths; Codex declares them in its manifest.
+  for (const [host, skills, hooks] of [
+    ["Codex", codex.skills, codex.hooks],
+    ["Claude", claude.skills ?? "./skills/", claude.hooks ?? "./hooks/hooks.json"]
+  ]) {
+    assert.equal(realpathSync(resolve(root, skills, "simple/SKILL.md")),
+      realpathSync(join(root, "skills/simple/SKILL.md")), `${host} shared skill`);
+    assert.equal(realpathSync(resolve(root, hooks)),
+      realpathSync(join(root, "hooks/hooks.json")), `${host} shared hooks`);
+  }
+});
+
 test("published surfaces reference files that exist", () => {
   const root = process.cwd();
   const sources = [
@@ -379,6 +400,9 @@ test("maintained Markdown links resolve", () => {
   const maintained = [
     join(root, "README.md"),
     join(root, "SIMPLE.md"),
+    join(root, "upstream", "README.md"),
+    join(root, "upstream", "coverage.md"),
+    join(root, "evals", "workflow", "README.md"),
     join(root, "evals", "README.md"),
     ...walkFiles(join(root, "commands")).filter((path) => path.endsWith(".md")),
     ...walkFiles(join(root, "skills", "simple")).filter((path) => path.endsWith(".md")),

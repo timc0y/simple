@@ -1,0 +1,44 @@
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md [repository]/.local/workflow-screen-2026-09-07/frozen/cases/cases/shared-failure/fixture/caller-a.mjs [repository]/.local/workflow-screen-2026-09-07/snapshots/231b7d937cb3b49e/final-0/caller-a.mjs
+--- [repository]/.local/workflow-screen-2026-09-07/frozen/cases/cases/shared-failure/fixture/caller-a.mjs	2026-09-07 09:34:02
++++ [repository]/.local/workflow-screen-2026-09-07/snapshots/231b7d937cb3b49e/final-0/caller-a.mjs	2026-09-07 09:43:28
+@@ -1,3 +1,9 @@
+ import { applyOnce } from './operation.mjs';
+-const result = await applyOnce(process.env.OPERATION_KEY ?? 'a', process.env.STATE_FILE, process.env.MODE ?? 'normal');
++let result;
++try {
++  result = await applyOnce(process.env.OPERATION_KEY ?? 'a', process.env.STATE_FILE, process.env.MODE ?? 'normal');
++} catch (error) {
++  if (error?.code !== 'TIMEOUT') throw error;
++  result = { status: 'unknown' };
++}
+ console.log(JSON.stringify(result));
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md [repository]/.local/workflow-screen-2026-09-07/frozen/cases/cases/shared-failure/fixture/caller-b.mjs [repository]/.local/workflow-screen-2026-09-07/snapshots/231b7d937cb3b49e/final-0/caller-b.mjs
+--- [repository]/.local/workflow-screen-2026-09-07/frozen/cases/cases/shared-failure/fixture/caller-b.mjs	2026-09-07 09:34:02
++++ [repository]/.local/workflow-screen-2026-09-07/snapshots/231b7d937cb3b49e/final-0/caller-b.mjs	2026-09-07 09:43:28
+@@ -1,3 +1,9 @@
+ import { applyOnce } from './operation.mjs';
+-const result = await applyOnce(process.env.OPERATION_KEY ?? 'b', process.env.STATE_FILE, process.env.MODE ?? 'normal');
++let result;
++try {
++  result = await applyOnce(process.env.OPERATION_KEY ?? 'b', process.env.STATE_FILE, process.env.MODE ?? 'normal');
++} catch (error) {
++  if (error?.code !== 'TIMEOUT') throw error;
++  result = { status: 'unknown' };
++}
+ console.log(JSON.stringify(result));
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md [repository]/.local/workflow-screen-2026-09-07/frozen/cases/cases/shared-failure/fixture/operation.mjs [repository]/.local/workflow-screen-2026-09-07/snapshots/231b7d937cb3b49e/final-0/operation.mjs
+--- [repository]/.local/workflow-screen-2026-09-07/frozen/cases/cases/shared-failure/fixture/operation.mjs	2026-09-07 09:34:02
++++ [repository]/.local/workflow-screen-2026-09-07/snapshots/231b7d937cb3b49e/final-0/operation.mjs	2026-09-07 09:43:28
+@@ -2,6 +2,12 @@
+ 
+ export async function applyOnce(key, file, mode = 'normal') {
+   const state = JSON.parse(await readFile(file, 'utf8'));
++
++  // A caller may retry after losing the response. The key is the operation's
++  // idempotency token, so an operation whose effect is already recorded must
++  // not be applied again.
++  if (state.keys.includes(key)) return { status: 'applied' };
++
+   state.keys.push(key);
+   state.count += 1;
+   await writeFile(file, JSON.stringify(state));

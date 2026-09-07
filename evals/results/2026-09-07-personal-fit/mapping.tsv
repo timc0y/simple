@@ -1,0 +1,9 @@
+112965a6a11370fd	1	easy-edit	gpt-5.6-luna	none
+e846d3ccd06ed8e6	1	easy-edit	gpt-5.6-luna	previous
+718a8011d7d3cd03	1	easy-edit	gpt-5.6-luna	candidate
+c1e2b9051369d3bc	1	shared-failure	gpt-5.6-luna	previous
+621e1472748e9ccc	1	shared-failure	gpt-5.6-luna	candidate
+a0180e4c89c6f861	1	shared-failure	gpt-5.6-luna	none
+21226db7fc500a43	1	migration-decision	gpt-5.6-luna	candidate
+c49292021bd42eee	1	migration-decision	gpt-5.6-luna	none
+2ee2221300de2218	1	migration-decision	gpt-5.6-luna	previous

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "112965a6a11370fd",
+    "case": "easy-edit",
+    "condition": "none",
+    "tokens": 60683,
+    "latency_ms": 39432,
+    "toolcalls": 4,
+    "references_in_read_commands": []
+  },
+  {
+    "id": "e846d3ccd06ed8e6",
+    "case": "easy-edit",
+    "condition": "previous",
+    "tokens": 100015,
+    "latency_ms": 45441,
+    "toolcalls": 4,
+    "references_in_read_commands": [
+      "architecture.md",
+      "commands.md",
+      "repository-work.md",
+      "verification.md"
+    ]
+  },
+  {
+    "id": "718a8011d7d3cd03",
+    "case": "easy-edit",
+    "condition": "candidate",
+    "tokens": 123465,
+    "latency_ms": 54019,
+    "toolcalls": 8,
+    "references_in_read_commands": [
+      "delivery.md",
+      "repository-work.md",
+      "verification.md"
+    ]
+  },
+  {
+    "id": "c1e2b9051369d3bc",
+    "case": "shared-failure",
+    "condition": "previous",
+    "tokens": 227021,
+    "latency_ms": 124339,
+    "toolcalls": 8,
+    "references_in_read_commands": [
+      "diagnosis.md",
+      "verification.md"
+    ]
+  },
+  {
+    "id": "621e1472748e9ccc",
+    "case": "shared-failure",
+    "condition": "candidate",
+    "tokens": 133558,
+    "latency_ms": 83705,
+    "toolcalls": 7,
+    "references_in_read_commands": [
+      "diagnosis.md"
+    ]
+  },
+  {
+    "id": "a0180e4c89c6f861",
+    "case": "shared-failure",
+    "condition": "none",
+    "tokens": 122756,
+    "latency_ms": 98611,
+    "toolcalls": 7,
+    "references_in_read_commands": []
+  },
+  {
+    "id": "21226db7fc500a43",
+    "case": "migration-decision",
+    "condition": "candidate",
+    "tokens": 70613,
+    "latency_ms": 58583,
+    "toolcalls": 3,
+    "references_in_read_commands": [
+      "compatibility.md",
+      "writing.md"
+    ]
+  },
+  {
+    "id": "c49292021bd42eee",
+    "case": "migration-decision",
+    "condition": "none",
+    "tokens": 54353,
+    "latency_ms": 54534,
+    "toolcalls": 3,
+    "references_in_read_commands": []
+  },
+  {
+    "id": "2ee2221300de2218",
+    "case": "migration-decision",
+    "condition": "previous",
+    "tokens": 96763,
+    "latency_ms": 72517,
+    "toolcalls": 4,
+    "references_in_read_commands": [
+      "architecture.md",
+      "compatibility.md",
+      "writing.md"
+    ]
+  }
+]

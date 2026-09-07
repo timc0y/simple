@@ -1,0 +1,6 @@
+231b7d937cb3b49e	1	shared-failure	gpt-5.6-luna	none
+660b326e2864fd00	1	shared-failure	gpt-5.6-luna	previous
+a178d6c229e77053	1	shared-failure	gpt-5.6-luna	candidate
+5cefc40355f9005d	1	writing-context	gpt-5.6-luna	previous
+fed8b0ea0b1012c3	1	writing-context	gpt-5.6-luna	candidate
+aa37caf49bcf3181	1	writing-context	gpt-5.6-luna	none

@@ -4,6 +4,9 @@
 
 - Stage and users: Tim maintains and uses the method. The repository publishes installation routes for the plugin and skill.
 - Operators: Tim maintains releases and repository profiles.
+- Owner-stated use: PR volume is low. Simple should fit direct implementation,
+  verification and authorized delivery; PR watching and queue automation are not
+  current requirements.
 - External consumers: the repository does not establish whether anyone outside Tim uses an installed surface.
 - Public contracts: the skill, command entry points, references, plugin manifests, hooks, and `simple.mjs` commands.
 - Persistent production data: none.
@@ -31,6 +34,10 @@
 ## Ordinary paths
 
 - Shared guidance lives in `skills/simple`; host manifests only package it.
+- Conditional references cover diagnosis, verification, experiments, delivery,
+  session learning and type design without adding registered skills or hook modes.
+- `upstream/` keeps pinned PStack and Ponytail source archives for review. Adopted
+  lessons live in existing Simple references; upstream skills and hooks are inactive.
 - `README.md` owns public setup and use; the skill references own detailed method guidance.
 - `scripts/link-skill.mjs` owns the shared agent route and four local host routes. It
   replaces stale symlinks but refuses to replace a real file or directory.
@@ -55,6 +62,7 @@
 - Profile structure: `node skills/simple/scripts/simple.mjs check`
 - Patch formatting: `git diff --check`
 - Verifier self-tests: `npm run test:behavior` and `npm run test:preservation`
+- Workflow verifier self-test: `npm run test:workflow`
 - Model behaviour: reviewed runs indexed in `evals/results/README.md`; current
   preservation runs use Luna only.
 

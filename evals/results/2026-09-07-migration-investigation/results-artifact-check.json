@@ -1,0 +1,110 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T10:00:26.496551+00:00",
+    "skillCommit": "snapshot-e0074e6e9dd515f093507661b6edd1ac330d67bd4d9c78b4745095da52b3d42c",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "without-example",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "migration-r1__r1",
+        "passed": true,
+        "evidence": "raw/d2ef282c2a6c40b1.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "migration-r2__r1",
+        "passed": true,
+        "evidence": "raw/6d084186d8a0754b.md",
+        "graderVerdicts": {}
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T10:00:26.496551+00:00",
+    "skillCommit": "snapshot-b5afa73ad1cd1855983f7298df9cc10440f52b907c4f7ac2f7e1812acea7fe9b",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "with-example",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "migration-r1__r1",
+        "passed": true,
+        "evidence": "raw/045c6b7b19d9ee86.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "migration-r2__r1",
+        "passed": true,
+        "evidence": "raw/1e918758e1e7f85f.md",
+        "graderVerdicts": {}
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T10:00:26.496551+00:00",
+    "skillCommit": "snapshot-e0074e6e9dd515f093507661b6edd1ac330d67bd4d9c78b4745095da52b3d42c",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "without-example-architecture",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "migration-r1__r1",
+        "passed": true,
+        "evidence": "raw/df09424c965ebac3.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "migration-r2__r1",
+        "passed": true,
+        "evidence": "raw/c0ba520e46a1173f.md",
+        "graderVerdicts": {}
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-07T10:00:26.496551+00:00",
+    "skillCommit": "snapshot-b5afa73ad1cd1855983f7298df9cc10440f52b907c4f7ac2f7e1812acea7fe9b",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated executable behavior evaluation",
+    "condition": "with-example-architecture",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "migration-r1__r1",
+        "passed": true,
+        "evidence": "raw/f833b3a8590b26eb.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "migration-r2__r1",
+        "passed": true,
+        "evidence": "raw/a6f7f17c31e6f48a.md",
+        "graderVerdicts": {}
+      }
+    ]
+  }
+]

@@ -68,3 +68,17 @@ self-review supplied independent confirmation.
 
 Read `model-profiles.md` to route each role by current host capability. Model names are
 examples, not requirements.
+
+## Adversarial review and candidate selection
+
+For an adversarial review, give reviewers the intended outcome, actual artifact and same acceptance criteria.
+Keep each independent first judgment separate from the other reviewers' conclusions.
+Ask for a concrete counterexample, affected obligation and smallest supported correction.
+Track each material finding as accepted, deferred, rejected with a reason, or unresolved.
+Keep a decisive lone finding even when other reviewers missed it.
+Do not manufacture disagreement or require a fixed number of reviewers.
+
+Use `experiments.md` when reviewers must compare runnable candidate artifacts rather than design opinions.
+Recheck the selected and integrated artifact; a review does not transfer automatically to a different patch.
+This adapts PStack's [interrogate](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/interrogate/SKILL.md)
+and [arena](https://github.com/cursor/plugins/blob/93b00b89ef425a9c1bac0d0b317dfc49c930ac99/pstack/skills/arena/SKILL.md) workflows.

@@ -3,6 +3,9 @@
 Commands are independent entry points into one Simple method. They are not a mandatory
 lifecycle and must not duplicate the core skill.
 
+For any command, use the task-procedure table under `simple work` to select relevant specialist guidance.
+A plan, review or investigation uses that procedure within its own scope; it does not authorize implementation.
+
 ## `simple init`
 
 Read `repository-work.md`. Inspect the repository, run `scripts/simple.mjs init`, record
@@ -16,6 +19,20 @@ profile and agent-routing files unless the user authorizes more.
 
 Read and follow `simple work` in `repository-work.md`.
 
+Select the relevant procedure from the request; the user need not name another command:
+
+| Requested outcome | Read |
+| --- | --- |
+| Diagnose or fix a bug, regression, slow path or leak | `diagnosis.md` |
+| Review type design or validation boundaries | `types.md` |
+| Verify a product, maintain its checks, use test-first work or match a UI | `verification.md` |
+| Prototype, compare implementations or optimize a measured outcome | `experiments.md` |
+| Build dependent stages, follow review, release with authority, pause or clean up | `delivery.md` |
+| Recover context or learn from repeated corrections | `repository-work.md` |
+| Review session history, capture conventions or improve a skill | `learning.md` |
+
+These are conditional procedures, not a sequence to run on every task.
+
 ## `simple reconcile`
 
 Read and follow `simple reconcile` in `repository-work.md`; also read `refactoring.md`.
@@ -28,6 +45,9 @@ ordinary-path findings, unpaid complexity, profile contradictions, proof gaps,
 highest-value actions, and material unknowns. For `simple audit deep` or a requested
 multi-lens review, follow `multi-lens-audit.md` instead; do not impose that cost on a
 scoped audit.
+
+For shortcut debt or measured impact, use the corresponding section in `audit.md`.
+For a complexity-only review, keep that scope while preserving the affected contracts.
 
 ## `simple board`
 
@@ -68,6 +88,11 @@ For each material finding, state the affected obligation, evidence, consequence 
 smallest supported correction. Mark optional improvements as optional. Judge the
 problem separately from the proposed remedy. If a governing rule is wrong, repair
 that rule rather than adding exceptions for each symptom.
+
+For a complexity finding, name the location, unnecessary work and simpler replacement.
+Explain why the replacement preserves the affected obligation. This adapts
+[Ponytail's review](https://github.com/DietrichGebert/ponytail/blob/0a4dd63ad4541f4f655c4108a295916f3c1d8fda/skills/ponytail-review/SKILL.md).
+Do not use a line-count target or a fixed response limit to omit a material finding.
 
 ## `simple write`
 

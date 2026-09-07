@@ -27,6 +27,11 @@ evaluation decisions, not future priority.
 - `research/README.md` owns current research decisions. Reports retain their sources
   and method but are not runtime instructions.
 - Plugin manifests package the shared source. They do not own a second skill copy.
+- `upstream/README.md` owns the source archive review and update procedure. Archives
+  contain reference material, not active instructions. Do not install or execute
+  their contents as part of an ordinary Simple task.
+- `upstream/coverage.md` accounts for every pinned source skill and playbook. Update
+  its mappings when a source refresh or workflow change affects coverage.
 
 Use `$simple` and read the nearest `SIMPLE.md` for repository-dependent decisions and work. Explicit workflows: `simple init`, `audit`, `board`, `research`, `work`, `reconcile`, `plan`, `review`, `write`, `emulate`, or `check`.
 

@@ -1,0 +1,182 @@
+{
+  "created_at": "2026-09-07T10:13:14.376032+00:00",
+  "model": "gpt-5.6-luna",
+  "reasoning": "medium",
+  "conditions": [
+    "current",
+    "candidate"
+  ],
+  "cases": [
+    "case-dual-persisted-names-r1",
+    "case-dual-persisted-names-r2",
+    "case-internal-rename-r1",
+    "case-internal-rename-r2",
+    "known-migration-r1",
+    "known-migration-r2"
+  ],
+  "repeats": 2,
+  "hashes": {
+    "frozen/behavior-run.py": "2d781e28dc8dc5b2350caf3ee2853c3ef26546bae49c2f18b77c2103209357e8",
+    "frozen/protocol.md": "b881fc119d10064ccadd9332244ca2b698c68a7717065a8eeb9e95b9173426f3",
+    "frozen/candidate-skill/SKILL.md": "ec6c72aaa992cbb9bd10fe484ffa14fe5146450256bfe5737dd9d05e8e4f580c",
+    "frozen/current-skill/SKILL.md": "ec6c72aaa992cbb9bd10fe484ffa14fe5146450256bfe5737dd9d05e8e4f580c",
+    "frozen/current-skill/references/examples.md": "6e923ae706d2111c67fbdc3d76caffc4b8cdfb31a9a19d87a8758f3ab7c30d78",
+    "frozen/current-skill/references/model-profiles.md": "b23e861ecec40f671a7700ed7999906f5b44ef9209d6f6e98aceb05a63e7a881",
+    "frozen/current-skill/references/architecture.md": "fa30c807a306bfa3aaacf90f7de43b574909cfc19db745dc41df291baeaaccf9",
+    "frozen/current-skill/references/experiments.md": "1872319ca855d9e8cb5521a4025c7f2308516754eed7752ffe312d0adc7770b0",
+    "frozen/current-skill/references/operator-emulation.md": "2b0a3b87a358190057afc2a96b994c828e2f82bd1126c94eacbd0f5a3127f177",
+    "frozen/current-skill/references/commands.md": "e9f4c094c8a497bc9a2178589aabb1e6f049857baa97ceeb7e30bb5443480b62",
+    "frozen/current-skill/references/profile-template.md": "f9a9e2e6927d10af6fdc0439aab39159bc8b13ee8e1afb4879e7eb624fd4bc3c",
+    "frozen/current-skill/references/learning.md": "11548009c2ecddc84afea1c1173163d7b0515e3e2aabfa13f43f8d3234fe0c63",
+    "frozen/current-skill/references/audit.md": "91921b09649accc0fb3cf09e13c5caff5889895d5f903a75a27f6f2de8717379",
+    "frozen/current-skill/references/verification.md": "9b4529e8679d7369ede36d241d673f164dcbb320b72706929a80bf3ffdcde8bb",
+    "frozen/current-skill/references/repository-work.md": "026e800a7269848e29b049ee5f062ac22a9d1f65135ce2ab9d76a258f72fab2e",
+    "frozen/current-skill/references/research.md": "c97cb91435f1392b1f5f492b55c70daa0779d18d4e59510b1bf0549d3e640e88",
+    "frozen/current-skill/references/writing.md": "1c0c524ce01d4672093ba93c24bd91a0e3ac874bef99da3ca99c616ef708e6e7",
+    "frozen/current-skill/references/delivery.md": "094e44c2b1647cb243f9432eb874f6a0109fedd6cfeb1ee13ad86076aa8173db",
+    "frozen/current-skill/references/board.md": "a2260423ca378267cd8cb9592b838717bc3f037b935f556238f0e97f653d69de",
+    "frozen/current-skill/references/multi-lens-audit.md": "5b3d883d32bbf0675e2833de520d6d17b89b26311f96ad2b275e0c8640911734",
+    "frozen/current-skill/references/compatibility.md": "7c7625631531e6228ca360a733dfa2ff7df97cd05ec53f4927b12acd8158cb5d",
+    "frozen/current-skill/references/diagnosis.md": "42c3016622fe92b1ae7da21eb046b34904512f1680fe3c3e6751ad46d1b31a40",
+    "frozen/current-skill/references/deletion-tools.md": "164f47cf0104c40ea75e3a2a7b08fe8ff20f42ec8b885506b6d93d381abb3dfa",
+    "frozen/current-skill/references/types.md": "6e1a218e041252dcac2b77b897afcf95c523e95a42fc2da841b70d198086869f",
+    "frozen/current-skill/references/refactoring.md": "1251dcca9d3b191495e2d3fac6362823f29f786ff3950c8d203baafe45c21494",
+    "frozen/current-skill/agents/openai.yaml": "b874bbed9e8e3b98429999c131112230da297684787a51e0573c56a98b8e38c0",
+    "frozen/current-skill/scripts/simple.mjs": "0f29f42ff75e67aab9572462556ea225d656e2d6401764a7bb8e11b191bd7214",
+    "frozen/current-skill/assets/SIMPLE.template.md": "0f052ae7a2f858e6b0ef02ffcd39586e0f03934d26e3c2b28d552f26808b4424",
+    "frozen/current-skill/references/operator-lenses/minimal-implementation.md": "a6c18a2c3ad7cf5d0c1ff94e4a804709b3252da9998cfdb0999c90d262c2285f",
+    "frozen/current-skill/references/operator-lenses/theo-product-engineer.md": "0e2e9109ee8bb9ae29467ca7d46277f29f2ef4773a2246ed9a7fc8b9c611ef1b",
+    "frozen/cases/cases/case-dual-persisted-names-r1/selftest.mjs": "f7d2ba794292183184c728f3f01e40628e97a56f9ce783716419626a7fcea69b",
+    "frozen/cases/cases/case-dual-persisted-names-r1/prompt.md": "7ad9aedce6d955c1f20515066d7149cf620a905d4d9a810550a031e8ad593bba",
+    "frozen/cases/cases/case-dual-persisted-names-r1/verifier.mjs": "a75244661cb173cfc075d60b4625d2fc3f5f5d6bcc591dc14199ee96e2f55518",
+    "frozen/cases/cases/case-internal-rename-r2/selftest.mjs": "f7d2ba794292183184c728f3f01e40628e97a56f9ce783716419626a7fcea69b",
+    "frozen/cases/cases/case-internal-rename-r2/prompt.md": "02c11810ab9fac9c8673d5b35ca98b387dfbe5e5b72a88231c8a42f85dc68fb3",
+    "frozen/cases/cases/case-internal-rename-r2/verifier.mjs": "a75244661cb173cfc075d60b4625d2fc3f5f5d6bcc591dc14199ee96e2f55518",
+    "frozen/cases/cases/known-migration-r2/selftest.mjs": "89cb3829b09c0b612bda16892370a23fbf9d0d926237c2c63229b5ee195a82f9",
+    "frozen/cases/cases/known-migration-r2/prompt.md": "baafb110e3ede7e81daf8c17b3ebaf097a17688cd143fd1c7f6fed9b5a1a2e82",
+    "frozen/cases/cases/known-migration-r2/verifier.mjs": "a75244661cb173cfc075d60b4625d2fc3f5f5d6bcc591dc14199ee96e2f55518",
+    "frozen/cases/cases/case-dual-persisted-names-r2/selftest.mjs": "f7d2ba794292183184c728f3f01e40628e97a56f9ce783716419626a7fcea69b",
+    "frozen/cases/cases/case-dual-persisted-names-r2/prompt.md": "7ad9aedce6d955c1f20515066d7149cf620a905d4d9a810550a031e8ad593bba",
+    "frozen/cases/cases/case-dual-persisted-names-r2/verifier.mjs": "a75244661cb173cfc075d60b4625d2fc3f5f5d6bcc591dc14199ee96e2f55518",
+    "frozen/cases/cases/case-internal-rename-r1/selftest.mjs": "f7d2ba794292183184c728f3f01e40628e97a56f9ce783716419626a7fcea69b",
+    "frozen/cases/cases/case-internal-rename-r1/prompt.md": "02c11810ab9fac9c8673d5b35ca98b387dfbe5e5b72a88231c8a42f85dc68fb3",
+    "frozen/cases/cases/case-internal-rename-r1/verifier.mjs": "a75244661cb173cfc075d60b4625d2fc3f5f5d6bcc591dc14199ee96e2f55518",
+    "frozen/cases/cases/known-migration-r1/selftest.mjs": "89cb3829b09c0b612bda16892370a23fbf9d0d926237c2c63229b5ee195a82f9",
+    "frozen/cases/cases/known-migration-r1/prompt.md": "baafb110e3ede7e81daf8c17b3ebaf097a17688cd143fd1c7f6fed9b5a1a2e82",
+    "frozen/cases/cases/known-migration-r1/verifier.mjs": "a75244661cb173cfc075d60b4625d2fc3f5f5d6bcc591dc14199ee96e2f55518",
+    "frozen/cases/cases/known-migration-r1/fixture/context.md": "b56a1c75329a632beb5772ea4980bf931a3d3e940f96f91e9f0f3cca9b2dde17",
+    "frozen/cases/cases/known-migration-r1/graders/criteria.md": "39d1284397f8889c3f2c93a5859323cd8a0d50d79f8079b8daa272ec3746eee0",
+    "frozen/cases/cases/known-migration-r1/graders/references/fail.md": "28a90e32295396c50d40b9d21d7993fdd4f96a74fd6bce35d8f393cdde2c5daf",
+    "frozen/cases/cases/known-migration-r1/graders/references/pass.md": "17d3989abfb330762f112866552ab3874b4fec30e7815cd8c1abb37350daac84",
+    "frozen/cases/cases/case-internal-rename-r1/fixture/context.md": "27e5d21a5948276921a379f2c13c03e7c2410e59d9dde80b7e464f332f7330a2",
+    "frozen/cases/cases/case-internal-rename-r1/graders/criteria.md": "cb8a2282534381f364830cb52258dd75140b4f04299be16e0d98e133d321fe59",
+    "frozen/cases/cases/case-internal-rename-r1/graders/references/fail.md": "7ed5ea2b6917e689307737fc54349b799faeb5df44cf2720ffad9c57122de719",
+    "frozen/cases/cases/case-internal-rename-r1/graders/references/pass.md": "ecda2e6013ffbecca97d0c0efd11b35baa014f867696cd6e34f9993b1547d90e",
+    "frozen/cases/cases/case-dual-persisted-names-r2/fixture/context.md": "c1fd3168f06fca628f1c3450cc33295a7d26aed9da4a83ddae247d4c46c36d75",
+    "frozen/cases/cases/case-dual-persisted-names-r2/graders/criteria.md": "989fdfee4abbc14186d24aca94a4dc30bac5c694a78a44a2b99a8603d448c149",
+    "frozen/cases/cases/case-dual-persisted-names-r2/graders/references/fail.md": "78cec5081c8d9d70f4a23c49967c83e07f91b5c848684c71dbe8edf116af34a2",
+    "frozen/cases/cases/case-dual-persisted-names-r2/graders/references/pass.md": "0ecfe18ee4aecb3a08b5ae1978a985f329f9240673a0b373618470d2a0d9694e",
+    "frozen/cases/cases/known-migration-r2/fixture/context.md": "b56a1c75329a632beb5772ea4980bf931a3d3e940f96f91e9f0f3cca9b2dde17",
+    "frozen/cases/cases/known-migration-r2/graders/criteria.md": "39d1284397f8889c3f2c93a5859323cd8a0d50d79f8079b8daa272ec3746eee0",
+    "frozen/cases/cases/known-migration-r2/graders/references/fail.md": "28a90e32295396c50d40b9d21d7993fdd4f96a74fd6bce35d8f393cdde2c5daf",
+    "frozen/cases/cases/known-migration-r2/graders/references/pass.md": "17d3989abfb330762f112866552ab3874b4fec30e7815cd8c1abb37350daac84",
+    "frozen/cases/cases/case-internal-rename-r2/fixture/context.md": "27e5d21a5948276921a379f2c13c03e7c2410e59d9dde80b7e464f332f7330a2",
+    "frozen/cases/cases/case-internal-rename-r2/graders/criteria.md": "cb8a2282534381f364830cb52258dd75140b4f04299be16e0d98e133d321fe59",
+    "frozen/cases/cases/case-internal-rename-r2/graders/references/fail.md": "7ed5ea2b6917e689307737fc54349b799faeb5df44cf2720ffad9c57122de719",
+    "frozen/cases/cases/case-internal-rename-r2/graders/references/pass.md": "ecda2e6013ffbecca97d0c0efd11b35baa014f867696cd6e34f9993b1547d90e",
+    "frozen/cases/cases/case-dual-persisted-names-r1/fixture/context.md": "c1fd3168f06fca628f1c3450cc33295a7d26aed9da4a83ddae247d4c46c36d75",
+    "frozen/cases/cases/case-dual-persisted-names-r1/graders/criteria.md": "989fdfee4abbc14186d24aca94a4dc30bac5c694a78a44a2b99a8603d448c149",
+    "frozen/cases/cases/case-dual-persisted-names-r1/graders/references/fail.md": "78cec5081c8d9d70f4a23c49967c83e07f91b5c848684c71dbe8edf116af34a2",
+    "frozen/cases/cases/case-dual-persisted-names-r1/graders/references/pass.md": "0ecfe18ee4aecb3a08b5ae1978a985f329f9240673a0b373618470d2a0d9694e",
+    "frozen/candidate-skill/references/examples.md": "6e923ae706d2111c67fbdc3d76caffc4b8cdfb31a9a19d87a8758f3ab7c30d78",
+    "frozen/candidate-skill/references/model-profiles.md": "b23e861ecec40f671a7700ed7999906f5b44ef9209d6f6e98aceb05a63e7a881",
+    "frozen/candidate-skill/references/architecture.md": "fa30c807a306bfa3aaacf90f7de43b574909cfc19db745dc41df291baeaaccf9",
+    "frozen/candidate-skill/references/experiments.md": "1872319ca855d9e8cb5521a4025c7f2308516754eed7752ffe312d0adc7770b0",
+    "frozen/candidate-skill/references/operator-emulation.md": "2b0a3b87a358190057afc2a96b994c828e2f82bd1126c94eacbd0f5a3127f177",
+    "frozen/candidate-skill/references/commands.md": "e9f4c094c8a497bc9a2178589aabb1e6f049857baa97ceeb7e30bb5443480b62",
+    "frozen/candidate-skill/references/profile-template.md": "f9a9e2e6927d10af6fdc0439aab39159bc8b13ee8e1afb4879e7eb624fd4bc3c",
+    "frozen/candidate-skill/references/learning.md": "11548009c2ecddc84afea1c1173163d7b0515e3e2aabfa13f43f8d3234fe0c63",
+    "frozen/candidate-skill/references/audit.md": "91921b09649accc0fb3cf09e13c5caff5889895d5f903a75a27f6f2de8717379",
+    "frozen/candidate-skill/references/verification.md": "9b4529e8679d7369ede36d241d673f164dcbb320b72706929a80bf3ffdcde8bb",
+    "frozen/candidate-skill/references/repository-work.md": "026e800a7269848e29b049ee5f062ac22a9d1f65135ce2ab9d76a258f72fab2e",
+    "frozen/candidate-skill/references/research.md": "c97cb91435f1392b1f5f492b55c70daa0779d18d4e59510b1bf0549d3e640e88",
+    "frozen/candidate-skill/references/writing.md": "1c0c524ce01d4672093ba93c24bd91a0e3ac874bef99da3ca99c616ef708e6e7",
+    "frozen/candidate-skill/references/delivery.md": "094e44c2b1647cb243f9432eb874f6a0109fedd6cfeb1ee13ad86076aa8173db",
+    "frozen/candidate-skill/references/board.md": "a2260423ca378267cd8cb9592b838717bc3f037b935f556238f0e97f653d69de",
+    "frozen/candidate-skill/references/multi-lens-audit.md": "5b3d883d32bbf0675e2833de520d6d17b89b26311f96ad2b275e0c8640911734",
+    "frozen/candidate-skill/references/compatibility.md": "d507c19d881795ac68134ead2ea682a4454ee0bafc92e7f8c07d514ee88ae1fc",
+    "frozen/candidate-skill/references/diagnosis.md": "42c3016622fe92b1ae7da21eb046b34904512f1680fe3c3e6751ad46d1b31a40",
+    "frozen/candidate-skill/references/deletion-tools.md": "164f47cf0104c40ea75e3a2a7b08fe8ff20f42ec8b885506b6d93d381abb3dfa",
+    "frozen/candidate-skill/references/types.md": "6e1a218e041252dcac2b77b897afcf95c523e95a42fc2da841b70d198086869f",
+    "frozen/candidate-skill/references/refactoring.md": "1251dcca9d3b191495e2d3fac6362823f29f786ff3950c8d203baafe45c21494",
+    "frozen/candidate-skill/agents/openai.yaml": "b874bbed9e8e3b98429999c131112230da297684787a51e0573c56a98b8e38c0",
+    "frozen/candidate-skill/scripts/simple.mjs": "0f29f42ff75e67aab9572462556ea225d656e2d6401764a7bb8e11b191bd7214",
+    "frozen/candidate-skill/assets/SIMPLE.template.md": "0f052ae7a2f858e6b0ef02ffcd39586e0f03934d26e3c2b28d552f26808b4424",
+    "frozen/candidate-skill/references/operator-lenses/minimal-implementation.md": "a6c18a2c3ad7cf5d0c1ff94e4a804709b3252da9998cfdb0999c90d262c2285f",
+    "frozen/candidate-skill/references/operator-lenses/theo-product-engineer.md": "0e2e9109ee8bb9ae29467ca7d46277f29f2ef4773a2246ed9a7fc8b9c611ef1b"
+  },
+  "base_runner_sha256": "2d781e28dc8dc5b2350caf3ee2853c3ef26546bae49c2f18b77c2103209357e8",
+  "adapter_sha256": "1b17e7cf9a628f3a7f84d23fa7352971efcbe3640898b9aad306c11ae317427d",
+  "cells": [
+    {
+      "id": "de06635796cc6918",
+      "case": "case-dual-persisted-names-r1",
+      "condition": "current"
+    },
+    {
+      "id": "c4b9ea681ce5bab9",
+      "case": "case-dual-persisted-names-r1",
+      "condition": "candidate"
+    },
+    {
+      "id": "267a48c90ab05e41",
+      "case": "case-dual-persisted-names-r2",
+      "condition": "candidate"
+    },
+    {
+      "id": "cd18e9622ba612e7",
+      "case": "case-dual-persisted-names-r2",
+      "condition": "current"
+    },
+    {
+      "id": "d1992bd74986e30d",
+      "case": "case-internal-rename-r1",
+      "condition": "current"
+    },
+    {
+      "id": "7b5a43776f3d67fc",
+      "case": "case-internal-rename-r1",
+      "condition": "candidate"
+    },
+    {
+      "id": "9f3a7f1c2cdea479",
+      "case": "case-internal-rename-r2",
+      "condition": "candidate"
+    },
+    {
+      "id": "a071dbdd50be382f",
+      "case": "case-internal-rename-r2",
+      "condition": "current"
+    },
+    {
+      "id": "34388b6531a435b5",
+      "case": "known-migration-r1",
+      "condition": "current"
+    },
+    {
+      "id": "e3195f039387e199",
+      "case": "known-migration-r1",
+      "condition": "candidate"
+    },
+    {
+      "id": "11636a6ab1a6d21b",
+      "case": "known-migration-r2",
+      "condition": "candidate"
+    },
+    {
+      "id": "2d617db4d882c63c",
+      "case": "known-migration-r2",
+      "condition": "current"
+    }
+  ]
+}

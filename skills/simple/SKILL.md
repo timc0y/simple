@@ -6,6 +6,7 @@ description: >-
   for architecture, ownership, refactoring, deletion, compatibility, migration,
   repository setup or reconciliation, audits, decision research, reference implementations, fallbacks, implementation plans,
   or work that is becoming more complex than its demonstrated requirements; for
+  debugging, performance, verification and implementation through review;
   technical plans, documentation, comments, Markdown, prompts, reviews, updates, and
   handoffs; and when asked what a documented engineer, company, or operator would do.
   Read the nearest SIMPLE.md when repository facts change the answer.
@@ -122,6 +123,13 @@ blockers, risk, and the next relevant action. Do not narrate routine tool use.
 
 ## Load specialist guidance only when needed
 
+- Bugs, regressions, performance or runtime traces: read `references/diagnosis.md`.
+- Type design, state variants or trust-boundary validation: read `references/types.md`.
+- History recovery, repeated working conventions or skill improvement: read `references/learning.md`.
+- Product verification, test-first work or visual parity: read `references/verification.md`.
+- Prototypes, competing implementations or measured improvement: read `references/experiments.md`.
+- Dependent feature work, review follow-through, authorized release or safe pause:
+  read `references/delivery.md` and `references/repository-work.md`.
 - Architecture or new abstractions: read `references/architecture.md`.
 - Decision research, package selection or learning from a reference implementation:
   read `references/research.md`. Use a brief lookup for a narrow question.

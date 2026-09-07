@@ -71,3 +71,35 @@ appropriate to its consequence.
 For a quick audit, inspect the profile, repository shape, obvious ownership seams,
 and compatibility inventory. Scope the crawl to the user's target when one is given.
 Do not silently escalate a quick audit into the deep workflow.
+
+## Shortcut debt
+
+For a requested debt review, search existing shortcut comments and debt records before creating a ledger.
+This command finds common Simple and Ponytail markers while respecting repository ignore rules:
+
+```sh
+rg -n 'ponytail:|simple:' .
+```
+
+Inspect each match in context; quoted examples and unrelated labels are not debt.
+Account for relevant ignored or generated areas separately when the requested scope includes them.
+Report each actual shortcut's location, present consequence, known ceiling and observable upgrade trigger.
+Mark a missing trigger as unknown instead of inventing one.
+Rank by current consequence and evidence that the ceiling is near, not by age or line count.
+Use the existing issue or code owner for accepted work. A clean result needs no empty ledger.
+
+This adapts [Ponytail debt](https://github.com/DietrichGebert/ponytail/blob/0a4dd63ad4541f4f655c4108a295916f3c1d8fda/skills/ponytail-debt/SKILL.md)
+without requiring one comment syntax or a separate installed skill.
+
+## Measured impact
+
+For a requested gain report, select a real before-and-after revision or recorded run.
+Separate completed behaviour, maintenance removed, runtime effects and agent process cost.
+Use Git statistics to count changed source, not to infer quality or lifetime savings.
+Distinguish generated code, dependencies, tests and documentation from maintained implementation.
+Keep failed cases and unresolved regressions visible beside aggregate results.
+
+If no matched baseline exists, report what changed without a percentage improvement claim.
+An upstream benchmark measures its own conditions; it cannot establish Simple's performance.
+Use `experiments.md` for a new measurement.
+This adapts the reporting purpose of [Ponytail gain](https://github.com/DietrichGebert/ponytail/blob/0a4dd63ad4541f4f655c4108a295916f3c1d8fda/skills/ponytail-gain/SKILL.md).

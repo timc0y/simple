@@ -1,0 +1,9 @@
+{
+  "unmeasured_final_changes": [
+    "SKILL.md",
+    "references/commands.md",
+    "references/delivery.md",
+    "references/diagnosis.md"
+  ],
+  "note": "These final routing and issue-intake additions were source-reviewed and structurally checked, not rerun through the six model cells."
+}

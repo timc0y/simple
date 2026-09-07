@@ -1,0 +1,35 @@
+[
+  {
+    "id": "21226db7fc500a43",
+    "kind": "lead manual review against frozen criteria",
+    "required_behavior_preserved": true,
+    "smallest_storage_design": false,
+    "implemented_or_published": false,
+    "unrequested_PR_automation": false,
+    "note": "Preserves API/data/old-worker requirements but adds a second column plus synchronization. Existing-column mapping would avoid that maintenance. This is a simplicity miss, not demonstrated data loss.",
+    "evidence": "artifacts/21226db7fc500a43/decision.md",
+    "passed": false
+  },
+  {
+    "id": "c49292021bd42eee",
+    "kind": "lead manual review against frozen criteria",
+    "required_behavior_preserved": true,
+    "smallest_storage_design": false,
+    "implemented_or_published": false,
+    "unrequested_PR_automation": false,
+    "note": "Preserves API/data/old-worker requirements but adds a second column plus synchronization. Existing-column mapping would avoid that maintenance. This is a simplicity miss, not demonstrated data loss.",
+    "evidence": "artifacts/c49292021bd42eee/decision.md",
+    "passed": false
+  },
+  {
+    "id": "2ee2221300de2218",
+    "kind": "lead manual review against frozen criteria",
+    "required_behavior_preserved": true,
+    "smallest_storage_design": true,
+    "implemented_or_published": false,
+    "unrequested_PR_automation": false,
+    "note": "Keeps one stored column during overlap and maps the new internal name at the database boundary.",
+    "evidence": "artifacts/2ee2221300de2218/decision.md",
+    "passed": true
+  }
+]

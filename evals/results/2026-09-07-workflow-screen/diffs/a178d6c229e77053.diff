@@ -1,0 +1,12 @@
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md [repository]/.local/workflow-screen-2026-09-07/frozen/cases/cases/shared-failure/fixture/operation.mjs [repository]/.local/workflow-screen-2026-09-07/snapshots/a178d6c229e77053/final-0/operation.mjs
+--- [repository]/.local/workflow-screen-2026-09-07/frozen/cases/cases/shared-failure/fixture/operation.mjs	2026-09-07 09:34:02
++++ [repository]/.local/workflow-screen-2026-09-07/snapshots/a178d6c229e77053/final-0/operation.mjs	2026-09-07 09:46:31
+@@ -2,6 +2,8 @@
+ 
+ export async function applyOnce(key, file, mode = 'normal') {
+   const state = JSON.parse(await readFile(file, 'utf8'));
++  if (state.keys.includes(key)) return { status: 'already-applied' };
++
+   state.keys.push(key);
+   state.count += 1;
+   await writeFile(file, JSON.stringify(state));

@@ -3,6 +3,16 @@
 Each report answers one question. The report keeps its sources and method. This index
 records the current decision and the evidence that followed it.
 
+Simple incorporates selected PStack and Ponytail lessons in its existing references.
+The [upstream adoption map](../upstream/README.md) records the sources, adaptations and
+update procedure. The source archives are review material, not runtime instructions.
+The [workflow screen](../evals/results/2026-09-07-workflow-screen/README.md) preserves
+original grades and a corrected all-pass result. It establishes no comparative gain.
+
+The [workflow coverage map](../upstream/coverage.md) extends that adoption to the full
+pinned skill and playbook inventory. The [workflow screen](../evals/workflow/README.md)
+defines a bounded Luna execution check; it does not establish superiority over either upstream project.
+
 | Report | Current decision | Later evidence |
 | --- | --- | --- |
 | [Learned priors and the semantic delta](eliciting-priors-and-teaching-the-delta.md) | Use a cue when it expresses a wanted concept clearly. Keep repository facts in `SIMPLE.md`. Require comparative evidence for a performance claim. | Earlier cue trials do not establish a reliable gain. The [repository-fact run](../evals/results/2026-08-27-repository-fact-profile/README.md) improved from 4 of 12 to 12 of 12. |

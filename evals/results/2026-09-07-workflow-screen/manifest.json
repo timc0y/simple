@@ -1,0 +1,121 @@
+{
+  "created_at": "2026-09-07T08:42:03.914996+00:00",
+  "model": "gpt-5.6-luna",
+  "reasoning": "medium",
+  "conditions": [
+    "none",
+    "previous",
+    "candidate"
+  ],
+  "cases": [
+    "shared-failure",
+    "writing-context"
+  ],
+  "repeats": 1,
+  "purpose": "bounded execution and preservation screen; no superiority claim",
+  "hashes": {
+    "frozen/behavior-run.py": "2d781e28dc8dc5b2350caf3ee2853c3ef26546bae49c2f18b77c2103209357e8",
+    "frozen/candidate-skill/SKILL.md": "2b1cbc31bd1799c370c1310840e5ac5f86ed18f3a7d9a7082b08c580c1a28917",
+    "frozen/candidate-skill/agents/openai.yaml": "b874bbed9e8e3b98429999c131112230da297684787a51e0573c56a98b8e38c0",
+    "frozen/candidate-skill/assets/SIMPLE.template.md": "0f052ae7a2f858e6b0ef02ffcd39586e0f03934d26e3c2b28d552f26808b4424",
+    "frozen/candidate-skill/references/architecture.md": "fa30c807a306bfa3aaacf90f7de43b574909cfc19db745dc41df291baeaaccf9",
+    "frozen/candidate-skill/references/audit.md": "91921b09649accc0fb3cf09e13c5caff5889895d5f903a75a27f6f2de8717379",
+    "frozen/candidate-skill/references/board.md": "a2260423ca378267cd8cb9592b838717bc3f037b935f556238f0e97f653d69de",
+    "frozen/candidate-skill/references/commands.md": "250ea61b39bf3be239a24cc9df77b4b66b42b2571f8397ae8cf45ba8d8432eb3",
+    "frozen/candidate-skill/references/compatibility.md": "e4b18e65af5febba55792fbd91511a6933261150e758089af651b41aa43b8f24",
+    "frozen/candidate-skill/references/deletion-tools.md": "164f47cf0104c40ea75e3a2a7b08fe8ff20f42ec8b885506b6d93d381abb3dfa",
+    "frozen/candidate-skill/references/delivery.md": "0a208faf51c9ce3330dda73ef538519b81c22f94b472deadaf30b5e9bdef0ef4",
+    "frozen/candidate-skill/references/diagnosis.md": "0ea9bc58f0035d531daca9745a50412e777da71ddadceb95cc0b17615f0fddc3",
+    "frozen/candidate-skill/references/examples.md": "6e923ae706d2111c67fbdc3d76caffc4b8cdfb31a9a19d87a8758f3ab7c30d78",
+    "frozen/candidate-skill/references/experiments.md": "1872319ca855d9e8cb5521a4025c7f2308516754eed7752ffe312d0adc7770b0",
+    "frozen/candidate-skill/references/learning.md": "11548009c2ecddc84afea1c1173163d7b0515e3e2aabfa13f43f8d3234fe0c63",
+    "frozen/candidate-skill/references/model-profiles.md": "b23e861ecec40f671a7700ed7999906f5b44ef9209d6f6e98aceb05a63e7a881",
+    "frozen/candidate-skill/references/multi-lens-audit.md": "5b3d883d32bbf0675e2833de520d6d17b89b26311f96ad2b275e0c8640911734",
+    "frozen/candidate-skill/references/operator-emulation.md": "2b0a3b87a358190057afc2a96b994c828e2f82bd1126c94eacbd0f5a3127f177",
+    "frozen/candidate-skill/references/operator-lenses/minimal-implementation.md": "a6c18a2c3ad7cf5d0c1ff94e4a804709b3252da9998cfdb0999c90d262c2285f",
+    "frozen/candidate-skill/references/operator-lenses/theo-product-engineer.md": "0e2e9109ee8bb9ae29467ca7d46277f29f2ef4773a2246ed9a7fc8b9c611ef1b",
+    "frozen/candidate-skill/references/profile-template.md": "f9a9e2e6927d10af6fdc0439aab39159bc8b13ee8e1afb4879e7eb624fd4bc3c",
+    "frozen/candidate-skill/references/refactoring.md": "1251dcca9d3b191495e2d3fac6362823f29f786ff3950c8d203baafe45c21494",
+    "frozen/candidate-skill/references/repository-work.md": "026e800a7269848e29b049ee5f062ac22a9d1f65135ce2ab9d76a258f72fab2e",
+    "frozen/candidate-skill/references/research.md": "c97cb91435f1392b1f5f492b55c70daa0779d18d4e59510b1bf0549d3e640e88",
+    "frozen/candidate-skill/references/types.md": "6e1a218e041252dcac2b77b897afcf95c523e95a42fc2da841b70d198086869f",
+    "frozen/candidate-skill/references/verification.md": "9b4529e8679d7369ede36d241d673f164dcbb320b72706929a80bf3ffdcde8bb",
+    "frozen/candidate-skill/references/writing.md": "1c0c524ce01d4672093ba93c24bd91a0e3ac874bef99da3ca99c616ef708e6e7",
+    "frozen/candidate-skill/scripts/simple.mjs": "0f29f42ff75e67aab9572462556ea225d656e2d6401764a7bb8e11b191bd7214",
+    "frozen/cases/cases/shared-failure/fixture/caller-a.mjs": "23c86011a3f4e0cba517c27dd8ef3e68ba9e737563398309babe240969affca4",
+    "frozen/cases/cases/shared-failure/fixture/caller-b.mjs": "749c0fa2e2ad96b2022530ddca8b5c6a2196f722343862f339af4505bf07ab0f",
+    "frozen/cases/cases/shared-failure/fixture/operation.mjs": "74c311106cbec181f4d6556d115b63bbaf54d988e7b4479411a34648877a59e9",
+    "frozen/cases/cases/shared-failure/fixture/package.json": "1239d4d885dcad42201a27ed9324f8f0f760b78700d8db9ced39a511cffe7eae",
+    "frozen/cases/cases/shared-failure/fixture/state.json": "6df0038313d5c09e66706fa48f3608c349d96202aec1d75cf4639a0783ba2b84",
+    "frozen/cases/cases/shared-failure/graders/criteria.md": "fea01c051afc8ada576f8d440db3b63debece45ee2bf4df7947f0b04f68119d9",
+    "frozen/cases/cases/shared-failure/graders/references/fail.md": "0f90ef6ab6f8145b70c52e7b9ecc12f1983374d51dcf91e524598ea684c8c390",
+    "frozen/cases/cases/shared-failure/graders/references/pass.md": "b3027d79e8b0101dcceb3e31702feeeb5b470ae0c3bc57b4fb165571c2477bc6",
+    "frozen/cases/cases/shared-failure/prompt.md": "7eb934697d08f26ee2e3753cab9ac8d3cdbfc42f7a4179e79995ab8f6cfb3d96",
+    "frozen/cases/cases/shared-failure/selftest.mjs": "e876b8077cbda04a25f0e845fa0469941483dc914eb3ec8ee4c4995a1bd2ad14",
+    "frozen/cases/cases/shared-failure/verifier.mjs": "9b1753acb7caca5a3749a598b6257dbd834b20895fb1ab1a0eadc9d7ed213ca7",
+    "frozen/cases/cases/writing-context/SIMPLE.md": "6a52f52689dcd2b668078a407cdab4c22d378e1c8b6abae1ee8d86b58a45f670",
+    "frozen/cases/cases/writing-context/fixture/package.json": "a90fc33418afa2b9cbf4768524b021135b965ecdf993457505bfae3ac44a8428",
+    "frozen/cases/cases/writing-context/graders/criteria.md": "02fb534b53b34e028ebe8cce0da27768aa78b6a6fa44b5144305df5b9588b989",
+    "frozen/cases/cases/writing-context/graders/references/fail.md": "97ca46206d9102824ec9eacb1711aeb480d9ea8c9552d059b185b79ce07f3bea",
+    "frozen/cases/cases/writing-context/graders/references/pass.md": "98eb90f1495439b69ff2c5db6532fcc465560ed073f407db668128d8339f5268",
+    "frozen/cases/cases/writing-context/prompt.md": "133543e657c4740509f2dbf9cfb90497f90da8915cba52ba3d7623a77b1e40f8",
+    "frozen/cases/cases/writing-context/selftest.mjs": "a7ad8b2c031316bfdf4717a8fa9484966dd58a54b22a4895045484b2444f57d9",
+    "frozen/cases/cases/writing-context/verifier.mjs": "58c73aaac55c7024cf73d6bbe745a84d326d0e4969649e65c28e68ccda781b6a",
+    "frozen/previous-skill/SKILL.md": "f0506267994edba5372e9c44340b1f824a6a64a123954c3d0ef28b591f56c148",
+    "frozen/previous-skill/agents/openai.yaml": "b874bbed9e8e3b98429999c131112230da297684787a51e0573c56a98b8e38c0",
+    "frozen/previous-skill/assets/SIMPLE.template.md": "0f052ae7a2f858e6b0ef02ffcd39586e0f03934d26e3c2b28d552f26808b4424",
+    "frozen/previous-skill/references/architecture.md": "cb4d6d7d1bd00b03be6fe5fbf7368df3902aa2d0bb3257a509b262d95af8d03f",
+    "frozen/previous-skill/references/audit.md": "3b6fd8d6c53ed3ed38ccb5d23a40f581761cf8af5b6d6dcc0b1cf5214ac183ab",
+    "frozen/previous-skill/references/board.md": "d3b38889430e46f01539ac6584cabe1a0093a9bb3ad8b616de29671e309b9105",
+    "frozen/previous-skill/references/commands.md": "4149b0e03cbf1a4565451be07f0fc2a30d3ce97c21fe09a464ba9c5e9736fa68",
+    "frozen/previous-skill/references/compatibility.md": "e4b18e65af5febba55792fbd91511a6933261150e758089af651b41aa43b8f24",
+    "frozen/previous-skill/references/deletion-tools.md": "164f47cf0104c40ea75e3a2a7b08fe8ff20f42ec8b885506b6d93d381abb3dfa",
+    "frozen/previous-skill/references/examples.md": "6e923ae706d2111c67fbdc3d76caffc4b8cdfb31a9a19d87a8758f3ab7c30d78",
+    "frozen/previous-skill/references/model-profiles.md": "b23e861ecec40f671a7700ed7999906f5b44ef9209d6f6e98aceb05a63e7a881",
+    "frozen/previous-skill/references/multi-lens-audit.md": "5b3d883d32bbf0675e2833de520d6d17b89b26311f96ad2b275e0c8640911734",
+    "frozen/previous-skill/references/operator-emulation.md": "2b0a3b87a358190057afc2a96b994c828e2f82bd1126c94eacbd0f5a3127f177",
+    "frozen/previous-skill/references/operator-lenses/minimal-implementation.md": "a6c18a2c3ad7cf5d0c1ff94e4a804709b3252da9998cfdb0999c90d262c2285f",
+    "frozen/previous-skill/references/operator-lenses/theo-product-engineer.md": "0e2e9109ee8bb9ae29467ca7d46277f29f2ef4773a2246ed9a7fc8b9c611ef1b",
+    "frozen/previous-skill/references/profile-template.md": "f9a9e2e6927d10af6fdc0439aab39159bc8b13ee8e1afb4879e7eb624fd4bc3c",
+    "frozen/previous-skill/references/refactoring.md": "eb7ab6a1168e195afda03009da24334e3e4e1d636ca91491d048820665304c2c",
+    "frozen/previous-skill/references/repository-work.md": "3bbbe04530b91ef553c126134c5a14b2b5f15feb5c37f5fc40a096a1bc28ef32",
+    "frozen/previous-skill/references/research.md": "bf1c2a109857c01af3b7d9f2e0c555c46c46120bd5dc827f5aceaa6dfdaed6c4",
+    "frozen/previous-skill/references/writing.md": "b6e1dad8d9456e711e093f359e838f55ff5f6cf3c23708e826f47bac1ddaa1c3",
+    "frozen/previous-skill/scripts/simple.mjs": "0f29f42ff75e67aab9572462556ea225d656e2d6401764a7bb8e11b191bd7214",
+    "frozen/workflow-run.py": "55b6c124a6d40ec49d07fbd5d72fe1f3a0b3023ecd5929ef6c166890c4594981"
+  },
+  "base_runner_sha256": "2d781e28dc8dc5b2350caf3ee2853c3ef26546bae49c2f18b77c2103209357e8",
+  "adapter_sha256": "55b6c124a6d40ec49d07fbd5d72fe1f3a0b3023ecd5929ef6c166890c4594981",
+  "cells": [
+    {
+      "id": "231b7d937cb3b49e",
+      "case": "shared-failure",
+      "condition": "none"
+    },
+    {
+      "id": "660b326e2864fd00",
+      "case": "shared-failure",
+      "condition": "previous"
+    },
+    {
+      "id": "a178d6c229e77053",
+      "case": "shared-failure",
+      "condition": "candidate"
+    },
+    {
+      "id": "5cefc40355f9005d",
+      "case": "writing-context",
+      "condition": "previous"
+    },
+    {
+      "id": "fed8b0ea0b1012c3",
+      "case": "writing-context",
+      "condition": "candidate"
+    },
+    {
+      "id": "aa37caf49bcf3181",
+      "case": "writing-context",
+      "condition": "none"
+    }
+  ]
+}

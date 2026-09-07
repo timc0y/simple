@@ -1,0 +1,62 @@
+[
+  {
+    "id": "231b7d937cb3b49e",
+    "case": "shared-failure",
+    "condition": "none",
+    "original_passed": false,
+    "corrected_passed": true,
+    "tokens": 91728,
+    "latency_ms": 70823,
+    "toolcalls": 5
+  },
+  {
+    "id": "660b326e2864fd00",
+    "case": "shared-failure",
+    "condition": "previous",
+    "original_passed": false,
+    "corrected_passed": true,
+    "tokens": 156662,
+    "latency_ms": 97316,
+    "toolcalls": 7
+  },
+  {
+    "id": "a178d6c229e77053",
+    "case": "shared-failure",
+    "condition": "candidate",
+    "original_passed": false,
+    "corrected_passed": true,
+    "tokens": 172347,
+    "latency_ms": 86702,
+    "toolcalls": 6
+  },
+  {
+    "id": "5cefc40355f9005d",
+    "case": "writing-context",
+    "condition": "previous",
+    "original_passed": true,
+    "corrected_passed": true,
+    "tokens": 77533,
+    "latency_ms": 38076,
+    "toolcalls": 4
+  },
+  {
+    "id": "fed8b0ea0b1012c3",
+    "case": "writing-context",
+    "condition": "candidate",
+    "original_passed": true,
+    "corrected_passed": true,
+    "tokens": 79363,
+    "latency_ms": 40920,
+    "toolcalls": 3
+  },
+  {
+    "id": "aa37caf49bcf3181",
+    "case": "writing-context",
+    "condition": "none",
+    "original_passed": true,
+    "corrected_passed": true,
+    "tokens": 49669,
+    "latency_ms": 28893,
+    "toolcalls": 3
+  }
+]

@@ -1,0 +1,13 @@
+run	case	model	condition	luna	strict
+1	stated-requirement	gpt-5.6-luna	none	false	false
+1	stated-requirement	gpt-5.6-luna	current	false	false
+1	stated-requirement	gpt-5.6-luna	candidate	true	true
+1	stated-requirement-consumer	gpt-5.6-luna	none	false	false
+1	stated-requirement-consumer	gpt-5.6-luna	current	true	true
+1	stated-requirement-consumer	gpt-5.6-luna	candidate	true	true
+2	stated-requirement	gpt-5.6-luna	none	false	false
+2	stated-requirement	gpt-5.6-luna	current	false	false
+2	stated-requirement	gpt-5.6-luna	candidate	true	true
+2	stated-requirement-consumer	gpt-5.6-luna	none	false	false
+2	stated-requirement-consumer	gpt-5.6-luna	current	false	false
+2	stated-requirement-consumer	gpt-5.6-luna	candidate	true	true

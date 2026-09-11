@@ -1,0 +1,13 @@
+id	condition	case	run	input_tokens	cached_input_tokens	output_tokens	reasoning_output_tokens	latency_s	skill_reads
+0a495f3153aa	none	stated-requirement	1	18459	15872	337	100	15	none
+dfcfd31f005e	current	stated-requirement	1	36606	11008	1790	1008	46	SKILL.md references/commands.md references/compatibility.md references/writing.md 
+0713ca2bc0c4	candidate	stated-requirement	1	41186	27904	1496	671	40	SKILL.md references/architecture.md references/commands.md references/repository-work.md references/writing.md 
+9a8670f804d5	none	stated-requirement-consumer	1	18513	15872	525	171	22	none
+0f54cb5a8548	current	stated-requirement-consumer	1	39655	27904	1612	602	38	SKILL.md 
+5d0a9502d4e2	candidate	stated-requirement-consumer	1	50936	38912	1528	495	38	SKILL.md references/architecture.md references/commands.md references/compatibility.md references/writing.md 
+53b3d5a242ff	none	stated-requirement	2	18466	15872	702	414	21	none
+83cf3c9fde9f	current	stated-requirement	2	41001	27904	1689	734	40	SKILL.md references/architecture.md references/commands.md references/repository-work.md references/writing.md 
+8b03759a20cf	candidate	stated-requirement	2	39761	21760	1332	585	37	SKILL.md 
+a8cd298678c9	none	stated-requirement-consumer	2	46155	37888	830	341	45	none
+e8b15384cfc1	current	stated-requirement-consumer	2	35958	26880	1213	372	40	SKILL.md references/commands.md references/writing.md 
+266d68894440	candidate	stated-requirement-consumer	2	40649	27904	1526	511	39	SKILL.md references/architecture.md references/commands.md references/compatibility.md references/verification.md references/writing.md 

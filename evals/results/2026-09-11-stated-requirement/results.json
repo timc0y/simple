@@ -1,0 +1,143 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-11T07:37:14.933Z",
+    "skillCommit": "none",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna stated-requirement screen",
+    "condition": "none",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "stated-requirement__r1",
+        "passed": false,
+        "evidence": "raw/0a495f3153aa.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "stated-requirement-consumer__r1",
+        "passed": false,
+        "evidence": "raw/9a8670f804d5.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "stated-requirement__r2",
+        "passed": false,
+        "evidence": "raw/53b3d5a242ff.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "stated-requirement-consumer__r2",
+        "passed": false,
+        "evidence": "raw/a8cd298678c9.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-11T07:37:14.933Z",
+    "skillCommit": "00c2add6cdad9d31527218cfa473f7da20bd38e2",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna stated-requirement screen",
+    "condition": "current",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "stated-requirement__r1",
+        "passed": false,
+        "evidence": "raw/dfcfd31f005e.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "stated-requirement-consumer__r1",
+        "passed": true,
+        "evidence": "raw/0f54cb5a8548.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "stated-requirement__r2",
+        "passed": false,
+        "evidence": "raw/83cf3c9fde9f.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "stated-requirement-consumer__r2",
+        "passed": false,
+        "evidence": "raw/e8b15384cfc1.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-11T07:37:14.933Z",
+    "skillCommit": "00c2add6cdad9d31527218cfa473f7da20bd38e2",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna stated-requirement screen",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "stated-requirement__r1",
+        "passed": true,
+        "evidence": "raw/0713ca2bc0c4.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "stated-requirement-consumer__r1",
+        "passed": true,
+        "evidence": "raw/5d0a9502d4e2.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "stated-requirement__r2",
+        "passed": true,
+        "evidence": "raw/8b03759a20cf.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "stated-requirement-consumer__r2",
+        "passed": true,
+        "evidence": "raw/266d68894440.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      }
+    ]
+  }
+]

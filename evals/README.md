@@ -25,7 +25,7 @@ Current coverage from the behavior and repeated preservation runs:
 | Preserve unaffected requirements through corrections. | Core correction rule. | Actual follow-up turns exercise a narrow synthetic correction; broader session behavior remains untested. |
 | Preserve facts and uncertainty in writing. | Core writing method; writing reference. | Prose review caught unsupported release-state claims missed by executable checks. Two repeats do not establish their cause. |
 | Keep useful discoveries available for later work. | Core knowledge guidance; repository-work reference. | Prompted reference reads were observed. Natural activation and later-session reuse remain untested. |
-| Surface a stated requirement that obstructs a materially simpler design, and keep it when a consumer makes it load-bearing. | Core stop trigger; architecture template field; plan and review contracts; worked example. | The `stated-requirement` and `stated-requirement-consumer` case pair exists but has not been run. No behavioural claim yet. |
+| Surface a stated requirement that obstructs a materially simpler design, and keep it when a consumer makes it load-bearing. | Core stop trigger; architecture template field; plan and review contracts; worked example. | The [stated-requirement screen](results/2026-09-11-stated-requirement/README.md) passed 4/4 candidate against 1/4 current on two lead-authored cases, two repeats. The example was never read; natural activation, a tempting relaxation with a real consumer, and held-out tasks remain untested. |
 
 Choose the next probe for a consequential coverage gap or observed failure. Use
 separately authored tasks that require discovery without naming the desired solution,

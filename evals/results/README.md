@@ -44,6 +44,7 @@ grader contract can support the stated decision. It does not mean statistical pr
 | [Overhaul screen](2026-09-05-overhaul/README.md) | Inconclusive strict tie | Luna recorded 3/6 for no skill, current, and candidate. Some rejections demanded ownership recitation or an unstated no-route contract; retain the grades without treating every rejection as a wrong decision. The owner requested adoption without a demonstrated gain. |
 | [Executable behavior](2026-09-06-behavior/README.md) | Valid completion screen; retry caveat | Luna: no skill 4/5, identical old copies 5/5 each, overhaul 5/5. The only miss retained an obsolete file. No overhaul gain established; one timeout retried. |
 | [Repeated preservation](2026-09-06-preservation/README.md) | Candidate regression; consolidation reverted | Luna: previous 12/12, candidate 10/12, short 11/12 including prose review. Both candidate notes invented release status despite reference retrieval. Earlier core/writing restored; all original grades retained. |
+| [Stated requirement](2026-09-11-stated-requirement/README.md) | Narrow positive screen | Luna: candidate 4/4, current 1/4, no skill 0/4; grader self-tests passed. Incidental case 2/2 against 0/2 is the tested capability; consumer control kept the requirement in every condition. No cell read the new example, so the core trigger and plan contract carried the effect. |
 
 Runs from 27 August with a condition map and TSV result now also contain normalized
 `results.json` records. Earlier files keep their original format unless the source data

@@ -193,6 +193,7 @@ Observed need:
 Existing owner:
 Ordinary path:
 Exact obstruction:
+Stated requirement that most shapes the design, and evidence it is load-bearing:
 Missing precondition:
 Smallest reversible experiment:
 Can the existing owner remain?

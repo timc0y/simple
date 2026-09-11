@@ -70,8 +70,12 @@ authorised. Do not require a report or expand a narrow lookup into an investigat
 Plan the requested outcome from repository evidence. Read `writing.md`; return plain
 Markdown with only the sections the work needs. Cover the outcome, relevant facts, what
 must be preserved and what may be replaced, the existing owner and ordinary path, the
+stated requirement that most shapes the design and the evidence it is load-bearing, the
 smallest truthful design, implementation steps, complexity removed or avoided,
 independent proof, and any material risk, unknown, or reconsideration condition.
+When that requirement comes from the request rather than repository evidence and a
+materially simpler design exists without it, present both and ask; do not drop it
+silently or build around it silently.
 Include a precedent or named standard only when it improves the decision and its
 prerequisites exist. Planning is read-only. Do not implement without authority.
 
@@ -79,7 +83,8 @@ prerequisites exist. Planning is read-only. Do not implement without authority.
 
 Review a design, plan, document, or diff for the requested purpose. For explanation
 or comparison, answer that question. For a defect review, lead with material findings ordered by
-consequence. Check for invented obligations, divided ownership, second paths,
+consequence. Check for invented obligations, a stated requirement honoured at a cost
+no evidence supports, divided ownership, second paths,
 unjustified compatibility, displaced machinery left behind, self-grading proof,
 unrelated changes, lost facts, and decorative or confusing prose. Report no finding
 when the evidence does not support one.

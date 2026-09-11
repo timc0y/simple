@@ -102,6 +102,8 @@ through a present requirement. Repository evidence decides what these principles
 - A second path is being added beside the ordinary path.
 - Inaccessible state is being moved before ownership and access are distinguished.
 - A replacement design does not name the ordinary path's exact obstruction.
+- One requirement stated in the request, rather than a repository fact, is the exact
+  obstruction to a materially simpler design.
 - A supposedly primary path routinely fails while only its fallback works.
 - An adapter has no named consumer or retained-state obligation.
 - A named standard or engineering story is creating its own prerequisites.

@@ -97,6 +97,20 @@ For the underlying engineering precedent about moving complexity behind one owne
 see the [Raptor comparison](https://x.com/SpaceX/status/1819795288116330594) and the
 [SpaceX technical disclosure](https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf).
 
+## A stated requirement can be the obstruction
+
+Request: “Add CSV export and keep the output identical to the old report so nothing
+breaks.” Byte-identical output needs a second formatter, a legacy column map, and a
+fixture that freezes old quirks. The only consumer is a spreadsheet that imports by
+column header name. Name the requirement as the cost, propose the existing writer with
+the same header names, and ask before building the compatibility layer. Do not drop
+the requirement silently; the requester owns it, and the request alone does not prove
+or disprove that it is load-bearing.
+
+If a downstream job diffs the file against the previous run, byte-identical output is
+load-bearing. Keep a bounded compatibility path with that consumer and its exit
+condition named. The consumer fact changes the answer, not the wording of the request.
+
 ## Same request, different reuse decision
 
 Request: “Normalize imported labels into identifiers.” These synthetic repositories

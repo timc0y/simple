@@ -74,6 +74,8 @@ Common errors include these examples:
 - The agent keeps attempting a broken primary path before the only working route.
 - A correction makes the agent forget the requirements that still apply.
 - The agent reports a valid result that the intended caller cannot use.
+- The agent builds around a stated requirement that no consumer needs, instead of
+  asking whether a simpler design is acceptable.
 
 Simple separates current facts from assumptions. It then finds the owner, ordinary
 path, exact obstruction, smallest correction, and independent proof.

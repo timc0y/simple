@@ -1,0 +1,1 @@
+Frozen prompt, criteria and references for this case referenced private client context and were removed from the public record. The re-themed public case lives under evals/ with the same structure and criteria.

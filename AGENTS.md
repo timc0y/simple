@@ -33,7 +33,7 @@ evaluation decisions, not future priority.
 - `upstream/coverage.md` accounts for every pinned source skill and playbook. Update
   its mappings when a source refresh or workflow change affects coverage.
 
-Use `$simple` and read the nearest `SIMPLE.md` for repository-dependent decisions and work. Explicit workflows: `simple init`, `audit`, `board`, `research`, `work`, `reconcile`, `plan`, `review`, `write`, `emulate`, or `check`.
+Use `$simple` and read the nearest `SIMPLE.md` for repository-dependent decisions and work. Explicit workflows: `simple init`, `audit`, `board`, `research`, `work`, `reconcile`, `plan`, `review`, `write`, `round`, `emulate`, or `check`.
 
 ## Swarm and authority
 

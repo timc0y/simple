@@ -42,7 +42,7 @@
 - `scripts/link-skill.mjs` owns the shared agent route and four local host routes. It
   replaces stale symlinks but refuses to replace a real file or directory.
 - `simple.mjs init` creates the route and profile; `setup` remains an alias for existing users; `check` validates their shape.
-- `audit`, `board`, `research`, `work`, `reconcile`, `plan`, `review`, `write`, and `emulate` are thin judgement modes over the shared skill; operator lenses stay sourced specialist references.
+- `audit`, `board`, `research`, `work`, `reconcile`, `plan`, `review`, `write`, `round`, and `emulate` are thin judgement modes over the shared skill; operator lenses stay sourced specialist references. `round` owns `ROUND.md` beside a profile; the session hook injects it with the profile.
 - `references/repository-work.md` owns the repository contract, swarm boundaries,
   end-to-end work, reconciliation, and release handoff guidance. Repository
   `AGENTS.md` files own only their local read order, owners, checks, and authority.
@@ -54,7 +54,7 @@
 - `evals/normalize-results.mjs` converts active TSV runner output into the shared result record.
 - `evals/preservation/run.py` reuses the behavior runner for repeated preservation
   checks. `research/simple-skill-ideas.md` retains hypotheses and the shortening audit.
-- One hook script handles session, subagent, relevant write, and stop events for both hook-capable hosts.
+- One hook script handles session, subagent, relevant write, shell and MCP tool, and stop events for both hook-capable hosts. It injects the profile, an adjacent `ROUND.md`, and the operator file at `~/.config/simple/operator.md`, and denies guarded tool calls the current user message did not ask for.
 
 ## Proof
 

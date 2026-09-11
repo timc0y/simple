@@ -1,5 +1,5 @@
 {
-  "description": "Load repository reality and keep development prose concise.",
+  "description": "Load repository reality, the active round, and operator rules; keep prose concise; guard irreversible commands.",
   "hooks": {
     "SessionStart": [
       {
@@ -28,7 +28,7 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "Edit|Write|apply_patch",
+        "matcher": "Edit|Write|apply_patch|Bash|shell|exec_command|local_shell|mcp__.*",
         "hooks": [
           {
             "type": "command",

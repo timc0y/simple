@@ -1,0 +1,19 @@
+{
+  "note": "Lead review after grading. Original grader verdicts in grades/*.json are retained unchanged. This file records where the lead disagrees with the grader and why, as a separate axis. It does not change results.tsv or results.json.",
+  "contract_defects": {
+    "plain-translation": "Criteria demanded that the reply name the client as the actor and the automation tool by name. The reply is addressed to the client, so 'please update the automation' already names the actor, and 'the automation' is the client's own term. All six answers gave the outcome first, a before-and-after pair, the five items, and 'no website change'. The case sits at a ceiling and the grader rejected all six on the literal wording. No condition differs materially.",
+    "verdict-first": "Criteria listed three verdict forms; the grader treated 'Yes. It is safe to delete the eleven inputs now.' as not an accepted form. All six answers open with that verdict and run 59 to 90 words. The case sits at a ceiling. No condition differs materially.",
+    "round-status": "Criteria required the reply to end with what remains; the candidate's own instruction in commands.md says to end with the stop condition and whether it is met. Candidate r1 followed the instruction and was failed for it."
+  },
+  "lead_verdicts": {
+    "round-status": {
+      "candidate r1 (e7da0ba08b20)": "pass on intent: state line first, four separated groups, three dated decisions, findings on one line, stop condition last. The only defect is the criteria contradiction.",
+      "candidate r2": "fail stands: dropped the two documentation-link loose ends, a lost fact.",
+      "current r1 / r2, none r1 / r2": "fail stands: no state line, decisions dropped, groups not separated. The shape appeared only under the candidate."
+    },
+    "stated-requirement": "Today's grader required the gate to name the requester's confirmation; yesterday's grader passed candidate answers whose gate was 'confirm that the consumer's header-based import is the intended contract'. Today's candidate answers use the same the consumer wording and were failed. The gate criterion is graded inconsistently across runs; mark the grader unstable on it. On substance today: both candidate answers reach the existing writer with named costs and a confirmation gate; current r1 still hedges by preserving legacy columns, footer and line endings; current r2 reaches the writer without costs. The design difference from yesterday persists; the strict-pass difference does not.",
+    "stated-requirement-consumer": "candidate r2 (a720e7799f41) fail stands: no exit condition tied to the reconciliation job changing or retiring; its 'reconsider' clause concerns escaping rules. Every other cell kept the requirement. One current-pass/candidate-fail pair, on the same exit-condition criterion that current also missed once yesterday.",
+    "scope-completion": "ceiling: all six report all three items done. The written scenario cannot reproduce the corpus failure, which occurs mid-loop with tools."
+  },
+  "adoption_view": "No measured gain. The round shape is the one behaviour change visible in the answers. The vocabulary, outcome-first and verdict-first rules could not be exercised because short isolated prompts already elicit them; the corpus failures occurred in long sessions where the reader had not asked for plain language. A probe with a long transcript prefix is needed to test them."
+}

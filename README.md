@@ -175,6 +175,7 @@ Commands are entry points into one method. They are not a mandatory sequence.
 | `simple plan` | Plan the smallest truthful change | Read only |
 | `simple review` | Review a design, document, plan, or diff | Read only |
 | `simple write` | Write or revise plain developer prose | Requested text |
+| `simple round` | Keep a multi-session round's ask, buckets, and decisions in one injected file | `ROUND.md` beside the profile |
 | `simple emulate` | Apply one documented operator method | Read only |
 | `simple check` | Check the route and profile structure | Read only |
 
@@ -295,6 +296,16 @@ to that repository profile, and the continuation runs at most once.
 A write hook can add a short review note after a Markdown or comment edit. The note
 arrives after the tool result. It can guide the next correction, but it cannot change
 edit arguments that the model already sent.
+
+The session hook also injects two optional files. `ROUND.md` beside a profile holds a
+multi-session round's ask, buckets, and decisions; `simple round` owns it. An operator
+file at `~/.config/simple/operator.md`, or the path in `SIMPLE_OPERATOR_FILE`, holds one
+person's working rules and is injected in every repository, with or without a profile.
+Its `## Guard` section lists shell command patterns and `tool:` name patterns; the hook
+denies a matching tool call unless the user's latest message contains the pattern's
+allow word or is a short affirmative reply to the agent's message that proposed the
+command; a negation never authorises, and without a transcript the hook only reminds. Copy
+`skills/simple/assets/OPERATOR.template.md` to start one.
 
 Codex needs one `/hooks` trust approval on each machine. Codex also reads the route in
 `AGENTS.md`. This route keeps Simple available when a host does not run hooks.

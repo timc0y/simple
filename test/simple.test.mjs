@@ -156,6 +156,89 @@ test("session hook injects the nearest nested profile", () => {
   assert.doesNotMatch(output.hookSpecificOutput.additionalContext, /root profile/);
 });
 
+test("session hook injects an active round beside the profile", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-round-"));
+  writeFileSync(join(root, "SIMPLE.md"), "# Simple\n\n## Reality\n\n- root profile\n");
+  const without = JSON.parse(runHook({ hook_event_name: "SessionStart", cwd: root }).stdout);
+  assert.doesNotMatch(without.hookSpecificOutput.additionalContext, /Active Simple round/);
+  writeFileSync(join(root, "ROUND.md"), "# Round\n\n## Ask\n\n- the client's ask\n\n## Decisions\n\n- 2026-09-11 keep the header names\n");
+  const withRound = JSON.parse(runHook({ hook_event_name: "SessionStart", cwd: root }).stdout);
+  const context = withRound.hookSpecificOutput.additionalContext;
+  assert.match(context, /Repository-specific Simple context/);
+  assert.match(context, /Active Simple round/);
+  assert.match(context, /keep the header names/);
+  assert.match(context, /stop condition/);
+});
+
+test("the round template and check agree on the round headings", () => {
+  const template = readFileSync(join(process.cwd(), "skills", "simple", "assets", "ROUND.template.md"), "utf8");
+  for (const heading of ["## Ask", "## State", "## Ticket", "## Investment", "## Blocked on client", "## Your call", "## Decisions"]) {
+    assert.ok(template.includes(heading), heading);
+  }
+  const root = mkdtempSync(join(tmpdir(), "simple-round-check-"));
+  const profile = readFileSync(join(process.cwd(), "SIMPLE.md"), "utf8");
+  writeFileSync(join(root, "SIMPLE.md"), profile);
+  writeFileSync(join(root, "AGENTS.md"), readFileSync(join(process.cwd(), "AGENTS.md"), "utf8"));
+  writeFileSync(join(root, "CLAUDE.md"), "@AGENTS.md\n");
+  writeFileSync(join(root, "ROUND.md"), template);
+  const failures = check(root);
+  assert.ok(failures.some((f) => /template marker/.test(f)), failures.join("\n"));
+  writeFileSync(join(root, "ROUND.md"), template.replace(/<!-- simple-round: fill.*-->\n/, ""));
+  assert.deepEqual(check(root).filter((f) => /ROUND/.test(f)), []);
+});
+
+test("session hook injects the operator file even without a profile", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-operator-"));
+  const operator = join(root, "operator.md");
+  writeFileSync(operator, "# Operator\n\n## Working rules\n\n- first sentence is the outcome\n");
+  const without = spawnSync(process.execPath, [hook], { input: JSON.stringify({ hook_event_name: "SessionStart", cwd: root }), encoding: "utf8", env: { ...process.env, SIMPLE_OPERATOR_FILE: join(root, "missing.md") } });
+  assert.equal(without.stdout.trim(), "");
+  const result = spawnSync(process.execPath, [hook], { input: JSON.stringify({ hook_event_name: "SessionStart", cwd: root }), encoding: "utf8", env: { ...process.env, SIMPLE_OPERATOR_FILE: operator } });
+  const context = JSON.parse(result.stdout).hookSpecificOutput.additionalContext;
+  assert.match(context, /Operator working rules/);
+  assert.match(context, /first sentence is the outcome/);
+  assert.doesNotMatch(context, /Repository-specific Simple context/);
+});
+
+test("the guard denies a guarded command unless the current user message asks for it", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-guard-"));
+  const operator = join(root, "operator.md");
+  writeFileSync(operator, "# Operator\n\n## Guard\n\n- git push\n- shopify theme push -> push\n- tool:mcp__.*delete -> delete\n");
+  const transcript = join(root, "transcript.jsonl");
+  const env = { ...process.env, SIMPLE_OPERATOR_FILE: operator };
+  const run = (toolName, command, lastUser) => {
+    writeFileSync(transcript, [
+      JSON.stringify({ type: "user", message: { role: "user", content: lastUser } }),
+      JSON.stringify({ type: "user", isMeta: true, message: { role: "user", content: "<system-reminder>ignored</system-reminder>" } }),
+      JSON.stringify({ type: "assistant", message: { role: "assistant", content: [{ type: "text", text: "working" }] } })
+    ].join("\n"));
+    const result = spawnSync(process.execPath, [hook], { input: JSON.stringify({ hook_event_name: "PreToolUse", cwd: root, tool_name: toolName, tool_input: { command }, transcript_path: transcript }), encoding: "utf8", env });
+    return result.stdout.trim() ? JSON.parse(result.stdout) : {};
+  };
+  assert.equal(run("Bash", "git push origin main", "tidy the docs then stop").hookSpecificOutput.permissionDecision, "deny");
+  assert.deepEqual(run("Bash", "git push origin main", "push it to main"), {});
+  assert.deepEqual(run("Bash", "git status", "tidy the docs"), {});
+  assert.equal(run("Bash", "shopify theme push --theme 1", "publish the theme").hookSpecificOutput.permissionDecision, "deny");
+  assert.equal(run("mcp__circle__delete_event", "", "check the events").hookSpecificOutput.permissionDecision, "deny");
+  assert.deepEqual(run("mcp__circle__delete_event", "", "delete that test event"), {});
+  const runAfterProposal = (toolName, command, assistantText, lastUser) => {
+    writeFileSync(transcript, [
+      JSON.stringify({ type: "user", message: { role: "user", content: "wipe the personal context" } }),
+      JSON.stringify({ type: "assistant", message: { role: "assistant", content: [{ type: "text", text: assistantText }] } }),
+      JSON.stringify({ type: "user", message: { role: "user", content: lastUser } })
+    ].join("\n"));
+    const result = spawnSync(process.execPath, [hook], { input: JSON.stringify({ hook_event_name: "PreToolUse", cwd: root, tool_name: toolName, tool_input: { command }, transcript_path: transcript }), encoding: "utf8", env });
+    return result.stdout.trim() ? JSON.parse(result.stdout) : {};
+  };
+  assert.deepEqual(runAfterProposal("Bash", "git push --force origin main", "I would run:\n\ngit push --force origin main\n\nSay the word.", "Do this all"), {});
+  assert.deepEqual(runAfterProposal("Bash", "git push origin main", "Next I'd git push origin main.", "yes"), {});
+  assert.equal(runAfterProposal("Bash", "git push origin main", "Next I'd git push origin main.", "do not push yet").hookSpecificOutput.permissionDecision, "deny");
+  assert.equal(runAfterProposal("Bash", "git push origin main", "Next I'd git push origin main.", "explain the diff first").hookSpecificOutput.permissionDecision, "deny");
+  assert.equal(runAfterProposal("Bash", "git push origin main", "I tidied the docs.", "do it").hookSpecificOutput.permissionDecision, "deny");
+  const noTranscript = spawnSync(process.execPath, [hook], { input: JSON.stringify({ hook_event_name: "PreToolUse", cwd: root, tool_name: "Bash", tool_input: { command: "git push" } }), encoding: "utf8", env });
+  assert.match(JSON.parse(noTranscript.stdout).hookSpecificOutput.additionalContext, /Guarded action/);
+});
+
 test("edit hook routes only relevant review reminders", () => {
   const root = mkdtempSync(join(tmpdir(), "simple-"));
   mkdirSync(join(root, ".git"));

@@ -1,0 +1,335 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-11T08:55:13.555Z",
+    "skillCommit": "none",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna writing-rules screen",
+    "condition": "none",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "plain-translation__r1",
+        "passed": false,
+        "evidence": "raw/bf877f495be2.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "verdict-first__r1",
+        "passed": false,
+        "evidence": "raw/79dd61578fe0.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "round-status__r1",
+        "passed": false,
+        "evidence": "raw/183a05b7f867.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "scope-completion__r1",
+        "passed": true,
+        "evidence": "raw/940d8723959b.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "stated-requirement__r1",
+        "passed": false,
+        "evidence": "raw/792e34cf7175.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "stated-requirement-consumer__r1",
+        "passed": false,
+        "evidence": "raw/44fc5bec937c.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "plain-translation__r2",
+        "passed": false,
+        "evidence": "raw/56c1ca5621ea.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "verdict-first__r2",
+        "passed": false,
+        "evidence": "raw/ba825e233fe5.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "round-status__r2",
+        "passed": false,
+        "evidence": "raw/d492dacb795c.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "scope-completion__r2",
+        "passed": true,
+        "evidence": "raw/1f4ec14628d1.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "stated-requirement__r2",
+        "passed": false,
+        "evidence": "raw/9e81d7c35db2.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "stated-requirement-consumer__r2",
+        "passed": false,
+        "evidence": "raw/ab1b227eb099.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-11T08:55:13.555Z",
+    "skillCommit": "ee0e9f235d188d6b244842be6aea9e0933e74dcb",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna writing-rules screen",
+    "condition": "current",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "plain-translation__r1",
+        "passed": false,
+        "evidence": "raw/f95f6f6ad5dd.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "verdict-first__r1",
+        "passed": false,
+        "evidence": "raw/4e1540b2fcc2.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "round-status__r1",
+        "passed": false,
+        "evidence": "raw/daf4ca1d7f0b.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "scope-completion__r1",
+        "passed": true,
+        "evidence": "raw/1f33fbac6d06.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "stated-requirement__r1",
+        "passed": false,
+        "evidence": "raw/38f7b3594fc2.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "stated-requirement-consumer__r1",
+        "passed": true,
+        "evidence": "raw/6a50c5fad11e.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "plain-translation__r2",
+        "passed": false,
+        "evidence": "raw/6405acde7391.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "verdict-first__r2",
+        "passed": false,
+        "evidence": "raw/1b2059f54faa.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "round-status__r2",
+        "passed": false,
+        "evidence": "raw/055aff9139bf.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "scope-completion__r2",
+        "passed": true,
+        "evidence": "raw/c136f6d26ab2.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "stated-requirement__r2",
+        "passed": false,
+        "evidence": "raw/98284de359dc.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "stated-requirement-consumer__r2",
+        "passed": true,
+        "evidence": "raw/ee829355e514.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-11T08:55:13.555Z",
+    "skillCommit": "ee0e9f235d188d6b244842be6aea9e0933e74dcb",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "default"
+    },
+    "harness": "isolated Codex Luna writing-rules screen",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "plain-translation__r1",
+        "passed": false,
+        "evidence": "raw/bd5d6d519bee.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "verdict-first__r1",
+        "passed": false,
+        "evidence": "raw/8d62b74b5d09.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "round-status__r1",
+        "passed": false,
+        "evidence": "raw/e7da0ba08b20.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "scope-completion__r1",
+        "passed": true,
+        "evidence": "raw/0000464a3a01.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "stated-requirement__r1",
+        "passed": false,
+        "evidence": "raw/d1f63862e4c8.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "stated-requirement-consumer__r1",
+        "passed": true,
+        "evidence": "raw/09b21f292258.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "plain-translation__r2",
+        "passed": false,
+        "evidence": "raw/6c47c4f2f8be.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "verdict-first__r2",
+        "passed": false,
+        "evidence": "raw/003820f8bf9b.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "round-status__r2",
+        "passed": false,
+        "evidence": "raw/59d8c8f19d13.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "scope-completion__r2",
+        "passed": true,
+        "evidence": "raw/535bdb61e85b.md",
+        "graderVerdicts": {
+          "luna": true
+        }
+      },
+      {
+        "id": "stated-requirement__r2",
+        "passed": false,
+        "evidence": "raw/4b3e5886501a.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      },
+      {
+        "id": "stated-requirement-consumer__r2",
+        "passed": false,
+        "evidence": "raw/a720e7799f41.md",
+        "graderVerdicts": {
+          "luna": false
+        }
+      }
+    ]
+  }
+]

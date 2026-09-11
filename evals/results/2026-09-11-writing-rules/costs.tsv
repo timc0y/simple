@@ -1,0 +1,37 @@
+id	condition	case	run	input_tokens	cached_input_tokens	output_tokens	reasoning_output_tokens	latency_s	skill_reads
+bf877f495be2	none	plain-translation	1	18488	15872	332	164	10	none
+f95f6f6ad5dd	current	plain-translation	1	35412	19968	740	398	21	SKILL.md references/writing.md 
+bd5d6d519bee	candidate	plain-translation	1	47456	39936	761	352	23	SKILL.md references/writing.md 
+79dd61578fe0	none	verdict-first	1	18481	15872	337	151	10	none
+4e1540b2fcc2	current	verdict-first	1	35964	28928	651	249	18	SKILL.md references/refactoring.md references/writing.md 
+8d62b74b5d09	candidate	verdict-first	1	35192	27904	620	262	17	SKILL.md references/writing.md 
+183a05b7f867	none	round-status	1	18613	15872	345	84	13	none
+daf4ca1d7f0b	current	round-status	1	35805	27904	909	466	25	SKILL.md references/writing.md 
+e7da0ba08b20	candidate	round-status	1	37916	28928	1285	718	29	SKILL.md references/commands.md references/writing.md 
+940d8723959b	none	scope-completion	1	18496	15872	297	124	11	none
+1f33fbac6d06	current	scope-completion	1	39071	16896	740	407	19	SKILL.md references/delivery.md references/repository-work.md references/writing.md 
+0000464a3a01	candidate	scope-completion	1	35570	16896	572	283	16	SKILL.md references/writing.md 
+792e34cf7175	none	stated-requirement	1	18441	15872	460	164	15	none
+38f7b3594fc2	current	stated-requirement	1	47808	34816	1442	507	35	SKILL.md references/commands.md references/writing.md 
+d1f63862e4c8	candidate	stated-requirement	1	49275	37888	1589	736	36	SKILL.md references/commands.md references/compatibility.md references/writing.md 
+44fc5bec937c	none	stated-requirement-consumer	1	18442	15872	568	145	15	none
+6a50c5fad11e	current	stated-requirement-consumer	1	37329	28928	1349	491	33	SKILL.md references/commands.md references/compatibility.md references/writing.md 
+09b21f292258	candidate	stated-requirement-consumer	1	41332	28928	1698	489	37	SKILL.md references/architecture.md references/commands.md references/compatibility.md references/verification.md references/writing.md 
+56c1ca5621ea	none	plain-translation	2	18504	15872	323	159	11	none
+6405acde7391	current	plain-translation	2	34740	26880	533	213	15	SKILL.md references/writing.md 
+6c47c4f2f8be	candidate	plain-translation	2	35755	28928	601	276	19	SKILL.md references/writing.md 
+ba825e233fe5	none	verdict-first	2	18449	15872	302	127	12	none
+1b2059f54faa	current	verdict-first	2	37655	27904	895	440	21	SKILL.md references/compatibility.md references/deletion-tools.md references/refactoring.md references/verification.md references/writing.md 
+003820f8bf9b	candidate	verdict-first	2	37940	15872	727	354	23	SKILL.md references/compatibility.md references/deletion-tools.md references/refactoring.md references/verification.md references/writing.md 
+d492dacb795c	none	round-status	2	28563	24832	605	262	17	none
+055aff9139bf	current	round-status	2	53814	37888	1199	672	33	SKILL.md references/delivery.md references/repository-work.md references/writing.md 
+59d8c8f19d13	candidate	round-status	2	37761	28928	1086	544	26	SKILL.md references/commands.md references/writing.md 
+1f4ec14628d1	none	scope-completion	2	18417	15872	241	67	9	none
+c136f6d26ab2	current	scope-completion	2	50670	39936	865	416	22	SKILL.md references/delivery.md references/repository-work.md references/writing.md 
+535bdb61e85b	candidate	scope-completion	2	34733	27904	361	96	12	SKILL.md references/writing.md 
+9e81d7c35db2	none	stated-requirement	2	18458	15872	360	130	12	none
+98284de359dc	current	stated-requirement	2	34382	27904	1154	580	38	SKILL.md references/writing.md 
+4b3e5886501a	candidate	stated-requirement	2	51707	38912	1239	404	32	SKILL.md references/architecture.md references/commands.md references/compatibility.md references/writing.md 
+ab1b227eb099	none	stated-requirement-consumer	2	18460	15872	492	174	16	none
+ee829355e514	current	stated-requirement-consumer	2	47806	20736	1165	237	30	SKILL.md references/commands.md references/writing.md 
+a720e7799f41	candidate	stated-requirement-consumer	2	39719	27904	1393	393	31	SKILL.md 

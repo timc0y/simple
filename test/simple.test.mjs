@@ -133,7 +133,7 @@ test("check validates the nearest nested profile through root routes", () => {
   writeFileSync(join(nested, "SIMPLE.md"), template);
   assert.ok(check(nested).some((failure) => failure.includes("incomplete")));
 
-  writeFileSync(join(nested, "SIMPLE.md"), template.replace(/^<!-- simple-profile: incomplete.*-->\n\n/m, ""));
+  writeFileSync(join(nested, "SIMPLE.md"), template.replace(/^<!-- simple-profile: incomplete.*-->\r?\n(?:\r?\n)?/m, ""));
   assert.deepEqual(check(nested), []);
 });
 
@@ -184,7 +184,7 @@ test("the round template and check agree on the round headings", () => {
   writeFileSync(join(root, "simple", "round.md"), template);
   const failures = check(root);
   assert.ok(failures.some((f) => /template marker/.test(f)), failures.join("\n"));
-  writeFileSync(join(root, "simple", "round.md"), template.replace(/<!-- simple-round: fill.*-->\n/, ""));
+  writeFileSync(join(root, "simple", "round.md"), template.replace(/<!-- simple-round: fill.*-->\r?\n/, ""));
   assert.deepEqual(check(root).filter((f) => /round/.test(f)), []);
   writeFileSync(join(root, "SIMPLE.md"), readFileSync(join(root, "SIMPLE.md"), "utf8") + "\n## Round\n\n- misplaced\n");
   assert.ok(check(root).some((f) => /move it to simple\/round\.md/.test(f)));
@@ -656,7 +656,7 @@ test("normalization records only graders that ran", () => {
 
 function completedProfile(root, label) {
   return readFileSync(join(root, "SIMPLE.md"), "utf8")
-    .replace(/^<!-- simple-profile: incomplete.*-->\n\n/m, "")
+    .replace(/^<!-- simple-profile: incomplete.*-->\r?\n(?:\r?\n)?/m, "")
     .replace(/^- Stage and users: .*$/m, `- Stage and users: ${label}`);
 }
 

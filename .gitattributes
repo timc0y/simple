@@ -1,3 +1,6 @@
+# Text files check out with LF on every platform; tests and hooks compare exact bytes.
+* text=auto eol=lf
+
 # Unified patches contain significant single-space context lines.
 *.patch whitespace=-blank-at-eol
 *.diff whitespace=-blank-at-eol

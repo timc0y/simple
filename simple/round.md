@@ -9,7 +9,7 @@
 
 ## State
 
-- Live version, HEAD, uncommitted files, last check: 0.8.0 at 91551b0 on main; this round file is the only uncommitted change; 33 tests green, check ok.
+- Live version, HEAD, uncommitted files, last check: 0.8.0 at 8b16370 on main; tree clean after this file; 33 tests green, check ok; CI green on Linux, Windows, and the plugin install.
 
 ## Ticket
 
@@ -18,8 +18,7 @@
 ## Investment
 
 - Done: operator file both Macs; hook fails open; CI written; manifest parity; OpenCode plugin and Gemini extension; rubric with readability dimension and shared runner; three writing lines (tied, ship); slimming (24/24 preserved); guard by affirmative plus proposal; per-repo files cut to AGENTS.md, CLAUDE.md, SIMPLE.md plus a simple/ folder for temporaries.
-- Done 12 Sep: pushed as 91551b0; this Mac installed for Claude and Codex with links; MacBook checkout at 91551b0.
-- In progress: MacBook plugin caches and links over the mount; first CI run.
+- Done 12 Sep: pushed as 91551b0 with the CI fix at 8b16370; both Macs installed for Claude and Codex at 0.8.0 with links; Actions enabled and the first green run recorded.
 - Not done: Codex hook trust on each Mac (yours); a live OpenCode or Gemini session to confirm those routes.
 
 ## Blocked on client

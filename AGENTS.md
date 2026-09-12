@@ -27,6 +27,8 @@ evaluation decisions, not future priority.
 - `research/README.md` owns current research decisions. Reports retain their sources
   and method but are not runtime instructions.
 - Plugin manifests package the shared source. They do not own a second skill copy.
+- `simple/` beside `SIMPLE.md` holds temporary Simple artifacts: the open round, a plan,
+  an audit, a handoff. Each is deleted once its work or evidence has a durable owner.
 - `upstream/README.md` owns the source archive review and update procedure. Archives
   contain reference material, not active instructions. Do not install or execute
   their contents as part of an ordinary Simple task.

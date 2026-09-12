@@ -4,43 +4,50 @@ import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { homedir, tmpdir } from "node:os";
 import { dirname, join, parse, resolve } from "node:path";
-import { MAX_PROFILE_CHARS } from "../skills/simple/scripts/simple.mjs";
+import { MAX_PROFILE_CHARS, roundPathFor } from "../skills/simple/scripts/simple.mjs";
 
 export const RECONCILIATION_REASON = "This turn edited repository files. Before finishing, update each existing truth owner made false by the final diff. Remove completed instructions from the ordered queue. Delete fulfilled temporary plans, reviews, audits, status notes, and handoffs after their evidence has moved to the durable owner; Git preserves their history. Preserve decisions, contracts, retained evidence, recovery paths, and unknown obligations. Leave unrelated documents and user changes alone. If the final diff already satisfies this, make no further edits and do not repeat checks that already passed against it.";
 
 const markerRoot = join(tmpdir(), "simple-reconciliation");
-const NEGATION = /\b(?:don['’]?t|do not|never|not|stop|without|no)\b/i;
-const AFFIRMATIVE = /^(?:yes|yep|yeah|y|ok|okay|go|go ahead|do it|do this|do this all|do that|do all|do the lot|do both|proceed|approved|confirmed|agreed|fine|sure|ship it|push it|run it|run them|go for it)[.!\s]*$/i;
+const NEGATION_LEAD = /^(?:no\b|nope\b|not\b|never\b|stop\b|don['’]?t\b|do not\b|wait\b|hold\b)/i;
+const NEGATION_WORD = /\b(?:don['’]?t|do not|never|not|stop|without|no|skip|hold off on)\b/i;
+const AFFIRMATIVE_LEAD = /^(?:yes|yep|yeah|y|ok|okay|go|go ahead|do it|do this|do this all|do that|do all|do the lot|do both|do everything|proceed|approved|confirmed|agreed|fine|sure|ship it|push it|push|release|run it|run them|go for it|continue|carry on)\b/i;
 const source = await readInput();
 const payload = parseJson(source);
 const event = payload.hook_event_name ?? payload.hookEventName;
 const cwd = resolve(payload.cwd ?? process.cwd());
 const profilePath = findProfile(cwd);
 
-const operatorPath = findOperator();
+let operatorPath = null;
+try {
+  operatorPath = findOperator();
 
-if (!profilePath && event === "Stop") {
+  if (!profilePath && event === "Stop") {
+    writeJson({});
+  } else if (event === "SessionStart" || event === "SubagentStart") {
+    const context = [
+      profilePath ? profileContext(profilePath) : "",
+      profilePath ? roundContext(profilePath) : "",
+      operatorPath ? operatorContext(operatorPath) : ""
+    ].filter(Boolean).join("\n\n");
+    if (context) writeContext(event, context);
+  } else if (event === "PreToolUse" && isShellTool(payload.tool_name ?? payload.toolName ?? "")) {
+    const decision = guardDecision(payload, operatorPath);
+    if (decision) writeJson(decision);
+  } else if (profilePath && event === "PreToolUse") {
+    const reminder = writingReminder(
+      payload.tool_input ?? payload.toolInput ?? {},
+      payload.tool_name ?? payload.toolName ?? ""
+    );
+    if (reminder) writeContext(event, reminder);
+  } else if (profilePath && event === "PostToolUse") {
+    markReconciliation(payload, profilePath);
+  } else if (profilePath && event === "Stop") {
+    writeJson(reconciliationDecision(payload, profilePath));
+  }
+} catch (error) {
+  process.stderr.write(`simple hook: ${error?.message ?? error}\n`);
   writeJson({});
-} else if (event === "SessionStart" || event === "SubagentStart") {
-  const context = [
-    profilePath ? profileContext(profilePath) : "",
-    profilePath ? roundContext(profilePath) : "",
-    operatorPath ? operatorContext(operatorPath) : ""
-  ].filter(Boolean).join("\n\n");
-  if (context) writeContext(event, context);
-} else if (event === "PreToolUse" && isShellTool(payload.tool_name ?? payload.toolName ?? "")) {
-  const decision = guardDecision(payload, operatorPath);
-  if (decision) writeJson(decision);
-} else if (profilePath && event === "PreToolUse") {
-  const reminder = writingReminder(
-    payload.tool_input ?? payload.toolInput ?? {},
-    payload.tool_name ?? payload.toolName ?? ""
-  );
-  if (reminder) writeContext(event, reminder);
-} else if (profilePath && event === "PostToolUse") {
-  markReconciliation(payload, profilePath);
-} else if (profilePath && event === "Stop") {
-  writeJson(reconciliationDecision(payload, profilePath));
 }
 
 export function findProfile(start) {
@@ -63,12 +70,11 @@ export function profileContext(path) {
 }
 
 export function roundContext(profilePath) {
-  const path = join(dirname(profilePath), "ROUND.md");
+  const path = roundPathFor(profilePath);
   if (!existsSync(path)) return "";
   const round = readFileSync(path, "utf8");
-  const truncated = round.length > MAX_PROFILE_CHARS;
-  const body = truncated ? `${round.slice(0, MAX_PROFILE_CHARS)}\n\n[Round truncated: shorten ROUND.md.]` : round.trim();
-  return `Active Simple round from ${path}:\n\n${body}\n\nThis is the current round's ask, buckets, and decisions. Answer status questions from it in its shape, append decisions the user makes, and do not widen the scope beyond its stop condition without saying so.`;
+  const body = round.length > MAX_PROFILE_CHARS ? `${round.slice(0, MAX_PROFILE_CHARS)}\n\n[Round truncated: close finished items into their owners.]` : round.trim();
+  return `Active Simple round from ${path}:\n\n${body}\n\nAnswer status questions from it in its shape, append decisions the user makes, and do not widen the scope beyond its stop condition without saying so. Temporary plans, audits, and handoffs for this repository live beside it in the same folder and are deleted when fulfilled.`;
 }
 
 export function findOperator() {
@@ -94,8 +100,8 @@ export function guardPatterns(operatorPath) {
       const [patternText, allowText] = line.split("->").map((part) => part.trim());
       const tool = patternText.startsWith("tool:");
       const source = tool ? patternText.slice(5).trim() : patternText;
-      const allow = allowText || source.split(/\s+/).filter((word) => /^[a-z]{3,}$/i.test(word)).pop() || source;
-      return { tool, pattern: new RegExp(source, "i"), allow: new RegExp(`\\b${escapeRegExp(allow)}`, "i"), source };
+      const allowWords = (allowText ? allowText.split(/\s*,\s*/) : [source.split(/\s+/).filter((word) => /^[a-z]{3,}$/i.test(word)).pop() || source]).filter(Boolean);
+      return { tool, pattern: new RegExp(source, "i"), allow: new RegExp(`\\b(?:${allowWords.map(escapeRegExp).join("|")})`, "i"), source };
     });
 }
 
@@ -104,33 +110,47 @@ export function guardDecision(payload, operatorPath) {
   if (!patterns.length) return null;
   const toolName = payload.tool_name ?? payload.toolName ?? "";
   const command = inputText(payload.tool_input ?? payload.toolInput ?? {});
-  const hit = patterns.find((entry) => (entry.tool ? entry.pattern.test(toolName) : entry.pattern.test(command)));
-  if (!hit) return null;
-  const turn = lastTurn(payload.transcript_path ?? payload.transcriptPath);
+  const hits = patterns.filter((entry) => (entry.tool ? entry.pattern.test(toolName) : entry.pattern.test(command)));
+  if (!hits.length) return null;
+  const hit = hits[0];
+  const turn = lastTurn(payload.transcript_path ?? payload.transcriptPath, profilePath ? roundPathFor(profilePath) : null);
   if (turn.user === null) {
     return { hookSpecificOutput: { hookEventName: "PreToolUse", additionalContext: `Guarded action (${hit.source}). Run it only if the user's current message asked for it explicitly; otherwise stop and ask.` } };
   }
-  if (authorises(turn, hit)) return null;
+  if (hits.every((entry) => authorises(turn, entry))) return null;
   return {
     hookSpecificOutput: {
       hookEventName: "PreToolUse",
       permissionDecision: "deny",
-      permissionDecisionReason: `Guarded action (${hit.source}) and the user's current message does not ask for it. Report what you would run and wait for an explicit instruction in this turn.`
+      permissionDecisionReason: `Guarded action (${hits.filter((entry) => !authorises(turn, entry)).map((entry) => entry.source).join("; ")}) and the user's current message does not ask for it. Report what you would run and wait for an explicit instruction in this turn.`
     }
   };
 }
 
 
 export function authorises(turn, hit) {
-  const user = turn.user ?? "";
-  if (NEGATION.test(user)) return false;
+  const user = (turn.user ?? "").trim();
+  if (NEGATION_LEAD.test(user)) return false;
+  if (negatedNear(user, hit.allow)) return false;
   if (hit.allow.test(user)) return true;
-  const proposed = turn.assistant ? (hit.pattern.test(turn.assistant) || hit.allow.test(turn.assistant)) : false;
-  return proposed && AFFIRMATIVE.test(user.trim());
+  const proposals = [turn.assistant, turn.round].filter(Boolean).join("\n");
+  const proposed = proposals ? (hit.pattern.test(proposals) || hit.allow.test(proposals)) : false;
+  return proposed && AFFIRMATIVE_LEAD.test(user);
 }
 
-export function lastTurn(transcriptPath) {
-  if (!transcriptPath || !existsSync(transcriptPath)) return { user: null, assistant: null };
+function negatedNear(user, allow) {
+  const words = user.split(/\s+/);
+  for (let index = 0; index < words.length; index += 1) {
+    if (!allow.test(words[index])) continue;
+    const before = words.slice(Math.max(0, index - 4), index).join(" ");
+    if (NEGATION_WORD.test(before)) return true;
+  }
+  return false;
+}
+
+export function lastTurn(transcriptPath, roundPath = null) {
+  const round = roundPath && existsSync(roundPath) ? readFileSync(roundPath, "utf8") : null;
+  if (!transcriptPath || !existsSync(transcriptPath)) return { user: null, assistant: null, round };
   const lines = readFileSync(transcriptPath, "utf8").split("\n");
   let user = null; let assistant = null;
   for (let index = lines.length - 1; index >= 0; index -= 1) {
@@ -147,7 +167,7 @@ export function lastTurn(transcriptPath) {
     }
     if (entry.type === "assistant" && user !== null && trimmed) { assistant = trimmed; break; }
   }
-  return { user, assistant };
+  return { user, assistant, round };
 }
 
 export function lastUserMessage(transcriptPath) {

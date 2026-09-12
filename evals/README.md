@@ -26,12 +26,31 @@ Current coverage from the behavior and repeated preservation runs:
 | Preserve facts and uncertainty in writing. | Core writing method; writing reference. | Prose review caught unsupported release-state claims missed by executable checks. Two repeats do not establish their cause. |
 | Keep useful discoveries available for later work. | Core knowledge guidance; repository-work reference. | Prompted reference reads were observed. Natural activation and later-session reuse remain untested. |
 | Surface a stated requirement that obstructs a materially simpler design, and keep it when a consumer makes it load-bearing. | Core stop trigger; architecture template field; plan and review contracts; worked example. | The [stated-requirement screen](results/2026-09-11-stated-requirement/README.md) passed 4/4 candidate against 1/4 current on two lead-authored cases, two repeats. The example was never read; natural activation, a tempting relaxation with a real consumer, and held-out tasks remain untested. |
-| Write so the reader understands: only their terms, outcome before mechanism, one concern per reply, verdict first, report once. | Writing reference standard; review contract; core report-once rule; `simple round` shape. | The `plain-translation`, `verdict-first`, `round-status`, and `scope-completion` cases exist; the [writing-rules run](results/2026-09-11-writing-rules/README.md) was inconclusive: translation and verdict cases sit at a ceiling on short prompts, and only the round-status shape changed with the candidate. Derived from the maintainer's private session corpus; a long-transcript probe and natural activation remain untested. |
+| Write so the reader understands: only their terms, outcome before mechanism, one concern per reply, verdict first, report once. | Writing reference standard; review contract; core report-once rule; `simple round` shape. | The `plain-translation`, `verdict-first`, `round-status`, and `scope-completion` cases exist; the [writing-rules](results/2026-09-11-writing-rules/README.md) and [readable-rules](results/2026-09-12-readable-rules/README.md) runs were ties on short prompts; only the round-status shape changed with the candidate. A long-transcript probe and natural activation remain untested. |
 
 Choose the next probe for a consequential coverage gap or observed failure. Use
 separately authored tasks that require discovery without naming the desired solution,
 and compare a case where reuse fits with one where it does not. Keep private session
 sources local. Continue using Luna only for this repository's model evaluations.
+
+## Score dimensions beside the verdict
+
+`evals/rubric.md` holds one shared rubric. The runner sends only the text between its
+judge markers to the grader, after the case criteria, so gate rules never reach the
+model. Each answer gets a pass verdict from the criteria plus four scores from 1 to 5:
+readability for a reader with a small working memory (first line, last line,
+unexplained terms, list size, state restated), actionability, completeness, and
+concision, and a blocker flag. Scores never change the verdict. The record's
+`scores.tsv` keeps them per cell and `noise-floor.tsv` reports mean and standard
+deviation per case and condition; a delta smaller than the larger standard deviation
+is noise. Blockers are read, not averaged.
+
+`evals/luna-cases.sh` is the shared isolated runner for prompt cases. A suite is a
+directory with `protocol.md` and a set of case directories; run it with `SUITE`,
+`CASES`, `BASELINE_COMMIT`, and `RESULT_DATE` in the environment. It stops before a
+cell when `MAX_INPUT_TOKENS` is exceeded and records the partial run.
+`evals/slimming/run.py` reuses the frozen behavior runner to check that a slimmed
+skill still passes the six preservation cases.
 
 ## Compare equal conditions
 

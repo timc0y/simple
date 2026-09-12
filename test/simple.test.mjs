@@ -156,18 +156,19 @@ test("session hook injects the nearest nested profile", () => {
   assert.doesNotMatch(output.hookSpecificOutput.additionalContext, /root profile/);
 });
 
-test("session hook injects an active round beside the profile", () => {
+test("session hook injects simple/round.md beside the profile", () => {
   const root = mkdtempSync(join(tmpdir(), "simple-round-"));
   writeFileSync(join(root, "SIMPLE.md"), "# Simple\n\n## Reality\n\n- root profile\n");
-  const without = JSON.parse(runHook({ hook_event_name: "SessionStart", cwd: root }).stdout);
+  const env = { ...process.env, SIMPLE_OPERATOR_FILE: join(root, "absent.md") };
+  const without = JSON.parse(spawnSync(process.execPath, [hook], { input: JSON.stringify({ hook_event_name: "SessionStart", cwd: root }), encoding: "utf8", env }).stdout);
   assert.doesNotMatch(without.hookSpecificOutput.additionalContext, /Active Simple round/);
-  writeFileSync(join(root, "ROUND.md"), "# Round\n\n## Ask\n\n- the client's ask\n\n## Decisions\n\n- 2026-09-11 keep the header names\n");
-  const withRound = JSON.parse(runHook({ hook_event_name: "SessionStart", cwd: root }).stdout);
+  mkdirSync(join(root, "simple"));
+  writeFileSync(join(root, "simple", "round.md"), "# Round\n\n## Ask\n\n- the ask\n\n## Decisions\n\n- 2026-09-11 keep the header names\n");
+  const withRound = JSON.parse(spawnSync(process.execPath, [hook], { input: JSON.stringify({ hook_event_name: "SessionStart", cwd: root }), encoding: "utf8", env }).stdout);
   const context = withRound.hookSpecificOutput.additionalContext;
   assert.match(context, /Repository-specific Simple context/);
   assert.match(context, /Active Simple round/);
   assert.match(context, /keep the header names/);
-  assert.match(context, /stop condition/);
 });
 
 test("the round template and check agree on the round headings", () => {
@@ -176,15 +177,17 @@ test("the round template and check agree on the round headings", () => {
     assert.ok(template.includes(heading), heading);
   }
   const root = mkdtempSync(join(tmpdir(), "simple-round-check-"));
-  const profile = readFileSync(join(process.cwd(), "SIMPLE.md"), "utf8");
-  writeFileSync(join(root, "SIMPLE.md"), profile);
+  writeFileSync(join(root, "SIMPLE.md"), readFileSync(join(process.cwd(), "SIMPLE.md"), "utf8"));
   writeFileSync(join(root, "AGENTS.md"), readFileSync(join(process.cwd(), "AGENTS.md"), "utf8"));
   writeFileSync(join(root, "CLAUDE.md"), "@AGENTS.md\n");
-  writeFileSync(join(root, "ROUND.md"), template);
+  mkdirSync(join(root, "simple"));
+  writeFileSync(join(root, "simple", "round.md"), template);
   const failures = check(root);
   assert.ok(failures.some((f) => /template marker/.test(f)), failures.join("\n"));
-  writeFileSync(join(root, "ROUND.md"), template.replace(/<!-- simple-round: fill.*-->\n/, ""));
-  assert.deepEqual(check(root).filter((f) => /ROUND/.test(f)), []);
+  writeFileSync(join(root, "simple", "round.md"), template.replace(/<!-- simple-round: fill.*-->\n/, ""));
+  assert.deepEqual(check(root).filter((f) => /round/.test(f)), []);
+  writeFileSync(join(root, "SIMPLE.md"), readFileSync(join(root, "SIMPLE.md"), "utf8") + "\n## Round\n\n- misplaced\n");
+  assert.ok(check(root).some((f) => /move it to simple\/round\.md/.test(f)));
 });
 
 test("session hook injects the operator file even without a profile", () => {
@@ -235,8 +238,34 @@ test("the guard denies a guarded command unless the current user message asks fo
   assert.equal(runAfterProposal("Bash", "git push origin main", "Next I'd git push origin main.", "do not push yet").hookSpecificOutput.permissionDecision, "deny");
   assert.equal(runAfterProposal("Bash", "git push origin main", "Next I'd git push origin main.", "explain the diff first").hookSpecificOutput.permissionDecision, "deny");
   assert.equal(runAfterProposal("Bash", "git push origin main", "I tidied the docs.", "do it").hookSpecificOutput.permissionDecision, "deny");
+  assert.deepEqual(runAfterProposal("Bash", "git push origin main", "Next: git push origin main.", "Proceed with all, as long as no regression."), {});
+  assert.equal(runAfterProposal("Bash", "git push origin main", "Next: git push origin main.", "Proceed with everything but do not push").hookSpecificOutput.permissionDecision, "deny");
+  assert.equal(runAfterProposal("Bash", "git push origin main", "Next: git push origin main.", "No, explain first").hookSpecificOutput.permissionDecision, "deny");
+  writeFileSync(join(root, "SIMPLE.md"), "# Simple\n\n## Reality\n\n- guard test\n");
+  mkdirSync(join(root, "simple"), { recursive: true });
+  writeFileSync(join(root, "simple", "round.md"), "# Round\n\n## Investment\n\n- Release: bump, git push, install. Not done.\n");
+  assert.deepEqual(runAfterProposal("Bash", "git push origin main", "Step 5 of 11 done.", "Proceed with all."), {});
+  assert.equal(runAfterProposal("Bash", "git push origin main", "Step 5 of 11 done.", "what is left?").hookSpecificOutput.permissionDecision, "deny");
   const noTranscript = spawnSync(process.execPath, [hook], { input: JSON.stringify({ hook_event_name: "PreToolUse", cwd: root, tool_name: "Bash", tool_input: { command: "git push" } }), encoding: "utf8", env });
   assert.match(JSON.parse(noTranscript.stdout).hookSpecificOutput.additionalContext, /Guarded action/);
+});
+
+test("the hook fails open with one stderr line when an injected file is unreadable or paths contain spaces", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple hook space-"));
+  const profileDir = join(root, "client repo with spaces");
+  mkdirSync(profileDir, { recursive: true });
+  writeFileSync(join(profileDir, "SIMPLE.md"), "# Simple\n\n## Reality\n\n- spaced profile\n");
+  const ok = spawnSync(process.execPath, [hook], { input: JSON.stringify({ hook_event_name: "SessionStart", cwd: profileDir }), encoding: "utf8", env: { ...process.env, SIMPLE_OPERATOR_FILE: join(root, "absent.md") } });
+  assert.equal(ok.status, 0);
+  assert.equal(ok.stderr, "");
+  assert.match(JSON.parse(ok.stdout).hookSpecificOutput.additionalContext, /spaced profile/);
+  const unreadable = join(root, "operator dir.md");
+  mkdirSync(unreadable);
+  const broken = spawnSync(process.execPath, [hook], { input: JSON.stringify({ hook_event_name: "SessionStart", cwd: profileDir }), encoding: "utf8", env: { ...process.env, SIMPLE_OPERATOR_FILE: unreadable } });
+  assert.equal(broken.status, 0);
+  assert.match(broken.stderr, /^simple hook: /);
+  assert.equal(broken.stderr.trim().split("\n").length, 1);
+  assert.equal(broken.stdout.trim(), "{}");
 });
 
 test("edit hook routes only relevant review reminders", () => {
@@ -513,6 +542,36 @@ test("release surfaces share one base version", () => {
   assert.equal(claudeVersion, packageVersion);
   assert.equal(marketplaceVersion, packageVersion);
   assert.equal(codexVersion.split("+")[0], packageVersion);
+  const gemini = JSON.parse(readFileSync(join(root, "gemini-extension.json"), "utf8"));
+  assert.equal(gemini.version, packageVersion);
+  const claudeManifest = JSON.parse(readFileSync(join(root, ".claude-plugin", "plugin.json"), "utf8"));
+  const codexManifest = JSON.parse(readFileSync(join(root, ".codex-plugin", "plugin.json"), "utf8"));
+  for (const field of ["name", "description", "license", "homepage"]) {
+    assert.equal(codexManifest[field], claudeManifest[field], field);
+  }
+  assert.equal(gemini.description, claudeManifest.description);
+});
+
+test("the OpenCode plugin appends profile, round, and operator context each turn", async () => {
+  const plugin = await import(new URL("../.opencode/plugins/simple.mjs", import.meta.url));
+  const root = mkdtempSync(join(tmpdir(), "simple-opencode-"));
+  writeFileSync(join(root, "SIMPLE.md"), "# Simple\n\n## Reality\n\n- opencode profile\n");
+  writeFileSync(join(root, "SIMPLE.md"), "# Simple\n\n## Reality\n\n- opencode profile\n");
+  mkdirSync(join(root, "simple"));
+  writeFileSync(join(root, "simple", "round.md"), "# Round\n\n## Ask\n\n- opencode round\n");
+  const operator = join(root, "operator.md");
+  writeFileSync(operator, "# Operator\n\n## Working rules\n\n- opencode operator\n");
+  const blocks = plugin.contextBlocks(root, { SIMPLE_OPERATOR_FILE: operator });
+  assert.equal(blocks.length, 3);
+  assert.match(blocks[0], /opencode profile/);
+  assert.match(blocks[1], /opencode round/);
+  assert.match(blocks[2], /opencode operator/);
+  const none = plugin.contextBlocks(mkdtempSync(join(tmpdir(), "simple-opencode-empty-")), { SIMPLE_OPERATOR_FILE: join(root, "absent.md") });
+  assert.deepEqual(none, []);
+  const hooks = await plugin.default();
+  const config = {};
+  await hooks.config(config);
+  assert.ok(config.skills.paths.some((path) => path.endsWith("skills")));
 });
 
 test("every eval grader ships self-test references", () => {

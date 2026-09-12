@@ -10,18 +10,11 @@ independent task could improve the result. Use the capability information that t
 current host or subagent tool exposes. This includes models, effort controls,
 permissions, and context modes. Do not require an alias that the host does not expose.
 
-Route work by capability:
-
-- **Light:** narrow, clear, repeatable, high-volume evidence work. Current examples
-  include Codex Luna and Claude Haiku.
-- **Medium:** evidence interpretation, independent solutions, option comparison, and
-  falsification. Current examples include Codex Terra and Claude Sonnet.
-- **Heavy:** ambiguous synthesis, difficult-to-reverse decisions, and adjudication of
-  material disagreement. Current examples include Codex Sol and Claude Opus or Fable.
-
-For OpenCode, map these tiers to the provider models and variants configured in the
-current host. These names are examples, not a compatibility contract. Host-provided
-capability information overrides this list.
+Route work by observed capability, consequence, and cost. Narrow, repeatable
+evidence work can go to the least costly model the host offers; interpretation,
+independent solutions, and falsification need more; ambiguous synthesis and
+difficult-to-reverse decisions need the most capable model available. Model names
+change; host-provided capability information is the contract.
 
 Choose the least costly model likely to complete the bounded role. Reasoning effort
 is a separate control: use more only when the role's ambiguity or consequence needs
@@ -29,10 +22,9 @@ it. If model selection is unavailable, inherit the current model. If delegation 
 unavailable, complete the workflow in the lead context and state when a review was not
 independent.
 
-Do not ask a light agent for architecture judgement. Escalate to medium when evidence
-needs interpretation. Escalate to heavy only when checked evidence leaves a material
-conflict, a public contract, retained data, security, recovery, or another difficult
-to reverse consequence.
+Escalate when evidence shows the assigned capability is insufficient: interpretation
+that a bounded agent got wrong, or a material conflict, public contract, retained
+data, security, recovery, or other difficult-to-reverse consequence.
 
 ## Autonomous
 

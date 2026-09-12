@@ -1,0 +1,51 @@
+name: checks
+
+# Runs the repository tests on Linux and Windows, then installs the plugin from
+# this checkout into a scratch Claude Code config and fails unless it reaches
+# "enabled". The install step catches load-layer breakage that the structural
+# tests cannot see, such as a malformed hook declaration.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  tests:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Repository tests
+        if: runner.os != 'Windows'
+        run: npm test
+      - name: Hook and profile tests only
+        if: runner.os == 'Windows'
+        run: node --test --test-name-pattern "hook|profile|round|guard|operator" test/simple.test.mjs
+      - name: Profile check
+        run: node skills/simple/scripts/simple.mjs check
+
+  load:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Install the plugin from this checkout into a scratch config
+        run: |
+          export CLAUDE_CONFIG_DIR="$RUNNER_TEMP/claude-scratch"
+          mkdir -p "$CLAUDE_CONFIG_DIR"
+          claude plugin marketplace add "$GITHUB_WORKSPACE"
+          claude plugin install simple@timc0y-simple
+          claude plugin list | tee plugin-list.txt
+          grep -q "enabled" plugin-list.txt || {
+            echo "::error::plugin failed to load; see claude plugin list output above"
+            exit 1
+          }

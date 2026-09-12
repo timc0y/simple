@@ -113,14 +113,16 @@ design analysis unless the content requires it.
 
 Use this for work that spans more than one session or compaction: a client ticket, an
 owner-funded investment in the same repository, or both at once. It owns one file,
-`ROUND.md`, beside the nearest `SIMPLE.md`. The session hook injects that file with the
-profile, so the round survives compaction. Do not create it for a task that finishes in
-one sitting.
+`simple/round.md`, in the `simple/` folder beside the nearest `SIMPLE.md`. That folder
+holds every temporary Simple artifact for the repository: the round, a plan, an audit,
+a handoff. Each is deleted when its work or evidence has moved to a durable owner. The
+session hook injects the round with the profile, so it survives compaction. Do not
+create it for a task that finishes in one sitting.
 
-Read `writing.md`. On the first call, copy `assets/ROUND.template.md` and fill it from
-the conversation: the client's ask verbatim, the budget, the investment goal in one
-sentence, the stop condition, and empty buckets. Ask only for a material fact the
-conversation cannot supply.
+Read `writing.md`. On the first call, copy `assets/ROUND.template.md` to
+`simple/round.md` and fill it from the conversation: the client's ask verbatim, the budget, the
+investment goal in one sentence, the stop condition, and empty buckets. Ask only for a
+material fact the conversation cannot supply.
 
 On every later call, refresh the file and reply with its contents in this order and no
 more: one state line (live version, HEAD, uncommitted files, last check), then the
@@ -133,7 +135,7 @@ the decisive fact, so a repeated question is answered from the file. A status qu
 during a round is answered with this shape.
 
 `simple round close` moves each surviving decision or obligation to its durable owner,
-prints the final state, and deletes `ROUND.md`. Do not close while the stop condition is
+prints the final state, and deletes the file. Do not close while the stop condition is
 unmet unless the user says so.
 
 ## `simple emulate`

@@ -1,0 +1,14 @@
+{
+  "note": "Lead review after grading. Grader verdicts in grades/*.json are retained unchanged. Dimension scores came from the rubric copy in this record; the repository rubric was corrected after the run for the conflict named below.",
+  "contract_defects": {
+    "debug-spiral": "The case criteria ask for exactly one diagnostic question; the rubric's last-line check penalises a closing question mark. The candidate's second repeat ended with the requested question and scored readability 3 for it. The one-point readability gap against current on this case is that conflict, not a model difference. The verdict failures are real: every condition kept checking for itself instead of stopping to ask, which is defensible for a tool-using agent, so the case does not discriminate.",
+    "failure-shape": "All six answers gave location, expected, actual, cause, and both fixes. They failed only the clause requiring one recommendation between the fixes, and the grader flagged that omission as a blocker in every condition. The case sits at a ceiling for the shape it was meant to test.",
+    "list-cap": "All six answers printed the flat twelve-item list. The candidate read references/writing.md in both repeats and still did so. The rule as written does not change this behaviour on a direct 'give me the list' request."
+  },
+  "lead_verdicts": {
+    "inspection-not-execution": "No skill 2 of 2, current 0 of 2, candidate 1 of 2. The skilled answers were shorter and dropped the release-script line in one repeat each; the candidate's first repeat kept it. Candidate is not below current; both are below no skill on this case, which is a real cost of terseness worth a later probe.",
+    "round-status": "Candidate 1 of 2 as on 11 September; current and no skill 0 of 2. Consistent with the previous run.",
+    "stated-requirement pair": "Candidate 2 of 2 on both; current 1 of 2 on both; today's grader passed one current answer on the gate wording that yesterday's failed, which is the instability already recorded."
+  },
+  "gate": "No current-pass/candidate-fail pair. No candidate blocker that current lacks. Readability below current beyond the noise floor on debug-spiral only, attributed to the criteria conflict. Decision: the core debug-spiral trigger is removed from the shipped candidate and kept in the operator file; the three writing-reference lines ship as recorded ties. The shipped skill therefore equals the frozen candidate minus that one core line."
+}

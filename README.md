@@ -175,7 +175,7 @@ Commands are entry points into one method. They are not a mandatory sequence.
 | `simple plan` | Plan the smallest truthful change | Read only |
 | `simple review` | Review a design, document, plan, or diff | Read only |
 | `simple write` | Write or revise plain developer prose | Requested text |
-| `simple round` | Keep a multi-session round's ask, buckets, and decisions in one injected file | `ROUND.md` beside the profile |
+| `simple round` | Keep a multi-session round's ask, buckets, and decisions in one injected file | `simple/round.md` beside the profile |
 | `simple emulate` | Apply one documented operator method | Read only |
 | `simple check` | Check the route and profile structure | Read only |
 
@@ -297,15 +297,24 @@ A write hook can add a short review note after a Markdown or comment edit. The n
 arrives after the tool result. It can guide the next correction, but it cannot change
 edit arguments that the model already sent.
 
-The session hook also injects two optional files. `ROUND.md` beside a profile holds a
-multi-session round's ask, buckets, and decisions; `simple round` owns it. An operator
-file at `~/.config/simple/operator.md`, or the path in `SIMPLE_OPERATOR_FILE`, holds one
+The session hook also injects two optional files. `simple/round.md`, in the `simple/`
+folder beside a profile, holds a multi-session round; `simple round` owns it. That
+folder is where every temporary Simple artifact for a repository lives, and each is
+deleted when fulfilled, so the repository root keeps only `AGENTS.md`, `CLAUDE.md`,
+and `SIMPLE.md`. The operator file at `~/.config/simple/operator.md`, or the path in `SIMPLE_OPERATOR_FILE`, holds one
 person's working rules and is injected in every repository, with or without a profile.
 Its `## Guard` section lists shell command patterns and `tool:` name patterns; the hook
 denies a matching tool call unless the user's latest message contains the pattern's
-allow word or is a short affirmative reply to the agent's message that proposed the
-command; a negation never authorises, and without a transcript the hook only reminds. Copy
+allow word, or opens with an affirmative and the agent's last reply or the active
+`simple/round.md` proposed the command; a negation next to the action refuses, and without a
+transcript the hook only reminds. Copy
 `skills/simple/assets/OPERATOR.template.md` to start one.
+
+OpenCode and Gemini CLI get the same context without hooks. Register
+`.opencode/plugins/simple.mjs` once in your global OpenCode config; it registers the
+skill and appends the profile, round, and operator file to the system prompt on every turn.
+`gemini-extension.json` points Gemini at the repository's `AGENTS.md`, which already
+routes to Simple. No extra file is added to a repository for either host.
 
 Codex needs one `/hooks` trust approval on each machine. Codex also reads the route in
 `AGENTS.md`. This route keeps Simple available when a host does not run hooks.

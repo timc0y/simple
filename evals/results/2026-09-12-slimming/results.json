@@ -1,0 +1,176 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-12T15:22:04.256621+00:00",
+    "skillCommit": "previous-snapshot-07bb829f8534c4b6e80204575f83e3af6c32f502bbdc33c195a93ccd078cff93",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated sequential Codex Luna preservation evaluation",
+    "condition": "previous",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "correction-preserves__r1",
+        "passed": true,
+        "evidence": "raw/2d19c916a76b50bb.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "fallback-selection__r1",
+        "passed": true,
+        "evidence": "raw/97fd4d6942158f00.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "reuse-package__r1",
+        "passed": true,
+        "evidence": "raw/9b329d970c36a1d8.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "reuse-local__r1",
+        "passed": true,
+        "evidence": "raw/37bd2473e3deb191.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "reuse-direct__r1",
+        "passed": true,
+        "evidence": "raw/bdd4fe074644bd7f.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "writing-context__r1",
+        "passed": true,
+        "evidence": "raw/fc592d85efd0877c.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "correction-preserves__r2",
+        "passed": true,
+        "evidence": "raw/553fde5fd8a4359a.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "fallback-selection__r2",
+        "passed": true,
+        "evidence": "raw/d459e29daa0d6895.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "reuse-package__r2",
+        "passed": true,
+        "evidence": "raw/db372b1e8d908570.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "reuse-local__r2",
+        "passed": true,
+        "evidence": "raw/89aac9ef76c92b4c.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "reuse-direct__r2",
+        "passed": true,
+        "evidence": "raw/6a3d89dd0e1e155e.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "writing-context__r2",
+        "passed": true,
+        "evidence": "raw/bdb50e7726ad7256.md",
+        "graderVerdicts": {}
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-09-12T15:22:04.256621+00:00",
+    "skillCommit": "candidate-snapshot-acf55fed85ad2dc1f1e5a855cd3fc003e4148a7decf48c8343789366dfb4ecfa",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not reported; requested gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "harness": "isolated sequential Codex Luna preservation evaluation",
+    "condition": "candidate",
+    "adapter": "candidate",
+    "tasks": [
+      {
+        "id": "correction-preserves__r1",
+        "passed": true,
+        "evidence": "raw/566c42456f37e790.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "fallback-selection__r1",
+        "passed": true,
+        "evidence": "raw/a6521655d09bae76.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "reuse-package__r1",
+        "passed": true,
+        "evidence": "raw/e010d1de1fe77567.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "reuse-local__r1",
+        "passed": true,
+        "evidence": "raw/d7167561948e5682.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "reuse-direct__r1",
+        "passed": true,
+        "evidence": "raw/f9cc190bc7dbc543.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "writing-context__r1",
+        "passed": true,
+        "evidence": "raw/7f93aee77c93c16b.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "correction-preserves__r2",
+        "passed": true,
+        "evidence": "raw/1256d40abced1810.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "fallback-selection__r2",
+        "passed": true,
+        "evidence": "raw/049a14fed5702bc0.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "reuse-package__r2",
+        "passed": true,
+        "evidence": "raw/2818811c2e647046.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "reuse-local__r2",
+        "passed": true,
+        "evidence": "raw/4df307288eae1068.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "reuse-direct__r2",
+        "passed": true,
+        "evidence": "raw/d894cdbe07759538.md",
+        "graderVerdicts": {}
+      },
+      {
+        "id": "writing-context__r2",
+        "passed": true,
+        "evidence": "raw/4babd397d1e572a8.md",
+        "graderVerdicts": {}
+      }
+    ]
+  }
+]

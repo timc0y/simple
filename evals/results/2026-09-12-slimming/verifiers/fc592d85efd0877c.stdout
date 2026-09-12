@@ -1,0 +1,1 @@
+{"passed":true,"checks":[{"id":"handoff-json","passed":true},{"id":"no-completion-claim","passed":true},{"id":"note-present","passed":true}],"manual":["release-note.md prose quality"]}

@@ -1,0 +1,21 @@
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md <REPO>/evals/preservation/cases/reuse-local/fixture/SIMPLE.md <REPO>/.local/slimming-eval-2026-09-12/snapshots/89aac9ef76c92b4c/initial-0/SIMPLE.md
+--- <REPO>/evals/preservation/cases/reuse-local/fixture/SIMPLE.md	1970-01-01 01:00:00
++++ <REPO>/.local/slimming-eval-2026-09-12/snapshots/89aac9ef76c92b4c/initial-0/SIMPLE.md	2026-09-08 07:00:21
+@@ -0,0 +1,5 @@
++# Fixture facts
++
++This synthetic Node.js ESM fixture has one existing local helper with a
++distinctive exported function. The helper is the owner for label normalization.
++
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md <REPO>/evals/preservation/cases/reuse-local/fixture/custom-normalizer.mjs <REPO>/.local/slimming-eval-2026-09-12/snapshots/89aac9ef76c92b4c/initial-0/custom-normalizer.mjs
+--- <REPO>/evals/preservation/cases/reuse-local/fixture/custom-normalizer.mjs	2026-09-08 07:00:21
++++ <REPO>/.local/slimming-eval-2026-09-12/snapshots/89aac9ef76c92b4c/initial-0/custom-normalizer.mjs	1970-01-01 01:00:00
+@@ -1 +0,0 @@
+-export const normalizeLabels = labels => labels.map(label => label.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-'));
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md <REPO>/evals/preservation/cases/reuse-local/fixture/main.mjs <REPO>/.local/slimming-eval-2026-09-12/snapshots/89aac9ef76c92b4c/initial-0/main.mjs
+--- <REPO>/evals/preservation/cases/reuse-local/fixture/main.mjs	2026-09-08 07:00:21
++++ <REPO>/.local/slimming-eval-2026-09-12/snapshots/89aac9ef76c92b4c/initial-0/main.mjs	2026-09-12 16:19:07
+@@ -1,2 +1,2 @@
+-import { readFile } from 'node:fs/promises'; import { normalizeLabels } from './custom-normalizer.mjs';
++import { readFile } from 'node:fs/promises'; import { normalizeLabels } from './src/label-helper.mjs';
+ console.log(JSON.stringify(normalizeLabels(JSON.parse(await readFile('labels.json','utf8')))));

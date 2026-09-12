@@ -23,6 +23,10 @@ const REQUIRED_HEADINGS = [...PROFILE.matchAll(/^## .+$/gm)].map(([heading]) => 
 const ROUND_TEMPLATE = readFileSync(new URL("../assets/ROUND.template.md", import.meta.url), "utf8");
 const REQUIRED_ROUND_HEADINGS = [...ROUND_TEMPLATE.matchAll(/^## .+$/gm)].map(([heading]) => heading);
 
+export function roundPathFor(profilePath) {
+  return resolve(dirname(profilePath), "simple", "round.md");
+}
+
 export function check(root = process.cwd()) {
   const failures = [];
   const target = resolve(root);
@@ -55,14 +59,15 @@ export function check(root = process.cwd()) {
     failures.push("SIMPLE.md is incomplete; replace setup prompts with observed facts and remove the incomplete marker");
   }
   if (/\b(?:TODO|TBD|FIXME)\b/.test(profile)) failures.push("SIMPLE.md contains an unresolved placeholder");
-  const roundPath = profilePath ? resolve(dirname(profilePath), "ROUND.md") : null;
+  if (/^## Round\s*$/m.test(profile)) failures.push("SIMPLE.md holds a Round section; move it to simple/round.md beside the profile");
+  const roundPath = profilePath ? roundPathFor(profilePath) : null;
   if (roundPath && existsSync(roundPath)) {
     const round = readFileSync(roundPath, "utf8");
     for (const heading of REQUIRED_ROUND_HEADINGS) {
-      if (!round.includes(heading)) failures.push(`ROUND.md is missing ${heading}`);
+      if (!round.includes(heading)) failures.push(`simple/round.md is missing ${heading}`);
     }
-    if (round.includes("simple-round: fill")) failures.push("ROUND.md still carries the template marker; fill it from the conversation");
-    if (round.length > MAX_PROFILE_CHARS) failures.push(`ROUND.md exceeds ${MAX_PROFILE_CHARS} characters; close finished items into their owners`);
+    if (round.includes("simple-round: fill")) failures.push("simple/round.md still carries the template marker; fill it from the conversation");
+    if (round.length > MAX_PROFILE_CHARS) failures.push(`simple/round.md exceeds ${MAX_PROFILE_CHARS} characters; close finished items into their owners`);
   }
   return failures;
 }

@@ -32,7 +32,9 @@ the unknown, its existing owner or work route, and the event that would make it 
 do not keep setup incomplete merely because eventual users or operators are unknown.
 
 Keep these headings exactly: `Reality`, `Preserve`, `Current boundary`, `Ordinary
-paths`, `Proof`, and `Reconsider when`. Give each fact one home:
+paths`, `Proof`, and `Reconsider when`. Temporary artifacts, including an open round,
+live in the `simple/` folder beside the profile, never inside it. Give each fact one
+home:
 
 - `Reality`: current users, operators, consumers, contracts, data, compatibility,
   scale, and failure consequences.

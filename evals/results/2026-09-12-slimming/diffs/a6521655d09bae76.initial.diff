@@ -1,0 +1,41 @@
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md <REPO>/evals/preservation/cases/fallback-selection/fixture/SIMPLE.md <REPO>/.local/slimming-eval-2026-09-12/snapshots/a6521655d09bae76/initial-0/SIMPLE.md
+--- <REPO>/evals/preservation/cases/fallback-selection/fixture/SIMPLE.md	1970-01-01 01:00:00
++++ <REPO>/.local/slimming-eval-2026-09-12/snapshots/a6521655d09bae76/initial-0/SIMPLE.md	2026-09-12 16:04:29
+@@ -0,0 +1,7 @@
++# Fixture facts
++
++This synthetic fixture is a plain Node.js ESM command. `supported.mjs` is the
++working implementation, and `transient-fallback.mjs` is reserved for a transient
++supported-path failure. `main.mjs` selects the supported implementation directly
++and retains only that transient fallback; the obsolete capability probe and legacy
++implementation have been removed.
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md <REPO>/evals/preservation/cases/fallback-selection/fixture/capability.mjs <REPO>/.local/slimming-eval-2026-09-12/snapshots/a6521655d09bae76/initial-0/capability.mjs
+--- <REPO>/evals/preservation/cases/fallback-selection/fixture/capability.mjs	2026-09-08 07:00:21
++++ <REPO>/.local/slimming-eval-2026-09-12/snapshots/a6521655d09bae76/initial-0/capability.mjs	1970-01-01 01:00:00
+@@ -1 +0,0 @@
+-export function hasLegacyCapability() { return process.env.CAPABILITY === '1'; }
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md <REPO>/evals/preservation/cases/fallback-selection/fixture/legacy.mjs <REPO>/.local/slimming-eval-2026-09-12/snapshots/a6521655d09bae76/initial-0/legacy.mjs
+--- <REPO>/evals/preservation/cases/fallback-selection/fixture/legacy.mjs	2026-09-08 07:00:21
++++ <REPO>/.local/slimming-eval-2026-09-12/snapshots/a6521655d09bae76/initial-0/legacy.mjs	1970-01-01 01:00:00
+@@ -1 +0,0 @@
+-export function runLegacy() { throw new Error('legacy implementation is unavailable'); }
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md <REPO>/evals/preservation/cases/fallback-selection/fixture/main.mjs <REPO>/.local/slimming-eval-2026-09-12/snapshots/a6521655d09bae76/initial-0/main.mjs
+--- <REPO>/evals/preservation/cases/fallback-selection/fixture/main.mjs	2026-09-08 07:00:21
++++ <REPO>/.local/slimming-eval-2026-09-12/snapshots/a6521655d09bae76/initial-0/main.mjs	2026-09-12 16:04:00
+@@ -1,8 +1,13 @@
+-import { hasLegacyCapability } from './capability.mjs';
+-import { runLegacy } from './legacy.mjs';
++import { runSupported } from './supported.mjs';
++import { runTransientFallback } from './transient-fallback.mjs';
+ 
+ export function run() {
+-  return hasLegacyCapability() ? 'supported-ok' : runLegacy();
++  try {
++    return runSupported();
++  } catch (error) {
++    if (error?.code === 'TRANSIENT') return runTransientFallback();
++    throw error;
++  }
+ }
+ 
+ console.log(run());

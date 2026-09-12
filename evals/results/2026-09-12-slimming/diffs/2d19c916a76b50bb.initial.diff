@@ -1,0 +1,33 @@
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md <REPO>/evals/preservation/cases/correction-preserves/fixture/audit.mjs <REPO>/.local/slimming-eval-2026-09-12/snapshots/2d19c916a76b50bb/initial-0/audit.mjs
+--- <REPO>/evals/preservation/cases/correction-preserves/fixture/audit.mjs	2026-09-08 07:00:21
++++ <REPO>/.local/slimming-eval-2026-09-12/snapshots/2d19c916a76b50bb/initial-0/audit.mjs	2026-09-12 16:01:34
+@@ -1,8 +1,9 @@
+ export function makeEvent(input) {
+   return { actor: input.actor, action: input.action, target: input.target,
+-    retentionDays: input.retentionDays, createdAt: input.createdAt };
++    retentionDays: input.retentionDays, createdAt: input.createdAt,
++    summary: `${input.actor.displayName} ${input.action} ${input.target}` };
+ }
+-export function describeEvent(event) { return JSON.stringify(event); }
++export function describeEvent(event) { return event.summary; }
+ export function byActor(events, id) { return events.filter(e => e.actor.id === id); }
+ export function prune(events, now) {
+   return events.filter(e => now - e.createdAt < e.retentionDays * 86400000);
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md <REPO>/evals/preservation/cases/correction-preserves/fixture/audit.test.mjs <REPO>/.local/slimming-eval-2026-09-12/snapshots/2d19c916a76b50bb/initial-0/audit.test.mjs
+--- <REPO>/evals/preservation/cases/correction-preserves/fixture/audit.test.mjs	2026-09-08 07:00:21
++++ <REPO>/.local/slimming-eval-2026-09-12/snapshots/2d19c916a76b50bb/initial-0/audit.test.mjs	2026-09-12 16:01:25
+@@ -1,7 +1,13 @@
+ import assert from 'node:assert/strict';
+-import {makeEvent,byActor,prune} from './audit.mjs';
++import {makeEvent,describeEvent,byActor,prune} from './audit.mjs';
+ const input={actor:{id:'u1',displayName:'Mira'},action:'updated',target:'draft',retentionDays:2,createdAt:0};
+ const event=makeEvent(input);
++assert.equal(event.summary,'Mira updated draft');
++assert.equal(describeEvent(event),'Mira updated draft');
++assert.deepEqual(event.actor,input.actor);
++assert.equal(event.action,input.action);
++assert.equal(event.target,input.target);
++assert.equal(event.retentionDays,input.retentionDays);
+ assert.equal(byActor([event],'u1').length,1);
+ assert.equal(prune([event],86400000).length,1);
+ assert.equal(prune([event],172800000).length,0);

@@ -1,0 +1,9 @@
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md <REPO>/evals/preservation/cases/reuse-direct/fixture/SIMPLE.md <REPO>/.local/slimming-eval-2026-09-12/snapshots/d894cdbe07759538/initial-0/SIMPLE.md
+--- <REPO>/evals/preservation/cases/reuse-direct/fixture/SIMPLE.md	1970-01-01 01:00:00
++++ <REPO>/.local/slimming-eval-2026-09-12/snapshots/d894cdbe07759538/initial-0/SIMPLE.md	2026-09-08 07:00:21
+@@ -0,0 +1,5 @@
++# Fixture facts
++
++This synthetic Node.js ESM fixture has no dependencies and no helper. The
++required behavior is the direct ASCII trim and lowercase contract.
++

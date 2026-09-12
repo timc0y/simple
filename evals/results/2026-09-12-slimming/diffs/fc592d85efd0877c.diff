@@ -1,0 +1,33 @@
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md <REPO>/evals/preservation/cases/writing-context/fixture/SIMPLE.md <REPO>/.local/slimming-eval-2026-09-12/snapshots/fc592d85efd0877c/final-0/SIMPLE.md
+--- <REPO>/evals/preservation/cases/writing-context/fixture/SIMPLE.md	1970-01-01 01:00:00
++++ <REPO>/.local/slimming-eval-2026-09-12/snapshots/fc592d85efd0877c/final-0/SIMPLE.md	2026-09-08 07:00:21
+@@ -0,0 +1,8 @@
++# Release facts
++
++- Version: `v2.4.0`
++- Check command: `npm test`
++- Deploy command: `npm run deploy -- v2.4.0`
++- Rollback boundary: before database migration starts
++- Migration duration: unknown
++
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md <REPO>/evals/preservation/cases/writing-context/fixture/handoff.json <REPO>/.local/slimming-eval-2026-09-12/snapshots/fc592d85efd0877c/final-0/handoff.json
+--- <REPO>/evals/preservation/cases/writing-context/fixture/handoff.json	1970-01-01 01:00:00
++++ <REPO>/.local/slimming-eval-2026-09-12/snapshots/fc592d85efd0877c/final-0/handoff.json	2026-09-12 16:11:22
+@@ -0,0 +1,7 @@
++{
++  "version": "v2.4.0",
++  "check_command": "npm test",
++  "deploy_command": "npm run deploy -- v2.4.0",
++  "rollback_boundary": "before database migration starts",
++  "migration_duration": "unknown"
++}
+diff -ruN --exclude=.git --exclude=.agents --exclude=prompt.md <REPO>/evals/preservation/cases/writing-context/fixture/release-note.md <REPO>/.local/slimming-eval-2026-09-12/snapshots/fc592d85efd0877c/final-0/release-note.md
+--- <REPO>/evals/preservation/cases/writing-context/fixture/release-note.md	1970-01-01 01:00:00
++++ <REPO>/.local/slimming-eval-2026-09-12/snapshots/fc592d85efd0877c/final-0/release-note.md	2026-09-12 16:11:36
+@@ -0,0 +1,6 @@
++# Release note
++
++For release `v2.4.0`, run `npm test` to check it, then deploy it with
++`npm run deploy -- v2.4.0`. The rollback boundary is before the database
++migration starts. The migration duration is unknown. These instructions do not
++indicate that the release has completed.

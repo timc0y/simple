@@ -1,0 +1,43 @@
+id	condition	case	run	input_tokens	cached_input_tokens	output_tokens	reasoning_output_tokens	latency_s	skill_reads
+2c08eac58cc7	none	debug-spiral	1	18491	15872	389	159	13	none
+96ebfe87823d	current	debug-spiral	1	36833	18688	715	360	19	SKILL.md references/diagnosis.md references/verification.md references/writing.md 
+2cbe9a70e198	candidate	debug-spiral	1	36971	24832	782	409	22	SKILL.md references/diagnosis.md references/writing.md 
+212dfd533018	none	list-cap	1	18448	9728	293	44	10	none
+2238dff988d5	current	list-cap	1	36908	28928	665	171	21	SKILL.md references/audit.md references/writing.md 
+23a86a425e98	candidate	list-cap	1	35836	27904	570	134	18	SKILL.md references/writing.md 
+d61f342380ac	none	failure-shape	1	18402	15872	292	81	13	none
+eeb7d18532c2	current	failure-shape	1	36682	28928	538	150	17	SKILL.md references/diagnosis.md references/writing.md 
+023490cf68d4	candidate	failure-shape	1	48883	38912	740	240	24	SKILL.md references/compatibility.md references/diagnosis.md references/writing.md 
+d5dba360f8a7	none	inspection-not-execution	1	18413	15872	252	83	10	none
+f4c796e08269	current	inspection-not-execution	1	34851	26880	483	176	17	SKILL.md references/writing.md 
+f6188649294a	candidate	inspection-not-execution	1	36511	28928	521	191	17	SKILL.md references/verification.md references/writing.md 
+9fea6e24d113	none	round-status	1	18681	15872	386	106	14	none
+81075a89e198	current	round-status	1	64621	47872	1294	666	35	SKILL.md references/commands.md references/writing.md 
+b0532dc6e00e	candidate	round-status	1	73394	55040	3170	1862	67	SKILL.md references/commands.md references/writing.md 
+2632a42d2d35	none	stated-requirement	1	18424	15872	344	99	12	none
+a2e00733b309	current	stated-requirement	1	40566	28928	1310	508	30	SKILL.md references/architecture.md references/commands.md references/compatibility.md references/writing.md 
+7b1576a9befb	candidate	stated-requirement	1	40671	27904	1528	700	37	SKILL.md references/architecture.md references/commands.md references/compatibility.md references/writing.md 
+697e7efb1637	none	stated-requirement-consumer	1	18466	15872	487	168	15	none
+1a74974d8d5c	current	stated-requirement-consumer	1	40463	28928	1226	320	28	SKILL.md 
+79f4d382ba60	candidate	stated-requirement-consumer	1	40753	28928	1459	489	38	SKILL.md references/architecture.md references/commands.md references/compatibility.md references/writing.md 
+e208260cdf32	none	debug-spiral	2	18389	15872	284	121	11	none
+73804f004f2c	current	debug-spiral	2	36146	26880	764	353	23	SKILL.md references/diagnosis.md references/writing.md 
+6be33fa1bbea	candidate	debug-spiral	2	36808	24832	600	249	21	SKILL.md references/diagnosis.md references/writing.md 
+0b953090716c	none	list-cap	2	18432	15872	271	40	12	none
+32176bf71292	current	list-cap	2	35666	24832	601	163	32	SKILL.md references/writing.md 
+3a850f60d636	candidate	list-cap	2	35803	28928	561	132	29	SKILL.md references/writing.md 
+67914d6e5c01	none	failure-shape	2	18400	15872	267	84	21	none
+132de32b02c9	current	failure-shape	2	36726	27904	548	148	22	SKILL.md references/diagnosis.md references/writing.md 
+d78a5705c6ee	candidate	failure-shape	2	35105	20736	505	170	21	SKILL.md references/writing.md 
+a6c78c76f877	none	inspection-not-execution	2	18381	15872	239	84	21	none
+abb12b301b41	current	inspection-not-execution	2	35526	27904	539	246	22	SKILL.md references/writing.md 
+8f9a838d1e60	candidate	inspection-not-execution	2	37450	28928	559	267	25	SKILL.md references/commands.md references/writing.md 
+d170be4fd25e	none	round-status	2	18650	15872	541	280	23	none
+ba838f304660	current	round-status	2	54695	43008	1588	1006	49	SKILL.md references/commands.md references/writing.md 
+b77ca6a1e737	candidate	round-status	2	38009	28928	1564	1032	38	SKILL.md references/commands.md references/writing.md 
+c14787f3c862	none	stated-requirement	2	27740	24832	606	191	26	none
+644fb24627c5	current	stated-requirement	2	40546	28928	1636	725	42	SKILL.md references/architecture.md references/commands.md references/compatibility.md references/writing.md 
+3d260c979af3	candidate	stated-requirement	2	41016	27904	1413	598	36	SKILL.md references/architecture.md references/commands.md references/verification.md references/writing.md 
+e996aa792759	none	stated-requirement-consumer	2	18433	15872	567	145	21	none
+fda20ade1d86	current	stated-requirement-consumer	2	39928	27904	1690	617	38	SKILL.md references/architecture.md references/commands.md references/compatibility.md references/writing.md 
+767bb8d43742	candidate	stated-requirement-consumer	2	39035	28928	1343	324	31	SKILL.md references/commands.md references/compatibility.md references/verification.md references/writing.md 

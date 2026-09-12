@@ -15,9 +15,9 @@ work and read; it does not hold repository facts.
 ## Guard
 
 The hook denies a shell command that matches a line here unless your latest message
-contains the allow word, or is a short affirmative reply to the agent's own message that
-proposed that command. A message containing a negation never authorises. Default allow word is the last word of the pattern; write
-`pattern -> word` to choose another. Prefix `tool:` to match a tool name instead.
+contains the allow word, or opens with an affirmative while the agent's last reply or the
+`simple/round.md` proposed that command. A negation next to the action refuses. Default allow word is the last word of the pattern; write
+`pattern -> word` to choose another, or `pattern -> word, word` for several. Prefix `tool:` to match a tool name instead.
 
 - git push
 - tool:mcp__.*(publish|delete) -> publish

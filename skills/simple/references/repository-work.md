@@ -21,7 +21,9 @@ A repository is easy to resume when:
 - Git preserves superseded prose unless an external compatibility promise requires a
   live pointer.
 
-Do not impose a fixed documentation tree. Reuse the repository's current owners when
+Keep temporary Simple artifacts (a round, a plan, an audit, a handoff) in the `simple/`
+folder beside the profile, and delete each when its work or evidence has moved to a
+durable owner. Do not impose a fixed documentation tree. Reuse the repository's current owners when
 they are sound. A small repository may keep source truth in its README and deployed
 truth in one operations guide. A larger repository may route distinct defect,
 provider, product, and implementation queues through one work index when those states
@@ -122,10 +124,9 @@ you durably advance progress. Use idempotency where the operation supports it. C
 relevant interruption points through the owner. An output file alone does not prove
 that a stage completed; a blocked stage remains blocked until its obligation is met.
 
-In the handoff, name the check that ran and its proof class. When external proof is
-relevant, use explicit `Local or structural proof:` and `Not proved:` lines for live,
-device, hardware, account, distribution, or user surfaces; never let a local pass imply
-them.
+In the handoff, name the check that ran and state exactly what it establishes and
+what remains unverified. A local or structural pass never implies live, device,
+hardware, account, distribution, or user proof; say which of those are not proved.
 
 Continue until the requested outcome is independently proved or an exact authority,
 hardware, account, or external dependency blocks it. Name that blocker and the

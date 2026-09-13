@@ -1,7 +1,9 @@
 // Simple for OpenCode. Registers the shared skill and appends the nearest
 // SIMPLE.md, its simple/round.md, and the operator file to the system prompt on
-// every turn, so repository facts and the active round survive compaction. There
-// is no on/off flag: injection happens when the files exist.
+// every turn, and pins the same blocks into the compaction summary, so repository
+// facts and the active round survive compaction. There is no on/off flag: injection
+// happens when the files exist. The guard is not ported: the tool.execute.before hook
+// does not carry the user's latest message, which the guard needs to authorise.
 //
 // Register once in the global OpenCode config, not per repository:
 //   { "plugin": ["<path to this checkout>/.opencode/plugins/simple.mjs"] }
@@ -53,6 +55,18 @@ export default async () => ({
     config.skills = config.skills || {};
     config.skills.paths = config.skills.paths || [];
     if (!config.skills.paths.includes(skillsDir)) config.skills.paths.push(skillsDir);
+  },
+  "experimental.session.compacting": async (_input, output) => {
+    let blocks;
+    try {
+      blocks = contextBlocks();
+    } catch (error) {
+      process.stderr.write(`simple opencode plugin: ${error?.message ?? error}\n`);
+      return;
+    }
+    if (!blocks.length) return;
+    output.context = output.context || [];
+    output.context.push(`Keep these Simple facts, the active round, and the operator rules verbatim in the summary; they are governance and state, not conversation:\n\n${blocks.join("\n\n")}`);
   },
   "experimental.chat.system.transform": async (_input, output) => {
     let blocks;

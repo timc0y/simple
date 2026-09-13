@@ -307,12 +307,17 @@ Its `## Guard` section lists shell command patterns and `tool:` name patterns; t
 denies a matching tool call unless the user's latest message contains the pattern's
 allow word, or opens with an affirmative and the agent's last reply or the active
 `simple/round.md` proposed the command; a negation next to the action refuses, and without a
-transcript the hook only reminds. Copy
+transcript the hook only reminds. It matches the whole command text, heredoc bodies
+and inline scripts included, and cannot see a payload that is encoded or built at run
+time. Codex accepts the same deny shape; enforcement under bypass-permissions mode is
+recorded per harness in the profile. Copy
 `skills/simple/assets/OPERATOR.template.md` to start one.
 
-OpenCode and Gemini CLI get the same context without hooks. Register
-`.opencode/plugins/simple.mjs` once in your global OpenCode config; it registers the
-skill and appends the profile, round, and operator file to the system prompt on every turn.
+OpenCode and Gemini CLI get the same context through their own plugin surfaces.
+Register `.opencode/plugins/simple.mjs` once in your global OpenCode config; it
+registers the skill, appends the profile, round, and operator file to the system
+prompt on every turn, and pins the same blocks into OpenCode's compaction summary. The
+guard is not ported to OpenCode.
 `gemini-extension.json` points Gemini at the repository's `AGENTS.md`, which already
 routes to Simple. No extra file is added to a repository for either host.
 

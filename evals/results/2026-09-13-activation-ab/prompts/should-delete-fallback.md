@@ -1,0 +1,1 @@
+The importer has a primary path that calls the vendor API and a fallback that reads a cached CSV when the API errors. Logs show the API has failed on every run for six weeks and the CSV path is what actually works. Tell me whether to delete the API path, keep it, or swap them, and what evidence decides it.

@@ -20,16 +20,19 @@
 
 ## Current boundary
 
-- Plugins package Simple for Codex and Claude Code; an OpenCode plugin and a Gemini
-  extension inject the same context without hooks. The local installer exposes one
-  source through the shared agent directory and four host routes.
-- The Codex package points to the shared lifecycle and writing-reminder hooks; the Claude package uses the same hook bundle. Codex needs one `/hooks` trust approval on each machine.
-- Pre-write hook context reaches the model after the triggering tool result. It can guide the next step, but it cannot shape edit arguments that the model already chose.
-- A file edit records one session-local temporary marker. The next stop forces one
-  reconciliation pass, clears the marker, and allows the continued turn to stop.
-  Read-only turns do not trigger reconciliation.
-- Codex also receives repository context through `AGENTS.md` and the skill, so the route survives hosts without hook support.
+- Plugins package Simple for Codex and Claude Code with one hook bundle; Codex needs
+  one `/hooks` trust approval per machine. An OpenCode plugin and a Gemini extension
+  inject the same context, tested structurally, not live, without the guard.
+- Pre-write hook context arrives after the triggering tool result: it guides the next
+  step, not the edit already chosen.
+- A file edit sets a session-local marker; the next stop forces one reconciliation
+  pass and clears it. Read-only turns do not trigger reconciliation.
+- Codex also gets repository context through `AGENTS.md` and the skill, so the route
+  survives hosts without hook support.
 - A directory-registered Claude Code marketplace runs hooks from the checkout, not the plugin cache (seen 11 Sep 2026).
+- The compact-start hook re-injects profile, round, and operator file; OpenCode pins
+  them into its summary. Docs say a hook deny is ignored in bypass mode; it blocked
+  here on 12 Sep 2026. Unproven on other harnesses.
 - Setup records no inferred users or production promises.
 
 ## Ordinary paths

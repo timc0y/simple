@@ -1,0 +1,1 @@
+Write the handoff note for the release I just finished: version 3.2.0, migrations ran on staging, the payments integration test was skipped because the sandbox was down, and nothing is deployed to production yet. Keep it to what the next engineer needs.

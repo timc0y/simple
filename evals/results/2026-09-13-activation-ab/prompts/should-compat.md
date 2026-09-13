@@ -1,0 +1,1 @@
+We want to rename the `full_name` column to `display_name` in the users table. A published REST endpoint returns `full_name`. Plan the change: what has to stay compatible, what can change directly, and how we prove it.

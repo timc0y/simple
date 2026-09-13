@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "claudeVersion": "2.1.270",
+  "startedAt": "2026-09-13T06:54:14.256Z",
+  "durationSeconds": 127,
+  "costUsd": 0.3913845,
+  "partial": false,
+  "suite": {
+    "root": "<REPO>",
+    "ablation": "with-without",
+    "caseFilter": "stated-requirement",
+    "threshold": 1,
+    "concurrency": 1,
+    "plugins": [
+      {
+        "name": "simple",
+        "version": "0.8.0",
+        "path": "<REPO>"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "name": "stated-requirement",
+      "dir": "evals-trial/stated-requirement",
+      "source": "prose",
+      "promptMarkdown": "Use Simple to plan this request before implementation:\n\n> Add a CSV export for the monthly usage report. Keep the output identical to the\n> old report so nothing breaks.\n\nKnown facts:\n\n- The old report came from a retired script. Its file has a fixed 14-column layout\n  with two empty legacy columns, a `Total` footer row, and Windows line endings.\n- The only consumer is the finance team's spreadsheet, which imports by column header\n  name. Finance confirmed that nobody compares files between months.\n- The application already has a CSV writer used by two other exports. It emits a\n  header row and data rows with no footer.\n- Reproducing the old layout byte for byte needs a second formatter, a legacy column\n  map, and a fixture that freezes the empty columns and footer.\n- No published API, downstream job, or retained data depends on the file bytes.\n\nReturn a plan in plain Markdown. Do not write code.",
+      "runsPerCase": 3,
+      "timeoutSeconds": 300,
+      "maxTurns": 8,
+      "graders": [
+        {
+          "name": "criteria",
+          "type": "llm",
+          "weight": 1,
+          "graderMarkdown": "Pass when the response identifies \"identical to the old report\" as the requirement\nthat most shapes the design; states what honouring it costs (a second formatter, a\nlegacy column map, and a frozen fixture); shows from the supplied facts that nothing\nobserved depends on the file bytes (import by header name, no month-to-month\ncomparison, no downstream job or retained data); proposes the existing CSV writer with\nthe old header names as the smallest design; and makes the relaxation an explicit\ndecision for the requester, either by asking before building the compatibility layer\nor by stating the relaxed design as the recommendation with the requester's\nconfirmation named as the gate. Proof may be an import into the spreadsheet or a\nheader-name check; either is acceptable. Fail if the response builds or plans the\nbyte-identical formatter without questioning the requirement; drops the requirement\nsilently or claims the plain export is \"identical\"; invents a consumer, contract, or\nfuture need on either side; asks the requester for facts already supplied; or stalls\nwithout a recommended design.",
+          "config": {
+            "criteria": "Pass when the response identifies \"identical to the old report\" as the requirement\nthat most shapes the design; states what honouring it costs (a second formatter, a\nlegacy column map, and a frozen fixture); shows from the supplied facts that nothing\nobserved depends on the file bytes (import by header name, no month-to-month\ncomparison, no downstream job or retained data); proposes the existing CSV writer with\nthe old header names as the smallest design; and makes the relaxation an explicit\ndecision for the requester, either by asking before building the compatibility layer\nor by stating the relaxed design as the recommendation with the requester's\nconfirmation named as the gate. Proof may be an import into the spreadsheet or a\nheader-name check; either is acceptable. Fail if the response builds or plans the\nbyte-identical formatter without questioning the requirement; drops the requirement\nsilently or claims the plain export is \"identical\"; invents a consumer, contract, or\nfuture need on either side; asks the requester for facts already supplied; or stalls\nwithout a recommended design.",
+            "focus": "last_message"
+          }
+        },
+        {
+          "name": "skill-fired",
+          "type": "tool_used",
+          "weight": 1,
+          "config": {
+            "tool": "Skill",
+            "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?simple\"",
+            "arm": "with-only"
+          }
+        }
+      ],
+      "arms": {
+        "with": [
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 5,
+            "costUsd": 0.245287,
+            "judgeCostUsd": 0.0037920000000000002,
+            "durationSeconds": 68,
+            "startedAt": "2026-09-13T06:54:14.348Z",
+            "error": null,
+            "tracePath": "/private/tmp/e-wjq76d/out/trace.jsonl",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "criteria",
+                "passed": true,
+                "weight": 1,
+                "explanation": "judge votes: PASS PASS PASS",
+                "withOnly": false,
+                "scored": true,
+                "judgeVotes": [
+                  true,
+                  true,
+                  true
+                ],
+                "evidence": "The working directory is empty — no repository files to check — so this plan rests entirely on the facts you listed, plus one unknown I'd settle before writing anything.\n\nOne disagreement up front: \"identical output\" and \"nothing breaks\" are different requirements here, and the facts you gave say so. The consumer imports by column header name and nobody compares months, so what must survive is the header text and the values — not the bytes. Building for byte parity costs a second formatter, a legacy column map, and a freeze fixture, all to protect something no consumer reads. I'd drop the byte requirement. If you want it anyway, say so and I'll plan that version instead; the extra pieces are known and small, just permanent.\n\n# Plan: CSV export for the monthly usage report\n\n## Outcome\n\nThe monthly usage report is produced by the application's existing CSV writer. Finance imports the file into the same spreadsheet with no changes on their side, because every column header they look up is spelled exactly as before.\n\n## What must be preserved\n\n- The exact header text of the 12 real columns, character for character. This is the only contract the consumer actually uses.\n- The value formatting inside each column (number, date, and currency rendering), since the spreadsheet parses these on import.\n\n## What can be dropped\n\n- The two empty legacy columns. They carry no values.\n- Windows line endings. Spreadsheet imports accept LF.\n- Byte-for-byte layout, column order as a requirement, and the freeze fixture. No API, job, or retained data reads the bytes.\n\n## The one fact to establish first\n\nDoes the finance spreadsheet reference either legacy column header, or read the `Total` footer row?\n\nImport-by-header-name is what makes the legacy columns droppable, but it is also what would break if a lookup names one of them. And the footer row is content, not bytes — your facts rule out byte dependencies, not a formula pointing at the total. Get one real old report file and, if possible, the sheet's import config or formulas. That single artifact settles the header strings and both unknowns at once.\n\nNeither answer reintroduces a second formatter. If a legacy header is referenced, it becomes an ordinary empty column in the same writer. If the `Total` row is read, it becomes the last data row passed to the same writer — \"footer\" is a property of the old formatter's design, not of the file. The writer's lack of a footer feature is not an obstruction.\n\n## Steps\n\n1. Obtain one real old report file and the sheet's import definition. Answer the question above.\n2. Define the export's columns using the 12 header strings copied verbatim from that file, in their original order.\n3. Wire the monthly usage query into the existing CSV writer, matching how the other two exports do it.\n4. Apply the step 1 answer: add back a legacy header as an empty column, or append the `Total` row as a final data row, only if the sheet reads it.\n5. Delete the retired script's remaining references, if any survive in the repository.\n\n## Proof\n\nParse the old file and a generated file for the same month by header name, then compare values column by column. Do not byte-diff them; that comparison is designed to fail here and would tell you nothing about the consumer.\n\nThen have finance import one generated month into the real spreadsheet before the new export is the only path. That is the surface the requirement actually lives on, and it is independent of how the file is produced.\n\n## Risks\n\n- If the old report's headers contain trailing spaces, a BOM, or inconsistent casing, those are part of the contract and must be copied exactly. Take them from the file, not from a schema or from the retired script's source.\n- A BOM specifically may be required for the spreadsheet to read non-ASCII characters correctly. Check the old file's first bytes; if it has one, confirm the shared writer emits one too.\n\n## Reconsider if\n\nFinance turns out to have a second consumer of this file, or the sheet does a positional import rather than a header lookup. Either fact restores a real dependency on layout, and the plan changes at step 2."
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": true,
+                "scored": false
+              }
+            ]
+          }
+        ],
+        "without": [
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 1,
+            "costUsd": 0.1460975,
+            "judgeCostUsd": 0.0044340000000000004,
+            "durationSeconds": 59,
+            "startedAt": "2026-09-13T06:55:22.132Z",
+            "error": null,
+            "tracePath": "/private/tmp/e-iO7NNS/out/trace.jsonl",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "criteria",
+                "passed": true,
+                "weight": 1,
+                "explanation": "judge votes: PASS PASS PASS",
+                "withOnly": false,
+                "scored": true,
+                "judgeVotes": [
+                  true,
+                  true,
+                  true
+                ],
+                "evidence": "There's no skill or agent named `Simple` available in this session (the closest names are `simplify`, which rewrites changed code, and the `Plan` agent). I planned it directly, with a bias toward the simplest thing that actually preserves compatibility.\n\n---\n\n# Plan: CSV export for the monthly usage report\n\n## The one judgment call up front\n\n\"Keep the output identical\" and \"nothing breaks\" are not the same requirement here, and the facts you gave separate them cleanly:\n\n- The **only** consumer imports **by column header name**.\n- Nobody compares files across months.\n- No API, job, or retained data depends on the bytes.\n\nSo the compatibility surface is: **the header names, their values, and the file being parseable.** Byte-identity is not the compatibility surface — it's a proxy for it. Chasing it buys a second formatter, a legacy column map, and a fixture that permanently freezes two empty columns and a footer row, all to satisfy a consumer that cannot observe the difference.\n\n**Recommendation:** reuse the existing CSV writer, preserve the 14 header names exactly, drop the byte-level legacy artifacts. Build with no new formatter.\n\n## What's kept vs. dropped\n\n| Legacy trait | Decision | Why |\n|---|---|---|\n| 14 column headers, exact names & order | **Keep** | This is the actual contract. Costs one ordered list of strings. |\n| The 2 empty legacy columns | **Keep as empty columns** | Cheap insurance — if a spreadsheet formula references them by name, it keeps resolving. No formatter needed, just two entries in the header list that always emit `\"\"`. |\n| `Total` footer row | **Drop** (see open question) | The existing writer has no footer concept. Adding one is the single biggest driver of \"second formatter.\" A spreadsheet can `SUM` the column. |\n| Windows (CRLF) line endings | **Drop**, emit whatever the shared writer emits | Every spreadsheet importer accepts both. Not observable to the consumer. |\n| Byte-for-byte fixture | **Don't build** | It would lock in the empty columns and footer as tested behavior, making them permanent. |\n\n## Implementation steps\n\n1. **Pin the contract.** Extract the 14 header names, in order, from the retired script (or a saved copy of last month's output) into a single ordered constant next to the new export. Include the two legacy columns with their original names and a comment saying they are intentionally always empty and why.\n2. **Find the data source.** Locate where the monthly usage figures are currently computed in the app. If the retired script did its own aggregation, port the *calculations* (this is the part that must be faithful — a wrong number is a real break, unlike a wrong line ending) and note any rounding, date-window, or timezone rules it used.\n3. **Wire up the export** using the same CSV writer the two existing exports use. Follow their registration/entry-point pattern rather than inventing a new one — one row per usage record, header emitted by the shared writer.\n4. **Map fields to columns** with a plain struct/dict-to-row mapping in the export itself. No shared legacy column-map module; nothing else will ever use it.\n5. **Check encoding.** If the report can contain non-ASCII (customer or product names) and finance opens the file in Excel, confirm what encoding the old file used. A UTF-8-vs-Latin-1/BOM mismatch is the one byte-level detail that *can* visibly break the consumer — worth matching.\n6. **Verify against a real month.** Generate the new file for a month the old script also produced and diff the *parsed* values column-by-column. Ignore ordering of the file bytes; care about numbers and header names.\n\n## Tests\n\n- One test asserting the header row equals the 14 expected names in exact order (this is the contract test).\n- One test on row mapping for a small fixed input set, including a record that exercises the rounding/formatting rules from step 2.\n- No golden-file fixture.\n\n## Open question (non-blocking)\n\nFinance confirmed they don't compare files month to month, which covers the empty columns and line endings — but it doesn't cover the `Total` row. Ask finance: **does any formula in the sheet reference the `Total` row, or do they compute their own totals?**\n\n- If they compute their own → drop it as planned.\n- If they reference it → the cheapest fix is appending one extra data row with `Total` in the first column, via the normal row path, not a footer feature in the shared writer. That's ~5 lines in this export and still no second formatter.\n\nProceeding on the assumption that the footer is droppable; switching is a small, contained change either way.\n\n## Rollback\n\nIf the import breaks, the failure will be a missing or renamed header — visible immediately in the spreadsheet and fixable by editing one string list. The retired script's output is not needed as a fallback since no retained data depends on it."
+              }
+            ]
+          }
+        ]
+      },
+      "aggregates": {
+        "score": 1,
+        "passRate": 1,
+        "scoreWithout": 1,
+        "passRateWithout": 1,
+        "delta": 0
+      }
+    }
+  ],
+  "aggregates": {
+    "casesTotal": 1,
+    "casesPassed": 1,
+    "overallScore": 1,
+    "overallPassRate": 1,
+    "meanDelta": 0
+  }
+}

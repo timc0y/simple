@@ -1,0 +1,1 @@
+Look at how a small Express app organises its route handlers, middleware, and database access, and tell me what is unnecessarily complicated, what should have one owner, and what you would remove first. Read-only; do not change anything.

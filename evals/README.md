@@ -25,6 +25,7 @@ Current coverage from the behavior and repeated preservation runs:
 | Preserve unaffected requirements through corrections. | Core correction rule. | Actual follow-up turns exercise a narrow synthetic correction; broader session behavior remains untested. |
 | Preserve facts and uncertainty in writing. | Core writing method; writing reference. | Prose review caught unsupported release-state claims missed by executable checks. Two repeats do not establish their cause. |
 | Keep useful discoveries available for later work. | Core knowledge guidance; repository-work reference. | Prompted reference reads were observed. Natural activation and later-session reuse remain untested. |
+| Open the skill when a task needs it and stay closed when it does not. | The skill description. | The [activation baseline](results/2026-09-13-activation/README.md) measured 12/12 should-fire and 6/12 false fires; the [description A/B](results/2026-09-13-activation-ab/README.md) kept 12/12 and cut false fires to 0/12 against 3/12 for the old wording in the same run, so the narrower description with a stated exclusion ships. `evals/activation/run.sh` measures activation without a grader; real-session activation remains unmeasured. |
 | Surface a stated requirement that obstructs a materially simpler design, and keep it when a consumer makes it load-bearing. | Core stop trigger; architecture template field; plan and review contracts; worked example. | The [stated-requirement screen](results/2026-09-11-stated-requirement/README.md) passed 4/4 candidate against 1/4 current on two lead-authored cases, two repeats. The example was never read; natural activation, a tempting relaxation with a real consumer, and held-out tasks remain untested. |
 | Write so the reader understands: only their terms, outcome before mechanism, one concern per reply, verdict first, report once. | Writing reference standard; review contract; core report-once rule; `simple round` shape. | The `plain-translation`, `verdict-first`, `round-status`, and `scope-completion` cases exist; the [writing-rules](results/2026-09-11-writing-rules/README.md) and [readable-rules](results/2026-09-12-readable-rules/README.md) runs were ties on short prompts; only the round-status shape changed with the candidate. A long-transcript probe and natural activation remain untested. |
 
@@ -48,9 +49,23 @@ is noise. Blockers are read, not averaged.
 `evals/luna-cases.sh` is the shared isolated runner for prompt cases. A suite is a
 directory with `protocol.md` and a set of case directories; run it with `SUITE`,
 `CASES`, `BASELINE_COMMIT`, and `RESULT_DATE` in the environment. It stops before a
-cell when `MAX_INPUT_TOKENS` is exceeded and records the partial run.
+cell when `MAX_INPUT_TOKENS` is exceeded and records the partial run. A case may
+carry a `prompt-alt.md` paraphrase; it runs as `case@alt` under the same criteria, so
+the noise floor includes prompt wording, not only repeats. The grader sees the pass
+and fail references in an order fixed per case by hash and recorded in
+`reference-order.tsv`, so position bias shows up across cases. Input tokens, output
+tokens, and latency are recorded per cell in `scores.tsv` and averaged in the noise
+floor, because instruction changes move cost more reliably than correctness.
 `evals/slimming/run.py` reuses the frozen behavior runner to check that a slimmed
 skill still passes the six preservation cases.
+
+`claude plugin eval` is a second, host-native reading for changes aimed at Claude Code
+users. It needs each grader file to carry frontmatter with a `type`, treats an `llm`
+grader's body as its criteria, and can record whether the skill fired through a
+`tool_used` grader marked `arm: with-only`. Simple's case files do not carry that
+frontmatter; convert a copy rather than changing the originals. Runs are
+non-interactive only with `--trust-plugin`. The [13 September trial](results/2026-09-13-plugin-eval-trial/README.md)
+records the format and one two-arm result.
 
 ## Compare equal conditions
 

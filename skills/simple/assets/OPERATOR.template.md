@@ -21,3 +21,8 @@ contains the allow word, or opens with an affirmative while the agent's last rep
 
 - git push
 - tool:mcp__.*(publish|delete) -> publish
+- (base64 -d|base64 --decode|xxd -r|(^|[;&|(]\s*)eval\s) -> decode
+
+The guard matches the whole command text, including heredoc bodies and inline
+scripts, so wrapping a command does not hide it. It cannot see a payload that is
+encoded or built at run time; the last line above blocks the usual decoders instead.

@@ -1,0 +1,2 @@
+current: should-fire opened 12/12; should-not-fire opened 3/12
+candidate: should-fire opened 12/12; should-not-fire opened 0/12

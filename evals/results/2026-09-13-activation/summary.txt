@@ -1,0 +1,2 @@
+should-fire opened: 12/12
+should-not-fire opened: 6/12

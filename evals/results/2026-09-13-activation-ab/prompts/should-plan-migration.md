@@ -1,0 +1,1 @@
+Plan moving our cron-based nightly sync to run on every webhook instead. The sync writes to Postgres and calls a rate-limited third-party API. Give me the smallest safe plan, with what must be preserved and how it is verified. Do not write code.

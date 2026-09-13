@@ -1,0 +1,8 @@
+Apply first-principles reasoning grounded in repository evidence to find the
+smallest truthful software design and write concise, plain developer prose. Use when
+a change's owner, scope, compatibility, or proof depends on repository facts:
+architecture, refactoring, deletion, migration, fallbacks, audits, plans,
+documentation, reviews, and handoffs; and when asked what a documented engineer or
+operator would do. Not for a one-line answer, a lookup, or a single-file edit with
+no design decision. Read the nearest SIMPLE.md when repository facts change the
+answer.

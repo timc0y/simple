@@ -572,6 +572,21 @@ test("the OpenCode plugin appends profile, round, and operator context each turn
   const config = {};
   await hooks.config(config);
   assert.ok(config.skills.paths.some((path) => path.endsWith("skills")));
+  const previous = process.cwd();
+  process.chdir(root);
+  try {
+    const compacting = { context: [] };
+    process.env.SIMPLE_OPERATOR_FILE = operator;
+    await hooks["experimental.session.compacting"]({}, compacting);
+    assert.equal(compacting.context.length, 1);
+    assert.match(compacting.context[0], /opencode profile/);
+    assert.match(compacting.context[0], /opencode round/);
+    assert.match(compacting.context[0], /opencode operator/);
+    assert.match(compacting.context[0], /verbatim in the summary/);
+  } finally {
+    delete process.env.SIMPLE_OPERATOR_FILE;
+    process.chdir(previous);
+  }
 });
 
 test("every eval grader ships self-test references", () => {

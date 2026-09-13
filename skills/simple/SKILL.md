@@ -2,14 +2,13 @@
 name: simple
 description: >-
   Apply first-principles reasoning grounded in repository evidence to find the
-  smallest truthful software design and write concise, plain developer prose. Use
-  for architecture, ownership, refactoring, deletion, compatibility, migration,
-  repository setup or reconciliation, audits, decision research, reference implementations, fallbacks, implementation plans,
-  or work that is becoming more complex than its demonstrated requirements; for
-  debugging, performance, verification and implementation through review;
-  technical plans, documentation, comments, Markdown, prompts, reviews, updates, and
-  handoffs; and when asked what a documented engineer, company, or operator would do.
-  Read the nearest SIMPLE.md when repository facts change the answer.
+  smallest truthful software design and write concise, plain developer prose. Use when
+  a change's owner, scope, compatibility, or proof depends on repository facts:
+  architecture, refactoring, deletion, migration, fallbacks, audits, plans,
+  documentation, reviews, and handoffs; and when asked what a documented engineer or
+  operator would do. Not for a one-line answer, a lookup, or a single-file edit with
+  no design decision. Read the nearest SIMPLE.md when repository facts change the
+  answer.
 ---
 
 # Simple

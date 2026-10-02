@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec7-8b60-7832-ace3-815c9568f189",
+    "turn": {
+      "id": "01a0fec7-8ba3-78e0-97b4-26f84966a5a4",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_0869c31bb943ef01016ac0331ddc4887d2995abd4df6f4dd4e",
+          "text": "lesson-card was published to school-site once; state.json showed the check was green.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980885,
+      "completedAt": 1790980894,
+      "durationMs": 8880
+    }
+  },
+  "emittedAtMs": 1790980894294
+}

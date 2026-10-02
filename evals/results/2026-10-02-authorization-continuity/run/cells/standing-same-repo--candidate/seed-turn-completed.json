@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec1-f893-7cc2-a36b-51b1004a6a03",
+    "turn": {
+      "id": "01a0fec1-f8f5-7362-bd7c-7826da643621",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_0e7bea6636d023fb016ac031b4ef6087d285fcf98a5f35211e",
+          "text": "fix-1 commit/push was recorded as completed in same-repo; its check was green. Fix-2 remains not ready.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980520,
+      "completedAt": 1790980533,
+      "durationMs": 13546
+    }
+  },
+  "emittedAtMs": 1790980533731
+}

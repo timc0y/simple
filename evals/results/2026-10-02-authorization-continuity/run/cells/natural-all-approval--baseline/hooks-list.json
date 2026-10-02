@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "cwd": "<fixture-runtime>/workspace",
+      "hooks": [
+        {
+          "key": "/<session-flags>/config.toml:pre_tool_use:0:0",
+          "eventName": "preToolUse",
+          "handlerType": "command",
+          "command": "node \"<fixture-runtime>/hook-source/scripts/hook.mjs\"",
+          "async": false,
+          "matcher": "Bash|shell|exec_command|local_shell|container\\.exec|mcp__.*",
+          "timeoutSec": 3,
+          "statusMessage": null,
+          "additionalContextLimit": 0,
+          "sourcePath": "/<session-flags>/config.toml",
+          "source": "sessionFlags",
+          "pluginId": null,
+          "displayOrder": 0,
+          "enabled": true,
+          "isManaged": false,
+          "currentHash": "sha256:bb2d2a361607bcc8765c04c8b9d4ea57df826c62e1664d6378e32eb00a061b16",
+          "trustStatus": "trusted"
+        },
+        {
+          "key": "/<session-flags>/config.toml:session_start:0:0",
+          "eventName": "sessionStart",
+          "handlerType": "command",
+          "command": "node \"<fixture-runtime>/hook-source/scripts/hook.mjs\"",
+          "async": false,
+          "matcher": "startup|resume|clear|compact",
+          "timeoutSec": 3,
+          "statusMessage": null,
+          "additionalContextLimit": 0,
+          "sourcePath": "/<session-flags>/config.toml",
+          "source": "sessionFlags",
+          "pluginId": null,
+          "displayOrder": 1,
+          "enabled": true,
+          "isManaged": false,
+          "currentHash": "sha256:af705024e9d1941c9b4964264d11c9ee7e7a77e2a2bfe376e0f2375982c1c05b",
+          "trustStatus": "trusted"
+        }
+      ],
+      "warnings": [],
+      "errors": []
+    }
+  ]
+}

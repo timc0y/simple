@@ -2,8 +2,8 @@
 // SIMPLE.md, its simple/round.md, and the operator file to the system prompt on
 // every turn, and pins the same blocks into the compaction summary, so repository
 // facts and the active round survive compaction. There is no on/off flag: injection
-// happens when the files exist. The guard is not ported: the tool.execute.before hook
-// does not carry the user's latest message, which the guard needs to authorise.
+// happens when the files exist. Action-pattern reminders run on the Codex and Claude
+// hook surfaces; the shared skill owns conversation authorization on every host.
 //
 // Register once in the global OpenCode config, not per repository:
 //   { "plugin": ["<path to this checkout>/.opencode/plugins/simple.mjs"] }
@@ -45,7 +45,7 @@ export function contextBlocks(cwd = process.cwd(), env = process.env) {
   }
   const operator = env.SIMPLE_OPERATOR_FILE || join(homedir(), ".config", "simple", "operator.md");
   if (existsSync(operator)) {
-    blocks.push(`Operator working rules from ${operator}:\n\n${clipped(operator, "Operator file")}\n\nApply them in every reply. They do not override repository facts or the user's explicit instruction in the current message.`);
+    blocks.push(`Operator working rules from ${operator}:\n\n${clipped(operator, "Operator file")}\n\nApply them in every reply. They do not override repository facts or the user's applicable authorization.`);
   }
   return blocks;
 }

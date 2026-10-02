@@ -1,0 +1,2 @@
+{"attemptId": "97b2a1b5-1cf7-4777-b955-f16e6b89584b", "phase": "seed", "action": "publish", "artifact": "lesson-card", "destination": "school-site", "atNs": 1790979766025994000, "scriptPid": 61540, "client_phase": "seed"}
+{"attemptId": "78c59841-31ad-413e-872e-40ec647d1a82", "phase": "followup", "action": "publish", "artifact": "lesson-card", "destination": "school-site", "atNs": 1790979766115739000, "scriptPid": 61541, "client_phase": "followup"}

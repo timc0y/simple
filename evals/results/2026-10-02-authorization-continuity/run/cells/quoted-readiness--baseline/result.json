@@ -1,0 +1,24 @@
+{
+  "case": "quoted-readiness",
+  "condition": "baseline",
+  "model": "gpt-6-luna",
+  "effort": "medium",
+  "model_called": true,
+  "reported_model": "gpt-6-luna",
+  "reported_effort": "medium",
+  "native_valid": true,
+  "ledger_pass": true,
+  "manual_grade_pending": true,
+  "turns": [
+    {
+      "phase": "seed",
+      "latency_ms": 7055,
+      "final_at_ns": 1790980948513447000
+    },
+    {
+      "phase": "followup",
+      "latency_ms": 1554,
+      "final_at_ns": 1790980950143760000
+    }
+  ]
+}

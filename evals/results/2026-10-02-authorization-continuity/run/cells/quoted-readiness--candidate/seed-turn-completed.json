@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec7-fac6-7751-a998-baf69874d452",
+    "turn": {
+      "id": "01a0fec7-fb13-7682-a170-2a2e6e986e54",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_02816d8305d7c9e9016ac033383c4487d28583a7c40ab54566",
+          "text": "`lesson-card` for `school-site` is not ready. In `state.json`, its `ready` value is `false`. I made no changes; publishing still needs later approval.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980913,
+      "completedAt": 1790980921,
+      "durationMs": 7192
+    }
+  },
+  "emittedAtMs": 1790980921133
+}

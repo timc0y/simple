@@ -1,0 +1,16 @@
+{
+  "seed": [
+    [
+      "commit-push",
+      "fix-1",
+      "same-repo"
+    ]
+  ],
+  "followup": [
+    [
+      "commit-push",
+      "fix-2",
+      "same-repo"
+    ]
+  ]
+}

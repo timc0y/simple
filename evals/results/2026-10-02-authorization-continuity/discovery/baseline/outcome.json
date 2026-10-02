@@ -1,0 +1,10 @@
+{
+  "condition": "baseline",
+  "valid": true,
+  "model_turns": 0,
+  "model": "gpt-6-luna",
+  "active_hooks": 2,
+  "all_trusted": true,
+  "assigned_skills": 1,
+  "skip_host_skill_discovery": true
+}

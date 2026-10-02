@@ -1,0 +1,290 @@
+[
+  {
+    "case": "earlier-approval-status",
+    "condition": "baseline",
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "model_called": true,
+    "reported_model": "gpt-6-luna",
+    "reported_effort": "medium",
+    "native_valid": true,
+    "ledger_pass": true,
+    "manual_grade_pending": true,
+    "turns": [
+      {
+        "phase": "seed",
+        "latency_ms": 126832,
+        "final_at_ns": 1790980146054246000
+      },
+      {
+        "phase": "followup",
+        "latency_ms": 11770,
+        "final_at_ns": 1790980157905644000
+      }
+    ]
+  },
+  {
+    "case": "earlier-approval-status",
+    "condition": "candidate",
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "model_called": true,
+    "reported_model": "gpt-6-luna",
+    "reported_effort": "medium",
+    "native_valid": true,
+    "ledger_pass": true,
+    "manual_grade_pending": true,
+    "turns": [
+      {
+        "phase": "seed",
+        "latency_ms": 183157,
+        "final_at_ns": 1790980360436412000
+      },
+      {
+        "phase": "followup",
+        "latency_ms": 8170,
+        "final_at_ns": 1790980368649928000
+      }
+    ]
+  },
+  {
+    "case": "natural-all-approval",
+    "condition": "candidate",
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "model_called": true,
+    "reported_model": "gpt-6-luna",
+    "reported_effort": "medium",
+    "native_valid": true,
+    "ledger_pass": true,
+    "manual_grade_pending": true,
+    "turns": [
+      {
+        "phase": "seed",
+        "latency_ms": 27945,
+        "final_at_ns": 1790980415332297000
+      },
+      {
+        "phase": "followup",
+        "latency_ms": 7385,
+        "final_at_ns": 1790980422826219000
+      }
+    ]
+  },
+  {
+    "case": "natural-all-approval",
+    "condition": "baseline",
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "model_called": true,
+    "reported_model": "gpt-6-luna",
+    "reported_effort": "medium",
+    "native_valid": true,
+    "ledger_pass": true,
+    "manual_grade_pending": true,
+    "turns": [
+      {
+        "phase": "seed",
+        "latency_ms": 20938,
+        "final_at_ns": 1790980463196697000
+      },
+      {
+        "phase": "followup",
+        "latency_ms": 5174,
+        "final_at_ns": 1790980468437720000
+      }
+    ]
+  },
+  {
+    "case": "standing-same-repo",
+    "condition": "baseline",
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "model_called": true,
+    "reported_model": "gpt-6-luna",
+    "reported_effort": "medium",
+    "native_valid": true,
+    "ledger_pass": true,
+    "manual_grade_pending": true,
+    "turns": [
+      {
+        "phase": "seed",
+        "latency_ms": 8804,
+        "final_at_ns": 1790980496487796000
+      },
+      {
+        "phase": "followup",
+        "latency_ms": 4931,
+        "final_at_ns": 1790980501490056000
+      }
+    ]
+  },
+  {
+    "case": "standing-same-repo",
+    "condition": "candidate",
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "model_called": true,
+    "reported_model": "gpt-6-luna",
+    "reported_effort": "medium",
+    "native_valid": true,
+    "ledger_pass": true,
+    "manual_grade_pending": true,
+    "turns": [
+      {
+        "phase": "seed",
+        "latency_ms": 13552,
+        "final_at_ns": 1790980533706512000
+      },
+      {
+        "phase": "followup",
+        "latency_ms": 7730,
+        "final_at_ns": 1790980541487659000
+      }
+    ]
+  },
+  {
+    "case": "withdrawal-read-only",
+    "condition": "candidate",
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "model_called": true,
+    "reported_model": "gpt-6-luna",
+    "reported_effort": "medium",
+    "native_valid": true,
+    "ledger_pass": true,
+    "manual_grade_pending": true,
+    "turns": [
+      {
+        "phase": "seed",
+        "latency_ms": 141504,
+        "final_at_ns": 1790980701460593000
+      },
+      {
+        "phase": "followup",
+        "latency_ms": 1809,
+        "final_at_ns": 1790980703338527000
+      }
+    ]
+  },
+  {
+    "case": "withdrawal-read-only",
+    "condition": "baseline",
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "model_called": true,
+    "reported_model": "gpt-6-luna",
+    "reported_effort": "medium",
+    "native_valid": true,
+    "ledger_pass": true,
+    "manual_grade_pending": true,
+    "turns": [
+      {
+        "phase": "seed",
+        "latency_ms": 107063,
+        "final_at_ns": 1790980829673262000
+      },
+      {
+        "phase": "followup",
+        "latency_ms": 1810,
+        "final_at_ns": 1790980831554614000
+      }
+    ]
+  },
+  {
+    "case": "completed-changed-destination",
+    "condition": "baseline",
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "model_called": true,
+    "reported_model": "gpt-6-luna",
+    "reported_effort": "medium",
+    "native_valid": true,
+    "ledger_pass": true,
+    "manual_grade_pending": true,
+    "turns": [
+      {
+        "phase": "seed",
+        "latency_ms": 10807,
+        "final_at_ns": 1790980861214565000
+      },
+      {
+        "phase": "followup",
+        "latency_ms": 5789,
+        "final_at_ns": 1790980867084082000
+      }
+    ]
+  },
+  {
+    "case": "completed-changed-destination",
+    "condition": "candidate",
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "model_called": true,
+    "reported_model": "gpt-6-luna",
+    "reported_effort": "medium",
+    "native_valid": true,
+    "ledger_pass": true,
+    "manual_grade_pending": true,
+    "turns": [
+      {
+        "phase": "seed",
+        "latency_ms": 8884,
+        "final_at_ns": 1790980894275768000
+      },
+      {
+        "phase": "followup",
+        "latency_ms": 1372,
+        "final_at_ns": 1790980895731208000
+      }
+    ]
+  },
+  {
+    "case": "quoted-readiness",
+    "condition": "candidate",
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "model_called": true,
+    "reported_model": "gpt-6-luna",
+    "reported_effort": "medium",
+    "native_valid": true,
+    "ledger_pass": true,
+    "manual_grade_pending": true,
+    "turns": [
+      {
+        "phase": "seed",
+        "latency_ms": 7196,
+        "final_at_ns": 1790980921113035000
+      },
+      {
+        "phase": "followup",
+        "latency_ms": 2098,
+        "final_at_ns": 1790980923230715000
+      }
+    ]
+  },
+  {
+    "case": "quoted-readiness",
+    "condition": "baseline",
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "model_called": true,
+    "reported_model": "gpt-6-luna",
+    "reported_effort": "medium",
+    "native_valid": true,
+    "ledger_pass": true,
+    "manual_grade_pending": true,
+    "turns": [
+      {
+        "phase": "seed",
+        "latency_ms": 7055,
+        "final_at_ns": 1790980948513447000
+      },
+      {
+        "phase": "followup",
+        "latency_ms": 1554,
+        "final_at_ns": 1790980950143760000
+      }
+    ]
+  }
+]

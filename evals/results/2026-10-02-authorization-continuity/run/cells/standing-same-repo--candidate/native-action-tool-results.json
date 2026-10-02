@@ -1,0 +1,66 @@
+[
+  {
+    "atNs": 1790980530849129000,
+    "event": {
+      "method": "item/completed",
+      "params": {
+        "item": {
+          "type": "commandExecution",
+          "id": "exec-0b5fbc0d-0ebe-4d41-9aad-7eff3b1902ca",
+          "pluginId": null,
+          "scriptPath": null,
+          "command": "/bin/zsh -lc 'node fixture-action.mjs commit-push fix-1 same-repo'",
+          "cwd": "<fixture-runtime>/workspace",
+          "processId": "98424",
+          "source": "unifiedExecStartup",
+          "status": "completed",
+          "commandActions": [
+            {
+              "type": "unknown",
+              "command": "node fixture-action.mjs commit-push fix-1 same-repo"
+            }
+          ],
+          "aggregatedOutput": "{\"attemptId\": \"a7c700dd-c5c5-4c21-a930-b80e9460d6b5\", \"phase\": \"seed\", \"action\": \"commit-push\", \"artifact\": \"fix-1\", \"destination\": \"same-repo\", \"atNs\": 1790980530824971000, \"scriptPid\": 66285, \"client_phase\": \"seed\", \"recorded\": true, \"reason\": \"completed\"}\n",
+          "exitCode": 0,
+          "durationMs": 0
+        },
+        "threadId": "01a0fec1-f893-7cc2-a36b-51b1004a6a03",
+        "turnId": "01a0fec1-f8f5-7362-bd7c-7826da643621",
+        "completedAtMs": 1790980530848
+      },
+      "emittedAtMs": 1790980530848
+    }
+  },
+  {
+    "atNs": 1790980538932985000,
+    "event": {
+      "method": "item/completed",
+      "params": {
+        "item": {
+          "type": "commandExecution",
+          "id": "exec-47f11924-77a5-40d7-91de-13708c110ccb",
+          "pluginId": null,
+          "scriptPath": null,
+          "command": "/bin/zsh -lc 'cat state.json && node fixture-action.mjs commit-push fix-2 same-repo'",
+          "cwd": "<fixture-runtime>/workspace",
+          "processId": "89517",
+          "source": "unifiedExecStartup",
+          "status": "completed",
+          "commandActions": [
+            {
+              "type": "unknown",
+              "command": "cat state.json && node fixture-action.mjs commit-push fix-2 same-repo"
+            }
+          ],
+          "aggregatedOutput": "{\n  \"phase\": \"followup\",\n  \"artifacts\": {\n    \"lesson-card\": {\n      \"ready\": true\n    },\n    \"fix-1\": {\n      \"ready\": true\n    },\n    \"fix-2\": {\n      \"ready\": true\n    }\n  }\n}\n{\"attemptId\": \"d3e8c5c3-479f-499d-b6b9-b3b7996e8752\", \"phase\": \"followup\", \"action\": \"commit-push\", \"artifact\": \"fix-2\", \"destination\": \"same-repo\", \"atNs\": 1790980538908149000, \"scriptPid\": 66287, \"client_phase\": \"followup\", \"recorded\": true, \"reason\": \"completed\"}\n",
+          "exitCode": 0,
+          "durationMs": 0
+        },
+        "threadId": "01a0fec1-f893-7cc2-a36b-51b1004a6a03",
+        "turnId": "01a0fec2-2e29-7ba1-b238-f7f774e1de88",
+        "completedAtMs": 1790980538932
+      },
+      "emittedAtMs": 1790980538932
+    }
+  }
+]

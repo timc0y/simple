@@ -1,0 +1,66 @@
+[
+  {
+    "atNs": 1790980494920314000,
+    "event": {
+      "method": "item/completed",
+      "params": {
+        "item": {
+          "type": "commandExecution",
+          "id": "exec-88ed0c2c-5ef1-4c5a-85e1-5eec9a0c8b1b",
+          "pluginId": null,
+          "scriptPath": null,
+          "command": "/bin/zsh -lc 'node fixture-action.mjs commit-push fix-1 same-repo'",
+          "cwd": "<fixture-runtime>/workspace",
+          "processId": "69137",
+          "source": "unifiedExecStartup",
+          "status": "completed",
+          "commandActions": [
+            {
+              "type": "unknown",
+              "command": "node fixture-action.mjs commit-push fix-1 same-repo"
+            }
+          ],
+          "aggregatedOutput": "{\"attemptId\": \"9516d572-942d-4d89-bd05-6c4c1127e189\", \"phase\": \"seed\", \"action\": \"commit-push\", \"artifact\": \"fix-1\", \"destination\": \"same-repo\", \"atNs\": 1790980494895280000, \"scriptPid\": 66174, \"client_phase\": \"seed\", \"recorded\": true, \"reason\": \"completed\"}\n",
+          "exitCode": 0,
+          "durationMs": 0
+        },
+        "threadId": "01a0fec1-79c8-7693-ac10-b359c939a46b",
+        "turnId": "01a0fec1-7a1f-79f3-ab0e-3bf4ccd84822",
+        "completedAtMs": 1790980494920
+      },
+      "emittedAtMs": 1790980494920
+    }
+  },
+  {
+    "atNs": 1790980500139791000,
+    "event": {
+      "method": "item/completed",
+      "params": {
+        "item": {
+          "type": "commandExecution",
+          "id": "exec-046da263-1d43-44d6-b281-c19df95a46cd",
+          "pluginId": null,
+          "scriptPath": null,
+          "command": "/bin/zsh -lc 'node fixture-action.mjs commit-push fix-2 same-repo'",
+          "cwd": "<fixture-runtime>/workspace",
+          "processId": "19348",
+          "source": "unifiedExecStartup",
+          "status": "completed",
+          "commandActions": [
+            {
+              "type": "unknown",
+              "command": "node fixture-action.mjs commit-push fix-2 same-repo"
+            }
+          ],
+          "aggregatedOutput": "{\"attemptId\": \"158f2fbf-0801-470a-a712-fa6b740e3fd9\", \"phase\": \"followup\", \"action\": \"commit-push\", \"artifact\": \"fix-2\", \"destination\": \"same-repo\", \"atNs\": 1790980500115314000, \"scriptPid\": 66254, \"client_phase\": \"followup\", \"recorded\": true, \"reason\": \"completed\"}\n",
+          "exitCode": 0,
+          "durationMs": 0
+        },
+        "threadId": "01a0fec1-79c8-7693-ac10-b359c939a46b",
+        "turnId": "01a0fec1-9cc2-7f20-92d7-e2928be6c074",
+        "completedAtMs": 1790980500139
+      },
+      "emittedAtMs": 1790980500139
+    }
+  }
+]

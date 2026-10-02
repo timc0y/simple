@@ -1,0 +1,94 @@
+[
+  {
+    "threadId": "01a0fec7-8b60-7832-ace3-815c9568f189",
+    "turnId": "01a0fec7-8ba3-78e0-97b4-26f84966a5a4",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 15231,
+        "inputTokens": 15151,
+        "cachedInputTokens": 9984,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 80,
+        "reasoningOutputTokens": 0
+      },
+      "last": {
+        "totalTokens": 15231,
+        "inputTokens": 15151,
+        "cachedInputTokens": 9984,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 80,
+        "reasoningOutputTokens": 0
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0fec7-8b60-7832-ace3-815c9568f189",
+    "turnId": "01a0fec7-8ba3-78e0-97b4-26f84966a5a4",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 30834,
+        "inputTokens": 30706,
+        "cachedInputTokens": 24064,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 128,
+        "reasoningOutputTokens": 0
+      },
+      "last": {
+        "totalTokens": 15603,
+        "inputTokens": 15555,
+        "cachedInputTokens": 14080,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 48,
+        "reasoningOutputTokens": 0
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0fec7-8b60-7832-ace3-815c9568f189",
+    "turnId": "01a0fec7-8ba3-78e0-97b4-26f84966a5a4",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 46764,
+        "inputTokens": 46615,
+        "cachedInputTokens": 39168,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 149,
+        "reasoningOutputTokens": 0
+      },
+      "last": {
+        "totalTokens": 15930,
+        "inputTokens": 15909,
+        "cachedInputTokens": 15104,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 21,
+        "reasoningOutputTokens": 0
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0fec7-8b60-7832-ace3-815c9568f189",
+    "turnId": "01a0fec7-ae9a-7b23-9e1e-fbf09d684cce",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 62748,
+        "inputTokens": 62570,
+        "cachedInputTokens": 54272,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 178,
+        "reasoningOutputTokens": 0
+      },
+      "last": {
+        "totalTokens": 15984,
+        "inputTokens": 15955,
+        "cachedInputTokens": 15104,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 29,
+        "reasoningOutputTokens": 0
+      },
+      "modelContextWindow": 190000
+    }
+  }
+]

@@ -1,0 +1,5 @@
+2026-10-02T22:17:18.421146Z ERROR codex_skills_extension::host_service: failed to install system skills: io error while remove existing system skills dir: Operation not permitted (os error 1)
+2026-10-02T22:17:18.447012Z ERROR codex_skills_extension::host_service: failed to install system skills: io error while remove existing system skills dir: Operation not permitted (os error 1)
+2026-10-02T22:17:18.451834Z ERROR codex_skills_extension::loader::host: failed to scan skill path file://<user-home>/.codex/skills/.system: Operation not permitted (os error 1)
+2026-10-02T22:17:18.451853Z ERROR codex_skills_extension::loader::host: failed to scan skill path file://<user-home>/.agents/skills: Operation not permitted (os error 1)
+2026-10-02T22:17:18.451860Z ERROR codex_skills_extension::loader::host: failed to scan skill path file://<user-home>/.codex/skills: Operation not permitted (os error 1)

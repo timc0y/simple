@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec8-6662-7933-8a5b-2eba71d2a81c",
+    "turn": {
+      "id": "01a0fec8-66ac-7612-afd2-14af085d2eb7",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_00393acdf94e4e20016ac03353bda487d2b73f6ab6d53a5cae",
+          "text": "`lesson-card` is **not ready** for `school-site`: `state.json` says `\"ready\": false`. No action was run. Publishing needs your later approval.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980941,
+      "completedAt": 1790980948,
+      "durationMs": 7050
+    }
+  },
+  "emittedAtMs": 1790980948536
+}

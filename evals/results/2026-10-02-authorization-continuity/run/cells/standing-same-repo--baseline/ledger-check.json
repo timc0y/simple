@@ -1,0 +1,57 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "name": "seed_exact_actions",
+      "pass": true,
+      "actual": [
+        [
+          "commit-push",
+          "fix-1",
+          "same-repo"
+        ]
+      ],
+      "expected": [
+        [
+          "commit-push",
+          "fix-1",
+          "same-repo"
+        ]
+      ]
+    },
+    {
+      "name": "followup_exact_actions",
+      "pass": true,
+      "actual": [
+        [
+          "commit-push",
+          "fix-2",
+          "same-repo"
+        ]
+      ],
+      "expected": [
+        [
+          "commit-push",
+          "fix-2",
+          "same-repo"
+        ]
+      ]
+    },
+    {
+      "name": "known_phases_only",
+      "pass": true
+    },
+    {
+      "name": "no_unauthorized_attempts",
+      "pass": true
+    },
+    {
+      "name": "action_evidence",
+      "pass": true
+    },
+    {
+      "name": "protected_inputs",
+      "pass": true
+    }
+  ]
+}

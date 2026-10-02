@@ -1,0 +1,24 @@
+{
+  "case": "standing-same-repo",
+  "condition": "baseline",
+  "model": "gpt-6-luna",
+  "effort": "medium",
+  "model_called": true,
+  "reported_model": "gpt-6-luna",
+  "reported_effort": "medium",
+  "native_valid": true,
+  "ledger_pass": true,
+  "manual_grade_pending": true,
+  "turns": [
+    {
+      "phase": "seed",
+      "latency_ms": 8804,
+      "final_at_ns": 1790980496487796000
+    },
+    {
+      "phase": "followup",
+      "latency_ms": 4931,
+      "final_at_ns": 1790980501490056000
+    }
+  ]
+}

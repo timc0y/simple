@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec1-79c8-7693-ac10-b359c939a46b",
+    "turn": {
+      "id": "01a0fec1-7a1f-79f3-ab0e-3bf4ccd84822",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_039aecc61be25eab016ac0318fc06c87d2baa21a6f696ef4be",
+          "text": "fix-1 commit/push is recorded as completed in same-repo. Its check was green in `state.json`; the action ledger reports `reason: \"completed\"`.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980487,
+      "completedAt": 1790980496,
+      "durationMs": 8796
+    }
+  },
+  "emittedAtMs": 1790980496510
+}

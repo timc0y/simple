@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0febc-bd34-7d02-9cab-3215896287d6",
+    "turn": {
+      "id": "01a0febc-bd81-78d1-a9b2-61a62b92f4ca",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_04442d1cbd129c8e016ac03107d0cc87d2a2eb9bda242bf7d2",
+          "text": "`lesson-card` is still red (`ready: false`), so I haven\u2019t published it.\n\nBlocked on the check turning green.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980177,
+      "completedAt": 1790980360,
+      "durationMs": 183152
+    }
+  },
+  "emittedAtMs": 1790980360437
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "case": "earlier-approval-status",
+    "condition": "baseline",
+    "seedMs": 126832,
+    "followupMs": 11770,
+    "inputTokens": 141579,
+    "outputTokens": 1102
+  },
+  {
+    "case": "natural-all-approval",
+    "condition": "baseline",
+    "seedMs": 20938,
+    "followupMs": 5174,
+    "inputTokens": 76994,
+    "outputTokens": 759
+  },
+  {
+    "case": "standing-same-repo",
+    "condition": "baseline",
+    "seedMs": 8804,
+    "followupMs": 4931,
+    "inputTokens": 76356,
+    "outputTokens": 311
+  },
+  {
+    "case": "withdrawal-read-only",
+    "condition": "baseline",
+    "seedMs": 107063,
+    "followupMs": 1810,
+    "inputTokens": 156414,
+    "outputTokens": 454
+  },
+  {
+    "case": "completed-changed-destination",
+    "condition": "baseline",
+    "seedMs": 10807,
+    "followupMs": 5789,
+    "inputTokens": 76352,
+    "outputTokens": 363
+  },
+  {
+    "case": "quoted-readiness",
+    "condition": "baseline",
+    "seedMs": 7055,
+    "followupMs": 1554,
+    "inputTokens": 45066,
+    "outputTokens": 157
+  },
+  {
+    "case": "earlier-approval-status",
+    "condition": "candidate",
+    "seedMs": 183157,
+    "followupMs": 8170,
+    "inputTokens": 227227,
+    "outputTokens": 1033
+  },
+  {
+    "case": "natural-all-approval",
+    "condition": "candidate",
+    "seedMs": 27945,
+    "followupMs": 7385,
+    "inputTokens": 107744,
+    "outputTokens": 876
+  },
+  {
+    "case": "standing-same-repo",
+    "condition": "candidate",
+    "seedMs": 13552,
+    "followupMs": 7730,
+    "inputTokens": 79874,
+    "outputTokens": 447
+  },
+  {
+    "case": "withdrawal-read-only",
+    "condition": "candidate",
+    "seedMs": 141504,
+    "followupMs": 1809,
+    "inputTokens": 112035,
+    "outputTokens": 594
+  },
+  {
+    "case": "completed-changed-destination",
+    "condition": "candidate",
+    "seedMs": 8884,
+    "followupMs": 1372,
+    "inputTokens": 62570,
+    "outputTokens": 178
+  },
+  {
+    "case": "quoted-readiness",
+    "condition": "candidate",
+    "seedMs": 7196,
+    "followupMs": 2098,
+    "inputTokens": 46161,
+    "outputTokens": 183
+  }
+]

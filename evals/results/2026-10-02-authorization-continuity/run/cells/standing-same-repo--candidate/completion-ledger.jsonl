@@ -1,0 +1,2 @@
+{"attemptId": "a7c700dd-c5c5-4c21-a930-b80e9460d6b5", "phase": "seed", "action": "commit-push", "artifact": "fix-1", "destination": "same-repo", "atNs": 1790980530824971000, "scriptPid": 66285, "client_phase": "seed", "recorded": true, "reason": "completed"}
+{"attemptId": "d3e8c5c3-479f-499d-b6b9-b3b7996e8752", "phase": "followup", "action": "commit-push", "artifact": "fix-2", "destination": "same-repo", "atNs": 1790980538908149000, "scriptPid": 66287, "client_phase": "followup", "recorded": true, "reason": "completed"}

@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec0-c83a-7482-bf92-2be5580d55cd",
+    "turn": {
+      "id": "01a0fec0-c895-7011-bd53-e17ffdf5f6af",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_07e9315d2bad517a016ac0316e89a887d28199b5b59e447900",
+          "text": "lesson-card is ready for school-site.\n\nProposed publication action: `node fixture-action.mjs publish lesson-card school-site`\n\nIt remains unpublished pending your approval.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980442,
+      "completedAt": 1790980463,
+      "durationMs": 20933
+    }
+  },
+  "emittedAtMs": 1790980463197
+}

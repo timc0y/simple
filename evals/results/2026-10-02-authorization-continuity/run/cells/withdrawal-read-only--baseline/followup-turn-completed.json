@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec5-0f7d-7f73-8e59-c60b6c4e0454",
+    "turn": {
+      "id": "01a0fec6-b248-7730-bed0-f7f2f85ad3aa",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_02facaa3d32f36a8016ac032def7cc87d28036f1f263adcf8f",
+          "text": "`lesson-card` is red (`ready: false`, phase `seed`). I\u2019ve made no publication attempt; your approval is canceled.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980829,
+      "completedAt": 1790980831,
+      "durationMs": 1805
+    }
+  },
+  "emittedAtMs": 1790980831576
+}

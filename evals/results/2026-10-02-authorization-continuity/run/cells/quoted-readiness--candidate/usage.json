@@ -1,0 +1,71 @@
+[
+  {
+    "threadId": "01a0fec7-fac6-7751-a998-baf69874d452",
+    "turnId": "01a0fec7-fb13-7682-a170-2a2e6e986e54",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 15246,
+        "inputTokens": 15143,
+        "cachedInputTokens": 0,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 103,
+        "reasoningOutputTokens": 0
+      },
+      "last": {
+        "totalTokens": 15246,
+        "inputTokens": 15143,
+        "cachedInputTokens": 0,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 103,
+        "reasoningOutputTokens": 0
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0fec7-fac6-7751-a998-baf69874d452",
+    "turnId": "01a0fec7-fb13-7682-a170-2a2e6e986e54",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 30763,
+        "inputTokens": 30618,
+        "cachedInputTokens": 14080,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 145,
+        "reasoningOutputTokens": 0
+      },
+      "last": {
+        "totalTokens": 15517,
+        "inputTokens": 15475,
+        "cachedInputTokens": 14080,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 42,
+        "reasoningOutputTokens": 0
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0fec7-fac6-7751-a998-baf69874d452",
+    "turnId": "01a0fec8-1765-7090-afdf-3b56fcc0c564",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 46344,
+        "inputTokens": 46161,
+        "cachedInputTokens": 29184,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 183,
+        "reasoningOutputTokens": 0
+      },
+      "last": {
+        "totalTokens": 15581,
+        "inputTokens": 15543,
+        "cachedInputTokens": 15104,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 38,
+        "reasoningOutputTokens": 0
+      },
+      "modelContextWindow": 190000
+    }
+  }
+]

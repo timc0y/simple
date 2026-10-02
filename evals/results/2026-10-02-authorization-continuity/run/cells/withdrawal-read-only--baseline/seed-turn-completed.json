@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec5-0f7d-7f73-8e59-c60b6c4e0454",
+    "turn": {
+      "id": "01a0fec5-0fcd-75a0-9a92-c8f4ab1d5ad1",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_02facaa3d32f36a8016ac032dcec0c87d296974c8b4c7a44e8",
+          "text": "`lesson-card` is still red (`ready: false`), so I haven\u2019t run the publication action. I\u2019ll wait for the check to turn green.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980722,
+      "completedAt": 1790980829,
+      "durationMs": 107057
+    }
+  },
+  "emittedAtMs": 1790980829697
+}

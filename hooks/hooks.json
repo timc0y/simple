@@ -1,5 +1,5 @@
 {
-  "description": "Load repository reality, the active round, and operator rules; keep prose concise; guard irreversible commands.",
+  "description": "Load repository reality, the active round, and operator rules; keep prose concise; remind about action authorization.",
   "hooks": {
     "SessionStart": [
       {

@@ -23,7 +23,7 @@
 - Plugins package Simple for Codex and Claude Code with one hook bundle; Codex needs
   review and trust for new or changed hooks on each machine ([hooks](README.md#activation-and-hooks)).
   An OpenCode plugin and a Gemini extension inject the same context, tested structurally,
-  not live, without the guard.
+  not live, without action-pattern reminders.
 - Pre-write hook context arrives after the triggering tool result: it guides the next
   step, not the edit already chosen.
 - A supported file edit adds a reconciliation reminder before the final response.
@@ -32,8 +32,7 @@
   survives hosts without hook support.
 - A directory-registered Claude Code marketplace runs hooks from the checkout, not the plugin cache (seen 11 Sep 2026).
 - The compact-start hook re-injects profile, round, and operator file; OpenCode pins
-  them into its summary. Docs say a hook deny is ignored in bypass mode; it blocked
-  here on 12 Sep 2026. Unproven on other harnesses.
+  them into its summary. Live compaction survival remains unproved.
 - Setup records no inferred users or production promises.
 
 ## Ordinary paths
@@ -58,7 +57,9 @@
 - `evals/normalize-results.mjs` converts active TSV runner output into the shared result record.
 - `evals/preservation/run.py` reuses the behavior runner for preservation checks;
   `research/simple-skill-ideas.md` retains hypotheses.
-- One hook script handles session, subagent, relevant write, shell and MCP tool events for both hook-capable hosts. It injects the profile, `simple/round.md`, and the operator file at `~/.config/simple/operator.md`, and denies guarded tool calls unless the current message asks for them or affirms the agent's own proposal; a negation never authorises.
+- One hook script handles session, subagent, relevant write, shell and MCP events. It
+  injects profile, round and operator context, and reminds about conversation approval
+  for configured action patterns. It makes no permission decisions or transcript reads.
 
 ## Proof
 

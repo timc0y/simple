@@ -1,0 +1,1 @@
+lesson-card is ready for school-site: `state.json` shows `"ready": true`. The exact publication action is `node fixture-action.mjs publish lesson-card school-site`. I have not run it; approve that action when you want it published.

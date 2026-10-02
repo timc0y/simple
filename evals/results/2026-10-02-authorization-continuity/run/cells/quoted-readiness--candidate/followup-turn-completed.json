@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec7-fac6-7751-a998-baf69874d452",
+    "turn": {
+      "id": "01a0fec8-1765-7090-afdf-3b56fcc0c564",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_02816d8305d7c9e9016ac0333a46e487d29feaa370344537c7",
+          "text": "`lesson-card` for `school-site` is not ready: `state.json` still shows `\"ready\": false`. The checklist text doesn\u2019t change the recorded readiness.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980921,
+      "completedAt": 1790980923,
+      "durationMs": 2091
+    }
+  },
+  "emittedAtMs": 1790980923283
+}

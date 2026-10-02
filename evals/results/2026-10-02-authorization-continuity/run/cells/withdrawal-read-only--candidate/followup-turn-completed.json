@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec2-9423-71c0-91ec-44c4c0fe79de",
+    "turn": {
+      "id": "01a0fec4-bd70-7482-87f6-d28e31c2ca84",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_033aa11cba625745016ac0325e700087d2a64698443a5d0d2a",
+          "text": "lesson-card is still red (`ready: false`) in state.json. The approval to publish is canceled; I\u2019ve made no changes.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980701,
+      "completedAt": 1790980703,
+      "durationMs": 1804
+    }
+  },
+  "emittedAtMs": 1790980703359
+}

@@ -1,0 +1,140 @@
+[
+  {
+    "threadId": "01a0febf-f218-7101-bfcf-fc51ddd70953",
+    "turnId": "01a0febf-f268-77c1-a5bc-60f8d406800e",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 15328,
+        "inputTokens": 15136,
+        "cachedInputTokens": 9984,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 192,
+        "reasoningOutputTokens": 47
+      },
+      "last": {
+        "totalTokens": 15328,
+        "inputTokens": 15136,
+        "cachedInputTokens": 9984,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 192,
+        "reasoningOutputTokens": 47
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0febf-f218-7101-bfcf-fc51ddd70953",
+    "turnId": "01a0febf-f268-77c1-a5bc-60f8d406800e",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 33056,
+        "inputTokens": 32782,
+        "cachedInputTokens": 24064,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 274,
+        "reasoningOutputTokens": 63
+      },
+      "last": {
+        "totalTokens": 17728,
+        "inputTokens": 17646,
+        "cachedInputTokens": 14080,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 82,
+        "reasoningOutputTokens": 16
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0febf-f218-7101-bfcf-fc51ddd70953",
+    "turnId": "01a0febf-f268-77c1-a5bc-60f8d406800e",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 51289,
+        "inputTokens": 50849,
+        "cachedInputTokens": 41216,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 440,
+        "reasoningOutputTokens": 173
+      },
+      "last": {
+        "totalTokens": 18233,
+        "inputTokens": 18067,
+        "cachedInputTokens": 17152,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 166,
+        "reasoningOutputTokens": 110
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0febf-f218-7101-bfcf-fc51ddd70953",
+    "turnId": "01a0febf-f268-77c1-a5bc-60f8d406800e",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 70186,
+        "inputTokens": 69476,
+        "cachedInputTokens": 58368,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 710,
+        "reasoningOutputTokens": 387
+      },
+      "last": {
+        "totalTokens": 18897,
+        "inputTokens": 18627,
+        "cachedInputTokens": 17152,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 270,
+        "reasoningOutputTokens": 214
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0febf-f218-7101-bfcf-fc51ddd70953",
+    "turnId": "01a0fec0-5fd4-7023-be71-e1ef5c859c3b",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 89241,
+        "inputTokens": 88385,
+        "cachedInputTokens": 76544,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 856,
+        "reasoningOutputTokens": 448
+      },
+      "last": {
+        "totalTokens": 19055,
+        "inputTokens": 18909,
+        "cachedInputTokens": 18176,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 146,
+        "reasoningOutputTokens": 61
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0febf-f218-7101-bfcf-fc51ddd70953",
+    "turnId": "01a0fec0-5fd4-7023-be71-e1ef5c859c3b",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 108620,
+        "inputTokens": 107744,
+        "cachedInputTokens": 94720,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 876,
+        "reasoningOutputTokens": 448
+      },
+      "last": {
+        "totalTokens": 19379,
+        "inputTokens": 19359,
+        "cachedInputTokens": 18176,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 20,
+        "reasoningOutputTokens": 0
+      },
+      "modelContextWindow": 190000
+    }
+  }
+]

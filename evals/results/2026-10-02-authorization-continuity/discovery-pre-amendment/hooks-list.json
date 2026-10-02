@@ -1,0 +1,51 @@
+{
+  "data": [
+    {
+      "cwd": "/private<machine-temporary-path>",
+      "hooks": [
+        {
+          "key": "/<session-flags>/config.toml:pre_tool_use:0:0",
+          "eventName": "preToolUse",
+          "handlerType": "command",
+          "command": "node \"/private<machine-temporary-path>\"",
+          "async": false,
+          "matcher": "Bash|shell|exec_command|local_shell|container\\.exec|mcp__.*",
+          "timeoutSec": 3,
+          "statusMessage": null,
+          "additionalContextLimit": 0,
+          "sourcePath": "/<session-flags>/config.toml",
+          "source": "sessionFlags",
+          "pluginId": null,
+          "displayOrder": 0,
+          "enabled": true,
+          "isManaged": false,
+          "currentHash": "sha256:4a16c52facf0d702eb6340ecd5b0404bbe30c4b94f65fbe9c06c128bc36066b9",
+          "trustStatus": "trusted"
+        },
+        {
+          "key": "/<session-flags>/config.toml:session_start:0:0",
+          "eventName": "sessionStart",
+          "handlerType": "command",
+          "command": "node \"/private<machine-temporary-path>\"",
+          "async": false,
+          "matcher": "startup|resume|clear|compact",
+          "timeoutSec": 3,
+          "statusMessage": null,
+          "additionalContextLimit": 0,
+          "sourcePath": "/<session-flags>/config.toml",
+          "source": "sessionFlags",
+          "pluginId": null,
+          "displayOrder": 1,
+          "enabled": true,
+          "isManaged": false,
+          "currentHash": "sha256:dccd774473414070e5388611b56ad2441ef1b3fabaea5a59d3e7c3599e1bb322",
+          "trustStatus": "trusted"
+        }
+      ],
+      "warnings": [
+        "failed to read hooks config <user-home>/.codex/hooks.json: Operation not permitted (os error 1)"
+      ],
+      "errors": []
+    }
+  ]
+}

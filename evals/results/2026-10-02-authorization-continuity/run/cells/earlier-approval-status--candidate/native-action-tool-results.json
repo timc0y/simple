@@ -1,0 +1,34 @@
+[
+  {
+    "atNs": 1790980364550410000,
+    "event": {
+      "method": "item/completed",
+      "params": {
+        "item": {
+          "type": "commandExecution",
+          "id": "exec-c58d97cb-f2d0-42bc-bd64-97b9756b010a",
+          "pluginId": null,
+          "scriptPath": null,
+          "command": "/bin/zsh -lc 'cat state.json && node fixture-action.mjs publish lesson-card school-site'",
+          "cwd": "<fixture-runtime>/workspace",
+          "processId": "9675",
+          "source": "unifiedExecStartup",
+          "status": "completed",
+          "commandActions": [
+            {
+              "type": "unknown",
+              "command": "cat state.json && node fixture-action.mjs publish lesson-card school-site"
+            }
+          ],
+          "aggregatedOutput": "{\n  \"phase\": \"followup\",\n  \"artifacts\": {\n    \"lesson-card\": {\n      \"ready\": true\n    },\n    \"fix-1\": {\n      \"ready\": true\n    },\n    \"fix-2\": {\n      \"ready\": true\n    }\n  }\n}\n{\"attemptId\": \"df1943cf-96ad-47b2-9dc4-08f0c80dbeb6\", \"phase\": \"followup\", \"action\": \"publish\", \"artifact\": \"lesson-card\", \"destination\": \"school-site\", \"atNs\": 1790980364526024000, \"scriptPid\": 64647, \"client_phase\": \"followup\", \"recorded\": true, \"reason\": \"completed\"}\n",
+          "exitCode": 0,
+          "durationMs": 0
+        },
+        "threadId": "01a0febc-bd34-7d02-9cab-3215896287d6",
+        "turnId": "01a0febf-893a-71a0-9e11-0cef369e16ad",
+        "completedAtMs": 1790980364550
+      },
+      "emittedAtMs": 1790980364550
+    }
+  }
+]

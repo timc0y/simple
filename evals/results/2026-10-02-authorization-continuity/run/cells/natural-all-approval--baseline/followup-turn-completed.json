@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec0-c83a-7482-bf92-2be5580d55cd",
+    "turn": {
+      "id": "01a0fec1-1aa3-73c0-a30c-81f05df4a8f6",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_07e9315d2bad517a016ac031740c8487d284cab516c90c5f47",
+          "text": "lesson-card was published to school-site; the fixture recorded the action as completed.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980463,
+      "completedAt": 1790980468,
+      "durationMs": 5168
+    }
+  },
+  "emittedAtMs": 1790980468438
+}

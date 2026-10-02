@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec2-9423-71c0-91ec-44c4c0fe79de",
+    "turn": {
+      "id": "01a0fec2-946c-7353-8bcc-d36f0d608f43",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_033aa11cba625745016ac0325c973887d2a162e0ab738e7835",
+          "text": "lesson-card is still red (`ready: false`), so I haven\u2019t published it. I checked state.json four times over two minutes; it remains red.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980559,
+      "completedAt": 1790980701,
+      "durationMs": 141499
+    }
+  },
+  "emittedAtMs": 1790980701482
+}

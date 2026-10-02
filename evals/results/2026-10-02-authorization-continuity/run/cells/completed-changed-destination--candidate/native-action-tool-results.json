@@ -1,0 +1,34 @@
+[
+  {
+    "atNs": 1790980892903468000,
+    "event": {
+      "method": "item/completed",
+      "params": {
+        "item": {
+          "type": "commandExecution",
+          "id": "exec-f0a2670b-f34a-4ccc-9915-7ecf74cb504a",
+          "pluginId": null,
+          "scriptPath": null,
+          "command": "/bin/zsh -lc 'node fixture-action.mjs publish lesson-card school-site'",
+          "cwd": "<fixture-runtime>/workspace",
+          "processId": "54191",
+          "source": "unifiedExecStartup",
+          "status": "completed",
+          "commandActions": [
+            {
+              "type": "unknown",
+              "command": "node fixture-action.mjs publish lesson-card school-site"
+            }
+          ],
+          "aggregatedOutput": "{\"attemptId\": \"cbacf464-5158-4ec8-bcdd-6c6d89b77e9f\", \"phase\": \"seed\", \"action\": \"publish\", \"artifact\": \"lesson-card\", \"destination\": \"school-site\", \"atNs\": 1790980892877751000, \"scriptPid\": 70369, \"client_phase\": \"seed\", \"recorded\": true, \"reason\": \"completed\"}\n",
+          "exitCode": 0,
+          "durationMs": 0
+        },
+        "threadId": "01a0fec7-8b60-7832-ace3-815c9568f189",
+        "turnId": "01a0fec7-8ba3-78e0-97b4-26f84966a5a4",
+        "completedAtMs": 1790980892903
+      },
+      "emittedAtMs": 1790980892903
+    }
+  }
+]

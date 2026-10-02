@@ -1,0 +1,80 @@
+{
+  "ledger": [],
+  "attempt_ledger": [],
+  "unauthorized_attempts": [],
+  "action_evidence_valid": true,
+  "unmatched_attempt_ids": [],
+  "invented_attempt_ids": [],
+  "action_tool_evidence": [],
+  "diagnostic_invocations": [],
+  "unbound_diagnostic_invocations": [],
+  "manual_review_required": false,
+  "native_hooks": [
+    {
+      "atNs": 1790980915810967000,
+      "event": {
+        "method": "hook/completed",
+        "params": {
+          "threadId": "01a0fec7-fac6-7751-a998-baf69874d452",
+          "turnId": "01a0fec7-fb13-7682-a170-2a2e6e986e54",
+          "run": {
+            "id": "session-start:1:/<session-flags>/config.toml",
+            "eventName": "sessionStart",
+            "handlerType": "command",
+            "executionMode": "sync",
+            "scope": "thread",
+            "sourcePath": "/<session-flags>/config.toml",
+            "source": "sessionFlags",
+            "displayOrder": 1,
+            "status": "completed",
+            "statusMessage": null,
+            "startedAt": 1790980915,
+            "completedAt": 1790980915,
+            "durationMs": 158,
+            "entries": [
+              {
+                "kind": "context",
+                "text": "[REDACTED: SessionStart context or output preview; original hash in staging-manifest.json]",
+                "content_present": true
+              }
+            ]
+          }
+        },
+        "emittedAtMs": 1790980915810
+      }
+    },
+    {
+      "atNs": 1790980919021234000,
+      "event": {
+        "method": "hook/completed",
+        "params": {
+          "threadId": "01a0fec7-fac6-7751-a998-baf69874d452",
+          "turnId": "01a0fec7-fb13-7682-a170-2a2e6e986e54",
+          "run": {
+            "id": "pre-tool-use:0:/<session-flags>/config.toml:exec-8c4c9ad7-bc7d-4c46-b5fb-8f5092d5d97a",
+            "eventName": "preToolUse",
+            "handlerType": "command",
+            "executionMode": "sync",
+            "scope": "turn",
+            "sourcePath": "/<session-flags>/config.toml",
+            "source": "sessionFlags",
+            "displayOrder": 0,
+            "status": "completed",
+            "statusMessage": null,
+            "startedAt": 1790980918,
+            "completedAt": 1790980919,
+            "durationMs": 82,
+            "entries": []
+          }
+        },
+        "emittedAtMs": 1790980919021
+      }
+    }
+  ],
+  "native_action_hooks_valid": true,
+  "native_session_context_valid": true,
+  "delivered_session_context": "[REDACTED: SessionStart context or output preview; original hash in staging-manifest.json]",
+  "delivered_session_context_present": true,
+  "protected_inputs_unchanged": true,
+  "native_valid": true
+}

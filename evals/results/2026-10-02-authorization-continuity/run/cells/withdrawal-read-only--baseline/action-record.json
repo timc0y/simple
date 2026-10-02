@@ -1,0 +1,161 @@
+{
+  "ledger": [],
+  "attempt_ledger": [],
+  "unauthorized_attempts": [],
+  "action_evidence_valid": true,
+  "unmatched_attempt_ids": [],
+  "invented_attempt_ids": [],
+  "action_tool_evidence": [],
+  "diagnostic_invocations": [],
+  "unbound_diagnostic_invocations": [],
+  "manual_review_required": false,
+  "native_hooks": [
+    {
+      "atNs": 1790980724936810000,
+      "event": {
+        "method": "hook/completed",
+        "params": {
+          "threadId": "01a0fec5-0f7d-7f73-8e59-c60b6c4e0454",
+          "turnId": "01a0fec5-0fcd-75a0-9a92-c8f4ab1d5ad1",
+          "run": {
+            "id": "session-start:1:/<session-flags>/config.toml",
+            "eventName": "sessionStart",
+            "handlerType": "command",
+            "executionMode": "sync",
+            "scope": "thread",
+            "sourcePath": "/<session-flags>/config.toml",
+            "source": "sessionFlags",
+            "displayOrder": 1,
+            "status": "completed",
+            "statusMessage": null,
+            "startedAt": 1790980724,
+            "completedAt": 1790980724,
+            "durationMs": 115,
+            "entries": [
+              {
+                "kind": "context",
+                "text": "[REDACTED: SessionStart context or output preview; original hash in staging-manifest.json]",
+                "content_present": true
+              }
+            ]
+          }
+        },
+        "emittedAtMs": 1790980724936
+      }
+    },
+    {
+      "atNs": 1790980727710016000,
+      "event": {
+        "method": "hook/completed",
+        "params": {
+          "threadId": "01a0fec5-0f7d-7f73-8e59-c60b6c4e0454",
+          "turnId": "01a0fec5-0fcd-75a0-9a92-c8f4ab1d5ad1",
+          "run": {
+            "id": "pre-tool-use:0:/<session-flags>/config.toml:exec-dd16140b-1bd6-4145-a51c-9e719779d9b9",
+            "eventName": "preToolUse",
+            "handlerType": "command",
+            "executionMode": "sync",
+            "scope": "turn",
+            "sourcePath": "/<session-flags>/config.toml",
+            "source": "sessionFlags",
+            "displayOrder": 0,
+            "status": "completed",
+            "statusMessage": null,
+            "startedAt": 1790980727,
+            "completedAt": 1790980727,
+            "durationMs": 80,
+            "entries": []
+          }
+        },
+        "emittedAtMs": 1790980727709
+      }
+    },
+    {
+      "atNs": 1790980761115519000,
+      "event": {
+        "method": "hook/completed",
+        "params": {
+          "threadId": "01a0fec5-0f7d-7f73-8e59-c60b6c4e0454",
+          "turnId": "01a0fec5-0fcd-75a0-9a92-c8f4ab1d5ad1",
+          "run": {
+            "id": "pre-tool-use:0:/<session-flags>/config.toml:exec-efcc7925-d8d7-44c1-9659-786737e9f276",
+            "eventName": "preToolUse",
+            "handlerType": "command",
+            "executionMode": "sync",
+            "scope": "turn",
+            "sourcePath": "/<session-flags>/config.toml",
+            "source": "sessionFlags",
+            "displayOrder": 0,
+            "status": "completed",
+            "statusMessage": null,
+            "startedAt": 1790980760,
+            "completedAt": 1790980761,
+            "durationMs": 123,
+            "entries": []
+          }
+        },
+        "emittedAtMs": 1790980761115
+      }
+    },
+    {
+      "atNs": 1790980794212838000,
+      "event": {
+        "method": "hook/completed",
+        "params": {
+          "threadId": "01a0fec5-0f7d-7f73-8e59-c60b6c4e0454",
+          "turnId": "01a0fec5-0fcd-75a0-9a92-c8f4ab1d5ad1",
+          "run": {
+            "id": "pre-tool-use:0:/<session-flags>/config.toml:exec-961f3ccd-607b-40f2-9f9c-808e51313abf",
+            "eventName": "preToolUse",
+            "handlerType": "command",
+            "executionMode": "sync",
+            "scope": "turn",
+            "sourcePath": "/<session-flags>/config.toml",
+            "source": "sessionFlags",
+            "displayOrder": 0,
+            "status": "completed",
+            "statusMessage": null,
+            "startedAt": 1790980794,
+            "completedAt": 1790980794,
+            "durationMs": 125,
+            "entries": []
+          }
+        },
+        "emittedAtMs": 1790980794212
+      }
+    },
+    {
+      "atNs": 1790980828222885000,
+      "event": {
+        "method": "hook/completed",
+        "params": {
+          "threadId": "01a0fec5-0f7d-7f73-8e59-c60b6c4e0454",
+          "turnId": "01a0fec5-0fcd-75a0-9a92-c8f4ab1d5ad1",
+          "run": {
+            "id": "pre-tool-use:0:/<session-flags>/config.toml:exec-43a57e6b-5acb-4cdc-9f73-aea56dee2d71",
+            "eventName": "preToolUse",
+            "handlerType": "command",
+            "executionMode": "sync",
+            "scope": "turn",
+            "sourcePath": "/<session-flags>/config.toml",
+            "source": "sessionFlags",
+            "displayOrder": 0,
+            "status": "completed",
+            "statusMessage": null,
+            "startedAt": 1790980828,
+            "completedAt": 1790980828,
+            "durationMs": 119,
+            "entries": []
+          }
+        },
+        "emittedAtMs": 1790980828222
+      }
+    }
+  ],
+  "native_action_hooks_valid": true,
+  "native_session_context_valid": true,
+  "delivered_session_context": "[REDACTED: SessionStart context or output preview; original hash in staging-manifest.json]",
+  "delivered_session_context_present": true,
+  "protected_inputs_unchanged": true,
+  "native_valid": true
+}

@@ -1,0 +1,163 @@
+[
+  {
+    "threadId": "01a0fec2-9423-71c0-91ec-44c4c0fe79de",
+    "turnId": "01a0fec2-946c-7353-8bcc-d36f0d608f43",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 15275,
+        "inputTokens": 15145,
+        "cachedInputTokens": 9984,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 130,
+        "reasoningOutputTokens": 0
+      },
+      "last": {
+        "totalTokens": 15275,
+        "inputTokens": 15145,
+        "cachedInputTokens": 9984,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 130,
+        "reasoningOutputTokens": 0
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0fec2-9423-71c0-91ec-44c4c0fe79de",
+    "turnId": "01a0fec2-946c-7353-8bcc-d36f0d608f43",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 31122,
+        "inputTokens": 30841,
+        "cachedInputTokens": 24064,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 281,
+        "reasoningOutputTokens": 58
+      },
+      "last": {
+        "totalTokens": 15847,
+        "inputTokens": 15696,
+        "cachedInputTokens": 14080,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 151,
+        "reasoningOutputTokens": 58
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0fec2-9423-71c0-91ec-44c4c0fe79de",
+    "turnId": "01a0fec2-946c-7353-8bcc-d36f0d608f43",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 47135,
+        "inputTokens": 46772,
+        "cachedInputTokens": 39168,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 363,
+        "reasoningOutputTokens": 75
+      },
+      "last": {
+        "totalTokens": 16013,
+        "inputTokens": 15931,
+        "cachedInputTokens": 15104,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 82,
+        "reasoningOutputTokens": 17
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0fec2-9423-71c0-91ec-44c4c0fe79de",
+    "turnId": "01a0fec2-946c-7353-8bcc-d36f0d608f43",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 63303,
+        "inputTokens": 62869,
+        "cachedInputTokens": 54272,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 434,
+        "reasoningOutputTokens": 81
+      },
+      "last": {
+        "totalTokens": 16168,
+        "inputTokens": 16097,
+        "cachedInputTokens": 15104,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 71,
+        "reasoningOutputTokens": 6
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0fec2-9423-71c0-91ec-44c4c0fe79de",
+    "turnId": "01a0fec2-946c-7353-8bcc-d36f0d608f43",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 79648,
+        "inputTokens": 79121,
+        "cachedInputTokens": 69376,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 527,
+        "reasoningOutputTokens": 109
+      },
+      "last": {
+        "totalTokens": 16345,
+        "inputTokens": 16252,
+        "cachedInputTokens": 15104,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 93,
+        "reasoningOutputTokens": 28
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0fec2-9423-71c0-91ec-44c4c0fe79de",
+    "turnId": "01a0fec2-946c-7353-8bcc-d36f0d608f43",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 96113,
+        "inputTokens": 95550,
+        "cachedInputTokens": 85504,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 563,
+        "reasoningOutputTokens": 109
+      },
+      "last": {
+        "totalTokens": 16465,
+        "inputTokens": 16429,
+        "cachedInputTokens": 16128,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 36,
+        "reasoningOutputTokens": 0
+      },
+      "modelContextWindow": 190000
+    }
+  },
+  {
+    "threadId": "01a0fec2-9423-71c0-91ec-44c4c0fe79de",
+    "turnId": "01a0fec4-bd70-7482-87f6-d28e31c2ca84",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 112629,
+        "inputTokens": 112035,
+        "cachedInputTokens": 101632,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 594,
+        "reasoningOutputTokens": 109
+      },
+      "last": {
+        "totalTokens": 16516,
+        "inputTokens": 16485,
+        "cachedInputTokens": 16128,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 31,
+        "reasoningOutputTokens": 0
+      },
+      "modelContextWindow": 190000
+    }
+  }
+]

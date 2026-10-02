@@ -73,6 +73,16 @@ outcome, unaffected requirements, accepted decisions, and existing authorization
 A status question does not cancel ongoing work. Informal wording or a transcription
 error does not establish a new API, identifier, or compatibility promise.
 
+Before selecting tools, recover authorization for the agreed actions, work and
+destination from the active conversation. Clear action requests, including requests
+phrased as questions, and natural approval of a concrete proposal count. Readiness or
+explanation questions, quotations and action mentions do not grant permission. Honor
+withdrawals, read-only limits and unmet conditions. Completed work ends a one-time
+approval; an explicitly standing instruction remains valid within its stated bounds.
+Ask only when applicable approval is missing or unclear, or the action or destination
+exceeds it. Never require a particular word in the latest message or ask again for
+approval that still applies. Host permissions also apply.
+
 ## Write in order
 
 1. Identify the reader, purpose, destination, and source of truth.

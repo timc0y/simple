@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec7-02b7-7551-ae00-2ae304c06853",
+    "turn": {
+      "id": "01a0fec7-2d87-71d1-84fb-8cfbab864b32",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_0305d7cb399dd0cf016ac03302533087d282bab57cb852c2dc",
+          "text": "`lesson-card` is green for `partner-site` in phase `followup`; the recorded action was the earlier `school-site` publication. Nothing remains in this status request.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980861,
+      "completedAt": 1790980867,
+      "durationMs": 5783
+    }
+  },
+  "emittedAtMs": 1790980867105
+}

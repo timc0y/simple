@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec1-79c8-7693-ac10-b359c939a46b",
+    "turn": {
+      "id": "01a0fec1-9cc2-7f20-92d7-e2928be6c074",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_039aecc61be25eab016ac03194e39887d2b6f58a105cc110d0",
+          "text": "fix-2 commit/push is recorded as completed in same-repo. The fixture ledger reports `reason: \"completed\"`.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980496,
+      "completedAt": 1790980501,
+      "durationMs": 4925
+    }
+  },
+  "emittedAtMs": 1790980501506
+}

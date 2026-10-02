@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0feba-53d0-7e63-bc3d-97ba0cf040e3",
+    "turn": {
+      "id": "01a0feba-5437-7df2-aca1-5d404ef280fe",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_00b252defb80cc62016ac03030d47887d2ae5b792f8e18026c",
+          "text": "`lesson-card` has not been published to `school-site`; its check is still red in `state.json` (`ready: false`). I waited and rechecked, but the state did not change, so I did not run the publication action.\n\nBlocked on Tim: `lesson-card` needs a green check.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980019,
+      "completedAt": 1790980146,
+      "durationMs": 126824
+    }
+  },
+  "emittedAtMs": 1790980146082
+}

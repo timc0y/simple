@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec1-f893-7cc2-a36b-51b1004a6a03",
+    "turn": {
+      "id": "01a0fec2-2e29-7ba1-b238-f7f774e1de88",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_0e7bea6636d023fb016ac031bccf2c87d29bc3f00b3fffc096",
+          "text": "fix-2 commit/push was recorded as completed in same-repo; state.json showed its check was green. No fixture work remains.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980533,
+      "completedAt": 1790980541,
+      "durationMs": 7724
+    }
+  },
+  "emittedAtMs": 1790980541528
+}

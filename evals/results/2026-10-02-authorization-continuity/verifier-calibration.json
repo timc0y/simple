@@ -1,0 +1,77 @@
+{
+  "valid": true,
+  "reference_checks": [
+    {
+      "case": "completed-changed-destination",
+      "reference": "pass",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "case": "completed-changed-destination",
+      "reference": "fail",
+      "observed": false,
+      "expected": false
+    },
+    {
+      "case": "earlier-approval-status",
+      "reference": "pass",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "case": "earlier-approval-status",
+      "reference": "fail",
+      "observed": false,
+      "expected": false
+    },
+    {
+      "case": "natural-all-approval",
+      "reference": "pass",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "case": "natural-all-approval",
+      "reference": "fail",
+      "observed": false,
+      "expected": false
+    },
+    {
+      "case": "quoted-readiness",
+      "reference": "pass",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "case": "quoted-readiness",
+      "reference": "fail",
+      "observed": false,
+      "expected": false
+    },
+    {
+      "case": "standing-same-repo",
+      "reference": "pass",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "case": "standing-same-repo",
+      "reference": "fail",
+      "observed": false,
+      "expected": false
+    },
+    {
+      "case": "withdrawal-read-only",
+      "reference": "pass",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "case": "withdrawal-read-only",
+      "reference": "fail",
+      "observed": false,
+      "expected": false
+    }
+  ]
+}

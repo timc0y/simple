@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0fec7-8b60-7832-ace3-815c9568f189",
+    "turn": {
+      "id": "01a0fec7-ae9a-7b23-9e1e-fbf09d684cce",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_0869c31bb943ef01016ac0331f289c87d2a1886827710aad6e",
+          "text": "lesson-card to school-site: done once. lesson-card is green for partner-site, but that publication has not been requested.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980894,
+      "completedAt": 1790980895,
+      "durationMs": 1367
+    }
+  },
+  "emittedAtMs": 1790980895731
+}

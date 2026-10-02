@@ -1,0 +1,14 @@
+{
+  "phase": "followup",
+  "artifacts": {
+    "lesson-card": {
+      "ready": true
+    },
+    "fix-1": {
+      "ready": true
+    },
+    "fix-2": {
+      "ready": true
+    }
+  }
+}

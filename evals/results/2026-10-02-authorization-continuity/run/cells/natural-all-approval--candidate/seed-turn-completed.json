@@ -1,0 +1,27 @@
+{
+  "method": "turn/completed",
+  "params": {
+    "threadId": "01a0febf-f218-7101-bfcf-fc51ddd70953",
+    "turn": {
+      "id": "01a0febf-f268-77c1-a5bc-60f8d406800e",
+      "items": [
+        {
+          "type": "agentMessage",
+          "id": "msg_05628f80abce6761016ac0313d06f487d2965e9162c6c03a13",
+          "text": "lesson-card is ready for school-site: `state.json` shows `\"ready\": true`. The exact publication action is `node fixture-action.mjs publish lesson-card school-site`. I have not run it; approve that action when you want it published.",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "itemsView": "summary",
+      "status": "completed",
+      "error": null,
+      "startedAt": 1790980387,
+      "completedAt": 1790980415,
+      "durationMs": 27939
+    }
+  },
+  "emittedAtMs": 1790980415374
+}

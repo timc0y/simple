@@ -203,51 +203,58 @@ test("session hook injects the operator file even without a profile", () => {
   assert.doesNotMatch(context, /Repository-specific Simple context/);
 });
 
-test("the guard denies a guarded command unless the current user message asks for it", () => {
-  const root = mkdtempSync(join(tmpdir(), "simple-guard-"));
+test("action reminders use conversation authority without per-turn word decisions", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-approval-"));
   const operator = join(root, "operator.md");
-  writeFileSync(operator, "# Operator\n\n## Guard\n\n- git push\n- shopify theme push -> push\n- tool:mcp__.*delete -> delete\n");
-  const transcript = join(root, "transcript.jsonl");
-  const env = { ...process.env, SIMPLE_OPERATOR_FILE: operator };
-  const run = (toolName, command, lastUser) => {
-    writeFileSync(transcript, [
-      JSON.stringify({ type: "user", message: { role: "user", content: lastUser } }),
-      JSON.stringify({ type: "user", isMeta: true, message: { role: "user", content: "<system-reminder>ignored</system-reminder>" } }),
-      JSON.stringify({ type: "assistant", message: { role: "assistant", content: [{ type: "text", text: "working" }] } })
-    ].join("\n"));
-    const result = spawnSync(process.execPath, [hook], { input: JSON.stringify({ hook_event_name: "PreToolUse", cwd: root, tool_name: toolName, tool_input: { command }, transcript_path: transcript }), encoding: "utf8", env });
-    return result.stdout.trim() ? JSON.parse(result.stdout) : {};
-  };
-  assert.equal(run("Bash", "git push origin main", "tidy the docs then stop").hookSpecificOutput.permissionDecision, "deny");
-  assert.deepEqual(run("Bash", "git push origin main", "push it to main"), {});
-  assert.deepEqual(run("Bash", "git status", "tidy the docs"), {});
-  assert.equal(run("Bash", "shopify theme push --theme 1", "publish the theme").hookSpecificOutput.permissionDecision, "deny");
-  assert.equal(run("mcp__circle__delete_event", "", "check the events").hookSpecificOutput.permissionDecision, "deny");
-  assert.deepEqual(run("mcp__circle__delete_event", "", "delete that test event"), {});
-  const runAfterProposal = (toolName, command, assistantText, lastUser) => {
-    writeFileSync(transcript, [
-      JSON.stringify({ type: "user", message: { role: "user", content: "wipe the personal context" } }),
-      JSON.stringify({ type: "assistant", message: { role: "assistant", content: [{ type: "text", text: assistantText }] } }),
-      JSON.stringify({ type: "user", message: { role: "user", content: lastUser } })
-    ].join("\n"));
-    const result = spawnSync(process.execPath, [hook], { input: JSON.stringify({ hook_event_name: "PreToolUse", cwd: root, tool_name: toolName, tool_input: { command }, transcript_path: transcript }), encoding: "utf8", env });
-    return result.stdout.trim() ? JSON.parse(result.stdout) : {};
-  };
-  assert.deepEqual(runAfterProposal("Bash", "git push --force origin main", "I would run:\n\ngit push --force origin main\n\nSay the word.", "Do this all"), {});
-  assert.deepEqual(runAfterProposal("Bash", "git push origin main", "Next I'd git push origin main.", "yes"), {});
-  assert.equal(runAfterProposal("Bash", "git push origin main", "Next I'd git push origin main.", "do not push yet").hookSpecificOutput.permissionDecision, "deny");
-  assert.equal(runAfterProposal("Bash", "git push origin main", "Next I'd git push origin main.", "explain the diff first").hookSpecificOutput.permissionDecision, "deny");
-  assert.equal(runAfterProposal("Bash", "git push origin main", "I tidied the docs.", "do it").hookSpecificOutput.permissionDecision, "deny");
-  assert.deepEqual(runAfterProposal("Bash", "git push origin main", "Next: git push origin main.", "Proceed with all, as long as no regression."), {});
-  assert.equal(runAfterProposal("Bash", "git push origin main", "Next: git push origin main.", "Proceed with everything but do not push").hookSpecificOutput.permissionDecision, "deny");
-  assert.equal(runAfterProposal("Bash", "git push origin main", "Next: git push origin main.", "No, explain first").hookSpecificOutput.permissionDecision, "deny");
-  writeFileSync(join(root, "SIMPLE.md"), "# Simple\n\n## Reality\n\n- guard test\n");
-  mkdirSync(join(root, "simple"), { recursive: true });
-  writeFileSync(join(root, "simple", "round.md"), "# Round\n\n## Investment\n\n- Release: bump, git push, install. Not done.\n");
-  assert.deepEqual(runAfterProposal("Bash", "git push origin main", "Step 5 of 11 done.", "Proceed with all."), {});
-  assert.equal(runAfterProposal("Bash", "git push origin main", "Step 5 of 11 done.", "what is left?").hookSpecificOutput.permissionDecision, "deny");
-  const noTranscript = spawnSync(process.execPath, [hook], { input: JSON.stringify({ hook_event_name: "PreToolUse", cwd: root, tool_name: "Bash", tool_input: { command: "git push" } }), encoding: "utf8", env });
-  assert.match(JSON.parse(noTranscript.stdout).hookSpecificOutput.additionalContext, /Guarded action/);
+  writeFileSync(operator, "# Operator\n\n## Guard\n\nProse mentioning npm test is not a pattern.\n\n- git push\n- git commit -> commit, push\n- tool:mcp__.*delete -> delete\n");
+  const unreadableTranscript = join(root, "transcript-dir");
+  mkdirSync(unreadableTranscript);
+  const run = (toolName, command, extra = {}) => spawnSync(process.execPath, [hook], {
+    input: JSON.stringify({ hook_event_name: "PreToolUse", cwd: root, tool_name: toolName,
+      tool_input: { command }, transcript_path: unreadableTranscript, ...extra }),
+    encoding: "utf8", env: { ...process.env, SIMPLE_OPERATOR_FILE: operator }
+  });
+  for (const [tool, command] of [
+    ["Bash", "git push origin main"],
+    ["Bash", "git commit -m fix"],
+    ["mcp__circle__delete_event", ""],
+    ["Bash", "python3 -c 'print(\"git push\")'"]
+  ]) {
+    const result = run(tool, command);
+    assert.equal(result.status, 0);
+    assert.equal(result.stderr, "", "authorization must not depend on reading a host transcript");
+    const output = JSON.parse(result.stdout).hookSpecificOutput;
+    assert.equal(output.permissionDecision, undefined, "the hook cannot grant or deny scope from words");
+    assert.equal(output.permissionDecisionReason, undefined);
+    assert.match(output.additionalContext, /already.*authori[sz]ed|earlier approval/i);
+    assert.match(output.additionalContext, /work.*destination/i);
+    assert.match(output.additionalContext, /withdraw|read-only/i);
+    assert.match(output.additionalContext, /quot|mention/i);
+    assert.match(output.additionalContext, /guidance/i);
+    assert.doesNotMatch(output.additionalContext, /current message.*explicit|allow word|explicit instruction in this turn/i);
+  }
+  assert.equal(run("Bash", "git status").stdout, "");
+  assert.equal(run("Bash", "npm test").stdout, "");
+  assert.equal(run("Bash", "echo 'Prose mentioning npm test is not a pattern.'").stdout, "");
+  writeFileSync(operator, readFileSync(new URL("../skills/simple/assets/OPERATOR.template.md", import.meta.url), "utf8"));
+  assert.equal(run("Bash", "echo 'These patterns trigger an authorization reminder, not a permission decision.'").stdout, "");
+  assert.match(JSON.parse(run("Bash", "git push origin main").stdout).hookSpecificOutput.additionalContext, /conversation/);
+});
+
+test("authorization guidance is present before tool selection without a profile", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-approval-context-"));
+  const operator = join(root, "operator.md");
+  writeFileSync(operator, "# Operator\n\n## Guard\n\n- git push\n");
+  const result = spawnSync(process.execPath, [hook], {
+    input: JSON.stringify({ hook_event_name: "SessionStart", cwd: root }),
+    encoding: "utf8", env: { ...process.env, SIMPLE_OPERATOR_FILE: operator }
+  });
+  const context = JSON.parse(result.stdout).hookSpecificOutput.additionalContext;
+  assert.match(context, /earlier approval|already.*authori[sz]ed/i);
+  assert.match(context, /standing/i);
+  assert.match(context, /question|quot/i);
+  assert.match(context, /one-time|completed/i);
+  assert.match(context, /condition|read-only/i);
 });
 
 test("the hook fails open with one stderr line when an injected file is unreadable or paths contain spaces", () => {

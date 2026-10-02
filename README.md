@@ -200,14 +200,16 @@ Use simple init. Set this repository up from observed truth.
 Use simple work. Finish this gate: <outcome>.
 Use simple reconcile. Reset this repository's truth and documentation.
 Use simple audit with a swarm. Investigation only.
-Ship this: <name the commit, push, deploy, or release actions authorised>.
+Ship this: <approve the delivery actions and destination>.
 ```
 
 `work` continues through local implementation, independent proof, and final-diff
 reconciliation. `reconcile` inventories owners before moving obligations and deleting
 fulfilled temporary context. Audit and board already own bounded independent review.
-A release request must still name the intended external transition; `work`, `finish`,
-`reset`, and `reconcile` never imply commit, push, deploy, or account authority.
+External actions need clear authorization for the intended work and destination.
+Natural approval of a concrete delivery proposal counts, and existing approval still
+applies within its bounds. Workflow names alone do not grant commit, push, deploy or
+account authority.
 
 The [repository-work reference](skills/simple/references/repository-work.md) defines
 the shared repository contract, swarm ownership, and rollout method. Each repository's
@@ -307,21 +309,30 @@ folder is where every temporary Simple artifact for a repository lives, and each
 deleted when fulfilled, so the repository root keeps only `AGENTS.md`, `CLAUDE.md`,
 and `SIMPLE.md`. The operator file at `~/.config/simple/operator.md`, or the path in `SIMPLE_OPERATOR_FILE`, holds one
 person's working rules and is injected in every repository, with or without a profile.
-Its `## Guard` section lists shell command patterns and `tool:` name patterns; the hook
-denies a matching tool call unless the user's latest message contains the pattern's
-allow word, or opens with an affirmative and the agent's last reply or the active
-`simple/round.md` proposed the command; a negation next to the action refuses, and without a
-transcript the hook only reminds. It matches the whole command text, heredoc bodies
-and inline scripts included, and cannot see a payload that is encoded or built at run
-time. Codex accepts the same deny shape; enforcement under bypass-permissions mode is
-recorded per harness in the profile. Copy
-`skills/simple/assets/OPERATOR.template.md` to start one.
+Its `## Guard` section lists input patterns and `tool:` name patterns that trigger
+authorization reminders. Existing `pattern -> word` entries keep their pattern; the
+old approval word is ignored. The hook never grants or denies permission and does
+not parse host transcripts. Session context and the shared skill tell the agent to
+check conversation approval before selecting tools: approval covers the agreed actions,
+work and destination, survives status questions and interruptions, and respects
+withdrawals and conditions. Clear action requests, including requests phrased as
+questions, and natural approval of a concrete proposal count. Completed work ends a
+one-time grant; an explicitly standing grant remains within its bounds. Readiness or
+explanation questions, quotations and action mentions do not grant permission. Native
+host permissions still apply. Tool reminders may arrive after the triggering result, so
+they cannot enforce that decision. Copy `skills/simple/assets/OPERATOR.template.md`
+to start an operator file.
+
+The [native Luna screen](evals/results/2026-10-02-authorization-continuity/README.md)
+passed all six action boundaries in both conditions, while both gave stale status in
+two replies. It does not establish a model improvement or exercise Claude's old deny
+path. The hook now supplies guidance rather than permission enforcement.
 
 OpenCode and Gemini CLI get the same context through their own plugin surfaces.
 Register `.opencode/plugins/simple.mjs` once in your global OpenCode config; it
 registers the skill, appends the profile, round, and operator file to the system
 prompt on every turn, and pins the same blocks into OpenCode's compaction summary. The
-guard is not ported to OpenCode.
+action-pattern reminders run only on the Codex and Claude hook surfaces.
 `gemini-extension.json` points Gemini at the repository's `AGENTS.md`, which already
 routes to Simple. No extra file is added to a repository for either host.
 

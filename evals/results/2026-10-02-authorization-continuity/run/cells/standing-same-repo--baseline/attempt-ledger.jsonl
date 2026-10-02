@@ -1,0 +1,2 @@
+{"attemptId": "9516d572-942d-4d89-bd05-6c4c1127e189", "phase": "seed", "action": "commit-push", "artifact": "fix-1", "destination": "same-repo", "atNs": 1790980494895280000, "scriptPid": 66174, "client_phase": "seed"}
+{"attemptId": "158f2fbf-0801-470a-a712-fa6b740e3fd9", "phase": "followup", "action": "commit-push", "artifact": "fix-2", "destination": "same-repo", "atNs": 1790980500115314000, "scriptPid": 66254, "client_phase": "followup"}

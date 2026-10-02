@@ -104,6 +104,15 @@ reviewed or planned. The default authority covers local repository edits needed 
 that outcome. It does not include commit, push, deploy, release, account mutation, or
 deletion of external state unless the user explicitly authorizes those actions.
 
+Explicit authorization needs a clear request or approval, not a particular word or
+sentence form. Use the active conversation to recover the approved actions, work,
+destination and conditions.
+Approval of a concrete proposal carries through status questions, corrections and
+interruptions. Honor later withdrawals and read-only limits. A completed one-time
+delivery does not authorize new work; an explicitly standing grant continues within
+its bounds. Finish the authorized, reviewable work before asking for missing approval
+at a new external transition.
+
 1. Read the repository contract and inspect the current working tree. Establish the
    relevant truth owners, ordinary product path, release path, and history.
 2. Give subagents only bounded questions that can change the answer. Keep synthesis

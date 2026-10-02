@@ -1,0 +1,27 @@
+{
+  "valid": true,
+  "errors": [],
+  "snapshot": {
+    "registered_cells": 12,
+    "result_files_present": 12,
+    "cleanup_file_present": true
+  },
+  "staged_artifacts": 445,
+  "omitted_originals": 603,
+  "exact_copies": 367,
+  "derived_action_files": 12,
+  "deduplicated_method_files": 348,
+  "checks": [
+    "all original hashes unchanged including omissions",
+    "staged hashes and exact-copy identity",
+    "JSON and JSONL syntax",
+    "privacy fragments and machine paths absent",
+    "credential-pattern scan",
+    "all retained cell evidence and cleanup present",
+    "derived action tool IDs match evidence IDs",
+    "last replies, final states and final-file hashes unchanged",
+    "both frozen condition snapshots retained",
+    "duplicate cell method trees absent",
+    "SessionStart whole-context redaction and presence"
+  ]
+}

@@ -1,0 +1,1 @@
+Both callers now keep barcode text, so 00123 finds Tea and 123 still finds Coffee. Surrounding spaces are accepted, and unknown/empty codes return null. The independent caller checks and smoke checks passed in this local fixture. README matches. Nothing has been released.

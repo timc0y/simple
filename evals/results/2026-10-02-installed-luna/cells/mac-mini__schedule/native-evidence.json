@@ -1,0 +1,36 @@
+{
+  "derived_from": "Exact private app-server hook/completed and item/completed notifications. Installed hook definitions and output were unmodified.",
+  "plugin_id": "simple@timc0y-simple",
+  "forced_skill_input": true,
+  "events": [
+    {
+      "event": "sessionStart",
+      "status": "completed",
+      "source": "plugin",
+      "elapsedMs": 3183,
+      "beforeFinal": true,
+      "entries": [
+        {
+          "kind": "context",
+          "text": "[REDACTED: real operator and machine-path context; synthetic fixture profile is retained in inputs/cases.]"
+        }
+      ]
+    },
+    {
+      "event": "preToolUse",
+      "status": "completed",
+      "source": "plugin",
+      "elapsedMs": 6482,
+      "beforeFinal": true,
+      "entries": []
+    }
+  ],
+  "native_file_changes": [],
+  "completed_command_count": 1,
+  "nonzero_command_count": 0,
+  "observed_reference_reads": [
+    "writing.md"
+  ],
+  "observed_explicit_core_read": false,
+  "final_answer_elapsed_ms": 9527
+}

@@ -1,0 +1,12 @@
+{
+  "target": "mac-mini",
+  "case": "schedule",
+  "model_called": true,
+  "requested_model": "gpt-6-luna",
+  "reported_model": "gpt-6-luna",
+  "effort": "medium",
+  "native_valid": true,
+  "artifact_valid": true,
+  "latency_ms": 21239,
+  "manual_grade_pending": true
+}

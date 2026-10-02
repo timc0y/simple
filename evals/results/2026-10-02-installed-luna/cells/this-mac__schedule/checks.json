@@ -1,0 +1,21 @@
+{
+  "native_session_start": true,
+  "stop_executions": 0,
+  "all_hook_runs_completed": true,
+  "post_tool_context_before_final": false,
+  "reconciliation_count": 0,
+  "fixture_unchanged": true,
+  "final_matches_last_completed_agent": true,
+  "patch_format": {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "native_valid": true,
+  "artifact_valid": true
+}

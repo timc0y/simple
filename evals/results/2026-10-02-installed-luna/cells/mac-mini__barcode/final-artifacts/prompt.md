@@ -1,0 +1,3 @@
+Read the installed Simple skill at {INSTALLED_SKILL} and the specialist references routed for this task. Use the fixture SIMPLE.md as the task facts. Stay inside this fixture. Do not read evaluation files, other fixtures, or user configuration. Do not spawn other agents. For any needed file edits, use apply_patch.
+
+The web barcode lookup finds Tea for "00123", but the CLI says Coffee for the same barcode. Fix this for both callers through the existing lookup. Preserve ordinary barcodes, surrounding-space handling, and the null result for unknown or empty codes. Check the actual behavior and tell me what changed and what you verified. You may edit only files in this assigned fixture; do not commit, install, publish, or touch the Simple repository.

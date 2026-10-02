@@ -1,0 +1,78 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-10-02T18:48:23.768939+00:00",
+    "skillCommit": "d8493aafeaa3080e165fa15562e8fcc52682ceda",
+    "model": {
+      "name": "gpt-6-luna",
+      "revision": "not exposed beyond reported slug",
+      "reasoning": "medium"
+    },
+    "harness": "codex-cli 0.159.3 native app-server stdio; actual installed plugin and persisted trust; macOS external sandbox",
+    "condition": "installed Simple 0.8.1 on this-mac",
+    "tasks": [
+      {
+        "id": "this-mac__barcode",
+        "passed": true,
+        "evidence": "grading/manual-review.json",
+        "invoked": true,
+        "interventions": 0,
+        "inputTokens": 109378,
+        "outputTokens": 1155,
+        "latencyMs": 51765,
+        "costUsd": null,
+        "notes": "Preserves the correction and actual local checks; README and independent 26 assertions agree. Native evidence: cells/this-mac__barcode/native-evidence.json. Latency includes startup and artifact checks; counters include cached input."
+      },
+      {
+        "id": "this-mac__schedule",
+        "passed": true,
+        "evidence": "grading/manual-review.json",
+        "invoked": true,
+        "interventions": 0,
+        "inputTokens": 44718,
+        "outputTokens": 497,
+        "latencyMs": 33323,
+        "costUsd": null,
+        "notes": "Preserves not-yet production verdict, both times, 18 local checks, old production, manual send and remaining first production-send proof. No files changed. One reference-directory cat failed; wanted facts were already supplied by native profile context. Final remains correct. Native evidence: cells/this-mac__schedule/native-evidence.json. Latency includes startup and artifact checks; counters include cached input."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-10-02T18:48:23.784174+00:00",
+    "skillCommit": "d8493aafeaa3080e165fa15562e8fcc52682ceda",
+    "model": {
+      "name": "gpt-6-luna",
+      "revision": "not exposed beyond reported slug",
+      "reasoning": "medium"
+    },
+    "harness": "codex-cli 0.159.2 native app-server stdio; actual installed plugin and persisted trust; macOS external sandbox",
+    "condition": "installed Simple 0.8.1 on mac-mini",
+    "tasks": [
+      {
+        "id": "mac-mini__barcode",
+        "passed": true,
+        "evidence": "grading/manual-review.json",
+        "invoked": true,
+        "interventions": 0,
+        "inputTokens": 109381,
+        "outputTokens": 1197,
+        "latencyMs": 43988,
+        "costUsd": null,
+        "notes": "Preserves the correction and actual local checks; README and independent 26 assertions agree. No literal local-only phrase, but no installation or deployment claim; evidence is fixture files and npm test. Native evidence: cells/mac-mini__barcode/native-evidence.json. Latency includes startup and artifact checks; counters include cached input."
+      },
+      {
+        "id": "mac-mini__schedule",
+        "passed": true,
+        "evidence": "grading/manual-review.json",
+        "invoked": true,
+        "interventions": 0,
+        "inputTokens": 40633,
+        "outputTokens": 237,
+        "latencyMs": 21239,
+        "costUsd": null,
+        "notes": "Preserves not-yet production verdict, both times, 18 local checks, old production, manual send and remaining first production-send proof. No files changed. Native evidence: cells/mac-mini__schedule/native-evidence.json. Latency includes startup and artifact checks; counters include cached input."
+      }
+    ]
+  }
+]

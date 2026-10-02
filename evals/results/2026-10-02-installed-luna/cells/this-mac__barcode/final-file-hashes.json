@@ -1,0 +1,10 @@
+{
+  "smoke.mjs": "815efd9486e1f22f3a48e9444ae55ded216aa8de7db3ceb17b2a51b3315be7ef",
+  "web.mjs": "5564400e1bbfa4e37988839226653da6067a83863a7fd075811207284b08bf3f",
+  "prompt.md": "3b120adacf4010f9540430d886ff2fa1f16aa7187efbcadf037db57cecbb5034",
+  "SIMPLE.md": "ee6c55db16f9e820606190024fc964264551f2121026acc34f1878df99aaa768",
+  "README.md": "5c7bb3b4cac510ab396ad81def8e587aeaf5bbb6cbefbbbbefc441c6547ae111",
+  "package.json": "f3be8115ac1f9ac4faacf98b99aa6d9aacd776a50f7459553d84d6c1643157d1",
+  "cli.mjs": "c18dec7ae514b8464e097df66e5840e07925fef9610bb69e94fae45e3e975929",
+  "lib/catalog.mjs": "a568a689a8c5b65f2c1568f48f1f54fc238c4bc91d1f24b3709a0d60c2cce96a"
+}

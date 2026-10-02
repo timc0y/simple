@@ -1,0 +1,95 @@
+{
+  "reviewer": "root manual final-only review",
+  "secondary_review": "Read-only Sol review agreed all four task verdicts; no model grader ran.",
+  "rubric": "../../rubric.md",
+  "pre_registered_criteria": "criteria.json",
+  "all_four_pass": true,
+  "cells": {
+    "this-mac__barcode": {
+      "passed": true,
+      "criteria_flags": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true
+      },
+      "native_valid": true,
+      "artifact_valid": true,
+      "readme_accurate": true,
+      "scores": {
+        "readability": 4,
+        "actionability": 4,
+        "completeness": 5,
+        "concision": 5
+      },
+      "blocker": false,
+      "quotation": "Both callers now find Tea for `00123`, and ordinary barcode `123` still finds Coffee.\n\nThe shared lookup trims surrounding spaces, while both callers pass barcode text unchanged. I updated the README to match and added smoke checks for leading zeros, spaces, unknown codes, and empty codes.\n\nVerified: `npm test` passed all 10 assertions; `git diff --check` passed. No remaining work in the fixture.",
+      "notes": "Preserves the correction and actual local checks; README and independent 26 assertions agree."
+    },
+    "this-mac__schedule": {
+      "passed": true,
+      "criteria_flags": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "native_valid": true,
+      "artifact_valid": true,
+      "readme_accurate": null,
+      "scores": {
+        "readability": 4,
+        "actionability": 5,
+        "completeness": 5,
+        "concision": 5
+      },
+      "blocker": false,
+      "quotation": "No\u2014the team cannot rely on the fix in production yet. The digest change is **07:45 \u2192 08:15**, and all 18 local checks passed. They show the local version passed its checks; production still runs the old version, and no send with the fix has been observed.\n\nKeep sending the digest manually at 08:15 until the fix is installed and its first production send is checked. Installation and release need a separate explicit request.",
+      "notes": "Preserves not-yet production verdict, both times, 18 local checks, old production, manual send and remaining first production-send proof. No files changed. One reference-directory cat failed; wanted facts were already supplied by native profile context. Final remains correct."
+    },
+    "mac-mini__barcode": {
+      "passed": true,
+      "criteria_flags": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true
+      },
+      "native_valid": true,
+      "artifact_valid": true,
+      "readme_accurate": true,
+      "scores": {
+        "readability": 4,
+        "actionability": 4,
+        "completeness": 5,
+        "concision": 5
+      },
+      "blocker": false,
+      "quotation": "The CLI now returns Tea for `\"00123\"` through the existing lookup. It was converting barcode text to a number, which removed the leading zeros.\n\nI expanded the smoke checks to cover both callers: `\"00123\"` with and without surrounding spaces returns Tea; `\"123\"` still returns Coffee; unknown and empty codes return `null`. `npm test` passed all 12 assertions. The README now describes the shared behavior.",
+      "notes": "Preserves the correction and actual local checks; README and independent 26 assertions agree. No literal local-only phrase, but no installation or deployment claim; evidence is fixture files and npm test."
+    },
+    "mac-mini__schedule": {
+      "passed": true,
+      "criteria_flags": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "native_valid": true,
+      "artifact_valid": true,
+      "readme_accurate": null,
+      "scores": {
+        "readability": 4,
+        "actionability": 5,
+        "completeness": 5,
+        "concision": 5
+      },
+      "blocker": false,
+      "quotation": "No. The team cannot rely on the new morning digest in production yet. The fix changes the send time from **07:45 to 08:15**, and all 18 local checks passed. Those checks show the local fix passed; they do not prove the production service sends at 08:15.\n\nProduction still runs the old version, and no send with the fix has been observed. Until it is installed and its first production send is checked, the operator should keep sending the digest manually at 08:15. Installation and release need a separate explicit request.",
+      "notes": "Preserves not-yet production verdict, both times, 18 local checks, old production, manual send and remaining first production-send proof. No files changed."
+    }
+  }
+}

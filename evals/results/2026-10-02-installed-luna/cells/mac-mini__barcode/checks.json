@@ -1,0 +1,40 @@
+{
+  "native_session_start": true,
+  "stop_executions": 0,
+  "all_hook_runs_completed": true,
+  "post_tool_context_before_final": true,
+  "reconciliation_count": 1,
+  "fixture_unchanged": false,
+  "final_matches_last_completed_agent": true,
+  "patch_format": {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "independent": {
+    "argv": [
+      "node",
+      "[private home redacted]/Code/personal/simple/.local/context/installed-luna-2026-10-02/verify-barcode.mjs",
+      "[private runtime path redacted]"
+    ],
+    "returncode": 0,
+    "stdout": "{\"passed\":true,\"assertions\":26}\n",
+    "stderr": ""
+  },
+  "smoke": {
+    "argv": [
+      "npm",
+      "test"
+    ],
+    "returncode": 0,
+    "stdout": "\n> test\n> node smoke.mjs\n\n12 smoke assertions passed\n",
+    "stderr": ""
+  },
+  "native_valid": true,
+  "artifact_valid": true
+}

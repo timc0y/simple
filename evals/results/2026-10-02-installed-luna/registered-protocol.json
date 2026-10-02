@@ -1,0 +1,27 @@
+{
+  "source_commit": "d8493aafeaa3080e165fa15562e8fcc52682ceda",
+  "plugin_version": "0.8.1+codex.20261002",
+  "model": "gpt-6-luna",
+  "effort": "medium",
+  "harness": "native codex app-server stdio with actual user plugin registration and trust",
+  "targets": [
+    "this-mac",
+    "mac-mini"
+  ],
+  "cases_in_order": [
+    "barcode",
+    "schedule"
+  ],
+  "max_model_turns": 4,
+  "timeout_per_turn_seconds": 240,
+  "discovery_before_calls": "Both hosts hooks/list must report exactly four enabled trusted Simple plugin hooks, zero Stop and matching committed files; model/list must advertise exact Luna slug.",
+  "validity": "Actual hook/completed plugin source and context before final; no substituted hooks, wrappers or bypass trust. Barcode must use native apply_patch and independent verifier. Read-only fixture exact unchanged. Final answer must be last completed assistant message.",
+  "grading": "Frozen previous criteria/references; calibrated independent barcode verifier and single manual final-only review. No answer retries or instruction changes.",
+  "limits": [
+    "One installed condition, one code case and one read-only case per host; no improvement comparison or transfer claim.",
+    "Two actual user configurations and other installed plugins differ; per-host evidence, not an equal-condition A/B comparison.",
+    "Fresh native app-server execution does not prove T3 rendering.",
+    "Forced installed skill execution, not natural activation."
+  ],
+  "authority": "Only assigned temporary fixture writes and ignored evaluation evidence. Protect real config, installed plugins and source repo. No commits, push, install or release in solver turns."
+}

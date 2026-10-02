@@ -1,0 +1,8 @@
+
+> @timc0y/simple-skill@0.8.1 test:behavior
+> python3 evals/behavior/selftest.py && node evals/behavior/cases/fallback-selection/selftest.mjs && node evals/behavior/cases/uncertain-write/selftest.mjs && node evals/behavior/cases/reuse-reference/selftest.mjs
+
+Root case selftests passed: known fixes accepted; original and regression mutations rejected.
+selftest passed
+selftest passed
+selftest passed

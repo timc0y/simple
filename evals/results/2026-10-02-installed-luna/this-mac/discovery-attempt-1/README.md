@@ -1,0 +1,1 @@
+The first discovery attempt failed before any model call. An overly broad home-write denial prevented startup. The corrected launcher protects configuration, plugin and repository writes while allowing native temporary state. Original diagnostics remain private.

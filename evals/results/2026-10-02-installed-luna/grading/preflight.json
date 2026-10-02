@@ -1,0 +1,11 @@
+{
+  "independent_verifier_calibration": "delegated recheck accepted known fix (26 assertions) and rejected numeric conversion, lost spaces and invented unknown-code default",
+  "manual_reference_calibration": {
+    "barcode_pass": true,
+    "barcode_fail": false,
+    "schedule_pass": true,
+    "schedule_fail": false
+  },
+  "behavior_selftest_passed": true,
+  "model_calls_started": false
+}

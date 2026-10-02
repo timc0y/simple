@@ -1,0 +1,16 @@
+{
+  "valid": true,
+  "model_turns": 0,
+  "events": [
+    "preToolUse",
+    "postToolUse",
+    "sessionStart",
+    "subagentStart"
+  ],
+  "sources": [
+    "plugin"
+  ],
+  "plugin_id": "simple@timc0y-simple",
+  "all_trusted": true,
+  "exact_model_available": true
+}

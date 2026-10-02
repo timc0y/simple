@@ -1,0 +1,35 @@
+{
+  "argv": [
+    "sandbox-exec",
+    "-p",
+    "(version 1) (allow default) (deny file-write* (literal \"[private home redacted]/.codex/config.toml\")) (deny file-write* (subpath \"[private home redacted]/.codex/plugins\")) (deny file-write* (subpath \"[private home redacted]/.agents/skills\")) (deny file-write* (subpath \"[private home redacted]/Code/personal/simple\")) (deny file-read-data (subpath \"[private home redacted]/Code/personal/simple\")) (allow file-read* (literal \"[private home redacted]/Code/personal/simple/.claude-plugin/marketplace.json\")) (allow file-read* (literal \"[private home redacted]/Code/personal/simple/.codex-plugin/plugin.json\"))",
+    "codex",
+    "app-server",
+    "--stdio",
+    "--disable",
+    "apps",
+    "--disable",
+    "memories",
+    "--disable",
+    "multi_agent",
+    "--disable",
+    "multi_agent_v2",
+    "--disable",
+    "skill_mcp_dependency_install",
+    "--enable",
+    "code_mode_host",
+    "-c",
+    "sqlite_home=\"[private runtime path redacted]\"",
+    "-c",
+    "log_dir=\"[private runtime path redacted]\""
+  ],
+  "cwd": "[private runtime path redacted]",
+  "environment_overrides": {
+    "CODEX_SQLITE_HOME": "[private runtime path redacted]",
+    "TMPDIR": "[private runtime path redacted]"
+  },
+  "actual_home_and_codex_home_unchanged": true,
+  "installed_hooks_unmodified": true,
+  "hook_trust_bypass": false,
+  "inline_hooks": false
+}

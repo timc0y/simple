@@ -1,0 +1,117 @@
+[
+  {
+    "threadId": "[private session identifier redacted]",
+    "turnId": "[private session identifier redacted]",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 19534,
+        "inputTokens": 19307,
+        "cachedInputTokens": 11008,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 227,
+        "reasoningOutputTokens": 0
+      },
+      "last": {
+        "totalTokens": 19534,
+        "inputTokens": 19307,
+        "cachedInputTokens": 11008,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 227,
+        "reasoningOutputTokens": 0
+      },
+      "modelContextWindow": 380000
+    }
+  },
+  {
+    "threadId": "[private session identifier redacted]",
+    "turnId": "[private session identifier redacted]",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 41311,
+        "inputTokens": 40964,
+        "cachedInputTokens": 29184,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 347,
+        "reasoningOutputTokens": 12
+      },
+      "last": {
+        "totalTokens": 21777,
+        "inputTokens": 21657,
+        "cachedInputTokens": 18176,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 120,
+        "reasoningOutputTokens": 12
+      },
+      "modelContextWindow": 380000
+    }
+  },
+  {
+    "threadId": "[private session identifier redacted]",
+    "turnId": "[private session identifier redacted]",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 64005,
+        "inputTokens": 63015,
+        "cachedInputTokens": 50432,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 990,
+        "reasoningOutputTokens": 202
+      },
+      "last": {
+        "totalTokens": 22694,
+        "inputTokens": 22051,
+        "cachedInputTokens": 21248,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 643,
+        "reasoningOutputTokens": 190
+      },
+      "modelContextWindow": 380000
+    }
+  },
+  {
+    "threadId": "[private session identifier redacted]",
+    "turnId": "[private session identifier redacted]",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 87009,
+        "inputTokens": 85901,
+        "cachedInputTokens": 71680,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 1108,
+        "reasoningOutputTokens": 226
+      },
+      "last": {
+        "totalTokens": 23004,
+        "inputTokens": 22886,
+        "cachedInputTokens": 21248,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 118,
+        "reasoningOutputTokens": 24
+      },
+      "modelContextWindow": 380000
+    }
+  },
+  {
+    "threadId": "[private session identifier redacted]",
+    "turnId": "[private session identifier redacted]",
+    "tokenUsage": {
+      "total": {
+        "totalTokens": 110578,
+        "inputTokens": 109381,
+        "cachedInputTokens": 93952,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 1197,
+        "reasoningOutputTokens": 226
+      },
+      "last": {
+        "totalTokens": 23569,
+        "inputTokens": 23480,
+        "cachedInputTokens": 22272,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 89,
+        "reasoningOutputTokens": 0
+      },
+      "modelContextWindow": 380000
+    }
+  }
+]

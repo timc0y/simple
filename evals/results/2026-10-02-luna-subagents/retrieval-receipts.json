@@ -1,0 +1,47 @@
+{
+  "schedule": {
+    "source": "agent report from existing tool history after performance turns; no independently captured raw subagent trace",
+    "reads": [
+      "SKILL.md",
+      "references/writing.md",
+      "references/verification.md",
+      "references/delivery.md"
+    ],
+    "taskProfileRead": true,
+    "commands": [
+      "cat inputs/simple/SKILL.md && cat cases/schedule/SIMPLE.md",
+      "rg --files cases/schedule && cat inputs/simple/references/writing.md && cat inputs/simple/references/verification.md && cat inputs/simple/references/delivery.md",
+      "cat cases/schedule/prompt.md"
+    ]
+  },
+  "estimate": {
+    "source": "agent report from existing tool history after performance turns; no independently captured raw subagent trace",
+    "reads": [
+      "SKILL.md",
+      "references/writing.md"
+    ],
+    "taskProfileRead": true,
+    "commands": [
+      "cat inputs/simple/SKILL.md && cat cases/estimate/SIMPLE.md",
+      "cat inputs/simple/references/writing.md"
+    ]
+  },
+  "barcode": {
+    "source": "agent report from existing tool history after performance turns; no independently captured raw subagent trace",
+    "reads": [
+      "SKILL.md",
+      "references/diagnosis.md",
+      "references/verification.md"
+    ],
+    "taskProfileRead": true,
+    "commands": [
+      "cat inputs/simple/SKILL.md && cat cases/barcode/SIMPLE.md",
+      "cat inputs/simple/references/diagnosis.md && cat inputs/simple/references/verification.md && rg --files"
+    ],
+    "reportedChecks": {
+      "npm test": "10 smoke assertions passed",
+      "git diff --check && git diff -- lib/catalog.mjs web.mjs cli.mjs smoke.mjs README.md": "no output; ignored fixture, so not evidence of fixture whitespace"
+    },
+    "note": "Paths above made relative to evaluation root; exact original receipt stays in the root conversation."
+  }
+}

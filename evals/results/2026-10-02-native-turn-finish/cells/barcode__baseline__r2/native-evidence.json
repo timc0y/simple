@@ -1,0 +1,114 @@
+{
+  "derivedFrom": "private native-hooks.jsonl; absolute paths/session identifiers omitted",
+  "events": [
+    {
+      "order": 0,
+      "elapsedMs": 21988,
+      "event": "SessionStart",
+      "tool": null,
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": {
+        "hookSpecificOutput": {
+          "hookEventName": "SessionStart",
+          "additionalContext": "[Private profile-path injection redacted; synthetic profile retained in inputs/cases/barcode/SIMPLE.md.]"
+        }
+      }
+    },
+    {
+      "order": 1,
+      "elapsedMs": 29558,
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": null
+    },
+    {
+      "order": 2,
+      "elapsedMs": 37408,
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": null
+    },
+    {
+      "order": 3,
+      "elapsedMs": 48149,
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": null
+    },
+    {
+      "order": 4,
+      "elapsedMs": 60872,
+      "event": "PreToolUse",
+      "tool": "apply_patch",
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": {
+        "hookSpecificOutput": {
+          "hookEventName": "PreToolUse",
+          "additionalContext": "Review the Markdown edit after it runs. Keep decisions, contracts, constraints, proof, and operational knowledge; use few sentence-case headings, shallow lists, restrained emphasis, and no decorative styling."
+        }
+      }
+    },
+    {
+      "order": 5,
+      "elapsedMs": 60986,
+      "event": "PostToolUse",
+      "tool": "apply_patch",
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": null
+    },
+    {
+      "order": 6,
+      "elapsedMs": 70850,
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": null
+    },
+    {
+      "order": 7,
+      "elapsedMs": 76075,
+      "event": "Stop",
+      "tool": null,
+      "stopHookActive": false,
+      "exitCode": 0,
+      "output": {
+        "decision": "block",
+        "reason": "This turn edited repository files. Before finishing, update each existing truth owner made false by the final diff. Remove completed instructions from the ordered queue. Delete fulfilled temporary plans, reviews, audits, status notes, and handoffs after their evidence has moved to the durable owner; Git preserves their history. Preserve decisions, contracts, retained evidence, recovery paths, and unknown obligations. Leave unrelated documents and user changes alone. If the final diff already satisfies this, make no further edits and do not repeat checks that already passed against it."
+      }
+    },
+    {
+      "order": 8,
+      "elapsedMs": 81844,
+      "event": "Stop",
+      "tool": null,
+      "stopHookActive": true,
+      "exitCode": 0,
+      "output": {}
+    }
+  ],
+  "coreReadObserved": true,
+  "referencesObserved": [
+    "diagnosis.md",
+    "verification.md"
+  ],
+  "nativeProcessWallMs": 83641,
+  "usageRaw": [
+    {
+      "input_tokens": 118182,
+      "cached_input_tokens": 103680,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1341,
+      "reasoning_output_tokens": 268
+    }
+  ]
+}

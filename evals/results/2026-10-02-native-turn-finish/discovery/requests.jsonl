@@ -1,0 +1,5 @@
+{"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"clientInfo": {"name": "simple-hook-discovery", "version": "0.1.0"}, "capabilities": {"experimentalApi": true}}}
+{"jsonrpc": "2.0", "method": "initialized", "params": {}}
+{"jsonrpc": "2.0", "id": 2, "method": "hooks/list", "params": {"cwds": ["[private runtime root redacted]/runtime/discovery-cwd"]}}
+{"jsonrpc": "2.0", "id": 3, "method": "model/list", "params": {}}
+{"jsonrpc": "2.0", "id": 4, "method": "config/read", "params": {"cwd": "[private runtime root redacted]/runtime/discovery-cwd", "includeLayers": true}}

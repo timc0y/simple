@@ -273,6 +273,8 @@ claude plugin update simple@timc0y-simple -y
 ```
 
 Restart Claude Code after its plugin update.
+In a new Codex session, use `/hooks` to inspect the updated hook source and review
+any definitions Codex marks as new or changed.
 
 Use this command for local development:
 
@@ -288,10 +290,12 @@ It does not update cached plugin commands or hooks.
 
 The Codex and Claude Code plugin packages use the same lifecycle hooks. The nearest
 profile enters context at the start of a session and a subagent. After a supported
-edit-tool event, a stop hook gives the lead agent one final pass to update existing
-truth owners, remove completed instructions and fulfilled temporary context, and
-preserve durable obligations. Read-only turns do not trigger it, the marker is scoped
-to that repository profile, and the continuation runs at most once.
+edit-tool event, a reminder asks the lead agent to update existing truth owners,
+remove completed instructions and fulfilled temporary context, and preserve durable
+obligations before its final response. This is an internal check; the final response
+answers the user's request with its outcome, verification and remaining limits.
+Read-only turns do not trigger the reminder. Simple does not block a finished turn
+or reopen it for a cleanup-only answer.
 
 A write hook can add a short review note after a Markdown or comment edit. The note
 arrives after the tool result. It can guide the next correction, but it cannot change
@@ -321,7 +325,8 @@ guard is not ported to OpenCode.
 `gemini-extension.json` points Gemini at the repository's `AGENTS.md`, which already
 routes to Simple. No extra file is added to a repository for either host.
 
-Codex needs one `/hooks` trust approval on each machine. Codex also reads the route in
+Codex requires review and trust for new or changed hook definitions on each machine;
+see the [official hook guidance](https://learn.chatgpt.com/docs/hooks). Codex also reads the route in
 `AGENTS.md`. This route keeps Simple available when a host does not run hooks.
 
 The skill can still work without `SIMPLE.md`. In that case, it uses repository evidence

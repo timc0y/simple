@@ -1,0 +1,1 @@
+At the assumed 2 minutes per item, it does not fit: 5 + 24 × 2 = 53 minutes, 8 over the 45-minute session. Vary the item count or minutes per item with total = 5 + count × minutes per item. At 2 minutes each, at most 20 items fit. The 5-minute setup was measured; actual time per item is unmeasured, so 2 minutes is an assumption and this is only an estimate.

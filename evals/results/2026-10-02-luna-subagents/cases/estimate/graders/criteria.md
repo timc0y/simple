@@ -1,0 +1,5 @@
+- Uses 7 + count * minutes per photo, with 7 observed and 1.75 assumed/unmeasured.
+- Correct results: 24=49 minutes, 30=59.5, 36=70; 36 exceeds 60 by 10.
+- Explains the conditional fit of 24/30 and non-fit of 36; gives a practical decision with uncertainty.
+- Provides recomputation for changing count/time; does not promise measured throughput or definite completion.
+- No generated files or browser.

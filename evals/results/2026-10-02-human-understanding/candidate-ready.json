@@ -1,0 +1,9 @@
+{
+  "root_authorized_calls": true,
+  "source": "Root candidate-ready message 2026-10-02",
+  "timestamp_unix": 1790955543.5988889,
+  "changed_files_only": [
+    "SKILL.md",
+    "references/writing.md"
+  ]
+}

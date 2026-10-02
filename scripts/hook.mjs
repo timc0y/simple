@@ -1,14 +1,12 @@
 #!/usr/bin/env node
 
-import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
-import { homedir, tmpdir } from "node:os";
+import { existsSync, readFileSync } from "node:fs";
+import { homedir } from "node:os";
 import { dirname, join, parse, resolve } from "node:path";
 import { MAX_PROFILE_CHARS, roundPathFor } from "../skills/simple/scripts/simple.mjs";
 
-export const RECONCILIATION_REASON = "This turn edited repository files. Before finishing, update each existing truth owner made false by the final diff. Remove completed instructions from the ordered queue. Delete fulfilled temporary plans, reviews, audits, status notes, and handoffs after their evidence has moved to the durable owner; Git preserves their history. Preserve decisions, contracts, retained evidence, recovery paths, and unknown obligations. Leave unrelated documents and user changes alone. If the final diff already satisfies this, make no further edits and do not repeat checks that already passed against it.";
+export const RECONCILIATION_REMINDER = "Before your final response, update each existing truth owner made false by the final diff. Remove completed instructions from the ordered queue. Delete fulfilled temporary plans, reviews, audits, status notes, and handoffs after their evidence has moved to the durable owner; Git preserves their history. Preserve decisions, contracts, retained evidence, recovery paths, and unknown obligations. Leave unrelated documents and user changes alone. If the final diff already satisfies this, make no further edits and do not repeat checks that already passed against it. Treat this as an internal check, then answer the user's request with its outcome, verification and remaining limits.";
 
-const markerRoot = join(tmpdir(), "simple-reconciliation");
 const NEGATION_LEAD = /^(?:no\b|nope\b|not\b|never\b|stop\b|don['’]?t\b|do not\b|wait\b|hold\b)/i;
 const NEGATION_WORD = /\b(?:don['’]?t|do not|never|not|stop|without|no|skip|hold off on)\b/i;
 const AFFIRMATIVE_LEAD = /^(?:yes|yep|yeah|y|ok|okay|go|go ahead|do it|do this|do this all|do that|do all|do the lot|do both|do everything|proceed|approved|confirmed|agreed|fine|sure|ship it|push it|push|release|run it|run them|go for it|continue|carry on)\b/i;
@@ -22,9 +20,7 @@ let operatorPath = null;
 try {
   operatorPath = findOperator();
 
-  if (!profilePath && event === "Stop") {
-    writeJson({});
-  } else if (event === "SessionStart" || event === "SubagentStart") {
+  if (event === "SessionStart" || event === "SubagentStart") {
     const context = [
       profilePath ? profileContext(profilePath) : "",
       profilePath ? roundContext(profilePath) : "",
@@ -41,9 +37,9 @@ try {
     );
     if (reminder) writeContext(event, reminder);
   } else if (profilePath && event === "PostToolUse") {
-    markReconciliation(payload, profilePath);
-  } else if (profilePath && event === "Stop") {
-    writeJson(reconciliationDecision(payload, profilePath));
+    if (/^(?:apply_patch|Edit|Write)$/i.test(payload.tool_name ?? payload.toolName ?? "")) {
+      writeContext(event, RECONCILIATION_REMINDER);
+    }
   }
 } catch (error) {
   process.stderr.write(`simple hook: ${error?.message ?? error}\n`);
@@ -209,32 +205,6 @@ export function writingReminder(input, toolName = "") {
   }
 
   return reminders.join("\n");
-}
-
-export function reconciliationDecision(payload, profilePath) {
-  const marker = reconciliationMarker(payload, profilePath);
-  if (!marker || !existsSync(marker)) return {};
-
-  rmSync(marker, { force: true });
-  if (payload.stop_hook_active ?? payload.stopHookActive) return {};
-  return { decision: "block", reason: RECONCILIATION_REASON };
-}
-
-export function markReconciliation(payload, profilePath) {
-  const toolName = payload.tool_name ?? payload.toolName ?? "";
-  if (!/^(?:apply_patch|Edit|Write)$/i.test(toolName)) return;
-
-  const marker = reconciliationMarker(payload, profilePath);
-  if (!marker) return;
-  mkdirSync(markerRoot, { recursive: true, mode: 0o700 });
-  writeFileSync(marker, "", { mode: 0o600 });
-}
-
-function reconciliationMarker(payload, profilePath) {
-  const sessionId = payload.session_id ?? payload.sessionId;
-  if (!sessionId || !profilePath) return null;
-  const key = createHash("sha256").update(`${sessionId}\0${profilePath}`).digest("hex");
-  return join(markerRoot, key);
 }
 
 function hasAddedComment(input, toolName) {

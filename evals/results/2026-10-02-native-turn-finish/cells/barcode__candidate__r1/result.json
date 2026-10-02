@@ -1,0 +1,43 @@
+{
+  "cell": "barcode__candidate__r1",
+  "ordinal": 2,
+  "case": "barcode",
+  "arm": "candidate",
+  "repeat": "r1",
+  "model_called": true,
+  "returncode": 0,
+  "failure": null,
+  "latency_ms": 79659,
+  "native_valid": true,
+  "artifact_pass": true,
+  "final_answer_grade": "pending_root_manual_review",
+  "changed_files": [
+    "README.md",
+    "cli.mjs",
+    "lib/catalog.mjs",
+    "web.mjs"
+  ],
+  "session_start_events": 1,
+  "post_tool_events": 1,
+  "stop_events": 0,
+  "stop_blocks": 0,
+  "reconciliation_contexts": 1,
+  "candidate_context_before_final": true,
+  "agent_message_count": 2,
+  "last_message_nonempty": true,
+  "usage_raw": [
+    {
+      "input_tokens": 81550,
+      "cached_input_tokens": 70400,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1062,
+      "reasoning_output_tokens": 281
+    }
+  ],
+  "reported_model_revision": "not exposed in native exec JSONL",
+  "limits": [
+    "Small known-case screen; not transfer or broad improvement evidence.",
+    "CLI native execution differs from T3 rendering.",
+    "Actual app/session cache unchanged; live user session still old hooks."
+  ]
+}

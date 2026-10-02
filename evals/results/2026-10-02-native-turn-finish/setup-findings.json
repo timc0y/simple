@@ -1,0 +1,8 @@
+{
+  "source": "read-only diagnosis agent; project-layer/startup findings reported in conversation, not independently captured raw traces",
+  "initialStartup": "state db backfill is running at real Codex home; waiting up to 30s before retrying startup initialization",
+  "stateOverride": "CODEX_SQLITE_HOME plus matching sqlite_home kept actual HOME/CODEX_HOME/auth identity and bypassed the busy real-home state",
+  "projectLayer": "CLI projects trust override was present in sessionFlags but did not enable project .codex hook discovery; layer requested actual user config trust",
+  "inlineSource": "Independently retained discovery confirms four candidate hooks all sessionFlags, no Stop/global hooks/errors/warnings; exact requested Luna slug available",
+  "noRealInstallationOrConfigChanges": true
+}

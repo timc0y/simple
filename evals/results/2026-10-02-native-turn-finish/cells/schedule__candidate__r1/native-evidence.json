@@ -1,0 +1,51 @@
+{
+  "derivedFrom": "private native-hooks.jsonl; absolute paths/session identifiers omitted",
+  "events": [
+    {
+      "order": 0,
+      "elapsedMs": 22315,
+      "event": "SessionStart",
+      "tool": null,
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": {
+        "hookSpecificOutput": {
+          "hookEventName": "SessionStart",
+          "additionalContext": "[Private profile-path injection redacted; synthetic profile retained in inputs/cases/schedule/SIMPLE.md.]"
+        }
+      }
+    },
+    {
+      "order": 1,
+      "elapsedMs": 26691,
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": null
+    },
+    {
+      "order": 2,
+      "elapsedMs": 30412,
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": null
+    }
+  ],
+  "coreReadObserved": true,
+  "referencesObserved": [
+    "writing.md"
+  ],
+  "nativeProcessWallMs": 35547,
+  "usageRaw": [
+    {
+      "input_tokens": 44850,
+      "cached_input_tokens": 36096,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 297,
+      "reasoning_output_tokens": 24
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+run	case	model	condition	strict	opened
+1	dataset-explanation	luna	baseline-simple-working-tree	false	true
+1	dataset-explanation	luna	candidate-simple-working-tree	false	true
+1	owner-cleanup	luna	candidate-simple-working-tree	false	true
+1	owner-cleanup	luna	baseline-simple-working-tree	false	true
+1	simple-status	luna	baseline-simple-working-tree	true	true
+1	simple-status	luna	candidate-simple-working-tree	true	true
+1	varying-input	luna	candidate-simple-working-tree	true	true
+1	varying-input	luna	baseline-simple-working-tree	true	true

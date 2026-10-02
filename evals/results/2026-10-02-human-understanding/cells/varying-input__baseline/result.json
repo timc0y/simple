@@ -1,0 +1,68 @@
+{
+  "case": "varying-input",
+  "arm": "baseline",
+  "status": "completed",
+  "last_answer_stage": "seed",
+  "seed_answer_checks": {
+    "estimated_53_minutes": true,
+    "exceeds_45_minutes": true,
+    "inputs_and_relationship": true,
+    "item_time_unknown": true,
+    "change_supported": true
+  },
+  "final_answer_checks": {
+    "estimated_53_minutes": true,
+    "exceeds_45_minutes": true,
+    "inputs_and_relationship": true,
+    "item_time_unknown": true,
+    "change_supported": true
+  },
+  "artifact_checks": {
+    "retained_evidence_unchanged": true
+  },
+  "answer_screen_pass": true,
+  "artifact_pass": true,
+  "task_screen_pass": true,
+  "smoke": null,
+  "seed": {
+    "returncode": 0,
+    "latency_ms": 25771,
+    "started_unix": 1790955840.964509,
+    "thread_id": "[REDACTED: persisted thread identifier; original private]",
+    "agent_message_count": 2,
+    "usage": [
+      {
+        "input_tokens": 37420,
+        "cached_input_tokens": 27904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 808,
+        "reasoning_output_tokens": 235
+      }
+    ],
+    "last_answer_present": true,
+    "reported_revision": "not exposed in JSONL",
+    "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+  },
+  "final_call": {
+    "returncode": 0,
+    "latency_ms": 25771,
+    "started_unix": 1790955840.964509,
+    "thread_id": "[REDACTED: persisted thread identifier; original private]",
+    "agent_message_count": 2,
+    "usage": [
+      {
+        "input_tokens": 37420,
+        "cached_input_tokens": 27904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 808,
+        "reasoning_output_tokens": 235
+      }
+    ],
+    "last_answer_present": true,
+    "reported_revision": "not exposed in JSONL",
+    "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+  },
+  "native_hooks_exercised": false,
+  "feedback_identical": false,
+  "manual_review_required": true
+}

@@ -1,0 +1,564 @@
+[
+  {
+    "case": "dataset-explanation",
+    "arm": "baseline",
+    "status": "completed",
+    "last_answer_stage": "continuation",
+    "seed_answer_checks": {
+      "moon_result": true,
+      "unrun_field_trial": true,
+      "useful_decision": true,
+      "valid_tile_evidence": true,
+      "alignment_evidence": true
+    },
+    "final_answer_checks": {
+      "moon_result": false,
+      "unrun_field_trial": true,
+      "useful_decision": false,
+      "valid_tile_evidence": false,
+      "alignment_evidence": false
+    },
+    "artifact_checks": {
+      "durable_owner_has_moon_evidence": true,
+      "unrun_trial_preserved": true,
+      "retained_evidence_unchanged": true
+    },
+    "answer_screen_pass": false,
+    "artifact_pass": true,
+    "task_screen_pass": false,
+    "smoke": null,
+    "seed": {
+      "returncode": 0,
+      "latency_ms": 40738,
+      "started_unix": 1790955543.8889961,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 3,
+      "usage": [
+        {
+          "input_tokens": 88238,
+          "cached_input_tokens": 75264,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1558,
+          "reasoning_output_tokens": 284
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "final_call": {
+      "returncode": 0,
+      "latency_ms": 7960,
+      "started_unix": 1790955584.637214,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 1,
+      "usage": [
+        {
+          "input_tokens": 105505,
+          "cached_input_tokens": 91392,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1705,
+          "reasoning_output_tokens": 349
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "native_hooks_exercised": false,
+    "feedback_identical": true,
+    "manual_review_required": true
+  },
+  {
+    "case": "dataset-explanation",
+    "arm": "candidate",
+    "status": "completed",
+    "last_answer_stage": "continuation",
+    "seed_answer_checks": {
+      "moon_result": true,
+      "unrun_field_trial": true,
+      "useful_decision": true,
+      "valid_tile_evidence": true,
+      "alignment_evidence": true
+    },
+    "final_answer_checks": {
+      "moon_result": false,
+      "unrun_field_trial": true,
+      "useful_decision": false,
+      "valid_tile_evidence": false,
+      "alignment_evidence": false
+    },
+    "artifact_checks": {
+      "durable_owner_has_moon_evidence": true,
+      "unrun_trial_preserved": true,
+      "retained_evidence_unchanged": true
+    },
+    "answer_screen_pass": false,
+    "artifact_pass": true,
+    "task_screen_pass": false,
+    "smoke": null,
+    "seed": {
+      "returncode": 0,
+      "latency_ms": 38056,
+      "started_unix": 1790955592.692994,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 3,
+      "usage": [
+        {
+          "input_tokens": 88319,
+          "cached_input_tokens": 78336,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1504,
+          "reasoning_output_tokens": 264
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "final_call": {
+      "returncode": 0,
+      "latency_ms": 6633,
+      "started_unix": 1790955630.758198,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 1,
+      "usage": [
+        {
+          "input_tokens": 105613,
+          "cached_input_tokens": 94464,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1640,
+          "reasoning_output_tokens": 319
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "native_hooks_exercised": false,
+    "feedback_identical": true,
+    "manual_review_required": true
+  },
+  {
+    "case": "owner-cleanup",
+    "arm": "candidate",
+    "status": "completed",
+    "last_answer_stage": "continuation",
+    "seed_answer_checks": {
+      "moon_result": true,
+      "unrun_field_trial": true
+    },
+    "final_answer_checks": {
+      "moon_result": false,
+      "unrun_field_trial": false
+    },
+    "artifact_checks": {
+      "durable_owner_has_moon_evidence": true,
+      "unrun_trial_preserved": true,
+      "retained_evidence_unchanged": true,
+      "source_selects_moon": true,
+      "completed_queue_instruction_removed": true,
+      "fulfilled_temporary_plan_removed": true,
+      "unrelated_note_unchanged": true,
+      "independent_smoke_pass": true
+    },
+    "answer_screen_pass": false,
+    "artifact_pass": true,
+    "task_screen_pass": false,
+    "smoke": {
+      "returncode": 0,
+      "stdout": "selected dataset: moon\n",
+      "stderr": ""
+    },
+    "seed": {
+      "returncode": 0,
+      "latency_ms": 67003,
+      "started_unix": 1790955637.524595,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 5,
+      "usage": [
+        {
+          "input_tokens": 135545,
+          "cached_input_tokens": 119808,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2418,
+          "reasoning_output_tokens": 470
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "final_call": {
+      "returncode": 0,
+      "latency_ms": 6114,
+      "started_unix": 1790955704.5432892,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 1,
+      "usage": [
+        {
+          "input_tokens": 155921,
+          "cached_input_tokens": 139008,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2481,
+          "reasoning_output_tokens": 510
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "native_hooks_exercised": false,
+    "feedback_identical": true,
+    "manual_review_required": true
+  },
+  {
+    "case": "owner-cleanup",
+    "arm": "baseline",
+    "status": "completed",
+    "last_answer_stage": "continuation",
+    "seed_answer_checks": {
+      "moon_result": true,
+      "unrun_field_trial": true
+    },
+    "final_answer_checks": {
+      "moon_result": false,
+      "unrun_field_trial": false
+    },
+    "artifact_checks": {
+      "durable_owner_has_moon_evidence": true,
+      "unrun_trial_preserved": true,
+      "retained_evidence_unchanged": true,
+      "source_selects_moon": true,
+      "completed_queue_instruction_removed": true,
+      "fulfilled_temporary_plan_removed": true,
+      "unrelated_note_unchanged": true,
+      "independent_smoke_pass": true
+    },
+    "answer_screen_pass": false,
+    "artifact_pass": true,
+    "task_screen_pass": false,
+    "smoke": {
+      "returncode": 0,
+      "stdout": "selected dataset: moon\n",
+      "stderr": ""
+    },
+    "seed": {
+      "returncode": 0,
+      "latency_ms": 52629,
+      "started_unix": 1790955710.8221161,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 4,
+      "usage": [
+        {
+          "input_tokens": 127184,
+          "cached_input_tokens": 112640,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2145,
+          "reasoning_output_tokens": 374
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "final_call": {
+      "returncode": 0,
+      "latency_ms": 5812,
+      "started_unix": 1790955763.465033,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 1,
+      "usage": [
+        {
+          "input_tokens": 146117,
+          "cached_input_tokens": 130816,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2213,
+          "reasoning_output_tokens": 419
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "native_hooks_exercised": false,
+    "feedback_identical": true,
+    "manual_review_required": true
+  },
+  {
+    "case": "simple-status",
+    "arm": "baseline",
+    "status": "completed",
+    "last_answer_stage": "seed",
+    "seed_answer_checks": {
+      "locally_checked": true,
+      "not_installed": true,
+      "old_user_behaviour": true,
+      "install_next": true,
+      "concise_status": true
+    },
+    "final_answer_checks": {
+      "locally_checked": true,
+      "not_installed": true,
+      "old_user_behaviour": true,
+      "install_next": true,
+      "concise_status": true
+    },
+    "artifact_checks": {
+      "retained_evidence_unchanged": true,
+      "no_new_files": true,
+      "no_changed_files": true
+    },
+    "answer_screen_pass": true,
+    "artifact_pass": true,
+    "task_screen_pass": true,
+    "smoke": null,
+    "seed": {
+      "returncode": 0,
+      "latency_ms": 21765,
+      "started_unix": 1790955769.4468732,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 2,
+      "usage": [
+        {
+          "input_tokens": 54478,
+          "cached_input_tokens": 45056,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 716,
+          "reasoning_output_tokens": 188
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "final_call": {
+      "returncode": 0,
+      "latency_ms": 21765,
+      "started_unix": 1790955769.4468732,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 2,
+      "usage": [
+        {
+          "input_tokens": 54478,
+          "cached_input_tokens": 45056,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 716,
+          "reasoning_output_tokens": 188
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "native_hooks_exercised": false,
+    "feedback_identical": false,
+    "manual_review_required": true
+  },
+  {
+    "case": "simple-status",
+    "arm": "candidate",
+    "status": "completed",
+    "last_answer_stage": "seed",
+    "seed_answer_checks": {
+      "locally_checked": true,
+      "not_installed": true,
+      "old_user_behaviour": true,
+      "install_next": true,
+      "concise_status": true
+    },
+    "final_answer_checks": {
+      "locally_checked": true,
+      "not_installed": true,
+      "old_user_behaviour": true,
+      "install_next": true,
+      "concise_status": true
+    },
+    "artifact_checks": {
+      "retained_evidence_unchanged": true,
+      "no_new_files": true,
+      "no_changed_files": true
+    },
+    "answer_screen_pass": true,
+    "artifact_pass": true,
+    "task_screen_pass": true,
+    "smoke": null,
+    "seed": {
+      "returncode": 0,
+      "latency_ms": 22987,
+      "started_unix": 1790955791.275367,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 3,
+      "usage": [
+        {
+          "input_tokens": 52485,
+          "cached_input_tokens": 38912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 807,
+          "reasoning_output_tokens": 218
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "final_call": {
+      "returncode": 0,
+      "latency_ms": 22987,
+      "started_unix": 1790955791.275367,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 3,
+      "usage": [
+        {
+          "input_tokens": 52485,
+          "cached_input_tokens": 38912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 807,
+          "reasoning_output_tokens": 218
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "native_hooks_exercised": false,
+    "feedback_identical": false,
+    "manual_review_required": true
+  },
+  {
+    "case": "varying-input",
+    "arm": "candidate",
+    "status": "completed",
+    "last_answer_stage": "seed",
+    "seed_answer_checks": {
+      "estimated_53_minutes": true,
+      "exceeds_45_minutes": true,
+      "inputs_and_relationship": true,
+      "item_time_unknown": true,
+      "change_supported": true
+    },
+    "final_answer_checks": {
+      "estimated_53_minutes": true,
+      "exceeds_45_minutes": true,
+      "inputs_and_relationship": true,
+      "item_time_unknown": true,
+      "change_supported": true
+    },
+    "artifact_checks": {
+      "retained_evidence_unchanged": true
+    },
+    "answer_screen_pass": true,
+    "artifact_pass": true,
+    "task_screen_pass": true,
+    "smoke": null,
+    "seed": {
+      "returncode": 0,
+      "latency_ms": 26528,
+      "started_unix": 1790955814.334406,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 3,
+      "usage": [
+        {
+          "input_tokens": 38326,
+          "cached_input_tokens": 29952,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 945,
+          "reasoning_output_tokens": 293
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "final_call": {
+      "returncode": 0,
+      "latency_ms": 26528,
+      "started_unix": 1790955814.334406,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 3,
+      "usage": [
+        {
+          "input_tokens": 38326,
+          "cached_input_tokens": 29952,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 945,
+          "reasoning_output_tokens": 293
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "native_hooks_exercised": false,
+    "feedback_identical": false,
+    "manual_review_required": true
+  },
+  {
+    "case": "varying-input",
+    "arm": "baseline",
+    "status": "completed",
+    "last_answer_stage": "seed",
+    "seed_answer_checks": {
+      "estimated_53_minutes": true,
+      "exceeds_45_minutes": true,
+      "inputs_and_relationship": true,
+      "item_time_unknown": true,
+      "change_supported": true
+    },
+    "final_answer_checks": {
+      "estimated_53_minutes": true,
+      "exceeds_45_minutes": true,
+      "inputs_and_relationship": true,
+      "item_time_unknown": true,
+      "change_supported": true
+    },
+    "artifact_checks": {
+      "retained_evidence_unchanged": true
+    },
+    "answer_screen_pass": true,
+    "artifact_pass": true,
+    "task_screen_pass": true,
+    "smoke": null,
+    "seed": {
+      "returncode": 0,
+      "latency_ms": 25771,
+      "started_unix": 1790955840.964509,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 2,
+      "usage": [
+        {
+          "input_tokens": 37420,
+          "cached_input_tokens": 27904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 808,
+          "reasoning_output_tokens": 235
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "final_call": {
+      "returncode": 0,
+      "latency_ms": 25771,
+      "started_unix": 1790955840.964509,
+      "thread_id": "[REDACTED: persisted thread identifier; original private]",
+      "agent_message_count": 2,
+      "usage": [
+        {
+          "input_tokens": 37420,
+          "cached_input_tokens": 27904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 808,
+          "reasoning_output_tokens": 235
+        }
+      ],
+      "last_answer_present": true,
+      "reported_revision": "not exposed in JSONL",
+      "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+    },
+    "native_hooks_exercised": false,
+    "feedback_identical": false,
+    "manual_review_required": true
+  }
+]

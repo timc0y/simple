@@ -1,0 +1,31 @@
+{
+  "git_diff_check": {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "independent_barcode_verifier": {
+    "argv": [
+      "node",
+      "[private repository root redacted]/.local/context/turn-finish-native-2026-10-02/verify-barcode.mjs",
+      "[private runtime root redacted]/cells/barcode__baseline__r1/workspace"
+    ],
+    "returncode": 0,
+    "stdout": "{\"passed\":true,\"assertions\":26}\n",
+    "stderr": ""
+  },
+  "smoke": {
+    "argv": [
+      "node",
+      "smoke.mjs"
+    ],
+    "returncode": 0,
+    "stdout": "12 smoke assertions passed\n",
+    "stderr": ""
+  }
+}

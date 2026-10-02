@@ -1,0 +1,19 @@
+{
+  "returncode": 0,
+  "latency_ms": 52629,
+  "started_unix": 1790955710.8221161,
+  "thread_id": "[REDACTED: persisted thread identifier; original private]",
+  "agent_message_count": 4,
+  "usage": [
+    {
+      "input_tokens": 127184,
+      "cached_input_tokens": 112640,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2145,
+      "reasoning_output_tokens": 374
+    }
+  ],
+  "last_answer_present": true,
+  "reported_revision": "not exposed in JSONL",
+  "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+}

@@ -1,0 +1,34 @@
+{
+  "model": "gpt-6-luna",
+  "reasoning": "medium",
+  "host": "codex exec 0.159.3",
+  "conditions": [
+    "baseline cached Stop lifecycle",
+    "candidate PostToolUse reminder lifecycle"
+  ],
+  "changedFiles": [
+    "scripts/hook.mjs",
+    "hooks/hooks.json"
+  ],
+  "sameSkillInBothConditions": true,
+  "cases": [
+    "barcode",
+    "schedule"
+  ],
+  "matrix": [
+    "barcode baseline r1",
+    "barcode candidate r1",
+    "barcode candidate r2",
+    "barcode baseline r2",
+    "schedule candidate r1",
+    "schedule baseline r1"
+  ],
+  "nativeSetupGate": "No model calls until hooks/list confirms sources load. Require baseline Stop block on edits and candidate PostToolUse reconciliation context before a final answer. Stop on setup/native-validity failure; preserve evidence. Six calls maximum, no answer-based reruns or guidance retuning.",
+  "preflight": "Existing 26-assertion barcode verifier and known-fix/three-regression calibration from prior direct screen; manually calibrated schedule criteria and references.",
+  "authority": "Isolated ephemeral runtime only. Deny writes to real config, plugins, linked skills and main repo. No install, commit or publication.",
+  "limits": [
+    "Small known-case screen; not transfer or broad improvement evidence.",
+    "CLI native execution differs from T3 rendering.",
+    "Actual app/session cache unchanged; live user session still old hooks."
+  ]
+}

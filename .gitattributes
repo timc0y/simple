@@ -7,3 +7,7 @@
 
 # Preserve exact prompt and reference bytes used in recorded evaluations.
 evals/**/cases/**/*.md whitespace=-blank-at-eof
+
+# These recorded answers retain a Markdown hard line break from the model.
+evals/results/2026-10-02-human-understanding/raw/a48e7f431629.md whitespace=-blank-at-eol
+evals/results/2026-10-02-human-understanding/cells/simple-status__baseline/seed-last-message.md whitespace=-blank-at-eol

@@ -87,7 +87,8 @@ error does not establish a new API, identifier, or compatibility promise.
    decorative formatting unless the destination requires it.
 7. Remove generic introductions, repetition, filler, and formatting that carries no
    meaning.
-8. Check that compression did not remove a reason, boundary, risk, proof, or unknown.
+8. Check that the final response still answers the active request. Shortening, changing
+   format, or internal checks must not remove a reason, boundary, risk, proof, or unknown.
 
 Apply KISS to the solution shape and YAGNI to hypothetical obligations. Use
 Chesterton's Fence before removal. Hide necessary complexity behind one clear owner.

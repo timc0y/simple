@@ -327,76 +327,78 @@ test("edit hook routes only relevant review reminders", () => {
   assert.equal(architectureWords.stdout, "");
 });
 
-test("an edited turn gets one reconciliation pass before stopping", () => {
+test("supported edit tools receive reconciliation guidance before the final response", () => {
   const root = mkdtempSync(join(tmpdir(), "simple-"));
   mkdirSync(join(root, ".git"));
   setup(root);
   completeProfile(root, "reconciliation fixture");
-  const sessionId = `reconcile-${basename(root)}`;
+  const profile = readFileSync(join(root, "SIMPLE.md"), "utf8");
 
-  const readOnlyStop = runHook({
-    hook_event_name: "Stop",
-    session_id: sessionId,
-    cwd: root,
-    stop_hook_active: false
-  });
-  assert.deepEqual(JSON.parse(readOnlyStop.stdout), {});
-
-  const edit = runHook({
-    hook_event_name: "PostToolUse",
-    session_id: sessionId,
-    cwd: root,
-    tool_name: "apply_patch"
-  });
-  assert.equal(edit.stdout, "");
-
-  const firstStop = runHook({
-    hook_event_name: "Stop",
-    session_id: sessionId,
-    cwd: root,
-    stop_hook_active: false
-  });
-  const decision = JSON.parse(firstStop.stdout);
-  assert.equal(decision.decision, "block");
-  assert.match(decision.reason, /Remove completed instructions/);
-  assert.match(decision.reason, /Leave unrelated documents and user changes alone/);
-
-  const secondStop = runHook({
-    hook_event_name: "Stop",
-    session_id: sessionId,
-    cwd: root,
-    stop_hook_active: true
-  });
-  assert.deepEqual(JSON.parse(secondStop.stdout), {});
-});
-
-test("the stop hook is a no-op outside a profiled repository", () => {
-  const root = mkdtempSync(join(tmpdir(), "simple-"));
-  const result = runHook({
-    hook_event_name: "Stop",
-    session_id: `unprofiled-${basename(root)}`,
-    cwd: root,
-    stop_hook_active: false
-  });
-  assert.deepEqual(JSON.parse(result.stdout), {});
-});
-
-test("reconciliation markers do not cross repository profiles", () => {
-  const first = mkdtempSync(join(tmpdir(), "simple-first-"));
-  const second = mkdtempSync(join(tmpdir(), "simple-second-"));
-  for (const root of [first, second]) {
-    mkdirSync(join(root, ".git"));
-    setup(root);
-    completeProfile(root, basename(root));
+  for (const aliased of [false, true]) {
+    for (const toolName of ["apply_patch", "Edit", "Write"]) {
+      const event = aliased
+        ? { hookEventName: "PostToolUse", cwd: root, toolName }
+        : { hook_event_name: "PostToolUse", cwd: root, tool_name: toolName };
+      const result = runHook(event);
+      assert.equal(result.status, 0, toolName);
+      assert.ok(result.stdout.trim(), `${toolName} must receive guidance after the edit`);
+      const output = JSON.parse(result.stdout);
+      assert.equal(output.decision, undefined, toolName);
+      assert.equal(output.hookSpecificOutput.hookEventName, "PostToolUse", toolName);
+      const context = output.hookSpecificOutput.additionalContext;
+      assert.match(context, /before (?:your |the )?final (?:answer|response)/i, toolName);
+      assert.match(context, /truth owner|source of truth/i, toolName);
+      assert.match(context, /unrelated.*(?:documents|changes)/i, toolName);
+      assert.match(context, /answer.*(?:user|request)/i, toolName);
+    }
   }
-  const sessionId = `multi-repo-${basename(first)}`;
+  assert.equal(readFileSync(join(root, "SIMPLE.md"), "utf8"), profile);
+});
 
-  runHook({ hook_event_name: "PostToolUse", session_id: sessionId, cwd: first, tool_name: "Edit" });
-  const wrongRepository = runHook({ hook_event_name: "Stop", session_id: sessionId, cwd: second, stop_hook_active: false });
-  assert.deepEqual(JSON.parse(wrongRepository.stdout), {});
+test("read-only and unprofiled tool events do not request reconciliation", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-"));
+  mkdirSync(join(root, ".git"));
+  setup(root);
+  completeProfile(root, "read-only fixture");
 
-  const owningRepository = runHook({ hook_event_name: "Stop", session_id: sessionId, cwd: first, stop_hook_active: false });
-  assert.equal(JSON.parse(owningRepository.stdout).decision, "block");
+  for (const toolName of ["Read", "Bash", "exec_command", "mcp__fixture__read"]) {
+    const result = runHook({ hook_event_name: "PostToolUse", cwd: root, tool_name: toolName });
+    assert.equal(result.status, 0, toolName);
+    assert.equal(result.stdout, "", toolName);
+  }
+
+  const unprofiled = mkdtempSync(join(tmpdir(), "simple-unprofiled-"));
+  for (const toolName of ["apply_patch", "Edit", "Write"]) {
+    const result = runHook({ hook_event_name: "PostToolUse", cwd: unprofiled, tool_name: toolName });
+    assert.equal(result.status, 0, toolName);
+    assert.equal(result.stdout, "", toolName);
+  }
+});
+
+test("Stop cannot block the final answer after repeated edits or aliased hook inputs", () => {
+  const root = mkdtempSync(join(tmpdir(), "simple-"));
+  mkdirSync(join(root, ".git"));
+  setup(root);
+  completeProfile(root, "final-answer fixture");
+  const sessionId = `final-answer-${basename(root)}`;
+
+  for (const aliased of [false, true]) {
+    for (const toolName of ["apply_patch", "Edit", "Write"]) {
+      const event = aliased
+        ? { hookEventName: "PostToolUse", sessionId, cwd: root, toolName }
+        : { hook_event_name: "PostToolUse", session_id: sessionId, cwd: root, tool_name: toolName };
+      assert.equal(runHook(event).status, 0);
+    }
+
+    for (const active of [false, true, false]) {
+      const event = aliased
+        ? { hookEventName: "Stop", sessionId, cwd: root, stopHookActive: active }
+        : { hook_event_name: "Stop", session_id: sessionId, cwd: root, stop_hook_active: active };
+      const result = runHook(event);
+      assert.equal(result.status, 0);
+      assert.equal(result.stdout, "");
+    }
+  }
 });
 
 test("local install exposes one skill through each supported host", () => {
@@ -499,7 +501,7 @@ test("published surfaces reference files that exist", () => {
   assert.ok(codexPlugin.interface.defaultPrompt.some((prompt) => prompt.includes("truth owners and fulfilled temporary documentation")));
   const hooks = JSON.parse(readFileSync(join(root, "hooks", "hooks.json"), "utf8"));
   assert.ok(hooks.hooks.PostToolUse);
-  assert.ok(hooks.hooks.Stop);
+  assert.equal(hooks.hooks.Stop, undefined, "final answers must not trigger a continuation");
   for (const event of Object.values(hooks.hooks)) {
     for (const block of event) {
       for (const h of block.hooks) assert.match(h.command, /\$\{CLAUDE_PLUGIN_ROOT\}/);

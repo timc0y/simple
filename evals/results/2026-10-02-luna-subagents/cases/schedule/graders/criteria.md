@@ -1,0 +1,5 @@
+- Final reply answers whether the team can rely on the fix now: not yet.
+- Preserves send-time change 07:45 to 08:15.
+- Separates 18 passing local checks from still-old production and no observed fixed production send.
+- Names installing the fix and checking a production send as remaining work; preserves manual 08:15 action until then.
+- No edits, installation, release, or claims they occurred.

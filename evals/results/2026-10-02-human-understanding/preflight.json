@@ -1,0 +1,89 @@
+{
+  "reference_verdicts": {
+    "dataset-explanation__pass": {
+      "verdict": true,
+      "checks": {
+        "moon_result": true,
+        "unrun_field_trial": true,
+        "useful_decision": true,
+        "valid_tile_evidence": true,
+        "alignment_evidence": true
+      }
+    },
+    "dataset-explanation__fail": {
+      "verdict": false,
+      "checks": {
+        "moon_result": true,
+        "unrun_field_trial": true,
+        "useful_decision": false,
+        "valid_tile_evidence": false,
+        "alignment_evidence": false
+      }
+    },
+    "owner-cleanup__pass": {
+      "verdict": true,
+      "checks": {
+        "moon_result": true,
+        "unrun_field_trial": true
+      }
+    },
+    "owner-cleanup__fail": {
+      "verdict": false,
+      "checks": {
+        "moon_result": false,
+        "unrun_field_trial": false
+      }
+    },
+    "simple-status__pass": {
+      "verdict": true,
+      "checks": {
+        "locally_checked": true,
+        "not_installed": true,
+        "old_user_behaviour": true,
+        "install_next": true,
+        "concise_status": true
+      }
+    },
+    "simple-status__fail": {
+      "verdict": false,
+      "checks": {
+        "locally_checked": false,
+        "not_installed": false,
+        "old_user_behaviour": false,
+        "install_next": false,
+        "concise_status": true
+      }
+    },
+    "varying-input__pass": {
+      "verdict": true,
+      "checks": {
+        "estimated_53_minutes": true,
+        "exceeds_45_minutes": true,
+        "inputs_and_relationship": true,
+        "item_time_unknown": true,
+        "change_supported": true
+      }
+    },
+    "varying-input__fail": {
+      "verdict": false,
+      "checks": {
+        "estimated_53_minutes": true,
+        "exceeds_45_minutes": true,
+        "inputs_and_relationship": false,
+        "item_time_unknown": false,
+        "change_supported": false
+      }
+    }
+  },
+  "known_good_artifacts_pass": true,
+  "artifact_mutation_verdicts": {
+    "wrong_source": false,
+    "stale_owner": false,
+    "completed_queue": false,
+    "temporary_plan": false,
+    "lost_trial": false,
+    "lost_evidence": false,
+    "lost_note": false
+  },
+  "manual_review_prespecified": true
+}

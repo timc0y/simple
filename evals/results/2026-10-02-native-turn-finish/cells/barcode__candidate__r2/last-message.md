@@ -1,0 +1,3 @@
+Fixed both callers through the shared lookup. The CLI no longer converts barcode text to a number, and the lookup now trims surrounding spaces while preserving leading zeros. The README now describes that behavior.
+
+`npm test` passed all 12 smoke assertions, covering Tea for `"00123"` (with and without surrounding spaces), Coffee for `"123"` (also with spaces), and `null` for unknown and empty codes on both callers.

@@ -1,0 +1,25 @@
+{
+  "observed_successful_skill_reads": {
+    "seed": [
+      "SKILL.md",
+      "references/experiments.md",
+      "references/writing.md"
+    ],
+    "continuation": []
+  },
+  "completed_item_counts": {
+    "seed": {
+      "error": 1,
+      "agent_message": 3,
+      "command_execution": 4,
+      "file_change": 1
+    },
+    "continuation": {
+      "error": 1,
+      "agent_message": 1
+    }
+  },
+  "host_feature_warning_count": 2,
+  "forced_execution_not_activation": true,
+  "method": "Successful command-read events with nonempty output; raw commands and output retained privately."
+}

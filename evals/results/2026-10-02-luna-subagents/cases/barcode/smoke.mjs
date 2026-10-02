@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import { webLookup } from './web.mjs';
+import { cliLookup } from './cli.mjs';
+assert.equal(webLookup('123'), 'Coffee');
+assert.equal(cliLookup('123'), 'Coffee');
+assert.equal(webLookup('00123'), 'Tea');
+assert.equal(cliLookup('00123'), 'Tea');
+assert.equal(webLookup(' A7 '), 'Bread');
+assert.equal(cliLookup(' A7 '), 'Bread');
+assert.equal(webLookup('missing'), null);
+assert.equal(cliLookup('missing'), null);
+assert.equal(webLookup(''), null);
+assert.equal(cliLookup(''), null);
+console.log('10 smoke assertions passed');

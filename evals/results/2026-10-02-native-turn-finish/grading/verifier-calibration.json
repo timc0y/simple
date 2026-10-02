@@ -1,0 +1,34 @@
+[
+  {
+    "id": "known-fix",
+    "expectedPass": true,
+    "exitCode": 0,
+    "calibrationPassed": true,
+    "stdout": "{\"passed\":true,\"assertions\":26}\n",
+    "stderr": ""
+  },
+  {
+    "id": "numeric-conversion",
+    "expectedPass": false,
+    "exitCode": 1,
+    "calibrationPassed": true,
+    "stdout": "",
+    "stderr": "node:internal/modules/run_main:111\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: cli: \"00123\"\n\n'Coffee' !== 'Tea'\n\n    at file://[private repository root redacted]/.local/context/luna-subagents-2026-10-02/verify-barcode.mjs:16:12 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 'Coffee',\n  expected: 'Tea',\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v26.10.0\n"
+  },
+  {
+    "id": "lost-spaces",
+    "expectedPass": false,
+    "exitCode": 1,
+    "calibrationPassed": true,
+    "stdout": "",
+    "stderr": "node:internal/modules/run_main:111\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: cli: \" 00123 \"\n\nnull !== 'Tea'\n\n    at file://[private repository root redacted]/.local/context/luna-subagents-2026-10-02/verify-barcode.mjs:16:12 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: null,\n  expected: 'Tea',\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v26.10.0\n"
+  },
+  {
+    "id": "unknown-default",
+    "expectedPass": false,
+    "exitCode": 1,
+    "calibrationPassed": true,
+    "stdout": "",
+    "stderr": "node:internal/modules/run_main:111\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: cli: \"missing\"\n\n'Coffee' !== null\n\n    at file://[private repository root redacted]/.local/context/luna-subagents-2026-10-02/verify-barcode.mjs:16:12 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 'Coffee',\n  expected: null,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v26.10.0\n"
+  }
+]

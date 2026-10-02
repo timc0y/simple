@@ -1,0 +1,73 @@
+{
+  "case": "owner-cleanup",
+  "arm": "baseline",
+  "status": "completed",
+  "last_answer_stage": "continuation",
+  "seed_answer_checks": {
+    "moon_result": true,
+    "unrun_field_trial": true
+  },
+  "final_answer_checks": {
+    "moon_result": false,
+    "unrun_field_trial": false
+  },
+  "artifact_checks": {
+    "durable_owner_has_moon_evidence": true,
+    "unrun_trial_preserved": true,
+    "retained_evidence_unchanged": true,
+    "source_selects_moon": true,
+    "completed_queue_instruction_removed": true,
+    "fulfilled_temporary_plan_removed": true,
+    "unrelated_note_unchanged": true,
+    "independent_smoke_pass": true
+  },
+  "answer_screen_pass": false,
+  "artifact_pass": true,
+  "task_screen_pass": false,
+  "smoke": {
+    "returncode": 0,
+    "stdout": "selected dataset: moon\n",
+    "stderr": ""
+  },
+  "seed": {
+    "returncode": 0,
+    "latency_ms": 52629,
+    "started_unix": 1790955710.8221161,
+    "thread_id": "[REDACTED: persisted thread identifier; original private]",
+    "agent_message_count": 4,
+    "usage": [
+      {
+        "input_tokens": 127184,
+        "cached_input_tokens": 112640,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2145,
+        "reasoning_output_tokens": 374
+      }
+    ],
+    "last_answer_present": true,
+    "reported_revision": "not exposed in JSONL",
+    "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+  },
+  "final_call": {
+    "returncode": 0,
+    "latency_ms": 5812,
+    "started_unix": 1790955763.465033,
+    "thread_id": "[REDACTED: persisted thread identifier; original private]",
+    "agent_message_count": 1,
+    "usage": [
+      {
+        "input_tokens": 146117,
+        "cached_input_tokens": 130816,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2213,
+        "reasoning_output_tokens": 419
+      }
+    ],
+    "last_answer_present": true,
+    "reported_revision": "not exposed in JSONL",
+    "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+  },
+  "native_hooks_exercised": false,
+  "feedback_identical": true,
+  "manual_review_required": true
+}

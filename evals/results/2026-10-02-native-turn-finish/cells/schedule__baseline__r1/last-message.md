@@ -1,0 +1,3 @@
+The team should not rely on the new timing in production yet. The local fix changes the digest send time from 07:45 to 08:15, and all 18 local checks passed. Those checks show the local version passed; they do not prove the production service sends at 08:15.
+
+Production still runs the old version, and no send with the fix has been observed. Until the fix is installed and its first production send is checked, the operator should send the digest manually at 08:15. Installation and release require a separate explicit request.

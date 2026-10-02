@@ -1,0 +1,261 @@
+{
+  "registered_protocol_sha256": "d855e4ecebff3c44a52026bc10904802d008587825143062d36189bc4c97b716",
+  "maximum_model_calls": 6,
+  "started_at": "2026-10-02T17:06:18.048002+00:00",
+  "status": "completed_pending_root_grading",
+  "cells": [
+    {
+      "cell": "barcode__baseline__r1",
+      "ordinal": 1,
+      "case": "barcode",
+      "arm": "baseline",
+      "repeat": "r1",
+      "model_called": true,
+      "returncode": 0,
+      "failure": null,
+      "latency_ms": 66663,
+      "native_valid": true,
+      "artifact_pass": true,
+      "final_answer_grade": "pending_root_manual_review",
+      "changed_files": [
+        "README.md",
+        "cli.mjs",
+        "lib/catalog.mjs",
+        "smoke.mjs",
+        "web.mjs"
+      ],
+      "session_start_events": 1,
+      "post_tool_events": 1,
+      "stop_events": 2,
+      "stop_blocks": 1,
+      "reconciliation_contexts": 0,
+      "candidate_context_before_final": false,
+      "agent_message_count": 4,
+      "last_message_nonempty": true,
+      "usage_raw": [
+        {
+          "input_tokens": 137113,
+          "cached_input_tokens": 123904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1434,
+          "reasoning_output_tokens": 178
+        }
+      ],
+      "reported_model_revision": "not exposed in native exec JSONL",
+      "limits": [
+        "Small known-case screen; not transfer or broad improvement evidence.",
+        "CLI native execution differs from T3 rendering.",
+        "Actual app/session cache unchanged; live user session still old hooks."
+      ]
+    },
+    {
+      "cell": "barcode__candidate__r1",
+      "ordinal": 2,
+      "case": "barcode",
+      "arm": "candidate",
+      "repeat": "r1",
+      "model_called": true,
+      "returncode": 0,
+      "failure": null,
+      "latency_ms": 79659,
+      "native_valid": true,
+      "artifact_pass": true,
+      "final_answer_grade": "pending_root_manual_review",
+      "changed_files": [
+        "README.md",
+        "cli.mjs",
+        "lib/catalog.mjs",
+        "web.mjs"
+      ],
+      "session_start_events": 1,
+      "post_tool_events": 1,
+      "stop_events": 0,
+      "stop_blocks": 0,
+      "reconciliation_contexts": 1,
+      "candidate_context_before_final": true,
+      "agent_message_count": 2,
+      "last_message_nonempty": true,
+      "usage_raw": [
+        {
+          "input_tokens": 81550,
+          "cached_input_tokens": 70400,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1062,
+          "reasoning_output_tokens": 281
+        }
+      ],
+      "reported_model_revision": "not exposed in native exec JSONL",
+      "limits": [
+        "Small known-case screen; not transfer or broad improvement evidence.",
+        "CLI native execution differs from T3 rendering.",
+        "Actual app/session cache unchanged; live user session still old hooks."
+      ]
+    },
+    {
+      "cell": "barcode__candidate__r2",
+      "ordinal": 3,
+      "case": "barcode",
+      "arm": "candidate",
+      "repeat": "r2",
+      "model_called": true,
+      "returncode": 0,
+      "failure": null,
+      "latency_ms": 57866,
+      "native_valid": true,
+      "artifact_pass": true,
+      "final_answer_grade": "pending_root_manual_review",
+      "changed_files": [
+        "README.md",
+        "cli.mjs",
+        "lib/catalog.mjs",
+        "smoke.mjs",
+        "web.mjs"
+      ],
+      "session_start_events": 1,
+      "post_tool_events": 1,
+      "stop_events": 0,
+      "stop_blocks": 0,
+      "reconciliation_contexts": 1,
+      "candidate_context_before_final": true,
+      "agent_message_count": 3,
+      "last_message_nonempty": true,
+      "usage_raw": [
+        {
+          "input_tokens": 100213,
+          "cached_input_tokens": 77312,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1357,
+          "reasoning_output_tokens": 275
+        }
+      ],
+      "reported_model_revision": "not exposed in native exec JSONL",
+      "limits": [
+        "Small known-case screen; not transfer or broad improvement evidence.",
+        "CLI native execution differs from T3 rendering.",
+        "Actual app/session cache unchanged; live user session still old hooks."
+      ]
+    },
+    {
+      "cell": "barcode__baseline__r2",
+      "ordinal": 4,
+      "case": "barcode",
+      "arm": "baseline",
+      "repeat": "r2",
+      "model_called": true,
+      "returncode": 0,
+      "failure": null,
+      "latency_ms": 83858,
+      "native_valid": true,
+      "artifact_pass": true,
+      "final_answer_grade": "pending_root_manual_review",
+      "changed_files": [
+        "README.md",
+        "cli.mjs",
+        "lib/catalog.mjs",
+        "smoke.mjs"
+      ],
+      "session_start_events": 1,
+      "post_tool_events": 1,
+      "stop_events": 2,
+      "stop_blocks": 1,
+      "reconciliation_contexts": 0,
+      "candidate_context_before_final": false,
+      "agent_message_count": 4,
+      "last_message_nonempty": true,
+      "usage_raw": [
+        {
+          "input_tokens": 118182,
+          "cached_input_tokens": 103680,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1341,
+          "reasoning_output_tokens": 268
+        }
+      ],
+      "reported_model_revision": "not exposed in native exec JSONL",
+      "limits": [
+        "Small known-case screen; not transfer or broad improvement evidence.",
+        "CLI native execution differs from T3 rendering.",
+        "Actual app/session cache unchanged; live user session still old hooks."
+      ]
+    },
+    {
+      "cell": "schedule__candidate__r1",
+      "ordinal": 5,
+      "case": "schedule",
+      "arm": "candidate",
+      "repeat": "r1",
+      "model_called": true,
+      "returncode": 0,
+      "failure": null,
+      "latency_ms": 35594,
+      "native_valid": true,
+      "artifact_pass": true,
+      "final_answer_grade": "pending_root_manual_review",
+      "changed_files": [],
+      "session_start_events": 1,
+      "post_tool_events": 0,
+      "stop_events": 0,
+      "stop_blocks": 0,
+      "reconciliation_contexts": 0,
+      "candidate_context_before_final": false,
+      "agent_message_count": 2,
+      "last_message_nonempty": true,
+      "usage_raw": [
+        {
+          "input_tokens": 44850,
+          "cached_input_tokens": 36096,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 297,
+          "reasoning_output_tokens": 24
+        }
+      ],
+      "reported_model_revision": "not exposed in native exec JSONL",
+      "limits": [
+        "Small known-case screen; not transfer or broad improvement evidence.",
+        "CLI native execution differs from T3 rendering.",
+        "Actual app/session cache unchanged; live user session still old hooks."
+      ]
+    },
+    {
+      "cell": "schedule__baseline__r1",
+      "ordinal": 6,
+      "case": "schedule",
+      "arm": "baseline",
+      "repeat": "r1",
+      "model_called": true,
+      "returncode": 0,
+      "failure": null,
+      "latency_ms": 30811,
+      "native_valid": true,
+      "artifact_pass": true,
+      "final_answer_grade": "pending_root_manual_review",
+      "changed_files": [],
+      "session_start_events": 1,
+      "post_tool_events": 0,
+      "stop_events": 1,
+      "stop_blocks": 0,
+      "reconciliation_contexts": 0,
+      "candidate_context_before_final": false,
+      "agent_message_count": 2,
+      "last_message_nonempty": true,
+      "usage_raw": [
+        {
+          "input_tokens": 27291,
+          "cached_input_tokens": 22016,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 204,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "reported_model_revision": "not exposed in native exec JSONL",
+      "limits": [
+        "Small known-case screen; not transfer or broad improvement evidence.",
+        "CLI native execution differs from T3 rendering.",
+        "Actual app/session cache unchanged; live user session still old hooks."
+      ]
+    }
+  ],
+  "model_calls": 6,
+  "finished_at": "2026-10-02T17:12:13.710057+00:00",
+  "frozen_source_hashes_unchanged": true
+}

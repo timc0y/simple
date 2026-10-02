@@ -1,0 +1,30 @@
+{
+  "calls": 12,
+  "cells": 8,
+  "repeats": 1,
+  "baseline_passes": 2,
+  "candidate_passes": 2,
+  "artifact_passes": 8,
+  "baseline_pass_candidate_fail_pairs": [],
+  "native_hooks_exercised": false,
+  "human_comprehension_measured": false,
+  "live_ui_verified": false,
+  "demonstrated_improvement": false,
+  "scores_role": "Descriptive single unblinded manual-review scores under the shared rubric; not a preregistered superiority metric and not a measured noise floor.",
+  "total_input_tokens": 1135151,
+  "total_output_tokens": 18940,
+  "total_latency_ms": 321996,
+  "total_cached_input_tokens": 983552,
+  "usage_counter_semantics": "Totals sum CLI-reported per-call usage counters. Whether resume counters are cumulative is not established; no distinct billed consumption or efficiency claim.",
+  "readability_observation": {
+    "simple-status": {
+      "baseline": 4,
+      "candidate": 3
+    },
+    "varying-input": {
+      "baseline": 5,
+      "candidate": 4
+    },
+    "qualification": "Single unblinded samples; no measured noise floor and no causal conclusion."
+  }
+}

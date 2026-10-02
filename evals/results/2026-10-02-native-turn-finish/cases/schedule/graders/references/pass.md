@@ -1,0 +1,1 @@
+The team cannot rely on the fix yet. It changes 07:45 to 08:15 and passes 18 local checks, but production still runs the old version and no fixed production send has been observed. Keep the manual 08:15 send until the operator installs the fix and checks its first production send.

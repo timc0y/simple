@@ -1,0 +1,155 @@
+{
+  "reviewer": "root, one unblinded manual reviewer; no model grader",
+  "rubric": "evals/rubric.md",
+  "criteria": "criteria.json",
+  "verdicts": {
+    "schedule": {
+      "initial": {
+        "passed": true,
+        "criteria": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "scores": {
+          "readability": 4,
+          "actionability": 5,
+          "completeness": 5,
+          "concision": 5
+        },
+        "blocker": false,
+        "reason": "Correct not-yet production decision and manual action. It implies the uninstalled state through the remaining installation rather than explicitly saying old version; no preferred phrase required. Closing line is the unresolved production result rather than the next action.",
+        "scoreEvidence": {
+          "readability": "Until then, the team cannot rely on the new timing in production.",
+          "actionability": "The next step is to install and release the fix, then check its first production send.",
+          "completeness": "The local fix changes the send time from **07:45 to 08:15**, and all 18 local checks passed.",
+          "concision": "The team should keep sending the morning digest manually at **08:15**."
+        }
+      },
+      "continuation": {
+        "passed": false,
+        "criteria": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "scores": {
+          "readability": 5,
+          "actionability": 1,
+          "completeness": 1,
+          "concision": 5
+        },
+        "blocker": true,
+        "reason": "Only internal cleanup status remains. Production decision, change, proof boundary and manual action are absent. High brevity/readability scores do not rescue the verdict.",
+        "scoreEvidence": {
+          "readability": "No files were changed, so no truth owner needs updating.",
+          "actionability": "No files were changed, so no truth owner needs updating.",
+          "completeness": "No files were changed, so no truth owner needs updating.",
+          "concision": "No files were changed, so no truth owner needs updating."
+        }
+      }
+    },
+    "estimate": {
+      "initial": {
+        "passed": true,
+        "criteria": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "scores": {
+          "readability": 4,
+          "actionability": 5,
+          "completeness": 5,
+          "concision": 5
+        },
+        "blocker": false,
+        "reason": "Correct arithmetic, recommendation, formula and measured/assumed boundary. Final line is an example rather than a remaining action. A table was sufficient; no extra artifacts were needed.",
+        "scoreEvidence": {
+          "readability": "For example, with 24 photos at 2 minutes each: `7 + (24 \u00d7 2) = 55 minutes`.",
+          "actionability": "**24 photos is the best fit if you want some room in the hour.**",
+          "completeness": "These are estimates: setup took 7 minutes in one observation, but the 1.75 minutes per photo has not been measured.",
+          "concision": "**Total minutes = 7 + (photo count \u00d7 minutes per photo)**"
+        }
+      },
+      "continuation": {
+        "passed": false,
+        "criteria": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "scores": {
+          "readability": 5,
+          "actionability": 1,
+          "completeness": 1,
+          "concision": 5
+        },
+        "blocker": true,
+        "reason": "Only internal cleanup status remains; decision content and uncertainty are gone.",
+        "scoreEvidence": {
+          "readability": "I made no repository edits, so no truth owner needs updating.",
+          "actionability": "I made no repository edits, so no truth owner needs updating.",
+          "completeness": "I made no repository edits, so no truth owner needs updating.",
+          "concision": "I made no repository edits, so no truth owner needs updating."
+        }
+      }
+    },
+    "barcode": {
+      "initial": {
+        "passed": true,
+        "criteria": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "scores": {
+          "readability": 4,
+          "actionability": 5,
+          "completeness": 5,
+          "concision": 5
+        },
+        "blocker": false,
+        "reason": "Artifacts passed 26 independent assertions; root reproduced 10 smoke assertions. README is accurate. Reply states correction and checks without claiming delivery. Closing line is a check rather than what remains. Root formatting verification covers the ignored fixture.",
+        "scoreEvidence": {
+          "readability": "`git diff --check` passed.",
+          "actionability": "The web and CLI now return Tea for `00123`.",
+          "completeness": "I verified both callers with the smoke command: all 10 assertions passed, covering `00123`, ordinary barcodes, surrounding spaces, unknown codes, and empty codes returning `null`.",
+          "concision": "The shared lookup trims surrounding spaces, and both callers pass barcode text through unchanged, preserving leading zeros."
+        }
+      },
+      "continuation": {
+        "passed": false,
+        "criteria": [
+          true,
+          true,
+          false,
+          true
+        ],
+        "scores": {
+          "readability": 4,
+          "actionability": 3,
+          "completeness": 1,
+          "concision": 3
+        },
+        "blocker": true,
+        "reason": "Correct artifacts and some behavior survive, but the final reply substitutes an owner inventory for the concrete requested correction and actual verification results. It never says caller checks passed or gives the 00123 result. Final-reply failure, not artifact failure.",
+        "scoreEvidence": {
+          "readability": "The final diff already keeps the existing truth owners accurate:",
+          "actionability": "No further edits or checks are needed.",
+          "completeness": "`smoke.mjs` covers the requested cases.",
+          "concision": "`README.md` describes the behavior"
+        }
+      }
+    }
+  }
+}

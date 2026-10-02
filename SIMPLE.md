@@ -21,12 +21,13 @@
 ## Current boundary
 
 - Plugins package Simple for Codex and Claude Code with one hook bundle; Codex needs
-  one `/hooks` trust approval per machine. An OpenCode plugin and a Gemini extension
-  inject the same context, tested structurally, not live, without the guard.
+  review and trust for new or changed hooks on each machine ([hooks](README.md#activation-and-hooks)).
+  An OpenCode plugin and a Gemini extension inject the same context, tested structurally,
+  not live, without the guard.
 - Pre-write hook context arrives after the triggering tool result: it guides the next
   step, not the edit already chosen.
-- A file edit sets a session-local marker; the next stop forces one reconciliation
-  pass and clears it. Read-only turns do not trigger reconciliation.
+- A supported file edit adds a reconciliation reminder before the final response.
+  Read-only turns do not trigger it. No stop hook reopens a finished turn.
 - Codex also gets repository context through `AGENTS.md` and the skill, so the route
   survives hosts without hook support.
 - A directory-registered Claude Code marketplace runs hooks from the checkout, not the plugin cache (seen 11 Sep 2026).
@@ -57,7 +58,7 @@
 - `evals/normalize-results.mjs` converts active TSV runner output into the shared result record.
 - `evals/preservation/run.py` reuses the behavior runner for preservation checks;
   `research/simple-skill-ideas.md` retains hypotheses.
-- One hook script handles session, subagent, relevant write, shell and MCP tool, and stop events for both hook-capable hosts. It injects the profile, `simple/round.md`, and the operator file at `~/.config/simple/operator.md`, and denies guarded tool calls unless the current message asks for them or affirms the agent's own proposal; a negation never authorises.
+- One hook script handles session, subagent, relevant write, shell and MCP tool events for both hook-capable hosts. It injects the profile, `simple/round.md`, and the operator file at `~/.config/simple/operator.md`, and denies guarded tool calls unless the current message asks for them or affirms the agent's own proposal; a negation never authorises.
 
 ## Proof
 
@@ -77,7 +78,7 @@
 - Add an audit crawler lane only when it finds decision-changing evidence in representative repositories.
 - Remove the `AGENTS.md` route only if hook injection is observed reliable across every supported host.
 - Add profile layering only when nested profiles need shared root facts and an isolated evaluation proves the merge rule.
-- Narrow or remove stop reconciliation if measured runs add completion cost without
+- Reconsider reconciliation reminders if measured runs add completion cost without
   reducing stale repository context.
 - Narrow or remove a repository workflow when representative rollouts show that it
   duplicates the core method without reducing repeated user correction.

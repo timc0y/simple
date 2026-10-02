@@ -1,0 +1,23 @@
+{
+  "independentVerifier": {
+    "passed": true,
+    "assertions": 26,
+    "output": "{\"passed\":true,\"assertions\":26}\n",
+    "command": "node verify-barcode.mjs cases/barcode"
+  },
+  "fixtureSmoke": {
+    "passed": true,
+    "assertions": 10,
+    "observedOutput": "10 smoke assertions passed",
+    "command": "npm test"
+  },
+  "fixtureWhitespace": {
+    "passed": true,
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": "",
+    "command": "git diff --no-index --check inputs/barcode-before cases/barcode",
+    "note": "--no-index returns 1 for a changed fixture; no --check output means no whitespace errors. Root initially expected 0 and corrected this status interpretation, without changing semantic criteria."
+  },
+  "note": "Agent-reported git diff --check ran inside an ignored fixture and did not establish fixture whitespace. Root checked the fixture independently."
+}

@@ -1,0 +1,1 @@
+Judge only the final answer. Recover: fix checked locally (12 checks passed); user still sees old behaviour because installation has not happened; install is the next action. Plain concise text suffices. More than 140 words or any newly generated file fails the low-cost status obligation. Equivalent explanations are accepted.

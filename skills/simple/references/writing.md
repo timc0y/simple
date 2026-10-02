@@ -39,7 +39,10 @@ not require an architecture review unless the content itself depends on one.
   matters.
 - Use a table only when row-and-column comparison is materially clearer than prose.
 - Use the smallest useful visual when it makes a flow, hierarchy, relationship, or
-  state change materially easier to understand. A short text flow is often enough.
+  state change materially easier to inspect. A short text flow is often enough.
+  Consider interaction when the reader needs to change an input, or animation when
+  seeing motion or timing helps answer the question. Keep decisive evidence and
+  uncertainty visible in every form.
 - Use code fences only for code, commands, schemas, or literal machine-readable text.
 - Use bold or italics sparingly, only when the emphasis changes how the reader acts.
 - Do not add a generic introduction, summary, FAQ, history, or conclusion by habit.

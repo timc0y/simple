@@ -1,0 +1,70 @@
+{
+  "case": "dataset-explanation",
+  "arm": "candidate",
+  "status": "completed",
+  "last_answer_stage": "continuation",
+  "seed_answer_checks": {
+    "moon_result": true,
+    "unrun_field_trial": true,
+    "useful_decision": true,
+    "valid_tile_evidence": true,
+    "alignment_evidence": true
+  },
+  "final_answer_checks": {
+    "moon_result": false,
+    "unrun_field_trial": true,
+    "useful_decision": false,
+    "valid_tile_evidence": false,
+    "alignment_evidence": false
+  },
+  "artifact_checks": {
+    "durable_owner_has_moon_evidence": true,
+    "unrun_trial_preserved": true,
+    "retained_evidence_unchanged": true
+  },
+  "answer_screen_pass": false,
+  "artifact_pass": true,
+  "task_screen_pass": false,
+  "smoke": null,
+  "seed": {
+    "returncode": 0,
+    "latency_ms": 38056,
+    "started_unix": 1790955592.692994,
+    "thread_id": "[REDACTED: persisted thread identifier; original private]",
+    "agent_message_count": 3,
+    "usage": [
+      {
+        "input_tokens": 88319,
+        "cached_input_tokens": 78336,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1504,
+        "reasoning_output_tokens": 264
+      }
+    ],
+    "last_answer_present": true,
+    "reported_revision": "not exposed in JSONL",
+    "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+  },
+  "final_call": {
+    "returncode": 0,
+    "latency_ms": 6633,
+    "started_unix": 1790955630.758198,
+    "thread_id": "[REDACTED: persisted thread identifier; original private]",
+    "agent_message_count": 1,
+    "usage": [
+      {
+        "input_tokens": 105613,
+        "cached_input_tokens": 94464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1640,
+        "reasoning_output_tokens": 319
+      }
+    ],
+    "last_answer_present": true,
+    "reported_revision": "not exposed in JSONL",
+    "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+  },
+  "native_hooks_exercised": false,
+  "feedback_identical": true,
+  "manual_review_required": true
+}

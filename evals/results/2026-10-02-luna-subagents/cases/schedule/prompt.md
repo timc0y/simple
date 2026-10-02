@@ -1,0 +1,4 @@
+Apply Simple by reading [private evaluation root redacted]/inputs/simple/SKILL.md and the specialist references it routes this task to. Read the task's own SIMPLE.md, not this repository's profile, for task facts. You are assigned only this task. Do not read evals, other cases, grading files, private history, or user configuration. Do not spawn more agents. Use tools only within your assigned task and the frozen skill. Return your actual answer as your final reply; do not grade yourself or write a test report. The lead will capture the reply.
+Assigned task directory: [private evaluation root redacted]/cases/schedule
+
+Can the team rely on the new morning digest now? Explain what changed, what the checks prove, and the next step. Please do not change files, install anything, or release anything.

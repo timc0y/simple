@@ -1,0 +1,135 @@
+{
+  "reviewer": "root, one unblinded manual reviewer; no model grader",
+  "criteria": "criteria.json",
+  "rubric": "evals/rubric.md",
+  "verdicts": {
+    "barcode__baseline__r1": {
+      "passed": false,
+      "criteria": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "reason": "Artifacts and README are correct, but the actual Stop continuation replaces the requested barcode correction with cleanup status. The standalone last reply fails the frozen contract.",
+      "scores": {
+        "readability": 4,
+        "actionability": 2,
+        "completeness": 1,
+        "concision": 3
+      },
+      "blocker": true,
+      "quotes": {
+        "first": "The final diff already updates the affected truth owner, `README.md`, and the smoke checks passed against it. No further edits or checks are needed.",
+        "last": "The final diff already updates the affected truth owner, `README.md`, and the smoke checks passed against it. No further edits or checks are needed."
+      }
+    },
+    "barcode__candidate__r1": {
+      "passed": true,
+      "criteria": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "reason": "Concrete barcode correction and actual passing checks survive; independent 26 assertions and truthful README support the answer.",
+      "scores": {
+        "readability": 4,
+        "actionability": 5,
+        "completeness": 5,
+        "concision": 5
+      },
+      "blocker": false,
+      "quotes": {
+        "first": "Fixed the mismatch through the shared lookup: it trims surrounding spaces, while the CLI now passes barcode text through unchanged. The README reflects the shared behavior.",
+        "last": "Verified both callers return Tea for `\"00123\"` and `\" 00123 \"`, Coffee for `\"123\"` and `\" 123 \"`, and `null` for unknown and empty codes. The existing smoke command passed all four assertions, and `git diff --check` passed."
+      }
+    },
+    "barcode__candidate__r2": {
+      "passed": true,
+      "criteria": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "reason": "Concrete barcode correction and actual passing checks survive; independent 26 assertions and truthful README support the answer.",
+      "scores": {
+        "readability": 4,
+        "actionability": 5,
+        "completeness": 5,
+        "concision": 5
+      },
+      "blocker": false,
+      "quotes": {
+        "first": "Fixed both callers through the shared lookup. The CLI no longer converts barcode text to a number, and the lookup now trims surrounding spaces while preserving leading zeros. The README now describes that behavior.",
+        "last": "`npm test` passed all 12 smoke assertions, covering Tea for `\"00123\"` (with and without surrounding spaces), Coffee for `\"123\"` (also with spaces), and `null` for unknown and empty codes on both callers."
+      }
+    },
+    "barcode__baseline__r2": {
+      "passed": false,
+      "criteria": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "reason": "Artifacts and README are correct, but the actual Stop continuation replaces the requested barcode correction with cleanup status. The standalone last reply fails the frozen contract.",
+      "scores": {
+        "readability": 4,
+        "actionability": 2,
+        "completeness": 1,
+        "concision": 3
+      },
+      "blocker": true,
+      "quotes": {
+        "first": "The final diff already updates the README to match the shared lookup behavior. No other truth owner or temporary work item needs changes, so I made no further edits.",
+        "last": "The final diff already updates the README to match the shared lookup behavior. No other truth owner or temporary work item needs changes, so I made no further edits."
+      }
+    },
+    "schedule__candidate__r1": {
+      "passed": true,
+      "criteria": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reason": "Correct not-yet production decision, timing change, local-only checks, manual action and unobserved production send; no writes or release.",
+      "scores": {
+        "readability": 5,
+        "actionability": 5,
+        "completeness": 5,
+        "concision": 5
+      },
+      "blocker": false,
+      "quotes": {
+        "first": "**No.** The fix changes the digest send time from **07:45 to 08:15**, and all 18 local checks passed. Those checks show the local version passed; they do not prove the production service uses the fix or sends at 08:15. Production still runs the old version, and no production send with the fix has been observed.",
+        "last": "The operator should keep sending the digest manually at 08:15 until the fix is installed and its first production send is checked. Installation and release require a separate explicit request; this task is read-only."
+      }
+    },
+    "schedule__baseline__r1": {
+      "passed": true,
+      "criteria": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reason": "Correct not-yet production decision, timing change, local-only checks, manual action and unobserved production send; no writes or release.",
+      "scores": {
+        "readability": 5,
+        "actionability": 5,
+        "completeness": 5,
+        "concision": 5
+      },
+      "blocker": false,
+      "quotes": {
+        "first": "The team should not rely on the new timing in production yet. The local fix changes the digest send time from 07:45 to 08:15, and all 18 local checks passed. Those checks show the local version passed; they do not prove the production service sends at 08:15.",
+        "last": "Production still runs the old version, and no send with the fix has been observed. Until the fix is installed and its first production send is checked, the operator should send the digest manually at 08:15. Installation and release require a separate explicit request."
+      }
+    }
+  }
+}

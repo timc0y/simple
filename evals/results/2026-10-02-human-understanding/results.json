@@ -1,0 +1,120 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-10-02T15:48:51.610157Z",
+    "skillCommit": "3270463a94ec7367507b376303594e32b9162277 + frozen working tree (see freeze-verification.json)",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not exposed in JSONL",
+      "reasoning": "medium"
+    },
+    "harness": "Codex CLI 0.159.3 actual exec/resume; native hooks disabled",
+    "condition": "baseline-simple-working-tree",
+    "adapter": null,
+    "tasks": [
+      {
+        "id": "dataset-explanation__r1",
+        "passed": false,
+        "evidence": "cells/dataset-explanation__baseline/result.json",
+        "invoked": true,
+        "notes": "Final-only manual review: manual-review.json. Submitted last answer: cells/dataset-explanation__baseline/continuation-last-message.md. Synthetic late user-role feedback only; no native hook or human comprehension proof.",
+        "inputTokens": 193743,
+        "outputTokens": 3263,
+        "latencyMs": 48698,
+        "costUsd": null
+      },
+      {
+        "id": "owner-cleanup__r1",
+        "passed": false,
+        "evidence": "cells/owner-cleanup__baseline/result.json",
+        "invoked": true,
+        "notes": "Final-only manual review: manual-review.json. Submitted last answer: cells/owner-cleanup__baseline/continuation-last-message.md. Synthetic late user-role feedback only; no native hook or human comprehension proof.",
+        "inputTokens": 273301,
+        "outputTokens": 4358,
+        "latencyMs": 58441,
+        "costUsd": null
+      },
+      {
+        "id": "simple-status__r1",
+        "passed": true,
+        "evidence": "cells/simple-status__baseline/result.json",
+        "invoked": true,
+        "notes": "Final-only manual review: manual-review.json. Submitted last answer: cells/simple-status__baseline/seed-last-message.md. Synthetic late user-role feedback only; no native hook or human comprehension proof.",
+        "inputTokens": 54478,
+        "outputTokens": 716,
+        "latencyMs": 21765,
+        "costUsd": null
+      },
+      {
+        "id": "varying-input__r1",
+        "passed": true,
+        "evidence": "cells/varying-input__baseline/result.json",
+        "invoked": true,
+        "notes": "Final-only manual review: manual-review.json. Submitted last answer: cells/varying-input__baseline/seed-last-message.md. Synthetic late user-role feedback only; no native hook or human comprehension proof.",
+        "inputTokens": 37420,
+        "outputTokens": 808,
+        "latencyMs": 25771,
+        "costUsd": null
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-10-02T15:48:51.610157Z",
+    "skillCommit": "3270463a94ec7367507b376303594e32b9162277 + frozen working tree (see freeze-verification.json)",
+    "model": {
+      "name": "gpt-5.6-luna",
+      "revision": "not exposed in JSONL",
+      "reasoning": "medium"
+    },
+    "harness": "Codex CLI 0.159.3 actual exec/resume; native hooks disabled",
+    "condition": "candidate-simple-working-tree",
+    "adapter": "candidate-simple-working-tree",
+    "tasks": [
+      {
+        "id": "dataset-explanation__r1",
+        "passed": false,
+        "evidence": "cells/dataset-explanation__candidate/result.json",
+        "invoked": true,
+        "notes": "Final-only manual review: manual-review.json. Submitted last answer: cells/dataset-explanation__candidate/continuation-last-message.md. Synthetic late user-role feedback only; no native hook or human comprehension proof.",
+        "inputTokens": 193932,
+        "outputTokens": 3144,
+        "latencyMs": 44689,
+        "costUsd": null
+      },
+      {
+        "id": "owner-cleanup__r1",
+        "passed": false,
+        "evidence": "cells/owner-cleanup__candidate/result.json",
+        "invoked": true,
+        "notes": "Final-only manual review: manual-review.json. Submitted last answer: cells/owner-cleanup__candidate/continuation-last-message.md. Synthetic late user-role feedback only; no native hook or human comprehension proof.",
+        "inputTokens": 291466,
+        "outputTokens": 4899,
+        "latencyMs": 73117,
+        "costUsd": null
+      },
+      {
+        "id": "simple-status__r1",
+        "passed": true,
+        "evidence": "cells/simple-status__candidate/result.json",
+        "invoked": true,
+        "notes": "Final-only manual review: manual-review.json. Submitted last answer: cells/simple-status__candidate/seed-last-message.md. Synthetic late user-role feedback only; no native hook or human comprehension proof.",
+        "inputTokens": 52485,
+        "outputTokens": 807,
+        "latencyMs": 22987,
+        "costUsd": null
+      },
+      {
+        "id": "varying-input__r1",
+        "passed": true,
+        "evidence": "cells/varying-input__candidate/result.json",
+        "invoked": true,
+        "notes": "Final-only manual review: manual-review.json. Submitted last answer: cells/varying-input__candidate/seed-last-message.md. Synthetic late user-role feedback only; no native hook or human comprehension proof.",
+        "inputTokens": 38326,
+        "outputTokens": 945,
+        "latencyMs": 26528,
+        "costUsd": null
+      }
+    ]
+  }
+]

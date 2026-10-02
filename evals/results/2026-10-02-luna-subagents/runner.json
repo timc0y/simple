@@ -1,0 +1,38 @@
+{
+  "initialTool": "collaboration.spawn_agent",
+  "initialCalls": [
+    {
+      "task_name": "luna_schedule_probe",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "medium",
+      "fork_turns": "none",
+      "messageFile": "cases/schedule/prompt.md"
+    },
+    {
+      "task_name": "luna_estimate_probe",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "medium",
+      "fork_turns": "none",
+      "messageFile": "cases/estimate/prompt.md"
+    },
+    {
+      "task_name": "luna_barcode_probe",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "medium",
+      "fork_turns": "none",
+      "messageFile": "cases/barcode/prompt.md"
+    }
+  ],
+  "continuationTool": "collaboration.followup_task",
+  "continuationMessageFile": "continuation.md",
+  "continuationOrder": [
+    "schedule",
+    "estimate",
+    "barcode"
+  ],
+  "performanceFinals": 6,
+  "unscoredMetadataAudits": 3,
+  "metadataAuditMessage": "The test is finished. This is an unscored evidence audit, not a retry. From your existing tool history, list the exact Simple skill and reference files you read before the first final reply, and the tool commands used. Do not reread anything or change files. State if the history is unavailable. Reply only with this evidence.",
+  "barcodeAuditAddition": "Also list the command and observed output for the checks your first reply said passed.",
+  "notes": "Replay through delegation-capable host tools with fresh exclusive case directories and this frozen skill. Shared host context was not isolated."
+}

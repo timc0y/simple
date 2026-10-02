@@ -1,0 +1,88 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-10-02T16:20:21.779034+00:00",
+    "skillCommit": "3270463a94ec7367507b376303594e32b9162277 + uncommitted candidate",
+    "model": {
+      "name": "gpt-6-luna",
+      "revision": "not exposed beyond requested slug",
+      "reasoning": "medium"
+    },
+    "harness": "T3 Code / Codex collaboration subagents; synthetic followup_task hook continuation",
+    "condition": "frozen new Simple only; shared native host context",
+    "tasks": [
+      {
+        "id": "schedule/initial",
+        "passed": true,
+        "invoked": true,
+        "interventions": 0,
+        "inputTokens": null,
+        "outputTokens": null,
+        "latencyMs": null,
+        "costUsd": null,
+        "evidence": "grading/review.json",
+        "notes": "Correct not-yet production decision and manual action. It implies the uninstalled state through the remaining installation rather than explicitly saying old version; no preferred phrase required. Closing line is the unresolved production result rather than the next action."
+      },
+      {
+        "id": "schedule/continuation",
+        "passed": false,
+        "invoked": true,
+        "interventions": 1,
+        "inputTokens": null,
+        "outputTokens": null,
+        "latencyMs": null,
+        "costUsd": null,
+        "evidence": "grading/review.json",
+        "notes": "Only internal cleanup status remains. Production decision, change, proof boundary and manual action are absent. High brevity/readability scores do not rescue the verdict."
+      },
+      {
+        "id": "estimate/initial",
+        "passed": true,
+        "invoked": true,
+        "interventions": 0,
+        "inputTokens": null,
+        "outputTokens": null,
+        "latencyMs": null,
+        "costUsd": null,
+        "evidence": "grading/review.json",
+        "notes": "Correct arithmetic, recommendation, formula and measured/assumed boundary. Final line is an example rather than a remaining action. A table was sufficient; no extra artifacts were needed."
+      },
+      {
+        "id": "estimate/continuation",
+        "passed": false,
+        "invoked": true,
+        "interventions": 1,
+        "inputTokens": null,
+        "outputTokens": null,
+        "latencyMs": null,
+        "costUsd": null,
+        "evidence": "grading/review.json",
+        "notes": "Only internal cleanup status remains; decision content and uncertainty are gone."
+      },
+      {
+        "id": "barcode/initial",
+        "passed": true,
+        "invoked": true,
+        "interventions": 0,
+        "inputTokens": null,
+        "outputTokens": null,
+        "latencyMs": null,
+        "costUsd": null,
+        "evidence": "grading/review.json",
+        "notes": "Artifacts passed 26 independent assertions; root reproduced 10 smoke assertions. README is accurate. Reply states correction and checks without claiming delivery. Closing line is a check rather than what remains. Root formatting verification covers the ignored fixture."
+      },
+      {
+        "id": "barcode/continuation",
+        "passed": false,
+        "invoked": true,
+        "interventions": 1,
+        "inputTokens": null,
+        "outputTokens": null,
+        "latencyMs": null,
+        "costUsd": null,
+        "evidence": "grading/review.json",
+        "notes": "Correct artifacts and some behavior survive, but the final reply substitutes an owner inventory for the concrete requested correction and actual verification results. It never says caller checks passed or gives the 00123 result. Final-reply failure, not artifact failure."
+      }
+    ]
+  }
+]

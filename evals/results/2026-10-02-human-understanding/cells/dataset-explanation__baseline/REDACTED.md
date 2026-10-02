@@ -1,0 +1,1 @@
+[REDACTED: raw host JSONL, stderr, commands with absolute machine paths, sandbox settings and persisted thread identifiers are retained only in the ignored local record. This cell preserves the exact synthetic answers except any explicitly marked fixture-path redactions.]

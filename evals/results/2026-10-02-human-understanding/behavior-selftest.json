@@ -1,0 +1,6 @@
+{
+  "command": "npm run test:behavior",
+  "exit_code": 0,
+  "stdout": "Root case selftests passed: known fixes accepted; original and regression mutations rejected.\nselftest passed\nselftest passed\nselftest passed\n",
+  "run_before_solver_calls": true
+}

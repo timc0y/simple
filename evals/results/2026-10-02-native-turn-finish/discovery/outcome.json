@@ -1,0 +1,90 @@
+{
+  "inline_sources_verified": true,
+  "model_turns": 0,
+  "initialized": true,
+  "hook_count": 4,
+  "event_names": [
+    "postToolUse",
+    "preToolUse",
+    "sessionStart",
+    "subagentStart"
+  ],
+  "sources": [
+    "sessionFlags"
+  ],
+  "hook_errors": [],
+  "hook_warnings": [],
+  "model_listing": {
+    "id": 3,
+    "filtered_to_exact_slug": "gpt-6-luna",
+    "listed": true,
+    "catalog_complete": true,
+    "error": null,
+    "timeout": null
+  },
+  "config_layers": [
+    {
+      "name": {
+        "type": "sessionFlags"
+      },
+      "disabledReason": null,
+      "config_keys": [
+        "sqlite_home",
+        "log_dir",
+        "hooks",
+        "features"
+      ],
+      "hooks_keys": [
+        "SessionStart",
+        "SubagentStart",
+        "PreToolUse",
+        "PostToolUse"
+      ]
+    },
+    {
+      "name": {
+        "type": "user",
+        "file": "[private home redacted]/.codex/config.toml",
+        "profile": null
+      },
+      "disabledReason": null,
+      "config_keys": [
+        "model",
+        "model_context_window",
+        "model_auto_compact_token_limit",
+        "model_reasoning_effort",
+        "sandbox_mode",
+        "approval_policy",
+        "service_tier",
+        "notify",
+        "plugins",
+        "projects",
+        "notice",
+        "mcp_servers",
+        "tool_suggest",
+        "tui",
+        "desktop",
+        "features",
+        "marketplaces",
+        "shell_environment_policy",
+        "skills",
+        "hooks",
+        "memories"
+      ],
+      "hooks_keys": [
+        "state"
+      ]
+    },
+    {
+      "name": {
+        "type": "system",
+        "file": "/etc/codex/config.toml"
+      },
+      "disabledReason": null,
+      "config_keys": [],
+      "hooks_keys": []
+    }
+  ],
+  "elapsed_seconds": 1,
+  "process_returncode": 0
+}

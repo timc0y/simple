@@ -1,0 +1,38 @@
+{
+  "cell": "schedule__baseline__r1",
+  "ordinal": 6,
+  "case": "schedule",
+  "arm": "baseline",
+  "repeat": "r1",
+  "model_called": true,
+  "returncode": 0,
+  "failure": null,
+  "latency_ms": 30811,
+  "native_valid": true,
+  "artifact_pass": true,
+  "final_answer_grade": "pending_root_manual_review",
+  "changed_files": [],
+  "session_start_events": 1,
+  "post_tool_events": 0,
+  "stop_events": 1,
+  "stop_blocks": 0,
+  "reconciliation_contexts": 0,
+  "candidate_context_before_final": false,
+  "agent_message_count": 2,
+  "last_message_nonempty": true,
+  "usage_raw": [
+    {
+      "input_tokens": 27291,
+      "cached_input_tokens": 22016,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 204,
+      "reasoning_output_tokens": 0
+    }
+  ],
+  "reported_model_revision": "not exposed in native exec JSONL",
+  "limits": [
+    "Small known-case screen; not transfer or broad improvement evidence.",
+    "CLI native execution differs from T3 rendering.",
+    "Actual app/session cache unchanged; live user session still old hooks."
+  ]
+}

@@ -1,0 +1,1 @@
+The final diff already updates the README to match the shared lookup behavior. No other truth owner or temporary work item needs changes, so I made no further edits.

@@ -1,0 +1,18 @@
+{
+  "markers": [
+    "[private runtime root redacted]",
+    "[private repository root redacted]",
+    "[private home redacted]"
+  ],
+  "wholeTraceRedactions": [
+    "cells/*/events.jsonl",
+    "cells/*/events-timing.jsonl",
+    "cells/*/native-hooks.jsonl",
+    "cells/*/stderr.log",
+    "cells/*/wrapper-preflight-hooks.jsonl",
+    "discovery/responses.jsonl",
+    "discovery/stderr.log"
+  ],
+  "exactOriginals": "Retained in ignored .local/context/turn-finish-native-2026-10-02/",
+  "frozenInputs": "Unmodified synthetic fixtures and shared source. Graders stay in separate cases/ outside the runner inputs."
+}

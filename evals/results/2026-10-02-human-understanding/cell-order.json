@@ -1,0 +1,34 @@
+[
+  [
+    "dataset-explanation",
+    "baseline"
+  ],
+  [
+    "dataset-explanation",
+    "candidate"
+  ],
+  [
+    "owner-cleanup",
+    "candidate"
+  ],
+  [
+    "owner-cleanup",
+    "baseline"
+  ],
+  [
+    "simple-status",
+    "baseline"
+  ],
+  [
+    "simple-status",
+    "candidate"
+  ],
+  [
+    "varying-input",
+    "candidate"
+  ],
+  [
+    "varying-input",
+    "baseline"
+  ]
+]

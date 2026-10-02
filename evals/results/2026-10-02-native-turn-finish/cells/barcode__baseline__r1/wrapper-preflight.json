@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "sandbox-exec",
+    "-p",
+    "(version 1) (allow default) (deny file-read* (literal \"[private home redacted]/.codex/hooks.json\")) (deny file-read* (literal \"[private home redacted]/.codex/config.toml\")) (deny file-read* (literal \"[private home redacted]/.config/simple/operator.md\")) (deny file-write* (literal \"[private home redacted]/.codex/config.toml\")) (deny file-write* (literal \"[private home redacted]/.codex/hooks.json\")) (deny file-write* (subpath \"[private home redacted]/.codex/plugins\")) (deny file-write* (subpath \"[private home redacted]/.codex/skills\")) (deny file-write* (subpath \"[private home redacted]/.agents\")) (deny file-write* (subpath \"[private home redacted]/.config/simple\")) (deny file-read* (subpath \"[private repository root redacted]\")) (deny file-write* (subpath \"[private repository root redacted]\")) (deny file-read* (subpath \"[private home redacted]/.codex/plugins\")) (deny file-read* (subpath \"[private home redacted]/.codex/skills\")) (deny file-read* (subpath \"[private home redacted]/.agents/skills\")) (deny file-read* (subpath \"[private home redacted]/.codex/memories\")) (deny file-read* (subpath \"[private runtime root redacted]/preflight\")) (deny file-read* (subpath \"[private runtime root redacted]/cells/barcode__candidate__r1\")) (deny file-write* (subpath \"[private runtime root redacted]/cells/barcode__candidate__r1\")) (deny file-read* (subpath \"[private runtime root redacted]/cells/barcode__candidate__r2\")) (deny file-write* (subpath \"[private runtime root redacted]/cells/barcode__candidate__r2\")) (deny file-read* (subpath \"[private runtime root redacted]/cells/barcode__baseline__r2\")) (deny file-write* (subpath \"[private runtime root redacted]/cells/barcode__baseline__r2\")) (deny file-read* (subpath \"[private runtime root redacted]/cells/schedule__candidate__r1\")) (deny file-write* (subpath \"[private runtime root redacted]/cells/schedule__candidate__r1\")) (deny file-read* (subpath \"[private runtime root redacted]/cells/schedule__baseline__r1\")) (deny file-write* (subpath \"[private runtime root redacted]/cells/schedule__baseline__r1\"))",
+    "/bin/zsh",
+    "-c",
+    "python3 [private runtime root redacted]/cells/barcode__baseline__r1/runtime/native-hook.py"
+  ],
+  "input": {
+    "hook_event_name": "SessionStart",
+    "cwd": "[private runtime root redacted]/cells/barcode__baseline__r1/workspace",
+    "session_id": "local-wrapper-preflight",
+    "source": "startup",
+    "model": "gpt-6-luna"
+  },
+  "returncode": 0,
+  "stdout": "{\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":\"Repository-specific Simple context from [private runtime root redacted]/cells/barcode__baseline__r1/workspace/SIMPLE.md:\\n\\n# Barcode lookup fixture\\n\\n## Reality\\nThis is an isolated local fixture. The web and CLI use lib/catalog.mjs. Barcodes are text identifiers. Leading zeros distinguish products: \\\"00123\\\" is Tea and \\\"123\\\" is Coffee. Both callers must ignore surrounding spaces. Unknown or empty barcodes return null. No consumers require numeric barcode conversion.\\n\\n## Owners\\nlib/catalog.mjs owns lookup semantics. Callers pass barcode text to the lookup. README.md describes the current behavior and must stay true. package.json owns the local smoke command.\\n\\n## Boundary\\nOnly this fixture may be edited. No package release, commit, installation, or external action is authorized. This fixture has no persistent work queue or temporary plans.\\n\\nUse these observed facts when they materially affect design or writing. Choose the smallest truthful design and keep prose plain and load-bearing. Establish any material unknown before relying on it. Load $simple specialist references only when the task needs them.\"}}\n",
+  "stderr": "",
+  "valid": true,
+  "not_native_model_execution": true
+}

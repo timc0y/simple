@@ -1,0 +1,21 @@
+{
+  "manualReferenceCalibration": {
+    "schedule": {
+      "passAccepted": true,
+      "failRejected": true,
+      "reason": "pass retains all deployment facts and manual action; fail drops the answer"
+    },
+    "estimate": {
+      "passAccepted": true,
+      "failRejected": true,
+      "reason": "pass has correct arithmetic, conditional fit and uncertainty; fail has wrong arithmetic and certainty"
+    },
+    "barcode": {
+      "passAcceptedSubjectToArtifactCheck": true,
+      "failRejected": true,
+      "reason": "pass is truthful only when artifacts independently pass; smoke-only/deployment claim fails"
+    }
+  },
+  "reviewer": "root, single unblinded manual reviewer; no model grader",
+  "criteriaFrozen": true
+}

@@ -1,0 +1,9 @@
+{
+  "marker": "[private evaluation root redacted]",
+  "meaning": "Absolute private evaluation-root path removed. Original prompts and machine traces stay in ignored .local/context/.",
+  "affected": [
+    "cases/*/prompt.md",
+    "inputs/barcode-before/prompt.md",
+    "grading/verifier-calibration.json"
+  ]
+}

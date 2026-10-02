@@ -1,0 +1,1 @@
+The final diff already updates the affected truth owner, `README.md`, and the smoke checks passed against it. No further edits or checks are needed.

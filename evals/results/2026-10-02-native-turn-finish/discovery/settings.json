@@ -1,0 +1,44 @@
+{
+  "argv": [
+    "sandbox-exec",
+    "-p",
+    "(version 1) (allow default) (deny file-read* (literal \"[private home redacted]/.codex/hooks.json\")) (deny file-write* (literal \"[private home redacted]/.codex/config.toml\")) (deny file-write* (literal \"[private home redacted]/.codex/hooks.json\")) (deny file-write* (subpath \"[private home redacted]/.codex/plugins\")) (deny file-write* (subpath \"[private home redacted]/.codex/skills\")) (deny file-write* (subpath \"[private home redacted]/.agents\")) (deny file-write* (subpath \"[private home redacted]/.config/simple\")) (deny file-write* (subpath \"[private repository root redacted]\"))",
+    "codex",
+    "app-server",
+    "--stdio",
+    "--disable",
+    "code_mode_host",
+    "--disable",
+    "plugins",
+    "--disable",
+    "remote_plugin",
+    "--disable",
+    "apps",
+    "--disable",
+    "memories",
+    "--disable",
+    "skill_mcp_dependency_install",
+    "--enable",
+    "skip_host_skill_discovery",
+    "--enable",
+    "hooks",
+    "-c",
+    "sqlite_home=\"[private runtime root redacted]/runtime/state-discovery\"",
+    "-c",
+    "log_dir=\"[private runtime root redacted]/runtime/log-discovery\"",
+    "-c",
+    "hooks={\"SessionStart\"=[{\"matcher\"=\"startup|resume|clear|compact\",\"hooks\"=[{\"type\"=\"command\",\"command\"=\"node \\\"[private runtime root redacted]/plugins/candidate/scripts/hook.mjs\\\"\",\"statusMessage\"=\"Loading repository reality\",\"timeout\"=3}]}],\"SubagentStart\"=[{\"hooks\"=[{\"type\"=\"command\",\"command\"=\"node \\\"[private runtime root redacted]/plugins/candidate/scripts/hook.mjs\\\"\",\"statusMessage\"=\"Loading repository reality\",\"timeout\"=3}]}],\"PreToolUse\"=[{\"matcher\"=\"Edit|Write|apply_patch|Bash|shell|exec_command|local_shell|mcp__.*\",\"hooks\"=[{\"type\"=\"command\",\"command\"=\"node \\\"[private runtime root redacted]/plugins/candidate/scripts/hook.mjs\\\"\",\"timeout\"=3}]}],\"PostToolUse\"=[{\"matcher\"=\"Edit|Write|apply_patch\",\"hooks\"=[{\"type\"=\"command\",\"command\"=\"node \\\"[private runtime root redacted]/plugins/candidate/scripts/hook.mjs\\\"\",\"timeout\"=3}]}]}"
+  ],
+  "cwd": "[private runtime root redacted]/runtime/discovery-cwd",
+  "environment_overrides": {
+    "CODEX_SQLITE_HOME": "[private runtime root redacted]/runtime/state-discovery",
+    "SIMPLE_OPERATOR_FILE": "[private runtime root redacted]/runtime/missing-operator.md"
+  },
+  "actual_home_and_codex_home_unchanged": true,
+  "model_turns": 0,
+  "timeout_seconds": 45,
+  "source_sha256": {
+    "[private runtime root redacted]/plugins/candidate/hooks/hooks.json": "b0962d408247441423a98dbe6caf4c473ea7f922c747ccdd8fd804cc9ea2e2a3",
+    "[private runtime root redacted]/plugins/candidate/scripts/hook.mjs": "51ca10cc86cb24518fc7b1db77b05c314218dc16b74e47bd75813a2216db3486"
+  }
+}

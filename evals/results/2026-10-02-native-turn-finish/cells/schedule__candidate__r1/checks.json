@@ -1,0 +1,16 @@
+{
+  "git_diff_check": {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "read_only_unchanged": {
+    "passed": true,
+    "changed_files": []
+  }
+}

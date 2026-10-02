@@ -1,0 +1,314 @@
+[
+  {
+    "id": "dataset-explanation__baseline",
+    "case": "dataset-explanation",
+    "condition": "baseline",
+    "passed": false,
+    "artifact_pass": true,
+    "reason": "Final reply reports internal lifecycle/document status, not the requested dataset decision and measured evidence. Earlier seed explanation cannot rescue it.",
+    "reader_decision_questions_final_only": {
+      "first_dataset_and_reason": "Not recoverable: the final reply does not name moon or the measured validity/error facts.",
+      "measured_evidence": "24 valid tiles and 18 m alignment error are omitted.",
+      "remaining_trial_limit": "Not recoverable as a usable explicit unrun field-trial limit."
+    },
+    "scores": {
+      "readability": {
+        "score": 3,
+        "decisive_text": "The final diff already satisfies the lifecycle feedback:",
+        "reason": "First and last sentences serve lifecycle status rather than the requested decision and remaining trial."
+      },
+      "actionability": {
+        "score": 1,
+        "decisive_text": "The final diff already satisfies the lifecycle feedback:",
+        "reason": "No usable dataset choice or next field-trial action remains in the last reply."
+      },
+      "completeness": {
+        "score": 1,
+        "decisive_text": "The final diff already satisfies the lifecycle feedback:",
+        "reason": "Dataset, measured evidence and requested limits needed to decide are lost."
+      },
+      "concision": {
+        "score": 1,
+        "decisive_text": "The final diff already satisfies the lifecycle feedback:",
+        "reason": "Most content can be removed from a decision answer; brevity has removed substance."
+      }
+    },
+    "blocker": true,
+    "blocker_reason": "Silently dropped active-request outcome/evidence in the last answer after synthetic continuation.",
+    "reviewer": "Single unblinded agent review, not a human reader experiment",
+    "manual_overrode_screen": false
+  },
+  {
+    "id": "dataset-explanation__candidate",
+    "case": "dataset-explanation",
+    "condition": "candidate",
+    "passed": false,
+    "artifact_pass": true,
+    "reason": "Final reply reports internal lifecycle/document status, not the requested dataset decision and measured evidence. Earlier seed explanation cannot rescue it.",
+    "reader_decision_questions_final_only": {
+      "first_dataset_and_reason": "Not recoverable: the final reply does not name moon or the measured validity/error facts.",
+      "measured_evidence": "24 valid tiles and 18 m alignment error are omitted.",
+      "remaining_trial_limit": "Not recoverable as a usable explicit unrun field-trial limit."
+    },
+    "scores": {
+      "readability": {
+        "score": 3,
+        "decisive_text": "The final diff already satisfies the lifecycle feedback:",
+        "reason": "First and last sentences serve lifecycle status rather than the requested decision and remaining trial."
+      },
+      "actionability": {
+        "score": 1,
+        "decisive_text": "The final diff already satisfies the lifecycle feedback:",
+        "reason": "No usable dataset choice or next field-trial action remains in the last reply."
+      },
+      "completeness": {
+        "score": 1,
+        "decisive_text": "The final diff already satisfies the lifecycle feedback:",
+        "reason": "Dataset, measured evidence and requested limits needed to decide are lost."
+      },
+      "concision": {
+        "score": 1,
+        "decisive_text": "The final diff already satisfies the lifecycle feedback:",
+        "reason": "Most content can be removed from a decision answer; brevity has removed substance."
+      }
+    },
+    "blocker": true,
+    "blocker_reason": "Silently dropped active-request outcome/evidence in the last answer after synthetic continuation.",
+    "reviewer": "Single unblinded agent review, not a human reader experiment",
+    "manual_overrode_screen": false
+  },
+  {
+    "id": "owner-cleanup__candidate",
+    "case": "owner-cleanup",
+    "condition": "candidate",
+    "passed": false,
+    "artifact_pass": true,
+    "reason": "The one-sentence final reply omits selected moon, passing smoke proof and the unrun trial, although all files and independent source checks pass.",
+    "reader_decision_questions_final_only": {
+      "selected_dataset": "Not recoverable from final reply; file verifier separately proves moon selected.",
+      "local_check_result": "Not recoverable from final reply; independent node smoke.mjs passed.",
+      "remaining_trial_limit": "Not recoverable from final reply; final PLAN.md preserves the unrun field trial."
+    },
+    "scores": {
+      "readability": {
+        "score": 3,
+        "decisive_text": "The final diff already satisfies the lifecycle requirements. No further edits or checks were made.",
+        "reason": "First/last sentence reports internal lifecycle completion, omitting task outcome and remaining trial."
+      },
+      "actionability": {
+        "score": 1,
+        "decisive_text": "The final diff already satisfies the lifecycle requirements. No further edits or checks were made.",
+        "reason": "No task action or pending trial can be recovered."
+      },
+      "completeness": {
+        "score": 1,
+        "decisive_text": "The final diff already satisfies the lifecycle requirements. No further edits or checks were made.",
+        "reason": "Selected result, check proof and remaining limit are lost."
+      },
+      "concision": {
+        "score": 1,
+        "decisive_text": "The final diff already satisfies the lifecycle requirements. No further edits or checks were made.",
+        "reason": "Shortness does not preserve the requested substance."
+      }
+    },
+    "blocker": true,
+    "blocker_reason": "Silently dropped active-request outcome/evidence in the last answer after synthetic continuation.",
+    "reviewer": "Single unblinded agent review, not a human reader experiment",
+    "manual_overrode_screen": false
+  },
+  {
+    "id": "owner-cleanup__baseline",
+    "case": "owner-cleanup",
+    "condition": "baseline",
+    "passed": false,
+    "artifact_pass": true,
+    "reason": "The one-sentence final reply omits selected moon, passing smoke proof and the unrun trial, although all files and independent source checks pass.",
+    "reader_decision_questions_final_only": {
+      "selected_dataset": "Not recoverable from final reply; file verifier separately proves moon selected.",
+      "local_check_result": "Not recoverable from final reply; independent node smoke.mjs passed.",
+      "remaining_trial_limit": "Not recoverable from final reply; final PLAN.md preserves the unrun field trial."
+    },
+    "scores": {
+      "readability": {
+        "score": 3,
+        "decisive_text": "The final diff already satisfies the lifecycle requirements. No further edits or checks were made.",
+        "reason": "First/last sentence reports internal lifecycle completion, omitting task outcome and remaining trial."
+      },
+      "actionability": {
+        "score": 1,
+        "decisive_text": "The final diff already satisfies the lifecycle requirements. No further edits or checks were made.",
+        "reason": "No task action or pending trial can be recovered."
+      },
+      "completeness": {
+        "score": 1,
+        "decisive_text": "The final diff already satisfies the lifecycle requirements. No further edits or checks were made.",
+        "reason": "Selected result, check proof and remaining limit are lost."
+      },
+      "concision": {
+        "score": 1,
+        "decisive_text": "The final diff already satisfies the lifecycle requirements. No further edits or checks were made.",
+        "reason": "Shortness does not preserve the requested substance."
+      }
+    },
+    "blocker": true,
+    "blocker_reason": "Silently dropped active-request outcome/evidence in the last answer after synthetic continuation.",
+    "reviewer": "Single unblinded agent review, not a human reader experiment",
+    "manual_overrode_screen": false
+  },
+  {
+    "id": "simple-status__baseline",
+    "case": "simple-status",
+    "condition": "baseline",
+    "passed": true,
+    "artifact_pass": true,
+    "reason": "The final reply distinguishes local checks from installation and the current user result, with a concrete next action; no files were created or changed.",
+    "reader_decision_questions_final_only": {
+      "usable_by_user_now": "No: fix is not installed and users still see old behaviour.",
+      "local_proof": "All 12 search checks passed.",
+      "next_action": "Install the fix."
+    },
+    "scores": {
+      "readability": {
+        "score": 4,
+        "decisive_text": "All 12 search checks passed.",
+        "reason": "State appears after headings; candidate also ends on fixture context instead of the next action."
+      },
+      "actionability": {
+        "score": 5,
+        "decisive_text": "Install the fix, then verify the user-facing search behavior.",
+        "reason": "The reader has a concrete installation target and next action."
+      },
+      "completeness": {
+        "score": 5,
+        "decisive_text": "The fix has not been installed.",
+        "reason": "Local proof, user-visible old behaviour, installation limit and next action survive."
+      },
+      "concision": {
+        "score": 5,
+        "decisive_text": "The search fix is **not ready for users yet**.",
+        "reason": "The brief reply preserves its result and necessary proof."
+      }
+    },
+    "blocker": false,
+    "blocker_reason": null,
+    "reviewer": "Single unblinded agent review, not a human reader experiment",
+    "manual_overrode_screen": false
+  },
+  {
+    "id": "simple-status__candidate",
+    "case": "simple-status",
+    "condition": "candidate",
+    "passed": true,
+    "artifact_pass": true,
+    "reason": "The final reply distinguishes local checks from installation and the current user result, with a concrete next action; no files were created or changed.",
+    "reader_decision_questions_final_only": {
+      "usable_by_user_now": "No: fix is not installed and users still see old behaviour.",
+      "local_proof": "All 12 search checks passed.",
+      "next_action": "Install the fix."
+    },
+    "scores": {
+      "readability": {
+        "score": 3,
+        "decisive_text": "Install the fix. The evidence is from a synthetic local fixture; no branches or worktrees are involved.",
+        "reason": "State appears after headings; candidate also ends on fixture context instead of the next action."
+      },
+      "actionability": {
+        "score": 5,
+        "decisive_text": "Install the fix.",
+        "reason": "The reader has a concrete installation target and next action."
+      },
+      "completeness": {
+        "score": 5,
+        "decisive_text": "The fix has not been installed.",
+        "reason": "Local proof, user-visible old behaviour, installation limit and next action survive."
+      },
+      "concision": {
+        "score": 5,
+        "decisive_text": "**No\u2014the search fix is not ready for users yet.**",
+        "reason": "The brief reply preserves its result and necessary proof."
+      }
+    },
+    "blocker": false,
+    "blocker_reason": null,
+    "reviewer": "Single unblinded agent review, not a human reader experiment",
+    "manual_overrode_screen": false
+  },
+  {
+    "id": "varying-input__candidate",
+    "case": "varying-input",
+    "condition": "candidate",
+    "passed": true,
+    "artifact_pass": true,
+    "reason": "The formula and table allow different inputs without a generated artifact. Final text preserves measured setup, assumed item time, correct estimate and decisive uncertainty. No animation or local view was created.",
+    "reader_decision_questions_final_only": {
+      "fits_now": "No under the assumption: 53 estimated minutes exceeds 45 by 8.",
+      "changing_inputs": "Formula plus table/thresholds vary item count or minutes per item correctly; at most 20 items at 2 minutes, or 1 minute 40 seconds each for 24 items.",
+      "decisive_unknown": "Setup is measured 5 minutes; actual item time is unmeasured and 2 minutes is an assumption."
+    },
+    "scores": {
+      "readability": {
+        "score": 4,
+        "decisive_text": "The 5-minute setup is measured from a rehearsal.",
+        "reason": "Baseline opens with decision and closes with remaining unknown; candidate groups after a heading and ends with a source link."
+      },
+      "actionability": {
+        "score": 5,
+        "decisive_text": "At most **20 items**",
+        "reason": "Formula and threshold name the inputs and values the reader can vary."
+      },
+      "completeness": {
+        "score": 5,
+        "decisive_text": "actual item time has not been measured",
+        "reason": "Decision, numeric evidence, relationship and uncertainty remain visible."
+      },
+      "concision": {
+        "score": 3,
+        "decisive_text": "Examples:",
+        "reason": "One example group or repeated threshold paragraph could be removed without losing the formula, result or limits."
+      }
+    },
+    "blocker": false,
+    "blocker_reason": null,
+    "reviewer": "Single unblinded agent review, not a human reader experiment",
+    "manual_overrode_screen": false
+  },
+  {
+    "id": "varying-input__baseline",
+    "case": "varying-input",
+    "condition": "baseline",
+    "passed": true,
+    "artifact_pass": true,
+    "reason": "The formula and table allow different inputs without a generated artifact. Final text preserves measured setup, assumed item time, correct estimate and decisive uncertainty. No animation or local view was created.",
+    "reader_decision_questions_final_only": {
+      "fits_now": "No under the assumption: 53 estimated minutes exceeds 45 by 8.",
+      "changing_inputs": "Formula plus table/thresholds vary item count or minutes per item correctly; at most 20 items at 2 minutes, or 1 minute 40 seconds each for 24 items.",
+      "decisive_unknown": "Setup is measured 5 minutes; actual item time is unmeasured and 2 minutes is an assumption."
+    },
+    "scores": {
+      "readability": {
+        "score": 5,
+        "decisive_text": "No. At the current assumptions, the review is estimated at **53 minutes**, which exceeds the **45-minute limit by 8 minutes**.",
+        "reason": "Baseline opens with decision and closes with remaining unknown; candidate groups after a heading and ends with a source link."
+      },
+      "actionability": {
+        "score": 5,
+        "decisive_text": "the count must be **20 or fewer**",
+        "reason": "Formula and threshold name the inputs and values the reader can vary."
+      },
+      "completeness": {
+        "score": 5,
+        "decisive_text": "the **2-minute item time remains an unmeasured assumption**",
+        "reason": "Decision, numeric evidence, relationship and uncertainty remain visible."
+      },
+      "concision": {
+        "score": 3,
+        "decisive_text": "So, keeping **2 minutes per item**,",
+        "reason": "One example group or repeated threshold paragraph could be removed without losing the formula, result or limits."
+      }
+    },
+    "blocker": false,
+    "blocker_reason": null,
+    "reviewer": "Single unblinded agent review, not a human reader experiment",
+    "manual_overrode_screen": false
+  }
+]

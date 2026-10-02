@@ -1,0 +1,89 @@
+{
+  "derivedFrom": "private native-hooks.jsonl; absolute paths/session identifiers omitted",
+  "events": [
+    {
+      "order": 0,
+      "elapsedMs": 22747,
+      "event": "SessionStart",
+      "tool": null,
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": {
+        "hookSpecificOutput": {
+          "hookEventName": "SessionStart",
+          "additionalContext": "[Private profile-path injection redacted; synthetic profile retained in inputs/cases/barcode/SIMPLE.md.]"
+        }
+      }
+    },
+    {
+      "order": 1,
+      "elapsedMs": 31580,
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": null
+    },
+    {
+      "order": 2,
+      "elapsedMs": 38971,
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": null
+    },
+    {
+      "order": 3,
+      "elapsedMs": 53677,
+      "event": "PreToolUse",
+      "tool": "apply_patch",
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": {
+        "hookSpecificOutput": {
+          "hookEventName": "PreToolUse",
+          "additionalContext": "Review the Markdown edit after it runs. Keep decisions, contracts, constraints, proof, and operational knowledge; use few sentence-case headings, shallow lists, restrained emphasis, and no decorative styling."
+        }
+      }
+    },
+    {
+      "order": 4,
+      "elapsedMs": 53792,
+      "event": "PostToolUse",
+      "tool": "apply_patch",
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": {
+        "hookSpecificOutput": {
+          "hookEventName": "PostToolUse",
+          "additionalContext": "Before your final response, update each existing truth owner made false by the final diff. Remove completed instructions from the ordered queue. Delete fulfilled temporary plans, reviews, audits, status notes, and handoffs after their evidence has moved to the durable owner; Git preserves their history. Preserve decisions, contracts, retained evidence, recovery paths, and unknown obligations. Leave unrelated documents and user changes alone. If the final diff already satisfies this, make no further edits and do not repeat checks that already passed against it. Treat this as an internal check, then answer the user's request with its outcome, verification and remaining limits."
+        }
+      }
+    },
+    {
+      "order": 5,
+      "elapsedMs": 72330,
+      "event": "PreToolUse",
+      "tool": "Bash",
+      "stopHookActive": null,
+      "exitCode": 0,
+      "output": null
+    }
+  ],
+  "coreReadObserved": true,
+  "referencesObserved": [
+    "diagnosis.md",
+    "verification.md"
+  ],
+  "nativeProcessWallMs": 79450,
+  "usageRaw": [
+    {
+      "input_tokens": 81550,
+      "cached_input_tokens": 70400,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1062,
+      "reasoning_output_tokens": 281
+    }
+  ]
+}

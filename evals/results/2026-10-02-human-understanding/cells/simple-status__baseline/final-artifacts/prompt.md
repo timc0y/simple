@@ -1,0 +1,1 @@
+Tell me whether the search fix is ready to use. This is a status question: no repository edits or new files are needed. The evidence is in evidence/status.md. Give the result, proof and what remains in the final answer. Choose whatever form helps me understand it.

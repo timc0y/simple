@@ -1,0 +1,1 @@
+The final diff already keeps the existing truth owners accurate: `lib/catalog.mjs` owns trimming, both callers preserve barcode text, `README.md` describes the behavior, and `smoke.mjs` covers the requested cases. No further edits or checks are needed.

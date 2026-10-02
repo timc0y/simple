@@ -1,0 +1,65 @@
+{
+  "description": "Load repository reality, the active round, and operator rules; keep prose concise; guard irreversible commands.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 [private runtime root redacted]/cells/barcode__baseline__r2/runtime/native-hook.py",
+            "statusMessage": "Loading repository reality",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 [private runtime root redacted]/cells/barcode__baseline__r2/runtime/native-hook.py",
+            "statusMessage": "Loading repository reality",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|apply_patch|Bash|shell|exec_command|local_shell|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 [private runtime root redacted]/cells/barcode__baseline__r2/runtime/native-hook.py",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|apply_patch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 [private runtime root redacted]/cells/barcode__baseline__r2/runtime/native-hook.py",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 [private runtime root redacted]/cells/barcode__baseline__r2/runtime/native-hook.py",
+            "timeout": 3
+          }
+        ]
+      }
+    ]
+  }
+}

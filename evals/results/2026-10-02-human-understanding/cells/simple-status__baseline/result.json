@@ -1,0 +1,70 @@
+{
+  "case": "simple-status",
+  "arm": "baseline",
+  "status": "completed",
+  "last_answer_stage": "seed",
+  "seed_answer_checks": {
+    "locally_checked": true,
+    "not_installed": true,
+    "old_user_behaviour": true,
+    "install_next": true,
+    "concise_status": true
+  },
+  "final_answer_checks": {
+    "locally_checked": true,
+    "not_installed": true,
+    "old_user_behaviour": true,
+    "install_next": true,
+    "concise_status": true
+  },
+  "artifact_checks": {
+    "retained_evidence_unchanged": true,
+    "no_new_files": true,
+    "no_changed_files": true
+  },
+  "answer_screen_pass": true,
+  "artifact_pass": true,
+  "task_screen_pass": true,
+  "smoke": null,
+  "seed": {
+    "returncode": 0,
+    "latency_ms": 21765,
+    "started_unix": 1790955769.4468732,
+    "thread_id": "[REDACTED: persisted thread identifier; original private]",
+    "agent_message_count": 2,
+    "usage": [
+      {
+        "input_tokens": 54478,
+        "cached_input_tokens": 45056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 716,
+        "reasoning_output_tokens": 188
+      }
+    ],
+    "last_answer_present": true,
+    "reported_revision": "not exposed in JSONL",
+    "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+  },
+  "final_call": {
+    "returncode": 0,
+    "latency_ms": 21765,
+    "started_unix": 1790955769.4468732,
+    "thread_id": "[REDACTED: persisted thread identifier; original private]",
+    "agent_message_count": 2,
+    "usage": [
+      {
+        "input_tokens": 54478,
+        "cached_input_tokens": 45056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 716,
+        "reasoning_output_tokens": 188
+      }
+    ],
+    "last_answer_present": true,
+    "reported_revision": "not exposed in JSONL",
+    "warnings": "[REDACTED: private host stderr; warnings assessed in README]"
+  },
+  "native_hooks_exercised": false,
+  "feedback_identical": false,
+  "manual_review_required": true
+}

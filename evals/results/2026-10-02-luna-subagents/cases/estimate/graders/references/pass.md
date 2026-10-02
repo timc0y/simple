@@ -1,0 +1,1 @@
+24 photos gives the most room: 49 minutes under the assumption. At 30 the estimate is 59.5 minutes, leaving only 0.5; at 36 it is 70, or 10 over. Recompute as 7 + count × minutes per photo. The 7-minute setup was measured; 1.75 per photo was not. Measure tagging time before treating either fit as reliable.

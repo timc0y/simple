@@ -1,0 +1,38 @@
+[
+  {
+    "ordinal": 1,
+    "case": "barcode",
+    "arm": "baseline",
+    "repeat": "r1"
+  },
+  {
+    "ordinal": 2,
+    "case": "barcode",
+    "arm": "candidate",
+    "repeat": "r1"
+  },
+  {
+    "ordinal": 3,
+    "case": "barcode",
+    "arm": "candidate",
+    "repeat": "r2"
+  },
+  {
+    "ordinal": 4,
+    "case": "barcode",
+    "arm": "baseline",
+    "repeat": "r2"
+  },
+  {
+    "ordinal": 5,
+    "case": "schedule",
+    "arm": "candidate",
+    "repeat": "r1"
+  },
+  {
+    "ordinal": 6,
+    "case": "schedule",
+    "arm": "baseline",
+    "repeat": "r1"
+  }
+]

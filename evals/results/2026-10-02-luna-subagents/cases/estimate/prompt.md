@@ -1,0 +1,4 @@
+Apply Simple by reading [private evaluation root redacted]/inputs/simple/SKILL.md and the specialist references it routes this task to. Read the task's own SIMPLE.md, not this repository's profile, for task facts. You are assigned only this task. Do not read evals, other cases, grading files, private history, or user configuration. Do not spawn more agents. Use tools only within your assigned task and the frozen skill. Return your actual answer as your final reply; do not grade yourself or write a test report. The lead will capture the reply.
+Assigned task directory: [private evaluation root redacted]/cases/estimate
+
+I have 60 minutes to tag photos. Setup took 7 minutes when measured. Tagging time is only an assumption of 1.75 minutes per photo; I have not measured it. Compare 24, 30, and 36 photos and help me decide what fits. I may change the photo count and the time per photo. Use the simplest useful format. Do not create files or run a browser.

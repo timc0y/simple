@@ -1,0 +1,1 @@
+Judge only the final answer after real continuation. Recover the first dataset decision, the measured 24 valid tiles and 18 m alignment error, and the unrun field-trial limit. Cleanup-only replies fail even if earlier replies were useful. Preserve truth owners and retained measurements.

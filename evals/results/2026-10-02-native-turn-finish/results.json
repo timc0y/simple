@@ -1,0 +1,102 @@
+[
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-10-02T17:30:27.124361+00:00",
+    "skillCommit": "3270463a94ec7367507b376303594e32b9162277 + uncommitted shared skill; baseline frozen hooks",
+    "model": {
+      "name": "gpt-6-luna",
+      "revision": "not exposed beyond requested slug",
+      "reasoning": "medium"
+    },
+    "harness": "Codex CLI 0.159.3; native session-flag command hooks; code-mode host enabled; externally sandboxed macOS",
+    "condition": "baseline hook lifecycle, same new Simple skill",
+    "tasks": [
+      {
+        "id": "barcode__baseline__r1",
+        "passed": false,
+        "evidence": "grading/manual-review.json",
+        "invoked": true,
+        "interventions": 0,
+        "inputTokens": 137113,
+        "outputTokens": 1434,
+        "latencyMs": 66457,
+        "costUsd": null,
+        "notes": "Artifacts and README are correct, but the actual Stop continuation replaces the requested barcode correction with cleanup status. The standalone last reply fails the frozen contract. Native automatic Stop blocks: 1. Model revision beyond requested slug unavailable."
+      },
+      {
+        "id": "barcode__baseline__r2",
+        "passed": false,
+        "evidence": "grading/manual-review.json",
+        "invoked": true,
+        "interventions": 0,
+        "inputTokens": 118182,
+        "outputTokens": 1341,
+        "latencyMs": 83641,
+        "costUsd": null,
+        "notes": "Artifacts and README are correct, but the actual Stop continuation replaces the requested barcode correction with cleanup status. The standalone last reply fails the frozen contract. Native automatic Stop blocks: 1. Model revision beyond requested slug unavailable."
+      },
+      {
+        "id": "schedule__baseline__r1",
+        "passed": true,
+        "evidence": "grading/manual-review.json",
+        "invoked": true,
+        "interventions": 0,
+        "inputTokens": 27291,
+        "outputTokens": 204,
+        "latencyMs": 30778,
+        "costUsd": null,
+        "notes": "Correct not-yet production decision, timing change, local-only checks, manual action and unobserved production send; no writes or release. Native automatic Stop blocks: 0. Model revision beyond requested slug unavailable."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "recordedAt": "2026-10-02T17:30:27.124486+00:00",
+    "skillCommit": "3270463a94ec7367507b376303594e32b9162277 + uncommitted shared skill; candidate frozen hooks",
+    "model": {
+      "name": "gpt-6-luna",
+      "revision": "not exposed beyond requested slug",
+      "reasoning": "medium"
+    },
+    "harness": "Codex CLI 0.159.3; native session-flag command hooks; code-mode host enabled; externally sandboxed macOS",
+    "condition": "candidate hook lifecycle, same new Simple skill",
+    "tasks": [
+      {
+        "id": "barcode__candidate__r1",
+        "passed": true,
+        "evidence": "grading/manual-review.json",
+        "invoked": true,
+        "interventions": 0,
+        "inputTokens": 81550,
+        "outputTokens": 1062,
+        "latencyMs": 79450,
+        "costUsd": null,
+        "notes": "Concrete barcode correction and actual passing checks survive; independent 26 assertions and truthful README support the answer. Native automatic Stop blocks: 0. Model revision beyond requested slug unavailable."
+      },
+      {
+        "id": "barcode__candidate__r2",
+        "passed": true,
+        "evidence": "grading/manual-review.json",
+        "invoked": true,
+        "interventions": 0,
+        "inputTokens": 100213,
+        "outputTokens": 1357,
+        "latencyMs": 57643,
+        "costUsd": null,
+        "notes": "Concrete barcode correction and actual passing checks survive; independent 26 assertions and truthful README support the answer. Native automatic Stop blocks: 0. Model revision beyond requested slug unavailable."
+      },
+      {
+        "id": "schedule__candidate__r1",
+        "passed": true,
+        "evidence": "grading/manual-review.json",
+        "invoked": true,
+        "interventions": 0,
+        "inputTokens": 44850,
+        "outputTokens": 297,
+        "latencyMs": 35547,
+        "costUsd": null,
+        "notes": "Correct not-yet production decision, timing change, local-only checks, manual action and unobserved production send; no writes or release. Native automatic Stop blocks: 0. Model revision beyond requested slug unavailable."
+      }
+    ]
+  }
+]

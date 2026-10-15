@@ -71,6 +71,10 @@
 - Model behaviour: reviewed runs indexed in `evals/results/README.md`; current
   preservation runs use Luna only.
 
+## Cloudflare framework fit — 15 October 2026 (source review)
+
+Simple is the installable method, hooks, commands and evaluation cases; it is not an app that needs Astro, Void or TanStack. Recommend per-repository framework changes only when an existing owner would lose less work or gain a tested invariant. Do not turn framework preference into a universal template, create another task queue or add a new runtime to the method itself. Evaluate changes through its existing preservation/workflow/model-behaviour suites.
+
 ## Reconsider when
 
 - Add parsing only if observed edits cannot be routed reliably with narrow heuristics.

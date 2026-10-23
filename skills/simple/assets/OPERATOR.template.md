@@ -12,6 +12,18 @@ work and read; it does not hold repository facts.
 - What the agent should ask once, up front, when it is missing.
 - Which actions need approval, its scope and conditions, and any standing authority.
 
+## Attention (optional)
+
+- Attention name:
+
+Leave the name blank to disable the marker. When set, the context adapter asks
+the lead agent to begin ordinary final user-facing prose with that name and a
+comma. Exact JSON, requested exact text, code-only responses, quotes, generated
+files, tool calls, progress updates and internal subagent reports are exempt.
+Do not automatically insert a missing name afterward, block a finished answer,
+or interpret the marker as a hallucination detector. It measures compliance
+with one instruction, not truth or full context retention.
+
 ## Guard
 
 These patterns trigger an authorization reminder, not a permission decision. Before

@@ -136,7 +136,9 @@ function print(failures, failProcess = true) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  const [command = "check", directory = process.cwd()] = process.argv.slice(2);
+  const args = process.argv.slice(2);
+  const withContext = args.includes("--context");
+  const [command = "check", directory = process.cwd()] = args.filter((arg) => arg !== "--context");
   if (command === "init" || command === "setup") {
     try {
       init(resolve(directory));
@@ -146,9 +148,17 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
       process.exitCode = 1;
     }
   } else if (command === "check") {
-    print(check(resolve(directory)));
+    const failures = check(resolve(directory));
+    if (withContext) {
+      const { assembleContext } = await import("../../../scripts/context.mjs");
+      const { sources, errors, complete } = assembleContext({ cwd: resolve(directory) });
+      process.stdout.write(JSON.stringify({ ok: !failures.length && !errors.length && complete, ready: !failures.length && !errors.length && complete, failures, sources, errors, note: "Local files emitted by the assembler, not host-received or model-applied evidence." }, null, 2) + "\n");
+      if (failures.length || errors.length || !complete) process.exitCode = 1;
+    } else {
+      print(failures);
+    }
   } else {
-    process.stderr.write("Usage: simple.mjs <init|check> [repository]\n");
+    process.stderr.write("Usage: simple.mjs <init|check> [repository] [--context]\n");
     process.exitCode = 2;
   }
 }

@@ -27,7 +27,10 @@ from the PStack source archive. Automated intake still needs a configured host a
 2. Reproduce the failure on the reported surface when access permits.
 3. Check the build, target, input and environment against the report.
 4. Trace the operation through its callers, state changes and effects.
-5. Choose an observation that separates the remaining explanations.
+5. Choose an observation that separates the remaining explanations. For a bug finding,
+   show a reachable input, caller path, and wrong effect; keep a plausible but
+   unobserved mechanism labelled as a hypothesis. After several fixes built on the
+   same premise fail, test that shared premise before proposing another patch.
 6. Confirm the mechanism with runtime evidence or a focused reproducer.
 
 A nearby local success does not disprove a production failure.

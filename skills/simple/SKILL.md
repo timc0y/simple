@@ -73,6 +73,14 @@ outcome, unaffected requirements, accepted decisions, and existing authorization
 A status question does not cancel ongoing work. Informal wording or a transcription
 error does not establish a new API, identifier, or compatibility promise.
 
+After a resume, compaction, or conflicting handoff, recover the active outcome,
+unaffected requirements, explicit corrections, unresolved decisions, and the last
+verified state from the conversation and existing truth owners. A summary or round
+file is a pointer, not proof that mutable external state remains current. Refresh
+the owning source before asserting a current build, release, deployment, count, or
+blocker. If refresh is unavailable, call the state last-known, not current.
+A formatting or attention marker cannot establish factual correctness.
+
 Before selecting tools, recover authorization for the agreed actions, work and
 destination from the active conversation. Clear action requests, including requests
 phrased as questions, and natural approval of a concrete proposal count. Readiness or

@@ -38,7 +38,9 @@ Reviewer agreement and a winning prototype do not prove the integrated result.
 5. Record baseline variation and required behaviour checks.
 6. Freeze the measurement procedure and candidate inputs.
 7. Make one interpretable change per trial.
-8. Measure the result and check preserved behaviour.
+8. Measure the result and check preserved behaviour. Count consumed input,
+   completed work, successful outputs and skipped or failed records alongside timing.
+   Reject a speedup caused by doing less work or skipping a required output.
 
 Keep accepted and rejected trials with their hypothesis, artifact, result and decision in one existing evidence owner.
 Preserve that evidence before reverting an unsuccessful trial.

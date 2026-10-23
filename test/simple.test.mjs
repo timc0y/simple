@@ -272,7 +272,7 @@ test("the hook fails open with one stderr line when an injected file is unreadab
   assert.equal(broken.status, 0);
   assert.match(broken.stderr, /^simple hook: /);
   assert.equal(broken.stderr.trim().split("\n").length, 1);
-  assert.equal(broken.stdout.trim(), "{}");
+  assert.match(JSON.parse(broken.stdout).hookSpecificOutput.additionalContext, /spaced profile/);
 });
 
 test("edit hook routes only relevant review reminders", () => {
@@ -561,40 +561,38 @@ test("release surfaces share one base version", () => {
   assert.equal(gemini.description, claudeManifest.description);
 });
 
-test("the OpenCode plugin appends profile, round, and operator context each turn", async () => {
+test("the OpenCode plugin uses host project identity and the shared context", async () => {
   const plugin = await import(new URL("../.opencode/plugins/simple.mjs", import.meta.url));
   const root = mkdtempSync(join(tmpdir(), "simple-opencode-"));
-  writeFileSync(join(root, "SIMPLE.md"), "# Simple\n\n## Reality\n\n- opencode profile\n");
   writeFileSync(join(root, "SIMPLE.md"), "# Simple\n\n## Reality\n\n- opencode profile\n");
   mkdirSync(join(root, "simple"));
   writeFileSync(join(root, "simple", "round.md"), "# Round\n\n## Ask\n\n- opencode round\n");
   const operator = join(root, "operator.md");
   writeFileSync(operator, "# Operator\n\n## Working rules\n\n- opencode operator\n");
-  const blocks = plugin.contextBlocks(root, { SIMPLE_OPERATOR_FILE: operator });
+  const { assembleContext } = await import("../scripts/context.mjs");
+  const blocks = assembleContext({cwd:root,env:{SIMPLE_OPERATOR_FILE:operator}}).blocks;
   assert.equal(blocks.length, 3);
   assert.match(blocks[0], /opencode profile/);
   assert.match(blocks[1], /opencode round/);
   assert.match(blocks[2], /opencode operator/);
-  const none = plugin.contextBlocks(mkdtempSync(join(tmpdir(), "simple-opencode-empty-")), { SIMPLE_OPERATOR_FILE: join(root, "absent.md") });
-  assert.deepEqual(none, []);
-  const hooks = await plugin.default();
+  assert.deepEqual(assembleContext({cwd:mkdtempSync(join(tmpdir(),"simple-empty-")),env:{SIMPLE_OPERATOR_FILE:join(root,"absent.md")}}).blocks, []);
+  const hooks = await plugin.default({directory:root});
   const config = {};
   await hooks.config(config);
   assert.ok(config.skills.paths.some((path) => path.endsWith("skills")));
-  const previous = process.cwd();
-  process.chdir(root);
+  const compacting = {context:[]};
+  const previousOperator = process.env.SIMPLE_OPERATOR_FILE;
+  process.env.SIMPLE_OPERATOR_FILE = operator;
   try {
-    const compacting = { context: [] };
-    process.env.SIMPLE_OPERATOR_FILE = operator;
     await hooks["experimental.session.compacting"]({}, compacting);
     assert.equal(compacting.context.length, 1);
     assert.match(compacting.context[0], /opencode profile/);
     assert.match(compacting.context[0], /opencode round/);
     assert.match(compacting.context[0], /opencode operator/);
-    assert.match(compacting.context[0], /verbatim in the summary/);
+    assert.match(compacting.context[0], /check current evidence|verify current state/);
   } finally {
-    delete process.env.SIMPLE_OPERATOR_FILE;
-    process.chdir(previous);
+    if(previousOperator===undefined) delete process.env.SIMPLE_OPERATOR_FILE;
+    else process.env.SIMPLE_OPERATOR_FILE=previousOperator;
   }
 });
 

@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 export function validateResults(records, root = null) {
   const failures = [];
   if (!Array.isArray(records)) return ["top level must be an array"];
+  if (records.length === 0) return ["top level must contain at least one record"];
   const recordFields = new Set(["schemaVersion", "recordedAt", "skillCommit", "model", "harness", "condition", "adapter", "tasks"]);
   const taskFields = new Set(["id", "passed", "interventions", "unsupportedClaims", "lostFacts", "formattingViolations", "operatorAttributionErrors", "modeConfusions", "safetyBoundaryViolations", "unprovenSimulationClaims", "inputTokens", "outputTokens", "latencyMs", "costUsd", "evidence", "notes", "invoked", "graderVerdicts"]);
   const countFields = ["interventions", "unsupportedClaims", "lostFacts", "formattingViolations", "operatorAttributionErrors", "modeConfusions", "safetyBoundaryViolations", "unprovenSimulationClaims", "inputTokens", "outputTokens", "latencyMs"];
@@ -16,7 +17,8 @@ export function validateResults(records, root = null) {
     for (const field of ["recordedAt", "skillCommit", "harness", "condition"]) {
       if (typeof record?.[field] !== "string" || !record[field]) failures.push(`${at}: missing ${field}`);
     }
-    if (record?.recordedAt && Number.isNaN(Date.parse(record.recordedAt))) failures.push(`${at}: invalid recordedAt`);
+    if (record?.recordedAt && (Number.isNaN(Date.parse(record.recordedAt)) || !/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$/.test(record.recordedAt)))
+      failures.push(`${at}: invalid recordedAt`);
     if (!(record?.adapter === undefined || record.adapter === null || typeof record.adapter === "string")) failures.push(`${at}: adapter must be a string or null`);
     for (const field of ["name", "revision", "reasoning"]) {
       if (typeof record?.model?.[field] !== "string" || !record.model[field]) failures.push(`${at}: missing model.${field}`);
@@ -38,6 +40,15 @@ export function validateResults(records, root = null) {
       if (root && typeof task?.evidence === "string" && !existsSync(join(root, task.evidence))) {
         failures.push(`${taskAt}: missing evidence ${task.evidence}`);
       }
+      if (task?.graderVerdicts !== undefined) {
+        if (!task.graderVerdicts || typeof task.graderVerdicts !== "object" || Array.isArray(task.graderVerdicts)) {
+          failures.push(`${taskAt}: graderVerdicts must be an object`);
+        } else {
+          for (const name of Object.keys(task.graderVerdicts)) {
+            if (!["luna", "terra"].includes(name)) failures.push(`${taskAt}: unknown graderVerdicts.${name}`);
+          }
+        }
+      }
       for (const grader of ["luna", "terra"]) {
         const verdict = task?.graderVerdicts?.[grader];
         if (verdict !== undefined && typeof verdict !== "boolean") failures.push(`${taskAt}: graderVerdicts.${grader} must be boolean`);
@@ -47,7 +58,7 @@ export function validateResults(records, root = null) {
         const value = task?.[field];
         if (!(value === undefined || value === null || Number.isInteger(value) && value >= 0)) failures.push(`${taskAt}: ${field} must be a non-negative integer or null`);
       }
-      if (!(task?.costUsd === undefined || task.costUsd === null || typeof task.costUsd === "number" && task.costUsd >= 0)) failures.push(`${taskAt}: costUsd must be a non-negative number or null`);
+      if (!(task?.costUsd === undefined || task.costUsd === null || typeof task.costUsd === "number" && Number.isFinite(task.costUsd) && task.costUsd >= 0)) failures.push(`${taskAt}: costUsd must be a non-negative number or null`);
       if (!(task?.notes === undefined || task.notes === null || typeof task.notes === "string")) failures.push(`${taskAt}: notes must be a string or null`);
     });
   });

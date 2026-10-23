@@ -4,6 +4,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { dirname, join, parse, resolve } from "node:path";
 import { MAX_PROFILE_CHARS, roundPathFor } from "../skills/simple/scripts/simple.mjs";
+import { assembleContext } from "./context.mjs";
 
 export const RECONCILIATION_REMINDER = "Before your final response, update each existing truth owner made false by the final diff. Remove completed instructions from the ordered queue. Delete fulfilled temporary plans, reviews, audits, status notes, and handoffs after their evidence has moved to the durable owner; Git preserves their history. Preserve decisions, contracts, retained evidence, recovery paths, and unknown obligations. Leave unrelated documents and user changes alone. If the final diff already satisfies this, make no further edits and do not repeat checks that already passed against it. Treat this as an internal check, then answer the user's request with its outcome, verification and remaining limits.";
 
@@ -19,12 +20,9 @@ try {
   operatorPath = findOperator();
 
   if (event === "SessionStart" || event === "SubagentStart") {
-    const context = [
-      profilePath ? profileContext(profilePath) : "",
-      profilePath ? roundContext(profilePath) : "",
-      operatorPath ? operatorContext(operatorPath) : ""
-    ].filter(Boolean).join("\n\n");
-    if (context) writeContext(event, context);
+    const assembled = assembleContext({ cwd, env: process.env });
+    for (const failure of assembled.errors) process.stderr.write(`simple hook: ${failure}\n`);
+    if (assembled.text) writeContext(event, assembled.text);
   } else if (event === "PreToolUse" && isShellTool(payload.tool_name ?? payload.toolName ?? "")) {
     const reminder = authorizationReminder(payload, operatorPath);
     if (reminder) writeContext(event, reminder);

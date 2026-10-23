@@ -348,6 +348,28 @@ Simple is not ready when a profile still has the incomplete marker. `simple chec
 reports this state. It also checks the route and the profile size. It does not prove
 that profile claims are true. Use `simple review` to compare them with the repository.
 
+### Context integrity and optional attention marker
+
+The hook and OpenCode adapter now use one bounded context assembler. Each optional
+profile, round, or operator file is read independently. Partial, omitted and
+unavailable blocks are visible in diagnostics instead of silently presented as full
+context. OpenCode resolves the directory from its own plugin instance.
+
+```sh
+node skills/simple/scripts/simple.mjs check --context
+```
+
+This reports local source paths, content hashes and assembler-emission status
+**without printing private operator content**. It does not prove that a
+host injected a particular block or that a model followed it. A compacted summary
+may contain stale status; recheck current truth owners before claiming present state.
+
+The operator template has an optional `Attention name:` field. Leave it blank by
+default. When filled, ordinary lead-agent final prose requests the name as a prefix.
+Strict formats, code, documents, quotes and subagent reports are exempt. Presence
+is not a correctness signal; absence is a reason to inspect context delivery,
+not evidence that the answer hallucinated. The hook never retries completed work.
+
 ## Evidence
 
 The latest [executable behavior screen](evals/results/2026-09-06-behavior/README.md)

@@ -13,24 +13,16 @@ method](https://github.com/DietrichGebert/ponytail/blob/main/benchmarks/agentic/
 Ponytail is not bundled, invoked, or credited as having run. The sources were checked
 on 21 August 2026. Simple retains its own repository-first method and proof boundary.
 
-## Ladder
+## Decision rule
 
-Stop at the first rung that fully satisfies present obligations:
+Use the single implementation ladder in [architecture](../architecture.md).
+Do not apply a second ordered ladder: local implementation is not necessarily
+simpler than a maintained dependency. Compare concepts and total work to integrate,
+verify, operate and maintain, including the existing owner's capabilities.
 
-1. The requirement can be removed.
-2. The existing owner and ordinary path already solve it.
-3. Existing repository code can be reused or extended locally.
-4. The language or standard library solves it.
-5. The platform provides a native capability.
-6. An already-installed dependency solves it without divided ownership.
-7. One direct local implementation solves it clearly.
-8. Only then add a new abstraction, dependency, workflow, service, state store, or
-   owner.
-
-Minimise concepts and system burden, not line count. A compact implementation that
-loses a real obligation is not simple. Do not assume fewer lines also means fewer
-reasoning tokens, tool calls, elapsed time, or cost; measure those on the target model,
-harness, and workload.
+Minimise concepts and system burden, not line count. Do not assume fewer lines
+also mean fewer reasoning tokens, tool calls, elapsed time or cost; measure on
+the intended model, harness and workload.
 
 ## Never simplify away
 

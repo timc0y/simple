@@ -34,6 +34,9 @@ Use the repository's test style and public interfaces.
 Do not impose a test-first ceremony on copy edits or work that only a real device can establish.
 
 Check the check: a known defect must fail, and a valid alternative implementation must remain acceptable.
+When a repeated error is encoded as a guard, test a representative version of the
+original error against that guard and a valid counterexample. A passing check alone
+does not prove the guard would have prevented the error.
 A missing import, unreachable assertion or empty artifact is not a useful regression signal.
 Keep baseline failures separate from failures caused by the change.
 

@@ -17,7 +17,7 @@ export function validateResults(records, root = null) {
     for (const field of ["recordedAt", "skillCommit", "harness", "condition"]) {
       if (typeof record?.[field] !== "string" || !record[field]) failures.push(`${at}: missing ${field}`);
     }
-    if (record?.recordedAt && (Number.isNaN(Date.parse(record.recordedAt)) || !/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$/.test(record.recordedAt)))
+    if (record?.recordedAt && (Number.isNaN(Date.parse(record.recordedAt)) || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(record.recordedAt)))
       failures.push(`${at}: invalid recordedAt`);
     if (!(record?.adapter === undefined || record.adapter === null || typeof record.adapter === "string")) failures.push(`${at}: adapter must be a string or null`);
     for (const field of ["name", "revision", "reasoning"]) {

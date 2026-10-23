@@ -11,3 +11,13 @@ evals/**/cases/**/*.md whitespace=-blank-at-eof
 # These recorded answers retain a Markdown hard line break from the model.
 evals/results/2026-10-02-human-understanding/raw/a48e7f431629.md whitespace=-blank-at-eol
 evals/results/2026-10-02-human-understanding/cells/simple-status__baseline/seed-last-message.md whitespace=-blank-at-eol
+
+# Recorded machine output is evidence, not hand-authored source. Retain the
+# published files, while reducing noise in language statistics and diff views.
+evals/results/**/events/** linguist-generated=true
+evals/results/**/raw/** linguist-generated=true
+evals/results/**/*.jsonl linguist-generated=true
+evals/results/**/*.log linguist-generated=true
+evals/results/**/*.stdout linguist-generated=true
+evals/results/**/*.stderr linguist-generated=true
+evals/results/**/*.tsv linguist-generated=true

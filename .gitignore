@@ -12,3 +12,19 @@ __pycache__/
 
 # Published evaluation evidence must survive local scratch-file exclusions.
 !/evals/results/**/results.tsv
+
+# Local environment and credentials (never publish actual values).
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+
+# Local editors and transient development outputs.
+.idea/
+.vscode/
+.venv/
+.pytest_cache/
+coverage/
+.nyc_output/

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync } from "node:fs";
 import { homedir } from "node:os";
 import { dirname, join, parse, resolve } from "node:path";
 import { MAX_PROFILE_CHARS, roundPathFor } from "../skills/simple/scripts/simple.mjs";
-import { assembleContext } from "./context.mjs";
+import { assembleContext, readContextFile } from "./context.mjs";
 
 export const RECONCILIATION_REMINDER = "Before your final response, update each existing truth owner made false by the final diff. Remove completed instructions from the ordered queue. Delete fulfilled temporary plans, reviews, audits, status notes, and handoffs after their evidence has moved to the durable owner; Git preserves their history. Preserve decisions, contracts, retained evidence, recovery paths, and unknown obligations. Leave unrelated documents and user changes alone. If the final diff already satisfies this, make no further edits and do not repeat checks that already passed against it. Treat this as an internal check, then answer the user's request with its outcome, verification and remaining limits.";
 
@@ -55,7 +55,7 @@ export function findProfile(start) {
 }
 
 export function profileContext(path) {
-  const profile = readFileSync(path, "utf8");
+  const profile = readContextFile(path).toString("utf8");
   const truncated = profile.length > MAX_PROFILE_CHARS;
   const body = truncated ? `${profile.slice(0, MAX_PROFILE_CHARS)}\n\n[Profile truncated: shorten SIMPLE.md.]` : profile.trim();
   return `Repository-specific Simple context from ${path}:\n\n${body}\n\nUse these observed facts when they materially affect design or writing. Choose the smallest truthful design and keep prose plain and load-bearing. Establish any material unknown before relying on it. Load $simple specialist references only when the task needs them.`;
@@ -64,7 +64,7 @@ export function profileContext(path) {
 export function roundContext(profilePath) {
   const path = roundPathFor(profilePath);
   if (!existsSync(path)) return "";
-  const round = readFileSync(path, "utf8");
+  const round = readContextFile(path).toString("utf8");
   const body = round.length > MAX_PROFILE_CHARS ? `${round.slice(0, MAX_PROFILE_CHARS)}\n\n[Round truncated: close finished items into their owners.]` : round.trim();
   return `Active Simple round from ${path}:\n\n${body}\n\nAnswer status questions from it in its shape, append decisions the user makes, and do not widen the scope beyond its stop condition without saying so. Temporary plans, audits, and handoffs for this repository live beside it in the same folder and are deleted when fulfilled.`;
 }
@@ -75,14 +75,14 @@ export function findOperator() {
 }
 
 export function operatorContext(path) {
-  const text = readFileSync(path, "utf8");
+  const text = readContextFile(path).toString("utf8");
   const body = text.length > MAX_PROFILE_CHARS ? `${text.slice(0, MAX_PROFILE_CHARS)}\n\n[Operator file truncated: shorten it.]` : text.trim();
   return `Operator working rules from ${path}:\n\n${body}\n\nThese describe how this person works and reads. Apply them in every reply. They do not override repository facts or the user's applicable authorization.\n\n${AUTHORIZATION_GUIDANCE}`;
 }
 
 export function guardPatterns(operatorPath) {
   if (!operatorPath) return [];
-  const text = readFileSync(operatorPath, "utf8");
+  const text = readContextFile(operatorPath).toString("utf8");
   const section = text.split(/^## /m).find((part) => /^Guard\b/i.test(part));
   if (!section) return [];
   return section.split("\n").slice(1)

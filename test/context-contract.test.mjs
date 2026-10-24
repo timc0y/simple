@@ -1,10 +1,11 @@
 import test from "node:test";
+import { spawnSync } from "node:child_process";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { assembleContext } from "../skills/simple/scripts/context.mjs";
+import { assembleContext, MAX_SOURCE_BYTES, readContextFile } from "../skills/simple/scripts/context.mjs";
 
 function fixture(t) {
   const root = mkdtempSync(join(tmpdir(), "simple context "));
@@ -108,4 +109,30 @@ test("the regression case distinguishes the previous cross-line parser", (t) => 
   assert.equal(previous[1], "## Guard", "the negative control must reproduce the original bug");
   writeFileSync(f.operator, input);
   assert.doesNotMatch(f.read().text, /Optional attention marker/);
+});
+
+test("oversized optional sources are rejected before read and do not erase valid context", (t) => {
+  const f = fixture(t);
+  writeFileSync(join(f.root, "SIMPLE.md"), "healthy profile");
+  writeFileSync(f.operator, Buffer.alloc(MAX_SOURCE_BYTES + 1, 65));
+  const result = f.read();
+  assert.match(result.text, /healthy profile/);
+  const source = result.sources.find((entry) => entry.kind === "operator");
+  assert.equal(source.status, "unavailable");
+  assert.equal(source.sha256, undefined, "an unread oversized file must not get a fabricated full hash");
+  assert.match(result.errors.join(" "), /SIMPLE_SOURCE_TOO_LARGE/);
+  writeFileSync(f.operator, Buffer.alloc(MAX_SOURCE_BYTES, 65));
+  assert.equal(readContextFile(f.operator).length, MAX_SOURCE_BYTES);
+});
+
+test("non-regular context files are rejected without waiting for input", { skip: process.platform === "win32" }, (t) => {
+  const f = fixture(t);
+  const created = spawnSync("mkfifo", [f.operator], { encoding: "utf8" });
+  assert.equal(created.status, 0, created.stderr);
+  const moduleURL = new URL("../skills/simple/scripts/context.mjs", import.meta.url).href;
+  const program = `import { readContextFile } from ${JSON.stringify(moduleURL)};
+    try { readContextFile(process.argv[1]); process.exitCode = 2; }
+    catch (error) { if (error.code !== "SIMPLE_NOT_REGULAR") throw error; }`;
+  const result = spawnSync(process.execPath, ["--input-type=module", "-e", program, f.operator], { encoding: "utf8", timeout: 3000 });
+  assert.equal(result.status, 0, result.error?.message || result.stderr);
 });

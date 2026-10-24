@@ -61,7 +61,7 @@ def selftest() -> None:
     base.RECORD = RECORD
     base.CASES = CASES
     base.CONDITIONS = CONDITIONS
-    base.selftest = selftest
+    base.selftest = isolated_selftest
     base.skill_into = skill_into
     base.verify_freeze = verify_freeze
     if not OLD_RUNNER.is_file():
@@ -83,12 +83,17 @@ def selftest() -> None:
     root_selftest = subprocess.run(["python3", str(ROOT / "evals/behavior/selftest.py")], capture_output=True, text=True)
     if root_selftest.returncode:
         raise RuntimeError(f"behavior selftest failed: {root_selftest.stdout}{root_selftest.stderr}")
+
+
+def isolated_selftest() -> None:
+    """Native isolation is mandatory before any solver, including cached resumes."""
+    selftest()
     RECORD.mkdir(parents=True, exist_ok=True)
     base.canary()
 
 
 def preregister() -> None:
-    selftest()
+    isolated_selftest()
     if os.environ.get("FINAL_FREEZE") != "1":
         raise RuntimeError("set FINAL_FREEZE=1 only after root confirms FINAL FREEZE")
     if (RECORD / "manifest.json").exists():
@@ -176,7 +181,7 @@ def archive_invalid(cid: str) -> None:
 
 
 def measure() -> None:
-    selftest()
+    isolated_selftest()
     if os.environ.get("READY") != "1":
         raise RuntimeError("set READY=1 only after FINAL FREEZE and preregistration")
     if not (RECORD / "manifest.json").is_file():

@@ -1,12 +1,35 @@
 // Canonical context assembly lives inside the independently installable skill.
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync } from "node:fs";
+import { closeSync, constants, existsSync, fstatSync, openSync, readSync } from "node:fs";
 import { homedir } from "node:os";
 import { dirname, join, parse, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 export const MAX_FILE_CHARS = 6000;
 export const MAX_CONTEXT_CHARS = 12000;
+export const MAX_SOURCE_BYTES = 1024 * 1024;
+
+// Output clipping must not hide an unbounded read or wait forever on a named pipe.
+export function readContextFile(path) {
+  const fd = openSync(path, constants.O_RDONLY | (constants.O_NONBLOCK ?? 0));
+  try {
+    const stat = fstatSync(fd);
+    if (!stat.isFile()) throw Object.assign(new Error("Context source must be a regular file"), { code: "SIMPLE_NOT_REGULAR" });
+    if (stat.size > MAX_SOURCE_BYTES) throw Object.assign(new Error("Context source exceeds 1 MiB"), { code: "SIMPLE_SOURCE_TOO_LARGE" });
+    // One extra byte detects growth after fstat without reading an unbounded stream.
+    const buffer = Buffer.allocUnsafe(MAX_SOURCE_BYTES + 1);
+    let length = 0;
+    while (length < buffer.length) {
+      const count = readSync(fd, buffer, length, buffer.length - length, null);
+      if (!count) break;
+      length += count;
+    }
+    if (length > MAX_SOURCE_BYTES) throw Object.assign(new Error("Context source exceeds 1 MiB"), { code: "SIMPLE_SOURCE_TOO_LARGE" });
+    return buffer.subarray(0, length);
+  } finally {
+    closeSync(fd);
+  }
+}
 
 export function findProfile(start = process.cwd()) {
   let directory = resolve(start);
@@ -27,7 +50,7 @@ export function findOperator(env = process.env, home = homedir()) {
 export function skillIdentity() {
   const identify = (url) => {
     const path = fileURLToPath(url);
-    const raw = readFileSync(path);
+    const raw = readContextFile(path);
     return { path, bytes: raw.length, sha256: createHash("sha256").update(raw).digest("hex") };
   };
   return {
@@ -68,7 +91,7 @@ export function assembleContext({ cwd = process.cwd(), env = process.env, home =
   function add(kind, path, tail, reserve = 0) {
     if (!path || !existsSync(path)) return;
     try {
-      const raw = readFileSync(path);
+      const raw = readContextFile(path);
       const full = raw.toString("utf8").trim();
       const identity = { kind, path, bytes: raw.length, sha256: createHash("sha256").update(raw).digest("hex") };
       const heading = kind === "profile" ? `Repository-specific Simple context from ${path}:\n\n`

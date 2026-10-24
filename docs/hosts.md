@@ -145,7 +145,9 @@ facts on the next invocation. These checks require no model credentials.
 Keep four evidence levels distinct: source available, adapter emitted, host
 received and task outcome preserved. `check --context` establishes only local
 source identity and emission. Its `hostDelivered` and `modelApplied` fields remain
-null. Source hashes include raw whitespace and line endings. The name prefix
+null. Source hashes include raw whitespace and line endings. Context sources must be
+regular files no larger than 1 MiB; oversized files and named pipes are rejected
+without an unbounded read, while other readable sources remain available. The name prefix
 establishes none of the other evidence levels.
 
 For a native host release check, record its exact version and install source,

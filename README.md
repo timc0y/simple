@@ -9,6 +9,9 @@ observable evidence. It also helps write concise, useful developer prose.
 
 It is **not** an agent, runtime wrapper, framework or mandatory workflow.
 
+**Supported hosts: OpenCode, Claude Code, Codex and Antigravity.** One shared
+skill, with small host adapters. [Host setup and verification](docs/hosts.md).
+
 ## Quick start
 
 Install the skill using Agent Skills:
@@ -164,16 +167,36 @@ claude plugin install simple@timc0y-simple
 npm run install:local
 ```
 
-That links the one skill source into local Codex, Claude Code, OpenCode, Gemini
-and shared Agent Skills locations; it does **not** update cached plugin commands
-or hooks. For OpenCode, separately register
-[`.opencode/plugins/simple.mjs`](.opencode/plugins/simple.mjs) once in the host's
-global plugin configuration.
+That links the shared skill into the four supported hosts' native locations.
+Every destination is checked before links change; real files and directories are
+never overwritten. It does **not** update cached plugins or enable hooks.
 
-**Gemini:** `gemini-extension.json` points to the repository's `AGENTS.md`
-route. The repo does **not** establish equivalent native hook injection of
-profile, round and operator content on Gemini. Do not assume host parity based
-on the extension manifest alone.
+**OpenCode:** choose the adapter for your installed major version. V1 registers
+[`.opencode/plugins/simple.mjs`](.opencode/plugins/simple.mjs) through `plugin`;
+V2 registers the [plugin directory](integrations/opencode-v2/package.json) through
+`plugins`. Do not load both. Keep the complete checkout beside the adapter.
+
+**Antigravity:** install the shared skill through its native plugin manager:
+
+```sh
+agy plugin install https://github.com/timc0y/simple
+agy plugin list --json
+```
+
+Optional context injection uses Antigravity's native PreInvocation contract:
+
+```sh
+node skills/simple/scripts/antigravity.mjs config
+```
+
+Run that from a checkout or use the script inside the installed skill. It prints
+configuration for review; merge the named `simple` block into the existing hook
+file without replacing other hooks. See [host setup](docs/hosts.md) for paths,
+OpenCode examples, trust requirements and contract-test limits.
+
+Gemini CLI is no longer supported and its extension manifest is removed.
+Antigravity itself uses `.gemini/config` and `.gemini/antigravity-cli`; those native
+paths remain intentionally. Historical research is retained, not active support.
 
 After a **published plugin release**, update your installed host plugins:
 
@@ -188,11 +211,14 @@ the plugin manifests currently identify the **0.8.2** release family.
 
 ## Activation and hooks
 
-Codex and Claude use the shared hook to load the nearest profile, open round and
-optional personal operator rules. OpenCode uses its project-specific plugin context
-on each turn and requests context preservation during compaction. Host delivery
-and model behaviour require separate observation; structural tests do not prove
-compaction survival.
+Codex and Claude use the shared hook on start, resume, fork and compaction to load
+the nearest profile, open round and optional operator rules. OpenCode V1 uses its
+project instance; V2 resolves each session independently. Antigravity's optional
+hook injects transient context before each model invocation and refuses to guess
+between unrelated workspace roots. These adapters do not override permissions,
+create synthetic user requests or force another turn after completion.
+Host delivery and model behaviour require separate observation; structural tests
+do not prove compaction survival.
 
 The assembler reads optional sources independently, applies a combined output
 budget, labels incomplete context and keeps source identities available. Inspect
@@ -202,8 +228,10 @@ its **local** inputs (without exposing private file content) with:
 node skills/simple/scripts/simple.mjs check --context
 ```
 
-This reports what the assembler can supply, **not** what a host delivered or
-what a model followed. After a resume or compaction, verify mutable status from
+This reports raw-file hashes and what the assembler can supply, **not** what a
+host delivered or what a model followed. It also identifies the actual installed
+skill and assembler files; it does not claim to hash every specialist reference.
+The command works from a skill-only installation without the surrounding checkout. After a resume or compaction, verify mutable status from
 its actual owner before describing it as current.
 
 The personal operator template

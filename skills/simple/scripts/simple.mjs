@@ -150,9 +150,9 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   } else if (command === "check") {
     const failures = check(resolve(directory));
     if (withContext) {
-      const { assembleContext } = await import("../../../scripts/context.mjs");
+      const { assembleContext, skillIdentity } = await import("./context.mjs");
       const { sources, errors, complete } = assembleContext({ cwd: resolve(directory) });
-      process.stdout.write(JSON.stringify({ ok: !failures.length && !errors.length && complete, ready: !failures.length && !errors.length && complete, failures, sources, errors, note: "Local files emitted by the assembler, not host-received or model-applied evidence." }, null, 2) + "\n");
+      process.stdout.write(JSON.stringify({ ok: !failures.length && !errors.length && complete, ready: !failures.length && !errors.length && complete, failures, sources, errors, identity: skillIdentity(), note: "Local files emitted by the assembler, not host-received or model-applied evidence." }, null, 2) + "\n");
       if (failures.length || errors.length || !complete) process.exitCode = 1;
     } else {
       print(failures);

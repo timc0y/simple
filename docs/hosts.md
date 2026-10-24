@@ -134,6 +134,35 @@ Sources: [skills](https://antigravity.google/docs/skills),
 [plugins](https://antigravity.google/docs/plugins/),
 [hook payload and configuration](https://antigravity.google/docs/hooks/).
 
+## Verification record — 24 October 2026
+
+The implemented code was independently checked at
+[`49e24b8`](https://github.com/timc0y/simple/commit/49e24b8056f8d819b1d6348c3075841b266b4b44).
+[GitHub Actions run 40079474447](https://github.com/timc0y/simple/actions/runs/40079474447)
+passed the full Linux suite (73 tests), the existing selected Windows tests, the
+profile check and Claude plugin installation. An independent Linux checkout using
+Node 22.23.4 also passed all 73 tests, `check --context`, the behavior, preservation
+and workflow verifier self-tests, and `git diff --check`; its working tree stayed
+clean. These are implementation and verifier results, not a new model benchmark.
+
+Independent review found and led to fixes for cross-line blank-name parsing,
+standalone-skill import dependencies, truncation accounting and unbounded or
+non-regular context inputs. The new fixtures include the former parser as a
+negative control, and verify that native model execution still requires its
+isolation canary even though offline fixture checks now run on Linux.
+
+Native OpenCode V2 plugin loading and Antigravity plugin discovery were not
+confirmed: the isolated OpenCode package-install attempt did not leave the expected
+executable, and a permitted Antigravity binary download was not established.
+Their adapter contracts and hook subprocesses were tested; live model compaction
+survival was not. The activation classifier's eight Node tests passed, but Zsh
+syntax and shell-level self-tests could not run in the independent sandbox because
+Zsh was absent and the bounded package-download attempt found no package. No
+activation `measure` or `resume` model run was performed. The shell runner therefore
+retains an explicit native execution gap rather than inheriting the Node parser's
+pass result. No plugin release, user installation, or private hook configuration
+was changed by this work.
+
 ## Verification and evidence boundaries
 
 `npm test` includes generated context-budget cases, a negative control for the old

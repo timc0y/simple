@@ -97,6 +97,21 @@ Model families and cost tiers are host concerns. Use `model-profiles.md` when mo
 selection is available. Agreement is not proof; the lead resolves conflicts with
 repository evidence and a discriminating check.
 
+A delegated assignment names one question or outcome, the source snapshot, required
+evidence, authority, exclusive paths if any, budget and stop condition. Prefer native
+host limits and cancellation over a new supervisor. Workers return completed,
+failed, cancelled or blocked with their artifact identity and remaining uncertainty.
+The lead accounts for unfinished and cancelled work, rejects duplicate results and
+rechecks changed source before integrating. Cancel obsolete workers and clean up
+only temporary resources created for this task; never broaden their authority.
+
+After interruption, establish whether an operation failed or merely lost its reply.
+Use the existing operation's receipt, transaction ID, idempotency key or current
+state before repeating a consequential write. A worker's final message is not a
+receipt. Changed destinations, withdrawals and completed one-time approvals must
+be reconciled before resuming. Keep evidence and recovery with their current owner;
+do not create a second general-purpose transaction journal inside Simple.
+
 ## `simple work`
 
 Use this when the user wants the named repository outcome implemented, not merely

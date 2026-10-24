@@ -69,10 +69,31 @@ self-review supplied independent confirmation.
 Read `model-profiles.md` to route each role by current host capability. Model names are
 examples, not requirements.
 
+## Refute a specific finding
+
+Separate discovering suspicious code from establishing that one finding is real.
+Give a reviewer the exact claim, input, caller, source revision and alleged effect.
+Ask them to disprove it by finding upstream constraints, unreachable paths, valid
+recovery or a counterexample to the claim. Do not reward finding volume.
+
+Return confirmed, refuted or unresolved, with the decisive evidence. Confirmation
+needs a reachable failure or an independently checked mechanism; a theoretical
+pattern is not enough. Missing access is unresolved, not a false positive. When the
+claim is consequential, compare the smallest failing input with a valid nearby case.
+The lead preserves a justified minority finding rather than taking a vote.
+
+This procedure draws on the verification focus of Trail of Bits'
+[fp-check](https://github.com/trailofbits/skills/tree/main/plugins/fp-check).
+Its source files are not copied into Simple or relicensed as MIT.
+
 ## Adversarial review and candidate selection
 
 For an adversarial review, give reviewers the intended outcome, actual artifact and same acceptance criteria.
 Keep each independent first judgment separate from the other reviewers' conclusions.
+For a diff, inspect which existing obligations changed: validation, caller promises,
+authority, recovery, identity and externally visible state. Follow affected callers
+and relevant history; a small diff can remove a large obligation. Do not equate line
+count, caller count or reviewer confidence with severity.
 Ask for a concrete counterexample, affected obligation and smallest supported correction.
 Track each material finding as accepted, deferred, rejected with a reason, or unresolved.
 Keep a decisive lone finding even when other reviewers missed it.

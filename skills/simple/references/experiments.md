@@ -28,6 +28,10 @@ Compare integration work, maintenance, operating cost and reader effort separate
 Inspect the actual selected artifact before integration.
 After integration, rerun the affected checks against the final tree.
 Reviewer agreement and a winning prototype do not prove the integrated result.
+For a quality comparison, hide candidate labels from the reviewer when possible and
+keep the task and acceptance criteria identical. Score working behavior, solution
+quality and cost separately: a polished but incomplete answer cannot win by style.
+A blind preference is still not a substitute for an executable acceptance check.
 
 ## Improve a metric
 
@@ -52,7 +56,28 @@ Report a missed target honestly; do not relax it or repeat until a lucky pass ap
 A plateau can justify a different hypothesis within the budget, not endless unattended work.
 A simpler implementation with unchanged performance can be worthwhile; report that as maintenance improvement, not a speed gain.
 
+Account for all billed attempts, not only completed answers: preflight, solvers,
+follow-ups, retries and graders. Reserve a bounded call or spending allowance before
+launching work where the provider supports it; a post-run token total is not a hard
+spending cap. Missing usage remains unknown, never zero. Preserve the aggregate
+allowance on resume and stop rather than relaunching indefinitely.
+
 For agent evaluations, test reference retrieval separately from execution.
+Freeze the actual installed skill content, source revision, host version and
+configuration; a repository version label does not identify a stale installed copy.
+Use realistic near-miss negatives for activation and independently checked artifacts
+for completion. A path mention is not a successful read, and a successful read is
+not evidence that the resulting work is correct. Failed or ambiguous instrumentation
+is invalid evidence, not a valid non-activation. Keep invalid counts visible.
+
+Publish synthetic fixtures, redacted proofs and minimal usage metadata. Do not copy
+private transcripts, operator settings, identities, prompts or tool outputs into a
+public result merely because the host can collect them. Capture only the categories
+needed for the question, with the user's authority.
+
+The [Agent Skills evaluation guidance](https://agentskills.io/skill-creation/evaluating-skills)
+provides a source-backed comparison pattern; adoption here is methodological, not
+a new measured performance claim.
 Keep held-out tasks, matched tools and per-capability failures.
 A higher total does not cancel a lost requirement.
 Use the repository's evaluation protocol and the user's model selection.

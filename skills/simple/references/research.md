@@ -23,6 +23,13 @@ Use available search or source tools. Do not depend on a particular search provi
 Check external claims that can change against current sources.
 Keep private repository data out of public searches.
 
+Retrieve the smallest evidence that can settle the question, without deleting its
+meaning. Prefer targeted file ranges, scoped interactive page snapshots, diffs and
+local aggregates over repeatedly dumping entire outputs. Preserve source identity,
+failed records, counts and warnings. Expand when the narrower view cannot resolve an
+uncertainty; fewer tokens are not a gain if they hide a failure. Refresh browser
+references and current state after navigation or mutation invalidates the snapshot.
+
 Trace the relevant inputs, operation order, state, output and failure behaviour.
 Separate documented contracts, observed implementation details and inference.
 An official client shows how its authors use the system.

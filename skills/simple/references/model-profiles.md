@@ -2,6 +2,10 @@
 
 Use one canonical Simple skill. Adapt the amount of guidance to observed model and
 harness behaviour, not to marketing names or assumptions about a model family.
+The maintained host adapters are OpenCode, Claude Code, Codex and Antigravity.
+A historical comparison with another host does not add it to supported scope.
+Inspect the installed host version, active skill path and actual permissions before
+using a capability; API-shaped test doubles do not establish native support.
 
 ## Delegation tiers
 

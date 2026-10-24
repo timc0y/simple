@@ -2,6 +2,28 @@
 
 Evaluate Simple as a decision skill. Do not grade preferred phrases.
 
+## Current instrument boundaries
+
+The supported product hosts are OpenCode, Claude Code, Codex and Antigravity.
+Historical runs on other hosts remain evidence, not an active support commitment.
+Host-contract tests are separate from native loader checks and model evaluations;
+report each layer independently. Name prefixes, role instructions and reviewer
+agreement never substitute for task outcome checks.
+
+Offline preservation self-tests now exercise fixtures without requiring macOS
+`sandbox-exec`. Preregistration, native preflight, measurement and cached resumes
+still run the isolation canary before any solver; no model isolation is bypassed.
+The macOS runner remains macOS-specific for real model execution.
+
+For new comparisons, retain the installed source identity, host and model versions,
+exact planned cells and invalid attempts. Preserve original acceptance criteria
+through harness repairs and recheck a known defect against the repaired verifier.
+Account for solver, follow-up, preflight, retry and grader costs together; unknown
+usage stays unknown. Existing historical runners do not thereby gain provider-level
+spending caps. Confirm the selected runner's enforcement before a paid experiment.
+Keep private session data local; public reports should use synthetic tasks and
+redacted artifacts, not a complete private transcript.
+
 ## Start from intended capabilities
 
 The requested capabilities define the requirements. Evaluations provide evidence

@@ -40,6 +40,26 @@ does not prove the guard would have prevented the error.
 A missing import, unreachable assertion or empty artifact is not a useful regression signal.
 Keep baseline failures separate from failures caused by the change.
 
+## Invariants and test repair
+
+Use generated boundary cases when an input space is more important than a few
+examples. State the property independently of the implementation: blank stays off,
+separate projects stay separate, output stays bounded, and an optional failure does
+not erase healthy evidence. Include valid counterexamples and retain the smallest
+failing input. Avoid generators that filter away the cases the property needs.
+A small deterministic loop is enough when no property-testing library is needed.
+
+When repairing a test, distinguish a stale selector, invalid fixture, broken harness
+and product regression before changing it. Preserve the original acceptance outcome.
+A required test marked skipped, a weaker assertion, a replaced baseline or an
+unbounded retry does not turn a broken feature into a pass. Exercise a known product
+regression after a harness correction to show the corrected check still rejects it.
+Record an unavoidable blocked check as blocked, not successful.
+
+[Playwright's test-agent workflow](https://playwright.dev/docs/test-agents) is one
+example of automated test repair; Simple keeps the acceptance contract outside the
+repairing agent's discretion. No browser framework is required for unrelated work.
+
 ## UI and visual equivalence
 
 For exact visual parity, capture the baseline before the change.

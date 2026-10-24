@@ -1,0 +1,7 @@
+{
+  "name": "simple-opencode-v2",
+  "private": true,
+  "type": "module",
+  "main": "./index.mjs",
+  "exports": "./index.mjs"
+}

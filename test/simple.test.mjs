@@ -414,7 +414,8 @@ test("local install exposes one skill through each supported host", () => {
     "/tmp/simple-home/.claude/skills/simple",
     "/tmp/simple-home/.codex/skills/simple",
     "/tmp/simple-home/.config/opencode/skills/simple",
-    "/tmp/simple-home/.gemini/config/skills/simple"
+    "/tmp/simple-home/.gemini/config/skills/simple",
+    "/tmp/simple-home/.gemini/antigravity-cli/skills/simple"
   ]);
 });
 
@@ -551,14 +552,14 @@ test("release surfaces share one base version", () => {
   assert.equal(claudeVersion, packageVersion);
   assert.equal(marketplaceVersion, packageVersion);
   assert.equal(codexVersion.split("+")[0], packageVersion);
-  const gemini = JSON.parse(readFileSync(join(root, "gemini-extension.json"), "utf8"));
-  assert.equal(gemini.version, packageVersion);
   const claudeManifest = JSON.parse(readFileSync(join(root, ".claude-plugin", "plugin.json"), "utf8"));
   const codexManifest = JSON.parse(readFileSync(join(root, ".codex-plugin", "plugin.json"), "utf8"));
   for (const field of ["name", "description", "license", "homepage"]) {
     assert.equal(codexManifest[field], claudeManifest[field], field);
   }
-  assert.equal(gemini.description, claudeManifest.description);
+  const antigravity = JSON.parse(readFileSync(join(root, "plugin.json"), "utf8"));
+  assert.equal(antigravity.name, claudeManifest.name);
+  assert.equal(antigravity.description, claudeManifest.description);
 });
 
 test("the OpenCode plugin uses host project identity and the shared context", async () => {

@@ -526,6 +526,8 @@ test("maintained Markdown links resolve", () => {
     join(root, "upstream", "coverage.md"),
     join(root, "evals", "workflow", "README.md"),
     join(root, "evals", "README.md"),
+    join(root, "CONTRIBUTING.md"),
+    ...walkFiles(join(root, "docs")).filter((path) => path.endsWith(".md")),
     ...walkFiles(join(root, "commands")).filter((path) => path.endsWith(".md")),
     ...walkFiles(join(root, "skills", "simple")).filter((path) => path.endsWith(".md")),
     ...walkFiles(join(root, "research")).filter((path) => path.endsWith(".md")),

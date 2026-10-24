@@ -42,7 +42,7 @@ prepare() {
   [[ "$record" = /tmp/simple-activation ]] || return 1
   [[ ! -e "$record" ]] || { print 'existing scratch record: resume it or archive it before a new measure' >&2; return 2; }
   [[ ! -e "$result_dir" ]] || { print 'result directory already exists; preserve it and select a new RESULT_SUFFIX' >&2; return 2; }
-  mkdir -p "$record/raw" "$record/events" "$record/errors" "$record/workspaces" "$record/inputs" "$record/evidence"
+  mkdir -p "$record/raw" "$record/events" "$record/errors" "$record/workspaces" "$record/inputs" "$record/evidence" "$record/cells" "$record/attempts"
   print 2 > "$record/evidence-version"
   cp "$suite/evidence.mjs" "$record/inputs/evidence.mjs"
   : > "$record/activation.tsv"
@@ -63,23 +63,32 @@ PY
   fi
   cp -R "$suite/prompts" "$record/inputs/prompts"
   cp "$suite/protocol.md" "$record/protocol.md"
-  (cd "$record/inputs" && find . -type f -exec shasum -a 256 {} +) > "$record/input-sha256.txt"
   print "candidate\t$(git -C "$repo" rev-parse HEAD)\ncandidate_tree_dirty\t$(git -C "$repo" status --porcelain -- skills/simple | wc -l | tr -d ' ')" > "$record/inputs/commits.tsv"
+  print "$model\t$runs\t${(j:,:)conditions}" > "$record/inputs/run-config.tsv"
+  (cd "$record/inputs" && find . -type f -exec shasum -a 256 {} +) > "$record/input-sha256.txt"
 }
 
 solve_one() {
   local run=$1 case_name=$2 condition=$3
   local id=$(opaque_id "$run" "$case_name" "$model" "$condition")
-  if grep -q "^$id	" "$record/activation.tsv" 2>/dev/null; then print "skip $id (done)"; return; fi
+  if [[ -s "$record/cells/$id.tsv" ]]; then print "skip $id (done)"; return; fi
   local workspace="$record/workspaces/$id"
-  mkdir -p "$workspace/.agents/skills"
-  cp -R "$record/inputs/$condition-skill" "$workspace/.agents/skills/simple"
-  cp "$record/inputs/prompts/$case_name.md" "$workspace/prompt.md"
-  local started=$(date +%s)
-  local solver_exit=0
-  if run_codex "$workspace" "$(<"$workspace/prompt.md")" "$record/events/$id.jsonl" "$record/errors/$id.log"; then solver_exit=0; else solver_exit=$?; fi
-  local latency=$(( $(date +%s) - started ))
-  print "$solver_exit" > "$record/errors/$id.exit"
+  local solver_exit latency
+  if [[ -s "$record/errors/$id.exit" ]]; then
+    solver_exit=$(<"$record/errors/$id.exit")
+    latency=unknown
+    [[ -s "$record/errors/$id.latency" ]] && latency=$(<"$record/errors/$id.latency")
+  else
+    mkdir "$record/attempts/$id" 2>/dev/null || { print "attempt $id has no recorded exit; inspect it before repeating any paid call" >&2; return 2; }
+    mkdir -p "$workspace/.agents/skills"
+    cp -R "$record/inputs/$condition-skill" "$workspace/.agents/skills/simple"
+    cp "$record/inputs/prompts/$case_name.md" "$workspace/prompt.md"
+    local started=$(date +%s)
+    if run_codex "$workspace" "$(<"$workspace/prompt.md")" "$record/events/$id.jsonl" "$record/errors/$id.log"; then solver_exit=0; else solver_exit=$?; fi
+    latency=$(( $(date +%s) - started ))
+    print "$solver_exit" > "$record/errors/$id.exit.tmp"; mv "$record/errors/$id.exit.tmp" "$record/errors/$id.exit"
+    print "$latency" > "$record/errors/$id.latency"
+  fi
   jq -r -s '[.[] | select(.type == "item.completed" and .item.type == "agent_message") | .item.text] | last // ""' "$record/events/$id.jsonl" > "$record/raw/$id.md" 2>/dev/null || :
   node "$record/inputs/evidence.mjs" "$record/events/$id.jsonl" "$workspace" "$solver_exit" > "$record/evidence/$id.json.tmp"
   mv "$record/evidence/$id.json.tmp" "$record/evidence/$id.json"
@@ -89,7 +98,8 @@ solve_one() {
   local expected=false
   (( ${should[(Ie)$case_name]} )) && expected=true
   local tokens=$(jq -r 'select(.type=="turn.completed") | .usage.input_tokens' "$record/events/$id.jsonl" | tail -1)
-  print "$id\t$run\t$case_name\t$model\t$condition\t$expected\t$opened\t$evidence_valid\t$latency\t${tokens:-unknown}\t$solver_exit\t$reason" >> "$record/activation.tsv"
+  print "$id\t$run\t$case_name\t$model\t$condition\t$expected\t$opened\t$evidence_valid\t$latency\t${tokens:-unknown}\t$solver_exit\t$reason" > "$record/cells/$id.tsv.tmp"
+  mv "$record/cells/$id.tsv.tmp" "$record/cells/$id.tsv"
   print "solved $id ($case_name, $condition) expected=$expected opened=$opened valid=$evidence_valid reason=$reason"
 }
 
@@ -110,7 +120,7 @@ summarize() {
   print 'id\trun\tcase\tmodel\tcondition\texpected\topened\tevidence_valid\tlatency_s\tinput_tokens\tsolver_exit\treason' > "$result_dir/activation.tsv"
   cat "$record/activation.tsv" >> "$result_dir/activation.tsv"
   cp "$record/summary.txt" "$record/protocol.md" "$record/input-sha256.txt" "$record/evidence-version" "$result_dir/"
-  cp -R "$record/inputs" "$record/evidence" "$result_dir/"
+  cp -R "$record/inputs" "$record/evidence" "$record/cells" "$result_dir/"
   cp -R "$record/raw" "$result_dir/raw"; cp -R "$record/inputs/prompts" "$result_dir/prompts"; cp "$record/inputs/commits.tsv" "$result_dir/commits.tsv"
   [[ -f "$record/inputs/candidate-description.txt" ]] && cp "$record/inputs/candidate-description.txt" "$result_dir/candidate-description.txt"
   mkdir -p "$result_dir/errors"
@@ -126,6 +136,18 @@ run_all() {
       else for condition in "${(Oa)conditions[@]}"; do solve_one "$run" "$case_name" "$condition"; done; fi
     done
   done
+  : > "$record/activation.tsv.tmp"
+  local id
+  for run in {1..$runs}; do
+    for case_name in "${cases[@]}"; do
+      for condition in "${conditions[@]}"; do
+        id=$(opaque_id "$run" "$case_name" "$model" "$condition")
+        [[ -s "$record/cells/$id.tsv" ]] || { print "missing planned cell $id" >&2; return 2; }
+        cat "$record/cells/$id.tsv" >> "$record/activation.tsv.tmp"
+      done
+    done
+  done
+  mv "$record/activation.tsv.tmp" "$record/activation.tsv"
   summarize
 }
 
@@ -137,9 +159,10 @@ measure() {
 
 resume() {
   [[ ${READY:-} = 1 ]] || { print 'set READY=1 when the prompts are frozen' >&2; return 2; }
-  [[ -s "$record/activation.tsv" ]] || { print "no record to resume at $record" >&2; return 1; }
+  [[ -d "$record/cells" ]] || { print "no version-2 cells to resume at $record" >&2; return 1; }
   [[ -f "$record/evidence-version" && "$(<"$record/evidence-version")" = 2 ]] || { print 'legacy evidence cannot be resumed as the new instrument' >&2; return 2; }
   (cd "$record/inputs" && shasum -a 256 -c "$record/input-sha256.txt") || return 2
+  [[ "$(print "$model\t$runs\t${(j:,:)conditions}")" = "$(<"$record/inputs/run-config.tsv")" ]] || { print 'resume model, repeats or conditions differ from the frozen run' >&2; return 2; }
   run_all
 }
 

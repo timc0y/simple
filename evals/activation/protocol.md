@@ -19,7 +19,11 @@ usage is unknown. Retain the parser, exact skill/prompt snapshots, source checks
 solver exit and per-cell classification; raw event traces stay in local scratch
 until separately reviewed for public disclosure. Resume checks frozen input hashes
 and rejects old record formats. Never overwrite an earlier published result to
-make a rerun look like its original execution.
+make a rerun look like its original execution. Per-cell rows are written atomically;
+the summary is rebuilt from all planned cells, not from an append-only partial TSV.
+An interrupted post-processing step can reuse the recorded solver exit and trace.
+An attempt with no recorded exit is unresolved and must not be automatically replayed.
+Run one process per record; resume keeps the frozen model, repeats and conditions.
 
 ## Historical registration
 

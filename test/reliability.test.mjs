@@ -3,6 +3,7 @@ import { spawnSync } from "node:child_process";
 import { mkdtempSync, mkdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { test } from "node:test";
 import { assembleContext } from "../scripts/context.mjs";
 import openCode from "../.opencode/plugins/simple.mjs";
@@ -75,7 +76,7 @@ test("session hook preserves readable profile when the optional operator is a di
   const operator=join(cwd,"unreadable.md");
   mkdirSync(operator);
   const hook=new URL("../scripts/hook.mjs",import.meta.url);
-  const result=spawnSync(process.execPath,[hook.pathname],{input:JSON.stringify({hook_event_name:"SessionStart",cwd}),encoding:"utf8",env:{...process.env,SIMPLE_OPERATOR_FILE:operator}});
+  const result=spawnSync(process.execPath,[fileURLToPath(hook)],{input:JSON.stringify({hook_event_name:"SessionStart",cwd}),encoding:"utf8",env:{...process.env,SIMPLE_OPERATOR_FILE:operator}});
   assert.equal(result.status,0);
   assert.match(JSON.parse(result.stdout).hookSpecificOutput.additionalContext,/readable/);
   assert.match(result.stderr,/context unavailable/);

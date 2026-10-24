@@ -1,5 +1,28 @@
 # Activation screen protocol
 
+## Current instrumentation, 24 October 2026
+
+New runs use evidence version 2. The historical registrations and results below
+are preserved; they have not been regraded as though they used the new parser.
+Only a completed, successful literal read of the isolated workspace's SKILL.md
+with returned text establishes observed opening. The classifier accepts narrow
+cat/sed/head forms and literal shell wrappers, never executes trace commands, and
+requires a successful solver exit, completed turn and nonempty final response.
+Path mentions, echoes and listings do not count. Ambiguous commands, incomplete
+reads, changed-directory compounds and unknown tool-event contracts remain invalid,
+with a null activation value, rather than valid negative observations. This is a
+conservative observed-read screen, not proof of natural activation for every future
+host tool or of correct application of the skill.
+
+Report invalid cells separately from both hit and false-fire denominators. Missing
+usage is unknown. Retain the parser, exact skill/prompt snapshots, source checksums,
+solver exit and per-cell classification; raw event traces stay in local scratch
+until separately reviewed for public disclosure. Resume checks frozen input hashes
+and rejects old record formats. Never overwrite an earlier published result to
+make a rerun look like its original execution.
+
+## Historical registration
+
 Registered before any solver call, 13 September 2026.
 
 Question: with the current skill available but never named, does the agent open it on

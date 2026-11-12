@@ -16,14 +16,14 @@ test("the setup compatibility alias creates an incomplete profile idempotently",
   const root = mkdtempSync(join(tmpdir(), "simple-"));
   setup(root);
   const firstAgents = readFileSync(join(root, "AGENTS.md"), "utf8");
-  const firstClaude = readFileSync(join(root, "CLAUDE.md"), "utf8");
   const firstProfile = readFileSync(join(root, "SIMPLE.md"), "utf8");
   setup(root);
   assert.equal(readFileSync(join(root, "AGENTS.md"), "utf8"), firstAgents);
-  assert.equal(readFileSync(join(root, "CLAUDE.md"), "utf8"), firstClaude);
   assert.equal(readFileSync(join(root, "SIMPLE.md"), "utf8"), firstProfile);
-  assert.equal(firstClaude, "@AGENTS.md\n");
-  assert.ok(check(root).some((failure) => failure.includes("incomplete")));
+  assert.equal(existsSync(join(root, "CLAUDE.md")), false);
+  const failures = check(root);
+  assert.ok(failures.some((failure) => failure.includes("incomplete")));
+  assert.ok(!failures.some((failure) => failure.includes("CLAUDE.md")), failures.join("\n"));
 });
 
 test("init is the public setup command", () => {

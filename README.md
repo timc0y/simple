@@ -126,7 +126,7 @@ From a **Simple source checkout**, initialize a target repository:
 node skills/simple/scripts/simple.mjs init /path/to/repository
 ```
 
-This scaffolds or upgrades `AGENTS.md`, `CLAUDE.md` and `SIMPLE.md`
+This scaffolds or upgrades `AGENTS.md` and `SIMPLE.md`
 without inventing project facts. Finish the profile using actual evidence, then run:
 
 ```sh

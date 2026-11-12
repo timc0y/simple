@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, realpathSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
@@ -35,7 +35,7 @@ export function check(root = process.cwd()) {
   const claudePath = resolve(repository, "CLAUDE.md");
   const profilePath = nearestProfile(target, repository);
   const agents = read(agentsPath, failures);
-  const claude = read(claudePath, failures);
+  const claude = existsSync(claudePath) ? readFileSync(claudePath, "utf8") : "";
   const profile = read(profilePath, failures);
 
   if (agents && !agents.includes(ROUTE)) {
@@ -74,7 +74,6 @@ export function check(root = process.cwd()) {
 
 export function init(root = process.cwd()) {
   const agentsPath = resolve(root, "AGENTS.md");
-  const claudePath = resolve(root, "CLAUDE.md");
   const profilePath = resolve(root, "SIMPLE.md");
   let agents = existsSync(agentsPath) ? readFileSync(agentsPath, "utf8") : "";
 
@@ -87,11 +86,6 @@ export function init(root = process.cwd()) {
       throw new Error("AGENTS.md has an unrecognized ## Simple section; reconcile it manually instead of adding a duplicate");
     }
     writeFileSync(agentsPath, `${agents.trimEnd()}${agents.trim() ? "\n\n" : ""}## Simple\n\n${ROUTE}\n`);
-  }
-
-  const claude = existsSync(claudePath) ? readFileSync(claudePath, "utf8") : "";
-  if (!/^@AGENTS\.md\s*$/m.test(claude) && !claude.includes(ROUTE)) {
-    writeFileSync(claudePath, `${claude.trimEnd()}${claude.trim() ? "\n\n" : ""}@AGENTS.md\n`);
   }
 
   if (!existsSync(profilePath)) writeFileSync(profilePath, PROFILE);
@@ -135,7 +129,7 @@ function print(failures, failProcess = true) {
   if (failProcess && failures.length) process.exitCode = 1;
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(realpathSync(process.argv[1])).href) {
   const args = process.argv.slice(2);
   const withContext = args.includes("--context");
   const [command = "check", directory = process.cwd()] = args.filter((arg) => arg !== "--context");

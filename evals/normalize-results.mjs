@@ -1,6 +1,7 @@
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { cellKey, readMapping, readTsv } from "./grading.mjs";
 
 export function validateResults(records, root = null) {
   const failures = [];
@@ -66,19 +67,26 @@ export function validateResults(records, root = null) {
 }
 
 export function normalizeResults(recordDirectory, { skillCommit, harness, reasoning = "default", recordedAt = new Date().toISOString() }) {
-  const mapping = readTsv(join(recordDirectory, "mapping.tsv"), ["id", "run", "case", "model", "condition"]);
-  const results = readTsv(join(recordDirectory, "results.tsv"));
+  const mapping = readMapping(recordDirectory);
+  const results = readTsv(join(recordDirectory, "results.tsv"), null, ["run", "case", "model", "condition", "strict"]);
   const modelMetadata = existsSync(join(recordDirectory, "models.tsv"))
     ? new Map(readTsv(join(recordDirectory, "models.tsv")).map((model) => [model.key, model]))
     : new Map();
-  const ids = new Map(mapping.map((row) => [key(row), row.id]));
+  const ids = new Map(mapping.map((row) => [cellKey(row), row.id]));
+  const observed = new Set();
   const groups = new Map();
 
   for (const row of results) {
+    const cell = cellKey(row);
+    if (observed.has(cell)) throw new Error(`Duplicate result: ${cell}`);
+    observed.add(cell);
     const groupKey = `${row.model}\t${row.condition}`;
     if (!groups.has(groupKey)) groups.set(groupKey, []);
-    const id = ids.get(key(row));
-    if (!id) throw new Error(`No mapping for ${key(row)}`);
+    const id = ids.get(cell);
+    if (!id) throw new Error(`No mapping for ${cell}`);
+    for (const field of ["strict", "luna", "terra", "opened"]) {
+      if (row[field] !== undefined && row[field] !== "true" && row[field] !== "false") throw new Error(`Invalid Boolean ${field} for ${cell}: ${row[field]}`);
+    }
     groups.get(groupKey).push({
       id: `${row.case}__r${row.run}`,
       passed: row.strict === "true",
@@ -90,6 +98,8 @@ export function normalizeResults(recordDirectory, { skillCommit, harness, reason
       ...(row.opened === undefined ? {} : { invoked: row.opened === "true" })
     });
   }
+  const missing = mapping.filter((row) => !observed.has(cellKey(row)));
+  if (missing.length) throw new Error(`Incomplete run: missing ${missing.length} planned result(s): ${missing.map((row) => row.id).join(", ")}`);
 
   return [...groups.entries()].map(([groupKey, tasks]) => {
     const [model, condition] = groupKey.split("\t");
@@ -110,17 +120,6 @@ export function normalizeResults(recordDirectory, { skillCommit, harness, reason
       tasks
     };
   });
-}
-
-function readTsv(path, suppliedFields = null) {
-  const allLines = readFileSync(path, "utf8").trim().split("\n");
-  const fields = suppliedFields || allLines.shift().split("\t");
-  const lines = allLines;
-  return lines.filter(Boolean).map((line) => Object.fromEntries(line.split("\t").map((value, index) => [fields[index], value])));
-}
-
-function key(row) {
-  return `${row.run}\t${row.case}\t${row.model}\t${row.condition}`;
 }
 
 const invokedPath = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1];

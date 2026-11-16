@@ -71,14 +71,23 @@ the control and credit the resulting difference to self-review.
 | Primary source | Mechanism and limit | Decision here |
 | --- | --- | --- |
 | [Anthropic prompting guidance](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices), inspected 16 November 2026 | Vendor guidance recommends clear goals, constraints and relevant examples. It is not a matched evaluation of these repositories. | Carry task context; do not add an obligatory interview or example quota. |
-| [LaMP, ACL 2024](https://aclanthology.org/2024.acl-long.399/) | Retrieval from user profiles improves studied personalized tasks; retrieval choice matters. Its metrics and tasks do not establish an individual's voice quality in arbitrary prose. | Retain scoped, approved examples; evaluate their relevance and provenance separately from fluency. |
-| [QAEval, TACL 2021](https://aclanthology.org/2021.tacl-1.47/) | Reference-derived questions test information overlap beyond literal wording. Question quality, answerability and answer comparison remain failure sources. | Accept faithful paraphrases. Ask about required relationships, not merely recurring names or numbers. |
+| [LaMP, ACL 2024](https://aclanthology.org/2024.acl-long.399/) | Profile retrieval improves some measured personalized tasks, while some conditions/metrics decline; retrieval choice matters. Its metrics and tasks do not establish an individual's voice quality in arbitrary prose. | Retain scoped, approved examples; evaluate their relevance and provenance separately from fluency. |
+| [QAEval, TACL 2021](https://aclanthology.org/2021.tacl-1.47/) | Questions from a reference summary are answered from the candidate to estimate information recall. Coverage and QA models are incomplete; adapting this to request/source questions is our inference. | Accept faithful paraphrases. Ask about required relationships, not merely recurring names or numbers. |
 | [QAFactEval source](https://github.com/salesforce/QAFactEval/blob/master/qafacteval.py), inspected 16 November 2026 | Generates questions from summaries and checks their answers against the source. That direction checks unsupported content, not all source omissions. Code was inspected, not executed here. | Keep both source/request-to-draft and draft-to-source checks. Do not import its model stack or threshold. |
 | [Huang et al., ICLR 2024](https://arxiv.org/abs/2310.01798v2) | Intrinsic self-correction can fail or degrade studied reasoning outputs. Revision prompts can confound comparisons by adding requirements missing from the initial prompt. | Stop when no concrete failure is found; use the same information in the one-pass control. |
 | [ProCo, EMNLP 2024](https://aclanthology.org/2024.emnlp-main.714/) | Verification against a known masked condition improves studied reasoning tasks. Short problems with entity/number answers are not open-ended prose. | Known-condition checks are a testable lead, not proof that iterative rewriting works here. |
 | [Lost in the Middle, v3](https://arxiv.org/abs/2307.03172v3) | Relevant information's position affects studied long-context tasks. This is not a direct test of skill activation or editorial adherence. | Record delivery/read evidence separately from use and task outcome. |
-| [Style-personalization evaluation, v4, 1 September 2026](https://arxiv.org/html/2508.06374v4) | Style resemblance, preference and copy-editing usefulness are distinct. First-person author judgement is not fully captured; several apparent metric/ensemble differences fall within uncertainty. | Keep voice, fidelity, usefulness and reader understanding separate. Do not introduce an ensemble or embedding threshold. |
+| [Style-personalization evaluation, v4, 1 September 2026](https://arxiv.org/html/2508.06374v4) | Content preference, style preference and copy-editing usefulness are distinct. Annotators are not the original authors; neither/both/indeterminate judgments and uncertainty matter. Binary discrimination does not fully capture the first-person perspective. | Keep voice, fidelity, usefulness and reader understanding separate. Do not introduce an ensemble or embedding threshold. |
 | [MT-Bench / Chatbot Arena, NeurIPS 2023](https://arxiv.org/abs/2306.05685v4) and [FastChat judging code](https://raw.githubusercontent.com/lm-sys/FastChat/main/fastchat/llm_judge/common.py), inspected 16 November 2026 | Judges exhibit position, verbosity and other biases. The code evaluates both orders and records mapped judgments. It was not executed here. | Anonymous candidates, ties/rejection and recorded order disagreements belong in evaluation; agreement is still fallible. |
+
+Additional primary evidence retained from the parallel source inspection:
+
+| Source | Decision and limit |
+| --- | --- |
+| [Relevant in-context examples, Liu et al. 2022](https://aclanthology.org/2022.deelio-1.10/) | Relevant demonstrations helped the studied tasks; this does not establish arbitrary personal voice or justify another retrieval service. |
+| [QAFactEval paper, Fabbri et al. 2022](https://aclanthology.org/2022.naacl-main.187.pdf) | Summary-derived questions test consistency with a source. This is distinct from QAEval’s reference-to-candidate coverage direction and from independently verifying source truth. |
+| [Self-Refine, Madaan et al. 2023](https://proceedings.neurips.cc/paper_files/paper/2023/file/91edff07232fb1b55a505a9e9f6c0ff3-Paper-Conference.pdf) | Specific feedback and revision helped several studied tasks. Combined with the self-correction counterevidence above, this supports targeted repair rather than a universal polishing loop. |
+| [Claude personalization](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features), [Grammarly Goals](https://support.grammarly.com/hc/en-us/articles/360054679292-What-are-Goals) | Vendor scopes separate general instructions, projects, skills and task goals. Grammarly documents intent that does not affect suggestions: collecting a field is not evidence that the path uses it. No independent quality gain follows. |
 
 Two writing products supply implementation precedents, not independent performance
 evidence. [Grammarly's Paraphraser](https://support.grammarly.com/hc/en-us/articles/38552469933837-Paraphraser-agent-user-guide)
@@ -154,3 +163,28 @@ must remain unknown.
 The [verification record](../evals/results/2026-11-16-writing-method/README.md) owns
 the actual commands, results and delivery limits. It must not convert deterministic
 checks or a small smoke task into a claim of better model behaviour.
+
+## Same-day reconciliation and follow-up
+
+A final remote check discovered [draft PR 2](https://github.com/timc0y/simple/pull/2)
+at `5032a8688a51ff5c3af73bee67ea836db5274ccd`, created while this separate checkout
+was being verified. Its 52 changed files were fetched and checked against their Git
+blob hashes. The follow-up preserves that draft, its CI dependency fix, eight-case
+suite, revised operation-aware rubric, corrected retry reference, research sources
+and recorded evidence. It retains the incoming conditional writing defaults and
+consolidates the alternative development fixtures into the same suite. No unseen
+local changes are claimed as preserved.
+
+The evaluator follow-up adds exact normalized-result mapping and strict retained
+order-check validation while keeping incoming frozen JSON source evidence, nested
+artifacts and solver read-denial construction. Independent review found that a
+truthy or malformed stable marker could manufacture a completed result; the final
+path recomputes agreement from the actual strict verdicts before writing results.
+These deterministic repairs do not establish semantic grader reliability.
+
+The [follow-up record](../evals/results/2026-11-16-writing-check/README.md) owns its
+checks and separate synthetic task. Its task ran against the recorded earlier
+candidate bytes, before reconciliation; it is not a final-installed-skill claim.
+The parent draft’s reported checks and native tasks remain attributed to that record,
+not relabelled as executions by this lead. Both records prohibit paid API evaluation;
+no extra model tasks were launched after reconciliation.

@@ -136,39 +136,56 @@ work needs it; the reply alone may suffice for a routine resolution.
 
 ## Editing
 
-Choose the operation from the request, not from a general preference for shorter prose:
+Choose the operation from the user's request. Do not make the human select a mode
+when the conversation already establishes it.
 
-- Explain: develop the requested mechanism or reasoning; a shorter verdict may not
-  answer the question.
-- Shorten: remove introductions, repetition, filler, duplicated headings, decoration,
-  and optional background before compressing material reasoning.
-- Punctuation only: change punctuation within the requested scope; preserve the words,
-  their order, and meaning.
-- Restructure: change grouping and order while preserving dependencies and connections.
-- Compose: choose wording and form for the stated purpose using supported facts.
+| Requested operation | What may change |
+| --- | --- |
+| Explain | Develop the same claim and its reasons at useful depth; preserve conditions and uncertainty. Simpler need not mean shorter. |
+| Shorten | Remove introductions, repetition, filler, duplicated headings, decoration and optional background before material reasoning or actions. |
+| Punctuation only | Change punctuation within the requested passage; preserve words, their order and the document structure. |
+| Light edit | Keep useful sentences and structure; fix the requested issue. |
+| Restructure | Move supplied material while preserving causal links, emphasis, exceptions, prerequisites and citation attachment. |
+| Compose | Build from the brief and source. Ask only for necessary missing substance; do not invent it. |
 
-Keep actors attached to their actions, numbers to their quantities, and evidence to the
-claims it supports. Preserve conditions, exceptions, negation, sequence, comparisons,
-and degrees of certainty, even when separated by several paragraphs. Retain exact
-quotes, code, and citation attachment when the request requires them. Keeping the same
-names and numbers is not enough if their relationships change. For example, "Deploy
-after checks pass and the owner approves" requires both conditions; it does not say
-either happened. "May be ready Friday" is not a promise of Friday delivery.
+Use the smallest change that fulfils that operation. Keep already-good wording when
+changing it would not help. An unchanged draft that leaves the requested defect
+unresolved is not a completed edit. Compression succeeds only when the reader can
+still decide, operate, recover or verify correctly.
 
-Source fidelity does not establish source truth. In a faithful edit, do not silently
-correct a factual claim outside the requested scope. When correction is requested or
-explicitly superseding evidence governs the task, use the corrected fact and preserve
-unaffected requirements; later style edits must not restore the old error. A later
-mention alone does not supersede an authoritative source. Keep unresolved conflicts
-and unknowns visible rather than inventing a resolution.
+### Check the request and source
 
-Derive the final check from this request and its sources: does every material source
-meaning survive, is every new claim supported, and did the requested improvement
-actually occur? Unchanged text fails a needed improvement, but is valid when it already
-meets the request. Repair only identified failures and recheck the affected parts; do
-not loop for an unspecified improvement. Keep this check private unless requested.
-Compression succeeds only when the reader can still decide, operate, recover, or verify
-correctly; the check does not impose a final-response format.
+Before relying on the draft, derive the few decisive questions from the request and
+authoritative material: what must this reader understand or do, and what would make
+the answer misleading? Use the source including explicitly approved corrections;
+a factual correction belongs to that task, not a universal writing rule. Separately
+supplied facts may govern the task. A later mention alone does not supersede an
+authoritative source: resolve consequential conflicts from the user’s stated
+authority, ask when that authority is unclear, and preserve unaffected requirements.
+Later style edits must not restore an approved factual error.
+
+Check once, then repair identified failures and recheck the affected passages:
+
+- Does the result fulfil the requested operation, purpose and exact constraints?
+- Source to draft: did a material fact, reason, condition, exception, action or unknown
+  disappear? True remaining sentences do not establish completeness.
+- Draft to source: is each added claim supported? Keep who does what, to whom, when,
+  under which condition and with what certainty. Names and numbers alone cannot prove
+  those relationships; a possibility must not become a promise.
+- After moving or cutting text, do long-range exceptions still apply and do citations,
+  quotations and code remain attached to the same claims? Check exact requirements
+  directly; judge meaning separately from wording similarity.
+
+Stop when the requested result is complete. Do not run an open-ended polishing or
+self-scoring loop. Keep detailed checks out of the response unless requested; ask
+the human only when missing substance prevents a truthful answer. This is an agent's
+fallible review, not independent proof or a required answer template. Fidelity to a
+source does not establish that the source itself is true. Preserve an unknown answer
+unless new evidence resolves it.
+
+For example, “Maya may send Lee the two files after approval” can become “After
+approval, Maya could send both files to Lee.” Swapping Maya and Lee keeps the names
+and quantity but changes responsibility; removing approval loses a condition.
 
 ## Adapt to the audience
 

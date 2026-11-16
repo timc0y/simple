@@ -34,6 +34,13 @@ spending caps. Confirm the selected runner's enforcement before a paid experimen
 Keep private session data local; public reports should use synthetic tasks and
 redacted artifacts, not a complete private transcript.
 
+The [request/source follow-up](results/2026-11-16-writing-check/README.md) preserves
+the same-day draft’s cases and source evidence. The shared grading helper now also
+checks complete result maps and optional retained order-swapped judgments. It parses
+one strict record and recomputes agreement from both raw verdicts before completion;
+malformed or disagreeing records remain inconclusive and cannot earn a pass.
+The [separate smoke budget](writing-check/protocol.md) grants no paid evaluation calls.
+
 ## Start from intended capabilities
 
 The requested capabilities define the requirements. Evaluations provide evidence

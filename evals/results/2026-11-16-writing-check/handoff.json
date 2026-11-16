@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-16",
+  "kind": "synthetic_noncomparative_smoke",
+  "baselineCommit": "f315d12fe6855e9e17af561875f32d70dadb9a55",
+  "model": {
+    "requested": "gpt-6-luna",
+    "reasoning": "medium",
+    "revision": null,
+    "host": "collaboration subagent",
+    "installedPlugin": false,
+    "tokenUsage": null
+  },
+  "budget": {
+    "paidApiEvaluationCalls": 0,
+    "additionalApiSpend": 0,
+    "solverTurnsAllowed": 2,
+    "solverTurnsUsed": 1
+  },
+  "task": {
+    "request": "Use the Simple writing guidance to shorten and organise this update into a handoff for the incident lead. Use no more than 100 words. Keep the handoff useful for deciding what happens next. Return only the revised handoff.",
+    "source": "The local change is ready, so this is an update on where things have got to and what needs to happen next. The queue consumer now records a delivery receipt before removing the message. I ran all 12 checks in the disposable fixture and they passed. The change has not been deployed. Tessa needs to inspect the receipt from staging and tell Omar whether it matches the submitted batch. Omar may rerun the failed staging batch only after Tessa confirms that match. If the receipt is missing, Omar must leave the batch alone and report that to Tessa. After an authorised rerun, Omar sends its outcome to Tessa. We do not yet know how long the rerun will take. The next action is Tessa’s receipt check.",
+    "author": "independent research helper"
+  },
+  "delivery": {
+    "explicitReadPaths": [
+      "skills/simple/SKILL.md",
+      "routed specialist references as relevant"
+    ],
+    "naturalActivationVerified": false,
+    "collaboratorReadTraceIndependentlyCaptured": false,
+    "instructionSha256": {
+      "skills/simple/SKILL.md": "d0282298925aa7873c3802755b0333cd4f80b85abb263c3cef46eb4b66d5bf33",
+      "skills/simple/references/writing.md": "a3d351391fc009a0dc5112afc707812b266af9b2f4cccac6bb3b67ee9d0c4a7d",
+      "SIMPLE.md": "96751877b4c0a8b9eded8dca73a53100b82244dc219e374e7b92ae5da900b05a",
+      "skills/simple/scripts/context.mjs": "ae497c950760b506fb7c7bf6c20997b5ab07c263b7221c8f41875244985daf47",
+      "evals/writing-check/protocol.md": "20d0d2cb48bc502c437eab0706ece3a72aa8d883747414d1bbad487d3703c318"
+    }
+  },
+  "output": "Tessa’s next action is to inspect the staging receipt and tell Omar whether it matches the submitted batch. The queue consumer now records a receipt before removing a message; all 12 disposable fixture checks passed. The change is ready but not deployed.\n\nOmar may rerun the failed staging batch only after Tessa confirms a match. If the receipt is missing, he must leave the batch untouched and report that to Tessa. After an authorized rerun, Omar should send Tessa the outcome; its duration is unknown.",
+  "wordCount": 85,
+  "wordCountBasis": "whitespace-separated",
+  "acceptance": {
+    "reviewers": [
+      "lead",
+      "independent task author"
+    ],
+    "preSavedAcceptanceChecklist": false,
+    "result": "task requirements met with a possible modal weakening",
+    "preserved": [
+      "next action belongs to Tessa",
+      "receipt match reported to Omar",
+      "12 disposable fixture checks passed",
+      "ready but not deployed",
+      "Omar reruns only after confirmation",
+      "missing receipt means leave batch and report to Tessa",
+      "Omar reports rerun outcome to Tessa",
+      "duration unknown"
+    ],
+    "caution": "The output says Omar should send the outcome; the source assigns Omar sends. Should may express duty, but is softer. Retained without a claim of unequivocal failure or perfect fidelity."
+  },
+  "limits": [
+    "No baseline or repeated matched conditions",
+    "Not a preregistered semantic scoring experiment",
+    "No measured general quality or reader-understanding gain",
+    "No installed-host or natural-activation verification",
+    "Collaborator service does not expose exact revision or usage"
+  ],
+  "candidateStage": "Pre-reconciliation explicitly routed task; these instruction hashes do not identify the final reconciled skill. No model task was rerun after incoming draft reconciliation."
+}

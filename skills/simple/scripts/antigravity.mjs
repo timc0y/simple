@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { realpathSync } from "node:fs";
 import { isAbsolute, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { assembleContext } from "./context.mjs";
@@ -46,7 +47,7 @@ async function readInput() {
   return JSON.parse(input || "{}");
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(realpathSync(process.argv[1])).href) {
   const mode = process.argv[2];
   try {
     if (mode === "config") process.stdout.write(`${JSON.stringify(hookConfiguration(), null, 2)}\n`);

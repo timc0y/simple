@@ -1,0 +1,28 @@
+{
+  "kind": "explicitly invoked synthetic skill-use observation",
+  "requestedModel": "gpt-6-luna",
+  "reasoningEffort": "high",
+  "exactModelRevision": null,
+  "usage": null,
+  "taskMaterial": {
+    "request": "Turn the note into a clear handoff for a colleague in three or four sentences. Return only the handoff.",
+    "source": "Mara added an upload retry. The retry runs once after a network interruption and only when no upload receipt has been recorded. Validation failures are permanent until the input is corrected and are not retried. Jules reviews duplicate receipts. Local tests passed. Production has not been checked. Whether version 4.2 has been deployed is unknown."
+  },
+  "invocationBoundary": "Fresh native collaboration task with the repository skill explicitly named. Only supplied source and skill guidance were permitted; no research/evaluations, file edits, external services or further delegation. Task material is recorded here; this is not a complete host/system prompt trace.",
+  "output": "Mara added an upload retry that runs once after a network interruption when no upload receipt has been recorded. Validation failures are not retried and remain permanent until the input is corrected; Jules reviews cases with duplicate receipts. Local tests passed, but production has not been checked. It is unknown whether version 4.2 has been deployed.",
+  "readEvidence": "The subagent reported reading the canonical SKILL.md and writing.md. This is a read report, not an independent installed-host delivery trace.",
+  "sourceSha256": {
+    "skills/simple/SKILL.md": "c28a847e5086c4dc70b1918f661a96edc99e5188b6abd27324e4a32e56840feb",
+    "skills/simple/references/writing.md": "81adb0e818cdc92731f1e075bffa017d7dfc5050d08f90995810ed66c951d4f8"
+  },
+  "leadAssessment": {
+    "requestedFormat": "four sentences",
+    "relationshipsConditionsAndUnknowns": "preserved in this example",
+    "unsupportedReleaseClaim": false
+  },
+  "limits": [
+    "One authored synthetic task; no matched baseline or held-out model comparison.",
+    "No natural activation, continuation, installed-host, or human-comprehension claim.",
+    "Requested model identity is recorded; exact revision, tokens, latency and price are not exposed."
+  ]
+}

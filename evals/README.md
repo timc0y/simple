@@ -2,6 +2,13 @@
 
 Evaluate Simple as a decision skill. Do not grade preferred phrases.
 
+The [writing-method cases](writing-method/protocol.md) exercise requested edit scope,
+logical relationships, no-op decisions and bounded checks through the existing case
+layout. The shared rubric now evaluates form and usefulness relative to the request;
+it must not require a report-style opening, closing or next action in literal copy.
+Keep earlier frozen rubrics and grades unchanged. A change in grading rules starts a
+new comparison; it does not retroactively establish a skill gain.
+
 ## Current instrument boundaries
 
 The supported product hosts are OpenCode, Claude Code, Codex and Antigravity.
@@ -14,6 +21,9 @@ Offline preservation self-tests now exercise fixtures without requiring macOS
 `sandbox-exec`. Preregistration, native preflight, measurement and cached resumes
 still run the isolation canary before any solver; no model isolation is bypassed.
 The macOS runner remains macOS-specific for real model execution.
+The offline runner-contract tests in `npm test` require `zsh`, `jq` and `python3`
+on the test host. Linux CI installs these explicitly; no model executable or API
+credential is needed for those tests.
 
 For new comparisons, retain the installed source identity, host and model versions,
 exact planned cells and invalid attempts. Preserve original acceptance criteria
@@ -23,6 +33,13 @@ usage stays unknown. Existing historical runners do not thereby gain provider-le
 spending caps. Confirm the selected runner's enforcement before a paid experiment.
 Keep private session data local; public reports should use synthetic tasks and
 redacted artifacts, not a complete private transcript.
+
+The [request/source follow-up](results/2026-11-16-writing-check/README.md) preserves
+the same-day draft’s cases and source evidence. The shared grading helper now also
+checks complete result maps and optional retained order-swapped judgments. It parses
+one strict record and recomputes agreement from both raw verdicts before completion;
+malformed or disagreeing records remain inconclusive and cannot earn a pass.
+The [separate smoke budget](writing-check/protocol.md) grants no paid evaluation calls.
 
 ## Start from intended capabilities
 
@@ -61,8 +78,8 @@ sources local. Continue using Luna only for this repository's model evaluations.
 `evals/rubric.md` holds one shared rubric. The runner sends only the text between its
 judge markers to the grader, after the case criteria, so gate rules never reach the
 model. Each answer gets a pass verdict from the criteria plus four scores from 1 to 5:
-readability for a reader with a small working memory (first line, last line,
-unexplained terms, list size, state restated), actionability, completeness, and
+readability for the intended reader and requested operation, actionability (including
+usefulness when no next action is requested), completeness, and
 concision, and a blocker flag. Scores never change the verdict. The record's
 `scores.tsv` keeps them per cell and `noise-floor.tsv` reports mean and standard
 deviation per case and condition; a delta smaller than the larger standard deviation
@@ -70,14 +87,30 @@ is noise. Blockers are read, not averaged.
 
 `evals/luna-cases.sh` is the shared isolated runner for prompt cases. A suite is a
 directory with `protocol.md` and a set of case directories; run it with `SUITE`,
-`CASES`, `BASELINE_COMMIT`, and `RESULT_DATE` in the environment. It stops before a
-cell when `MAX_INPUT_TOKENS` is exceeded and records the partial run. A case may
+`CASES`, `BASELINE_COMMIT`, and `RESULT_DATE` in the environment. It checks
+`MAX_INPUT_TOKENS` before each solver or grader call, counting the reported input
+usage from preflight, calibration, solvers and graders. Missing usage stops the run.
+This is a between-call threshold, not a provider spending cap. A case may
 carry a `prompt-alt.md` paraphrase; it runs as `case@alt` under the same criteria, so
-the noise floor includes prompt wording, not only repeats. The grader sees the pass
-and fail references in an order fixed per case by hash and recorded in
-`reference-order.tsv`, so position bias shows up across cases. Input tokens, output
-tokens, and latency are recorded per cell in `scores.tsv` and averaged in the noise
+the noise floor includes prompt wording, not only repeats. Before solving, each
+case's grader must classify its pass and fail references as anonymous answers. The
+same controls are mixed into final grading; `grading.mjs` checks their actual
+verdicts, exact IDs, Boolean fields and integer scores. A claimed self-test is not
+proof. Expected control verdicts stay outside the grader prompt; retained prompts and
+expected-ID records show their order. Include these calibration calls in the planned
+allowance. Input tokens, output tokens, and latency are recorded per cell in
+`scores.tsv` and averaged in the noise
 floor, because instruction changes move cost more reliably than correctness.
+Solving and grading use the frozen cases in the run record. Existing records and
+grader attempts are preserved: resume a compatible record, or choose a new suite
+name for a new attempt. These checks do not establish native host isolation; confirm
+the selected runner's isolation before model execution.
+
+The same helper supplies frozen source evidence, exact candidate/control sets and
+strict Boolean/score validation. Its command entry point resolves symlinks, including
+macOS `/tmp`. A supplied reversed order must validate against the same mapping and
+agree before successful reporting. Historical frozen helpers and judgments retain
+their original protocols; they are not rewritten by this reconciliation.
 `evals/slimming/run.py` reuses the frozen behavior runner to check that a slimmed
 skill still passes the six preservation cases.
 
@@ -150,6 +183,18 @@ Reject missing, invented, duplicate, or placeholder identifiers.
 Grade present obligations, ownership, lost facts, independent proof, unsupported
 claims, mode errors, safety boundaries, and writing quality. Do not grade one
 preferred implementation when more than one design satisfies the task.
+
+For writing and handoff cases, check factual support and required information
+separately from readability. Calibrate with a valid paraphrase and a near-miss that
+uses the expected terms but reverses a material relationship, condition or uncertainty.
+Keyword matches establish neither correctness nor completeness. Keep earlier grades
+when a checker correction changes the result, and recheck both hits and misses.
+
+Model readability ratings and sentence-length measures are not human comprehension
+results. A study of updates or handoffs must check whether the intended audience can
+identify the verified outcome, material uncertainty and next action, including when
+a polished answer contains a wrong claim. Report accuracy and effort separately from
+preference.
 
 ## Keep a complete run record
 

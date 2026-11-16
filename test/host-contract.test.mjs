@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, realpathSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -98,7 +98,7 @@ test("skill-only installation runs context diagnostics without checkout dependen
   const run = spawnSync(process.execPath, [cli, "check", target, "--context"], { encoding: "utf8", env: isolated(cwd) });
   const body = JSON.parse(run.stdout);
   assert.equal(run.status, 1, "the deliberately incomplete profile must not look ready");
-  assert.ok(body.identity.assembler.path.startsWith(copy));
+  assert.equal(realpathSync(body.identity.assembler.path), realpathSync(join(copy, "scripts/context.mjs")));
   assert.match(body.identity.skillFile.sha256, /^[0-9a-f]{64}$/);
   assert.equal(body.identity.hostDelivered, null);
   assert.equal(body.identity.modelApplied, null);

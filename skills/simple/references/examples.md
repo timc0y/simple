@@ -97,6 +97,24 @@ For the underlying engineering precedent about moving complexity behind one owne
 see the [Raptor comparison](https://x.com/SpaceX/status/1819795288116330594) and the
 [SpaceX technical disclosure](https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf).
 
+## Put a list on the record that already syncs
+
+A site shows each parent's child records, and the obvious build gives every child its own CMS item,
+synced from the database. The site is near its item ceiling, and children would add thousands. The
+next obvious build is a service that serves each parent's list to the page: a worker, a schedule, an
+endpoint and a cache, and links that search engines cannot see.
+
+The parent records already sync. Have the database build one text field per parent from its
+visible children (a rollup of one formatted line each), sync it with the existing parent sync, and
+let the page turn the lines into the designed cards. No new items, no new service, the links stay
+in the page's HTML, and without JavaScript the page still shows a list of links. Visibility stays
+with the database's existing rule because the rollup includes only rows that pass it. The page must
+render each line as text, not HTML, when the lines contain outside data.
+
+If each child needs its own page, filter or URL, or one parent's list outgrows the field, children
+need their own items and the ceiling must be dealt with first. The changed requirement creates the
+obligation, not the number of children.
+
 ## A stated requirement can be the obstruction
 
 Request: “Add CSV export and keep the output identical to the old report so nothing

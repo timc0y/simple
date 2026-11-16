@@ -33,6 +33,7 @@
 - `skills/simple/SKILL.md` and its specialist references own the method. Commands and manifests only expose that source.
 - `README.md` owns first-use guidance; `docs/hosts.md` owns host-specific configuration and verification. `AGENTS.md` owns this repository's read order, owners and authority.
 - `scripts/link-skill.mjs` preflights six local links for the four supported hosts and shared skill discovery. Real files/directories are never replaced. It does not update plugin caches or authorize hooks.
+- Optional Codehygiene installs use the bundled helper and existing uv/Python; `README.md` owns setup. Findings are advisory.
 - `simple.mjs init` scaffolds routes and an incomplete profile. `setup` remains an alias. `check` validates structure; `check --context` adds source identities without printing operator contents.
 - `audit`, `board`, `research`, `work`, `reconcile`, `plan`, `review`, `write`, `round` and `emulate` are judgement entry points, not a compulsory sequence. `simple/round.md` and other temporary artifacts end when their evidence has a durable owner.
 - The lead owns synthesis and final verification. Subagents are bounded and read-only unless assigned exclusive paths; one writer owns each file.

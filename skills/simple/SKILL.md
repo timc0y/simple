@@ -93,10 +93,12 @@ approval that still applies. Host permissions also apply.
 
 ## Write in order
 
-1. Identify the reader, purpose, destination, and source of truth.
-2. Preserve every material fact, decision, constraint, caveat, and next action.
-3. Answer the reader's main question first. Group the reasons and evidence beneath the
-   answer, and put each detail beside the point it supports.
+1. Identify the requested operation, reader, purpose, destination, and source of truth.
+   Let the operation bound the edits and form choices.
+2. Preserve every material fact, decision, constraint, caveat, and next action, including
+   the relationships that make them true.
+3. Where the request leaves the order open, answer the reader's main question first.
+   Group reasons and evidence beneath the answer, beside the point each supports.
 4. Choose the smallest structure that makes the content easy to understand and use.
    When a flow, relationship, comparison, or change is hard to picture in prose, use a
    short example or the smallest useful visual.
@@ -105,8 +107,11 @@ approval that still applies. Host permissions also apply.
    decorative formatting unless the destination requires it.
 7. Remove generic introductions, repetition, filler, and formatting that carries no
    meaning.
-8. Check that the final response still answers the active request. Shortening, changing
-   format, or internal checks must not remove a reason, boundary, risk, proof, or unknown.
+8. Privately check the final response against the active request and governing sources:
+   did it perform the requested operation, preserve material meaning and relationships,
+   and add only supported claims? Check omissions as well as additions, including each
+   reason, boundary, risk, proof, and unknown. Repair identified failures, recheck the
+   affected parts, then stop. Do not replace the answer with the check or a fixed template.
 
 Apply KISS to the solution shape and YAGNI to hypothetical obligations. Use
 Chesterton's Fence before removal. Hide necessary complexity behind one clear owner.
@@ -148,7 +153,7 @@ Stop early only for a blocker the human alone can clear, and name it as the last
 - Bugs, regressions, performance or runtime traces: read `references/diagnosis.md`.
 - Type design, state variants or trust-boundary validation: read `references/types.md`.
 - History recovery, repeated working conventions or skill improvement: read `references/learning.md`.
-- Product verification, test-first work or visual parity: read `references/verification.md`.
+- Product verification, Codehygiene checks, test-first work or visual parity: read `references/verification.md`.
 - Prototypes, competing implementations or measured improvement: read `references/experiments.md`.
 - Dependent feature work, review follow-through, authorized release or safe pause:
   read `references/delivery.md` and `references/repository-work.md`.

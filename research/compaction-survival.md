@@ -64,7 +64,8 @@ states for itself.
 Simple now emits only context for these matches on Codex and Claude. Native host
 permissions still apply independently. Reminders can arrive after the triggering tool
 result and cannot decide permission for an already selected action. OpenCode and
-Gemini use the shared guidance without this pattern reminder.
+Antigravity use the shared guidance without this pattern reminder. Gemini CLI is
+retired; its earlier observations remain historical evidence.
 
 ## Not done
 

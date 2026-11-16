@@ -6,17 +6,22 @@ not require an architecture review unless the content itself depends on one.
 
 ## Plain writing standard
 
-- Preserve material facts, decisions, constraints, caveats, proof, and next actions.
-- Start with the reader's question. Give the answer, outcome, or current state first.
+Use these defaults for choices the requested operation leaves open. A limited edit or
+exact output requirement takes precedence over a preferred opening, structure, or style.
+
+- Preserve material facts, decisions, constraints, caveats, proof, next actions, and
+  the relationships between them.
+- Start with the reader's question. Give the answer, user-visible outcome, or current
+  state before the mechanism when choosing the opening is part of the task.
 - Group reasons and evidence under the point they support. Do not make the reader build
   the argument from scattered facts.
 - Use one term for one concept. Use only terms the reader or their client has already
   used; introduce any other term with its plain meaning in the same sentence.
-- State the user-visible outcome in the first sentence, before any mechanism. For a
-  change to a number, label, field, or wording, show one before-and-after pair.
-- Keep one reply to one concern: the reader's last request. Put findings outside it on
-  one line marked as not acted on. Give each action you chose yourself its reason in
-  terms of the reader's goal.
+- When reporting a change to a number, label, field, or wording, use a before-and-after
+  pair when it helps the reader understand the change.
+- Keep the reply on the active request, including accepted context and unaffected
+  requirements. Put unrelated findings on one line marked as not acted on. Give each
+  action you chose yourself its reason in terms of the reader's goal.
 - Name the actor when responsibility matters.
 - Prefer direct constructions and short sentences.
 - Prefer a concrete example or before-and-after account when abstract prose is hard to
@@ -111,19 +116,29 @@ Lead with the outcome or finding. For a question whether something is safe, corr
 or okay to do, the first sentence is the verdict: safe now, not safe until a named
 condition, or the reader's decision with its reason. Include evidence that changes
 confidence, the exact blocker or remaining risk, and the next meaningful action.
+Put the decisive observation beside a consequential claim so the reader can check it
+without reconstructing the investigation. Keep supporting detail in its existing
+owner; retain any fact that changes the reader's decision in the reply.
 Report a failure as location, expected and actual, cause, fix, in that order and
 without alarm words. State what ran and what was only read or looked at; reading a
 script or inspecting an output is not running it, and a check that did not run did
 not pass. State assumptions only when
 they can change the solution, and name a blocker with the exact missing authority,
-fact, or dependency. Do not narrate routine tool use.
+fact, or dependency. Attach uncertainty to the affected claim and missing observation:
+"The deployment has not been checked" is more useful than general doubt. An error
+that stopped does not establish a fixed cause, and a successful tool call establishes
+only what that operation checked. Do not narrate routine tool use.
 
 > The migration is unnecessary: the repository has no production data or external
 > consumers. I replaced the schema directly and the test suite passes.
 
-For a handoff, report the outcome, why it is sufficient, proof, and any remaining risk
-or reconsideration condition. Repeat earlier commentary only when the final state
-needs it.
+For a handoff, report the outcome, artifact and target, last verified state, first
+unproved step, remaining risk, and who owns the next action. Preserve existing
+authorization and any effect whose result is still unknown. Explain why the evidence
+supports the claimed outcome and what would change the conclusion. The receiver checks
+the relevant artifact and mutable state before continuing; acknowledgment alone does
+not verify them. Use the parts the handoff needs rather than a fixed template. Repeat
+earlier commentary only when the final state needs it.
 
 When you reject or defer a material review finding, explain the decision and its
 decisive fact or trade-off. Keep a non-obvious reason in the existing owner when later
@@ -131,10 +146,57 @@ work needs it; the reply alone may suffice for a routine resolution.
 
 ## Editing
 
-Preserve the original meaning before shortening. Remove introductions, repetition,
-filler, duplicated headings, decorative formatting, and optional background first.
-Compression is successful only when the reader can still decide, operate, recover, or
-verify correctly.
+Choose the operation from the user's request. Do not make the human select a mode
+when the conversation already establishes it.
+
+| Requested operation | What may change |
+| --- | --- |
+| Explain | Develop the same claim and its reasons at useful depth; preserve conditions and uncertainty. Simpler need not mean shorter. |
+| Shorten | Remove introductions, repetition, filler, duplicated headings, decoration and optional background before material reasoning or actions. |
+| Punctuation only | Change punctuation within the requested passage; preserve words, their order and the document structure. |
+| Light edit | Keep useful sentences and structure; fix the requested issue. |
+| Restructure | Move supplied material while preserving causal links, emphasis, exceptions, prerequisites and citation attachment. |
+| Compose | Build from the brief and source. Ask only for necessary missing substance; do not invent it. |
+
+Use the smallest change that fulfils that operation. Keep already-good wording when
+changing it would not help. An unchanged draft that leaves the requested defect
+unresolved is not a completed edit. Compression succeeds only when the reader can
+still decide, operate, recover or verify correctly.
+
+### Check the request and source
+
+Before relying on the draft, derive the few decisive questions from the request and
+authoritative material: what must this reader understand or do, and what would make
+the answer misleading? Use the source including explicitly approved corrections;
+a factual correction belongs to that task, not a universal writing rule. Separately
+supplied facts may govern the task. A later mention alone does not supersede an
+authoritative source: resolve consequential conflicts from the user’s stated
+authority, ask when that authority is unclear, and preserve unaffected requirements.
+Later style edits must not restore an approved factual error.
+
+Check once, then repair identified failures and recheck the affected passages:
+
+- Does the result fulfil the requested operation, purpose and exact constraints?
+- Source to draft: did a material fact, reason, condition, exception, action or unknown
+  disappear? True remaining sentences do not establish completeness.
+- Draft to source: is each added claim supported? Keep who does what, to whom, when,
+  under which condition and with what certainty. Names and numbers alone cannot prove
+  those relationships; a possibility must not become a promise.
+- After moving or cutting text, do long-range exceptions still apply and do citations,
+  quotations and code remain attached to the same claims? Check exact requirements
+  directly; judge meaning separately from wording similarity.
+
+Stop when the requested result is complete. Do not run an open-ended polishing or
+self-scoring loop. Keep detailed checks out of the response unless requested; ask
+the human only when missing substance prevents a truthful answer. This is an agent's
+fallible review, not independent proof or a required answer template. Fidelity to a
+source does not establish that the source itself is true. Preserve an unknown answer
+unless new evidence resolves it.
+
+For example, “Maya may send Lee the two files after approval” can become “After
+approval, Maya could send both files to Lee.” Swapping Maya and Lee keeps the names
+and quantity but changes responsibility; removing approval loses a condition.
+Preserve domain terms and identifiers when they carry meaning; explain them rather than removing the fact to satisfy a style preference.
 
 ## Adapt to the audience
 

@@ -171,6 +171,42 @@ That links the shared skill into the four supported hosts' native locations.
 Every destination is checked before links change; real files and directories are
 never overwritten. It does **not** update cached plugins or enable hooks.
 
+To include the optional Codehygiene code checker in a local install:
+
+```sh
+npm run install:local -- --with-codehygiene
+```
+
+This requires existing `uv` and Python 3.10+. It installs Codehygiene 0.4.0 from
+a pinned source commit into an isolated uv tool environment, without downloading
+Python or forcibly replacing an existing tool. A tool-install failure stops before
+Simple's links change. The ordinary install needs neither uv nor Python.
+
+Agent Skills and plugin installs also include the helper, but do not run it
+automatically. To add the checker afterwards, replace `/path/to/simple` with the
+installed skill directory:
+
+```sh
+node /path/to/simple/scripts/codehygiene.mjs install
+```
+
+For review output without a quality grade, scan explicit files with the helper:
+
+```sh
+node /path/to/simple/scripts/codehygiene.mjs scan --base HEAD path/to/file.ts
+```
+
+`--base` focuses candidates on changed lines, including staged and unstaged edits;
+untracked files are scanned in full. Omit `--base HEAD` to review the whole file.
+Output retains raw flags, counts those outside changed lines, and reports unread
+lines, clipped columns and non-ASCII encoding limits. It runs the installed 0.4.0
+tool locally, with no dependency downloads or automatic fixes. A missing tool,
+invalid comparison or failed scan returns an error, not a clean result.
+
+The underlying detector is unchanged. These are optional suggestions to inspect;
+fewer candidates do not establish improved accuracy or code quality. See the
+[verification guidance](skills/simple/references/verification.md#optional-codehygiene).
+
 **OpenCode:** choose the adapter for your installed major version. V1 registers
 [`.opencode/plugins/simple.mjs`](.opencode/plugins/simple.mjs) through `plugin`;
 V2 registers the [plugin directory](integrations/opencode-v2/package.json) through

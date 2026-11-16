@@ -4,6 +4,12 @@ This map accounts for the pinned sources in [sources.json](sources.json). It rec
 Simple keeps one active skill and shared hooks. The original archives remain reference material.
 Each row maps the source outcome to its Simple owner. Different wording or fewer mandatory stages does not prove better execution.
 
+## Optional external tool
+
+| Source | Simple owner | Adaptation |
+| --- | --- | --- |
+| [Codehygiene, pinned source](https://github.com/brianbell-x/codehygiene/tree/423c7e1f02ef409bbaea209268bfcde36e0f1cb0) | [install/scan helper](../skills/simple/scripts/codehygiene.mjs), [verification](../skills/simple/references/verification.md#optional-codehygiene) | Optional install; changed-line review with raw flags and encoding limits. No quality grades, automatic fixes, vendored weights or mandatory upstream skill. The unchanged detector has no demonstrated accuracy gain. |
+
 ## PStack skills and principles
 
 | Source | Simple owner | Adaptation |
@@ -109,9 +115,9 @@ The archive also contains three Benny automation skills outside the main skill d
 - PStack orchestration, plan-check, PR-watch and worktree-audit programs remain archived. Simple uses available host and repository tools; it does not implement those programs.
 - PStack provider-specific bot UI, model-configuration and agent-bootstrap surfaces remain archived. Their portable user outcomes map to repository-work, model-profiles and learning.
 - Ponytail persistent intensity, prompt mode tracking, statusline, MCP server and host-specific adapters remain archived. Simple does not expose those runtime features.
-- Ponytail [adapter checks](https://github.com/DietrichGebert/ponytail/blob/0a4dd63ad4541f4f655c4108a295916f3c1d8fda/tests/commands.test.js) inform Simple's [package checks](../test/simple.test.mjs): plugin discovery resolves to the shared skill and hooks; existing tests preserve the five local routes. This proves local wiring, not installation on every host.
+- Ponytail [adapter checks](https://github.com/DietrichGebert/ponytail/blob/0a4dd63ad4541f4f655c4108a295916f3c1d8fda/tests/commands.test.js) inform Simple's [package checks](../test/simple.test.mjs): plugin discovery resolves to the shared skill and hooks; existing tests preserve six local links for four supported hosts and shared discovery. This proves local wiring, not installation on every host.
 - The [compatibility example](../skills/simple/references/compatibility.md#example-rename-storage-preserve-the-api) retains the database-versus-API consumer distinction from the historical Ponytail comparison.
-- Native Simple hook support remains Codex and Claude. Portable skill installation is broader; this change does not establish hook parity on every Ponytail host.
+- Codex and Claude share the lifecycle hook; OpenCode has versioned adapters and Antigravity has optional PreInvocation context. [Host setup](../docs/hosts.md) records their distinct contracts and native verification gaps. Shared source does not establish host parity.
 - Upstream benchmark harnesses and measurements remain source evidence. Simple uses its own isolated Luna harness and reports its own results.
 
 These are explicit implementation boundaries. Method coverage does not erase an unavailable runtime capability.

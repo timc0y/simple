@@ -16,6 +16,6 @@ Reconsider this if another failure class gains different retry behaviour.
 
 ## 3. Development update
 
-Retries are now limited to network failures. Validation failures fail immediately,
-since they are permanent and a retry cannot change the outcome. The reason is
-recorded in a comment beside the retry code and in a short decision note.
+The retry decision is to retry only network failures, since they are transient.
+Validation failures are permanent, so retrying them cannot change the outcome. The
+comment and note above preserve that boundary and its reason.

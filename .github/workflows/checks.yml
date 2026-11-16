@@ -1,7 +1,7 @@
 name: checks
 
-# Runs the repository tests on Linux and Windows, then installs the plugin from
-# this checkout into a scratch Claude Code config and fails unless it reaches
+# Runs the full tests on Linux and selected hook/profile tests on Windows, then
+# installs the plugin from this checkout into a scratch Claude Code config and fails unless it reaches
 # "enabled". The install step catches load-layer breakage that the structural
 # tests cannot see, such as a malformed hook declaration.
 on:
@@ -20,6 +20,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Install offline evaluator test dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y zsh jq python3
       - name: Repository tests
         if: runner.os != 'Windows'
         run: npm test

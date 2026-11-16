@@ -4,6 +4,7 @@ import { lstatSync, mkdirSync, readlinkSync, rmSync, symlinkSync } from "node:fs
 import { homedir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { installCodehygiene } from "../skills/simple/scripts/codehygiene.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const target = join(root, "skills/simple");
@@ -21,7 +22,7 @@ export function skillLinks(home = homedir()) {
   ];
 }
 
-export function install(home = homedir()) {
+export function install(home = homedir(), { withCodehygiene = false, installTool = installCodehygiene } = {}) {
   // Preflight every destination before changing any existing installation.
   const links = skillLinks(home).map((link) => {
     let entry;
@@ -30,6 +31,8 @@ export function install(home = homedir()) {
     if (entry && !entry.isSymbolicLink()) throw new Error(`refusing to replace non-symlink ${link}`);
     return { link, entry };
   });
+  // Install only after every link destination passes preflight, before changing links.
+  if (withCodehygiene) installTool();
   for (const { link, entry } of links) {
     if (entry && resolve(dirname(link), readlinkSync(link)) === target) continue;
     mkdirSync(dirname(link), { recursive: true });
@@ -39,4 +42,13 @@ export function install(home = homedir()) {
   }
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) install();
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+  const args = process.argv.slice(2);
+  if (args.some((arg) => arg !== "--with-codehygiene")) {
+    process.stderr.write("Usage: node scripts/link-skill.mjs [--with-codehygiene]\n");
+    process.exitCode = 1;
+  } else {
+    try { install(undefined, { withCodehygiene: args.includes("--with-codehygiene") }); }
+    catch (error) { process.stderr.write(`${error.message}\n`); process.exitCode = 1; }
+  }
+}

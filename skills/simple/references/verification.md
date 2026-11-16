@@ -24,6 +24,27 @@ Use `repository-work.md` for the start, identity, action, observation and cleanu
 Confirm identity before destructive or external actions, not just after them.
 A missing credential or unavailable device makes that check blocked; it does not change the promised behaviour.
 
+## Optional Codehygiene
+
+When installed and relevant to the requested change, use the bundled helper:
+`node /path/to/simple/scripts/codehygiene.mjs scan --base HEAD path/to/file`.
+Replace `/path/to/simple` with this skill's directory. Omit `--base HEAD` for a
+whole-file view. Installation is optional; the helper's `install` action installs
+the pinned tool when requested, not merely to finish an ordinary Simple task.
+
+The helper presents observations for review without a quality grade or prescribed
+rewrite. It retains raw flags and counts those outside changed lines; related
+context can fall outside that focus. Untracked files are scanned in full. Read the
+coverage fields before interpreting an empty candidate list as an absence of flags.
+
+Review findings in changed code against its actual purpose; separate existing issues
+from this change. Preserve useful comments, domain names, validation and recovery.
+Do not require a clean score or rewrite sound code to satisfy the checker.
+It examines character patterns, not program behaviour. Its current input encoding
+is limited to 2,048 lines and 128 columns per line and collapses non-ASCII characters.
+A clean result cannot replace tests, type checks or proof of the requested outcome.
+The helper changes presentation and focus, not the detector's accuracy.
+
 ## Test-first work
 
 When a cheap local regression test can reproduce the defect, make it fail for the intended reason first.

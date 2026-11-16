@@ -21,6 +21,9 @@ Offline preservation self-tests now exercise fixtures without requiring macOS
 `sandbox-exec`. Preregistration, native preflight, measurement and cached resumes
 still run the isolation canary before any solver; no model isolation is bypassed.
 The macOS runner remains macOS-specific for real model execution.
+The offline runner-contract tests in `npm test` require `zsh`, `jq` and `python3`
+on the test host. Linux CI installs these explicitly; no model executable or API
+credential is needed for those tests.
 
 For new comparisons, retain the installed source identity, host and model versions,
 exact planned cells and invalid attempts. Preserve original acceptance criteria
@@ -68,8 +71,8 @@ sources local. Continue using Luna only for this repository's model evaluations.
 `evals/rubric.md` holds one shared rubric. The runner sends only the text between its
 judge markers to the grader, after the case criteria, so gate rules never reach the
 model. Each answer gets a pass verdict from the criteria plus four scores from 1 to 5:
-readability for a reader with a small working memory (first line, last line,
-unexplained terms, list size, state restated), actionability, completeness, and
+readability for the intended reader and requested operation, actionability (including
+usefulness when no next action is requested), completeness, and
 concision, and a blocker flag. Scores never change the verdict. The record's
 `scores.tsv` keeps them per cell and `noise-floor.tsv` reports mean and standard
 deviation per case and condition; a delta smaller than the larger standard deviation

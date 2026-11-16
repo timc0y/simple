@@ -31,6 +31,15 @@ input and missing reason validation. Both were repaired and rechecked. The revie
 also identified two Communicator evidence-path defects, repaired in that repository.
 No remaining material blocker was reported in the bounded recheck.
 
+The [first GitHub CI run](https://github.com/timc0y/simple/actions/runs/43855878667)
+at `08232be41017d4a116b3de3895ab7997418ac9ca` exposed a test-environment omission:
+Ubuntu lacked `zsh`, so four new runner-contract tests failed to start (73 other tests
+passed). Linux CI now installs the existing runner's `zsh`, `jq` and `python3`
+dependencies explicitly; the tests are not skipped. That run's separate Claude Code
+scratch plugin-load check passed. This establishes loading at that revision, not
+agent activation or use of the writing method. The draft PR retains each CI attempt
+and the head-specific status of the dependency repair.
+
 ## Native skill-use observation
 
 One fresh `gpt-6-luna` task at `high` reasoning read the explicitly named repository
@@ -50,10 +59,11 @@ installation or ordinary activation of this change.
 ## Budget and limits
 
 The separately billed model/API evaluation allowance is zero calls and $0. No formal
-model comparison is run. Up to two fresh native collaboration tasks may exercise the
-final repository skills on synthetic writing: one Simple and one Communicator task,
-using the host's `gpt-6-luna` option. Stop after those tasks, including failed attempts;
-no retries to obtain a preferred answer. Record actual outputs and source hashes.
+model comparison is run. The allowance registered before execution was two fresh
+native collaboration tasks on synthetic writing: one Simple and one Communicator,
+using the host's `gpt-6-luna` option. The stopping rule included failed attempts and
+prohibited retries to obtain a preferred answer; actual outputs and source hashes
+were required.
 Both tasks ran once and the allowance is exhausted. Communicator's task and subsequent
 compiled MCP review are recorded in that repository's verification documents. These
 are explicitly invoked observations without supported-host isolation or matched

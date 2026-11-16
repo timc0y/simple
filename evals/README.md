@@ -2,6 +2,13 @@
 
 Evaluate Simple as a decision skill. Do not grade preferred phrases.
 
+The [writing-method cases](writing-method/protocol.md) exercise requested edit scope,
+logical relationships, no-op decisions and bounded checks through the existing case
+layout. The shared rubric now evaluates form and usefulness relative to the request;
+it must not require a report-style opening, closing or next action in literal copy.
+Keep earlier frozen rubrics and grades unchanged. A change in grading rules starts a
+new comparison; it does not retroactively establish a skill gain.
+
 ## Current instrument boundaries
 
 The supported product hosts are OpenCode, Claude Code, Codex and Antigravity.

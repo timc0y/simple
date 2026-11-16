@@ -6,17 +6,22 @@ not require an architecture review unless the content itself depends on one.
 
 ## Plain writing standard
 
-- Preserve material facts, decisions, constraints, caveats, proof, and next actions.
-- Start with the reader's question. Give the answer, outcome, or current state first.
+Use these defaults for choices the requested operation leaves open. A limited edit or
+exact output requirement takes precedence over a preferred opening, structure, or style.
+
+- Preserve material facts, decisions, constraints, caveats, proof, next actions, and
+  the relationships between them.
+- Start with the reader's question. Give the answer, user-visible outcome, or current
+  state before the mechanism when choosing the opening is part of the task.
 - Group reasons and evidence under the point they support. Do not make the reader build
   the argument from scattered facts.
 - Use one term for one concept. Use only terms the reader or their client has already
   used; introduce any other term with its plain meaning in the same sentence.
-- State the user-visible outcome in the first sentence, before any mechanism. For a
-  change to a number, label, field, or wording, show one before-and-after pair.
-- Keep one reply to one concern: the reader's last request. Put findings outside it on
-  one line marked as not acted on. Give each action you chose yourself its reason in
-  terms of the reader's goal.
+- When reporting a change to a number, label, field, or wording, use a before-and-after
+  pair when it helps the reader understand the change.
+- Keep the reply on the active request, including accepted context and unaffected
+  requirements. Put unrelated findings on one line marked as not acted on. Give each
+  action you chose yourself its reason in terms of the reader's goal.
 - Name the actor when responsibility matters.
 - Prefer direct constructions and short sentences.
 - Prefer a concrete example or before-and-after account when abstract prose is hard to
@@ -131,10 +136,39 @@ work needs it; the reply alone may suffice for a routine resolution.
 
 ## Editing
 
-Preserve the original meaning before shortening. Remove introductions, repetition,
-filler, duplicated headings, decorative formatting, and optional background first.
-Compression is successful only when the reader can still decide, operate, recover, or
-verify correctly.
+Choose the operation from the request, not from a general preference for shorter prose:
+
+- Explain: develop the requested mechanism or reasoning; a shorter verdict may not
+  answer the question.
+- Shorten: remove introductions, repetition, filler, duplicated headings, decoration,
+  and optional background before compressing material reasoning.
+- Punctuation only: change punctuation within the requested scope; preserve the words,
+  their order, and meaning.
+- Restructure: change grouping and order while preserving dependencies and connections.
+- Compose: choose wording and form for the stated purpose using supported facts.
+
+Keep actors attached to their actions, numbers to their quantities, and evidence to the
+claims it supports. Preserve conditions, exceptions, negation, sequence, comparisons,
+and degrees of certainty, even when separated by several paragraphs. Retain exact
+quotes, code, and citation attachment when the request requires them. Keeping the same
+names and numbers is not enough if their relationships change. For example, "Deploy
+after checks pass and the owner approves" requires both conditions; it does not say
+either happened. "May be ready Friday" is not a promise of Friday delivery.
+
+Source fidelity does not establish source truth. In a faithful edit, do not silently
+correct a factual claim outside the requested scope. When correction is requested or
+explicitly superseding evidence governs the task, use the corrected fact and preserve
+unaffected requirements; later style edits must not restore the old error. A later
+mention alone does not supersede an authoritative source. Keep unresolved conflicts
+and unknowns visible rather than inventing a resolution.
+
+Derive the final check from this request and its sources: does every material source
+meaning survive, is every new claim supported, and did the requested improvement
+actually occur? Unchanged text fails a needed improvement, but is valid when it already
+meets the request. Repair only identified failures and recheck the affected parts; do
+not loop for an unspecified improvement. Keep this check private unless requested.
+Compression succeeds only when the reader can still decide, operate, recover, or verify
+correctly; the check does not impose a final-response format.
 
 ## Adapt to the audience
 

@@ -14,6 +14,15 @@ const grade = (id, passed) => ({ id, passed, blocker: !passed,
   scores: { readability: 4, actionability: 4, completeness: 4, concision: 4 }, reason: "Checked the material conditions." });
 const response = () => ({ grades: [grade(ids[0], true), grade(ids[1], false), grade(ids[2], false)] });
 
+test("a passed verdict cannot conceal a reported blocker", () => {
+  const contradictory = response();
+  contradictory.grades[0].blocker = true;
+  assert.match(validateGrades(contradictory, ids, controls).join("\n"), /pass.*blocker/);
+  const ordinaryFailure = response();
+  ordinaryFailure.grades[1].blocker = false;
+  assert.deepEqual(validateGrades(ordinaryFailure, ids, controls), []);
+});
+
 test("grader controls use returned verdicts rather than a claimed self-test", () => {
   assert.deepEqual(validateGrades(response(), ids, controls), []);
   const bad = response();

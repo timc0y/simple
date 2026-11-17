@@ -1,0 +1,17 @@
+{
+  "registeredAt": "2026-11-17T12:40:44.778493+00:00",
+  "scope": "Development diagnostic of draft-only reading; six existing drafts and four new lead-authored controls. Not held-out writing-quality evidence.",
+  "modelRequested": "gpt-6-luna",
+  "reasoning": "medium",
+  "host": "native collaboration; fresh contexts; cooperative instruction-only file isolation",
+  "tasks": 2,
+  "automaticRetries": 0,
+  "paidApiCalls": 0,
+  "stop": "Stop after the two registered reader tasks. No answer repair or tuning.",
+  "acceptance": "All IDs/questions complete, literal per-draft evidence; all four controls correctly read in both orders; inspect event answers from six existing drafts against the separately retained source event. No numerical semantic score from an uncalibrated reader.",
+  "limitations": [
+    "Same model alias and changed batch/prompt shape prevent causal attribution to source withholding alone.",
+    "Reused failure cases are development data; no held-out quality gain or reader-comprehension claim.",
+    "Backend revision/token use/cost not exposed."
+  ]
+}

@@ -95,6 +95,16 @@ test("anonymous grading includes frozen tasks, source and constraints without co
   assert.ok(prompt.indexOf(`CANDIDATE ${failId}`) < prompt.indexOf(`CANDIDATE ${passId}`));
   assert.doesNotMatch(prompt, /KNOWN PASS|KNOWN FAIL|passReferencePassed/);
   assert.match(prompt, /no required winner/);
+  const idsIn = text => [...text.matchAll(/=== CANDIDATE ([A-Za-z0-9._-]+) ===/g)].map(m => m[1]);
+  const reversed = buildGraderPrompt(directory, "writing", "fail-first", "answers", "reverse");
+  const real = idsIn(prompt).filter(id => id === "a" || id === "b");
+  assert.deepEqual(idsIn(reversed).filter(id => id === "a" || id === "b"), [...real].reverse());
+  assert.ok(reversed.indexOf(`CANDIDATE ${failId}`) < reversed.indexOf(`CANDIDATE ${passId}`));
+  assert.throws(() => buildGraderPrompt(directory, "writing", "pass-first", "answers", "typo"), /presentation order/);
+  const cli = spawnSync(process.execPath, [fileURLToPath(new URL("../evals/grading.mjs", import.meta.url)),
+    "prompt", directory, "writing", "fail-first", "answers", "reverse"], { encoding: "utf8" });
+  assert.equal(cli.status, 0, cli.stderr);
+  assert.equal(cli.stdout.trimEnd(), reversed.trimEnd());
   writeFileSync(join(directory, "raw", "b.md"), " ");
   assert.throws(() => buildGraderPrompt(directory, "writing"), /Empty candidate/);
   const calibration = buildGraderPrompt(directory, "writing", "pass-first", "calibration");

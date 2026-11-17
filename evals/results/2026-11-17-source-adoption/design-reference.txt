@@ -1,0 +1,186 @@
+# Review, extend and establish a design system
+
+A useful system makes the next feature's decisions clear: owned tokens,
+components, variants and examples.
+
+Start a new system from a working [representative surface](start-new.md).
+For an existing one, classify the difference before merging its owners.
+
+## Contents
+
+- [Find the owners](#find-the-owners)
+- [Classify meaningful differences](#classify-meaningful-differences)
+- [Establish the missing foundation](#establish-the-missing-foundation)
+- [Keep density and elevation contextual](#keep-density-and-elevation-contextual)
+- [Carry useful context between tools](#carry-useful-context-between-tools)
+- [Promote and retire deliberately](#promote-and-retire-deliberately)
+- [Verify the changed decisions](#verify-the-changed-decisions)
+
+## Find the owners
+
+Read project guidance, `DESIGN.md`, component documentation and package
+configuration. Locate type, spacing, color, border, radius, shadow, motion and
+icon decisions. Follow aliases and theme mappings to editable inputs; change
+the generator rather than its output.
+
+Inspect actual usage, affected applications and package boundaries, including
+independently released consumers. A literal value is not automatically wrong;
+resolve inheritance, utilities, variants and runtime/native themes. Trace the
+winning declaration: layer, import order, scoped selector, utility and inline
+style. Moving CSS or adding a library layer can change precedence without changing
+the values. Compare affected computed states before deleting displaced styles;
+do not impose layers on a deliberately unlayered system.
+
+## Classify meaningful differences
+
+Compare the same role, content and state across representative consumers,
+including an unusual one.
+
+| Difference | Response |
+| --- | --- |
+| Intentional variant | Retain; explain ambiguous usage |
+| Missing supported variant | Extend the same contract with a bounded alternative |
+| Accidental drift | Migrate to the intended owner |
+| Different requirement | Preserve it or compose narrower primitives |
+| Uncertain | Inspect behavior/history; record what remains unknown |
+
+Would these roles intentionally change together? Compare purpose, state,
+density, theme and surrounding surface before joining their owners. Equal values
+can serve independently changing roles; unequal values can express one intended
+role. Put an intentional exception at the smallest owner that explains it, with
+a representative consumer. [Charlotte and HCH's image edges](project-examples.md#cc-01--give-the-composition-one-hairline-owner)
+show why the same image treatment need not transfer between products.
+
+For cramped forms, label/helper spacing may belong to the field group,
+line-height to a shared text role, and gutters to one layout. A compact table
+may legitimately retain a density variant. Record role → editable owner →
+consumer → disposition.
+
+## Establish the missing foundation
+
+Keep existing formats, names and APIs. Derive missing decisions from a working
+surface.
+
+| Layer | Define |
+| --- | --- |
+| Foundations | Actual fonts/text roles, spacing relationships, required colors, radii and motion |
+| Semantic roles | Canvas, surface, text, border, action, focus and supported status meanings |
+| Components | Required variants, states and content/responsive behavior |
+| Compositions | Repeated arrangements sharing a task and constraints |
+
+Use the existing theme mechanism and inspect actual color pairs.
+`border.subtle` need not serve as a focus indicator or an input's only boundary.
+Keep one editable owner; add an export pipeline only for a real consumer.
+Document intended use, exceptions and generated outputs. Extend an existing
+story/preview with realistic content and states.
+
+## Keep density and elevation contextual
+
+Resolve density for a coherent region. Coordinate control height, label leading,
+icon size, padding and gaps; inspect its popup contents too. Compact spacing need
+not shrink essential reading text. Fluid's [size system](https://www.fluidfunctionalism.com/docs/sizes)
+is a worked example, not a universal 36px/28px target or type scale.
+
+For layered surfaces, separate the background's relationship to its substrate
+from the shadow's component role. A menu on a page and the same menu in a dialog
+may need different background levels while retaining the same popover shadow.
+Fluid's [Elevated component](https://github.com/mickadesign/fluid-functionalism/blob/200b4534f18ab8ac25c8f623f552a2e6f1284646/registry/default/lib/elevated.tsx)
+accepts an explicit `shadowLevel` for that fixed role; by default its shadow
+follows the computed background level. Inspect light/dark appearances and the deepest
+supported nesting; a capped ladder eventually stops adding separation.
+
+React context can cross a portal while ordinary CSS inheritance follows its DOM
+placement. Verify both token availability and component context in the actual
+portal host. Preserve the existing theme/density owner; introduce a provider only
+when repeated consumers require that contextual behavior.
+
+## Carry useful context between tools
+
+When another agent, canvas or generated scene needs the visual system, provide
+a compact extract from the existing owner:
+
+| Include | Example of useful specificity |
+| --- | --- |
+| Role and actual value | The body face, size, weight, leading and loaded font source |
+| Use and exception | Compact table rows differ from reading text; action emphasis differs from status |
+| Editable owner | Theme variable, component variant or source file that controls the decision |
+| Representative view | The actual screen/state where these relationships can be seen |
+| Evidence status | Observed in the render, found in code, or proposed and not yet checked |
+
+Describe the relationships that carry character, such as quiet chrome around a
+high-contrast document. Keep existing token names and semantic aliases. Nearby
+colors need not be consolidated, and an inferred style is not an approved rule.
+Update the current design document when appropriate; avoid a second competing
+token inventory. Google's [Stitch extraction skill](https://github.com/google-labs-code/stitch-skills/blob/0337446dadde6f8c94210444e2aa9d546126480f/plugins/stitch-design/skills/extract-design-md/SKILL.md)
+offers deeper code-to-design extraction detail when that transfer is needed.
+
+### Match the destination format
+
+`DESIGN.md` is a filename, not an interoperability guarantee. Google's
+[format](https://github.com/google-labs-code/design.md/blob/6e5da5382f41edbba9d73b2c62f33f32e9971f15/docs/spec.md)
+combines structured YAML values with Markdown rationale; other tools accept
+prose or a package containing separate tokens and previews. Inspect the actual
+consumer before exporting. Preserve the current editable owner and identify
+generated outputs; creating a handoff should not establish another token source.
+
+For a borrowed reference, separate observed source/state, inferred relationship
+and proposed extension. A generated pricing table in a brand-inspired kit does
+not establish that the brand shipped that pattern. Keep source URLs, captured
+states and known gaps with the extract. [Resource selection](design-resources.md#design-context-and-reference-kits)
+records mixed-format examples and the limits of Google's lint, diff and export:
+valid token syntax and declared color pairs do not verify the rendered system.
+
+## Promote and retire deliberately
+
+Promote a composition when real consumers share its purpose, behavior and required
+variation. Keep it local when sharing introduces speculative options; a repetition
+count alone does not establish a shared contract.
+
+At the component owner, document when to use it, alternatives, supported states,
+content limits, keyboard/focus behavior and a realistic example. Make provisional
+support explicit until representative consumers exercise it. The
+[GOV.UK contribution criteria](https://design-system.service.gov.uk/community/contribution-criteria/)
+and [Carbon checklist](https://www.carbondesignsystem.com/getting-started/contributing/component-checklist)
+provide useful review categories.
+
+[Component migration](component-reuse.md#migrate-completely-before-deleting)
+owns retirement and compatibility. Refresh the owning guidance and specimens so
+a displaced path is not recreated; component count is not a quality measure.
+
+## Verify the changed decisions
+
+Inspect each changed role/variant in representative consumers, supported themes,
+long content and affected states. Check actual fonts, contrast and focus.
+Use [Tools](components-tools.md) for token formats, generation and component testing.
+
+Keep evidence attached to the consumer and state tested; a primitive's local
+checks do not certify every assembled page or complete process. When a shared
+shell moves recurring help, inspect its order across comparable page variations
+under [Consistent Help](https://www.w3.org/WAI/WCAG22/Understanding/consistent-help.html).
+The criterion does not require adding help everywhere or identical coordinates
+across breakpoints.
+
+## Learn a system from reference pages
+
+Separate measured values, repeated role-level patterns and inferred rationale.
+Capture a representative page and a materially different page/state when the claimed
+rule spans both. Record the viewport, theme, component role, actual computed value
+and source. Repeated values support a candidate system rule; one hero's value does
+not establish a site-wide token. Computed pixels do not reveal the original variable
+name or prove the designer's intent.
+
+For a useful inferred principle, connect a concrete trigger, the observed choice,
+a plausible alternative and evidence showing where the choice applies. Keep the
+reason a hypothesis unless the designer or project records it. Missing motion or
+imagery in one capture does not prove deliberate restraint. Drop generic praise and
+contradicted principles rather than filling a fixed quota. Test the principle on a
+new component with different content before using it to extend the system.
+
+Store confirmed decisions in the existing design owner; keep a reference's inferred
+rules separate from the target product's commitments. Do not append instructions to
+host configuration merely because a reference tool offers that export.
+
+Adapted from [Taste's pattern and trade-off analysis](https://github.com/senlindesign/taste-skill/tree/6dce223f2f5665d3636ca9a44ec3a7aa1322a9b8/references)
+and [Impeccable's extraction guidance](https://github.com/pbakaus/impeccable/blob/d41d9860b0094dcb68030657da63461212835aaa/.agent/skills/impeccable/reference/extract.md).
+The adaptation keeps inference explicit and does not adopt fixed principle counts,
+font judgements or a mandatory new workflow.

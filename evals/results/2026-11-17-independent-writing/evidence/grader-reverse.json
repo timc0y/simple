@@ -1,0 +1,536 @@
+{
+  "assessments": [
+    {
+      "id": "item-d67d28788468",
+      "meaning": "preserved",
+      "completeness": "complete",
+      "usefulness": "use_unchanged",
+      "evidence": [
+        {
+          "sourceExcerpt": "The studio closes at 5 pm on Mondays.",
+          "draftExcerpt": "The studio closes at 5 pm on Mondays.",
+          "reason": "Preserves the usual closing time."
+        },
+        {
+          "sourceExcerpt": "Existing bookings on 23 June can still run until 6 pm because the building manager approved a one-off extension.",
+          "draftExcerpt": "Existing bookings on 23 June may run until 6 pm under a one-off extension approved by the building manager.",
+          "reason": "Keeps the exception limited to existing bookings on 23 June."
+        },
+        {
+          "sourceExcerpt": "New bookings cannot be added after 5 pm.",
+          "draftExcerpt": "New bookings cannot be added after 5 pm.",
+          "reason": "Retains the restriction on new bookings."
+        }
+      ],
+      "questions": [
+        {
+          "id": "usual-rule",
+          "answer": "5 pm.",
+          "pass": true
+        },
+        {
+          "id": "exception",
+          "answer": "Existing bookings on 23 June may run until 6 pm.",
+          "pass": true
+        },
+        {
+          "id": "new-bookings",
+          "answer": "No.",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "item-3e6d5e5bb861",
+      "meaning": "preserved",
+      "completeness": "complete",
+      "usefulness": "use_unchanged",
+      "evidence": [
+        {
+          "sourceExcerpt": "Screen three is waiting for your copy.",
+          "draftExcerpt": "Screen three is waiting on your copy.",
+          "reason": "The client remains responsible for supplying the copy."
+        },
+        {
+          "sourceExcerpt": "If it arrives by Tuesday, I can finish the review by Thursday; otherwise I’ll send a revised date.",
+          "draftExcerpt": "If you send it by Tuesday, I can finish the review by Thursday; otherwise, I’ll send you a revised date.",
+          "reason": "Preserves both the conditional Thursday timing and fallback."
+        },
+        {
+          "sourceExcerpt": "I reviewed screens one and two.",
+          "draftExcerpt": "I’ve reviewed the first two screens.",
+          "reason": "Reports only the first two screens as reviewed."
+        }
+      ],
+      "questions": [
+        {
+          "id": "copy-owner",
+          "answer": "The client (the recipient) must supply the copy.",
+          "pass": true
+        },
+        {
+          "id": "deadline-condition",
+          "answer": "The copy must arrive by Tuesday.",
+          "pass": true
+        },
+        {
+          "id": "fallback",
+          "answer": "The sender will send a revised date.",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "item-8f1a1fc4e65f",
+      "meaning": "preserved",
+      "completeness": "complete",
+      "usefulness": "use_unchanged",
+      "evidence": [
+        {
+          "sourceExcerpt": "We have not confirmed the venue yet.",
+          "draftExcerpt": "We have not confirmed the venue yet.",
+          "reason": "Leaves the already-clear sentence unchanged and preserves its pending status."
+        }
+      ],
+      "questions": [
+        {
+          "id": "status",
+          "answer": "No, the venue has not been confirmed.",
+          "pass": true
+        },
+        {
+          "id": "time",
+          "answer": "Confirmation remains outstanding at the time of writing.",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "item-201fb7d2bedd",
+      "meaning": "preserved",
+      "completeness": "complete",
+      "usefulness": "use_unchanged",
+      "evidence": [
+        {
+          "sourceExcerpt": "Mara review the figures.",
+          "draftExcerpt": "Mara will review the figures.",
+          "reason": "Keeps review ownership with Mara."
+        },
+        {
+          "sourceExcerpt": "I’ll change file after she tell me.",
+          "draftExcerpt": "I’ll update the file after she reports back.",
+          "reason": "Keeps the file update with the sender after Mara reports back."
+        },
+        {
+          "sourceExcerpt": "If all okay, maybe we can send Friday.",
+          "draftExcerpt": "If everything is approved, we may be able to send it on Friday.",
+          "reason": "Sending remains conditional and tentative."
+        }
+      ],
+      "questions": [
+        {
+          "id": "review-owner",
+          "answer": "Mara reviews the figures.",
+          "pass": true
+        },
+        {
+          "id": "file-owner",
+          "answer": "The sender changes the file after Mara reports back.",
+          "pass": true
+        },
+        {
+          "id": "uncertain-send",
+          "answer": "No; Friday is only a possibility if everything is satisfactory.",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "item-cea8c6994811",
+      "meaning": "preserved",
+      "completeness": "complete",
+      "usefulness": "use_unchanged",
+      "evidence": [
+        {
+          "sourceExcerpt": "I reviewed screens one and two.",
+          "draftExcerpt": "I’ve reviewed screens one and two.",
+          "reason": "Reports only the first two screens as reviewed."
+        },
+        {
+          "sourceExcerpt": "Screen three is waiting for your copy.",
+          "draftExcerpt": "Screen three is still waiting on your copy.",
+          "reason": "Keeps the client responsible for supplying the copy."
+        },
+        {
+          "sourceExcerpt": "If it arrives by Tuesday, I can finish the review by Thursday; otherwise I’ll send a revised date.",
+          "draftExcerpt": "If you send it by Tuesday, I can finish the review by Thursday; otherwise, I’ll send you a revised date.",
+          "reason": "Preserves the condition and fallback."
+        }
+      ],
+      "questions": [
+        {
+          "id": "copy-owner",
+          "answer": "The client (the recipient) must supply the copy.",
+          "pass": true
+        },
+        {
+          "id": "deadline-condition",
+          "answer": "The copy must arrive by Tuesday.",
+          "pass": true
+        },
+        {
+          "id": "fallback",
+          "answer": "The sender will send a revised date.",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "item-a9b70739ef48",
+      "meaning": "preserved",
+      "completeness": "complete",
+      "usefulness": "use_unchanged",
+      "evidence": [
+        {
+          "sourceExcerpt": "The studio closes at 5 pm on Mondays.",
+          "draftExcerpt": "The studio closes at 5 pm on Mondays.",
+          "reason": "Preserves the usual closing time."
+        },
+        {
+          "sourceExcerpt": "Existing bookings on 23 June can still run until 6 pm because the building manager approved a one-off extension.",
+          "draftExcerpt": "Existing bookings on 23 June may run until 6 pm under a one-off extension approved by the building manager.",
+          "reason": "Keeps the exception limited to existing bookings on 23 June."
+        },
+        {
+          "sourceExcerpt": "New bookings cannot be added after 5 pm.",
+          "draftExcerpt": "New bookings cannot be added after 5 pm.",
+          "reason": "Retains the restriction on new bookings."
+        }
+      ],
+      "questions": [
+        {
+          "id": "usual-rule",
+          "answer": "5 pm.",
+          "pass": true
+        },
+        {
+          "id": "exception",
+          "answer": "Existing bookings on 23 June may run until 6 pm.",
+          "pass": true
+        },
+        {
+          "id": "new-bookings",
+          "answer": "No.",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "item-e6fa4e2eaba6",
+      "meaning": "preserved",
+      "completeness": "complete",
+      "usefulness": "use_unchanged",
+      "evidence": [
+        {
+          "sourceExcerpt": "Please send the signed form by 3 pm on Tuesday so I can submit it that afternoon.",
+          "draftExcerpt": "Could you send the signed form by Tuesday at 3 pm? I can submit it that afternoon.",
+          "reason": "Makes the request more natural while retaining the deadline and same-afternoon submission."
+        }
+      ],
+      "questions": []
+    },
+    {
+      "id": "item-42bd8629262e",
+      "meaning": "preserved",
+      "completeness": "complete",
+      "usefulness": "use_unchanged",
+      "evidence": [
+        {
+          "sourceExcerpt": "The studio closes at 5 pm on Mondays.",
+          "draftExcerpt": "The studio closes at 5 pm on Mondays.",
+          "reason": "Preserves the usual closing time."
+        },
+        {
+          "sourceExcerpt": "Existing bookings on 23 June can still run until 6 pm because the building manager approved a one-off extension.",
+          "draftExcerpt": "Existing bookings on 23 June may run until 6 pm under a one-off extension approved by the building manager.",
+          "reason": "Keeps the exception limited to existing bookings on 23 June."
+        },
+        {
+          "sourceExcerpt": "New bookings cannot be added after 5 pm.",
+          "draftExcerpt": "New bookings cannot be added after 5 pm.",
+          "reason": "Retains the restriction on new bookings."
+        }
+      ],
+      "questions": [
+        {
+          "id": "usual-rule",
+          "answer": "5 pm.",
+          "pass": true
+        },
+        {
+          "id": "exception",
+          "answer": "Existing bookings on 23 June may run until 6 pm.",
+          "pass": true
+        },
+        {
+          "id": "new-bookings",
+          "answer": "No.",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "item-eef26446eb54",
+      "meaning": "preserved",
+      "completeness": "complete",
+      "usefulness": "use_unchanged",
+      "evidence": [
+        {
+          "sourceExcerpt": "Mara review the figures.",
+          "draftExcerpt": "Mara will review the figures.",
+          "reason": "Keeps review ownership with Mara."
+        },
+        {
+          "sourceExcerpt": "I’ll change file after she tell me.",
+          "draftExcerpt": "I’ll update the file after she tells me.",
+          "reason": "Keeps the file update with the sender after Mara reports back."
+        },
+        {
+          "sourceExcerpt": "If all okay, maybe we can send Friday.",
+          "draftExcerpt": "If everything is approved, we may be able to send it on Friday.",
+          "reason": "Sending remains conditional and tentative."
+        }
+      ],
+      "questions": [
+        {
+          "id": "review-owner",
+          "answer": "Mara reviews the figures.",
+          "pass": true
+        },
+        {
+          "id": "file-owner",
+          "answer": "The sender changes the file after Mara reports back.",
+          "pass": true
+        },
+        {
+          "id": "uncertain-send",
+          "answer": "No; Friday is only a possibility if everything is satisfactory.",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "item-8f4e4d21c7d9",
+      "meaning": "changed",
+      "completeness": "incomplete",
+      "usefulness": "edit",
+      "evidence": [
+        {
+          "sourceExcerpt": "The replacement unit can ship on Monday if the safety check passes; otherwise dispatch moves to Thursday.",
+          "draftExcerpt": "The replacement unit can ship Monday if the safety check passes.",
+          "reason": "Retains the condition but omits the Thursday fallback required by the task."
+        }
+      ],
+      "questions": []
+    },
+    {
+      "id": "item-62945f642139",
+      "meaning": "preserved",
+      "completeness": "complete",
+      "usefulness": "use_unchanged",
+      "evidence": [
+        {
+          "sourceExcerpt": "We have not confirmed the venue yet.",
+          "draftExcerpt": "We have not confirmed the venue yet.",
+          "reason": "Leaves the already-clear sentence unchanged and preserves its pending status."
+        }
+      ],
+      "questions": [
+        {
+          "id": "status",
+          "answer": "No, the venue has not been confirmed.",
+          "pass": true
+        },
+        {
+          "id": "time",
+          "answer": "Confirmation remains outstanding at the time of writing.",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "item-45ae649ab1f2",
+      "meaning": "preserved",
+      "completeness": "incomplete",
+      "usefulness": "edit",
+      "evidence": [
+        {
+          "sourceExcerpt": "The team will review the proposal next week.",
+          "draftExcerpt": "The team will review the proposal next week.",
+          "reason": "The draft does not name Wednesday as requested by the task context."
+        },
+        {
+          "sourceExcerpt": "Make this more specific by naming the day, which the context says is Wednesday.",
+          "draftExcerpt": "The team will review the proposal next week.",
+          "reason": "Leaves out the authorised specific day."
+        }
+      ],
+      "questions": []
+    },
+    {
+      "id": "item-0a97ab06b739",
+      "meaning": "preserved",
+      "completeness": "complete",
+      "usefulness": "use_unchanged",
+      "evidence": [
+        {
+          "sourceExcerpt": "We have not confirmed the venue yet.",
+          "draftExcerpt": "We have not confirmed the venue yet.",
+          "reason": "Leaves the already-clear sentence unchanged and preserves its pending status."
+        }
+      ],
+      "questions": [
+        {
+          "id": "status",
+          "answer": "No, the venue has not been confirmed.",
+          "pass": true
+        },
+        {
+          "id": "time",
+          "answer": "Confirmation remains outstanding at the time of writing.",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "item-8909ccf65307",
+      "meaning": "changed",
+      "completeness": "incomplete",
+      "usefulness": "reject",
+      "evidence": [
+        {
+          "sourceExcerpt": "I’ll send the agenda after Priya confirms the attendee list.",
+          "draftExcerpt": "Priya will send the agenda after I confirm the attendee list.",
+          "reason": "Reverses who sends the agenda and who confirms the attendee list."
+        }
+      ],
+      "questions": []
+    },
+    {
+      "id": "item-2d2569f264ac",
+      "meaning": "preserved",
+      "completeness": "complete",
+      "usefulness": "use_unchanged",
+      "evidence": [
+        {
+          "sourceExcerpt": "I reviewed screens one and two.",
+          "draftExcerpt": "I’ve reviewed screens one and two.",
+          "reason": "Reports only the first two screens as reviewed."
+        },
+        {
+          "sourceExcerpt": "Screen three is waiting for your copy.",
+          "draftExcerpt": "Screen three is waiting on your copy.",
+          "reason": "Keeps the client responsible for supplying the copy."
+        },
+        {
+          "sourceExcerpt": "If it arrives by Tuesday, I can finish the review by Thursday; otherwise I’ll send a revised date.",
+          "draftExcerpt": "If you send it by Tuesday, I can finish the review by Thursday; otherwise, I’ll send you a revised date.",
+          "reason": "Preserves conditional timing and fallback."
+        }
+      ],
+      "questions": [
+        {
+          "id": "copy-owner",
+          "answer": "The client (the recipient) must supply the copy.",
+          "pass": true
+        },
+        {
+          "id": "deadline-condition",
+          "answer": "The copy must arrive by Tuesday.",
+          "pass": true
+        },
+        {
+          "id": "fallback",
+          "answer": "The sender will send a revised date.",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "item-6ce786e5629a",
+      "meaning": "uncertain",
+      "completeness": "complete",
+      "usefulness": "edit",
+      "evidence": [
+        {
+          "sourceExcerpt": "I’ll change file after she tell me.",
+          "draftExcerpt": "I’ll update the file after she tells me she’s finished.",
+          "reason": "Adds that Mara has finished, a detail not stated in the source's report-back condition."
+        },
+        {
+          "sourceExcerpt": "If all okay, maybe we can send Friday.",
+          "draftExcerpt": "If everything is okay, we may be able to send it on Friday.",
+          "reason": "Keeps Friday sending conditional and tentative."
+        }
+      ],
+      "questions": [
+        {
+          "id": "review-owner",
+          "answer": "Mara reviews the figures.",
+          "pass": true
+        },
+        {
+          "id": "file-owner",
+          "answer": "The sender updates the file after Mara tells them she’s finished.",
+          "pass": false
+        },
+        {
+          "id": "uncertain-send",
+          "answer": "No; Friday is only a possibility if everything is satisfactory.",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "caseId": "case-33bd424fa054",
+      "outcome": "tie",
+      "preferredIds": [
+        "item-a9b70739ef48",
+        "item-42bd8629262e",
+        "item-d67d28788468"
+      ],
+      "reason": "All three drafts are identical and preserve every rule and exception."
+    },
+    {
+      "caseId": "case-55633dafc32d",
+      "outcome": "preferred",
+      "preferredIds": [
+        "item-eef26446eb54",
+        "item-201fb7d2bedd"
+      ],
+      "reason": "These two preserve ownership and sequence without adding that Mara must explicitly say she has finished; they are equally usable."
+    },
+    {
+      "caseId": "case-9b7147d28710",
+      "outcome": "tie",
+      "preferredIds": [
+        "item-62945f642139",
+        "item-8f1a1fc4e65f",
+        "item-0a97ab06b739"
+      ],
+      "reason": "All three are identical and correctly leave the clear sentence unchanged."
+    },
+    {
+      "caseId": "case-c832511bb101",
+      "outcome": "tie",
+      "preferredIds": [
+        "item-2d2569f264ac",
+        "item-3e6d5e5bb861",
+        "item-cea8c6994811"
+      ],
+      "reason": "All preserve the client's copy responsibility, conditional timing, fallback, and limited review status."
+    }
+  ]
+}

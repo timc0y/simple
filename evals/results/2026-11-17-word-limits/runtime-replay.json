@@ -1,0 +1,95 @@
+{
+  "kind": "deterministic archived-output replay; no model inference",
+  "outcomes": [
+    {
+      "repo": "simple",
+      "condition": "current",
+      "status": "fallback",
+      "wordLimit": {
+        "status": "failed",
+        "maxWords": 65,
+        "actualWords": 79,
+        "excessWords": 14,
+        "basis": "whitespace",
+        "locale": null
+      },
+      "semanticPreservation": "not_run",
+      "providerCallbacks": 1
+    },
+    {
+      "repo": "simple",
+      "condition": "candidate",
+      "status": "fallback",
+      "wordLimit": {
+        "status": "failed",
+        "maxWords": 65,
+        "actualWords": 83,
+        "excessWords": 18,
+        "basis": "whitespace",
+        "locale": null
+      },
+      "semanticPreservation": "not_run",
+      "providerCallbacks": 1
+    },
+    {
+      "repo": "simple",
+      "condition": "current-repeat",
+      "status": "fallback",
+      "wordLimit": {
+        "status": "failed",
+        "maxWords": 65,
+        "actualWords": 73,
+        "excessWords": 8,
+        "basis": "whitespace",
+        "locale": null
+      },
+      "semanticPreservation": "not_run",
+      "providerCallbacks": 1
+    },
+    {
+      "repo": "communicator",
+      "condition": "current",
+      "status": "fallback",
+      "wordLimit": {
+        "status": "failed",
+        "maxWords": 70,
+        "actualWords": 85,
+        "excessWords": 15,
+        "basis": "whitespace",
+        "locale": null
+      },
+      "semanticPreservation": "not_run",
+      "providerCallbacks": 1
+    },
+    {
+      "repo": "communicator",
+      "condition": "candidate",
+      "status": "fallback",
+      "wordLimit": {
+        "status": "failed",
+        "maxWords": 70,
+        "actualWords": 83,
+        "excessWords": 13,
+        "basis": "whitespace",
+        "locale": null
+      },
+      "semanticPreservation": "not_run",
+      "providerCallbacks": 1
+    },
+    {
+      "repo": "communicator",
+      "condition": "current-repeat",
+      "status": "fallback",
+      "wordLimit": {
+        "status": "failed",
+        "maxWords": 70,
+        "actualWords": 82,
+        "excessWords": 12,
+        "basis": "whitespace",
+        "locale": null
+      },
+      "semanticPreservation": "not_run",
+      "providerCallbacks": 1
+    }
+  ]
+}

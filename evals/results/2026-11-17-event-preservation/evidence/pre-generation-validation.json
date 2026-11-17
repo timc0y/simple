@@ -1,0 +1,16 @@
+{
+  "caseEdits": [
+    "Simple long summary: clarified inventory/escalation scope before generation so unrelated actionable closing/charging details do not make 65 words infeasible; corrected one nonliteral source excerpt.",
+    "Communicator long summary: clarified booking/card scope before generation, including host authority, so safety/closing/contact tasks are outside the 70-word summary.",
+    "Replaced topic-overlapping authored voice examples with two unrelated, lead-authored synthetic style examples; same examples in every condition."
+  ],
+  "summaryFeasibilityWordCounts": {
+    "simple": 60,
+    "communicator": 60
+  },
+  "wordBudgetConvention": "Whitespace-delimited words, same convention for every output.",
+  "caseSourceTextsChanged": false,
+  "questionsSourceGrounded": true,
+  "feasibilityDraftsNotSuppliedToWritersOrReaders": true,
+  "casesSha256": "9e77a694d9c5a650e92e1a61a7b9bca10c72c7aa43f3a216e75b5a00400aa6f8"
+}

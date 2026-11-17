@@ -1,0 +1,37 @@
+{
+  "registeredAt": "2026-11-17T12:46:37.267676+00:00",
+  "scope": "Small candidate instruction comparison using new independent synthetic cases and draft-only readers; lead source/operation assessment.",
+  "modelRequested": "gpt-6-luna",
+  "reasoning": "medium",
+  "caseAuthorTasks": 1,
+  "draftBatches": 6,
+  "draftOnlyReaderBatches": 4,
+  "totalTaskBound": 11,
+  "conditions": [
+    "current",
+    "candidate",
+    "current-repeat"
+  ],
+  "casesPerRepo": 4,
+  "repos": [
+    "simple",
+    "communicator"
+  ],
+  "paidApiCalls": 0,
+  "automaticRetries": 0,
+  "stop": "Stop at eleven tasks; no draft repairs, case substitutions or candidate tuning after results.",
+  "candidateChange": "One sentence preserving event identity within a condition, added to the existing preservation rule. No active skill change before evaluation.",
+  "acceptance": "Inspect independently authored source obligations and requested edit scope for every draft. Candidate can be a useful lead only if it repairs a failure shared by both current batches, introduces no current-pass/candidate-fail case, and both draft-only reading orders pass evidence/control checks. Small sample cannot establish broad quality gain. Otherwise retain current guidance.",
+  "controls": "Four lead-authored reader controls, frozen before reading; all required identities and literal draft excerpts must validate. Source/gold hidden from reader input.",
+  "limits": [
+    "Fresh contexts share filesystem; instruction-only isolation.",
+    "Same model alias writes and reads. Exact backend revision, token use and costs not exposed.",
+    "Lead performs source/operation adjudication; not human-reader comprehension, personal voice, natural activation or blind style preference."
+  ],
+  "frozenMethodHashes": {
+    "simple-candidate.txt": "6d1e0eb39dadf56396b46fe36c512485b8ea6b7ac29811ec5c7457e5c130382c",
+    "communicator-candidate.txt": "407ac495cb5580c2be0af62e99f08bad1f9602d2aa598740ece05e4279956d2b",
+    "simple-current.txt": "99d4e935835d70a4965110c009a695265f022bf8e217c35ac9f8dc39e033e596",
+    "communicator-current.txt": "add37297c8e3211c0c417c22457efd70217c4b6c5b9aa31498bc842fc8ffb6ec"
+  }
+}

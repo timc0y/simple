@@ -1,0 +1,33 @@
+{
+  "registeredAt": "2026-11-17T13:34:37.024Z",
+  "modelRequested": "gpt-6-luna",
+  "reasoning": "medium",
+  "modelTaskBound": 8,
+  "automaticRetries": 0,
+  "paidApiCalls": 0,
+  "scope": "Development calibration of the actual exported meaning-review prompt with user payload captured through the actual library adapt path. Recorded model verdicts will be replayed through the unchanged parser and runtime.",
+  "cases": "Eight lead-authored controls: four faithful rewrites and four single-defect counterparts, with no style preference ranking.",
+  "acceptance": "All eight raw verdicts must parse with literal excerpts. Faithful controls should be preserved and faulty controls rejected. Report false acceptance, false rejection, invalid output and runtime fallback separately; no instruction tuning or retries.",
+  "stop": "Stop after eight fresh native tasks; retain all results.",
+  "limits": [
+    "The captured system/user text is supplied via a native task file, not verified raw-provider role delivery.",
+    "Native collaboration does not expose/enforce the reference provider temperature or output-token limit, although the actual runtime request records temperature 0 and maxTokens 1500.",
+    "Same Luna alias across controls; this is not a configured-provider benchmark, installed plugin test, personal voice or human comprehension study.",
+    "Sources are lead-authored development controls, not independently authored or held-out quality cases.",
+    "Exact backend revision, usage and cost not exposed."
+  ],
+  "sourceIdentities": {
+    "writing.ts": "6c406487a0dcbb1513238d9bd7540f0d1f9a5b61c992d49cef0caf5a803751af",
+    "runtime.ts": "21440ee2ad558fa6b8ada88a9cc32140bdfd54c9c5ef144904d2d3f469a9a117"
+  },
+  "inputHashes": {
+    "ea4d20fd0b29.input.json": "60762c85239c09efe32e0cc3b159a2016b2986497756b526cb456231e0403856",
+    "68cfee5e8423.input.json": "ebcc4d4c8656c28644de60208af52192ef2ec319c4ab167a49a49dbdb968d83d",
+    "d240102c9384.input.json": "7fc8cbeb6cfdd1131aed45b2f9432559f02729c86eaeee33496c3ae78a7ff7da",
+    "5cc482556e6c.input.json": "ee65efec6a039bc50e55d2596f6ee1c15eacb0f360e81f80519bd57271bb575a",
+    "2c745fbeb431.input.json": "2a54469d6483d135e02a6045a48f262128c5f2b54fb40a0390693c370e384250",
+    "ea1c642ee5ba.input.json": "23ed69d72f4f91ea3eb4dc8ec92d86a5f2b553848ec07842165efcbcedd72926",
+    "08c7eb15d346.input.json": "491542f97db9d78c8e19f36a5ec6ac5f7102a5d4091e921ab3d48098d6fed867",
+    "62320ec400a4.input.json": "bdcde0ded88a4c7cf5f44d095f082c45281cdbd745c5c4f46b9c4573b1f383a2"
+  }
+}

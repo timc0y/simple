@@ -91,3 +91,37 @@ A search with no result does not prove the event never happened.
 Resolve conflicts by source proximity, direct evidence and applicability, not the number of matching accounts.
 Keep consequential competing explanations until an observation distinguishes them.
 Use `learning.md` for session-history recovery or adoption of working conventions.
+
+## Recent-source research and acquisition
+
+For a time-bounded question, record the actual search window and distinguish an
+item's publication date, the event date and retrieval time. Follow a discussed fix
+or feature to its current primary source. Group reposts and reports of the same
+underlying event before judging corroboration: ten posts repeating one announcement
+are one origin, not ten independent confirmations. Engagement can locate a topic;
+it cannot verify the claim. Name unavailable source families rather than presenting
+a partly successful search as comprehensive.
+
+Use the least acquisition needed: an available source connector or HTTP response
+for static material; an existing browser for script-rendered content or actual
+interaction. Retain the resolved URL, status and extraction boundary when they affect
+identity. A successful request returning a login/challenge page is not target evidence.
+If a changed page requires an adaptive selector, verify the recovered entity and
+field against the current page; a plausible match is not proof of the same record.
+Do not add a crawler, browser download or proxy layer to a simple read by default.
+
+For repository graphs or reverse-engineered inventories, distinguish explicit source
+relationships, resolution-based inference and ambiguity. Check edge direction and the
+current source of a decision-changing path. A path inherits its weakest unverified
+relationship; a numeric confidence label is not calibrated probability. Retain the
+source record when viewing a summary: exhausting returned pages does not establish
+complete source discovery, and a partial refresh must not erase unread evidence.
+Use an available graph or analysis tool when it resolves a real navigation problem;
+ordinary source search remains sufficient for a small task.
+
+Adapted from selected [Last30Days synthesis](https://github.com/mvanhorn/last30days-skill/blob/1b1492777016d262a6e1ab7a5402e066766d5061/skills/last30days/references/synthesis.md),
+[Scrapling acquisition](https://github.com/D4Vinci/Scrapling/blob/2998c9ebba52ef6116f0a483c7d2f21908250024/agent-skill/Scrapling-Skill/references/fetching/choosing.md),
+[Graphify extraction](https://github.com/Graphify-Labs/graphify/blob/480b61ed91cbc08177dc2c60caa9ffd6c9b95749/graphify/skills/codex/references/extraction-spec.md)
+and [REA evidence reuse](https://github.com/morluto/rea/blob/05be423acbdf3a56673bdbd3004e4b500c0f5217/.agents/skills/reverse-engineer-anything/references/evidence-workflows.md).
+The [adoption record](../../../research/ten-repositories-2026-11-17.md) states coverage
+and intentional differences. These tools are not required dependencies.

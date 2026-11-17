@@ -1,0 +1,9 @@
+{
+  "purpose": "Remove correct actor names, dates and presupposed events from draft-only reader questions.",
+  "timing": "Prepared after generation began but before any lead semantic inspection of drafts or any reading task.",
+  "writerInputsChanged": false,
+  "caseSourcesChanged": false,
+  "sameQuestionsAllConditions": true,
+  "originalSourceQuestionsAndGoldRetained": true,
+  "controlData": "Four lead-authored controls reused unchanged from preceding draft-only diagnostic; development calibration, not new held-out controls."
+}

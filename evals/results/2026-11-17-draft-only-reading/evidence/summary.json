@@ -1,0 +1,23 @@
+{
+  "registeredModelTasks": 2,
+  "completedModelTasks": 2,
+  "modelRequested": "gpt-6-luna",
+  "reasoning": "medium",
+  "revisionTokensCost": "not exposed; unknown",
+  "itemsPerOrder": 10,
+  "orders": 2,
+  "automatedValidation": "20 item/question identities complete; all answer evidence literal within the corresponding draft; supported/not_stated/uncertain labels valid",
+  "leadControlReview": {
+    "forward": 4,
+    "reverse": 4,
+    "totalControlsPerOrder": 4
+  },
+  "leadObservedDraftReview": {
+    "bothOrdersReadDraftEventCorrectly": 6,
+    "existingDraftsWithSourceEventMismatch": 4,
+    "existingDraftsWithSourceEventMatch": 2
+  },
+  "writingQualityGainEstablished": false,
+  "causalEffectOfSourceWithholdingEstablished": false,
+  "cooperativeIsolationOnly": true
+}

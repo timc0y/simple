@@ -1,0 +1,30 @@
+{
+  "eabff7336ff1": {
+    "kind": "repair",
+    "id": "simple-current"
+  },
+  "68da14eb7d24": {
+    "kind": "repair",
+    "id": "simple-candidate"
+  },
+  "864351d1c8bd": {
+    "kind": "repair",
+    "id": "simple-current-repeat"
+  },
+  "control-5feceb66": {
+    "kind": "control",
+    "expected": "receipt"
+  },
+  "control-6b86b273": {
+    "kind": "control",
+    "expected": "post on Monday; arrival that day is not required"
+  },
+  "control-d4735e3a": {
+    "kind": "control",
+    "expected": "none"
+  },
+  "control-4e074085": {
+    "kind": "control",
+    "expected": "Lina; Friday is proposed, not confirmed"
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "recordedAt": "2026-11-17T12:56:45.928026+00:00",
+  "conditionMappingRead": false,
+  "readerAnswersRead": false,
+  "scope": "Lead task/source inspection of opaque variants before unblinding; not an independent human-reader study. Source questions are not the sole source inventory.",
+  "verdicts": [
+    {
+      "id": "4543f5adb7bd",
+      "caseId": "simple-conditions-timing",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": []
+    },
+    {
+      "id": "65fcf45a8647",
+      "caseId": "simple-conditions-timing",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": []
+    },
+    {
+      "id": "ef3d31207033",
+      "caseId": "simple-conditions-timing",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": []
+    },
+    {
+      "id": "311478225114",
+      "caseId": "simple-long-exception-summary",
+      "content": "preserved",
+      "operation": "failed",
+      "usableUnchanged": false,
+      "notes": [
+        "73 whitespace-delimited words exceeds 65.",
+        "Checking each numbered sleeve is a less explicit paraphrase of checking that every player is in its sleeve; retain as a wording ambiguity, not a confirmed additional failure."
+      ]
+    },
+    {
+      "id": "bc5b895eb0a5",
+      "caseId": "simple-long-exception-summary",
+      "content": "preserved",
+      "operation": "failed",
+      "usableUnchanged": false,
+      "notes": [
+        "83 whitespace-delimited words exceeds 65."
+      ]
+    },
+    {
+      "id": "dfd24c98484e",
+      "caseId": "simple-long-exception-summary",
+      "content": "preserved",
+      "operation": "failed",
+      "usableUnchanged": false,
+      "notes": [
+        "79 whitespace-delimited words exceeds 65.",
+        "Checking each numbered sleeve is a less explicit paraphrase of checking that every player is in its sleeve; retain as a wording ambiguity, not a confirmed additional failure."
+      ]
+    },
+    {
+      "id": "402f2af317ac",
+      "caseId": "simple-correction-unknowns",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": []
+    },
+    {
+      "id": "7b3006b45593",
+      "caseId": "simple-correction-unknowns",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": []
+    },
+    {
+      "id": "dba965fb5647",
+      "caseId": "simple-correction-unknowns",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": []
+    },
+    {
+      "id": "5ca77c5d294e",
+      "caseId": "simple-punctuation-noop",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": [
+        "Byte-identical to approved source; exact no-op passed."
+      ]
+    },
+    {
+      "id": "a0ff9a265699",
+      "caseId": "simple-punctuation-noop",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": [
+        "Byte-identical to approved source; exact no-op passed."
+      ]
+    },
+    {
+      "id": "b4b0100830dc",
+      "caseId": "simple-punctuation-noop",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": [
+        "Byte-identical to approved source; exact no-op passed."
+      ]
+    },
+    {
+      "id": "177f61f9279b",
+      "caseId": "communicator-conditions-timing",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": []
+    },
+    {
+      "id": "7dbad062dcd2",
+      "caseId": "communicator-conditions-timing",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": []
+    },
+    {
+      "id": "b0e3fac4eb2b",
+      "caseId": "communicator-conditions-timing",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": []
+    },
+    {
+      "id": "2acb6305530b",
+      "caseId": "communicator-long-exception-summary",
+      "content": "incomplete",
+      "operation": "failed",
+      "usableUnchanged": false,
+      "notes": [
+        "83 whitespace-delimited words exceeds 70.",
+        "The explicit prohibition on using last month\u2019s printout is not retained. Specifying the latest tablet list is not an explicit prohibition on substituting an old printout.",
+        "The requested greeting step is omitted."
+      ]
+    },
+    {
+      "id": "7ca9f0b555ba",
+      "caseId": "communicator-long-exception-summary",
+      "content": "incomplete",
+      "operation": "failed",
+      "usableUnchanged": false,
+      "notes": [
+        "85 whitespace-delimited words exceeds 70.",
+        "The explicit prohibition on using last month\u2019s printout is not retained. Specifying the latest tablet list is not an explicit prohibition on substituting an old printout.",
+        "The requested greeting step is omitted."
+      ]
+    },
+    {
+      "id": "88e2580ac379",
+      "caseId": "communicator-long-exception-summary",
+      "content": "incomplete",
+      "operation": "failed",
+      "usableUnchanged": false,
+      "notes": [
+        "82 whitespace-delimited words exceeds 70.",
+        "The explicit prohibition on using last month\u2019s printout is not retained. Specifying the latest tablet list is not an explicit prohibition on substituting an old printout."
+      ]
+    },
+    {
+      "id": "28d1e6665194",
+      "caseId": "communicator-correction-unknowns",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": [
+        "Correct location, attributed approximate time and unconfirmed status retained. Task prohibits inventing a cause; omission of an explicit no-reason sentence is not itself an invented cause or an operation failure."
+      ]
+    },
+    {
+      "id": "7f08f063a324",
+      "caseId": "communicator-correction-unknowns",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": [
+        "Correct location, attributed approximate time and unconfirmed status retained. Task prohibits inventing a cause; omission of an explicit no-reason sentence is not itself an invented cause or an operation failure."
+      ]
+    },
+    {
+      "id": "a435bd846bba",
+      "caseId": "communicator-correction-unknowns",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": [
+        "Correct location, attributed approximate time and unconfirmed status retained. Task prohibits inventing a cause; omission of an explicit no-reason sentence is not itself an invented cause or an operation failure."
+      ]
+    },
+    {
+      "id": "46c708c38f55",
+      "caseId": "communicator-punctuation-noop",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": [
+        "Byte-identical to approved source; exact no-op passed."
+      ]
+    },
+    {
+      "id": "73af4994dbb8",
+      "caseId": "communicator-punctuation-noop",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": [
+        "Byte-identical to approved source; exact no-op passed."
+      ]
+    },
+    {
+      "id": "ecbcad384ef7",
+      "caseId": "communicator-punctuation-noop",
+      "content": "preserved",
+      "operation": "passed",
+      "usableUnchanged": true,
+      "notes": [
+        "Byte-identical to approved source; exact no-op passed."
+      ]
+    }
+  ]
+}

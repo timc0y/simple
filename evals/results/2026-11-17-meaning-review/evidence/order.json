@@ -1,0 +1,42 @@
+[
+  {
+    "id": "5cc482556e6c",
+    "referenceMaxTokens": 1500,
+    "referenceTemperature": 0
+  },
+  {
+    "id": "ea1c642ee5ba",
+    "referenceMaxTokens": 1500,
+    "referenceTemperature": 0
+  },
+  {
+    "id": "08c7eb15d346",
+    "referenceMaxTokens": 1500,
+    "referenceTemperature": 0
+  },
+  {
+    "id": "2c745fbeb431",
+    "referenceMaxTokens": 1500,
+    "referenceTemperature": 0
+  },
+  {
+    "id": "ea4d20fd0b29",
+    "referenceMaxTokens": 1500,
+    "referenceTemperature": 0
+  },
+  {
+    "id": "d240102c9384",
+    "referenceMaxTokens": 1500,
+    "referenceTemperature": 0
+  },
+  {
+    "id": "68cfee5e8423",
+    "referenceMaxTokens": 1500,
+    "referenceTemperature": 0
+  },
+  {
+    "id": "62320ec400a4",
+    "referenceMaxTokens": 1500,
+    "referenceTemperature": 0
+  }
+]

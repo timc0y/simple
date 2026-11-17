@@ -1,0 +1,19 @@
+{
+  "analysis.json": "08c3cd4784a3aa7eaa86e7b05dddb188b969bdb87b2d963dcbe7ef7d25940811",
+  "author-original.json": "113242a953d9d8bdbfed32e84cffecf381d303508afa926bfeb13301dc52f830",
+  "cases.json": "b597519964b54a67d5867884be7e7cfa9f3548411d5cb1a6be85bb362dffc690",
+  "condition-key.json": "ea80e1b26b3e5cd7b543313eb633ed1664ed07514258a84253dbd5a560d64b99",
+  "drafts-current.json": "175a5b77151c33ac4fe5bee2a6904d54f1bc533cad62c06d75a5140b73a9f691",
+  "drafts-minimal.json": "3ccb6b2248d6aa68361f055cb2c84d5c2ce3330921bb50d1566a35dd4a321afd",
+  "drafts-repeat.json": "d68549fc8206f054bea8b507e946ddd896174ad10d051bda5e1e1b2540f73312",
+  "grader-forward.input.json": "63fa856eed13be2b2e8ec0a26d4762d5cc30d261ef96132b96ab204f58fdbbaf",
+  "grader-forward.json": "85db25835710cf90987ef294e645b883345224297f61554d1ed6c342bf7c65b6",
+  "grader-reverse.input.json": "371f802011e0788be5b52f0776ea56704dd4943734e6433b545a1246471fb6f4",
+  "grader-reverse.json": "ce99eb36dfbfaf05c0057fb4d2be543a167407f245a98a47ac633b3a271cbfce",
+  "input-current.json": "c590384997bed03e8f024c9b24200f076d572921b0519db4e61621750844160e",
+  "input-minimal.json": "15337d425db730c505f27a092afc1c49d3165e96f707975860b1b9337f111026",
+  "input-repeat.json": "c590384997bed03e8f024c9b24200f076d572921b0519db4e61621750844160e",
+  "pre-generation-validation.json": "f5bcf2d24c3f7363544cea9e504b9601044de420f27ba35b56418b2c8e3730a6",
+  "run.json": "9cb15c4d1801d60bd3644bf89cf4add051939e83cf5405702485ed51a1245cbc",
+  "task-ledger.json": "9fc7f02b6344a670256c6b6b17ccf568dd71ba7361e064372cdc59962ff060da"
+}

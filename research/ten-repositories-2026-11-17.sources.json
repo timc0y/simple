@@ -1,0 +1,271 @@
+{
+  "reviewedOn": "2026-11-17",
+  "method": "Selected skill, reference and mechanism source inspection. Not exhaustive repository audit. Upstream code was read, not executed; no upstream package installed. Local guidance and scanner additions independently written.",
+  "sources": [
+    {
+      "repo": "DietrichGebert/ponytail",
+      "sha": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
+      "license": "MIT",
+      "filesRetrieved": [
+        {
+          "path": "LICENSE",
+          "bytes": 1071,
+          "sha256": "fb1bc6909ac3ef82d5c22106e32ef682b0cff66788fa915fb9b53b15c9d2f3ab"
+        },
+        {
+          "path": "skills/ponytail/SKILL.md",
+          "bytes": 3496,
+          "sha256": "9badd22a32e19cb884e46dfa8d3aae82bb81dfa5484105b8b4f0262df823a509"
+        },
+        {
+          "path": "skills/ponytail-gain/SKILL.md",
+          "bytes": 2164,
+          "sha256": "231034a896d6762e4b5c8468287083422c56b499119976ec9f76821f7d083090"
+        },
+        {
+          "path": "skills/ponytail-review/SKILL.md",
+          "bytes": 5143,
+          "sha256": "33fe4ebe22a460924e5d4a261e223df22e409cc94ab76182bee9fb91a3ef022e"
+        }
+      ]
+    },
+    {
+      "repo": "nutlope/hallmark",
+      "sha": "04977e15f3dfd6ee4b74c887dac3eb52665d6c92",
+      "license": "MIT",
+      "filesRetrieved": [
+        {
+          "path": "LICENSE",
+          "bytes": 1078,
+          "sha256": "06088a8b94598626f27612dea42300154bf7be967c85d9d3eee4490cb056af7d"
+        },
+        {
+          "path": "skills/hallmark/SKILL.md",
+          "bytes": 18239,
+          "sha256": "25a1ff92d925b2389e8409f42fb8ad7e033fceca8b5d1f07ed4ca4c28da53dc3"
+        },
+        {
+          "path": "skills/hallmark/scripts/sloplint-render.mjs",
+          "bytes": 99965,
+          "sha256": "228f14808cbf872ab6dcc5f4f9e8d58a5a9060028f1530bec80e24dbd12737f3"
+        },
+        {
+          "path": "skills/hallmark/scripts/sloplint.mjs",
+          "bytes": 231740,
+          "sha256": "23fb94903ae0e3b709019380443163bdc50390a246911e3423b83695e4bc8037"
+        }
+      ]
+    },
+    {
+      "repo": "mvanhorn/last30days-skill",
+      "sha": "1b1492777016d262a6e1ab7a5402e066766d5061",
+      "license": "MIT",
+      "filesRetrieved": [
+        {
+          "path": "skills/last30days/SKILL.md",
+          "bytes": 31980,
+          "sha256": "86d0cff3249b3b65fb9db39e11c70865d26c6fe822f19a69b6efea82750cd67c"
+        },
+        {
+          "path": "skills/last30days/references/research-runbook.md",
+          "bytes": 74218,
+          "sha256": "1867e15d2c949bfe6e9307d36d4387f5023279a2b5b9656661dedbbd8e13887c"
+        },
+        {
+          "path": "skills/last30days/references/synthesis.md",
+          "bytes": 27312,
+          "sha256": "97962128515659ca6e6a082660cb0b19d8bed7fc86f2c239d34282d6469e7c8f"
+        }
+      ]
+    },
+    {
+      "repo": "blader/humanizer",
+      "sha": "b48c832f0f809c1b5658edbb838c2521b72f2413",
+      "license": "MIT",
+      "filesRetrieved": [
+        {
+          "path": "LICENSE",
+          "bytes": 1066,
+          "sha256": "4ac4810254ab36d45419141aeb8e69bf50652cfafe5b2dab947d06d44e5cbf96"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 32394,
+          "sha256": "804a119e924ac30295b298213e0b71b3e38b2667b8ef4fb7b69e9246369b9045"
+        }
+      ]
+    },
+    {
+      "repo": "pbakaus/impeccable",
+      "sha": "d41d9860b0094dcb68030657da63461212835aaa",
+      "license": "Apache-2.0",
+      "filesRetrieved": [
+        {
+          "path": ".agent/skills/impeccable/SKILL.md",
+          "bytes": 12870,
+          "sha256": "8dae31cd4f2ebc0f78e2072b15e29ddd1f897618a03f96eb63359f8c9761a054"
+        },
+        {
+          "path": ".agent/skills/impeccable/reference/critique.md",
+          "bytes": 26569,
+          "sha256": "dae0196a437bd85ad333cd26745793c264b4d53cdfc48cdf6bd39451bd62496c"
+        },
+        {
+          "path": ".agent/skills/impeccable/reference/distill.md",
+          "bytes": 5605,
+          "sha256": "56361412a3b882f44d665de12f1f97fde69de6feee7666df8cc441eee1152761"
+        },
+        {
+          "path": ".agent/skills/impeccable/reference/extract.md",
+          "bytes": 3316,
+          "sha256": "6c943ab41da0b1de5d5f568c9801ff3566502a58ba9d4e82342a41dff1c93a6a"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 10766,
+          "sha256": "02bb8c3b4e70190e3986c0404ad2fd8d639b4f534252d82379cc1b502b6d1812"
+        }
+      ]
+    },
+    {
+      "repo": "morluto/rea",
+      "sha": "05be423acbdf3a56673bdbd3004e4b500c0f5217",
+      "license": "MIT",
+      "filesRetrieved": [
+        {
+          "path": ".agents/skills/reverse-engineer-anything/SKILL.md",
+          "bytes": 47237,
+          "sha256": "f4a725ddb3b5d3afe757a20e204760463f9305677f3204ce11bbe17aa7c5b754"
+        },
+        {
+          "path": ".agents/skills/reverse-engineer-anything/references/evidence-workflows.md",
+          "bytes": 12418,
+          "sha256": "ea6eaf1d11bb6d663503017aabc18e4c82b9f1f0277c35fc41ca63dda26ae602"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 1064,
+          "sha256": "798f9e4d18e49b30bf2f12696c8ced73dc4e1413da375a333d01281543a1ea8b"
+        }
+      ]
+    },
+    {
+      "repo": "Graphify-Labs/graphify",
+      "sha": "480b61ed91cbc08177dc2c60caa9ffd6c9b95749",
+      "license": "Apache-2.0",
+      "filesRetrieved": [
+        {
+          "path": "LICENSE",
+          "bytes": 11358,
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "graphify/skill-codex.md",
+          "bytes": 51680,
+          "sha256": "7511352c4cf6da3647462516de41e99a4be53d9ea106fd2e6fadf0bafb9740b0"
+        },
+        {
+          "path": "graphify/skills/codex/references/extraction-spec.md",
+          "bytes": 5423,
+          "sha256": "c9583d72b8007722e33e90daa840e46da54fafcc4e638b97dae5c2c1f9832c45"
+        },
+        {
+          "path": "graphify/skills/codex/references/query.md",
+          "bytes": 14775,
+          "sha256": "314e98daa21478e697643ec5b7cef5a35d04c4eb410037b37e22ac457610a147"
+        }
+      ]
+    },
+    {
+      "repo": "senlindesign/taste-skill",
+      "sha": "6dce223f2f5665d3636ca9a44ec3a7aa1322a9b8",
+      "license": "MIT declared by README badge",
+      "filesRetrieved": [
+        {
+          "path": "README.md",
+          "bytes": 10731,
+          "sha256": "f1b578149e438e21f7e67f28344f0ca6c496539a86dac5feb4b386fdc2622752"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 21346,
+          "sha256": "86baaf8bd95bbb7af5eed371c548f44d1ce4ff18c66e37ead9a350ffbbe1e597"
+        },
+        {
+          "path": "references/extract.js",
+          "bytes": 16187,
+          "sha256": "b6387fbe746c9467da9dee317903a1eaa4516310c17e4da8d394d7eb2f8bce11"
+        },
+        {
+          "path": "references/step2-pattern.md",
+          "bytes": 3207,
+          "sha256": "67a6190a2ae548f9a4e4c56f51f451627f919d7ddd92b97c207f579ce5b6e293"
+        },
+        {
+          "path": "references/step3-taste.md",
+          "bytes": 4052,
+          "sha256": "40417acab3c2bfe5803b6471ccec1abf98f8580395a7b3d1d29a8daf5a85787b"
+        },
+        {
+          "path": "references/step4-observer.md",
+          "bytes": 5149,
+          "sha256": "f9fc3eb4f1ae41d6be4c2c3d0318efa34f116d106d921a9cdc0a1b5f5259e6c8"
+        }
+      ]
+    },
+    {
+      "repo": "D4Vinci/Scrapling",
+      "sha": "2998c9ebba52ef6116f0a483c7d2f21908250024",
+      "license": "BSD-3-Clause; bundled agent skill also contains its own LICENSE.txt",
+      "filesRetrieved": [
+        {
+          "path": "LICENSE",
+          "bytes": 1499,
+          "sha256": "5c782ef0346e4fbfe0dc76fd435f181a0f1e4a1a7a6b13c169c6e74314ff5964"
+        },
+        {
+          "path": "agent-skill/Scrapling-Skill/SKILL.md",
+          "bytes": 27590,
+          "sha256": "3b9eced237fc5c1774cc9d16230ac55d28db706eaed5982d06f52aeb3552df2b"
+        },
+        {
+          "path": "agent-skill/Scrapling-Skill/references/fetching/choosing.md",
+          "bytes": 6447,
+          "sha256": "a2aeeca0f256e2ded491311c5b1e8f90a5108637d12c999760ea9aac74c27e45"
+        },
+        {
+          "path": "agent-skill/Scrapling-Skill/references/parsing/adaptive.md",
+          "bytes": 12777,
+          "sha256": "ca20857787e826ff380ca6c4e9483156c3f8feecd8e2285f8a9c630330481bcb"
+        }
+      ]
+    },
+    {
+      "repo": "cathrynlavery/diagram-design",
+      "sha": "f6db0decea96de66b901331a0f79a8d4b147ebae",
+      "license": "MIT",
+      "filesRetrieved": [
+        {
+          "path": "LICENSE",
+          "bytes": 1071,
+          "sha256": "bb7e12e91fecef43024111123ff784cec6c485585561d8b552557c0173b3ed29"
+        },
+        {
+          "path": "scripts/lint-render.py",
+          "bytes": 72685,
+          "sha256": "f9e4ea62e1bbabd7012ef8b60805dba0c2f10ee12de0e9627ec253c5dcfcda59"
+        },
+        {
+          "path": "skills/diagram-design/SKILL.md",
+          "bytes": 31967,
+          "sha256": "fba2015046dd6bfdd99b91c4b17c30bff5ebb3bd088de0e6863b41259c5026b8"
+        },
+        {
+          "path": "skills/diagram-design/references/semantic-patterns.md",
+          "bytes": 16679,
+          "sha256": "68bba2360c866b3a5525184457794e53f0c0250d7d51a1ff6591b8a4df13d867"
+        }
+      ]
+    }
+  ]
+}

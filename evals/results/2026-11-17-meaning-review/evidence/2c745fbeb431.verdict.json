@@ -1,0 +1,1 @@
+{"preserved":false,"changes":[{"before":"We have not booked the hall","after":"The hall is booked","reason":"The rewrite reverses the source's explicit statement that the hall has not been booked."},{"before":"Tuesday is only a proposed date","after":"for Tuesday","reason":"The rewrite turns a proposed date into a confirmed booking."}]}

@@ -1,0 +1,1175 @@
+{
+  "validComparison": false,
+  "countsAreDiagnosticOnly": true,
+  "validation": {
+    "forward": {
+      "artifactValid": false,
+      "errors": [
+        "item-cea8c6994811: draft quote not literal"
+      ],
+      "controls": [
+        {
+          "id": "control-faithful-paraphrase",
+          "matched": true,
+          "actual": {
+            "meaning": "preserved",
+            "completeness": "complete",
+            "usefulness": "use_unchanged"
+          }
+        },
+        {
+          "id": "control-responsibility-swap",
+          "matched": false,
+          "actual": {
+            "meaning": "changed",
+            "completeness": "incomplete",
+            "usefulness": "reject"
+          }
+        },
+        {
+          "id": "control-omitted-constraint",
+          "matched": false,
+          "actual": {
+            "meaning": "changed",
+            "completeness": "incomplete",
+            "usefulness": "edit"
+          }
+        },
+        {
+          "id": "control-faithful-no-improvement",
+          "matched": true,
+          "actual": {
+            "meaning": "preserved",
+            "completeness": "incomplete",
+            "usefulness": "edit"
+          }
+        }
+      ],
+      "calibrated": false
+    },
+    "reverse": {
+      "artifactValid": false,
+      "errors": [
+        "case-55633dafc32d: invalid preference shape"
+      ],
+      "controls": [
+        {
+          "id": "control-faithful-paraphrase",
+          "matched": true,
+          "actual": {
+            "meaning": "preserved",
+            "completeness": "complete",
+            "usefulness": "use_unchanged"
+          }
+        },
+        {
+          "id": "control-responsibility-swap",
+          "matched": false,
+          "actual": {
+            "meaning": "changed",
+            "completeness": "incomplete",
+            "usefulness": "reject"
+          }
+        },
+        {
+          "id": "control-omitted-constraint",
+          "matched": false,
+          "actual": {
+            "meaning": "changed",
+            "completeness": "incomplete",
+            "usefulness": "edit"
+          }
+        },
+        {
+          "id": "control-faithful-no-improvement",
+          "matched": true,
+          "actual": {
+            "meaning": "preserved",
+            "completeness": "incomplete",
+            "usefulness": "edit"
+          }
+        }
+      ],
+      "calibrated": false
+    }
+  },
+  "counts": {
+    "minimal": {
+      "drafts": 4,
+      "bothOrdersAccept": 3,
+      "meaningFailureEither": 1,
+      "incompleteEither": 0,
+      "needsEditOrRejectEither": 1,
+      "assessmentDisagreement": 1
+    },
+    "current": {
+      "drafts": 4,
+      "bothOrdersAccept": 4,
+      "meaningFailureEither": 0,
+      "incompleteEither": 0,
+      "needsEditOrRejectEither": 0,
+      "assessmentDisagreement": 0
+    },
+    "repeat": {
+      "drafts": 4,
+      "bothOrdersAccept": 3,
+      "meaningFailureEither": 0,
+      "incompleteEither": 0,
+      "needsEditOrRejectEither": 1,
+      "assessmentDisagreement": 1
+    }
+  },
+  "cases": [
+    {
+      "caseId": "simple-role-uncertainty-01",
+      "condition": "minimal",
+      "control": false,
+      "itemId": "item-cea8c6994811",
+      "bothOrdersAccept": true,
+      "judgments": [
+        {
+          "id": "item-cea8c6994811",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "I reviewed screens one and two.",
+              "draftExcerpt": "I\u2019ve reviewed the first two screens.",
+              "reason": "The completed review of the first two screens is retained."
+            },
+            {
+              "sourceExcerpt": "Screen three is waiting for your copy.",
+              "draftExcerpt": "Screen three is still waiting on your copy.",
+              "reason": "The client remains responsible for the copy and its outstanding status is explicit."
+            },
+            {
+              "sourceExcerpt": "If it arrives by Tuesday, I can finish the review by Thursday; otherwise I\u2019ll send a revised date.",
+              "draftExcerpt": "If you send it by Tuesday, I can finish the review by Thursday; otherwise, I\u2019ll send you a revised date.",
+              "reason": "Both the Tuesday condition and revised-date fallback are retained."
+            }
+          ],
+          "questions": [
+            {
+              "id": "copy-owner",
+              "answer": "The client (the recipient) must supply the copy.",
+              "pass": true
+            },
+            {
+              "id": "deadline-condition",
+              "answer": "The copy must arrive by Tuesday.",
+              "pass": true
+            },
+            {
+              "id": "fallback",
+              "answer": "The sender will send a revised date.",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "id": "item-cea8c6994811",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "I reviewed screens one and two.",
+              "draftExcerpt": "I\u2019ve reviewed screens one and two.",
+              "reason": "Reports only the first two screens as reviewed."
+            },
+            {
+              "sourceExcerpt": "Screen three is waiting for your copy.",
+              "draftExcerpt": "Screen three is still waiting on your copy.",
+              "reason": "Keeps the client responsible for supplying the copy."
+            },
+            {
+              "sourceExcerpt": "If it arrives by Tuesday, I can finish the review by Thursday; otherwise I\u2019ll send a revised date.",
+              "draftExcerpt": "If you send it by Tuesday, I can finish the review by Thursday; otherwise, I\u2019ll send you a revised date.",
+              "reason": "Preserves the condition and fallback."
+            }
+          ],
+          "questions": [
+            {
+              "id": "copy-owner",
+              "answer": "The client (the recipient) must supply the copy.",
+              "pass": true
+            },
+            {
+              "id": "deadline-condition",
+              "answer": "The copy must arrive by Tuesday.",
+              "pass": true
+            },
+            {
+              "id": "fallback",
+              "answer": "The sender will send a revised date.",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "simple-role-uncertainty-01",
+      "condition": "current",
+      "control": false,
+      "itemId": "item-3e6d5e5bb861",
+      "bothOrdersAccept": true,
+      "judgments": [
+        {
+          "id": "item-3e6d5e5bb861",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "I reviewed screens one and two.",
+              "draftExcerpt": "I\u2019ve reviewed the first two screens.",
+              "reason": "The completed review of the first two screens is retained."
+            },
+            {
+              "sourceExcerpt": "Screen three is waiting for your copy.",
+              "draftExcerpt": "Screen three is waiting on your copy.",
+              "reason": "The client remains responsible for the copy."
+            },
+            {
+              "sourceExcerpt": "If it arrives by Tuesday, I can finish the review by Thursday; otherwise I\u2019ll send a revised date.",
+              "draftExcerpt": "If you send it by Tuesday, I can finish the review by Thursday; otherwise, I\u2019ll send you a revised date.",
+              "reason": "Both the Tuesday condition and revised-date fallback are retained."
+            }
+          ],
+          "questions": [
+            {
+              "id": "copy-owner",
+              "answer": "The client (the recipient) must supply the copy.",
+              "pass": true
+            },
+            {
+              "id": "deadline-condition",
+              "answer": "The copy must arrive by Tuesday.",
+              "pass": true
+            },
+            {
+              "id": "fallback",
+              "answer": "The sender will send a revised date.",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "id": "item-3e6d5e5bb861",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "Screen three is waiting for your copy.",
+              "draftExcerpt": "Screen three is waiting on your copy.",
+              "reason": "The client remains responsible for supplying the copy."
+            },
+            {
+              "sourceExcerpt": "If it arrives by Tuesday, I can finish the review by Thursday; otherwise I\u2019ll send a revised date.",
+              "draftExcerpt": "If you send it by Tuesday, I can finish the review by Thursday; otherwise, I\u2019ll send you a revised date.",
+              "reason": "Preserves both the conditional Thursday timing and fallback."
+            },
+            {
+              "sourceExcerpt": "I reviewed screens one and two.",
+              "draftExcerpt": "I\u2019ve reviewed the first two screens.",
+              "reason": "Reports only the first two screens as reviewed."
+            }
+          ],
+          "questions": [
+            {
+              "id": "copy-owner",
+              "answer": "The client (the recipient) must supply the copy.",
+              "pass": true
+            },
+            {
+              "id": "deadline-condition",
+              "answer": "The copy must arrive by Tuesday.",
+              "pass": true
+            },
+            {
+              "id": "fallback",
+              "answer": "The sender will send a revised date.",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "simple-role-uncertainty-01",
+      "condition": "repeat",
+      "control": false,
+      "itemId": "item-2d2569f264ac",
+      "bothOrdersAccept": true,
+      "judgments": [
+        {
+          "id": "item-2d2569f264ac",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "I reviewed screens one and two.",
+              "draftExcerpt": "I\u2019ve reviewed screens one and two.",
+              "reason": "The completed review of the first two screens is retained."
+            },
+            {
+              "sourceExcerpt": "Screen three is waiting for your copy.",
+              "draftExcerpt": "Screen three is waiting on your copy.",
+              "reason": "The client remains responsible for supplying the copy."
+            },
+            {
+              "sourceExcerpt": "If it arrives by Tuesday, I can finish the review by Thursday; otherwise I\u2019ll send a revised date.",
+              "draftExcerpt": "If you send it by Tuesday, I can finish the review by Thursday; otherwise, I\u2019ll send you a revised date.",
+              "reason": "Both the Tuesday condition and revised-date fallback are retained."
+            }
+          ],
+          "questions": [
+            {
+              "id": "copy-owner",
+              "answer": "The client (the recipient) must supply the copy.",
+              "pass": true
+            },
+            {
+              "id": "deadline-condition",
+              "answer": "The copy must arrive by Tuesday.",
+              "pass": true
+            },
+            {
+              "id": "fallback",
+              "answer": "The sender will send a revised date.",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "id": "item-2d2569f264ac",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "I reviewed screens one and two.",
+              "draftExcerpt": "I\u2019ve reviewed screens one and two.",
+              "reason": "Reports only the first two screens as reviewed."
+            },
+            {
+              "sourceExcerpt": "Screen three is waiting for your copy.",
+              "draftExcerpt": "Screen three is waiting on your copy.",
+              "reason": "Keeps the client responsible for supplying the copy."
+            },
+            {
+              "sourceExcerpt": "If it arrives by Tuesday, I can finish the review by Thursday; otherwise I\u2019ll send a revised date.",
+              "draftExcerpt": "If you send it by Tuesday, I can finish the review by Thursday; otherwise, I\u2019ll send you a revised date.",
+              "reason": "Preserves conditional timing and fallback."
+            }
+          ],
+          "questions": [
+            {
+              "id": "copy-owner",
+              "answer": "The client (the recipient) must supply the copy.",
+              "pass": true
+            },
+            {
+              "id": "deadline-condition",
+              "answer": "The copy must arrive by Tuesday.",
+              "pass": true
+            },
+            {
+              "id": "fallback",
+              "answer": "The sender will send a revised date.",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "simple-noop-02",
+      "condition": "minimal",
+      "control": false,
+      "itemId": "item-62945f642139",
+      "bothOrdersAccept": true,
+      "judgments": [
+        {
+          "id": "item-62945f642139",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "We have not confirmed the venue yet.",
+              "draftExcerpt": "We have not confirmed the venue yet.",
+              "reason": "The sentence is correctly left unchanged and its pending status remains clear."
+            }
+          ],
+          "questions": [
+            {
+              "id": "status",
+              "answer": "No.",
+              "pass": true
+            },
+            {
+              "id": "time",
+              "answer": "Confirmation remains outstanding at the time of writing.",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "id": "item-62945f642139",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "We have not confirmed the venue yet.",
+              "draftExcerpt": "We have not confirmed the venue yet.",
+              "reason": "Leaves the already-clear sentence unchanged and preserves its pending status."
+            }
+          ],
+          "questions": [
+            {
+              "id": "status",
+              "answer": "No, the venue has not been confirmed.",
+              "pass": true
+            },
+            {
+              "id": "time",
+              "answer": "Confirmation remains outstanding at the time of writing.",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "simple-noop-02",
+      "condition": "current",
+      "control": false,
+      "itemId": "item-0a97ab06b739",
+      "bothOrdersAccept": true,
+      "judgments": [
+        {
+          "id": "item-0a97ab06b739",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "We have not confirmed the venue yet.",
+              "draftExcerpt": "We have not confirmed the venue yet.",
+              "reason": "The sentence is correctly left unchanged and its pending status remains clear."
+            }
+          ],
+          "questions": [
+            {
+              "id": "status",
+              "answer": "No.",
+              "pass": true
+            },
+            {
+              "id": "time",
+              "answer": "Confirmation remains outstanding at the time of writing.",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "id": "item-0a97ab06b739",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "We have not confirmed the venue yet.",
+              "draftExcerpt": "We have not confirmed the venue yet.",
+              "reason": "Leaves the already-clear sentence unchanged and preserves its pending status."
+            }
+          ],
+          "questions": [
+            {
+              "id": "status",
+              "answer": "No, the venue has not been confirmed.",
+              "pass": true
+            },
+            {
+              "id": "time",
+              "answer": "Confirmation remains outstanding at the time of writing.",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "simple-noop-02",
+      "condition": "repeat",
+      "control": false,
+      "itemId": "item-8f1a1fc4e65f",
+      "bothOrdersAccept": true,
+      "judgments": [
+        {
+          "id": "item-8f1a1fc4e65f",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "We have not confirmed the venue yet.",
+              "draftExcerpt": "We have not confirmed the venue yet.",
+              "reason": "The sentence is correctly left unchanged and its pending status remains clear."
+            }
+          ],
+          "questions": [
+            {
+              "id": "status",
+              "answer": "No.",
+              "pass": true
+            },
+            {
+              "id": "time",
+              "answer": "Confirmation remains outstanding at the time of writing.",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "id": "item-8f1a1fc4e65f",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "We have not confirmed the venue yet.",
+              "draftExcerpt": "We have not confirmed the venue yet.",
+              "reason": "Leaves the already-clear sentence unchanged and preserves its pending status."
+            }
+          ],
+          "questions": [
+            {
+              "id": "status",
+              "answer": "No, the venue has not been confirmed.",
+              "pass": true
+            },
+            {
+              "id": "time",
+              "answer": "Confirmation remains outstanding at the time of writing.",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "simple-clarity-03",
+      "condition": "minimal",
+      "control": false,
+      "itemId": "item-eef26446eb54",
+      "bothOrdersAccept": false,
+      "judgments": [
+        {
+          "id": "item-eef26446eb54",
+          "meaning": "changed",
+          "completeness": "complete",
+          "usefulness": "edit",
+          "evidence": [
+            {
+              "sourceExcerpt": "If all okay, maybe we can send Friday.",
+              "draftExcerpt": "If everything is approved, we may be able to send it on Friday.",
+              "reason": "Tentativeness and timing remain, but \u201capproved\u201d introduces a potentially more formal condition than everything being okay."
+            },
+            {
+              "sourceExcerpt": "I\u2019ll change file after she tell me.",
+              "draftExcerpt": "I\u2019ll update the file after she tells me.",
+              "reason": "The sender still updates the file after Mara reports back."
+            }
+          ],
+          "questions": [
+            {
+              "id": "review-owner",
+              "answer": "Mara.",
+              "pass": true
+            },
+            {
+              "id": "file-owner",
+              "answer": "The sender changes it after Mara tells them.",
+              "pass": true
+            },
+            {
+              "id": "uncertain-send",
+              "answer": "No; it may be sent Friday if everything is approved.",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "id": "item-eef26446eb54",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "Mara review the figures.",
+              "draftExcerpt": "Mara will review the figures.",
+              "reason": "Keeps review ownership with Mara."
+            },
+            {
+              "sourceExcerpt": "I\u2019ll change file after she tell me.",
+              "draftExcerpt": "I\u2019ll update the file after she tells me.",
+              "reason": "Keeps the file update with the sender after Mara reports back."
+            },
+            {
+              "sourceExcerpt": "If all okay, maybe we can send Friday.",
+              "draftExcerpt": "If everything is approved, we may be able to send it on Friday.",
+              "reason": "Sending remains conditional and tentative."
+            }
+          ],
+          "questions": [
+            {
+              "id": "review-owner",
+              "answer": "Mara reviews the figures.",
+              "pass": true
+            },
+            {
+              "id": "file-owner",
+              "answer": "The sender changes the file after Mara reports back.",
+              "pass": true
+            },
+            {
+              "id": "uncertain-send",
+              "answer": "No; Friday is only a possibility if everything is satisfactory.",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "simple-clarity-03",
+      "condition": "current",
+      "control": false,
+      "itemId": "item-201fb7d2bedd",
+      "bothOrdersAccept": true,
+      "judgments": [
+        {
+          "id": "item-201fb7d2bedd",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "Mara review the figures.",
+              "draftExcerpt": "Mara will review the figures.",
+              "reason": "Mara remains responsible for reviewing the figures."
+            },
+            {
+              "sourceExcerpt": "I\u2019ll change file after she tell me.",
+              "draftExcerpt": "I\u2019ll update the file after she reports back.",
+              "reason": "The sender updates the file after Mara reports back."
+            },
+            {
+              "sourceExcerpt": "If all okay, maybe we can send Friday.",
+              "draftExcerpt": "If everything is approved, we may be able to send it on Friday.",
+              "reason": "The Friday timing remains conditional and tentative, although approval is a slightly more formal condition."
+            }
+          ],
+          "questions": [
+            {
+              "id": "review-owner",
+              "answer": "Mara.",
+              "pass": true
+            },
+            {
+              "id": "file-owner",
+              "answer": "The sender changes it after Mara reports back.",
+              "pass": true
+            },
+            {
+              "id": "uncertain-send",
+              "answer": "No; sending Friday is possible if everything is approved.",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "id": "item-201fb7d2bedd",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "Mara review the figures.",
+              "draftExcerpt": "Mara will review the figures.",
+              "reason": "Keeps review ownership with Mara."
+            },
+            {
+              "sourceExcerpt": "I\u2019ll change file after she tell me.",
+              "draftExcerpt": "I\u2019ll update the file after she reports back.",
+              "reason": "Keeps the file update with the sender after Mara reports back."
+            },
+            {
+              "sourceExcerpt": "If all okay, maybe we can send Friday.",
+              "draftExcerpt": "If everything is approved, we may be able to send it on Friday.",
+              "reason": "Sending remains conditional and tentative."
+            }
+          ],
+          "questions": [
+            {
+              "id": "review-owner",
+              "answer": "Mara reviews the figures.",
+              "pass": true
+            },
+            {
+              "id": "file-owner",
+              "answer": "The sender changes the file after Mara reports back.",
+              "pass": true
+            },
+            {
+              "id": "uncertain-send",
+              "answer": "No; Friday is only a possibility if everything is satisfactory.",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "simple-clarity-03",
+      "condition": "repeat",
+      "control": false,
+      "itemId": "item-6ce786e5629a",
+      "bothOrdersAccept": false,
+      "judgments": [
+        {
+          "id": "item-6ce786e5629a",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "Mara review the figures.",
+              "draftExcerpt": "Mara will review the figures.",
+              "reason": "Mara remains responsible for reviewing the figures."
+            },
+            {
+              "sourceExcerpt": "I\u2019ll change file after she tell me.",
+              "draftExcerpt": "I\u2019ll update the file after she tells me she\u2019s finished.",
+              "reason": "The sender updates the file after Mara reports completion."
+            },
+            {
+              "sourceExcerpt": "If all okay, maybe we can send Friday.",
+              "draftExcerpt": "If everything is okay, we may be able to send it on Friday.",
+              "reason": "Friday remains conditional and tentative."
+            }
+          ],
+          "questions": [
+            {
+              "id": "review-owner",
+              "answer": "Mara.",
+              "pass": true
+            },
+            {
+              "id": "file-owner",
+              "answer": "The sender changes it after Mara says she has finished.",
+              "pass": true
+            },
+            {
+              "id": "uncertain-send",
+              "answer": "No; sending Friday is only possible if everything is okay.",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "id": "item-6ce786e5629a",
+          "meaning": "uncertain",
+          "completeness": "complete",
+          "usefulness": "edit",
+          "evidence": [
+            {
+              "sourceExcerpt": "I\u2019ll change file after she tell me.",
+              "draftExcerpt": "I\u2019ll update the file after she tells me she\u2019s finished.",
+              "reason": "Adds that Mara has finished, a detail not stated in the source's report-back condition."
+            },
+            {
+              "sourceExcerpt": "If all okay, maybe we can send Friday.",
+              "draftExcerpt": "If everything is okay, we may be able to send it on Friday.",
+              "reason": "Keeps Friday sending conditional and tentative."
+            }
+          ],
+          "questions": [
+            {
+              "id": "review-owner",
+              "answer": "Mara reviews the figures.",
+              "pass": true
+            },
+            {
+              "id": "file-owner",
+              "answer": "The sender updates the file after Mara tells them she\u2019s finished.",
+              "pass": false
+            },
+            {
+              "id": "uncertain-send",
+              "answer": "No; Friday is only a possibility if everything is satisfactory.",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "simple-long-exception-04",
+      "condition": "minimal",
+      "control": false,
+      "itemId": "item-a9b70739ef48",
+      "bothOrdersAccept": true,
+      "judgments": [
+        {
+          "id": "item-a9b70739ef48",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "The studio closes at 5 pm on Mondays.",
+              "draftExcerpt": "The studio closes at 5 pm on Mondays.",
+              "reason": "The normal closing time is retained."
+            },
+            {
+              "sourceExcerpt": "Existing bookings on 23 June can still run until 6 pm because the building manager approved a one-off extension.",
+              "draftExcerpt": "Existing bookings on 23 June may run until 6 pm under a one-off extension approved by the building manager.",
+              "reason": "The specific date, existing bookings, end time and one-off approval are retained."
+            },
+            {
+              "sourceExcerpt": "New bookings cannot be added after 5 pm.",
+              "draftExcerpt": "New bookings cannot be added after 5 pm.",
+              "reason": "The restriction on new bookings is retained."
+            }
+          ],
+          "questions": [
+            {
+              "id": "usual-rule",
+              "answer": "5 pm.",
+              "pass": true
+            },
+            {
+              "id": "exception",
+              "answer": "Existing bookings on 23 June may run until 6 pm.",
+              "pass": true
+            },
+            {
+              "id": "new-bookings",
+              "answer": "No.",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "id": "item-a9b70739ef48",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "The studio closes at 5 pm on Mondays.",
+              "draftExcerpt": "The studio closes at 5 pm on Mondays.",
+              "reason": "Preserves the usual closing time."
+            },
+            {
+              "sourceExcerpt": "Existing bookings on 23 June can still run until 6 pm because the building manager approved a one-off extension.",
+              "draftExcerpt": "Existing bookings on 23 June may run until 6 pm under a one-off extension approved by the building manager.",
+              "reason": "Keeps the exception limited to existing bookings on 23 June."
+            },
+            {
+              "sourceExcerpt": "New bookings cannot be added after 5 pm.",
+              "draftExcerpt": "New bookings cannot be added after 5 pm.",
+              "reason": "Retains the restriction on new bookings."
+            }
+          ],
+          "questions": [
+            {
+              "id": "usual-rule",
+              "answer": "5 pm.",
+              "pass": true
+            },
+            {
+              "id": "exception",
+              "answer": "Existing bookings on 23 June may run until 6 pm.",
+              "pass": true
+            },
+            {
+              "id": "new-bookings",
+              "answer": "No.",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "simple-long-exception-04",
+      "condition": "current",
+      "control": false,
+      "itemId": "item-42bd8629262e",
+      "bothOrdersAccept": true,
+      "judgments": [
+        {
+          "id": "item-42bd8629262e",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "The studio closes at 5 pm on Mondays.",
+              "draftExcerpt": "The studio closes at 5 pm on Mondays.",
+              "reason": "The normal closing time is retained."
+            },
+            {
+              "sourceExcerpt": "Existing bookings on 23 June can still run until 6 pm because the building manager approved a one-off extension.",
+              "draftExcerpt": "Existing bookings on 23 June may run until 6 pm under a one-off extension approved by the building manager.",
+              "reason": "The specific date, existing bookings, end time and one-off approval are retained."
+            },
+            {
+              "sourceExcerpt": "New bookings cannot be added after 5 pm.",
+              "draftExcerpt": "New bookings cannot be added after 5 pm.",
+              "reason": "The restriction on new bookings is retained."
+            }
+          ],
+          "questions": [
+            {
+              "id": "usual-rule",
+              "answer": "5 pm.",
+              "pass": true
+            },
+            {
+              "id": "exception",
+              "answer": "Existing bookings on 23 June may run until 6 pm.",
+              "pass": true
+            },
+            {
+              "id": "new-bookings",
+              "answer": "No.",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "id": "item-42bd8629262e",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "The studio closes at 5 pm on Mondays.",
+              "draftExcerpt": "The studio closes at 5 pm on Mondays.",
+              "reason": "Preserves the usual closing time."
+            },
+            {
+              "sourceExcerpt": "Existing bookings on 23 June can still run until 6 pm because the building manager approved a one-off extension.",
+              "draftExcerpt": "Existing bookings on 23 June may run until 6 pm under a one-off extension approved by the building manager.",
+              "reason": "Keeps the exception limited to existing bookings on 23 June."
+            },
+            {
+              "sourceExcerpt": "New bookings cannot be added after 5 pm.",
+              "draftExcerpt": "New bookings cannot be added after 5 pm.",
+              "reason": "Retains the restriction on new bookings."
+            }
+          ],
+          "questions": [
+            {
+              "id": "usual-rule",
+              "answer": "5 pm.",
+              "pass": true
+            },
+            {
+              "id": "exception",
+              "answer": "Existing bookings on 23 June may run until 6 pm.",
+              "pass": true
+            },
+            {
+              "id": "new-bookings",
+              "answer": "No.",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "simple-long-exception-04",
+      "condition": "repeat",
+      "control": false,
+      "itemId": "item-d67d28788468",
+      "bothOrdersAccept": true,
+      "judgments": [
+        {
+          "id": "item-d67d28788468",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "The studio closes at 5 pm on Mondays.",
+              "draftExcerpt": "The studio closes at 5 pm on Mondays.",
+              "reason": "The normal closing time is retained."
+            },
+            {
+              "sourceExcerpt": "Existing bookings on 23 June can still run until 6 pm because the building manager approved a one-off extension.",
+              "draftExcerpt": "Existing bookings on 23 June may run until 6 pm under a one-off extension approved by the building manager.",
+              "reason": "The specific date, existing bookings, end time and one-off approval are retained."
+            },
+            {
+              "sourceExcerpt": "New bookings cannot be added after 5 pm.",
+              "draftExcerpt": "New bookings cannot be added after 5 pm.",
+              "reason": "The restriction on new bookings is retained."
+            }
+          ],
+          "questions": [
+            {
+              "id": "usual-rule",
+              "answer": "5 pm.",
+              "pass": true
+            },
+            {
+              "id": "exception",
+              "answer": "Existing bookings on 23 June may run until 6 pm.",
+              "pass": true
+            },
+            {
+              "id": "new-bookings",
+              "answer": "No.",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "id": "item-d67d28788468",
+          "meaning": "preserved",
+          "completeness": "complete",
+          "usefulness": "use_unchanged",
+          "evidence": [
+            {
+              "sourceExcerpt": "The studio closes at 5 pm on Mondays.",
+              "draftExcerpt": "The studio closes at 5 pm on Mondays.",
+              "reason": "Preserves the usual closing time."
+            },
+            {
+              "sourceExcerpt": "Existing bookings on 23 June can still run until 6 pm because the building manager approved a one-off extension.",
+              "draftExcerpt": "Existing bookings on 23 June may run until 6 pm under a one-off extension approved by the building manager.",
+              "reason": "Keeps the exception limited to existing bookings on 23 June."
+            },
+            {
+              "sourceExcerpt": "New bookings cannot be added after 5 pm.",
+              "draftExcerpt": "New bookings cannot be added after 5 pm.",
+              "reason": "Retains the restriction on new bookings."
+            }
+          ],
+          "questions": [
+            {
+              "id": "usual-rule",
+              "answer": "5 pm.",
+              "pass": true
+            },
+            {
+              "id": "exception",
+              "answer": "Existing bookings on 23 June may run until 6 pm.",
+              "pass": true
+            },
+            {
+              "id": "new-bookings",
+              "answer": "No.",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "preferences": {
+    "forward": [
+      {
+        "caseId": "case-c832511bb101",
+        "outcome": "tie",
+        "preferredIds": [
+          "item-cea8c6994811",
+          "item-3e6d5e5bb861",
+          "item-2d2569f264ac"
+        ],
+        "reason": "All three preserve the client\u2019s responsibility, Tuesday condition, Thursday review timing and revised-date fallback, with no meaningful difference in requested usefulness."
+      },
+      {
+        "caseId": "case-9b7147d28710",
+        "outcome": "tie",
+        "preferredIds": [
+          "item-0a97ab06b739",
+          "item-8f1a1fc4e65f",
+          "item-62945f642139"
+        ],
+        "reason": "The variants are identical and all correctly leave the already clear sentence unchanged."
+      },
+      {
+        "caseId": "case-55633dafc32d",
+        "outcome": "preferred",
+        "preferredIds": [
+          "item-6ce786e5629a"
+        ],
+        "reason": "It retains the ordinary conditional \u2018everything is okay\u2019 and the tentative Friday possibility. The other variants say \u2018approved\u2019, which can introduce a formal approval condition not present in the source."
+      },
+      {
+        "caseId": "case-33bd424fa054",
+        "outcome": "tie",
+        "preferredIds": [
+          "item-d67d28788468",
+          "item-42bd8629262e",
+          "item-a9b70739ef48"
+        ],
+        "reason": "The variants are identical and fully preserve the usual rule, the dated exception for existing bookings, and the limit on new bookings."
+      }
+    ],
+    "reverse": [
+      {
+        "caseId": "case-33bd424fa054",
+        "outcome": "tie",
+        "preferredIds": [
+          "item-a9b70739ef48",
+          "item-42bd8629262e",
+          "item-d67d28788468"
+        ],
+        "reason": "All three drafts are identical and preserve every rule and exception."
+      },
+      {
+        "caseId": "case-55633dafc32d",
+        "outcome": "preferred",
+        "preferredIds": [
+          "item-eef26446eb54",
+          "item-201fb7d2bedd"
+        ],
+        "reason": "These two preserve ownership and sequence without adding that Mara must explicitly say she has finished; they are equally usable."
+      },
+      {
+        "caseId": "case-9b7147d28710",
+        "outcome": "tie",
+        "preferredIds": [
+          "item-62945f642139",
+          "item-8f1a1fc4e65f",
+          "item-0a97ab06b739"
+        ],
+        "reason": "All three are identical and correctly leave the clear sentence unchanged."
+      },
+      {
+        "caseId": "case-c832511bb101",
+        "outcome": "tie",
+        "preferredIds": [
+          "item-2d2569f264ac",
+          "item-3e6d5e5bb861",
+          "item-cea8c6994811"
+        ],
+        "reason": "All preserve the client's copy responsibility, conditional timing, fallback, and limited review status."
+      }
+    ]
+  }
+}

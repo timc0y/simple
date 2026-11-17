@@ -45,6 +45,27 @@ is limited to 2,048 lines and 128 columns per line and collapses non-ASCII chara
 A clean result cannot replace tests, type checks or proof of the requested outcome.
 The helper changes presentation and focus, not the detector's accuracy.
 
+## Rendered text evidence
+
+When interface wording, slot fit or repeated claims are part of the requested
+outcome, use Interface Craft's existing text-slot scanner if available. Discover
+its actual skill/checkout path; do not add a second collector to Simple. The
+scanner accepts explicit URLs, viewport dimensions, configured budgets and claim
+aliases and retains measurements separately from review candidates.
+
+Keep the exact report, capture identities, configuration, coverage omissions and
+failed captures. A completed process does not mean a complete site or journey was
+reviewed. Distinguish source length from rendered lines, page totals from viewport
+counts, and lexical/declared claim matches from a verified meaning judgment. A
+smaller word count or a lower warning count is not proof of improved understanding.
+Before changing copy, check conditions, actions, numbers, labels and deliberate
+repetition against the actual task and source. Recheck the affected rendered state.
+
+Parallax can import the report as candidate evidence. That import cannot complete
+readiness, supply missing images or establish a specialist's visual review. Preserve
+each skill's owner: Interface Craft measures the UI, Communicator handles approved
+voice/meaning evidence, and Parallax coordinates the product review.
+
 ## Test-first work
 
 When a cheap local regression test can reproduce the defect, make it fail for the intended reason first.

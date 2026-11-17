@@ -1,0 +1,21 @@
+{
+  "finishedAt": "2026-11-17T13:02:14.302904+00:00",
+  "registeredTasks": 11,
+  "completedTasks": 11,
+  "draftsAcrossRun": 24,
+  "readingItemsAcrossRun": 64,
+  "readingAnswersAcrossRun": 136,
+  "modelRequested": "gpt-6-luna",
+  "reasoning": "medium",
+  "leadSourceReviewer": "root agent (gpt-6.1-sol), opaque variant IDs; judgments saved before condition lookup and reader answers",
+  "exactBackendRevisionTokensCost": "not exposed; unknown",
+  "sourceCasesIndependentlyAuthored": true,
+  "leadPreGenerationEdits": "Summary scopes clarified, literal excerpt repaired, synthetic examples replaced; reader questions subsequently made neutral before reading or lead draft inspection. Exact timing and original data retained.",
+  "candidateAdopted": false,
+  "currentRepeatPayloadIdentical": true,
+  "contentIdenticalRepeatOutputs": 2,
+  "qualityGainEstablished": false,
+  "automaticRetries": 0,
+  "draftRepairs": 0,
+  "paidApiCalls": 0
+}

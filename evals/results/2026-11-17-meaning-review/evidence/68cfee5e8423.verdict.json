@@ -1,0 +1,1 @@
+{"preserved":false,"changes":[{"before":"otherwise dispatch moves to Thursday.","after":"","reason":"The rewrite omits the fallback dispatch timing when the safety check fails."}]}

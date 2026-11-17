@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": "simple-current",
+      "text": "Count returned players, check numbered sleeves; date count in green ledger. If one is missing, note its number and last-seen time; tell desk lead before leaving; leave check incomplete. If desk lead is absent, enter “pending lead review” in ledger and notify building manager before locking up; manager cannot authorise disposal or replacement. Initial only if all devices are present and counted.",
+      "status": "repaired",
+      "measuredWhitespaceWords": 62
+    },
+    {
+      "id": "simple-candidate",
+      "text": "Count returned players, check numbered sleeves; date count in green ledger. If one is missing, note its number and last-seen time; tell desk lead before leaving; leave check incomplete. If desk lead is absent, enter “pending lead review” in ledger and notify building manager before locking up; manager cannot authorise disposal or replacement. Initial only if all devices are present and counted.",
+      "status": "repaired",
+      "measuredWhitespaceWords": 62
+    },
+    {
+      "id": "simple-current-repeat",
+      "text": "Count returned players, check numbered sleeves; date count in green ledger. If one is missing, note its number and last-seen time; tell desk lead before leaving; leave check incomplete. If desk lead is absent, enter “pending lead review” in ledger and notify building manager before locking up; manager cannot authorise disposal or replacement. Initial only if all devices are present and counted.",
+      "status": "repaired",
+      "measuredWhitespaceWords": 62
+    }
+  ]
+}

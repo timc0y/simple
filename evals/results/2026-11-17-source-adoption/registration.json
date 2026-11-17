@@ -1,0 +1,26 @@
+{
+  "registeredAt": "2026-11-17T15:48:42.381382+00:00",
+  "taskBound": 1,
+  "automaticRetries": 0,
+  "model": "gpt-6-luna",
+  "reasoning": "medium",
+  "paidApiCalls": 0,
+  "scope": "One composite development forward-test of final routed guidance, three synthetic tasks; no baseline or causal quality comparison.",
+  "acceptance": [
+    "Research distinguishes correlated origins, private preview and failed source family; proposes a decision-changing check without making a call.",
+    "Design distinguishes local measured value from system rule and intent, with no invented capture.",
+    "Writing removes only filler and preserves actor, may, after-recording and absent-coordinator restriction."
+  ],
+  "limits": [
+    "Native file instructions, not provider role/sampling parity.",
+    "One model, one composite task; no human comprehension or personal voice evidence.",
+    "Source access constrained by instruction, not an isolated sandbox."
+  ],
+  "deliveredInputSha256": "d9970c08f87b6e38be46bd3d1f427b573b0b579aba93a8126e04134f9e380e36",
+  "publicInputNote": "Absolute local reference paths replaced by snapshot filenames in public input only. Actual private delivered bytes retained; no source content or task facts changed.",
+  "referenceHashes": {
+    "design-reference.txt": "1de5c7fb1764a5377178174a1550f90a83416f24710a5a14aa51e2a0600ed0b7",
+    "research-reference.txt": "a2f643510d6c37fe18db62eb7c09abe57528fe067d26a428ded6ecf90baf01c5",
+    "editorial-reference.txt": "f410df3f10709af1b15e6bfe20f2d1ffd60be8b5f20530741eb3b1e47ed4f354"
+  }
+}

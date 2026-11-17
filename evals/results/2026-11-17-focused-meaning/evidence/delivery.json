@@ -1,0 +1,16 @@
+{
+  "capturedAfterRun": true,
+  "sourceIdentity": "locally modified focused source/build",
+  "files": {
+    "src/runtime.ts": "5a4576314005052804a953dafe3bcf5886f6598973cb1a2adf6b41276b357cb7",
+    "src/writing.ts": "114e208c7acd1721855d307cbaa4b8d0735a9fe5f050bba3aa1144237de0b510",
+    "dist/runtime.js": "b6222c9b6c3977d519120991f96c3d30908acb162d6e0a901a638b907b793049",
+    "dist/writing.js": "b0d65456ee9e4b7402e02604e3dfaca3ebb04848e9f5dbe6536d9babfdce0bc2"
+  },
+  "modelRequested": "gpt-6-luna",
+  "reasoning": "medium",
+  "backendRevision": null,
+  "usage": null,
+  "providerRolesVerified": false,
+  "sharedFilesystemIsolation": "instruction only"
+}

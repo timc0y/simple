@@ -1,0 +1,47 @@
+{
+  "pack": {
+    "schemaVersion": 1,
+    "packVersion": "1.0.0",
+    "id": "synthetic-meaning-control",
+    "workspaceId": "synthetic",
+    "actor": {
+      "id": "synthetic",
+      "displayName": "Synthetic Writer",
+      "kind": "person"
+    },
+    "voice": {
+      "overall": {
+        "sampleSize": 12,
+        "medianWords": 42,
+        "medianSentences": 3,
+        "questionRate": 0.1,
+        "exclamationRate": 0,
+        "contractionRate": 0.4,
+        "paragraphRate": 0.5,
+        "terminalPeriodRate": 0.6,
+        "bareEndingRate": 0.2,
+        "recurringPhrases": []
+      },
+      "bySurface": {}
+    },
+    "rules": [],
+    "avoid": [],
+    "surfaceGuidance": {},
+    "examples": [],
+    "compiledAt": "2026-11-17T00:00:00.000Z",
+    "sourceDigest": "sha256:synthetic",
+    "privacy": {
+      "rawMessagesIncluded": false,
+      "recipientRecordsIncluded": false,
+      "relationshipsIncluded": false,
+      "targetDossiersIncluded": false,
+      "approvedRevisionExamplesOnly": true,
+      "explicitReleaseCopiesOnly": true
+    }
+  },
+  "sourceText": "For each Saturday repair café, the welcome volunteer should greet visitors at the blue table, ask whether they have booked, and give walk-ins a numbered card if a bench is available. The card is a queue marker, not a promise that a repair can be completed. Visitors should keep electrical items switched off until a repairer is ready to inspect them. A volunteer can help carry heavier objects from the entrance, but should not open or test equipment. The kettle is in the kitchen, and the public toilets are along the corridor past the noticeboard. At closing, collect unused numbered cards and return them to the envelope in the welcome box. The booking spreadsheet is printed each Friday by the coordinator, who may be working remotely on the day. If the coordinator has not delivered the printout by 9:15, ask the event host to check the latest booking list on the shared tablet before assigning any walk-in cards; do not use last month's printout as a substitute. The event host can verify names and booking status but cannot approve a repair or promise a place at a bench. If no host is present, pause walk-in card distribution and contact the coordinator by phone. Please leave the blue table in place for the next group, which meets on the first Sunday of the month. Visitors may take a leaflet about future sessions, but do not collect email addresses at the welcome table.",
+  "objective": "Write a practical summary of no more than 70 words for the volunteer welcome pack. The source is authoritative. Keep the routine steps and the exception near the end; leave out unrelated venue details. Cover only arrival booking checks and numbered-card decisions, including the event host’s authority limit. Exclude equipment safety, closing, furniture, leaflets and contact-collection instructions.",
+  "surface": "web-copy",
+  "requiredStrings": [],
+  "prohibitedStrings": []
+}

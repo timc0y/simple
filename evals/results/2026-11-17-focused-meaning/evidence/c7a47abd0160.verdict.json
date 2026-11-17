@@ -1,0 +1,20 @@
+{
+  "preserved": false,
+  "changes": [
+    {
+      "before": "When all devices are present, the volunteer may initial the check after recording the count.",
+      "after": "May initial before recording count, with all devices present.",
+      "reason": "Reverses the required order: the source allows initialling only after the count is recorded, while the rewrite says before."
+    },
+    {
+      "before": "if a player is missing during a shift when the desk lead is absent",
+      "after": "Absent lead: enter “pending lead review” in ledger; notify building manager before locking up",
+      "reason": "Drops the condition that this exception applies when a player is missing; the rewrite makes the absent-lead procedure appear to apply regardless."
+    },
+    {
+      "before": "the manager is covering only until the lead returns",
+      "after": "",
+      "reason": "Omits the limit on the manager's temporary covering role."
+    }
+  ]
+}

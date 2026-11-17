@@ -1,0 +1,60 @@
+{
+  "8ad8950107": {
+    "repo": "simple",
+    "condition": "minimal",
+    "kind": "observed-draft",
+    "eventInDraft": "sending",
+    "sourceEvent": "arrival"
+  },
+  "7906364309": {
+    "repo": "simple",
+    "condition": "current",
+    "kind": "observed-draft",
+    "eventInDraft": "sending",
+    "sourceEvent": "arrival"
+  },
+  "ffe57efb83": {
+    "repo": "simple",
+    "condition": "repeat",
+    "kind": "observed-draft",
+    "eventInDraft": "sending",
+    "sourceEvent": "arrival"
+  },
+  "0f6715e29c": {
+    "repo": "communicator",
+    "condition": "minimal",
+    "kind": "observed-draft",
+    "eventInDraft": "arrival",
+    "sourceEvent": "sending"
+  },
+  "15ed83760e": {
+    "repo": "communicator",
+    "condition": "current",
+    "kind": "observed-draft",
+    "eventInDraft": "sending",
+    "sourceEvent": "sending"
+  },
+  "256abb2c13": {
+    "repo": "communicator",
+    "condition": "repeat",
+    "kind": "observed-draft",
+    "eventInDraft": "sending",
+    "sourceEvent": "sending"
+  },
+  "6bac38a985": {
+    "kind": "control",
+    "expected": "receipt"
+  },
+  "3f30f4530c": {
+    "kind": "control",
+    "expected": "posting"
+  },
+  "eded843d98": {
+    "kind": "control",
+    "expected": "none"
+  },
+  "51fb9939b6": {
+    "kind": "control",
+    "expected": "Lina; Friday is proposed, not confirmed"
+  }
+}

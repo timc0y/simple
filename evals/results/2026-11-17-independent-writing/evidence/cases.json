@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "id": "simple-role-uncertainty-01",
+      "repo": "simple",
+      "task": "Write a short project update for the client using only these facts: I reviewed the first two screens; the third screen is still waiting on their copy; I can finish the review by Thursday if it arrives by Tuesday; otherwise I will send a revised date. Keep the client responsible for supplying the copy, preserve the conditional timing, and do not imply that the whole project is nearly finished. Source text: \u2018I reviewed screens one and two. Screen three is waiting for your copy. If it arrives by Tuesday, I can finish the review by Thursday; otherwise I\u2019ll send a revised date.\u2019",
+      "sourceText": "I reviewed screens one and two. Screen three is waiting for your copy. If it arrives by Tuesday, I can finish the review by Thursday; otherwise I\u2019ll send a revised date.",
+      "obligations": [
+        {
+          "id": "copy-owner",
+          "question": "Who must supply the copy?",
+          "expectedAnswer": "The client (the recipient).",
+          "sourceExcerpt": "Screen three is waiting for your copy."
+        },
+        {
+          "id": "deadline-condition",
+          "question": "What condition makes Thursday completion possible?",
+          "expectedAnswer": "The copy must arrive by Tuesday.",
+          "sourceExcerpt": "If it arrives by Tuesday, I can finish the review by Thursday"
+        },
+        {
+          "id": "fallback",
+          "question": "What happens if the copy does not arrive by Tuesday?",
+          "expectedAnswer": "The sender will provide a revised date.",
+          "sourceExcerpt": "otherwise I\u2019ll send a revised date."
+        }
+      ],
+      "operation": "Rewrite as a concise, clear client update.",
+      "usefulnessCriteria": [
+        "Clearly states that the client needs to provide the copy.",
+        "Keeps Thursday dependent on receiving it by Tuesday.",
+        "Retains the fallback of sending a revised date.",
+        "Does not overstate completion of the wider project."
+      ]
+    },
+    {
+      "id": "simple-noop-02",
+      "repo": "simple",
+      "task": "Check this sentence for the requested change. It is already clear and correct, so keep it unchanged unless a genuine error requires correction. Source text: \u2018We have not confirmed the venue yet.\u2019",
+      "sourceText": "We have not confirmed the venue yet.",
+      "obligations": [
+        {
+          "id": "status",
+          "question": "Has the venue been confirmed?",
+          "expectedAnswer": "No.",
+          "sourceExcerpt": "have not confirmed the venue"
+        },
+        {
+          "id": "time",
+          "question": "What does \u2018yet\u2019 establish?",
+          "expectedAnswer": "Confirmation remains outstanding at the time of writing.",
+          "sourceExcerpt": "yet"
+        }
+      ],
+      "operation": "Proofread; make no unnecessary edits.",
+      "usefulnessCriteria": [
+        "Leaves the sentence unchanged.",
+        "Does not turn the pending status into a decision or promise."
+      ]
+    },
+    {
+      "id": "simple-clarity-03",
+      "repo": "simple",
+      "task": "Rewrite the note to make the action and timing easier to follow. Preserve that Mara owns the review, the sender owns the file update, and approval is not guaranteed. Source text: \u2018Mara review the figures. I\u2019ll change file after she tell me. If all okay, maybe we can send Friday.\u2019",
+      "sourceText": "Mara review the figures. I\u2019ll change file after she tell me. If all okay, maybe we can send Friday.",
+      "obligations": [
+        {
+          "id": "review-owner",
+          "question": "Who reviews the figures?",
+          "expectedAnswer": "Mara.",
+          "sourceExcerpt": "Mara review the figures."
+        },
+        {
+          "id": "file-owner",
+          "question": "Who changes the file, and when?",
+          "expectedAnswer": "The sender changes it after Mara reports back.",
+          "sourceExcerpt": "I\u2019ll change file after she tell me."
+        },
+        {
+          "id": "uncertain-send",
+          "question": "Is sending on Friday definite?",
+          "expectedAnswer": "No; Friday is only a possibility if everything is satisfactory.",
+          "sourceExcerpt": "If all okay, maybe we can send Friday."
+        }
+      ],
+      "operation": "Edit for clear grammar and sequence while preserving the uncertainty.",
+      "usefulnessCriteria": [
+        "Fixes grammar and makes the sequence readable.",
+        "Keeps Mara responsible for review and the sender responsible for changing the file.",
+        "Frames Friday sending as conditional and tentative."
+      ]
+    },
+    {
+      "id": "simple-long-exception-04",
+      "repo": "simple",
+      "task": "Turn this into a short service notice. Preserve the normal rule and the specific exception for existing bookings; do not imply that new bookings are affected. Source text: \u2018The studio closes at 5 pm on Mondays. Existing bookings on 23 June can still run until 6 pm because the building manager approved a one-off extension. New bookings cannot be added after 5 pm.\u2019",
+      "sourceText": "The studio closes at 5 pm on Mondays. Existing bookings on 23 June can still run until 6 pm because the building manager approved a one-off extension. New bookings cannot be added after 5 pm.",
+      "obligations": [
+        {
+          "id": "usual-rule",
+          "question": "What is the studio\u2019s usual Monday closing time?",
+          "expectedAnswer": "5 pm.",
+          "sourceExcerpt": "The studio closes at 5 pm on Mondays."
+        },
+        {
+          "id": "exception",
+          "question": "Which bookings may run until 6 pm, and on what date?",
+          "expectedAnswer": "Existing bookings on 23 June.",
+          "sourceExcerpt": "Existing bookings on 23 June can still run until 6 pm"
+        },
+        {
+          "id": "new-bookings",
+          "question": "Can a new booking be added after 5 pm?",
+          "expectedAnswer": "No.",
+          "sourceExcerpt": "New bookings cannot be added after 5 pm."
+        }
+      ],
+      "operation": "Condense into a clear notice without losing the exception.",
+      "usefulnessCriteria": [
+        "States the usual Monday 5 pm closing time.",
+        "Preserves the one-off extension for existing bookings on 23 June only.",
+        "States that new bookings cannot be added after 5 pm."
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "control-faithful-paraphrase",
+      "sourceText": "Please send the signed form by 3 pm on Tuesday so I can submit it that afternoon.",
+      "task": "Make this sound a little more natural without changing its meaning.",
+      "draftText": "Could you send the signed form by Tuesday at 3 pm? I can submit it that afternoon.",
+      "expectedMeaning": "preserved",
+      "expectedCompleteness": "complete",
+      "expectedUsefulness": "use_unchanged",
+      "reason": "The request, Tuesday 3 pm deadline, signed-form requirement, and same-afternoon submission are all retained in natural wording.",
+      "sourceExcerpt": "Please send the signed form by 3 pm on Tuesday so I can submit it that afternoon.",
+      "draftExcerpt": "Could you send the signed form by Tuesday at 3 pm? I can submit it that afternoon."
+    },
+    {
+      "id": "control-responsibility-swap",
+      "sourceText": "I\u2019ll send the agenda after Priya confirms the attendee list.",
+      "task": "Rewrite this sentence clearly and preserve who does each action.",
+      "draftText": "Priya will send the agenda after I confirm the attendee list.",
+      "expectedMeaning": "changed",
+      "expectedCompleteness": "complete",
+      "expectedUsefulness": "reject",
+      "reason": "The draft reverses both action owners: the sender should send the agenda and Priya should confirm the attendee list.",
+      "sourceExcerpt": "I\u2019ll send the agenda after Priya confirms",
+      "draftExcerpt": "Priya will send the agenda after I confirm"
+    },
+    {
+      "id": "control-omitted-constraint",
+      "sourceText": "The replacement unit can ship on Monday if the safety check passes; otherwise dispatch moves to Thursday.",
+      "task": "Shorten this update without losing any condition or fallback.",
+      "draftText": "The replacement unit can ship Monday if the safety check passes.",
+      "expectedMeaning": "preserved",
+      "expectedCompleteness": "incomplete",
+      "expectedUsefulness": "edit",
+      "reason": "Preserves the conditional Monday possibility but omits the required Thursday fallback.",
+      "sourceExcerpt": "if the safety check passes; otherwise dispatch moves to Thursday",
+      "draftExcerpt": "The replacement unit can ship Monday if the safety check passes."
+    },
+    {
+      "id": "control-faithful-no-improvement",
+      "sourceText": "The team will review the proposal next week.",
+      "task": "Make this more specific by naming the day, which the context says is Wednesday.",
+      "draftText": "The team will review the proposal next week.",
+      "expectedMeaning": "preserved",
+      "expectedCompleteness": "incomplete",
+      "expectedUsefulness": "edit",
+      "reason": "The unchanged draft faithfully repeats the source but misses the requested Wednesday clarification.",
+      "sourceExcerpt": "next week",
+      "draftExcerpt": "next week"
+    }
+  ]
+}

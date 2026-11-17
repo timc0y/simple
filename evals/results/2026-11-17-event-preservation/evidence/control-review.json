@@ -1,0 +1,27 @@
+{
+  "leadControls": [
+    {
+      "batch": "simple-forward",
+      "matched": 4,
+      "uncertain": 0
+    },
+    {
+      "batch": "simple-reverse",
+      "matched": 4,
+      "uncertain": 0
+    },
+    {
+      "batch": "communicator-forward",
+      "matched": 4,
+      "uncertain": 0
+    },
+    {
+      "batch": "communicator-reverse",
+      "matched": 3,
+      "uncertain": 1
+    }
+  ],
+  "uncertainty": "The reverse Communicator reader says no deadline is stated, but correctly says the sample should be posted on Monday. The control says post on Monday while its question asks for a deadline. Schedule vs deadline wording makes this a calibration ambiguity, not an unequivocal semantic error. Original control/key remain unchanged.",
+  "compoundQuestionLimit": "Forward Communicator answers to the long-summary fallback question describe the fallback but do not explicitly answer which substitutes are disallowed. Literal quotations and complete question IDs do not establish that every part of a compound question was answered. The lead separately inspected the full source and omission.",
+  "calibratedQualityScoreAvailable": false
+}

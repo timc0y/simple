@@ -1,0 +1,14 @@
+{
+  "simple": {
+    "valid": true,
+    "errors": [],
+    "items": 7,
+    "answers": 28
+  },
+  "communicator": {
+    "valid": true,
+    "errors": [],
+    "items": 7,
+    "answers": 37
+  }
+}

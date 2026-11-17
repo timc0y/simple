@@ -1,0 +1,80 @@
+[
+  {
+    "id": "simple-current",
+    "wordLimitCheck": {
+      "status": "passed",
+      "maxWords": 65,
+      "actualWords": 62,
+      "excessWords": 0,
+      "basis": "whitespace",
+      "locale": null
+    },
+    "semanticPreservation": "not_run",
+    "taskFulfilment": "not_assessed"
+  },
+  {
+    "id": "simple-candidate",
+    "wordLimitCheck": {
+      "status": "passed",
+      "maxWords": 65,
+      "actualWords": 62,
+      "excessWords": 0,
+      "basis": "whitespace",
+      "locale": null
+    },
+    "semanticPreservation": "not_run",
+    "taskFulfilment": "not_assessed"
+  },
+  {
+    "id": "simple-current-repeat",
+    "wordLimitCheck": {
+      "status": "passed",
+      "maxWords": 65,
+      "actualWords": 62,
+      "excessWords": 0,
+      "basis": "whitespace",
+      "locale": null
+    },
+    "semanticPreservation": "not_run",
+    "taskFulfilment": "not_assessed"
+  },
+  {
+    "id": "communicator-current",
+    "wordLimitCheck": {
+      "status": "passed",
+      "maxWords": 70,
+      "actualWords": 70,
+      "excessWords": 0,
+      "basis": "whitespace",
+      "locale": null
+    },
+    "semanticPreservation": "not_run",
+    "taskFulfilment": "not_assessed"
+  },
+  {
+    "id": "communicator-candidate",
+    "wordLimitCheck": {
+      "status": "passed",
+      "maxWords": 70,
+      "actualWords": 70,
+      "excessWords": 0,
+      "basis": "whitespace",
+      "locale": null
+    },
+    "semanticPreservation": "not_run",
+    "taskFulfilment": "not_assessed"
+  },
+  {
+    "id": "communicator-current-repeat",
+    "wordLimitCheck": {
+      "status": "passed",
+      "maxWords": 70,
+      "actualWords": 70,
+      "excessWords": 0,
+      "basis": "whitespace",
+      "locale": null
+    },
+    "semanticPreservation": "not_run",
+    "taskFulfilment": "not_assessed"
+  }
+]

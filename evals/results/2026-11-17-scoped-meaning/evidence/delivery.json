@@ -1,0 +1,16 @@
+{
+  "capturedAfterRun": true,
+  "sourceIdentity": "retained pre-focus source/build",
+  "files": {
+    "runtime.ts.txt": "21440ee2ad558fa6b8ada88a9cc32140bdfd54c9c5ef144904d2d3f469a9a117",
+    "writing.ts.txt": "6c406487a0dcbb1513238d9bd7540f0d1f9a5b61c992d49cef0caf5a803751af",
+    "dist/runtime.js": "a5a88e18e1c144cd66d9b80f6e9fd19e079c40e29b16bad5b0b8bdf16639df0a",
+    "dist/writing.js": "62b056ab849c7124dc1f7d8087745a7d3f8ee25b0f458197e509e057ece3df31"
+  },
+  "modelRequested": "gpt-6-luna",
+  "reasoning": "medium",
+  "backendRevision": null,
+  "usage": null,
+  "providerRolesVerified": false,
+  "sharedFilesystemIsolation": "instruction only"
+}

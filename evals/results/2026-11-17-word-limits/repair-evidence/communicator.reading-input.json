@@ -1,0 +1,195 @@
+{
+  "instructions": "Answer every question solely from its corresponding draft. No source, requested task, expected answer or other draft context is available. Do not invent an omitted instruction. Use supported, not_stated or uncertain. For not_stated, say what is absent and quote the closest relevant passage; that quote locates context, it does not by itself prove absence. Use literal excerpts from that same draft. Return strict JSON {\"items\":[{\"id\":\"...\",\"answers\":[{\"id\":\"q1\",\"answer\":\"...\",\"status\":\"supported|not_stated|uncertain\",\"excerpt\":\"literal excerpt\"}]}]}.",
+  "items": [
+    {
+      "id": "control-4e074085",
+      "draft": "After Noah approves the draft, Lina may send it. Friday is only a proposed date.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "Who may send the draft, and is Friday confirmed?"
+        }
+      ]
+    },
+    {
+      "id": "control-d4735e3a",
+      "draft": "I\u2019m waiting for the file. There is no agreed deadline.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "What deadline has been agreed?"
+        }
+      ]
+    },
+    {
+      "id": "control-6b86b273",
+      "draft": "Please post the sample on Monday; it does not need to arrive that day.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "What action is requested for Monday, and must arrival happen that day?"
+        }
+      ]
+    },
+    {
+      "id": "40ec87cb144b",
+      "draft": "Greet visitors; check bookings. Give walk-ins numbered cards only if a bench is available: a queue marker, not a repair or bench promise. When Friday\u2019s printout is missing at 9:15, the host checks the live shared tablet list before assigning cards; never substitute last month\u2019s printout. The host may verify names and bookings, cannot approve repairs or promise a bench. With no host, pause card distribution and phone the coordinator.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "What condition allows queue cards to be issued?"
+        },
+        {
+          "id": "q2",
+          "text": "What does a card promise about repair completion?"
+        },
+        {
+          "id": "q3",
+          "text": "What time triggers the missing-booking-information fallback?"
+        },
+        {
+          "id": "q4",
+          "text": "Who should check the current booking list?"
+        },
+        {
+          "id": "q5",
+          "text": "Where should that list be checked?"
+        },
+        {
+          "id": "q6",
+          "text": "Must that check happen before or after card distribution?"
+        },
+        {
+          "id": "q7",
+          "text": "What substitute does the note explicitly disallow?"
+        },
+        {
+          "id": "q8",
+          "text": "Can the fallback contact authorise repairs?"
+        },
+        {
+          "id": "q9",
+          "text": "Can the fallback contact promise a bench place?"
+        },
+        {
+          "id": "q10",
+          "text": "What happens to card distribution if the fallback contact is absent?"
+        },
+        {
+          "id": "q11",
+          "text": "Who should be contacted then, and by what channel?"
+        }
+      ]
+    },
+    {
+      "id": "d46adceb016f",
+      "draft": "Greet visitors; check bookings. Give walk-ins numbered cards only if a bench is available: a queue marker, not a repair or bench promise. When Friday\u2019s printout is missing at 9:15, the host checks the live shared tablet list before assigning cards; never substitute last month\u2019s printout. The host may verify names and bookings, cannot approve repairs or promise a bench. With no host, pause card distribution and phone the coordinator.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "What condition allows queue cards to be issued?"
+        },
+        {
+          "id": "q2",
+          "text": "What does a card promise about repair completion?"
+        },
+        {
+          "id": "q3",
+          "text": "What time triggers the missing-booking-information fallback?"
+        },
+        {
+          "id": "q4",
+          "text": "Who should check the current booking list?"
+        },
+        {
+          "id": "q5",
+          "text": "Where should that list be checked?"
+        },
+        {
+          "id": "q6",
+          "text": "Must that check happen before or after card distribution?"
+        },
+        {
+          "id": "q7",
+          "text": "What substitute does the note explicitly disallow?"
+        },
+        {
+          "id": "q8",
+          "text": "Can the fallback contact authorise repairs?"
+        },
+        {
+          "id": "q9",
+          "text": "Can the fallback contact promise a bench place?"
+        },
+        {
+          "id": "q10",
+          "text": "What happens to card distribution if the fallback contact is absent?"
+        },
+        {
+          "id": "q11",
+          "text": "Who should be contacted then, and by what channel?"
+        }
+      ]
+    },
+    {
+      "id": "284b73f8c085",
+      "draft": "Greet visitors; check bookings. Give walk-ins numbered cards only if a bench is available: a queue marker, not a repair or bench promise. When Friday\u2019s printout is missing at 9:15, the host checks the live shared tablet list before assigning cards; never substitute last month\u2019s printout. The host may verify names and bookings, cannot approve repairs or promise a bench. With no host, pause card distribution and phone the coordinator.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "What condition allows queue cards to be issued?"
+        },
+        {
+          "id": "q2",
+          "text": "What does a card promise about repair completion?"
+        },
+        {
+          "id": "q3",
+          "text": "What time triggers the missing-booking-information fallback?"
+        },
+        {
+          "id": "q4",
+          "text": "Who should check the current booking list?"
+        },
+        {
+          "id": "q5",
+          "text": "Where should that list be checked?"
+        },
+        {
+          "id": "q6",
+          "text": "Must that check happen before or after card distribution?"
+        },
+        {
+          "id": "q7",
+          "text": "What substitute does the note explicitly disallow?"
+        },
+        {
+          "id": "q8",
+          "text": "Can the fallback contact authorise repairs?"
+        },
+        {
+          "id": "q9",
+          "text": "Can the fallback contact promise a bench place?"
+        },
+        {
+          "id": "q10",
+          "text": "What happens to card distribution if the fallback contact is absent?"
+        },
+        {
+          "id": "q11",
+          "text": "Who should be contacted then, and by what channel?"
+        }
+      ]
+    },
+    {
+      "id": "control-5feceb66",
+      "draft": "If the signed form reaches me by noon, I can lodge it today.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "What must happen by noon?"
+        }
+      ]
+    }
+  ]
+}

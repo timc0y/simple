@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-11-17T13:16:14.259Z",
+  "nodeVersion": "v26.13.1",
+  "packagedServerSha256": "7389b8e8ed209dd07d9aca37adcbcb3cc7f6df570889a1a220fe00fe87c3cee1",
+  "protocolVersion": "2025-06-18",
+  "tools": [
+    "get_context",
+    "find_people",
+    "remember_context",
+    "forget_context",
+    "compose_communication",
+    "remember_writing",
+    "interpret_communication",
+    "inspect_voice_profile",
+    "review_communication",
+    "prepare_email_output",
+    "prepare_slack_output"
+  ],
+  "composeConstraintRetained": true,
+  "overLimitReview": {
+    "status": "failed",
+    "maxWords": 4,
+    "actualWords": 5,
+    "excessWords": 1,
+    "basis": "whitespace",
+    "locale": null
+  },
+  "withinLimitReview": {
+    "status": "passed",
+    "maxWords": 4,
+    "actualWords": 4,
+    "excessWords": 0,
+    "basis": "whitespace",
+    "locale": null
+  },
+  "passingLengthStillHasUnassessedMeaning": {
+    "semanticPreservation": "not_run",
+    "taskFulfilment": "not_assessed"
+  },
+  "syntheticStoreUnchanged": true,
+  "syntheticStoreHashes": {
+    "manifest.json": "b6797d94574b0920c1c3b4ceb09a9779a2a7f808e16c113b319287fa0ccdee5c",
+    "data.json": "4167dca8cff59c6aac3a9f69f987e72fb3ea2a1741297e04df268bfdcbc6c9e4"
+  },
+  "scope": "Actual bundled MCP stdio connection and tool calls with disposable synthetic context. No model inference, installation, personal context or real iCloud sync."
+}

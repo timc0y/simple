@@ -1,0 +1,47 @@
+{
+  "pack": {
+    "schemaVersion": 1,
+    "packVersion": "1.0.0",
+    "id": "synthetic-meaning-control",
+    "workspaceId": "synthetic",
+    "actor": {
+      "id": "synthetic",
+      "displayName": "Synthetic Writer",
+      "kind": "person"
+    },
+    "voice": {
+      "overall": {
+        "sampleSize": 12,
+        "medianWords": 42,
+        "medianSentences": 3,
+        "questionRate": 0.1,
+        "exclamationRate": 0,
+        "contractionRate": 0.4,
+        "paragraphRate": 0.5,
+        "terminalPeriodRate": 0.6,
+        "bareEndingRate": 0.2,
+        "recurringPhrases": []
+      },
+      "bySurface": {}
+    },
+    "rules": [],
+    "avoid": [],
+    "surfaceGuidance": {},
+    "examples": [],
+    "compiledAt": "2026-11-17T00:00:00.000Z",
+    "sourceDigest": "sha256:synthetic",
+    "privacy": {
+      "rawMessagesIncluded": false,
+      "recipientRecordsIncluded": false,
+      "relationshipsIncluded": false,
+      "targetDossiersIncluded": false,
+      "approvedRevisionExamplesOnly": true,
+      "explicitReleaseCopiesOnly": true
+    }
+  },
+  "sourceText": "Lina may initial the check only after the count is recorded in the ledger.",
+  "objective": "Rewrite clearly while preserving all material source meaning, including conditions and fallback actions.",
+  "surface": "web-copy",
+  "requiredStrings": [],
+  "prohibitedStrings": []
+}

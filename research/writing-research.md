@@ -2,9 +2,8 @@
 
 Recorded 16 November 2026. This catalogue preserves the references followed in the
 owner's writing/coding research and subsequent Simple/Communicator planning. It is
-self-contained; no private transcript or other checkout is needed. The separate
-[Simple implementation plan](../simple/writing-evaluation-plan.md) owns the proposed
-work. Current research decisions remain in [the research index](README.md).
+self-contained; no private transcript or other checkout is needed. Current implementation and evaluation decisions remain in [the research index](README.md)
+and [dated results](../evals/results/README.md).
 
 For Simple, use these sources to test explanation, preservation, audience adaptation,
 learning from corrections and evaluator reliability in existing owners. Personal
@@ -991,3 +990,118 @@ candidate bytes, before reconciliation; it is not a final-installed-skill claim.
 The parent draft’s reported checks and native tasks remain attributed to that record,
 not relabelled as executions by this lead. Both records prohibit paid API evaluation;
 no extra model tasks were launched after reconciliation.
+
+## Further investigations requested 17 November 2026
+
+Status: research candidates, not adopted runtime dependencies. Earlier supplied
+posts, Ink/FACTS, Edison/RAL, Jev and Codehygiene remain in their existing sections
+above; this update preserves that history rather than replacing the catalogue.
+
+### Tested instruction optimisation
+
+Owner-supplied [Mike Taylor post](https://x.com/hammer_mt/status/2122466766127530076)
+links [How I Finally Got AI to Write Like Me](https://every.to/also-true-for-humans/how-i-finally-got-ai-to-write-like-me).
+The [released skill](https://gist.github.com/hammer-mt/200d26db9beebc42b6c81486c48cd4a1)
+and [gold-triad method](https://www.saxifrage.xyz/post/pairwise-gold-triad-eval)
+are references for model-specific instruction experiments. The article discusses
+GEPA; the released workflow describes an autoresearch keep/revert loop. Those are
+distinct implementations. Author-reported writing results do not establish a gain here.
+
+For Simple, investigate current method versus no added method versus a bounded
+candidate, with frozen task evidence, untouched tests, real control verdicts,
+order-swapped judgments and original raw outputs. Assess task completion, meaning
+and useful explanation separately; personal-style resemblance is not the target.
+Use the existing evaluator and protocol before adding an optimiser framework.
+Communicator owns the personal-voice experiment and approved-example corpus.
+
+### DeltaDB and harness integration
+
+Owner-supplied [DeltaDB](https://delta.dev/deltadb) records edit history with thread
+context while Git retains commits. Its [checkout lifecycle](https://delta.dev/docs/concepts/worktrees)
+and [Git integration](https://delta.dev/docs/concepts/delta-and-git) are candidates
+for reducing recovery and worktree bookkeeping. Automatic file synchronization
+does not establish correct integration, retained reasoning or model adherence.
+
+The [CLI documentation](https://delta.dev/cli) described official Claude Code
+integration and upcoming Pi support when read on 16 November. Other harnesses need
+an adapter to capture their conversations, not merely an installed CLI. The
+[adapter contract](https://delta.dev/docs/cli/build-a-plugin) specifies session
+identity, receipts, reconnects, cancellation and superseded turns. Investigate those
+boundaries with synthetic data before recommending a broad workflow change.
+
+Unresolved: independent export/recovery, file-versus-transcript completeness,
+compaction/history limits, private versus organization visibility, ignored-file
+handling, checkout cleanup and supported-host compatibility. Tracked files remain
+eligible for import even when a later ignore rule matches. No all-repository upload,
+custom bridge or required Delta dependency is adopted by this research record.
+Machine installation and sign-in state are local facts, not portable skill contracts.
+
+### Rendered UI text checks
+
+The owner requested text density, prose amount, slot lengths and repeated-meaning
+checks. [Interface Craft's investigation](https://github.com/timc0y/interface-craft/blob/main/docs/research/text-slot-lint-2026-11-17.md)
+owns the tool survey and implemented local rendered scanner. Simple's part is to establish
+what each observation proves, retain deliberate repetition and required conditions,
+and require matched rendered evidence before claiming an improvement. Keep one
+scanner owner; no new hook, mandatory score or duplicated checker is adopted here.
+The scanner now measures text slots and checks configured budgets/claim aliases;
+arbitrary paraphrase understanding and real-site precision remain unvalidated.
+
+## Independent evaluation decisions, 17 November 2026
+
+The requested local implementation and independent model-evaluation phase has run.
+The temporary implementation plan is retired into the existing method, architecture,
+research and dated result owners. This does not establish a general writing gain or
+close every research question below. Earlier references to an absent plan describe
+its historical baseline, not a current missing file.
+
+The independent comparison exposed changed event relationships, unreliable grading
+and invalid evidence. Draft-only readers made some differences inspectable. The
+additional event-preservation sentence did not earn adoption: conditions tied and
+all long summaries exceeded explicit word budgets. Explicit counting now has a
+mechanical owner rather than relying on a meaning judge. Later short-control
+calibration passed, but full-source review exposed disputed scope and nonliteral
+quotations. A focused meaning payload retains source/task/fidelity information and
+excludes style/length measurements; one of five follow-up verdicts still failed
+literal validation. Preserve negative outcomes and the guard against invented
+excerpts. A model verdict is evidence to inspect, not author approval.
+
+### Unresolved research questions and conditions
+
+These are research designs, not a persistent task queue or authority for more model
+calls. Register a separate bounded experiment before selecting one.
+
+- Can a reviewer distinguish faithful paraphrase from swapped actors, negation,
+  changed quantities/dates, reported versus established facts, permission versus
+  commitment, necessary/sufficient conditions, and approval/completion states?
+  Check omissions as well as supported claims, with valid and nearby faulty controls.
+- Can writing preserve long-range exceptions, prerequisites, reasons, references,
+  quotations, code, links and untouched template fields within authorised scope?
+  Include already-good text, punctuation-only edits, summaries, explanations,
+  authorised factual updates and useful repetition. A word-limit pass is insufficient.
+- Can successive shortening, warming, regrouping and factual corrections retain the
+  latest accepted substance without treating every generated draft as truth?
+  Include changed/conflicting preferences, one-task exceptions, irrelevant context
+  and instructions inside quoted source material treated as data.
+- Can assessment remain calibrated with an unknown answer, abstention, missing case,
+  forged markers, malformed text containing “yes”, a later invalid verdict, changed
+  facts beside old facts, related records across splits, or reversed answer order?
+  Required Boolean fidelity checks and per-case failures stay separate from ratings;
+  order disagreement is not a quality tie. Do not add an evaluation framework merely
+  to test these cases.
+
+Keep development and held-out identities, duplicates and related conversations
+separate; an ID or `heldOut` flag does not establish independence. Compare matched
+model/host/source/tool conditions and baseline variation before attributing gains.
+Distinguish absent evidence, retrieval failure, wrong use, poor writing, reviewer
+error and invalid instrumentation. Report coverage, fidelity, preference, usefulness,
+intervention effort and unknown inference cost separately. Independent model reading
+is not human comprehension, native delivery or installed workflow evidence.
+
+No training, steering, inferred persistent preferences, new host adapter, universal
+sentence rule or detector-score optimisation is adopted. A smaller reproduced
+remedy and an appropriate measured comparison remain prerequisites for such changes.
+
+The [evaluation decisions](../evals/results/README.md) retain each run, raw evidence,
+model-delivery limitations and adoption decision. General-purpose writing remains
+owned by Simple; personal voice selection and storage remain with Communicator.

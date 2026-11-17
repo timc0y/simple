@@ -1,0 +1,21 @@
+{
+  "cases": 4,
+  "validVerdicts": 2,
+  "controls": 2,
+  "controlsMatched": 0,
+  "diagnosticRepairs": [
+    {
+      "name": "simple-actual-repair",
+      "preserved": false,
+      "runtime": "fallback",
+      "parseError": null
+    },
+    {
+      "name": "communicator-actual-repair",
+      "preserved": false,
+      "runtime": "fallback",
+      "parseError": null
+    }
+  ],
+  "stop": "Four registered tasks used; no retries or output repair."
+}

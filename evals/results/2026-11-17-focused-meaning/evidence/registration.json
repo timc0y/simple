@@ -1,0 +1,24 @@
+{
+  "registeredAt": "2026-11-17T14:15:43.795Z",
+  "modelRequested": "gpt-6-luna",
+  "reasoning": "medium",
+  "taskBound": 5,
+  "automaticRetries": 0,
+  "paidApiCalls": 0,
+  "scope": "Development rerun after one code-design change: a fidelity-only provider payload and semantic-only instruction boundary. Same four longer source/draft pairs plus one short faithful control. Not a single-factor or contemporaneous randomised comparison.",
+  "acceptance": "No prompt or output tuning after tasks start. Preserve literal-excerpt fail-closed parsing. Check the clear order-reversal control rejects and short faithful control accepts. Treat other summaries as diagnostics, especially the proposed positive whose exception scope was disputed. Inspect semantic concerns and nonsemantic word-count complaints separately; do not force rejection diagnostics to pass.",
+  "retention": "Retain focused data contract if mechanical payload/source-retention tests pass, fault control is not falsely accepted, short faithful control is not rejected, and no new semantic concern is hidden by metrics removal. No broad quality claim from five development cases.",
+  "limits": [
+    "Native task-file delivery is not verified original-provider role/temperature/token configuration.",
+    "Cached earlier baseline results and a changed payload+instruction bundle do not isolate a causal component effect.",
+    "Exact backend revisions, usage and cost unknown.",
+    "Shared filesystem access constrained by instruction, not enforced sandbox."
+  ],
+  "inputHashes": {
+    "fa71a6b0d76a.input.json": "981a6819f0df5e356c550af77047b597c0e92479a703ad03a8e1e17bbf00db23",
+    "c7a47abd0160.input.json": "965202601f5b9fb28aa93d6dd4b208de264d890a458561d853128803b69669cd",
+    "f6f566d6e6cf.input.json": "eb5a37bba31c2e3ee9e8f311317f7e4a06dd1d56ad1d1c3b440228c1aebe95cf",
+    "21a1726ed6bd.input.json": "cc266468f740019823c152e43bfd3a3d9c5cc87cdf234e08143924c52fe10042",
+    "5cc482556e6c.input.json": "bd2741c47bbbc7dd0b4320a34b50c3a9622be0475bcfe53708277d4cb1345341"
+  }
+}

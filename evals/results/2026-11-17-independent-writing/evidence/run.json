@@ -1,0 +1,35 @@
+{
+  "registeredAt": "2026-11-17T12:23:05.396681+00:00",
+  "finishedAt": "2026-11-17T12:36:31.379538+00:00",
+  "scope": "native collaboration tool, explicit supplied instructions; not installed-plugin activation",
+  "modelRequested": "gpt-6-luna",
+  "reasoning": "medium",
+  "modelRevision": "not exposed",
+  "usageAndCost": "not exposed; unknown",
+  "data": "Synthetic only",
+  "sourceInstructions": {
+    "simple-core": {
+      "sha256": "97466ff2c3dfbad9bbdc8ff743467b0cb82fc43ea381fa3a4a82f5fe152f7aa9",
+      "bytes": 12410
+    },
+    "simple-writing": {
+      "sha256": "a9058fc74f35698aa8e7e1890612498ecbe62337d057264291117ae2f184e0f9",
+      "bytes": 13337
+    },
+    "minimal": {
+      "sha256": "6cb1f76ddcc86540ffb32563d746e3d06ce5d6e630bb0e88a7b0ebd2aa2e013c",
+      "bytes": null
+    }
+  },
+  "totalRunTaskBound": 11,
+  "totalRunTasksUsed": 11,
+  "totalRunDrafts": 24,
+  "repositoryDrafts": 12,
+  "repositoryAssessments": 32,
+  "automaticRetries": 0,
+  "repairs": 0,
+  "sameModelFamilyJudges": true,
+  "inputRepeatContentIdentical": true,
+  "comparisonValid": false,
+  "noQualityGainEstablished": true
+}

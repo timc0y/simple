@@ -1,0 +1,26 @@
+{
+  "simple-forward": {
+    "structurallyValid": true,
+    "errors": [],
+    "items": 16,
+    "answers": 34
+  },
+  "simple-reverse": {
+    "structurallyValid": true,
+    "errors": [],
+    "items": 16,
+    "answers": 34
+  },
+  "communicator-forward": {
+    "structurallyValid": true,
+    "errors": [],
+    "items": 16,
+    "answers": 34
+  },
+  "communicator-reverse": {
+    "structurallyValid": true,
+    "errors": [],
+    "items": 16,
+    "answers": 34
+  }
+}

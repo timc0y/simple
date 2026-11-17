@@ -47,8 +47,9 @@ change; the two synthetic cases test intended decisions, not measured improvemen
 The [writing, meaning and evaluation catalogue](writing-research.md) retains the
 16 November continuation: the Julian Harris/Edison post, the earlier Thomas Ankcorn
 post, adversarial learning, personalisation, source preservation, reviewer reliability
-and related coding references. The [saved implementation plan](../simple/writing-evaluation-plan.md)
-is proposed work, not adopted runtime guidance or a new evaluation result.
+and related coding references. The [research decisions](writing-research.md#independent-evaluation-decisions-17-november-2026)
+retain unresolved questions; [dated results](../evals/results/README.md) retain the
+completed evaluation evidence and its limits.
 
 Function Vectors (2310.15213), Zero-Shot Reasoners (2205.11916), Chain-of-Thought
 Prompting (2201.11903), Automatic Prompt Engineer (2211.01910), Rethinking the Role

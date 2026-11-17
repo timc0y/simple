@@ -1,0 +1,127 @@
+# Editing longer writing
+
+Use this reference for a longer draft or a requested detailed review. The writer's instructions, approved examples and source meaning govern every edit. These patterns are reasons to look more closely, never proof that a person or AI wrote the text.
+
+## Choose the useful edit
+
+Check concision, formatting, grouping, flow and intention together. Cut spare words, group related points, connect each sentence to the next and give each paragraph a clear job. Use the smallest structure suited to the reader and destination: paragraphs for connected reasoning, lists for separate items, and headings or emphasis only when they help. Preserve substance, warmth and the requested scope; every editing choice should have a useful purpose.
+
+Identify what each section contributes to the reader's question. When several passages repeat the same argument in different words, retain its strongest supported expression and any distinct condition, evidence or consequence. Keep useful structure and deliberate repetition.
+
+Let the requested operation, objective and supplied constraints determine the useful edit. For a light edit, keep each addition or replacement only when it improves that result. Restructure only when requested or necessary to meet the stated job; move supplied material rather than inventing a new argument. Explain supplied relationships, and shorten repeated wording while keeping material claims. A punctuation-only request preserves words, order, case, symbols and protected text. Do not require an outline, critique, second draft or shorter version as extra output.
+
+For requested restructuring, move supplied explanations earlier when this reader needs them to understand a later claim. Keep deliberate narrative reveals; never invent a missing definition.
+
+For requested FAQ or reference review, use the supplied reader question to check whether headings, link labels and answer placement help them find the answer. Distinguish finding it from reading the piece in order; restructure only within the requested scope.
+
+When vague link wording hides its destination, use the supplied destination name and retain the exact URL. Never guess a title from the URL.
+
+For requested clarity edits, replace unclear position-only directions with supplied control or section names when they still identify the same item. Preserve necessary distinctions and never invent labels.
+
+For spoken copy, check what listeners can understand on first hearing. Keep supplied names, reminders and stage directions when they support that understanding; do not cut useful repetition just to tighten page prose.
+
+In a story, a passage can matter because of its effect later. Before cutting it, check how it shapes place, mood, pace or the reader's next understanding.
+
+## Look for patterns across the piece
+
+- Repeated openings, identical paragraph shapes and predictable closing moves can make a draft monotonous. Compare them with this writer's approved writing before changing them.
+- A transition should express an actual connection. A contrast needs two relevant positions; a group of three needs three useful items. Keep them when they earn their place.
+- Headings, lists, tables and passive sentences can be the clearest form for the job. Do not remove them to satisfy a generic humanizer rule.
+- Emphasis should help the reader understand an existing claim. Remove decorative emphasis when its removal preserves that claim; never supply a number or example to justify it.
+- A closing passage should answer the opening question or complete the requested action. An additional summary can be useful for the reader; avoid repeating the same conclusion without purpose.
+
+For a long draft, compare the opening, middle and closing with relevant approved examples for changes in the writer's voice. Keep deliberate differences serving each section's job; do not force uniform rhythm.
+
+Sentence and paragraph measurements help locate a pattern. They do not establish a target, an AI score or a preference shared by every writer. Preserve this writer's mix, including long sentences, formality, fragments or repeated terminology when supported by the channel and examples.
+
+## British English and natural flow
+
+Apply British English when requested or established for this writer. Check meaning before spelling: licence is a noun and license a verb; practice is a noun and practise a verb. Use program for software and programme for an event schedule. Follow the writer's or supplied house style for -ise/-ize, rather than treating one as proof of nationality. Preserve original names, quotations, code and technical identifiers.
+
+Check the job of small words before cutting them. “Could” can make a request polite or express possibility; “just”, “I think” and “I reckon” can carry warmth, uncertainty or emphasis. Keep the intended function and directness. Neither universal deletion nor adding British-sounding expressions establishes this writer's voice. “I like this idea”, “I’d do this” and “We can try this” express approval, recommendation and possibility. Preserve the supplied position without inventing reactions or commitments.
+
+For clarity, prefer a direct verb when it preserves the actor and action. Keep passive wording when the actor is unknown or the focus helps the reader. In longer passages, check how each sentence connects to the previous one: familiar information can lead into the new point. This is a useful option, not a sentence formula. A request to improve grouping permits moving related supplied points together. Keep conditions and reasons beside the claims they qualify, preserve emphasis and deliberate reveals, and keep useful order for a light edit.
+
+Read the passage as spoken words to find awkward phrasing or repeated rhythm. Keep useful longer sentences alongside shorter ones; never chase an average length. The writer's actual preferred before/after edits are stronger evidence than general guides or observed history. Keep an inferred preference tentative until supported; generated edits are not writing evidence.
+
+These examples are synthetic, not the writer's facts or preferences:
+
+| Source | Useful edit or decision | Why |
+| --- | --- | --- |
+| “We need a software license.” | “We need a software licence.” | British noun spelling, when that is the requested variety. |
+| “We carried out a review of the draft.” | “We reviewed the draft.” | Same actor and action, fewer spare words. |
+| “Could you send the draft?” | Keep when intended as a polite request. | “Send the draft” changes its directness. |
+| “The preview is ready. On Friday, we can review the preview.” | “The preview is ready. We can review it on Friday.” | Connects the sentences without changing the possibility or timing. |
+
+Sources for these independently phrased techniques: [Oxford spelling guidance](https://www.ox.ac.uk/about/the-university/brand/style-guide/words), [Cambridge politeness guidance](https://dictionary.cambridge.org/grammar/british-grammar/politeness_2), the [Plain English Campaign's writing guide](https://plainenglish.co.uk/free-guides), [Gopen and Swan on information order](https://www.gatsby.ucl.ac.uk/~pel/misc/gopen_swan.pdf), and [CIEP on sample edits](https://www.ciep.uk/resource/how-sample-edits-help-writers-trust-editors-and-proofreaders.html). Their audience and house style do not establish this writer's preferences.
+
+## Keep the substance
+
+Privately derive the few decisive questions from the actual request and source. In one pass, compare source and edit in both directions and check whether the requested result was achieved. Preserve who said, observed, owes or promises each thing; its time, quantity, condition, reason, exception and uncertainty. A hypothetical remains hypothetical, an attributed claim remains attributed, and a proposed result remains proposed. Fix identified issues and recheck the affected passages; do not turn the review into an open-ended critique or visible reasoning template. A punctuation change may leave an unwanted pattern intact, and unchanged text is useful only when it already meets the request.
+
+Keep lexical findings, operation boundaries, meaning and task fulfilment separate. Passing the punctuation-only check does not establish unchanged meaning or correct punctuation. Use separately supplied facts alongside the source and apply approved updates within their stated scope; resolve consequential conflicts from the user's stated authority. Preserve that material without claiming to have verified its external truth; missing evidence is a gap, not proof a claim is false. An approved factual correction belongs to its own task and never licenses copying changed facts into another draft.
+
+Code, quotations, names, definitions, links and references carry substance. Preserve them. An unresolved citation is a review gap, not permission to invent support or erase attribution. Supplied definitions govern terminology; stylistic variety must not merge distinct concepts.
+
+Use the source language's grammar, address, speech levels and typography. Do not apply English word lists or sentence rules to another language. When wording seems translated, improve its naturalness only while keeping the same actor, relationship and register; established borrowed technical terms may be appropriate.
+
+For requested English intended for translation or readers learning English, unpack dense noun phrases only using supplied relationships. Clarify ambiguous action, object or property wording when the source resolves it; ask when the choice changes meaning.
+
+## Small synthetic examples
+
+These illustrate editing boundaries, not the writer's voice or facts to reuse.
+
+| Source | Useful edit or decision | Why |
+| --- | --- | --- |
+| “The feature helps teams to save time.” | “The feature helps teams save time.” | Removes a spare word without strengthening the claim. |
+| “The trial is underway. The trial is currently in progress.” | “The trial is underway.” | Combines repeated information. |
+| “Powerful results: we cut the average wait from ten to eight minutes.” | “We cut the average wait from ten to eight minutes.” | Keeps the supplied result without its decorative label. |
+| “We may finish Friday after approval.” | Keep the possibility and approval condition. | “We will finish Friday” would add a promise and lose a condition. |
+| “Tracking details will be provided.” | Keep the passive if the actor is unknown. | Adding “I'll send them” invents responsibility. |
+
+For requested review notes, show the affected wording and why a change helps. Explain consequential loss of warmth, rhythm or emphasis. Respect wording the writer chooses to keep. Return the requested copy or review, with no automatic score or footer.
+
+Editing ideas adapted from [phuryn/work-humanizer](https://github.com/phuryn/work-humanizer), with the [MIT notice](work-humanizer-LICENSE) retained. Communicator replaces universal quotas and compulsory output with the writer's own evidence.
+
+## Interface copy supplied with text-slot measurements
+
+Use the selected slot's actual text, role, source facts and requested edit scope.
+A report can identify a budget overrun or repeated-claim candidate; it cannot
+authorise a changed price, stronger promise, missing condition or invented benefit.
+Keep “free trial”, “free forever” and “no card required” distinct. Repeated labels,
+plan-specific values and conditions beside later consequential actions can be useful.
+
+For a proposed consolidation, identify the distinct fact each slot contributes and
+keep it with the claim it qualifies. Prefer one clear expression of the shared
+claim only when it serves the task and preserves those facts. Do not shorten an
+error until its recovery step disappears or turn measured density into a rule
+that every screen needs less text. Treat the report as current-task evidence,
+not automatically approved voice examples. Interface Craft owns measurement and
+Parallax owns the rendered product review; Communicator owns the requested wording
+and its meaning check.
+
+## Diagnose rhetoric before substituting words
+
+For a requested human-tone or structural edit, inspect the job of a whole passage:
+a heading echoed by its first sentence, an unsupported appeal to unnamed experts,
+a staged objection nobody raised, or a closer that merely repeats the example.
+Remove the redundant move only when it adds no fact, qualifier, emphasis or reader
+orientation. A heading's first sentence may legitimately supply its definition;
+a repeated warning may be required where someone acts.
+
+If the same rhetorical scaffolding survives after replacing flagged words, rewrite
+the passage around its supported point instead of cycling through synonyms. Preserve
+the writer's real tension, aside, courtesy and deliberate pattern. Without approved
+voice evidence, call the result plain or less repetitive, not proven to sound like
+the writer. Never add a reaction or specific fact to make prose seem human.
+
+For example, shortening “Why approval matters. This section explains why approval
+matters. The coordinator must approve before dispatch.” can remove the middle
+sentence. It cannot shorten the remaining condition to “Dispatch after review”:
+review is not necessarily approval and the coordinator's responsibility is lost.
+This is a synthetic example, not personal writing evidence.
+
+The source comparison is [Humanizer 4's rhetorical pattern inventory](https://github.com/blader/humanizer/blob/b48c832f0f809c1b5658edbb838c2521b72f2413/SKILL.md).
+Communicator retains its own source/voice review and one finished draft; it does not
+adopt automatic edits on one pattern sighting, invented personal reactions, a
+visible draft/critique/final sequence or detection of whether a human wrote a text.

@@ -1,0 +1,27 @@
+{
+  "cases": 5,
+  "validVerdicts": 4,
+  "controls": 2,
+  "controlsMatched": 2,
+  "diagnosticRepairs": [
+    {
+      "name": "simple-actual-repair",
+      "preserved": false,
+      "runtime": "fallback",
+      "parseError": null
+    },
+    {
+      "name": "simple-faithful-control",
+      "preserved": true,
+      "runtime": "adapted",
+      "parseError": null
+    },
+    {
+      "name": "communicator-actual-repair",
+      "preserved": null,
+      "runtime": "fallback",
+      "parseError": "Meaning review before excerpt is absent from the source."
+    }
+  ],
+  "stop": "Five registered tasks used; no retries or output repair."
+}

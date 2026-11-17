@@ -1,0 +1,76 @@
+{
+  "tasks": [
+    {
+      "task": "writing_case_author",
+      "role": "independent synthetic case author",
+      "outputContentRetained": "author-original.json; parsed content, before pre-generation control corrections"
+    },
+    {
+      "task": "writing_batch_1",
+      "role": "draft",
+      "repo": "simple",
+      "condition": "minimal"
+    },
+    {
+      "task": "writing_batch_2",
+      "role": "draft",
+      "repo": "simple",
+      "condition": "current"
+    },
+    {
+      "task": "writing_batch_3",
+      "role": "draft",
+      "repo": "simple",
+      "condition": "repeat"
+    },
+    {
+      "task": "writing_batch_4",
+      "role": "draft",
+      "repo": "communicator",
+      "condition": "minimal"
+    },
+    {
+      "task": "writing_batch_5",
+      "role": "draft",
+      "repo": "communicator",
+      "condition": "current"
+    },
+    {
+      "task": "writing_batch_6",
+      "role": "draft",
+      "repo": "communicator",
+      "condition": "repeat"
+    },
+    {
+      "task": "writing_judge_1",
+      "role": "blind assessment",
+      "repo": "simple",
+      "order": "forward"
+    },
+    {
+      "task": "writing_judge_2",
+      "role": "blind assessment",
+      "repo": "simple",
+      "order": "reverse"
+    },
+    {
+      "task": "writing_judge_3",
+      "role": "blind assessment",
+      "repo": "communicator",
+      "order": "forward"
+    },
+    {
+      "task": "writing_judge_4",
+      "role": "blind assessment",
+      "repo": "communicator",
+      "order": "reverse"
+    }
+  ],
+  "modelRequested": "gpt-6-luna",
+  "reasoning": "medium",
+  "freshContexts": true,
+  "maxConcurrentHelpers": 1,
+  "usageAndExactRevision": "not exposed; unknown",
+  "nativeFinalCountClaims": "Some helper final messages misreported assessment counts; counts were recomputed from JSON files, which each contain 16 assessments.",
+  "sourceIdentitiesVerifiedAfterRun": true
+}

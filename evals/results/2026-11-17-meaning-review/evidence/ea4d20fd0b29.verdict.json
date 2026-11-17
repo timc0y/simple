@@ -1,0 +1,1 @@
+{"preserved":false,"changes":[{"before":"Lina may initial the check only after the count is recorded in the ledger.","after":"Lina may initial the check only after counting is finished.","reason":"The source requires the count to be recorded in the ledger before Lina may initial; the rewrite requires only that counting be finished, omitting the ledger-recording condition."}]}

@@ -41,6 +41,14 @@ one strict record and recomputes agreement from both raw verdicts before complet
 malformed or disagreeing records remain inconclusive and cannot earn a pass.
 The [separate smoke budget](writing-check/protocol.md) grants no paid evaluation calls.
 
+When using source-derived reader questions as independent preservation evidence,
+collect answers from draft-only input before revealing the source or expected
+answers. Save the actual reader input, question IDs, answers and literal draft
+excerpts; compare with authoritative source and approved updates afterward. A
+source-aware grader can compare fidelity but cannot by itself establish an
+independent reading of the draft. The [draft-only diagnostic](results/2026-11-17-draft-only-reading/README.md)
+supports this separation on a small development sample, not generic judge accuracy.
+
 ## Start from intended capabilities
 
 The requested capabilities define the requirements. Evaluations provide evidence
@@ -111,6 +119,21 @@ strict Boolean/score validation. Its command entry point resolves symlinks, incl
 macOS `/tmp`. A supplied reversed order must validate against the same mapping and
 agree before successful reporting. Historical frozen helpers and judgments retain
 their original protocols; they are not rewritten by this reconciliation.
+Control reference order and genuine answer order are separate inputs. To assemble
+an additional prompt without invoking a model:
+
+```bash
+node evals/grading.mjs prompt /private/run-record writing pass-first answers reverse
+```
+
+The final argument defaults to `forward`; `reverse` reverses genuine answers in
+their existing positions while keeping controls in the requested relative order.
+Controls are distributed through the answer set by a deterministic anonymous-ID
+layout. Retain both emitted prompts and independently collected judgments. The
+ordinary runner does not automatically collect this second judgment; comparing
+supplied verdict files alone cannot prove that a reversed prompt was delivered.
+Use the frozen helper for a recorded run; do not replace historical protocols.
+
 `evals/slimming/run.py` reuses the frozen behavior runner to check that a slimmed
 skill still passes the six preservation cases.
 

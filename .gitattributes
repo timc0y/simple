@@ -21,3 +21,7 @@ evals/results/**/*.log linguist-generated=true
 evals/results/**/*.stdout linguist-generated=true
 evals/results/**/*.stderr linguist-generated=true
 evals/results/**/*.tsv linguist-generated=true
+
+# Raw model verdicts retain exact bytes, including model-produced trailing spaces.
+evals/results/2026-11-17-focused-meaning/evidence/21a1726ed6bd.verdict.json -text whitespace=-blank-at-eol
+evals/results/2026-11-17-scoped-meaning/evidence/f6f566d6e6cf.verdict.json -text whitespace=-blank-at-eol

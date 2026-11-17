@@ -1,0 +1,78 @@
+{
+  "65fcf45a8647": {
+    "caseId": "simple-conditions-timing",
+    "condition": "current",
+    "kind": "draft"
+  },
+  "4543f5adb7bd": {
+    "caseId": "simple-conditions-timing",
+    "condition": "candidate",
+    "kind": "draft"
+  },
+  "ef3d31207033": {
+    "caseId": "simple-conditions-timing",
+    "condition": "current-repeat",
+    "kind": "draft"
+  },
+  "dfd24c98484e": {
+    "caseId": "simple-long-exception-summary",
+    "condition": "current",
+    "kind": "draft"
+  },
+  "bc5b895eb0a5": {
+    "caseId": "simple-long-exception-summary",
+    "condition": "candidate",
+    "kind": "draft"
+  },
+  "311478225114": {
+    "caseId": "simple-long-exception-summary",
+    "condition": "current-repeat",
+    "kind": "draft"
+  },
+  "7b3006b45593": {
+    "caseId": "simple-correction-unknowns",
+    "condition": "current",
+    "kind": "draft"
+  },
+  "dba965fb5647": {
+    "caseId": "simple-correction-unknowns",
+    "condition": "candidate",
+    "kind": "draft"
+  },
+  "402f2af317ac": {
+    "caseId": "simple-correction-unknowns",
+    "condition": "current-repeat",
+    "kind": "draft"
+  },
+  "5ca77c5d294e": {
+    "caseId": "simple-punctuation-noop",
+    "condition": "current",
+    "kind": "draft"
+  },
+  "a0ff9a265699": {
+    "caseId": "simple-punctuation-noop",
+    "condition": "candidate",
+    "kind": "draft"
+  },
+  "b4b0100830dc": {
+    "caseId": "simple-punctuation-noop",
+    "condition": "current-repeat",
+    "kind": "draft"
+  },
+  "3f30f4530c": {
+    "kind": "control",
+    "expected": "posting"
+  },
+  "6bac38a985": {
+    "kind": "control",
+    "expected": "receipt"
+  },
+  "51fb9939b6": {
+    "kind": "control",
+    "expected": "Lina; Friday is proposed, not confirmed"
+  },
+  "eded843d98": {
+    "kind": "control",
+    "expected": "none"
+  }
+}

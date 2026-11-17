@@ -1,0 +1,13 @@
+{
+  "caseCount": 8,
+  "caseEdits": [],
+  "controlEdits": [
+    "Replace ellipsis excerpts with literal complete excerpts in faithful control.",
+    "Make omitted-constraint draft preserve the safety-check condition so it isolates omission of the Thursday fallback; original scheduled-Monday wording also changed certainty."
+  ],
+  "limits": [
+    "Authored cases are short; the named long-exception case is not a long-document test.",
+    "Synthetic voice examples are closely related to their tasks, so this cannot isolate style learning from matched example reuse."
+  ],
+  "casesSha256": "1566fdebf4b946c2ab0a053120deabf9250ddf65aa9dd8c5106abacc07ca3c2a"
+}

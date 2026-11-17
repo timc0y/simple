@@ -1,0 +1,66 @@
+{
+  "5cc482556e6c": {
+    "family": "event",
+    "kind": "faithful",
+    "expectedPreserved": true,
+    "failure": null,
+    "sourceText": "Lina may initial the check only after the count is recorded in the ledger.",
+    "rewrittenText": "Only after the count is recorded in the ledger may Lina initial the check."
+  },
+  "ea4d20fd0b29": {
+    "family": "event",
+    "kind": "faulty",
+    "expectedPreserved": false,
+    "failure": "Recording is weakened to taking/counting; the record-before-initialling condition is not retained.",
+    "sourceText": "Lina may initial the check only after the count is recorded in the ledger.",
+    "rewrittenText": "Lina may initial the check only after counting is finished."
+  },
+  "d240102c9384": {
+    "family": "roles",
+    "kind": "faithful",
+    "expectedPreserved": true,
+    "failure": null,
+    "sourceText": "Mika will send the labels after Jo approves them.",
+    "rewrittenText": "After Jo approves the labels, Mika will send them."
+  },
+  "ea1c642ee5ba": {
+    "family": "roles",
+    "kind": "faulty",
+    "expectedPreserved": false,
+    "failure": "Sender and approver are swapped while the names remain.",
+    "sourceText": "Mika will send the labels after Jo approves them.",
+    "rewrittenText": "Jo will send the labels after Mika approves them."
+  },
+  "08c7eb15d346": {
+    "family": "omission",
+    "kind": "faithful",
+    "expectedPreserved": true,
+    "failure": null,
+    "sourceText": "The replacement unit may ship Monday if the safety check passes; otherwise dispatch moves to Thursday.",
+    "rewrittenText": "If the safety check passes, the replacement unit may ship Monday; otherwise, dispatch moves to Thursday."
+  },
+  "68cfee5e8423": {
+    "family": "omission",
+    "kind": "faulty",
+    "expectedPreserved": false,
+    "failure": "The required Thursday fallback is omitted.",
+    "sourceText": "The replacement unit may ship Monday if the safety check passes; otherwise dispatch moves to Thursday.",
+    "rewrittenText": "If the safety check passes, the replacement unit may ship Monday."
+  },
+  "62320ec400a4": {
+    "family": "negation",
+    "kind": "faithful",
+    "expectedPreserved": true,
+    "failure": null,
+    "sourceText": "We have not booked the hall; Tuesday is only a proposed date.",
+    "rewrittenText": "Tuesday is only a proposed date; we have not booked the hall."
+  },
+  "2c745fbeb431": {
+    "family": "negation",
+    "kind": "faulty",
+    "expectedPreserved": false,
+    "failure": "A negative booking status and proposed date become a confirmed booking.",
+    "sourceText": "We have not booked the hall; Tuesday is only a proposed date.",
+    "rewrittenText": "The hall is booked for Tuesday."
+  }
+}

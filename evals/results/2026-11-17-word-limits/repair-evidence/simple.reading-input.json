@@ -1,0 +1,159 @@
+{
+  "instructions": "Answer every question solely from its corresponding draft. No source, requested task, expected answer or other draft context is available. Do not invent an omitted instruction. Use supported, not_stated or uncertain. For not_stated, say what is absent and quote the closest relevant passage; that quote locates context, it does not by itself prove absence. Use literal excerpts from that same draft. Return strict JSON {\"items\":[{\"id\":\"...\",\"answers\":[{\"id\":\"q1\",\"answer\":\"...\",\"status\":\"supported|not_stated|uncertain\",\"excerpt\":\"literal excerpt\"}]}]}.",
+  "items": [
+    {
+      "id": "control-4e074085",
+      "draft": "After Noah approves the draft, Lina may send it. Friday is only a proposed date.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "Who may send the draft, and is Friday confirmed?"
+        }
+      ]
+    },
+    {
+      "id": "control-d4735e3a",
+      "draft": "I\u2019m waiting for the file. There is no agreed deadline.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "What deadline has been agreed?"
+        }
+      ]
+    },
+    {
+      "id": "control-6b86b273",
+      "draft": "Please post the sample on Monday; it does not need to arrive that day.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "What action is requested for Monday, and must arrival happen that day?"
+        }
+      ]
+    },
+    {
+      "id": "eabff7336ff1",
+      "draft": "Count returned players, check numbered sleeves; date count in green ledger. If one is missing, note its number and last-seen time; tell desk lead before leaving; leave check incomplete. If desk lead is absent, enter \u201cpending lead review\u201d in ledger and notify building manager before locking up; manager cannot authorise disposal or replacement. Initial only if all devices are present and counted.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "Who should be notified when the usual lead is available?"
+        },
+        {
+          "id": "q2",
+          "text": "By what point should that notification happen?"
+        },
+        {
+          "id": "q3",
+          "text": "Can the check be marked complete if an item is missing?"
+        },
+        {
+          "id": "q4",
+          "text": "What exact ledger entry is required when the usual lead is absent?"
+        },
+        {
+          "id": "q5",
+          "text": "Who should be notified when the usual lead is absent?"
+        },
+        {
+          "id": "q6",
+          "text": "By what point should the alternative notification happen?"
+        },
+        {
+          "id": "q7",
+          "text": "What authority limit applies to that alternative contact?"
+        },
+        {
+          "id": "q8",
+          "text": "What condition allows the check to be initialled?"
+        }
+      ]
+    },
+    {
+      "id": "68da14eb7d24",
+      "draft": "Count returned players, check numbered sleeves; date count in green ledger. If one is missing, note its number and last-seen time; tell desk lead before leaving; leave check incomplete. If desk lead is absent, enter \u201cpending lead review\u201d in ledger and notify building manager before locking up; manager cannot authorise disposal or replacement. Initial only if all devices are present and counted.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "Who should be notified when the usual lead is available?"
+        },
+        {
+          "id": "q2",
+          "text": "By what point should that notification happen?"
+        },
+        {
+          "id": "q3",
+          "text": "Can the check be marked complete if an item is missing?"
+        },
+        {
+          "id": "q4",
+          "text": "What exact ledger entry is required when the usual lead is absent?"
+        },
+        {
+          "id": "q5",
+          "text": "Who should be notified when the usual lead is absent?"
+        },
+        {
+          "id": "q6",
+          "text": "By what point should the alternative notification happen?"
+        },
+        {
+          "id": "q7",
+          "text": "What authority limit applies to that alternative contact?"
+        },
+        {
+          "id": "q8",
+          "text": "What condition allows the check to be initialled?"
+        }
+      ]
+    },
+    {
+      "id": "864351d1c8bd",
+      "draft": "Count returned players, check numbered sleeves; date count in green ledger. If one is missing, note its number and last-seen time; tell desk lead before leaving; leave check incomplete. If desk lead is absent, enter \u201cpending lead review\u201d in ledger and notify building manager before locking up; manager cannot authorise disposal or replacement. Initial only if all devices are present and counted.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "Who should be notified when the usual lead is available?"
+        },
+        {
+          "id": "q2",
+          "text": "By what point should that notification happen?"
+        },
+        {
+          "id": "q3",
+          "text": "Can the check be marked complete if an item is missing?"
+        },
+        {
+          "id": "q4",
+          "text": "What exact ledger entry is required when the usual lead is absent?"
+        },
+        {
+          "id": "q5",
+          "text": "Who should be notified when the usual lead is absent?"
+        },
+        {
+          "id": "q6",
+          "text": "By what point should the alternative notification happen?"
+        },
+        {
+          "id": "q7",
+          "text": "What authority limit applies to that alternative contact?"
+        },
+        {
+          "id": "q8",
+          "text": "What condition allows the check to be initialled?"
+        }
+      ]
+    },
+    {
+      "id": "control-5feceb66",
+      "draft": "If the signed form reaches me by noon, I can lodge it today.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "What must happen by noon?"
+        }
+      ]
+    }
+  ]
+}

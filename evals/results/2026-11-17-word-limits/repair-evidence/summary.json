@@ -1,0 +1,46 @@
+{
+  "tasksRegistered": 4,
+  "tasksCompleted": 4,
+  "repairRows": 6,
+  "sourceTasks": 2,
+  "uniqueRepairedTexts": 2,
+  "independentReaderItems": 14,
+  "readerAnswers": 65,
+  "numericResult": {
+    "simple": {
+      "before": [
+        79,
+        83,
+        73
+      ],
+      "after": [
+        62,
+        62,
+        62
+      ],
+      "maxWords": 65
+    },
+    "communicator": {
+      "before": [
+        85,
+        83,
+        82
+      ],
+      "after": [
+        70,
+        70,
+        70
+      ],
+      "maxWords": 70
+    }
+  },
+  "sourceReview": {
+    "simple": "Needs review: after recording the count becomes present and counted in the final condition; the ledger instruction remains earlier. Sleeve placement is also more compressed. Preservation is not established by the count pass.",
+    "communicator": "Lead review and targeted draft-only readings retain the registered booking/card conditions, explicit old-printout prohibition, authority limits and no-host fallback. Not human comprehension or voice approval."
+  },
+  "readerControlsLeadMatched": {
+    "simple": 4,
+    "communicator": 4
+  },
+  "limits": "Known failures, shared contexts within each repair batch, explicit numerical/source feedback and additional effort. Not six independent sources, a matched ablation, installed workflow or general writing-quality gain. Exact backend revision, token use and cost unknown."
+}

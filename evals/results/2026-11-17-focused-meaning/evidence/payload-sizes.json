@@ -1,0 +1,27 @@
+[
+  {
+    "id": "fa71a6b0d76a",
+    "baselineInputBytes": 11491,
+    "candidateInputBytes": 7571
+  },
+  {
+    "id": "c7a47abd0160",
+    "baselineInputBytes": 11553,
+    "candidateInputBytes": 7634
+  },
+  {
+    "id": "f6f566d6e6cf",
+    "baselineInputBytes": 11449,
+    "candidateInputBytes": 7539
+  },
+  {
+    "id": "21a1726ed6bd",
+    "baselineInputBytes": 11387,
+    "candidateInputBytes": 7461
+  },
+  {
+    "id": "5cc482556e6c",
+    "baselineInputBytes": 9099,
+    "candidateInputBytes": 5226
+  }
+]

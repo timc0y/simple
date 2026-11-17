@@ -1,0 +1,12 @@
+{
+  "controls": 8,
+  "validVerdicts": 8,
+  "invalidVerdicts": 0,
+  "semanticVerdictMatches": 8,
+  "faithful": 4,
+  "faulty": 4,
+  "runtimeFalseAcceptances": 0,
+  "runtimeFalseRejections": 0,
+  "sourceReturnedForFaults": 4,
+  "limits": "Prompt text delivered in native task contexts, not original provider role/temperature/max-token delivery. Recorded verdict replay executes real parser and runtime logic. Development controls, not general judge accuracy."
+}

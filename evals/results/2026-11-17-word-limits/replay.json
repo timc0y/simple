@@ -1,0 +1,134 @@
+[
+  {
+    "repo": "simple",
+    "condition": "current",
+    "input": {
+      "sourceText": "At the end of each reading-room shift, the volunteer should count returned audio players, check that each is in its numbered sleeve, and enter the count in the green ledger beside the date. If a player is missing, note its number and the time it was last seen, then tell the desk lead before leaving; do not mark the equipment check as complete. The cabinet key stays on the red hook behind the desk, and the charging plugs are kept in the shallow drawer underneath the printer. The room is usually quiet after six, although the poetry group sometimes runs over and may need the chairs left out for a few minutes. On wet evenings, visitors often leave umbrellas near the entrance, so keep the clear walkway open. The ledger is collected on the first Monday of each month by the facilities officer. One exception applies to the inventory entry: if a player is missing during a shift when the desk lead is absent, the volunteer must write “pending lead review” in the ledger and notify the building manager before locking up; the manager is covering only until the lead returns, and should not be asked to authorise disposal or replacement. When all devices are present, the volunteer may initial the check after recording the count. Never take a player home to charge it, even if its battery is empty. The next shift begins at 9 am, and the room should be left unlocked for the cleaner until 8 pm.",
+      "rewrittenText": "Count returned players, check each numbered sleeve and record the count beside the date in the green ledger. If one is missing, note its number and last-seen time, tell the desk lead before leaving and do not mark the check complete. If the lead is absent, write “pending lead review” and notify the building manager before locking up; the manager cannot authorise disposal or replacement. Initial the check only when all devices are present and the count is recorded.",
+      "objective": "Turn the source into a concise handover note of no more than 65 words for the evening archive volunteer. The source is authoritative. Preserve the ordinary process and the distant exception; omit background that does not affect what the volunteer should do. Summarise only equipment inventory and missing-player escalation, including when a check may be initialled. Exclude storage, charging, room-closing and visitor-management instructions.",
+      "operation": "shorten",
+      "maxWords": 65,
+      "wordCountBasis": "whitespace"
+    },
+    "wordLimitCheck": {
+      "status": "failed",
+      "maxWords": 65,
+      "actualWords": 79,
+      "excessWords": 14,
+      "basis": "whitespace",
+      "locale": null
+    },
+    "semanticPreservation": "not_run",
+    "taskFulfilment": "not_assessed"
+  },
+  {
+    "repo": "simple",
+    "condition": "candidate",
+    "input": {
+      "sourceText": "At the end of each reading-room shift, the volunteer should count returned audio players, check that each is in its numbered sleeve, and enter the count in the green ledger beside the date. If a player is missing, note its number and the time it was last seen, then tell the desk lead before leaving; do not mark the equipment check as complete. The cabinet key stays on the red hook behind the desk, and the charging plugs are kept in the shallow drawer underneath the printer. The room is usually quiet after six, although the poetry group sometimes runs over and may need the chairs left out for a few minutes. On wet evenings, visitors often leave umbrellas near the entrance, so keep the clear walkway open. The ledger is collected on the first Monday of each month by the facilities officer. One exception applies to the inventory entry: if a player is missing during a shift when the desk lead is absent, the volunteer must write “pending lead review” in the ledger and notify the building manager before locking up; the manager is covering only until the lead returns, and should not be asked to authorise disposal or replacement. When all devices are present, the volunteer may initial the check after recording the count. Never take a player home to charge it, even if its battery is empty. The next shift begins at 9 am, and the room should be left unlocked for the cleaner until 8 pm.",
+      "rewrittenText": "Count returned audio players, check each is in its numbered sleeve, and record the count beside the date in the green ledger. If one is missing, note its number and last-seen time, tell the desk lead before leaving, and do not mark the check complete. If the lead is absent, write “pending lead review” and notify the building manager before locking up; the manager cannot authorise disposal or replacement. Initial the check only when all devices are present and the count is recorded.",
+      "objective": "Turn the source into a concise handover note of no more than 65 words for the evening archive volunteer. The source is authoritative. Preserve the ordinary process and the distant exception; omit background that does not affect what the volunteer should do. Summarise only equipment inventory and missing-player escalation, including when a check may be initialled. Exclude storage, charging, room-closing and visitor-management instructions.",
+      "operation": "shorten",
+      "maxWords": 65,
+      "wordCountBasis": "whitespace"
+    },
+    "wordLimitCheck": {
+      "status": "failed",
+      "maxWords": 65,
+      "actualWords": 83,
+      "excessWords": 18,
+      "basis": "whitespace",
+      "locale": null
+    },
+    "semanticPreservation": "not_run",
+    "taskFulfilment": "not_assessed"
+  },
+  {
+    "repo": "simple",
+    "condition": "current-repeat",
+    "input": {
+      "sourceText": "At the end of each reading-room shift, the volunteer should count returned audio players, check that each is in its numbered sleeve, and enter the count in the green ledger beside the date. If a player is missing, note its number and the time it was last seen, then tell the desk lead before leaving; do not mark the equipment check as complete. The cabinet key stays on the red hook behind the desk, and the charging plugs are kept in the shallow drawer underneath the printer. The room is usually quiet after six, although the poetry group sometimes runs over and may need the chairs left out for a few minutes. On wet evenings, visitors often leave umbrellas near the entrance, so keep the clear walkway open. The ledger is collected on the first Monday of each month by the facilities officer. One exception applies to the inventory entry: if a player is missing during a shift when the desk lead is absent, the volunteer must write “pending lead review” in the ledger and notify the building manager before locking up; the manager is covering only until the lead returns, and should not be asked to authorise disposal or replacement. When all devices are present, the volunteer may initial the check after recording the count. Never take a player home to charge it, even if its battery is empty. The next shift begins at 9 am, and the room should be left unlocked for the cleaner until 8 pm.",
+      "rewrittenText": "Count returned players, check each numbered sleeve and record the count beside the date in the green ledger. If a player is missing, record its number and last-seen time, tell the desk lead before leaving and leave the check incomplete. If the lead is absent, write “pending lead review” and notify the building manager before locking up; the manager cannot authorise disposal or replacement. Initial only when all devices are present and counted.",
+      "objective": "Turn the source into a concise handover note of no more than 65 words for the evening archive volunteer. The source is authoritative. Preserve the ordinary process and the distant exception; omit background that does not affect what the volunteer should do. Summarise only equipment inventory and missing-player escalation, including when a check may be initialled. Exclude storage, charging, room-closing and visitor-management instructions.",
+      "operation": "shorten",
+      "maxWords": 65,
+      "wordCountBasis": "whitespace"
+    },
+    "wordLimitCheck": {
+      "status": "failed",
+      "maxWords": 65,
+      "actualWords": 73,
+      "excessWords": 8,
+      "basis": "whitespace",
+      "locale": null
+    },
+    "semanticPreservation": "not_run",
+    "taskFulfilment": "not_assessed"
+  },
+  {
+    "repo": "communicator",
+    "condition": "current",
+    "input": {
+      "sourceText": "For each Saturday repair café, the welcome volunteer should greet visitors at the blue table, ask whether they have booked, and give walk-ins a numbered card if a bench is available. The card is a queue marker, not a promise that a repair can be completed. Visitors should keep electrical items switched off until a repairer is ready to inspect them. A volunteer can help carry heavier objects from the entrance, but should not open or test equipment. The kettle is in the kitchen, and the public toilets are along the corridor past the noticeboard. At closing, collect unused numbered cards and return them to the envelope in the welcome box. The booking spreadsheet is printed each Friday by the coordinator, who may be working remotely on the day. If the coordinator has not delivered the printout by 9:15, ask the event host to check the latest booking list on the shared tablet before assigning any walk-in cards; do not use last month's printout as a substitute. The event host can verify names and booking status but cannot approve a repair or promise a place at a bench. If no host is present, pause walk-in card distribution and contact the coordinator by phone. Please leave the blue table in place for the next group, which meets on the first Sunday of the month. Visitors may take a leaflet about future sessions, but do not collect email addresses at the welcome table.",
+      "rewrittenText": "Ask visitors whether they have booked. Give walk-ins a numbered card only if a bench is available; it marks their place in the queue but does not promise a repair. If the coordinator’s Friday booking printout has not arrived by 9:15, ask the event host to check the latest list on the shared tablet before assigning cards. The host can verify names and booking status, but cannot approve repairs or promise a bench. If no host is present, pause card distribution and phone the coordinator.",
+      "objective": "Write a practical summary of no more than 70 words for the volunteer welcome pack. The source is authoritative. Keep the routine steps and the exception near the end; leave out unrelated venue details. Cover only arrival booking checks and numbered-card decisions, including the event host’s authority limit. Exclude equipment safety, closing, furniture, leaflets and contact-collection instructions.",
+      "operation": "shorten",
+      "maxWords": 70,
+      "wordCountBasis": "whitespace"
+    },
+    "wordLimitCheck": {
+      "status": "failed",
+      "maxWords": 70,
+      "actualWords": 85,
+      "excessWords": 15,
+      "basis": "whitespace",
+      "locale": null
+    },
+    "semanticPreservation": "not_run",
+    "taskFulfilment": "not_assessed"
+  },
+  {
+    "repo": "communicator",
+    "condition": "candidate",
+    "input": {
+      "sourceText": "For each Saturday repair café, the welcome volunteer should greet visitors at the blue table, ask whether they have booked, and give walk-ins a numbered card if a bench is available. The card is a queue marker, not a promise that a repair can be completed. Visitors should keep electrical items switched off until a repairer is ready to inspect them. A volunteer can help carry heavier objects from the entrance, but should not open or test equipment. The kettle is in the kitchen, and the public toilets are along the corridor past the noticeboard. At closing, collect unused numbered cards and return them to the envelope in the welcome box. The booking spreadsheet is printed each Friday by the coordinator, who may be working remotely on the day. If the coordinator has not delivered the printout by 9:15, ask the event host to check the latest booking list on the shared tablet before assigning any walk-in cards; do not use last month's printout as a substitute. The event host can verify names and booking status but cannot approve a repair or promise a place at a bench. If no host is present, pause walk-in card distribution and contact the coordinator by phone. Please leave the blue table in place for the next group, which meets on the first Sunday of the month. Visitors may take a leaflet about future sessions, but do not collect email addresses at the welcome table.",
+      "rewrittenText": "Ask visitors whether they have booked. Give walk-ins a numbered card only if a bench is available; the card marks their place in the queue but does not promise a repair. If the coordinator’s booking printout has not arrived by 9:15, ask the event host to check the latest list on the shared tablet before assigning cards. The host can verify bookings, but cannot approve repairs or promise a bench place. If no host is present, pause walk-in cards and phone the coordinator.",
+      "objective": "Write a practical summary of no more than 70 words for the volunteer welcome pack. The source is authoritative. Keep the routine steps and the exception near the end; leave out unrelated venue details. Cover only arrival booking checks and numbered-card decisions, including the event host’s authority limit. Exclude equipment safety, closing, furniture, leaflets and contact-collection instructions.",
+      "operation": "shorten",
+      "maxWords": 70,
+      "wordCountBasis": "whitespace"
+    },
+    "wordLimitCheck": {
+      "status": "failed",
+      "maxWords": 70,
+      "actualWords": 83,
+      "excessWords": 13,
+      "basis": "whitespace",
+      "locale": null
+    },
+    "semanticPreservation": "not_run",
+    "taskFulfilment": "not_assessed"
+  },
+  {
+    "repo": "communicator",
+    "condition": "current-repeat",
+    "input": {
+      "sourceText": "For each Saturday repair café, the welcome volunteer should greet visitors at the blue table, ask whether they have booked, and give walk-ins a numbered card if a bench is available. The card is a queue marker, not a promise that a repair can be completed. Visitors should keep electrical items switched off until a repairer is ready to inspect them. A volunteer can help carry heavier objects from the entrance, but should not open or test equipment. The kettle is in the kitchen, and the public toilets are along the corridor past the noticeboard. At closing, collect unused numbered cards and return them to the envelope in the welcome box. The booking spreadsheet is printed each Friday by the coordinator, who may be working remotely on the day. If the coordinator has not delivered the printout by 9:15, ask the event host to check the latest booking list on the shared tablet before assigning any walk-in cards; do not use last month's printout as a substitute. The event host can verify names and booking status but cannot approve a repair or promise a place at a bench. If no host is present, pause walk-in card distribution and contact the coordinator by phone. Please leave the blue table in place for the next group, which meets on the first Sunday of the month. Visitors may take a leaflet about future sessions, but do not collect email addresses at the welcome table.",
+      "rewrittenText": "Greet visitors and check whether they have booked. Give a walk-in a numbered card only if a bench is available; it marks their place in the queue, not a promise of a repair. If the Friday booking printout has not arrived by 9:15, ask the host to check the latest list on the shared tablet before issuing cards. The host can verify bookings, but cannot approve repairs or promise a bench. With no host present, pause card distribution and phone the coordinator.",
+      "objective": "Write a practical summary of no more than 70 words for the volunteer welcome pack. The source is authoritative. Keep the routine steps and the exception near the end; leave out unrelated venue details. Cover only arrival booking checks and numbered-card decisions, including the event host’s authority limit. Exclude equipment safety, closing, furniture, leaflets and contact-collection instructions.",
+      "operation": "shorten",
+      "maxWords": 70,
+      "wordCountBasis": "whitespace"
+    },
+    "wordLimitCheck": {
+      "status": "failed",
+      "maxWords": 70,
+      "actualWords": 82,
+      "excessWords": 12,
+      "basis": "whitespace",
+      "locale": null
+    },
+    "semanticPreservation": "not_run",
+    "taskFulfilment": "not_assessed"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "registeredAt": "2026-11-17T13:17:31.439845+00:00",
+  "modelRequested": "gpt-6-luna",
+  "reasoning": "medium",
+  "host": "Native collaboration; explicit supplied updated guidance and recorded built-tool feedback",
+  "scope": "Assisted repair smoke on six existing failed drafts. Not held out, matched or causal improvement evidence.",
+  "taskBound": 4,
+  "repairTasks": 2,
+  "draftOnlyReaderTasks": 2,
+  "repairsPerDraft": 1,
+  "automaticRetries": 0,
+  "paidApiCalls": 0,
+  "stop": "Stop after two repair batches and two independent reading batches, even if a repair fails. Do not tune source instructions during run.",
+  "acceptance": "Check each draft with the built word-limit helper and full source/task review. Check every material condition independently; passing the length check cannot establish preservation. Fresh readers see only repaired drafts and atomic questions, not source/gold. Corrected controls use a requested posting day, not ambiguous deadline wording.",
+  "confounds": "Guidance, numeric feedback, source omission feedback and additional effort all change together. Cannot attribute any repair to one factor or generalise beyond these known cases.",
+  "revisionUsageCost": "Exact backend revision, tokens and costs not exposed; unknown",
+  "methodHashes": {
+    "communicator-method.txt": "52b055a41d2c348f15d239a37a940519cb6e6a6a12ce3b21d1a0dd99c39a57f6",
+    "simple-method.txt": "948903b07c4a895f1fb21064d7b860fce31a62ba36156c01009a1f91d2ab242b"
+  }
+}

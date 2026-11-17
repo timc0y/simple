@@ -176,7 +176,11 @@ Later style edits must not restore an approved factual error.
 
 Check once, then repair identified failures and recheck the affected passages:
 
-- Does the result fulfil the requested operation, purpose and exact constraints?
+- Does the result fulfil the requested operation, purpose and exact constraints? For an
+  explicit length bound, measure the final artifact using the requested counting
+  convention. Do not infer a maximum from a preference for brevity, or drop material
+  obligations to make the count pass. State a real conflict rather than claiming the
+  result fits.
 - Source to draft: did a material fact, reason, condition, exception, action or unknown
   disappear? True remaining sentences do not establish completeness.
 - Draft to source: is each added claim supported? Keep who does what, to whom, when,

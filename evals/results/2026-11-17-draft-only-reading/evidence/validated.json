@@ -1,0 +1,132 @@
+{
+  "forward": {
+    "errors": [],
+    "answers": {
+      "3f30f4530c": {
+        "id": "q1",
+        "answer": "Posting the sample has a Monday deadline; arrival does not need to be that day.",
+        "status": "supported",
+        "excerpt": "Please post the sample on Monday; it does not need to arrive that day."
+      },
+      "6bac38a985": {
+        "id": "q1",
+        "answer": "The signed form must reach the speaker by noon.",
+        "status": "supported",
+        "excerpt": "If the signed form reaches me by noon"
+      },
+      "7906364309": {
+        "id": "q1",
+        "answer": "The copy for screen three must be sent by Tuesday.",
+        "status": "supported",
+        "excerpt": "If you send it by Tuesday, I can finish the review by Thursday"
+      },
+      "0f6715e29c": {
+        "id": "q1",
+        "answer": "The first draft must reach the speaker by Friday.",
+        "status": "supported",
+        "excerpt": "if it reaches me by Friday"
+      },
+      "51fb9939b6": {
+        "id": "q1",
+        "answer": "Lina may send the draft after Noah approves it; Friday is only proposed, not confirmed.",
+        "status": "supported",
+        "excerpt": "After Noah approves the draft, Lina may send it. Friday is only a proposed date."
+      },
+      "256abb2c13": {
+        "id": "q1",
+        "answer": "Send the first draft by Friday for review next week.",
+        "status": "supported",
+        "excerpt": "I can review your first draft next week if you send it by Friday."
+      },
+      "8ad8950107": {
+        "id": "q1",
+        "answer": "Send the copy for screen three by Tuesday.",
+        "status": "supported",
+        "excerpt": "If you send it by Tuesday, I can finish the review by Thursday"
+      },
+      "ffe57efb83": {
+        "id": "q1",
+        "answer": "Send the copy for screen three by Tuesday.",
+        "status": "supported",
+        "excerpt": "If you send it by Tuesday, I can finish the review by Thursday"
+      },
+      "eded843d98": {
+        "id": "q1",
+        "answer": "No deadline has been agreed.",
+        "status": "supported",
+        "excerpt": "There is no agreed deadline."
+      },
+      "15ed83760e": {
+        "id": "q1",
+        "answer": "Send the first draft by Friday for review next week.",
+        "status": "supported",
+        "excerpt": "I can review your first draft next week if you send it by Friday."
+      }
+    }
+  },
+  "reverse": {
+    "errors": [],
+    "answers": {
+      "15ed83760e": {
+        "id": "q1",
+        "answer": "Send the first draft by Friday.",
+        "status": "supported",
+        "excerpt": "if you send it by Friday"
+      },
+      "eded843d98": {
+        "id": "q1",
+        "answer": "No deadline has been agreed.",
+        "status": "supported",
+        "excerpt": "There is no agreed deadline."
+      },
+      "ffe57efb83": {
+        "id": "q1",
+        "answer": "Send the copy for screen three by Tuesday.",
+        "status": "supported",
+        "excerpt": "If you send it by Tuesday, I can finish the review by Thursday"
+      },
+      "8ad8950107": {
+        "id": "q1",
+        "answer": "Send the copy for screen three by Tuesday.",
+        "status": "supported",
+        "excerpt": "If you send it by Tuesday, I can finish the review by Thursday"
+      },
+      "256abb2c13": {
+        "id": "q1",
+        "answer": "Send the first draft by Friday.",
+        "status": "supported",
+        "excerpt": "if you send it by Friday"
+      },
+      "51fb9939b6": {
+        "id": "q1",
+        "answer": "Lina may send the draft after Noah approves it; Friday is only proposed, not confirmed.",
+        "status": "supported",
+        "excerpt": "After Noah approves the draft, Lina may send it. Friday is only a proposed date."
+      },
+      "0f6715e29c": {
+        "id": "q1",
+        "answer": "The first draft must reach the speaker by Friday.",
+        "status": "supported",
+        "excerpt": "if it reaches me by Friday"
+      },
+      "7906364309": {
+        "id": "q1",
+        "answer": "Send the copy for screen three by Tuesday.",
+        "status": "supported",
+        "excerpt": "If you send it by Tuesday, I can finish the review by Thursday"
+      },
+      "6bac38a985": {
+        "id": "q1",
+        "answer": "The signed form must reach the speaker by noon.",
+        "status": "supported",
+        "excerpt": "If the signed form reaches me by noon"
+      },
+      "3f30f4530c": {
+        "id": "q1",
+        "answer": "Posting the sample has a Monday deadline; arrival does not need to be that day.",
+        "status": "supported",
+        "excerpt": "Please post the sample on Monday; it does not need to arrive that day."
+      }
+    }
+  }
+}

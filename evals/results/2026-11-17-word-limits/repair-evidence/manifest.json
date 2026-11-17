@@ -1,0 +1,16 @@
+{
+  "built-tool-checks.json": "4b684a53b3144ad8a77d78ddaaeae303d58dca9635fd8852168ab407e796614b",
+  "communicator.input.json": "5587b9e53403c1c889c01370a5d790506807876555b0b692ad6985bc6848f98a",
+  "communicator.reading-input.json": "c2a8828ae5ade3453409cb696ac30a0bb8e589ab953e6dfb804bf538357b0d26",
+  "communicator.reading-key.json": "0fc0fb66e2b4357d9fdd19f3c5431bee3030777d246ebff45640f0be3e1853d8",
+  "communicator.reading.json": "2de4c64f3b6e56351c3b8f828cdaa72a7b3963246381e35f3cc37a906a6bdfa7",
+  "communicator.repairs.json": "05828b477dd074e329ce6507ad99588662f59d6df62c30bc3ceb1dad8434289e",
+  "reading-validation.json": "36451c8bf7a1d37995c26dd91dd111cf965fab0d3aea0d4e29374bca41d6093f",
+  "registration.json": "f4e94120ddeb942142badcd81502f070bfde07a12fde87f583fe79d5048b70ea",
+  "simple.input.json": "ddc97b1a3b9cd4147a51f2e9f12e879e1883087ad1b205898239f24a105f3ef1",
+  "simple.reading-input.json": "6d12fa5414a037f65153fdc37cbb6be0aebfaad387308aeb7e5bae58c5c1e996",
+  "simple.reading-key.json": "932c7e69bb6af59e50387c21a647c649e8a334a2c15425831a5cb78ec41b9289",
+  "simple.reading.json": "8b54ac561c6c523e41dd00ba234dd2231b133f2da471fee47c21d150b975d75c",
+  "simple.repairs.json": "c908d5d740a2e76c34eea68c13296ec3e4ea2a86dccf0551dbe28f2dde8ca92c",
+  "summary.json": "0159825b070a1e10f3f979944513fa3ea81040addc7def20ffef131cad0674aa"
+}

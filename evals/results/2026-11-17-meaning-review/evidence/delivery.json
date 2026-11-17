@@ -1,0 +1,23 @@
+{
+  "completedAt": "2026-11-17T13:45:22.721296+00:00",
+  "tasks": [
+    "meaning_control_1",
+    "meaning_control_2",
+    "meaning_control_3",
+    "meaning_control_4",
+    "meaning_control_5",
+    "meaning_control_6",
+    "meaning_control_7",
+    "meaning_control_8"
+  ],
+  "modelRequested": "gpt-6-luna",
+  "reasoning": "medium",
+  "maxConcurrentHelpers": 1,
+  "sourceAndInputsStillMatchRegistration": true,
+  "compiledModuleHashes": {
+    "writing.js": "62b056ab849c7124dc1f7d8087745a7d3f8ee25b0f458197e509e057ece3df31",
+    "runtime.js": "a5a88e18e1c144cd66d9b80f6e9fd19e079c40e29b16bad5b0b8bdf16639df0a"
+  },
+  "replay": "Real parser/runtime, fixed candidate output and recorded native meaning verdict. No new provider inference while replaying.",
+  "usageRevisionCost": "not exposed; unknown"
+}

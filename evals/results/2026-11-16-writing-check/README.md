@@ -110,3 +110,13 @@ which differs from the repository candidate recorded in the task. It was not upd
 This Linux executor lacks the native macOS `sandbox-exec` path. OpenCode, Claude Code,
 Codex and Antigravity installed workflows, live compaction survival and native model
 isolation remain unverified. No release, installation or paid API evaluation ran.
+
+## Instrument follow-up, 17 November 2026
+
+A regression reproduced acceptance of a grade reporting both `passed: true` and
+`blocker: true`. The shared validator now rejects that contradiction; a failed
+non-blocker remains valid. The grader prompt and rubric state the same invariant.
+All 99 repository tests and the profile check passed. The earlier frozen runs and
+raw grades are unchanged; this is a deterministic instrument repair, not a new
+model-quality result. Rendered text evidence now has a conditional route in the
+existing verification reference, with Interface Craft as its sole scanner owner.

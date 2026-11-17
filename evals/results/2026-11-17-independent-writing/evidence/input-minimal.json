@@ -1,0 +1,25 @@
+{
+  "method": "Fulfil the supplied writing request. Preserve the supplied facts, conditions and uncertainty, and follow the requested edit scope. Use only supplied context. Return the requested writing without commentary.\n",
+  "cases": [
+    {
+      "id": "simple-role-uncertainty-01",
+      "task": "Write a short project update for the client using only these facts: I reviewed the first two screens; the third screen is still waiting on their copy; I can finish the review by Thursday if it arrives by Tuesday; otherwise I will send a revised date. Keep the client responsible for supplying the copy, preserve the conditional timing, and do not imply that the whole project is nearly finished. Source text: \u2018I reviewed screens one and two. Screen three is waiting for your copy. If it arrives by Tuesday, I can finish the review by Thursday; otherwise I\u2019ll send a revised date.\u2019",
+      "sourceText": "I reviewed screens one and two. Screen three is waiting for your copy. If it arrives by Tuesday, I can finish the review by Thursday; otherwise I\u2019ll send a revised date."
+    },
+    {
+      "id": "simple-noop-02",
+      "task": "Check this sentence for the requested change. It is already clear and correct, so keep it unchanged unless a genuine error requires correction. Source text: \u2018We have not confirmed the venue yet.\u2019",
+      "sourceText": "We have not confirmed the venue yet."
+    },
+    {
+      "id": "simple-clarity-03",
+      "task": "Rewrite the note to make the action and timing easier to follow. Preserve that Mara owns the review, the sender owns the file update, and approval is not guaranteed. Source text: \u2018Mara review the figures. I\u2019ll change file after she tell me. If all okay, maybe we can send Friday.\u2019",
+      "sourceText": "Mara review the figures. I\u2019ll change file after she tell me. If all okay, maybe we can send Friday."
+    },
+    {
+      "id": "simple-long-exception-04",
+      "task": "Turn this into a short service notice. Preserve the normal rule and the specific exception for existing bookings; do not imply that new bookings are affected. Source text: \u2018The studio closes at 5 pm on Mondays. Existing bookings on 23 June can still run until 6 pm because the building manager approved a one-off extension. New bookings cannot be added after 5 pm.\u2019",
+      "sourceText": "The studio closes at 5 pm on Mondays. Existing bookings on 23 June can still run until 6 pm because the building manager approved a one-off extension. New bookings cannot be added after 5 pm."
+    }
+  ]
+}

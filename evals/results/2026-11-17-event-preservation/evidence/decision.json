@@ -1,0 +1,20 @@
+{
+  "conditionCountsFromLeadAgentReview": {
+    "simple": {
+      "current": 3,
+      "candidate": 3,
+      "current-repeat": 3
+    },
+    "communicator": {
+      "current": 3,
+      "candidate": 3,
+      "current-repeat": 3
+    }
+  },
+  "uniqueCandidateRepairs": 0,
+  "candidateAdopted": false,
+  "reason": "No candidate repair of a failure shared by both current batches. All conditions failed each long-summary task.",
+  "activeWritingInstructionsChanged": false,
+  "interpretation": "Small descriptive screen with partial blinding and lead-agent judgments, not a general writing-quality score.",
+  "readerCalibration": "Incomplete: one ambiguous schedule/deadline control; no general calibrated quality score."
+}

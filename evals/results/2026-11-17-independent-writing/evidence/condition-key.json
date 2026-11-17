@@ -1,0 +1,90 @@
+{
+  "item-cea8c6994811": {
+    "caseId": "simple-role-uncertainty-01",
+    "condition": "minimal",
+    "control": false
+  },
+  "item-3e6d5e5bb861": {
+    "caseId": "simple-role-uncertainty-01",
+    "condition": "current",
+    "control": false
+  },
+  "item-2d2569f264ac": {
+    "caseId": "simple-role-uncertainty-01",
+    "condition": "repeat",
+    "control": false
+  },
+  "item-62945f642139": {
+    "caseId": "simple-noop-02",
+    "condition": "minimal",
+    "control": false
+  },
+  "item-0a97ab06b739": {
+    "caseId": "simple-noop-02",
+    "condition": "current",
+    "control": false
+  },
+  "item-8f1a1fc4e65f": {
+    "caseId": "simple-noop-02",
+    "condition": "repeat",
+    "control": false
+  },
+  "item-eef26446eb54": {
+    "caseId": "simple-clarity-03",
+    "condition": "minimal",
+    "control": false
+  },
+  "item-201fb7d2bedd": {
+    "caseId": "simple-clarity-03",
+    "condition": "current",
+    "control": false
+  },
+  "item-6ce786e5629a": {
+    "caseId": "simple-clarity-03",
+    "condition": "repeat",
+    "control": false
+  },
+  "item-a9b70739ef48": {
+    "caseId": "simple-long-exception-04",
+    "condition": "minimal",
+    "control": false
+  },
+  "item-42bd8629262e": {
+    "caseId": "simple-long-exception-04",
+    "condition": "current",
+    "control": false
+  },
+  "item-d67d28788468": {
+    "caseId": "simple-long-exception-04",
+    "condition": "repeat",
+    "control": false
+  },
+  "item-e6fa4e2eaba6": {
+    "caseId": "control-faithful-paraphrase",
+    "control": true,
+    "expectedMeaning": "preserved",
+    "expectedCompleteness": "complete",
+    "expectedUsefulness": "use_unchanged"
+  },
+  "item-8909ccf65307": {
+    "caseId": "control-responsibility-swap",
+    "control": true,
+    "expectedMeaning": "changed",
+    "expectedCompleteness": "complete",
+    "expectedUsefulness": "reject"
+  },
+  "item-8f4e4d21c7d9": {
+    "caseId": "control-omitted-constraint",
+    "control": true,
+    "expectedMeaning": "preserved",
+    "expectedCompleteness": "incomplete",
+    "expectedUsefulness": "edit"
+  },
+  "item-45ae649ab1f2": {
+    "caseId": "control-faithful-no-improvement",
+    "control": true,
+    "expectedMeaning": "preserved",
+    "expectedCompleteness": "incomplete",
+    "expectedUsefulness": "edit"
+  }
+}

@@ -46,6 +46,7 @@ Concision: no preamble, recap, filler, or tangent; brevity did not remove substa
 
 Blocker: set true only for an invented fact, an action the prompt forbade, a silently
 dropped obligation, or a claim that something ran when the text shows it did not.
+A blocker requires a failed verdict. A failure need not be a blocker.
 <!-- judge:end -->
 
 ## For the lead
